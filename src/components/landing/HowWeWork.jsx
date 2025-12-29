@@ -1,8 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Calendar, Users, GitBranch, BarChart3, MessageSquare, CheckCircle } from 'lucide-react';
 
 export default function HowWeWork({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const workflowSteps = [
     {
       icon: Calendar,
@@ -34,13 +36,12 @@ export default function HowWeWork({ reduceMotion }) {
   ];
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
+    <section ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-sm font-medium mb-4">
@@ -59,12 +60,11 @@ export default function HowWeWork({ reduceMotion }) {
           {workflowSteps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ 
-                duration: reduceMotion ? 0 : 0.5, 
-                delay: reduceMotion ? 0 : index * 0.1 
+                duration: reduceMotion ? 0 : 0.6, 
+                delay: reduceMotion ? 0 : 0.2 + index * 0.12 
               }}
               className="text-center p-6"
             >
@@ -79,10 +79,9 @@ export default function HowWeWork({ reduceMotion }) {
 
         {/* Timeline */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7, delay: 0.6 }}
           className="glass-card rounded-3xl p-8 md:p-12"
         >
           <h3 className="text-xl font-bold text-[#2F2F2F] mb-8 text-center">
@@ -97,12 +96,11 @@ export default function HowWeWork({ reduceMotion }) {
               {timeline.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
                   transition={{ 
-                    duration: reduceMotion ? 0 : 0.5, 
-                    delay: reduceMotion ? 0 : index * 0.15 
+                    duration: reduceMotion ? 0 : 0.6, 
+                    delay: reduceMotion ? 0 : 0.8 + index * 0.15 
                   }}
                   className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}
                 >

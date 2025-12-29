@@ -38,7 +38,11 @@ export default function Layout({ children, currentPageName }) {
         
         :root {
           --color-primary: #DBFE01;
-          --color-dark: #2F2F2F;
+          --color-dark: #1a1a1a;
+        }
+        
+        body {
+          color: #1a1a1a;
         }
         
         html {
@@ -46,10 +50,11 @@ export default function Layout({ children, currentPageName }) {
         }
         
         .gradient-text {
-          background: linear-gradient(135deg, #DBFE01 0%, #B8D600 100%);
+          background: linear-gradient(135deg, #C5E000 0%, #A8C600 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
+          font-weight: 700;
         }
         
         .glass-card {
@@ -60,24 +65,27 @@ export default function Layout({ children, currentPageName }) {
         
         .btn-primary {
           background: #DBFE01;
-          color: #2F2F2F;
+          color: #1a1a1a;
+          font-weight: 600;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(219, 254, 1, 0.3);
+          box-shadow: 0 8px 30px rgba(219, 254, 1, 0.4);
+          background: #c5e000;
         }
         
         .btn-secondary {
           background: transparent;
-          color: #2F2F2F;
-          border: 1.5px solid #2F2F2F;
+          color: #1a1a1a;
+          border: 2px solid #1a1a1a;
+          font-weight: 600;
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .btn-secondary:hover {
-          background: #2F2F2F;
+          background: #1a1a1a;
           color: white;
         }
 
@@ -103,9 +111,9 @@ export default function Layout({ children, currentPageName }) {
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-[#DBFE01] flex items-center justify-center">
-                <span className="text-[#2F2F2F] font-bold text-lg">C</span>
+                <span className="text-[#1a1a1a] font-bold text-lg">C</span>
               </div>
-              <span className="text-[#2F2F2F] font-semibold text-xl tracking-tight">Conefia</span>
+              <span className="text-[#1a1a1a] font-bold text-xl tracking-tight">Conefia</span>
             </Link>
 
             {/* Desktop Nav */}
@@ -114,7 +122,7 @@ export default function Layout({ children, currentPageName }) {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-[#2F2F2F]/70 hover:text-[#2F2F2F] text-sm font-medium transition-colors relative group"
+                  className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-semibold transition-colors relative group"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
@@ -157,7 +165,7 @@ export default function Layout({ children, currentPageName }) {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-[#2F2F2F] text-lg font-medium py-2"
+                    className="block w-full text-left text-[#1a1a1a] text-lg font-semibold py-2"
                   >
                     {item.label}
                   </button>
@@ -179,15 +187,15 @@ export default function Layout({ children, currentPageName }) {
       {children}
 
       {/* Footer */}
-      <footer className="bg-[#2F2F2F] text-white py-16">
+      <footer className="bg-[#1a1a1a] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-8 h-8 rounded-lg bg-[#DBFE01] flex items-center justify-center">
-                  <span className="text-[#2F2F2F] font-bold text-lg">C</span>
+                  <span className="text-[#1a1a1a] font-bold text-lg">C</span>
                 </div>
-                <span className="font-semibold text-xl tracking-tight">Conefia</span>
+                <span className="font-bold text-xl tracking-tight">Conefia</span>
               </div>
               <p className="text-white/60 text-sm leading-relaxed max-w-sm">
                 Founder Ops for Digital Businesses. We validate, build, launch, and grow — all in one place.

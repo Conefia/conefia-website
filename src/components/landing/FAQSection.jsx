@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export default function FAQSection({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
@@ -33,13 +35,12 @@ export default function FAQSection({ reduceMotion }) {
   ];
 
   return (
-    <section id="faq" className="py-20 md:py-32 bg-white/50">
+    <section ref={ref} id="faq" className="py-20 md:py-32 bg-white/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-sm font-medium mb-4">
@@ -57,12 +58,11 @@ export default function FAQSection({ reduceMotion }) {
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ 
-                duration: reduceMotion ? 0 : 0.5, 
-                delay: reduceMotion ? 0 : index * 0.08 
+                duration: reduceMotion ? 0 : 0.6, 
+                delay: reduceMotion ? 0 : 0.2 + index * 0.1 
               }}
             >
               <button

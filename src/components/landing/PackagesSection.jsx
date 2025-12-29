@@ -1,8 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Search, Code2, Rocket, TrendingUp, CheckCircle2, Star, ArrowRight } from 'lucide-react';
 
 export default function PackagesSection({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const packages = [
     {
       icon: Search,
@@ -66,16 +68,15 @@ export default function PackagesSection({ reduceMotion }) {
   ];
 
   return (
-    <section id="packages" className="py-20 md:py-32 relative overflow-hidden">
+    <section ref={ref} id="packages" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#DBFE01]/20 text-[#2F2F2F] text-sm font-medium mb-4">
@@ -93,12 +94,11 @@ export default function PackagesSection({ reduceMotion }) {
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{ 
-                duration: reduceMotion ? 0 : 0.5, 
-                delay: reduceMotion ? 0 : index * 0.1 
+                duration: reduceMotion ? 0 : 0.6, 
+                delay: reduceMotion ? 0 : 0.2 + index * 0.12 
               }}
               className={`relative group ${pkg.highlight ? 'lg:-mt-4 lg:mb-4' : ''}`}
             >
@@ -146,10 +146,9 @@ export default function PackagesSection({ reduceMotion }) {
 
         {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.4 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.6 }}
           className="text-center mt-12"
         >
           <button

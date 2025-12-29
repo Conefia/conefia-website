@@ -1,8 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 
 export default function HeroSection({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -15,19 +18,19 @@ export default function HeroSection({ reduceMotion }) {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: reduceMotion ? 0 : 0.12,
-        delayChildren: reduceMotion ? 0 : 0.2,
+        staggerChildren: reduceMotion ? 0 : 0.15,
+        delayChildren: reduceMotion ? 0 : 0.3,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 20 },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: reduceMotion ? 0 : 0.6,
+        duration: reduceMotion ? 0 : 0.7,
         ease: [0.25, 0.46, 0.45, 0.94],
       },
     },
@@ -36,26 +39,26 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 md:pt-0">
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            animate={isInView ? "visible" : "hidden"}
             className="text-center lg:text-left"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-6">
-              <Sparkles className="w-4 h-4 text-[#2F2F2F]" />
-              <span className="text-sm font-medium text-[#2F2F2F]">Founder Ops Partner</span>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/15 border border-[#DBFE01]/30 mb-6">
+              <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+              <span className="text-sm font-semibold text-[#1a1a1a]">Your Founder Ops Partner</span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#2F2F2F] leading-[1.1] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#1a1a1a] leading-[1.1] tracking-tight mb-6"
             >
               Build it.{' '}
               <span className="gradient-text">Launch it.</span>{' '}
@@ -65,9 +68,10 @@ export default function HeroSection({ reduceMotion }) {
             {/* Subhead */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-[#2F2F2F]/60 leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-[#1a1a1a]/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Founder Ops for AI apps, e-commerce, and healthcare. We validate your idea, build the product, launch your presence, and scale with data-driven growth.
+              Your end-to-end Founder Ops partner for AI apps, e-commerce, and healthcare. 
+              From validation to product launch to data-driven growth — all under one roof.
             </motion.p>
 
             {/* CTAs */}
@@ -94,16 +98,16 @@ export default function HeroSection({ reduceMotion }) {
             {/* Trust indicators */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-wrap gap-6 mt-10 justify-center lg:justify-start"
+              className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start"
             >
               {[
                 { label: 'Typical MVP', value: '8–12 weeks' },
-                { label: 'Weekly demos', value: 'Always' },
+                { label: 'Weekly demos', value: 'Guaranteed' },
                 { label: 'Privacy-first', value: 'HIPAA-aware' },
               ].map((item, i) => (
                 <div key={i} className="text-center lg:text-left">
-                  <p className="text-sm text-[#2F2F2F]/40 uppercase tracking-wider">{item.label}</p>
-                  <p className="text-[#2F2F2F] font-semibold">{item.value}</p>
+                  <p className="text-xs text-[#1a1a1a]/50 uppercase tracking-wider font-semibold mb-1">{item.label}</p>
+                  <p className="text-[#1a1a1a] font-bold text-lg">{item.value}</p>
                 </div>
               ))}
             </motion.div>
@@ -112,8 +116,8 @@ export default function HeroSection({ reduceMotion }) {
           {/* Right Visual - Animated Flow */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.3 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
             className="relative"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
@@ -126,25 +130,25 @@ export default function HeroSection({ reduceMotion }) {
                   {phases.map((phase, index) => (
                     <motion.div
                       key={phase}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
                       transition={{ 
-                        duration: reduceMotion ? 0 : 0.5, 
-                        delay: reduceMotion ? 0 : 0.5 + index * 0.15 
+                        duration: reduceMotion ? 0 : 0.6, 
+                        delay: reduceMotion ? 0 : 0.6 + index * 0.15 
                       }}
                       className="flex items-center gap-4"
                     >
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg ${
-                        index === 0 ? 'bg-[#2F2F2F] text-white' :
-                        index === 1 ? 'bg-[#DBFE01] text-[#2F2F2F]' :
-                        index === 2 ? 'bg-[#2F2F2F]/10 text-[#2F2F2F]' :
-                        'bg-gradient-to-br from-[#DBFE01] to-[#B8D600] text-[#2F2F2F]'
+                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg ${
+                        index === 0 ? 'bg-[#1a1a1a] text-white' :
+                        index === 1 ? 'bg-[#DBFE01] text-[#1a1a1a]' :
+                        index === 2 ? 'bg-[#1a1a1a]/10 text-[#1a1a1a] border-2 border-[#1a1a1a]/20' :
+                        'bg-gradient-to-br from-[#DBFE01] to-[#B8D600] text-[#1a1a1a]'
                       }`}>
                         {index + 1}
                       </div>
                       <div className="flex-1">
-                        <p className="font-semibold text-[#2F2F2F] text-lg">{phase}</p>
-                        <p className="text-[#2F2F2F]/50 text-sm">
+                        <p className="font-bold text-[#1a1a1a] text-xl">{phase}</p>
+                        <p className="text-[#1a1a1a]/60 text-sm font-medium">
                           {index === 0 && '2–4 weeks'}
                           {index === 1 && '6–12 weeks'}
                           {index === 2 && '2–4 weeks'}
@@ -153,10 +157,10 @@ export default function HeroSection({ reduceMotion }) {
                       </div>
                       {index < phases.length - 1 && (
                         <motion.div
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ duration: reduceMotion ? 0 : 0.3, delay: reduceMotion ? 0 : 0.8 + index * 0.15 }}
-                          className="w-8 h-[2px] bg-gradient-to-r from-[#DBFE01] to-transparent"
+                          initial={{ scaleX: 0 }}
+                          animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+                          transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 1 + index * 0.15 }}
+                          className="w-8 h-[3px] bg-gradient-to-r from-[#DBFE01] to-transparent origin-left"
                         />
                       )}
                     </motion.div>
@@ -165,15 +169,15 @@ export default function HeroSection({ reduceMotion }) {
 
                 {/* Floating tags */}
                 <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 1.2 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 1.4 }}
                   className="flex flex-wrap gap-2 mt-8"
                 >
                   {['AI Agents', 'E-commerce', 'Healthcare', 'Web Apps'].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 rounded-full bg-[#2F2F2F]/5 text-[#2F2F2F]/70 text-xs font-medium"
+                      className="px-3 py-1.5 rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a]/80 text-xs font-semibold border border-[#1a1a1a]/10"
                     >
                       {tag}
                     </span>
@@ -183,14 +187,12 @@ export default function HeroSection({ reduceMotion }) {
 
               {/* Decorative elements */}
               <motion.div
-                animate={reduceMotion ? {} : { 
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-[#DBFE01] rounded-2xl flex items-center justify-center shadow-lg"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                transition={{ duration: 0.5, delay: 1.6 }}
+                className="absolute -top-4 -right-4 w-16 h-16 bg-[#DBFE01] rounded-2xl flex items-center justify-center shadow-xl"
               >
-                <Sparkles className="w-8 h-8 text-[#2F2F2F]" />
+                <Sparkles className="w-8 h-8 text-[#1a1a1a]" />
               </motion.div>
             </div>
           </motion.div>
@@ -201,15 +203,15 @@ export default function HeroSection({ reduceMotion }) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block"
       >
         <motion.div
           animate={reduceMotion ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-[#2F2F2F]/20 flex justify-center pt-2"
+          className="w-6 h-10 rounded-full border-2 border-[#1a1a1a]/30 flex justify-center pt-2"
         >
-          <div className="w-1.5 h-3 bg-[#2F2F2F]/40 rounded-full" />
+          <div className="w-1.5 h-3 bg-[#1a1a1a]/50 rounded-full" />
         </motion.div>
       </motion.div>
     </section>

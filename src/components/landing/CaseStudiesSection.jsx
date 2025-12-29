@@ -1,8 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowUpRight, Brain, ShoppingCart, Bot, Heart, Sparkles } from 'lucide-react';
 
 export default function CaseStudiesSection({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   const caseStudies = [
     {
       id: 'menovia',
@@ -37,17 +40,16 @@ export default function CaseStudiesSection({ reduceMotion }) {
   ];
 
   return (
-    <section id="case-studies" className="py-20 md:py-32 relative">
+    <section ref={ref} id="case-studies" className="py-20 md:py-32 relative">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#2F2F2F]" />
+      <div className="absolute inset-0 bg-[#1a1a1a]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-transparent" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between mb-16"
         >
           <div>
@@ -68,12 +70,11 @@ export default function CaseStudiesSection({ reduceMotion }) {
           {caseStudies.map((study, index) => (
             <motion.div
               key={study.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
               transition={{ 
-                duration: reduceMotion ? 0 : 0.6, 
-                delay: reduceMotion ? 0 : index * 0.15 
+                duration: reduceMotion ? 0 : 0.7, 
+                delay: reduceMotion ? 0 : 0.3 + index * 0.2 
               }}
               className="group"
             >
@@ -86,7 +87,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${study.gradient} opacity-60`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2F2F2F] via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
                   
                   {/* Icon badge */}
                   <div className="absolute top-4 left-4 w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center">
@@ -137,10 +138,9 @@ export default function CaseStudiesSection({ reduceMotion }) {
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.3 }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.7 }}
           className="text-center mt-12"
         >
           <p className="text-white/40 text-sm mb-4">Want results like these?</p>
