@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '../../utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
@@ -38,6 +40,15 @@ export default function CaseStudiesSection({ reduceMotion }) {
     emblaApi.on('select', onSelect);
     return () => emblaApi.off('select', onSelect);
   }, [emblaApi, onSelect]);
+
+  const caseStudyPages = {
+    'vascular-institute': 'CaseStudyVascular',
+    'menovia': 'CaseStudyMenovia',
+    'larovie': 'CaseStudyLarovie',
+    'al-mahfza': 'CaseStudyAlMahfza',
+    'hartalega': 'CaseStudyHartalega',
+    'aviya': 'CaseStudyAviya',
+  };
 
   const caseStudies = [
     {
@@ -277,12 +288,13 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         </div>
 
                         {/* CTA */}
-                        <button
+                        <Link
+                          to={createPageUrl(caseStudyPages[study.id])}
                           className={`w-full px-6 py-3 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-white/20 transition-all hover:-translate-y-0.5`}
                         >
                           View case study
                           <ArrowRight className="w-4 h-4" />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
