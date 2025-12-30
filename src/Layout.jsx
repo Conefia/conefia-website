@@ -34,20 +34,12 @@ export default function Layout({ children, currentPageName }) {
   return (
     <div className="font-['Poppins',sans-serif]">
       <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-          :root {
-            --color-primary: #DBFE01;
-            --color-dark: #1a1a1a;
-            --conefia-lime: #DBFE01;
-            --conefia-charcoal: #2F2F2F;
-            --hero-bg: #0B1020;
-            --hero-bg-2: #0F1630;
-            --line: rgba(219,254,1,.10);
-            --line-soft: rgba(255,255,255,.04);
-            --card: rgba(255,255,255,.05);
-            --border: rgba(255,255,255,.14);
-          }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+          --color-primary: #DBFE01;
+          --color-dark: #1a1a1a;
+        }
         
         body {
           color: #1a1a1a;
@@ -104,76 +96,7 @@ export default function Layout({ children, currentPageName }) {
             transition-duration: 0.01ms !important;
           }
         }
-
-        /* Contour Texture Hero */
-        .hero-contour {
-          min-height: 90vh;
-          color: #fff;
-          background: radial-gradient(1200px 700px at 20% 20%, var(--hero-bg-2), var(--hero-bg));
-          position: relative;
-          overflow: hidden;
-        }
-
-        .hero-contour::before {
-          content: "";
-          position: absolute;
-          inset: -20%;
-          background:
-            repeating-linear-gradient(135deg,
-              var(--line) 0px,
-              var(--line) 1px,
-              rgba(219,254,1,0) 1px,
-              rgba(219,254,1,0) 14px
-            ),
-            repeating-linear-gradient(135deg,
-              var(--line-soft) 0px,
-              var(--line-soft) 1px,
-              rgba(255,255,255,0) 1px,
-              rgba(255,255,255,0) 30px
-            ),
-            radial-gradient(900px 600px at 30% 35%, rgba(219,254,1,.10), transparent 60%),
-            radial-gradient(700px 500px at 80% 15%, rgba(219,254,1,.06), transparent 55%);
-          transform: rotate(-6deg);
-          pointer-events: none;
-          filter: saturate(.95);
-        }
-
-        .hero-contour::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(900px 600px at 50% 0%, rgba(0,0,0,0), rgba(0,0,0,.45));
-          pointer-events: none;
-        }
-
-        .visual-mock {
-          width: min(420px, 100%);
-          aspect-ratio: 4 / 5;
-          border-radius: 22px;
-          background: var(--card);
-          border: 1px solid var(--border);
-          box-shadow: 0 20px 70px rgba(0,0,0,.55);
-          position: relative;
-        }
-
-        .visual-mock::after {
-          content: "";
-          position: absolute;
-          inset: -1px;
-          border-radius: 22px;
-          pointer-events: none;
-          background: linear-gradient(135deg, rgba(219,254,1,.22), transparent 45%);
-          mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
-          -webkit-mask-composite: xor;
-          mask-composite: exclude;
-          padding: 1px;
-        }
-
-        .accent-lime {
-          color: var(--conefia-lime);
-          text-shadow: 0 0 24px rgba(219,254,1,.10);
-        }
-        `}</style>
+      `}</style>
 
       {/* Sticky Header */}
       <header 

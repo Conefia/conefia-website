@@ -39,7 +39,25 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="hero-contour relative flex items-center pt-20 md:pt-0">
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
+      {/* Animated gradient orbs */}
+      <motion.div 
+        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.4, 0.3],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{ duration: 8, repeat: Infinity, delay: 1 }}
+      />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
@@ -61,7 +79,7 @@ export default function HeroSection({ reduceMotion }) {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6"
             >
               Build it.{' '}
-              <span className="accent-lime">Launch it.</span>{' '}
+              <span className="text-[#DBFE01]">Launch it.</span>{' '}
               Grow it.
             </motion.h1>
 
@@ -121,8 +139,11 @@ export default function HeroSection({ reduceMotion }) {
             className="relative"
           >
             <div className="relative aspect-square max-w-lg mx-auto">
+              {/* Background glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/20 to-transparent rounded-full blur-3xl" />
+              
               {/* Flow diagram */}
-              <div className="relative visual-mock p-8 md:p-12">
+              <div className="relative glass-card rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/5">
                 <div className="space-y-6">
                   {phases.map((phase, index) => (
                     <motion.div
