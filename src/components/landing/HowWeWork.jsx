@@ -10,21 +10,29 @@ export default function HowWeWork({ reduceMotion }) {
       icon: Calendar,
       title: 'Weekly Demos',
       description: 'See progress every week. No black boxes, no surprises.',
+      gradient: 'from-violet-500 to-purple-600',
+      glow: 'shadow-violet-500/30',
     },
     {
       icon: GitBranch,
       title: 'Single Backlog',
       description: 'All priorities in one place. You always know what\'s next.',
+      gradient: 'from-cyan-500 to-blue-600',
+      glow: 'shadow-cyan-500/30',
     },
     {
       icon: MessageSquare,
       title: 'Async Updates',
       description: 'Daily Loom/Slack updates. Stay informed without meetings.',
+      gradient: 'from-emerald-500 to-teal-600',
+      glow: 'shadow-emerald-500/30',
     },
     {
       icon: BarChart3,
       title: 'Stage Gates',
       description: 'Clear milestones and sign-offs before moving forward.',
+      gradient: 'from-orange-500 to-amber-600',
+      glow: 'shadow-orange-500/30',
     },
   ];
 
