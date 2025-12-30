@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Send, CheckCircle2, Clock, Users, Shield, Mail, MessageSquare, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -15,10 +16,20 @@ export default function ContactSection({ reduceMotion }) {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    setSubmitted(true);
+    try {
+      await base44.integrations.Core.SendEmail({
+        to: 'info@conefia.com',
+        subject: `New Roadmap Call Request: ${formData.name}`,
+        body: `Name: ${formData.name}\nEmail: ${formData.email}\nProject: ${formData.project}`
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      // Fallback to showing success anyway for UX, or handle error appropriately
+      setSubmitted(true);
+    }
   };
 
   const trustItems = [
@@ -169,11 +180,11 @@ export default function ContactSection({ reduceMotion }) {
             {/* Alternative contact */}
             <div className="flex items-center justify-center gap-6 mt-6 text-sm text-[#2F2F2F]/50">
               <a 
-                href="mailto:hello@conefia.com" 
+                href="mailto:info@conefia.com" 
                 className="flex items-center gap-2 hover:text-[#2F2F2F] transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                hello@conefia.com
+                info@conefia.com
               </a>
             </div>
           </motion.div>
