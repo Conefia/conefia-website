@@ -121,7 +121,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-indigo-600 via-violet-500 to-purple-600',
       bgGradient: 'from-indigo-500/20 to-purple-500/20',
-      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 'aviya',
