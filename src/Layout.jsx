@@ -102,8 +102,8 @@ export default function Layout({ children, currentPageName }) {
       <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled 
-            ? 'bg-white/80 backdrop-blur-xl shadow-sm' 
-            : 'bg-transparent'
+            ? 'bg-gradient-to-r from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] shadow-lg shadow-black/20' 
+            : 'bg-gradient-to-r from-[#1a1a1a]/80 via-[#2F2F2F]/80 to-[#1a1a1a]/80 backdrop-blur-md'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -123,7 +123,7 @@ export default function Layout({ children, currentPageName }) {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-semibold transition-colors relative group"
+                  className="text-white/70 hover:text-white text-sm font-semibold transition-colors relative group"
                 >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
@@ -145,9 +145,9 @@ export default function Layout({ children, currentPageName }) {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
             </button>
           </div>
         </div>
@@ -159,14 +159,14 @@ export default function Layout({ children, currentPageName }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white border-t"
+              className="md:hidden bg-gradient-to-b from-[#2F2F2F] to-[#1a1a1a] border-t border-white/10"
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-[#1a1a1a] text-lg font-semibold py-2"
+                    className="block w-full text-left text-white text-lg font-semibold py-2"
                   >
                     {item.label}
                   </button>
