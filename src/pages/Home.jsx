@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import HeroSection from '@/components/landing/HeroSection';
 import SocialProofBar from '@/components/landing/SocialProofBar';
+import BrandLogoCarousel from '@/components/landing/BrandLogoCarousel';
 import ProblemSolution from '@/components/landing/ProblemSolution';
 import PlaybookSection from '@/components/landing/PlaybookSection';
 import CaseStudiesSection from '@/components/landing/CaseStudiesSection';
@@ -30,6 +31,7 @@ export default function Home() {
       <main className="relative">
         <HeroSection reduceMotion={shouldReduceMotion} />
         <SocialProofBar reduceMotion={shouldReduceMotion} />
+        <BrandLogoCarousel reduceMotion={shouldReduceMotion} />
         <ProblemSolution reduceMotion={shouldReduceMotion} />
         <PlaybookSection reduceMotion={shouldReduceMotion} />
         <CaseStudiesSection reduceMotion={shouldReduceMotion} />
