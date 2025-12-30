@@ -42,10 +42,10 @@ export default function SocialProofBar({ reduceMotion }) {
       value: '100%', 
       label: 'HIPAA-aware flows', 
       subtext: 'Privacy by design',
-      color: 'text-teal-600',
-      bgColor: 'bg-teal-50',
-      borderColor: 'border-teal-100',
-      ringColor: '#0d9488'
+      color: 'text-rose-600',
+      bgColor: 'bg-rose-50',
+      borderColor: 'border-rose-100',
+      ringColor: '#e11d48'
     },
   ];
 
@@ -77,10 +77,10 @@ export default function SocialProofBar({ reduceMotion }) {
                       opacity: [0.3, 0]
                     }}
                     transition={{ 
-                      duration: 2.5,
+                      duration: 4,
                       repeat: Infinity,
-                      ease: "easeOut",
-                      delay: index * 0.4
+                      ease: "easeInOut",
+                      delay: index * 0.8
                     }}
                   />
                 )}
