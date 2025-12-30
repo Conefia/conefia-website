@@ -172,130 +172,93 @@ export default function HeroSection({ reduceMotion }) {
         transition={{ duration: 8, repeat: Infinity, delay: 2 }}
       />
       
-      {/* Star clusters - concentrated around glow areas */}
+      {/* Galaxy Star Dust (High density) */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Cluster 1 - Top right (around main glow) */}
-        {[...Array(60)].map((_, i) => {
-          const angle = Math.random() * Math.PI * 2;
-          const distance = Math.random() * 200;
-          const x = 65 + Math.cos(angle) * distance / 10;
-          const y = 20 + Math.sin(angle) * distance / 10;
-          const size = Math.random() * 2 + 0.5;
-          
-          return (
-            <motion.div
-              key={`cluster1-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                boxShadow: size > 1.5 ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none',
-              }}
-              animate={reduceMotion ? {} : {
-                opacity: [0.2, 0.8, 0.2],
-                scale: [0.8, 1.2, 0.8],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-              }}
-            />
-          );
-        })}
-        
-        {/* Cluster 2 - Bottom right */}
-        {[...Array(45)].map((_, i) => {
-          const angle = Math.random() * Math.PI * 2;
-          const distance = Math.random() * 150;
-          const x = 70 + Math.cos(angle) * distance / 10;
-          const y = 65 + Math.sin(angle) * distance / 10;
-          const size = Math.random() * 1.5 + 0.5;
-          
-          return (
-            <motion.div
-              key={`cluster2-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                boxShadow: size > 1 ? '0 0 3px rgba(219, 254, 1, 0.6)' : 'none',
-              }}
-              animate={reduceMotion ? {} : {
-                opacity: [0.15, 0.7, 0.15],
-                scale: [0.7, 1.3, 0.7],
-              }}
-              transition={{
-                duration: 2.5 + Math.random() * 2.5,
-                repeat: Infinity,
-                delay: Math.random() * 4,
-              }}
-            />
-          );
-        })}
-        
-        {/* Cluster 3 - Left side */}
-        {[...Array(35)].map((_, i) => {
-          const angle = Math.random() * Math.PI * 2;
-          const distance = Math.random() * 120;
-          const x = 15 + Math.cos(angle) * distance / 10;
-          const y = 50 + Math.sin(angle) * distance / 10;
-          const size = Math.random() * 1.5 + 0.5;
-          
-          return (
-            <motion.div
-              key={`cluster3-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity: 0.4,
-              }}
-              animate={reduceMotion ? {} : {
-                opacity: [0.2, 0.6, 0.2],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 2,
-                repeat: Infinity,
-                delay: Math.random() * 3,
-              }}
-            />
-          );
-        })}
-        
-        {/* Scattered stars across the scene */}
-        {[...Array(100)].map((_, i) => {
-          const size = Math.random() < 0.9 ? Math.random() * 1 + 0.3 : Math.random() * 2 + 1.5;
-          
-          return (
-            <motion.div
-              key={`scattered-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                boxShadow: size > 1.5 ? '0 0 6px rgba(219, 254, 1, 0.9)' : 'none',
-              }}
-              animate={reduceMotion ? {} : {
-                opacity: [0.1, 0.5, 0.1],
-                scale: [0.5, 1, 0.5],
-              }}
-              transition={{
-                duration: 3 + Math.random() * 4,
-                repeat: Infinity,
-                delay: Math.random() * 5,
-              }}
-            />
-          );
-        })}
+        {/* Dust Field 1 - Dense Main Galaxy Stream */}
+        <div className="absolute inset-0" style={{ transform: 'rotate(-15deg) scale(1.2)' }}>
+          {[...Array(150)].map((_, i) => {
+             // Create a band/stream of stars
+             const x = Math.random() * 100;
+             const yBand = 50 + (Math.random() - 0.5) * 60 * Math.sin(x / 30); // Wavy band
+             const y = yBand + (Math.random() - 0.5) * 40; // Scatter around band
+             const size = Math.random() * 1.5 + 0.2;
+             const opacity = Math.random() * 0.6 + 0.1;
+             
+             return (
+               <motion.div
+                 key={`dust-${i}`}
+                 className="absolute rounded-full bg-[#DBFE01]"
+                 style={{
+                   left: `${x}%`,
+                   top: `${y}%`,
+                   width: `${size}px`,
+                   height: `${size}px`,
+                   boxShadow: Math.random() > 0.8 ? '0 0 3px rgba(219, 254, 1, 0.8)' : 'none',
+                 }}
+                 animate={{
+                   opacity: [opacity, opacity * 1.5, opacity],
+                 }}
+                 transition={{
+                   duration: 2 + Math.random() * 3,
+                   repeat: Infinity,
+                   delay: Math.random() * 2,
+                 }}
+               />
+             );
+          })}
+        </div>
+
+        {/* Dust Field 2 - Secondary Cluster */}
+        <div className="absolute inset-0">
+           {[...Array(80)].map((_, i) => {
+             const cx = 70; const cy = 30; // Top right cluster center
+             const angle = Math.random() * Math.PI * 2;
+             const r = Math.pow(Math.random(), 2) * 40; // Clumped towards center
+             const x = cx + Math.cos(angle) * r;
+             const y = cy + Math.sin(angle) * r * 0.8;
+             const size = Math.random() * 1.2 + 0.3;
+             
+             return (
+               <motion.div
+                 key={`cluster-top-${i}`}
+                 className="absolute rounded-full bg-white"
+                 style={{
+                   left: `${x}%`,
+                   top: `${y}%`,
+                   width: `${size}px`,
+                   height: `${size}px`,
+                   opacity: Math.random() * 0.5,
+                 }}
+                 animate={{ opacity: [0.2, 0.5, 0.2] }}
+                 transition={{ duration: 3 + Math.random(), repeat: Infinity }}
+               />
+             );
+           })}
+        </div>
+
+        {/* Bright Stars - Highlights */}
+        {[...Array(25)].map((_, i) => (
+          <motion.div
+            key={`bright-${i}`}
+            className="absolute rounded-full bg-[#DBFE01]"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 2 + 1}px`,
+              height: `${Math.random() * 2 + 1}px`,
+              boxShadow: '0 0 6px rgba(219, 254, 1, 0.9), 0 0 12px rgba(219, 254, 1, 0.4)',
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.6, 1, 0.6],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
       </div>
       
       {/* Fine grain texture */}
