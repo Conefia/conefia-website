@@ -86,7 +86,7 @@ export default function PlaybookSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="playbook" className="py-24 md:py-32 bg-gradient-to-b from-white/70 via-[#FAFAFA] to-white/70 relative overflow-hidden">
+    <section ref={ref} id="playbook" className="py-16 md:py-24 bg-gradient-to-b from-white/70 via-[#FAFAFA] to-white/70 relative overflow-hidden">
       {/* Animated background orbs */}
       <motion.div 
         className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
@@ -127,7 +127,7 @@ export default function PlaybookSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4" />
             The 4-Phase Playbook
           </motion.span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
             From idea to <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">market leader</span>
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/60 max-w-3xl mx-auto font-medium leading-relaxed">

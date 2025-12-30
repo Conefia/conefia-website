@@ -68,7 +68,7 @@ export default function PackagesSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="packages" className="py-20 md:py-32 relative overflow-hidden">
+    <section ref={ref} id="packages" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px]" />
       
@@ -82,7 +82,7 @@ export default function PackagesSection({ reduceMotion }) {
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#DBFE01]/20 text-[#2F2F2F] text-sm font-medium mb-4">
             Packages & Pricing
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2F2F2F] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
             Start at <span className="gradient-text">any phase</span>
           </h2>
           <p className="text-lg text-[#2F2F2F]/60 max-w-2xl mx-auto">

@@ -154,7 +154,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="case-studies" className="py-20 md:py-32 relative overflow-hidden">
+    <section ref={ref} id="case-studies" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[#1a1a1a]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-transparent" />
@@ -190,7 +190,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4" />
             Case Studies
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
             Real outcomes.<br />
             <span className="text-[#DBFE01]">Real growth.</span>
           </h2>

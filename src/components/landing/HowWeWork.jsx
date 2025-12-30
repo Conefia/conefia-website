@@ -80,7 +80,7 @@ export default function HowWeWork({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} className="py-20 md:py-32 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
+    <section ref={ref} className="py-16 md:py-24 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -91,7 +91,7 @@ export default function HowWeWork({ reduceMotion }) {
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a]/60 text-sm font-semibold mb-4">
             How We Work
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
             Transparent. <span className="gradient-text">Predictable.</span> Fast.
           </h2>
           <p className="text-lg text-[#1a1a1a]/60 max-w-2xl mx-auto font-medium">

@@ -49,7 +49,7 @@ export default function ProblemSolution({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} className="py-24 md:py-32 relative overflow-hidden">
+    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#1a1a1a]/[0.02] to-transparent" />
       
@@ -63,7 +63,7 @@ export default function ProblemSolution({ reduceMotion }) {
           <span className="inline-block px-4 py-2 rounded-full bg-[#1a1a1a]/8 text-[#1a1a1a]/70 text-sm font-semibold mb-6">
             Why Conefia
           </span>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
             Stop managing vendors.<br />
             <span className="gradient-text">Start shipping product.</span>
           </h2>

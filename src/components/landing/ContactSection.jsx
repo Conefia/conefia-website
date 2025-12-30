@@ -28,7 +28,7 @@ export default function ContactSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="contact" className="py-20 md:py-32 relative overflow-hidden">
+    <section ref={ref} id="contact" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] to-white" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px]" />
@@ -44,7 +44,7 @@ export default function ContactSection({ reduceMotion }) {
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#DBFE01]/20 text-[#2F2F2F] text-sm font-medium mb-4">
               Get Started
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#2F2F2F] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
               Ready to <span className="gradient-text">launch</span>?
             </h2>
             <p className="text-lg text-[#2F2F2F]/60 mb-8 leading-relaxed">

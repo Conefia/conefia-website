@@ -35,7 +35,7 @@ export default function FAQSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="faq" className="py-20 md:py-32 bg-white/50">
+    <section ref={ref} id="faq" className="py-16 md:py-24 bg-white/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -46,7 +46,7 @@ export default function FAQSection({ reduceMotion }) {
           <span className="inline-block px-4 py-1.5 rounded-full bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-sm font-medium mb-4">
             FAQ
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2F2F2F] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
             Common <span className="gradient-text">questions</span>
           </h2>
           <p className="text-lg text-[#2F2F2F]/60">
