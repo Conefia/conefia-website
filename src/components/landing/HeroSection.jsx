@@ -39,24 +39,117 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
-      {/* Animated gradient orbs */}
-      <motion.div 
-        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
-        animate={reduceMotion ? {} : {
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.4, 0.3],
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
-        animate={reduceMotion ? {} : {
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.3, 0.2],
-        }}
-        transition={{ duration: 8, repeat: Infinity, delay: 1 }}
-      />
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-[#0a0f1a] overflow-hidden">
+      {/* Galaxy-like background with contours */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Deep space gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0f1a] via-[#0d1420] to-[#1a1a2e]" />
+        
+        {/* Glowing nebula effects */}
+        <motion.div 
+          className="absolute top-[20%] right-[10%] w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-20 blur-[120px]"
+          animate={reduceMotion ? {} : {
+            scale: [1, 1.3, 1],
+            opacity: [0.15, 0.25, 0.15],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute bottom-[15%] left-[15%] w-[500px] h-[500px] rounded-full bg-[#DBFE01] opacity-15 blur-[100px]"
+          animate={reduceMotion ? {} : {
+            scale: [1.2, 1, 1.2],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{ duration: 12, repeat: Infinity, delay: 2, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute top-[50%] left-[50%] w-[400px] h-[400px] rounded-full bg-[#A8FF00] opacity-10 blur-[80px]"
+          animate={reduceMotion ? {} : {
+            scale: [1, 1.4, 1],
+            x: [-50, -80, -50],
+            y: [-50, -20, -50],
+          }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        {/* Contour lines SVG */}
+        <svg className="absolute inset-0 w-full h-full opacity-30" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="contourGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#DBFE01', stopOpacity: 0.3 }} />
+              <stop offset="50%" style={{ stopColor: '#DBFE01', stopOpacity: 0.1 }} />
+              <stop offset="100%" style={{ stopColor: '#DBFE01', stopOpacity: 0.05 }} />
+            </linearGradient>
+          </defs>
+          {/* Flowing contour lines */}
+          <motion.path
+            d="M-100,200 Q300,150 600,200 T1400,200 L1400,220 Q900,250 600,220 T-100,220 Z"
+            fill="none"
+            stroke="url(#contourGradient)"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+          />
+          <motion.path
+            d="M-100,350 Q400,300 800,350 T1600,350 L1600,365 Q1100,390 800,365 T-100,365 Z"
+            fill="none"
+            stroke="url(#contourGradient)"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            transition={{ duration: 2, delay: 0.3, ease: "easeInOut" }}
+          />
+          <motion.path
+            d="M-100,500 Q350,470 700,500 T1500,500 L1500,515 Q1000,540 700,515 T-100,515 Z"
+            fill="none"
+            stroke="url(#contourGradient)"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            transition={{ duration: 2, delay: 0.6, ease: "easeInOut" }}
+          />
+          <motion.path
+            d="M-100,650 Q450,600 850,650 T1700,650 L1700,665 Q1150,690 850,665 T-100,665 Z"
+            fill="none"
+            stroke="url(#contourGradient)"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            transition={{ duration: 2, delay: 0.9, ease: "easeInOut" }}
+          />
+          <motion.path
+            d="M-100,800 Q300,780 650,800 T1400,800 L1400,812 Q900,835 650,812 T-100,812 Z"
+            fill="none"
+            stroke="url(#contourGradient)"
+            strokeWidth="1.5"
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={isInView ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0 }}
+            transition={{ duration: 2, delay: 1.2, ease: "easeInOut" }}
+          />
+        </svg>
+        
+        {/* Particle stars */}
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-[#DBFE01] rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={reduceMotion ? {} : {
+              opacity: [0.2, 0.8, 0.2],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
