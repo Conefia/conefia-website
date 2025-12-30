@@ -7,10 +7,46 @@ export default function SocialProofBar({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const metrics = [
-    { icon: Timer, value: '30-50%', label: 'Faster time-to-market', subtext: 'vs. fragmented vendors' },
-    { icon: Rocket, value: '8-12', label: 'Weeks to MVP', subtext: 'Full product launch' },
-    { icon: Users, value: '100-500', label: 'Users in 30-60 days', subtext: 'Post-launch traction' },
-    { icon: ShieldCheck, value: '100%', label: 'HIPAA-aware flows', subtext: 'Privacy by design' },
+    { 
+      icon: Timer, 
+      value: '30-50%', 
+      label: 'Faster time-to-market', 
+      subtext: 'vs. fragmented vendors',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
+      borderColor: 'border-blue-100',
+      ringColor: '#2563eb'
+    },
+    { 
+      icon: Rocket, 
+      value: '8-12', 
+      label: 'Weeks to MVP', 
+      subtext: 'Full product launch',
+      color: 'text-purple-600',
+      bgColor: 'bg-purple-50',
+      borderColor: 'border-purple-100',
+      ringColor: '#9333ea'
+    },
+    { 
+      icon: Users, 
+      value: '100-500', 
+      label: 'Users in 30-60 days', 
+      subtext: 'Post-launch traction',
+      color: 'text-emerald-600',
+      bgColor: 'bg-emerald-50',
+      borderColor: 'border-emerald-100',
+      ringColor: '#059669'
+    },
+    { 
+      icon: ShieldCheck, 
+      value: '100%', 
+      label: 'HIPAA-aware flows', 
+      subtext: 'Privacy by design',
+      color: 'text-teal-600',
+      bgColor: 'bg-teal-50',
+      borderColor: 'border-teal-100',
+      ringColor: '#0d9488'
+    },
   ];
 
   return (
@@ -30,14 +66,15 @@ export default function SocialProofBar({ reduceMotion }) {
               }}
               className="text-center group"
             >
-              <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#DBFE01]/10 mb-6 group-hover:bg-[#DBFE01]/20 transition-all duration-300 border border-[#DBFE01]/20">
+              <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${metric.bgColor} mb-6 transition-all duration-300 border ${metric.borderColor} group-hover:scale-110`}>
                 {!reduceMotion && (
                   <motion.div 
-                    className="absolute inset-0 rounded-2xl bg-[#98b300]"
+                    className="absolute inset-0 rounded-2xl"
+                    style={{ backgroundColor: metric.ringColor }}
                     initial={{ opacity: 0, scale: 1 }}
                     animate={{ 
                       scale: [1, 1.5],
-                      opacity: [0.6, 0]
+                      opacity: [0.3, 0]
                     }}
                     transition={{ 
                       duration: 2.5,
@@ -47,7 +84,7 @@ export default function SocialProofBar({ reduceMotion }) {
                     }}
                   />
                 )}
-                <metric.icon className="w-7 h-7 text-[#1a1a1a] relative z-10" strokeWidth={1.5} />
+                <metric.icon className={`w-7 h-7 ${metric.color} relative z-10`} strokeWidth={1.5} />
               </div>
               <motion.p 
                 initial={{ scale: 0.5, opacity: 0 }}
