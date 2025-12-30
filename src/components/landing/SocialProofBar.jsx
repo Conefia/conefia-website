@@ -14,7 +14,8 @@ export default function SocialProofBar({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-20 border-y border-[#1a1a1a]/10 bg-white/70 backdrop-blur-sm">
+    <section ref={ref} className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10">
+      <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {metrics.map((metric, index) => (
@@ -32,11 +33,11 @@ export default function SocialProofBar({ reduceMotion }) {
               <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#DBFE01]/10 mb-6 group-hover:bg-[#DBFE01]/20 transition-all duration-300 border border-[#DBFE01]/20">
                 {!reduceMotion && (
                   <motion.div 
-                    className="absolute inset-0 rounded-2xl bg-[#DBFE01]"
+                    className="absolute inset-0 rounded-2xl bg-[#98b300]"
                     initial={{ opacity: 0, scale: 1 }}
                     animate={{ 
-                      scale: [1, 1.4],
-                      opacity: [0.3, 0]
+                      scale: [1, 1.5],
+                      opacity: [0.6, 0]
                     }}
                     transition={{ 
                       duration: 2.5,
