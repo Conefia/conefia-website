@@ -4,7 +4,7 @@ import { Calendar, Users, GitBranch, BarChart3, MessageSquare, CheckCircle } fro
 
 export default function HowWeWork({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const workflowSteps = [
     {
       icon: Calendar,

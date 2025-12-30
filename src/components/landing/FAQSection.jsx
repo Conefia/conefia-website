@@ -4,7 +4,7 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export default function FAQSection({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [

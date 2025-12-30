@@ -4,7 +4,7 @@ import { X, Check, ArrowRight, Users, Target, Layers, BarChart3, Sparkles } from
 
 export default function ProblemSolution({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const problems = [
     'Juggling 5+ vendors — dev, design, marketing, analytics all disconnected',

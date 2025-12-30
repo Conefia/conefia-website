@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 
 export default function ContactSection({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [formData, setFormData] = useState({
     name: '',
     email: '',

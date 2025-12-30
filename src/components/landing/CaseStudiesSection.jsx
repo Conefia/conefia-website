@@ -8,7 +8,7 @@ import Autoplay from 'embla-carousel-autoplay';
 
 export default function CaseStudiesSection({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'center', skipSnaps: false },

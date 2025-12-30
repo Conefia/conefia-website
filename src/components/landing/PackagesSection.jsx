@@ -4,7 +4,7 @@ import { Search, Code2, Rocket, TrendingUp, CheckCircle2, Star, ArrowRight } fro
 
 export default function PackagesSection({ reduceMotion }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const packages = [
     {
       icon: Search,
