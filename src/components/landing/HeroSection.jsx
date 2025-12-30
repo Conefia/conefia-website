@@ -279,7 +279,7 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="text-lg md:text-xl text-white/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Validate, build, and scale your digital venture with one partner. We turn concepts into market-leading AI, e-commerce, and healthcare products—faster, leaner, and all under one roof.
+              Validate, build, and scale your digital venture with one partner. We turn concepts into market-leading AI, mobile apps, and healthcare products—faster, leaner, and all under one roof.
             </motion.p>
 
             {/* CTAs */}
@@ -382,7 +382,7 @@ export default function HeroSection({ reduceMotion }) {
                   transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 1.4 }}
                   className="flex flex-wrap gap-2 mt-8"
                 >
-                  {['AI Agents', 'E-commerce', 'Healthcare', 'Web Apps'].map((tag) => (
+                  {['AI Agents', 'Mobile Apps', 'Healthcare', 'Web Apps'].map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1.5 rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a]/80 text-xs font-semibold border border-[#1a1a1a]/10"
