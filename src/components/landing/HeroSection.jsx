@@ -39,90 +39,24 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-[#0A1628] overflow-hidden">
-      {/* Flowing contour lines - diagonal flow */}
-      <div className="absolute inset-0 opacity-40">
-        <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" style={{ stopColor: '#1a3a5a', stopOpacity: 0.3 }} />
-              <stop offset="70%" style={{ stopColor: '#DBFE01', stopOpacity: 0.8 }} />
-              <stop offset="100%" style={{ stopColor: '#DBFE01', stopOpacity: 1 }} />
-            </linearGradient>
-          </defs>
-          {[...Array(20)].map((_, i) => {
-            const yStart = -200 + i * 100;
-            const amplitude = 80 + i * 5;
-            return (
-              <path
-                key={i}
-                d={`M -500 ${yStart} Q 200 ${yStart - amplitude}, 700 ${yStart} T 1700 ${yStart} T 2700 ${yStart}`}
-                stroke="url(#lineGradient)"
-                strokeWidth="2"
-                fill="none"
-                opacity={0.3 + (i * 0.02)}
-              />
-            );
-          })}
-        </svg>
-      </div>
-
-      {/* Primary lime glow - concentrated on right */}
-      <div className="absolute top-1/4 right-0 w-[900px] h-[900px] -translate-y-1/4 translate-x-1/3">
-        <motion.div 
-          className="absolute inset-0 rounded-full bg-[#DBFE01]"
-          style={{
-            filter: 'blur(150px)',
-            opacity: 0.35,
-          }}
-          animate={reduceMotion ? {} : {
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.45, 0.3],
-          }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-      </div>
-
-      {/* Secondary lime accent - bottom right */}
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
+      {/* Animated gradient orbs */}
       <motion.div 
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] translate-y-1/4 translate-x-1/4 rounded-full bg-[#DBFE01] opacity-25 blur-[120px]"
+        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
         animate={reduceMotion ? {} : {
-          scale: [1.1, 1, 1.1],
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.4, 0.3],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1.2, 1, 1.2],
           opacity: [0.2, 0.3, 0.2],
         }}
-        transition={{ duration: 7, repeat: Infinity, delay: 1 }}
+        transition={{ duration: 8, repeat: Infinity, delay: 1 }}
       />
-
-      {/* Blue atmospheric depth */}
-      <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] rounded-full bg-[#1e4a7a] opacity-30 blur-[100px]" />
-
-      {/* Scattered particles with depth */}
-      <div className="absolute inset-0 overflow-hidden">
-        {[...Array(60)].map((_, i) => {
-          const rightBias = Math.random() > 0.3 ? Math.random() * 40 + 60 : Math.random() * 60;
-          return (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 rounded-full"
-              style={{
-                left: `${rightBias}%`,
-                top: `${Math.random() * 100}%`,
-                backgroundColor: rightBias > 60 ? '#DBFE01' : '#4a7fa7',
-                opacity: rightBias > 60 ? 0.6 : 0.3,
-              }}
-              animate={reduceMotion ? {} : {
-                opacity: [0.2, 0.8, 0.2],
-                scale: [0.8, 1.5, 0.8],
-              }}
-              transition={{
-                duration: 2 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 2,
-              }}
-            />
-          );
-        })}
-      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
