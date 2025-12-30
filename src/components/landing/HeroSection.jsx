@@ -43,48 +43,84 @@ export default function HeroSection({ reduceMotion }) {
       {/* Base layer - Deep navy */}
       <div className="absolute inset-0 bg-[#0B1020]" />
       
+      {/* Dense Galaxy Lumination (Noise + Color Dodge) */}
+      <div 
+        className="absolute inset-0 opacity-40 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%),
+            radial-gradient(circle at 80% 60%, rgba(219, 254, 1, 0.1), transparent 50%)
+          `,
+          filter: 'url(#noiseFilter) contrast(150%) brightness(150%)',
+          mixBlendMode: 'color-dodge',
+        }}
+      />
+
       {/* Flowing topographic contour lines */}
-      <svg className="absolute inset-0 w-full h-full" style={{ transform: 'rotate(-40deg) scale(1.4)', transformOrigin: 'center' }}>
+      <svg className="absolute inset-0 w-full h-full opacity-60" style={{ transform: 'rotate(-15deg) scale(1.5)', transformOrigin: 'center' }}>
         <defs>
           <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-            <stop offset="50%" stopColor="rgba(219, 254, 1, 0.08)" />
+            <stop offset="30%" stopColor="rgba(219, 254, 1, 0.05)" />
+            <stop offset="50%" stopColor="rgba(219, 254, 1, 0.4)" />
+            <stop offset="70%" stopColor="rgba(219, 254, 1, 0.05)" />
             <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
           </linearGradient>
           <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
             <feMerge>
               <feMergeNode in="coloredBlur"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
         </defs>
-        {[...Array(35)].map((_, i) => {
-          const yOffset = i * 40;
-          const amplitude = 30 + Math.sin(i * 0.5) * 20;
-          const frequency = 0.015 + (i % 3) * 0.002;
-          const phase = i * 0.3;
+        {[...Array(60)].map((_, i) => {
+          const yOffset = i * 25 - 100; // More lines, closer together
+          const amplitude = 50 + Math.sin(i * 0.1) * 30; // Larger waves
+          const frequency = 0.008 + (i % 5) * 0.001; // Slower, wider waves
+          const phase = i * 0.2;
           
           return (
             <motion.path
               key={i}
-              d={`M -100,${yOffset} ${Array.from({ length: 50 }, (_, x) => {
-                const xPos = x * 40;
-                const yPos = yOffset + Math.sin(xPos * frequency + phase) * amplitude + Math.cos(xPos * frequency * 0.5) * (amplitude * 0.4);
+              d={`M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
+                const xPos = x * 40 - 100;
+                // Complex wave function for organic look
+                const yPos = yOffset 
+                  + Math.sin(xPos * frequency + phase) * amplitude 
+                  + Math.cos(xPos * frequency * 2.5 + phase) * (amplitude * 0.2)
+                  + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.5);
                 return `L ${xPos},${yPos}`;
               }).join(' ')}`}
               stroke="url(#lineGradient)"
-              strokeWidth={i % 4 === 0 ? "1.2" : "0.7"}
+              strokeWidth={i % 5 === 0 ? "1" : "0.5"} // Thinner lines generally
               fill="none"
-              opacity={0.4 + Math.random() * 0.3}
-              filter={i % 4 === 0 ? "url(#glow)" : "none"}
+              opacity={0.3 + Math.random() * 0.5}
+              filter={i % 8 === 0 ? "url(#glow)" : "none"} // Occasional glowing line
               animate={reduceMotion ? {} : {
-                opacity: [0.3, 0.7, 0.3],
+                opacity: [0.2, 0.6, 0.2],
+                d: [
+                   `M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
+                    const xPos = x * 40 - 100;
+                    const yPos = yOffset 
+                      + Math.sin(xPos * frequency + phase) * amplitude 
+                      + Math.cos(xPos * frequency * 2.5 + phase) * (amplitude * 0.2)
+                      + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.5);
+                    return `L ${xPos},${yPos}`;
+                  }).join(' ')}`,
+                   `M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
+                    const xPos = x * 40 - 100;
+                    const yPos = yOffset 
+                      + Math.sin(xPos * frequency + phase + 0.5) * amplitude 
+                      + Math.cos(xPos * frequency * 2.5 + phase + 0.5) * (amplitude * 0.2)
+                      + Math.sin(xPos * frequency * 0.5 + 0.5) * (amplitude * 0.5);
+                    return `L ${xPos},${yPos}`;
+                  }).join(' ')}`
+                ]
               }}
               transition={{
-                duration: 4 + Math.random() * 3,
-                repeat: Infinity,
-                delay: Math.random() * 2,
+                opacity: { duration: 3 + Math.random() * 4, repeat: Infinity, ease: "easeInOut" },
+                d: { duration: 20 + i, repeat: Infinity, repeatType: "mirror", ease: "linear" }
               }}
             />
           );
