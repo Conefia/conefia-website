@@ -5,6 +5,12 @@ import CaseStudyLarovie from './pages/CaseStudyLarovie';
 import CaseStudyMenovia from './pages/CaseStudyMenovia';
 import CaseStudyVascular from './pages/CaseStudyVascular';
 import Home from './pages/Home';
+import caseStudyAlMahfza from './pages/case-study-al-mahfza';
+import caseStudyAviya from './pages/case-study-aviya';
+import caseStudyHartalega from './pages/case-study-hartalega';
+import caseStudyLarovie from './pages/case-study-larovie';
+import caseStudyMenovia from './pages/case-study-menovia';
+import caseStudyVascular from './pages/case-study-vascular';
 import __Layout from './Layout.jsx';
 
 
@@ -16,6 +22,12 @@ export const PAGES = {
     "CaseStudyMenovia": CaseStudyMenovia,
     "CaseStudyVascular": CaseStudyVascular,
     "Home": Home,
+    "case-study-al-mahfza": caseStudyAlMahfza,
+    "case-study-aviya": caseStudyAviya,
+    "case-study-hartalega": caseStudyHartalega,
+    "case-study-larovie": caseStudyLarovie,
+    "case-study-menovia": caseStudyMenovia,
+    "case-study-vascular": caseStudyVascular,
 }
 
 export const pagesConfig = {
