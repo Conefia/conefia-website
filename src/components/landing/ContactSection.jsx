@@ -166,7 +166,7 @@ export default function ContactSection({ reduceMotion }) {
                 className="flex items-center gap-2 hover:text-[#2F2F2F] transition-colors"
               >
                 <Mail className="w-4 h-4" />
-                info@conefia.com
+                Email us
               </a>
             </div>
           </motion.div>
