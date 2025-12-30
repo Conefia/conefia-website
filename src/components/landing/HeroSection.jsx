@@ -341,7 +341,7 @@ export default function HeroSection({ reduceMotion }) {
               </button>
               <button 
                 onClick={() => scrollToSection('playbook')}
-                className="btn-secondary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2"
+                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm"
               >
                 <Play className="w-4 h-4" />
                 See playbook
