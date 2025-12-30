@@ -16,12 +16,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
-      {/* Fine line grid pattern */}
+      {/* Fine diagonal line pattern */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.08]"
+        className="fixed inset-0 pointer-events-none opacity-[0.06]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='%231a1a1a' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
-          backgroundSize: '100px 100px',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='diagonal' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 0 80 L 80 0 M -20 20 L 20 -20 M 60 100 L 100 60' fill='none' stroke='%231a1a1a' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23diagonal)'/%3E%3C/svg%3E")`,
+          backgroundSize: '80px 80px',
         }}
       />
       
