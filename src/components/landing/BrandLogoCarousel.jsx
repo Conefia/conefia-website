@@ -1,21 +1,9 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 
 export default function BrandLogoCarousel({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const [emblaRef] = useEmblaCarousel(
-    { 
-      loop: true, 
-      align: 'start',
-      dragFree: true,
-      containScroll: 'trimSnaps'
-    },
-    [Autoplay({ delay: 2000, stopOnInteraction: false })]
-  );
 
   const logos = [
     {
@@ -58,6 +46,23 @@ export default function BrandLogoCarousel({ reduceMotion }) {
 
   return (
     <section ref={ref} className="py-12 md:py-16 bg-white/50 overflow-hidden">
+      <style>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,9 +80,9 @@ export default function BrandLogoCarousel({ reduceMotion }) {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.2 }}
         >
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-12 md:gap-16">
-              {/* Duplicate logos for seamless infinite scroll */}
+          <div className="overflow-hidden">
+            <div className="flex gap-12 md:gap-16 animate-scroll">
+              {/* Duplicate logos twice for seamless infinite scroll */}
               {[...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
