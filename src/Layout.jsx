@@ -206,8 +206,8 @@ export default function Layout({ children, currentPageName }) {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/40">Services</h4>
-              <ul className="space-y-3 text-sm text-white/60">
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Services</h4>
+              <ul className="space-y-3 text-sm text-white/80 font-medium">
                 <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Validate</button></li>
                 <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Build</button></li>
                 <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Launch</button></li>
@@ -215,8 +215,8 @@ export default function Layout({ children, currentPageName }) {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/40">Company</h4>
-              <ul className="space-y-3 text-sm text-white/60">
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Company</h4>
+              <ul className="space-y-3 text-sm text-white/80 font-medium">
                 <li><button onClick={() => scrollToSection('case-studies')} className="hover:text-[#DBFE01] transition-colors">Case Studies</button></li>
                 <li><button onClick={() => scrollToSection('packages')} className="hover:text-[#DBFE01] transition-colors">Packages</button></li>
                 <li><button onClick={() => scrollToSection('contact')} className="hover:text-[#DBFE01] transition-colors">Contact</button></li>

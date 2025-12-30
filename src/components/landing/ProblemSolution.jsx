@@ -108,7 +108,7 @@ export default function ProblemSolution({ reduceMotion }) {
                       <div className="w-6 h-6 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0 mt-1">
                         <X className="w-4 h-4 text-red-600" />
                       </div>
-                      <span className="text-[#1a1a1a]/80 font-medium leading-relaxed">{problem}</span>
+                      <span className="text-[#1a1a1a] font-semibold leading-relaxed">{problem}</span>
                     </motion.li>
                   ))}
                 </ul>
@@ -205,7 +205,7 @@ export default function ProblemSolution({ reduceMotion }) {
                       <p className="font-bold text-[#1a1a1a] mb-1 group-hover:bg-gradient-to-r group-hover:from-[#1a1a1a] group-hover:to-[#1a1a1a]/70 group-hover:bg-clip-text transition-all">
                         {solution.text}
                       </p>
-                      <p className="text-xs text-[#1a1a1a]/60 font-medium">{solution.desc}</p>
+                      <p className="text-xs text-[#1a1a1a]/80 font-semibold">{solution.desc}</p>
                       
                       {/* Hover shine effect */}
                       <motion.div
