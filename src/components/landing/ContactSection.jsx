@@ -41,13 +41,13 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#DBFE01]/20 text-[#2F2F2F] text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#DBFE01] text-[#0B1020] text-sm font-bold mb-4 shadow-md shadow-[#DBFE01]/20">
               Get Started
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#0B1020] mb-4 leading-tight">
               Ready to <span className="gradient-text">launch</span>?
             </h2>
-            <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
+            <p className="text-lg text-[#0B1020] mb-8 leading-relaxed font-medium">
               Book a roadmap call and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </p>
@@ -57,26 +57,26 @@ export default function ContactSection({ reduceMotion }) {
               {trustItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-[#2F2F2F]/5"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-md border border-gray-100"
                 >
                   <item.icon className="w-4 h-4 text-[#DBFE01]" />
-                  <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
+                  <span className="text-sm text-[#0B1020] font-bold">{item.text}</span>
                 </div>
               ))}
             </div>
 
             {/* Lead magnet */}
-            <div className="glass-card rounded-2xl p-6 border-[#DBFE01]/20">
+            <div className="bg-white rounded-2xl p-6 border border-[#DBFE01]/30 shadow-lg shadow-[#DBFE01]/5">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0">
                   <Sparkles className="w-6 h-6 text-[#2F2F2F]" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-[#2F2F2F] mb-1">Free: Founder Launch Checklist</h3>
-                  <p className="text-[#2F2F2F]/70 text-sm mb-3 font-medium">
+                  <h3 className="font-bold text-[#0B1020] mb-1">Free: Founder Launch Checklist</h3>
+                  <p className="text-[#0B1020]/80 text-sm mb-3 font-medium">
                     The exact checklist we use to take products from idea to launch. Yours free after booking a call.
                   </p>
-                  <span className="text-xs text-[#2F2F2F]/40">PDF download • 12 pages</span>
+                  <span className="text-xs text-[#0B1020]/60 font-medium">PDF download • 12 pages</span>
                 </div>
               </div>
             </div>
@@ -88,11 +88,11 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="glass-card rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/5">
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#0B1020]/10 border border-gray-100">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-semibold text-[#0B1020] mb-2">
                       Your name
                     </label>
                     <Input
@@ -100,13 +100,13 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20"
+                      className="h-12 rounded-xl bg-gray-50 border-gray-200 text-[#0B1020] focus:bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-semibold text-[#0B1020] mb-2">
                       Email address
                     </label>
                     <Input
@@ -114,27 +114,27 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20"
+                      className="h-12 rounded-xl bg-gray-50 border-gray-200 text-[#0B1020] focus:bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-semibold text-[#0B1020] mb-2">
                       What are you building?
                     </label>
                     <Textarea
                       placeholder="Tell us about your idea or project..."
                       value={formData.project}
                       onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                      className="min-h-[120px] rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none"
+                      className="min-h-[120px] rounded-xl bg-gray-50 border-gray-200 text-[#0B1020] focus:bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none transition-all"
                       required
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#2F2F2F] font-semibold text-base transition-all hover:shadow-lg hover:shadow-[#DBFE01]/30"
+                    className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#0B1020] font-bold text-base transition-all hover:shadow-lg hover:shadow-[#DBFE01]/30"
                   >
                     Book roadmap call
                     <ArrowRight className="w-5 h-5 ml-2" />
