@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
+import AccelerateProcessVisual from './AccelerateProcessVisual';
 
 export default function HeroSection({ reduceMotion }) {
   const ref = React.useRef(null);
