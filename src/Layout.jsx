@@ -101,10 +101,10 @@ export default function Layout({ children, currentPageName }) {
 
       {/* Sticky Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-hidden relative ${
           scrolled 
-            ? 'bg-gradient-to-r from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] shadow-lg shadow-black/20' 
-            : 'bg-gradient-to-r from-[#1a1a1a]/80 via-[#2F2F2F]/80 to-[#1a1a1a]/80 backdrop-blur-md'
+            ? 'bg-gradient-to-r from-[#0B1020] via-[#121829] to-[#0B1020] shadow-lg shadow-black/20' 
+            : 'bg-gradient-to-r from-[#0B1020]/90 via-[#121829]/90 to-[#0B1020]/90 backdrop-blur-md'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -160,7 +160,7 @@ export default function Layout({ children, currentPageName }) {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-gradient-to-b from-[#2F2F2F] to-[#1a1a1a] border-t border-white/10"
+              className="md:hidden bg-gradient-to-b from-[#121829] to-[#0B1020] border-t border-white/10 overflow-hidden relative"
             >
               <div className="px-4 py-6 space-y-4">
                 {navItems.map((item) => (
