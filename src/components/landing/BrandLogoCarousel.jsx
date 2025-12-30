@@ -41,14 +41,6 @@ export default function BrandLogoCarousel({ reduceMotion }) {
     {
       name: 'Mend',
       url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/3c6f416b3_mend_48h.png'
-    },
-    {
-      name: 'Global Trade Association',
-      url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/ca5de43f1_global_trade_association_48h.png'
-    },
-    {
-      name: 'Integrio',
-      url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/893141179_integrio_48h.png'
     }
   ];
 
@@ -90,8 +82,8 @@ export default function BrandLogoCarousel({ reduceMotion }) {
         >
           <div className="overflow-hidden">
             <div className="flex gap-12 md:gap-16 animate-scroll">
-              {/* Duplicate logos for seamless infinite scroll */}
-              {[...logos, ...logos, ...logos].map((logo, index) => (
+              {/* Duplicate logos twice for seamless infinite scroll */}
+              {[...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
                   className="flex-[0_0_auto] flex items-center justify-center"
