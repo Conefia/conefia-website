@@ -25,11 +25,11 @@ export default function Layout({ children, currentPageName }) {
   };
 
   const navItems = [
-  { label: 'Playbook', id: 'playbook' },
-  { label: 'Case Studies', id: 'case-studies' },
-  { label: 'Packages', id: 'packages' },
-  { label: 'FAQ', id: 'faq' }];
-
+    { label: 'Playbook', id: 'playbook' },
+    { label: 'Case Studies', id: 'case-studies' },
+    { label: 'Packages', id: 'packages' },
+    { label: 'FAQ', id: 'faq' },
+  ];
 
   return (
     <div className="font-['Poppins',sans-serif]">
@@ -99,14 +99,14 @@ export default function Layout({ children, currentPageName }) {
       `}</style>
 
       {/* Sticky Header */}
-      <header
+      <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ?
-        'bg-white/80 backdrop-blur-xl shadow-sm' :
-        'bg-transparent'}`
-        }>
-
-        <div className="bg-[#2f2f2f] mx-auto px-4 max-w-7xl sm:px-6 lg:px-8">
+          scrolled 
+            ? 'bg-white/80 backdrop-blur-xl shadow-sm' 
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center gap-2">
@@ -118,24 +118,24 @@ export default function Layout({ children, currentPageName }) {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
-              {navItems.map((item) =>
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-semibold transition-colors relative group">
-
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="text-[#1a1a1a]/60 hover:text-[#1a1a1a] text-sm font-semibold transition-colors relative group"
+                >
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
                 </button>
-              )}
+              ))}
             </nav>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <button
+              <button 
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
-
+                className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2"
+              >
                 Book roadmap call
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -144,8 +144,8 @@ export default function Layout({ children, currentPageName }) {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -153,33 +153,33 @@ export default function Layout({ children, currentPageName }) {
 
         {/* Mobile Menu */}
         <AnimatePresence>
-          {mobileMenuOpen &&
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t">
-
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-white border-t"
+            >
               <div className="px-4 py-6 space-y-4">
-                {navItems.map((item) =>
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-[#1a1a1a] text-lg font-semibold py-2">
-
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className="block w-full text-left text-[#1a1a1a] text-lg font-semibold py-2"
+                  >
                     {item.label}
                   </button>
-              )}
-                <button
-                onClick={() => scrollToSection('contact')}
-                className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
-
+                ))}
+                <button 
+                  onClick={() => scrollToSection('contact')}
+                  className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4"
+                >
                   Book roadmap call
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
-          }
+          )}
         </AnimatePresence>
       </header>
 
@@ -228,6 +228,6 @@ export default function Layout({ children, currentPageName }) {
           </div>
         </div>
       </footer>
-    </div>);
-
+    </div>
+  );
 }
