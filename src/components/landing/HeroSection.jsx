@@ -39,24 +39,80 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
-      {/* Animated gradient orbs */}
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-[#0A1628] overflow-hidden">
+      {/* Contour lines background */}
+      <div className="absolute inset-0 opacity-30">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="contourGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: '#1e3a5f', stopOpacity: 0.6 }} />
+              <stop offset="50%" style={{ stopColor: '#DBFE01', stopOpacity: 0.3 }} />
+              <stop offset="100%" style={{ stopColor: '#1e3a5f', stopOpacity: 0.6 }} />
+            </linearGradient>
+          </defs>
+          {[...Array(12)].map((_, i) => (
+            <motion.path
+              key={i}
+              d={`M 0 ${50 + i * 80} Q ${250 + i * 30} ${30 + i * 80}, ${500 + i * 40} ${50 + i * 80} T ${1000 + i * 50} ${50 + i * 80} T ${1500 + i * 60} ${50 + i * 80} T 2000 ${50 + i * 80}`}
+              stroke="url(#contourGradient)"
+              strokeWidth="1.5"
+              fill="none"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{ duration: 2, delay: i * 0.1, ease: "easeInOut" }}
+            />
+          ))}
+        </svg>
+      </div>
+
+      {/* Animated gradient orbs with lime glow */}
       <motion.div 
-        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
+        className="absolute top-20 right-1/3 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-20 blur-[120px]"
         animate={reduceMotion ? {} : {
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.4, 0.3],
+          scale: [1, 1.3, 1],
+          opacity: [0.2, 0.35, 0.2],
         }}
         transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div 
-        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
+        className="absolute bottom-40 right-20 w-[500px] h-[500px] rounded-full bg-[#DBFE01] opacity-25 blur-[100px]"
         animate={reduceMotion ? {} : {
           scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.3, 0.2],
+          opacity: [0.25, 0.4, 0.25],
         }}
         transition={{ duration: 8, repeat: Infinity, delay: 1 }}
       />
+      <motion.div 
+        className="absolute top-1/2 left-1/4 w-[400px] h-[400px] rounded-full bg-[#1e3a5f] opacity-40 blur-[80px]"
+        animate={reduceMotion ? {} : {
+          scale: [1, 1.15, 1],
+          opacity: [0.4, 0.5, 0.4],
+        }}
+        transition={{ duration: 6, repeat: Infinity, delay: 0.5 }}
+      />
+
+      {/* Particle effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(40)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-[#DBFE01] rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={reduceMotion ? {} : {
+              opacity: [0.2, 0.6, 0.2],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
