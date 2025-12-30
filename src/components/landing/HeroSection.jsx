@@ -57,78 +57,50 @@ export default function HeroSection({ reduceMotion }) {
       />
 
       {/* Flowing topographic contour lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-70" style={{ transform: 'rotate(-25deg) scale(1.6)', transformOrigin: 'center' }}>
+      <svg className="absolute inset-0 w-full h-full opacity-80" viewBox="0 0 100 100" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-            <stop offset="30%" stopColor="rgba(219, 254, 1, 0.05)" />
-            <stop offset="50%" stopColor="rgba(219, 254, 1, 0.4)" />
-            <stop offset="70%" stopColor="rgba(219, 254, 1, 0.05)" />
+            <stop offset="40%" stopColor="rgba(219, 254, 1, 0.4)" />
+            <stop offset="60%" stopColor="rgba(219, 254, 1, 0.4)" />
             <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
           </linearGradient>
           <filter id="glow">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
             <feMerge>
               <feMergeNode in="coloredBlur"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
-          <filter id="noiseFilter">
-            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/>
-            <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="contrastNoise"/>
-            <feComposite operator="in" in="contrastNoise" in2="SourceGraphic" result="compositeNoise"/>
-          </filter>
         </defs>
-        {[...Array(80)].map((_, i) => {
-          const yOffset = i * 25 - 100; // More lines, closer together
-          const amplitude = 50 + Math.sin(i * 0.1) * 30; // Larger waves
-          const frequency = 0.008 + (i % 5) * 0.001; // Slower, wider waves
-          const phase = i * 0.2;
+        {[...Array(24)].map((_, i) => {
+          // Parallel stream offset
+          const ox = i * 0.8; 
+          const oy = i * 0.5;
+          
+          // Curve Definition:
+          // Start Top-Right (100,0) -> Curve Bottom-Left (-10, 80) -> Curve Up-Right (40, 20) -> End Bottom-Right (100, 100)
           
           return (
             <motion.path
               key={i}
-              d={`M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
-                const xPos = x * 40 - 100;
-                                      const t = (xPos + 800) / 1600;
-                                      const stream = Math.sin(t * Math.PI * 1.2 - Math.PI/2) * (amplitude * 0.6);
-                                      const meander = Math.sin(t * Math.PI * 2) * (amplitude * 0.25);
-                                      const yPos = yOffset 
-                                        + stream + meander
-                                        + Math.sin(xPos * frequency + phase) * amplitude 
-                                        + Math.cos(xPos * frequency * 2.0 + phase) * (amplitude * 0.18)
-                                        + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.4);
-                                      return `L ${xPos},${yPos}`;
-              }).join(' ')}`}
+              d={`M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`}
               stroke="url(#lineGradient)"
-              strokeWidth={i % 5 === 0 ? "1" : "0.5"} // Thinner lines generally
+              strokeWidth={i % 3 === 0 ? 0.3 : 0.15}
               fill="none"
-              opacity={0.3 + Math.random() * 0.5}
-              filter={i % 8 === 0 ? "url(#glow)" : "none"} // Occasional glowing line
+              opacity={0.4 + Math.random() * 0.4}
+              filter={i % 4 === 0 ? "url(#glow)" : "none"}
               animate={reduceMotion ? {} : {
-                opacity: [0.2, 0.6, 0.2],
                 d: [
-                   `M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
-                    const xPos = x * 40 - 100;
-                    const yPos = yOffset 
-                      + Math.sin(xPos * frequency + phase) * amplitude 
-                      + Math.cos(xPos * frequency * 2.5 + phase) * (amplitude * 0.2)
-                      + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.5);
-                    return `L ${xPos},${yPos}`;
-                  }).join(' ')}`,
-                   `M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
-                    const xPos = x * 40 - 100;
-                    const yPos = yOffset 
-                      + Math.sin(xPos * frequency + phase + 0.5) * amplitude 
-                      + Math.cos(xPos * frequency * 2.5 + phase + 0.5) * (amplitude * 0.2)
-                      + Math.sin(xPos * frequency * 0.5 + 0.5) * (amplitude * 0.5);
-                    return `L ${xPos},${yPos}`;
-                  }).join(' ')}`
+                   `M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`,
+                   `M ${100 + ox} ${-10 + oy} C ${-15 + ox} ${85 + oy}, ${55 + ox} ${15 + oy}, ${110 + ox} ${110 + oy}`,
+                   `M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`
                 ]
               }}
               transition={{
-                opacity: { duration: 3 + Math.random() * 4, repeat: Infinity, ease: "easeInOut" },
-                d: { duration: 20 + i, repeat: Infinity, repeatType: "mirror", ease: "linear" }
+                duration: 10 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut"
               }}
             />
           );
@@ -179,7 +151,7 @@ export default function HeroSection({ reduceMotion }) {
       <div className="absolute inset-0 overflow-hidden">
         {/* Dust Field 1 - Dense Main Galaxy Stream */}
         <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.3)' }}>
-          {[...Array(260)].map((_, i) => {
+          {[...Array(450)].map((_, i) => {
              // Create a band/stream of stars
              const x = Math.random() * 100;
              const yBand = 50 + (Math.random() - 0.5) * 60 * Math.sin(x / 30); // Wavy band

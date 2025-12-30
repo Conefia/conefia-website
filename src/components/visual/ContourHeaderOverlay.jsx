@@ -15,42 +15,25 @@ export default function ContourHeaderOverlay() {
       />
 
       {/* Contour lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-70" style={{ transform: 'rotate(-25deg) scale(1.5)', transformOrigin: 'center' }}>
+      <svg className="absolute inset-0 w-full h-full opacity-60" viewBox="0 0 100 100" preserveAspectRatio="none">
         <defs>
-          <linearGradient id="hdrLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <linearGradient id="hdrLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="rgba(219,254,1,0)" />
-            <stop offset="45%" stopColor="rgba(219,254,1,0.35)" />
+            <stop offset="50%" stopColor="rgba(219,254,1,0.3)" />
             <stop offset="100%" stopColor="rgba(219,254,1,0)" />
           </linearGradient>
-          <filter id="hdrGlow">
-            <feGaussianBlur stdDeviation="1.2" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
         </defs>
-        {Array.from({ length: 60 }).map((_, i) => {
-          const yOffset = i * 22 - 120;
-          const amp = 36 + Math.sin(i * 0.25) * 18;
-          const freq = 0.01 + (i % 4) * 0.001;
-          const phase = i * 0.2;
+        {Array.from({ length: 20 }).map((_, i) => {
+          const ox = i * 0.8;
+          const oy = i * 0.5;
           return (
             <path
               key={i}
-              d={`M -200,${yOffset} ${Array.from({ length: 45 }, (_, x) => {
-                const xPos = x * 40 - 100;
-                const t = (xPos + 800) / 1600;
-                const stream = Math.sin(t * Math.PI * 1.2 - Math.PI/2) * (amp * 0.55);
-                const meander = Math.sin(t * Math.PI * 2) * (amp * 0.22);
-                const yPos = yOffset + stream + meander + Math.sin(xPos * freq + phase) * amp + Math.cos(xPos * freq * 0.6) * (amp * 0.26);
-                return `L ${xPos},${yPos}`;
-              }).join(' ')}`}
+              d={`M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`}
               stroke="url(#hdrLineGradient)"
-              strokeWidth={i % 6 === 0 ? 1 : 0.5}
+              strokeWidth={i % 3 === 0 ? 0.4 : 0.2}
               fill="none"
-              opacity={0.25 + (i % 6 === 0 ? 0.25 : 0)}
-              filter={i % 6 === 0 ? 'url(#hdrGlow)' : 'none'}
+              opacity={0.3 + (i % 3 === 0 ? 0.3 : 0)}
             />
           );
         })}
@@ -58,7 +41,7 @@ export default function ContourHeaderOverlay() {
 
       {/* Star dust band */}
       <div className="absolute inset-0" style={{ transform: 'rotate(-25deg)' }}>
-        {Array.from({ length: 170 }).map((_, i) => {
+        {Array.from({ length: 300 }).map((_, i) => {
           const x = Math.random() * 100;
           const y = 60 + (Math.sin((x / 100) * Math.PI * 2) * 10) + (Math.random() - 0.5) * 10;
           const size = Math.random() * 1.3 + 0.2;
