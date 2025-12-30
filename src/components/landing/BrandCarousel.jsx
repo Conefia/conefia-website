@@ -1,7 +1,9 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export default function BrandCarousel() {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
   const logos = [
     {
       url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/92204c7cc_accenture_48h.png',
@@ -53,11 +55,16 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="py-12 bg-white/50 overflow-hidden">
+    <section ref={ref} className="py-12 bg-white/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-medium text-[#1a1a1a]/40 uppercase tracking-wider mb-8">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+          className="text-center text-sm font-medium text-[#1a1a1a]/40 uppercase tracking-wider mb-8"
+        >
           Trusted by
-        </p>
+        </motion.p>
         
         <div className="relative">
           {/* Gradient overlays */}

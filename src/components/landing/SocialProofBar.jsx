@@ -29,8 +29,33 @@ export default function SocialProofBar({ reduceMotion }) {
               }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#DBFE01]/15 mb-4 group-hover:bg-[#DBFE01]/25 transition-colors border border-[#DBFE01]/20">
-                <metric.icon className="w-6 h-6 text-[#1a1a1a]" />
+              <div className="relative inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#DBFE01]/15 mb-4 group-hover:bg-[#DBFE01]/25 transition-colors border border-[#DBFE01]/20">
+                {/* Pulsating rings */}
+                <motion.div
+                  className="absolute inset-0 rounded-2xl border-2 border-[#DBFE01]/40"
+                  animate={{
+                    scale: [1, 1.5, 1.5],
+                    opacity: [0.6, 0, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.3,
+                  }}
+                />
+                <motion.div
+                  className="absolute inset-0 rounded-2xl border-2 border-[#DBFE01]/40"
+                  animate={{
+                    scale: [1, 1.8, 1.8],
+                    opacity: [0.4, 0, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: index * 0.3 + 0.4,
+                  }}
+                />
+                <metric.icon className="w-6 h-6 text-[#1a1a1a] relative z-10" />
               </div>
               <motion.p 
                 initial={{ scale: 0.5, opacity: 0 }}
