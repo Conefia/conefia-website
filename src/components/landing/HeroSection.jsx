@@ -39,8 +39,26 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
+      {/* Animated gradient orbs */}
+      <motion.div 
+        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.4, 0.3],
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{ duration: 8, repeat: Infinity, delay: 1 }}
+      />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
@@ -50,25 +68,25 @@ export default function HeroSection({ reduceMotion }) {
             className="text-center lg:text-left"
           >
             {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/15 border border-[#DBFE01]/30 mb-6">
-              <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
-              <span className="text-sm font-semibold text-[#1a1a1a]">Your Founder Ops Partner</span>
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
+              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+              <span className="text-sm font-semibold text-[#DBFE01]">Your Founder Ops Partner</span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#1a1a1a] leading-[1.1] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6"
             >
               Build it.{' '}
-              <span className="gradient-text">Launch it.</span>{' '}
+              <span className="text-[#DBFE01]">Launch it.</span>{' '}
               Grow it.
             </motion.h1>
 
             {/* Subhead */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-[#1a1a1a]/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-white/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
               Your end-to-end Founder Ops partner for AI apps, e-commerce, and healthcare. 
               From validation to product launch to data-driven growth — all under one roof.
@@ -106,8 +124,8 @@ export default function HeroSection({ reduceMotion }) {
                 { label: 'Privacy-first', value: 'HIPAA-aware' },
               ].map((item, i) => (
                 <div key={i} className="text-center lg:text-left">
-                  <p className="text-xs text-[#1a1a1a]/50 uppercase tracking-wider font-semibold mb-1">{item.label}</p>
-                  <p className="text-[#1a1a1a] font-bold text-lg">{item.value}</p>
+                  <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">{item.label}</p>
+                  <p className="text-white font-bold text-lg">{item.value}</p>
                 </div>
               ))}
             </motion.div>
@@ -209,9 +227,9 @@ export default function HeroSection({ reduceMotion }) {
         <motion.div
           animate={reduceMotion ? {} : { y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 rounded-full border-2 border-[#1a1a1a]/30 flex justify-center pt-2"
-        >
-          <div className="w-1.5 h-3 bg-[#1a1a1a]/50 rounded-full" />
+          className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2"
+          >
+          <div className="w-1.5 h-3 bg-white/50 rounded-full" />
         </motion.div>
       </motion.div>
     </section>
