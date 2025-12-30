@@ -52,13 +52,13 @@ export default function HowWeWork({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a]/60 text-sm font-semibold mb-4">
             How We Work
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#2F2F2F] mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
             Transparent. <span className="gradient-text">Predictable.</span> Fast.
           </h2>
-          <p className="text-lg text-[#2F2F2F]/60 max-w-2xl mx-auto">
+          <p className="text-lg text-[#1a1a1a]/60 max-w-2xl mx-auto font-medium">
             No black boxes. Weekly demos, clear governance, and a single team accountable for your success.
           </p>
         </motion.div>
@@ -68,19 +68,33 @@ export default function HowWeWork({ reduceMotion }) {
           {workflowSteps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
               transition={{ 
                 duration: reduceMotion ? 0 : 0.6, 
-                delay: reduceMotion ? 0 : 0.2 + index * 0.12 
+                delay: reduceMotion ? 0 : 0.2 + index * 0.12,
+                type: "spring",
+                stiffness: 100
               }}
-              className="text-center p-6"
+              whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
+              className="text-center p-6 group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#DBFE01]/10 flex items-center justify-center mx-auto mb-4">
-                <step.icon className="w-7 h-7 text-[#2F2F2F]" />
-              </div>
-              <h3 className="text-lg font-semibold text-[#2F2F2F] mb-2">{step.title}</h3>
-              <p className="text-[#2F2F2F]/50 text-sm">{step.description}</p>
+              <motion.div 
+                className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mx-auto mb-4 shadow-lg ${step.glow} group-hover:shadow-2xl transition-all duration-300`}
+                whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}
+              >
+                <step.icon className="w-8 h-8 text-white relative z-10" />
+                <motion.div
+                  className="absolute inset-0 rounded-2xl bg-white/20"
+                  animate={reduceMotion ? {} : {
+                    scale: [1, 1.2, 1],
+                    opacity: [0.5, 0, 0.5],
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              </motion.div>
+              <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">{step.title}</h3>
+              <p className="text-[#1a1a1a]/60 text-sm font-medium">{step.description}</p>
             </motion.div>
           ))}
         </div>
@@ -92,13 +106,13 @@ export default function HowWeWork({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7, delay: 0.6 }}
           className="glass-card rounded-3xl p-8 md:p-12"
         >
-          <h3 className="text-xl font-bold text-[#2F2F2F] mb-8 text-center">
+          <h3 className="text-xl font-bold text-[#1a1a1a] mb-8 text-center">
             Typical Timeline
           </h3>
           
           <div className="relative">
             {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#DBFE01] via-[#2F2F2F]/20 to-transparent hidden md:block" />
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#DBFE01] via-[#1a1a1a]/20 to-transparent hidden md:block" />
             
             <div className="space-y-8 md:space-y-12">
               {timeline.map((item, index) => (
@@ -115,12 +129,12 @@ export default function HowWeWork({ reduceMotion }) {
                   {/* Dot */}
                   <div className={`absolute hidden md:flex ${index % 2 === 0 ? 'right-0 translate-x-1/2' : 'left-0 -translate-x-1/2'} top-0 w-4 h-4 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg`} />
                   
-                  <div className="bg-white/50 rounded-2xl p-6 border border-[#2F2F2F]/5 hover:border-[#DBFE01]/30 transition-colors">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#DBFE01]/10 text-[#2F2F2F] text-xs font-semibold mb-3">
+                  <div className="bg-white/50 rounded-2xl p-6 border border-[#1a1a1a]/5 hover:border-[#DBFE01]/30 transition-colors">
+                    <span className="inline-block px-3 py-1 rounded-full bg-[#DBFE01]/10 text-[#1a1a1a] text-xs font-semibold mb-3">
                       {item.week}
                     </span>
-                    <h4 className="text-lg font-bold text-[#2F2F2F] mb-1">{item.phase}</h4>
-                    <p className="text-[#2F2F2F]/50 text-sm">{item.tasks}</p>
+                    <h4 className="text-lg font-bold text-[#1a1a1a] mb-1">{item.phase}</h4>
+                    <p className="text-[#1a1a1a]/50 text-sm font-medium">{item.tasks}</p>
                   </div>
                 </motion.div>
               ))}
