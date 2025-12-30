@@ -57,7 +57,7 @@ export default function BrandCarousel() {
 
   return (
     <section ref={ref} className="py-12 bg-[#0B1020] overflow-hidden relative">
-      <ContourBackground className="opacity-20" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export default function BrandCarousel() {
               {duplicatedLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-50 hover:opacity-100 transition-all duration-300"
+                  className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-70 hover:brightness-100 hover:invert-0 hover:opacity-100 transition-all duration-300"
                 >
                   <img
                     src={logo.url}
