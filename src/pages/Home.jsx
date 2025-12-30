@@ -16,11 +16,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
-      {/* Fine line background texture */}
+      {/* Fine line grid pattern */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.015]"
+        className="fixed inset-0 pointer-events-none opacity-[0.08]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='%231a1a1a' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
+          backgroundSize: '100px 100px',
         }}
       />
       
