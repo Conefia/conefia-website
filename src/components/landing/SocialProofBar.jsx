@@ -50,7 +50,7 @@ export default function SocialProofBar({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} className="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10">
+    <section ref={ref} className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10">
       <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
