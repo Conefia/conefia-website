@@ -40,66 +40,99 @@ export default function HeroSection({ reduceMotion }) {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden">
-      {/* Base layer - Deep navy radial gradient */}
-      <div className="absolute inset-0 bg-gradient-radial from-[#0F1630] via-[#0B1020] to-[#0B1020]" 
-        style={{
-          background: 'radial-gradient(ellipse at 50% 30%, #0F1630 0%, #0B1020 60%, #0B1020 100%)'
-        }}
-      />
+      {/* Base layer - Deep navy */}
+      <div className="absolute inset-0 bg-[#0B1020]" />
       
-      {/* Contour lines pattern */}
-      <div className="absolute inset-0 opacity-[0.07]">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="contours" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
-              {[...Array(15)].map((_, i) => {
-                const offset = i * 14;
-                return (
-                  <path
-                    key={i}
-                    d={`M 0,${offset} Q 50,${offset + Math.sin(i) * 8} 100,${offset} T 200,${offset}`}
-                    stroke="#DBFE01"
-                    strokeWidth="0.8"
-                    fill="none"
-                    opacity={0.6 + Math.random() * 0.4}
-                  />
-                );
-              })}
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#contours)" transform="rotate(135 50 50)" />
-        </svg>
+      {/* Diagonal contour lines with glow */}
+      <div className="absolute inset-0" style={{ transform: 'rotate(-45deg) scale(1.5)', transformOrigin: 'center' }}>
+        {[...Array(40)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-full h-[1px]"
+            style={{
+              top: `${i * 3}%`,
+              background: `linear-gradient(90deg, transparent, rgba(219, 254, 1, ${0.03 + Math.random() * 0.07}) 50%, transparent)`,
+              boxShadow: i % 3 === 0 ? '0 0 20px rgba(219, 254, 1, 0.15)' : 'none',
+            }}
+            animate={reduceMotion ? {} : {
+              opacity: [0.3, 0.6, 0.3],
+              x: ['-100%', '100%'],
+            }}
+            transition={{
+              opacity: { duration: 3 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 },
+              x: { duration: 20 + i * 0.5, repeat: Infinity, ease: 'linear', delay: Math.random() * 5 },
+            }}
+          />
+        ))}
       </div>
       
-      {/* Asymmetric lime glows */}
+      {/* Galaxy-like lime glows - stronger and more focused */}
       <motion.div 
-        className="absolute top-[15%] right-[20%] w-[500px] h-[500px] rounded-full"
+        className="absolute top-[20%] right-[25%] w-[600px] h-[600px]"
         style={{
-          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.25) 0%, rgba(219, 254, 1, 0.15) 30%, transparent 60%)',
+          filter: 'blur(80px)',
+        }}
+        animate={reduceMotion ? {} : {
+          scale: [1, 1.2, 1],
+          opacity: [0.4, 0.6, 0.4],
+        }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      
+      <motion.div 
+        className="absolute bottom-[15%] right-[35%] w-[500px] h-[500px]"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, rgba(219, 254, 1, 0.1) 40%, transparent 70%)',
+          filter: 'blur(70px)',
+        }}
+        animate={reduceMotion ? {} : {
+          scale: [1.1, 0.9, 1.1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
+        transition={{ duration: 7, repeat: Infinity, delay: 1 }}
+      />
+      
+      <motion.div 
+        className="absolute bottom-[40%] left-[10%] w-[400px] h-[400px]"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.18) 0%, rgba(219, 254, 1, 0.08) 40%, transparent 70%)',
           filter: 'blur(60px)',
         }}
         animate={reduceMotion ? {} : {
-          scale: [1, 1.15, 1],
-          opacity: [0.08, 0.12, 0.08],
+          scale: [0.9, 1.15, 0.9],
+          opacity: [0.25, 0.45, 0.25],
         }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-[25%] left-[15%] w-[400px] h-[400px] rounded-full"
-        style={{
-          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.1) 0%, transparent 70%)',
-          filter: 'blur(50px)',
-        }}
-        animate={reduceMotion ? {} : {
-          scale: [1.1, 1, 1.1],
-          opacity: [0.06, 0.1, 0.06],
-        }}
-        transition={{ duration: 9, repeat: Infinity, delay: 1 }}
+        transition={{ duration: 8, repeat: Infinity, delay: 2 }}
       />
       
-      {/* Fine grain/noise texture */}
+      {/* Particle field */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(80)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-[2px] h-[2px] rounded-full bg-[#DBFE01]"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              opacity: Math.random() * 0.4,
+            }}
+            animate={reduceMotion ? {} : {
+              opacity: [0, Math.random() * 0.6, 0],
+              scale: [0, 1.5, 0],
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
+      </div>
+      
+      {/* Fine grain texture */}
       <div 
-        className="absolute inset-0 opacity-[0.05]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           mixBlendMode: 'overlay',
@@ -110,7 +143,7 @@ export default function HeroSection({ reduceMotion }) {
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(11, 16, 32, 0.3) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)',
         }}
       />
       
