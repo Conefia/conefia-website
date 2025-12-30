@@ -90,8 +90,8 @@ export default function BrandLogoCarousel({ reduceMotion }) {
         >
           <div className="overflow-hidden">
             <div className="flex gap-12 md:gap-16 animate-scroll">
-              {/* Duplicate logos twice for seamless infinite scroll */}
-              {[...logos, ...logos].map((logo, index) => (
+              {/* Duplicate logos for seamless infinite scroll */}
+              {[...logos, ...logos, ...logos].map((logo, index) => (
                 <div
                   key={index}
                   className="flex-[0_0_auto] flex items-center justify-center"
