@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Zap, Clock, TrendingUp, Shield } from 'lucide-react';
+import { Timer, Rocket, Users, ShieldCheck } from 'lucide-react';
 
 export default function SocialProofBar({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const metrics = [
-    { icon: Clock, value: '30-50%', label: 'Faster time-to-market', subtext: 'vs. fragmented vendors' },
-    { icon: Zap, value: '8-12', label: 'Weeks to MVP', subtext: 'Full product launch' },
-    { icon: TrendingUp, value: '100-500', label: 'Users in 30-60 days', subtext: 'Post-launch traction' },
-    { icon: Shield, value: '100%', label: 'HIPAA-aware flows', subtext: 'Privacy by design' },
+    { icon: Timer, value: '30-50%', label: 'Faster time-to-market', subtext: 'vs. fragmented vendors' },
+    { icon: Rocket, value: '8-12', label: 'Weeks to MVP', subtext: 'Full product launch' },
+    { icon: Users, value: '100-500', label: 'Users in 30-60 days', subtext: 'Post-launch traction' },
+    { icon: ShieldCheck, value: '100%', label: 'HIPAA-aware flows', subtext: 'Privacy by design' },
   ];
 
   return (
@@ -29,8 +29,24 @@ export default function SocialProofBar({ reduceMotion }) {
               }}
               className="text-center group"
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-[#DBFE01]/15 mb-4 group-hover:bg-[#DBFE01]/25 transition-colors border border-[#DBFE01]/20">
-                <metric.icon className="w-6 h-6 text-[#1a1a1a]" />
+              <div className="relative inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#DBFE01]/10 mb-6 group-hover:bg-[#DBFE01]/20 transition-all duration-300 border border-[#DBFE01]/20">
+                {!reduceMotion && (
+                  <motion.div 
+                    className="absolute inset-0 rounded-2xl bg-[#DBFE01]"
+                    initial={{ opacity: 0, scale: 1 }}
+                    animate={{ 
+                      scale: [1, 1.4],
+                      opacity: [0.3, 0]
+                    }}
+                    transition={{ 
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeOut",
+                      delay: index * 0.4
+                    }}
+                  />
+                )}
+                <metric.icon className="w-7 h-7 text-[#1a1a1a] relative z-10" strokeWidth={1.5} />
               </div>
               <motion.p 
                 initial={{ scale: 0.5, opacity: 0 }}
