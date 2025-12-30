@@ -73,32 +73,29 @@ export default function HeroSection({ reduceMotion }) {
             </feMerge>
           </filter>
         </defs>
-        {[...Array(24)].map((_, i) => {
-          // Parallel stream offset
-          const ox = i * 0.8; 
-          const oy = i * 0.5;
-          
-          // Curve Definition:
-          // Start Top-Right (100,0) -> Curve Bottom-Left (-10, 80) -> Curve Up-Right (40, 20) -> End Bottom-Right (100, 100)
+        {[...Array(45)].map((_, i) => {
+          // Parallel stream offset - wider spread to cover all
+          const ox = i * 0.9 - 10; 
+          const oy = i * 0.6 - 5;
           
           return (
             <motion.path
               key={i}
-              d={`M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`}
+              d={`M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`}
               stroke="url(#lineGradient)"
-              strokeWidth={i % 3 === 0 ? 0.3 : 0.15}
+              strokeWidth={i % 4 === 0 ? 0.4 : 0.15}
               fill="none"
-              opacity={0.4 + Math.random() * 0.4}
-              filter={i % 4 === 0 ? "url(#glow)" : "none"}
+              opacity={0.3 + Math.random() * 0.5}
+              filter={i % 6 === 0 ? "url(#glow)" : "none"}
               animate={reduceMotion ? {} : {
                 d: [
-                   `M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`,
-                   `M ${100 + ox} ${-10 + oy} C ${-15 + ox} ${85 + oy}, ${55 + ox} ${15 + oy}, ${110 + ox} ${110 + oy}`,
-                   `M ${100 + ox} ${-10 + oy} C ${-20 + ox} ${80 + oy}, ${50 + ox} ${10 + oy}, ${110 + ox} ${110 + oy}`
+                   `M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`,
+                   `M ${110 + ox} ${-20 + oy} C ${-20 + ox} ${95 + oy}, ${65 + ox} ${5 + oy}, ${120 + ox} ${120 + oy}`,
+                   `M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`
                 ]
               }}
               transition={{
-                duration: 10 + i * 0.5,
+                duration: 12 + i * 0.3,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -183,29 +180,51 @@ export default function HeroSection({ reduceMotion }) {
           })}
         </div>
 
-        {/* Dust Field 2 - Secondary Cluster */}
+        {/* Dust Field 2 - Luminous Concentrations */}
         <div className="absolute inset-0">
-           {[...Array(140)].map((_, i) => {
-             const cx = 70; const cy = 30; // Top right cluster center
+           {/* Top Right Concentration */}
+           {[...Array(100)].map((_, i) => {
+             const cx = 80; const cy = 20; 
+             const r = Math.pow(Math.random(), 1.5) * 25;
              const angle = Math.random() * Math.PI * 2;
-             const r = Math.pow(Math.random(), 2) * 40; // Clumped towards center
              const x = cx + Math.cos(angle) * r;
-             const y = cy + Math.sin(angle) * r * 0.8;
-             const size = Math.random() * 1.2 + 0.3;
-             
+             const y = cy + Math.sin(angle) * r;
              return (
                <motion.div
-                 key={`cluster-top-${i}`}
+                 key={`cluster-1-${i}`}
+                 className="absolute rounded-full bg-[#DBFE01]"
+                 style={{
+                   left: `${x}%`, top: `${y}%`,
+                   width: `${Math.random() * 1.5 + 0.5}px`,
+                   height: `${Math.random() * 1.5 + 0.5}px`,
+                   opacity: Math.random() * 0.7 + 0.2,
+                   boxShadow: '0 0 4px rgba(219, 254, 1, 0.6)'
+                 }}
+                 animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.2, 1] }}
+                 transition={{ duration: 2 + Math.random() * 2, repeat: Infinity }}
+               />
+             );
+           })}
+
+           {/* Bottom Left Stream Concentration */}
+           {[...Array(100)].map((_, i) => {
+             const cx = 20; const cy = 75; 
+             const r = Math.pow(Math.random(), 1.5) * 30;
+             const angle = Math.random() * Math.PI * 2;
+             const x = cx + Math.cos(angle) * r;
+             const y = cy + Math.sin(angle) * r * 0.6;
+             return (
+               <motion.div
+                 key={`cluster-2-${i}`}
                  className="absolute rounded-full bg-white"
                  style={{
-                   left: `${x}%`,
-                   top: `${y}%`,
-                   width: `${size}px`,
-                   height: `${size}px`,
-                   opacity: Math.random() * 0.5,
+                   left: `${x}%`, top: `${y}%`,
+                   width: `${Math.random() * 1.2 + 0.3}px`,
+                   height: `${Math.random() * 1.2 + 0.3}px`,
+                   opacity: Math.random() * 0.5 + 0.1,
                  }}
-                 animate={{ opacity: [0.2, 0.5, 0.2] }}
-                 transition={{ duration: 3 + Math.random(), repeat: Infinity }}
+                 animate={{ opacity: [0.1, 0.5, 0.1] }}
+                 transition={{ duration: 3 + Math.random() * 3, repeat: Infinity }}
                />
              );
            })}
