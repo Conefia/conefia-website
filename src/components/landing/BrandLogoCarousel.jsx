@@ -41,6 +41,14 @@ export default function BrandLogoCarousel({ reduceMotion }) {
     {
       name: 'Mend',
       url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/3c6f416b3_mend_48h.png'
+    },
+    {
+      name: 'Integrio',
+      url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/2526e92fa_integrio_48h.png'
+    },
+    {
+      name: 'Global Trade Association',
+      url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/c8a2a6d30_global_trade_association_48h.png'
     }
   ];
 
@@ -56,7 +64,7 @@ export default function BrandLogoCarousel({ reduceMotion }) {
           }
         }
         .animate-scroll {
-          animation: scroll 40s linear infinite;
+          animation: scroll 30s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
