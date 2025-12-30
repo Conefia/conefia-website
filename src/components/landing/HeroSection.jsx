@@ -327,83 +327,9 @@ export default function HeroSection({ reduceMotion }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
-            className="relative"
+            className="relative flex items-center justify-center"
           >
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/20 to-transparent rounded-full blur-3xl" />
-              
-              {/* Flow diagram */}
-              <div className="relative glass-card rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/5">
-                <div className="space-y-6">
-                  {phases.map((phase, index) => (
-                    <motion.div
-                      key={phase}
-                      initial={{ opacity: 0, x: -30 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                      transition={{ 
-                        duration: reduceMotion ? 0 : 0.6, 
-                        delay: reduceMotion ? 0 : 0.6 + index * 0.15 
-                      }}
-                      className="flex items-center gap-4"
-                    >
-                      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg ${
-                        index === 0 ? 'bg-[#1a1a1a] text-white' :
-                        index === 1 ? 'bg-[#DBFE01] text-[#1a1a1a]' :
-                        index === 2 ? 'bg-[#1a1a1a]/10 text-[#1a1a1a] border-2 border-[#1a1a1a]/20' :
-                        'bg-gradient-to-br from-[#DBFE01] to-[#B8D600] text-[#1a1a1a]'
-                      }`}>
-                        {index + 1}
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-bold text-[#1a1a1a] text-xl">{phase}</p>
-                        <p className="text-[#1a1a1a]/60 text-sm font-medium">
-                          {index === 0 && '2–4 weeks'}
-                          {index === 1 && '6–12 weeks'}
-                          {index === 2 && '2–4 weeks'}
-                          {index === 3 && 'Ongoing'}
-                        </p>
-                      </div>
-                      {index < phases.length - 1 && (
-                        <motion.div
-                          initial={{ scaleX: 0 }}
-                          animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                          transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 1 + index * 0.15 }}
-                          className="w-8 h-[3px] bg-gradient-to-r from-[#DBFE01] to-transparent origin-left"
-                        />
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Floating tags */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 1.4 }}
-                  className="flex flex-wrap gap-2 mt-8"
-                >
-                  {['AI Agents', 'Mobile Apps', 'Healthcare', 'Web Apps'].map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1.5 rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a]/80 text-xs font-semibold border border-[#1a1a1a]/10"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </motion.div>
-              </div>
-
-              {/* Decorative elements */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
-                transition={{ duration: 0.5, delay: 1.6 }}
-                className="absolute -top-4 -right-4 w-16 h-16 bg-[#DBFE01] rounded-2xl flex items-center justify-center shadow-xl"
-              >
-                <Sparkles className="w-8 h-8 text-[#1a1a1a]" />
-              </motion.div>
-            </div>
+            <AccelerateProcessVisual />
           </motion.div>
         </div>
       </div>
