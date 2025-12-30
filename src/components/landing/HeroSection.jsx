@@ -213,7 +213,7 @@ export default function HeroSection({ reduceMotion }) {
 
         {/* Dust Field 2 - Secondary Cluster */}
         <div className="absolute inset-0">
-           {[...Array(80)].map((_, i) => {
+           {[...Array(140)].map((_, i) => {
              const cx = 70; const cy = 30; // Top right cluster center
              const angle = Math.random() * Math.PI * 2;
              const r = Math.pow(Math.random(), 2) * 40; // Clumped towards center
