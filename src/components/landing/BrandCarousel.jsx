@@ -43,10 +43,6 @@ export default function BrandCarousel() {
       alt: 'Mend'
     },
     {
-      url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/e64319fb9_integrio_48h.png',
-      alt: 'Integrio'
-    },
-    {
       url: 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/c2a4a8150_global_trade_association_48h.png',
       alt: 'Global Trade Association'
     },
