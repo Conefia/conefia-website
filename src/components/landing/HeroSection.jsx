@@ -43,28 +43,53 @@ export default function HeroSection({ reduceMotion }) {
       {/* Base layer - Deep navy */}
       <div className="absolute inset-0 bg-[#0B1020]" />
       
-      {/* Diagonal contour lines with glow */}
-      <div className="absolute inset-0" style={{ transform: 'rotate(-45deg) scale(1.5)', transformOrigin: 'center' }}>
-        {[...Array(40)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-full h-[1px]"
-            style={{
-              top: `${i * 3}%`,
-              background: `linear-gradient(90deg, transparent, rgba(219, 254, 1, ${0.03 + Math.random() * 0.07}) 50%, transparent)`,
-              boxShadow: i % 3 === 0 ? '0 0 20px rgba(219, 254, 1, 0.15)' : 'none',
-            }}
-            animate={reduceMotion ? {} : {
-              opacity: [0.3, 0.6, 0.3],
-              x: ['-100%', '100%'],
-            }}
-            transition={{
-              opacity: { duration: 3 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 },
-              x: { duration: 20 + i * 0.5, repeat: Infinity, ease: 'linear', delay: Math.random() * 5 },
-            }}
-          />
-        ))}
-      </div>
+      {/* Flowing topographic contour lines */}
+      <svg className="absolute inset-0 w-full h-full" style={{ transform: 'rotate(-40deg) scale(1.4)', transformOrigin: 'center' }}>
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
+            <stop offset="50%" stopColor="rgba(219, 254, 1, 0.08)" />
+            <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        {[...Array(35)].map((_, i) => {
+          const yOffset = i * 40;
+          const amplitude = 30 + Math.sin(i * 0.5) * 20;
+          const frequency = 0.015 + (i % 3) * 0.002;
+          const phase = i * 0.3;
+          
+          return (
+            <motion.path
+              key={i}
+              d={`M -100,${yOffset} ${Array.from({ length: 50 }, (_, x) => {
+                const xPos = x * 40;
+                const yPos = yOffset + Math.sin(xPos * frequency + phase) * amplitude + Math.cos(xPos * frequency * 0.5) * (amplitude * 0.4);
+                return `L ${xPos},${yPos}`;
+              }).join(' ')}`}
+              stroke="url(#lineGradient)"
+              strokeWidth={i % 4 === 0 ? "1.2" : "0.7"}
+              fill="none"
+              opacity={0.4 + Math.random() * 0.3}
+              filter={i % 4 === 0 ? "url(#glow)" : "none"}
+              animate={reduceMotion ? {} : {
+                opacity: [0.3, 0.7, 0.3],
+              }}
+              transition={{
+                duration: 4 + Math.random() * 3,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          );
+        })}
+      </svg>
       
       {/* Galaxy-like lime glows - stronger and more focused */}
       <motion.div 
