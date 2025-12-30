@@ -56,14 +56,14 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="py-12 bg-[#0B1020] overflow-hidden relative">
+    <section ref={ref} className="py-6 bg-[#0B1020] overflow-hidden relative">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-8"
+          className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-4"
         >
           Trusted by
         </motion.p>
@@ -74,9 +74,7 @@ export default function BrandCarousel() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative"
         >
-          {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0B1020] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0B1020] to-transparent z-10 pointer-events-none" />
+          {/* Gradient overlays removed */}
           
           {/* Scrolling container */}
           <div className="flex">
