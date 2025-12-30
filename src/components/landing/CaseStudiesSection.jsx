@@ -89,7 +89,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-amber-600 via-orange-500 to-red-600',
       bgGradient: 'from-amber-500/20 to-red-500/20',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop&q=80',
+      image: 'https://res.cloudinary.com/dsl8p99td/image/upload/v1735588677/screenshot_larovie.ae_1735588676086_cz5bup.png',
     },
     {
       id: 'al-mahfza',
@@ -137,7 +137,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-sky-600 via-blue-500 to-indigo-600',
       bgGradient: 'from-sky-500/20 to-indigo-500/20',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=80',
+      image: 'https://res.cloudinary.com/dsl8p99td/image/upload/v1735588661/screenshot_www.aviyatelemed.com_1735588660088_axlugp.png',
     },
   ];
 
