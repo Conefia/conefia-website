@@ -7,46 +7,46 @@ export default function ProblemSolution({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const problems = [
-    'Juggling 5+ vendors — dev, design, marketing, analytics all disconnected',
-    'Misaligned priorities and conflicting roadmaps slowing you down',
-    'Slow handoffs with weeks of waiting between development phases',
-    'No single owner accountable for your success metrics and ROI',
-  ];
+  'Juggling 5+ vendors — dev, design, marketing, analytics all disconnected',
+  'Misaligned priorities and conflicting roadmaps slowing you down',
+  'Slow handoffs with weeks of waiting between development phases',
+  'No single owner accountable for your success metrics and ROI'];
+
 
   const solutions = [
-    { 
-      icon: Users, 
-      text: 'One accountable team', 
-      desc: 'End-to-end ownership',
-      gradient: 'from-violet-500 via-purple-500 to-fuchsia-500',
-      iconBg: 'from-violet-400 to-purple-500',
-      glow: 'shadow-violet-500/50'
-    },
-    { 
-      icon: Target, 
-      text: 'Single unified backlog', 
-      desc: 'Clear priorities always',
-      gradient: 'from-blue-500 via-cyan-500 to-teal-500',
-      iconBg: 'from-blue-400 to-cyan-500',
-      glow: 'shadow-cyan-500/50'
-    },
-    { 
-      icon: Layers, 
-      text: 'Strategy to execution', 
-      desc: 'Seamless delivery',
-      gradient: 'from-emerald-500 via-green-500 to-lime-500',
-      iconBg: 'from-emerald-400 to-green-500',
-      glow: 'shadow-emerald-500/50'
-    },
-    { 
-      icon: BarChart3, 
-      text: 'Outcome-driven growth', 
-      desc: 'Data-backed decisions',
-      gradient: 'from-orange-500 via-amber-500 to-yellow-400',
-      iconBg: 'from-orange-400 to-yellow-500',
-      glow: 'shadow-amber-500/50'
-    },
-  ];
+  {
+    icon: Users,
+    text: 'One accountable team',
+    desc: 'End-to-end ownership',
+    gradient: 'from-violet-500 via-purple-500 to-fuchsia-500',
+    iconBg: 'from-violet-400 to-purple-500',
+    glow: 'shadow-violet-500/50'
+  },
+  {
+    icon: Target,
+    text: 'Single unified backlog',
+    desc: 'Clear priorities always',
+    gradient: 'from-blue-500 via-cyan-500 to-teal-500',
+    iconBg: 'from-blue-400 to-cyan-500',
+    glow: 'shadow-cyan-500/50'
+  },
+  {
+    icon: Layers,
+    text: 'Strategy to execution',
+    desc: 'Seamless delivery',
+    gradient: 'from-emerald-500 via-green-500 to-lime-500',
+    iconBg: 'from-emerald-400 to-green-500',
+    glow: 'shadow-emerald-500/50'
+  },
+  {
+    icon: BarChart3,
+    text: 'Outcome-driven growth',
+    desc: 'Data-backed decisions',
+    gradient: 'from-orange-500 via-amber-500 to-yellow-400',
+    iconBg: 'from-orange-400 to-yellow-500',
+    glow: 'shadow-amber-500/50'
+  }];
+
 
   return (
     <section ref={ref} className="py-16 md:py-24 relative overflow-hidden">
@@ -58,10 +58,10 @@ export default function ProblemSolution({ reduceMotion }) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
-          className="text-center mb-20"
-        >
-          <span className="inline-block px-4 py-2 rounded-full bg-[#1a1a1a]/8 text-[#1a1a1a]/70 text-sm font-semibold mb-6">
-            Why Conefia
+          className="text-center mb-20">
+
+          <span className="bg-[#1a1a1a]/8 text-[#1a1a1a]/70 mb-6 px-4 py-2 text-lg font-semibold rounded-full inline-block">Why Conefia
+
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
             Stop managing vendors.<br />
@@ -79,8 +79,8 @@ export default function ProblemSolution({ reduceMotion }) {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
-            className="relative"
-          >
+            className="relative">
+
             <div className="glass-card rounded-3xl p-8 md:p-10 h-full border-red-200/50 bg-red-50/30 relative overflow-hidden">
               {/* Subtle animated background */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-100/50 to-transparent opacity-50" />
@@ -94,23 +94,23 @@ export default function ProblemSolution({ reduceMotion }) {
                   Fragmented vendors = fragmented outcomes
                 </h3>
                 <ul className="space-y-5">
-                  {problems.map((problem, index) => (
-                    <motion.li
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                      transition={{ 
-                        duration: reduceMotion ? 0 : 0.5, 
-                        delay: reduceMotion ? 0 : 0.4 + index * 0.12 
-                      }}
-                      className="flex items-start gap-3"
-                    >
+                  {problems.map((problem, index) =>
+                  <motion.li
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{
+                      duration: reduceMotion ? 0 : 0.5,
+                      delay: reduceMotion ? 0 : 0.4 + index * 0.12
+                    }}
+                    className="flex items-start gap-3">
+
                       <div className="w-6 h-6 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0 mt-1">
                         <X className="w-4 h-4 text-red-600" />
                       </div>
                       <span className="text-[#1a1a1a] font-semibold leading-relaxed">{problem}</span>
                     </motion.li>
-                  ))}
+                  )}
                 </ul>
               </div>
             </div>
@@ -121,22 +121,22 @@ export default function ProblemSolution({ reduceMotion }) {
             initial={{ opacity: 0, x: 40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.3 }}
-            className="relative"
-          >
+            className="relative">
+
             {/* Animated gradient glow background */}
-            <motion.div 
+            <motion.div
               className="absolute inset-0 opacity-20 blur-3xl"
               animate={reduceMotion ? {} : {
                 background: [
-                  'radial-gradient(circle at 0% 0%, #8b5cf6 0%, transparent 50%)',
-                  'radial-gradient(circle at 100% 100%, #06b6d4 0%, transparent 50%)',
-                  'radial-gradient(circle at 0% 100%, #10b981 0%, transparent 50%)',
-                  'radial-gradient(circle at 100% 0%, #f59e0b 0%, transparent 50%)',
-                  'radial-gradient(circle at 0% 0%, #8b5cf6 0%, transparent 50%)',
-                ]
+                'radial-gradient(circle at 0% 0%, #8b5cf6 0%, transparent 50%)',
+                'radial-gradient(circle at 100% 100%, #06b6d4 0%, transparent 50%)',
+                'radial-gradient(circle at 0% 100%, #10b981 0%, transparent 50%)',
+                'radial-gradient(circle at 100% 0%, #f59e0b 0%, transparent 50%)',
+                'radial-gradient(circle at 0% 0%, #8b5cf6 0%, transparent 50%)']
+
               }}
-              transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            />
+              transition={{ duration: 10, repeat: Infinity, ease: "linear" }} />
+
 
             <div className="relative glass-card rounded-3xl p-8 md:p-10 h-full border-2 border-transparent bg-gradient-to-br from-white via-white to-[#DBFE01]/5 overflow-hidden">
               {/* Animated border gradient */}
@@ -147,8 +147,8 @@ export default function ProblemSolution({ reduceMotion }) {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ duration: 0.5, delay: 0.8 }}
-                className="absolute top-4 right-4"
-              >
+                className="absolute top-4 right-4">
+
                 <Sparkles className="w-6 h-6 text-[#DBFE01]" />
               </motion.div>
 
@@ -164,41 +164,41 @@ export default function ProblemSolution({ reduceMotion }) {
               </h3>
               
               <div className="grid grid-cols-2 gap-4">
-                {solutions.map((solution, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
-                    animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : { opacity: 0, scale: 0.8, rotateY: -20 }}
-                    transition={{ 
-                      duration: reduceMotion ? 0 : 0.6, 
-                      delay: reduceMotion ? 0 : 0.5 + index * 0.12,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    whileHover={reduceMotion ? {} : { 
-                      scale: 1.05, 
-                      rotateY: 5,
-                      transition: { duration: 0.3 }
-                    }}
-                    className="group relative"
-                  >
+                {solutions.map((solution, index) =>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
+                  animate={isInView ? { opacity: 1, scale: 1, rotateY: 0 } : { opacity: 0, scale: 0.8, rotateY: -20 }}
+                  transition={{
+                    duration: reduceMotion ? 0 : 0.6,
+                    delay: reduceMotion ? 0 : 0.5 + index * 0.12,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={reduceMotion ? {} : {
+                    scale: 1.05,
+                    rotateY: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group relative">
+
                     {/* Gradient background with glow */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                     <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300`} />
                     
                     <div className="relative p-5 rounded-2xl bg-white/80 backdrop-blur-sm border-2 border-transparent group-hover:border-white group-hover:shadow-xl transition-all duration-300">
                       {/* Animated icon container */}
-                      <motion.div 
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${solution.iconBg} flex items-center justify-center mb-3 shadow-lg ${solution.glow} group-hover:shadow-2xl transition-shadow duration-300`}
-                        animate={reduceMotion ? {} : {
-                          rotate: [0, 5, -5, 0],
-                        }}
-                        transition={{
-                          duration: 2,
-                          repeat: Infinity,
-                          repeatDelay: 3,
-                        }}
-                      >
+                      <motion.div
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${solution.iconBg} flex items-center justify-center mb-3 shadow-lg ${solution.glow} group-hover:shadow-2xl transition-shadow duration-300`}
+                      animate={reduceMotion ? {} : {
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatDelay: 3
+                      }}>
+
                         <solution.icon className="w-6 h-6 text-white" />
                       </motion.div>
                       
@@ -209,22 +209,22 @@ export default function ProblemSolution({ reduceMotion }) {
                       
                       {/* Hover shine effect */}
                       <motion.div
-                        className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100"
-                        style={{
-                          background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)',
-                        }}
-                        animate={reduceMotion ? {} : {
-                          x: ['-100%', '100%'],
-                        }}
-                        transition={{
-                          duration: 1,
-                          repeat: Infinity,
-                          repeatDelay: 3,
-                        }}
-                      />
+                      className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100"
+                      style={{
+                        background: 'linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%)'
+                      }}
+                      animate={reduceMotion ? {} : {
+                        x: ['-100%', '100%']
+                      }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        repeatDelay: 3
+                      }} />
+
                     </div>
                   </motion.div>
-                ))}
+                )}
               </div>
             </div>
           </motion.div>
@@ -237,8 +237,8 @@ export default function ProblemSolution({ reduceMotion }) {
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             transition={{ duration: 0.5, delay: 0.8 }}
             whileHover={{ scale: 1.1, rotate: 90 }}
-            className="relative"
-          >
+            className="relative">
+
             <div className="absolute inset-0 bg-gradient-to-r from-violet-500 via-cyan-500 to-emerald-500 rounded-full blur-xl opacity-50" />
             <div className="relative w-16 h-16 rounded-full bg-gradient-to-r from-violet-500 via-cyan-500 to-emerald-500 flex items-center justify-center shadow-xl cursor-pointer">
               <ArrowRight className="w-7 h-7 text-white" />
@@ -246,6 +246,6 @@ export default function ProblemSolution({ reduceMotion }) {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
