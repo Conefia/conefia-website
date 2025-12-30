@@ -76,21 +76,7 @@ export default function ContactSection({ reduceMotion }) {
               ))}
             </div>
 
-            {/* Lead magnet */}
-            <div className="glass-card rounded-2xl p-6 border-[#DBFE01]/20">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0">
-                  <Sparkles className="w-6 h-6 text-[#2F2F2F]" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-[#2F2F2F] mb-1">Free: Founder Launch Checklist</h3>
-                  <p className="text-[#2F2F2F]/70 text-sm mb-3 font-medium">
-                    The exact checklist we use to take products from idea to launch. Yours free after booking a call.
-                  </p>
-                  <span className="text-xs text-[#2F2F2F]/40">PDF download • 12 pages</span>
-                </div>
-              </div>
-            </div>
+
           </motion.div>
 
           {/* Right form */}
@@ -168,11 +154,7 @@ export default function ContactSection({ reduceMotion }) {
                   <p className="text-[#2F2F2F]/60 mb-6">
                     We'll reach out within 24 hours to schedule your roadmap call.
                   </p>
-                  <div className="p-4 rounded-xl bg-[#DBFE01]/10">
-                    <p className="text-sm text-[#2F2F2F]/70">
-                      Check your inbox for the Founder Launch Checklist PDF.
-                    </p>
-                  </div>
+
                 </motion.div>
               )}
             </div>
