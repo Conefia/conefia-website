@@ -72,7 +72,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-purple-600 via-pink-500 to-rose-600',
       bgGradient: 'from-purple-500/20 to-rose-500/20',
-      image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 'larovie',
@@ -105,7 +105,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-emerald-600 via-green-500 to-lime-600',
       bgGradient: 'from-emerald-500/20 to-lime-500/20',
-      image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 'hartalega',
