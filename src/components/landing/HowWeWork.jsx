@@ -37,10 +37,46 @@ export default function HowWeWork({ reduceMotion }) {
   ];
 
   const timeline = [
-    { week: 'Week 1-2', phase: 'Discovery', tasks: 'Align on goals, research, prototype' },
-    { week: 'Week 3-8', phase: 'Build', tasks: 'Design, develop, iterate, QA' },
-    { week: 'Week 9-10', phase: 'Launch', tasks: 'Deploy, brand, go live' },
-    { week: 'Ongoing', phase: 'Grow', tasks: 'Experiment, optimize, scale' },
+    { 
+      week: 'Week 1-2', 
+      phase: 'Discovery', 
+      tasks: 'Align on goals, research, prototype',
+      icon: Users,
+      gradient: 'from-blue-500 via-indigo-500 to-purple-600',
+      bgGradient: 'from-blue-500/10 to-purple-500/10',
+      iconColor: 'text-blue-600',
+      glowColor: 'shadow-blue-500/50',
+    },
+    { 
+      week: 'Week 3-8', 
+      phase: 'Build', 
+      tasks: 'Design, develop, iterate, QA',
+      icon: GitBranch,
+      gradient: 'from-emerald-500 via-teal-500 to-cyan-600',
+      bgGradient: 'from-emerald-500/10 to-cyan-500/10',
+      iconColor: 'text-emerald-600',
+      glowColor: 'shadow-emerald-500/50',
+    },
+    { 
+      week: 'Week 9-10', 
+      phase: 'Launch', 
+      tasks: 'Deploy, brand, go live',
+      icon: CheckCircle,
+      gradient: 'from-orange-500 via-amber-500 to-yellow-500',
+      bgGradient: 'from-orange-500/10 to-yellow-500/10',
+      iconColor: 'text-orange-600',
+      glowColor: 'shadow-orange-500/50',
+    },
+    { 
+      week: 'Ongoing', 
+      phase: 'Grow', 
+      tasks: 'Experiment, optimize, scale',
+      icon: BarChart3,
+      gradient: 'from-pink-500 via-rose-500 to-red-600',
+      bgGradient: 'from-pink-500/10 to-rose-500/10',
+      iconColor: 'text-pink-600',
+      glowColor: 'shadow-pink-500/50',
+    },
   ];
 
   return (
@@ -104,37 +140,138 @@ export default function HowWeWork({ reduceMotion }) {
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={{ duration: reduceMotion ? 0 : 0.7, delay: 0.6 }}
-          className="glass-card rounded-3xl p-8 md:p-12"
+          className="relative"
         >
-          <h3 className="text-xl font-bold text-[#1a1a1a] mb-8 text-center">
-            Typical Timeline
+          <h3 className="text-2xl font-extrabold text-[#1a1a1a] mb-12 text-center">
+            <span className="bg-gradient-to-r from-blue-600 via-emerald-600 to-pink-600 bg-clip-text text-transparent">
+              Your Journey to Success
+            </span>
           </h3>
           
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#DBFE01] via-[#1a1a1a]/20 to-transparent hidden md:block" />
+            {/* Animated gradient line */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 rounded-full overflow-hidden hidden md:block">
+              <motion.div
+                className="w-full h-full bg-gradient-to-b from-blue-500 via-emerald-500 via-orange-500 to-pink-500"
+                initial={{ y: '-100%' }}
+                animate={isInView ? { y: '0%' } : { y: '-100%' }}
+                transition={{ duration: 2, ease: "easeOut", delay: 0.8 }}
+              />
+            </div>
             
-            <div className="space-y-8 md:space-y-12">
+            <div className="space-y-6 md:space-y-8">
               {timeline.map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  initial={{ opacity: 0, scale: 0.8, x: index % 2 === 0 ? -50 : 50 }}
+                  animate={isInView ? { opacity: 1, scale: 1, x: 0 } : { opacity: 0, scale: 0.8, x: index % 2 === 0 ? -50 : 50 }}
                   transition={{ 
-                    duration: reduceMotion ? 0 : 0.6, 
-                    delay: reduceMotion ? 0 : 0.8 + index * 0.15 
+                    duration: reduceMotion ? 0 : 0.7, 
+                    delay: reduceMotion ? 0 : 0.9 + index * 0.2,
+                    type: "spring",
+                    stiffness: 80
                   }}
-                  className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}
+                  whileHover={reduceMotion ? {} : { scale: 1.02, x: index % 2 === 0 ? -5 : 5 }}
+                  className={`relative flex items-start gap-6 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} group`}
                 >
-                  {/* Dot */}
-                  <div className={`absolute hidden md:flex ${index % 2 === 0 ? 'right-0 translate-x-1/2' : 'left-0 -translate-x-1/2'} top-0 w-4 h-4 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg`} />
+                  {/* Animated dot with pulse */}
+                  <motion.div 
+                    className={`relative hidden md:flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${item.gradient} shadow-xl ${item.glowColor} flex-shrink-0`}
+                    animate={reduceMotion ? {} : {
+                      rotate: [0, 5, -5, 0],
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                  >
+                    <item.icon className="w-10 h-10 text-white relative z-10" />
+                    <motion.div
+                      className="absolute inset-0 rounded-2xl bg-white/30"
+                      animate={reduceMotion ? {} : {
+                        scale: [1, 1.3, 1],
+                        opacity: [0.5, 0, 0.5],
+                      }}
+                      transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                    />
+                    
+                    {/* Progress ring */}
+                    <svg className="absolute inset-0 w-full h-full -rotate-90">
+                      <motion.circle
+                        cx="40"
+                        cy="40"
+                        r="38"
+                        stroke="white"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeDasharray="240"
+                        initial={{ strokeDashoffset: 240 }}
+                        animate={isInView ? { strokeDashoffset: 0 } : { strokeDashoffset: 240 }}
+                        transition={{ duration: 1.5, delay: 1 + index * 0.2 }}
+                        opacity="0.3"
+                      />
+                    </svg>
+                  </motion.div>
                   
-                  <div className="bg-white/50 rounded-2xl p-6 border border-[#1a1a1a]/5 hover:border-[#DBFE01]/30 transition-colors">
-                    <span className="inline-block px-3 py-1 rounded-full bg-[#DBFE01]/10 text-[#1a1a1a] text-xs font-semibold mb-3">
-                      {item.week}
-                    </span>
-                    <h4 className="text-lg font-bold text-[#1a1a1a] mb-1">{item.phase}</h4>
-                    <p className="text-[#1a1a1a]/50 text-sm font-medium">{item.tasks}</p>
+                  {/* Content card */}
+                  <div className={`flex-1 relative overflow-hidden rounded-3xl p-6 md:p-8 ${index % 2 === 0 ? 'md:mr-12' : 'md:ml-12'}`}>
+                    {/* Animated gradient background */}
+                    <motion.div 
+                      className={`absolute inset-0 bg-gradient-to-br ${item.bgGradient}`}
+                      animate={reduceMotion ? {} : {
+                        opacity: [0.5, 0.8, 0.5],
+                      }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                    />
+                    
+                    {/* Glass overlay */}
+                    <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
+                    
+                    {/* Border glow */}
+                    <div className={`absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-br ${item.gradient} opacity-20 group-hover:opacity-40 transition-opacity`} 
+                         style={{ padding: '2px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
+                    
+                    {/* Content */}
+                    <div className="relative">
+                      <div className="flex items-center gap-4 mb-4">
+                        {/* Mobile icon */}
+                        <motion.div 
+                          className={`md:hidden w-12 h-12 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-lg ${item.glowColor}`}
+                          whileHover={{ rotate: 10, scale: 1.1 }}
+                        >
+                          <item.icon className="w-6 h-6 text-white" />
+                        </motion.div>
+                        
+                        <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r ${item.gradient} text-white text-sm font-bold shadow-lg`}>
+                          <span className="relative flex h-2 w-2">
+                            <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75`}></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                          </span>
+                          {item.week}
+                        </span>
+                      </div>
+                      
+                      <h4 className={`text-2xl font-extrabold mb-2 bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`}>
+                        {item.phase}
+                      </h4>
+                      <p className="text-[#1a1a1a]/70 font-medium">{item.tasks}</p>
+                      
+                      {/* Progress bar */}
+                      <div className="mt-4 h-2 bg-[#1a1a1a]/5 rounded-full overflow-hidden">
+                        <motion.div
+                          className={`h-full rounded-full bg-gradient-to-r ${item.gradient} relative overflow-hidden`}
+                          initial={{ width: 0 }}
+                          animate={isInView ? { width: '100%' } : { width: 0 }}
+                          transition={{ duration: 1, delay: 1.2 + index * 0.2, ease: "easeOut" }}
+                        >
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent"
+                            animate={reduceMotion ? {} : {
+                              x: ['-100%', '200%'],
+                            }}
+                            transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                          />
+                        </motion.div>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}
