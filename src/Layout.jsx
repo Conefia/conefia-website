@@ -107,6 +107,7 @@ export default function Layout({ children, currentPageName }) {
             : 'bg-gradient-to-r from-[#0B1020]/90 via-[#121829]/90 to-[#0B1020]/90 backdrop-blur-md'
         }`}
       >
+        <ContourHeaderOverlay />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
