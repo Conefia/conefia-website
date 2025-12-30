@@ -8,6 +8,11 @@ import ContourBackground from '@/components/visual/ContourBackground';
 export default function Layout({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Home page is dark-themed (hero), others are light-themed
+  const isHomePage = currentPageName === 'Home';
+  // Use light text (dark mode header) if on Home page OR if scrolled (header becomes dark)
+  const useLightText = isHomePage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,25 +116,27 @@ export default function Layout({ children, currentPageName }) {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
-                alt="Conefia" 
-                className="h-10"
-              />
+            <img 
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
+            alt="Conefia" 
+            className={`h-10 transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`}
+            />
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-white/70 hover:text-white text-sm font-semibold transition-colors relative group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
-                </button>
-              ))}
+            {navItems.map((item) => (
+            <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`text-sm font-semibold transition-colors relative group ${
+              useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
+            }`}
+            >
+            {item.label}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+            </button>
+            ))}
             </nav>
 
             {/* CTA */}
