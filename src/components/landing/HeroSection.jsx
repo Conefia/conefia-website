@@ -279,8 +279,7 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="text-lg md:text-xl text-white/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
-              Your end-to-end Founder Ops partner for AI apps, e-commerce, and healthcare. 
-              From validation to product launch to data-driven growth — all under one roof.
+              Validate, build, and scale your digital venture with one partner. We turn concepts into market-leading AI, e-commerce, and healthcare products—faster, leaner, and all under one roof.
             </motion.p>
 
             {/* CTAs */}
