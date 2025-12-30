@@ -89,7 +89,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       ],
       gradient: 'from-amber-600 via-orange-500 to-red-600',
       bgGradient: 'from-amber-500/20 to-red-500/20',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop&q=80',
+      image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop&q=80',
     },
     {
       id: 'al-mahfza',
