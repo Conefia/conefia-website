@@ -57,7 +57,7 @@ export default function HeroSection({ reduceMotion }) {
       />
 
       {/* Flowing topographic contour lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-60" style={{ transform: 'rotate(-15deg) scale(1.5)', transformOrigin: 'center' }}>
+      <svg className="absolute inset-0 w-full h-full opacity-70" style={{ transform: 'rotate(-25deg) scale(1.6)', transformOrigin: 'center' }}>
         <defs>
           <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
@@ -79,7 +79,7 @@ export default function HeroSection({ reduceMotion }) {
             <feComposite operator="in" in="contrastNoise" in2="SourceGraphic" result="compositeNoise"/>
           </filter>
         </defs>
-        {[...Array(60)].map((_, i) => {
+        {[...Array(80)].map((_, i) => {
           const yOffset = i * 25 - 100; // More lines, closer together
           const amplitude = 50 + Math.sin(i * 0.1) * 30; // Larger waves
           const frequency = 0.008 + (i % 5) * 0.001; // Slower, wider waves
@@ -90,12 +90,15 @@ export default function HeroSection({ reduceMotion }) {
               key={i}
               d={`M -200,${yOffset} ${Array.from({ length: 60 }, (_, x) => {
                 const xPos = x * 40 - 100;
-                // Complex wave function for organic look
-                const yPos = yOffset 
-                  + Math.sin(xPos * frequency + phase) * amplitude 
-                  + Math.cos(xPos * frequency * 2.5 + phase) * (amplitude * 0.2)
-                  + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.5);
-                return `L ${xPos},${yPos}`;
+                                      const t = (xPos + 800) / 1600;
+                                      const stream = Math.sin(t * Math.PI * 1.2 - Math.PI/2) * (amplitude * 0.6);
+                                      const meander = Math.sin(t * Math.PI * 2) * (amplitude * 0.25);
+                                      const yPos = yOffset 
+                                        + stream + meander
+                                        + Math.sin(xPos * frequency + phase) * amplitude 
+                                        + Math.cos(xPos * frequency * 2.0 + phase) * (amplitude * 0.18)
+                                        + Math.sin(xPos * frequency * 0.5) * (amplitude * 0.4);
+                                      return `L ${xPos},${yPos}`;
               }).join(' ')}`}
               stroke="url(#lineGradient)"
               strokeWidth={i % 5 === 0 ? "1" : "0.5"} // Thinner lines generally
@@ -175,8 +178,8 @@ export default function HeroSection({ reduceMotion }) {
       {/* Galaxy Star Dust (High density) */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Dust Field 1 - Dense Main Galaxy Stream */}
-        <div className="absolute inset-0" style={{ transform: 'rotate(-15deg) scale(1.2)' }}>
-          {[...Array(150)].map((_, i) => {
+        <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.3)' }}>
+          {[...Array(260)].map((_, i) => {
              // Create a band/stream of stars
              const x = Math.random() * 100;
              const yBand = 50 + (Math.random() - 0.5) * 60 * Math.sin(x / 30); // Wavy band
@@ -236,8 +239,29 @@ export default function HeroSection({ reduceMotion }) {
            })}
         </div>
 
+        {/* Stream Dust - Flow path */}
+        <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.05)' }}>
+          {[...Array(120)].map((_, i) => {
+            const t = Math.random();
+            const x = 20 + t * 60; // 20% to 80%
+            const base = 55 + Math.sin(t * Math.PI * 1.2 - Math.PI/2) * 18 + Math.sin(t * Math.PI * 2) * 6;
+            const y = base + (Math.random() - 0.5) * 6;
+            const size = Math.random() * 1.4 + 0.4;
+            const opacity = 0.25 + Math.random() * 0.5;
+            return (
+              <motion.div
+                key={`stream-${i}`}
+                className="absolute rounded-full bg-[#DBFE01]"
+                style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, boxShadow: '0 0 3px rgba(219,254,1,0.6)' }}
+                animate={{ opacity: [opacity, opacity * 1.4, opacity] }}
+                transition={{ duration: 2 + Math.random() * 2.5, repeat: Infinity, delay: Math.random() * 1.5 }}
+              />
+            );
+          })}
+        </div>
+
         {/* Bright Stars - Highlights */}
-        {[...Array(25)].map((_, i) => (
+        {[...Array(40)].map((_, i) => (
           <motion.div
             key={`bright-${i}`}
             className="absolute rounded-full bg-[#DBFE01]"

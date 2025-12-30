@@ -15,7 +15,7 @@ export default function ContourHeaderOverlay() {
       />
 
       {/* Contour lines */}
-      <svg className="absolute inset-0 w-full h-full opacity-70" style={{ transform: 'rotate(-15deg) scale(1.4)', transformOrigin: 'center' }}>
+      <svg className="absolute inset-0 w-full h-full opacity-70" style={{ transform: 'rotate(-25deg) scale(1.5)', transformOrigin: 'center' }}>
         <defs>
           <linearGradient id="hdrLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="rgba(219,254,1,0)" />
@@ -30,7 +30,7 @@ export default function ContourHeaderOverlay() {
             </feMerge>
           </filter>
         </defs>
-        {Array.from({ length: 40 }).map((_, i) => {
+        {Array.from({ length: 60 }).map((_, i) => {
           const yOffset = i * 22 - 120;
           const amp = 36 + Math.sin(i * 0.25) * 18;
           const freq = 0.01 + (i % 4) * 0.001;
@@ -40,7 +40,10 @@ export default function ContourHeaderOverlay() {
               key={i}
               d={`M -200,${yOffset} ${Array.from({ length: 45 }, (_, x) => {
                 const xPos = x * 40 - 100;
-                const yPos = yOffset + Math.sin(xPos * freq + phase) * amp + Math.cos(xPos * freq * 0.6) * (amp * 0.3);
+                const t = (xPos + 800) / 1600;
+                const stream = Math.sin(t * Math.PI * 1.2 - Math.PI/2) * (amp * 0.55);
+                const meander = Math.sin(t * Math.PI * 2) * (amp * 0.22);
+                const yPos = yOffset + stream + meander + Math.sin(xPos * freq + phase) * amp + Math.cos(xPos * freq * 0.6) * (amp * 0.26);
                 return `L ${xPos},${yPos}`;
               }).join(' ')}`}
               stroke="url(#hdrLineGradient)"
@@ -54,8 +57,8 @@ export default function ContourHeaderOverlay() {
       </svg>
 
       {/* Star dust band */}
-      <div className="absolute inset-0" style={{ transform: 'rotate(-14deg)' }}>
-        {Array.from({ length: 110 }).map((_, i) => {
+      <div className="absolute inset-0" style={{ transform: 'rotate(-25deg)' }}>
+        {Array.from({ length: 170 }).map((_, i) => {
           const x = Math.random() * 100;
           const y = 60 + (Math.sin((x / 100) * Math.PI * 2) * 10) + (Math.random() - 0.5) * 10;
           const size = Math.random() * 1.3 + 0.2;
