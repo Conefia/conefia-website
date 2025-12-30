@@ -56,14 +56,14 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="py-12 bg-white/50 overflow-hidden relative">
-      <ContourBackground className="opacity-30" />
+    <section ref={ref} className="py-12 bg-[#0B1020] overflow-hidden relative">
+      <ContourBackground className="opacity-20" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center text-sm font-medium text-[#1a1a1a]/40 uppercase tracking-wider mb-8"
+          className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-8"
         >
           Trusted by
         </motion.p>
@@ -75,8 +75,8 @@ export default function BrandCarousel() {
           className="relative"
         >
           {/* Gradient overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white/50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white/50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0B1020] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0B1020] to-transparent z-10 pointer-events-none" />
           
           {/* Scrolling container */}
           <div className="flex">
@@ -97,7 +97,7 @@ export default function BrandCarousel() {
               {duplicatedLogos.map((logo, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-32 h-16 flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-50 hover:opacity-100 transition-all duration-300"
                 >
                   <img
                     src={logo.url}
