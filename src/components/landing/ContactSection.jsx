@@ -22,9 +22,9 @@ export default function ContactSection({ reduceMotion }) {
   };
 
   const trustItems = [
-    { icon: Clock, text: 'Typical MVP: 8–12 weeks' },
-    { icon: Users, text: 'Weekly demos' },
-    { icon: Shield, text: 'Privacy-first approach' },
+    { icon: Clock, text: 'MVP: 8–12 Weeks' },
+    { icon: Users, text: 'Weekly Demos' },
+    { icon: Shield, text: 'Privacy First' },
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function ContactSection({ reduceMotion }) {
                   key={index}
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-[#2F2F2F]/5"
                 >
-                  <item.icon className="w-4 h-4 text-[#DBFE01]" />
+                  <item.icon className="w-5 h-5 text-[#1a1a1a]" />
                   <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
                 </div>
               ))}
