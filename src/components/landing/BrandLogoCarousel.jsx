@@ -45,7 +45,7 @@ export default function BrandLogoCarousel({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} className="py-12 md:py-16 bg-gradient-to-r from-[#DBFE01]/20 via-[#DBFE01]/10 to-[#DBFE01]/20 overflow-hidden">
+    <section ref={ref} className="py-12 md:py-16 bg-white/50 overflow-hidden">
       <style>{`
         @keyframes scroll {
           0% {
