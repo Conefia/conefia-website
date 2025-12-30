@@ -39,23 +39,79 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 bg-gradient-to-br from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a] overflow-hidden">
-      {/* Animated gradient orbs */}
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden">
+      {/* Base layer - Deep navy radial gradient */}
+      <div className="absolute inset-0 bg-gradient-radial from-[#0F1630] via-[#0B1020] to-[#0B1020]" 
+        style={{
+          background: 'radial-gradient(ellipse at 50% 30%, #0F1630 0%, #0B1020 60%, #0B1020 100%)'
+        }}
+      />
+      
+      {/* Contour lines pattern */}
+      <div className="absolute inset-0 opacity-[0.07]">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="contours" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+              {[...Array(15)].map((_, i) => {
+                const offset = i * 14;
+                return (
+                  <path
+                    key={i}
+                    d={`M 0,${offset} Q 50,${offset + Math.sin(i) * 8} 100,${offset} T 200,${offset}`}
+                    stroke="#DBFE01"
+                    strokeWidth="0.8"
+                    fill="none"
+                    opacity={0.6 + Math.random() * 0.4}
+                  />
+                );
+              })}
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#contours)" transform="rotate(135 50 50)" />
+        </svg>
+      </div>
+      
+      {/* Asymmetric lime glows */}
       <motion.div 
-        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-30 blur-3xl"
+        className="absolute top-[15%] right-[20%] w-[500px] h-[500px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.12) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+        }}
         animate={reduceMotion ? {} : {
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.4, 0.3],
+          scale: [1, 1.15, 1],
+          opacity: [0.08, 0.12, 0.08],
         }}
         transition={{ duration: 8, repeat: Infinity }}
       />
       <motion.div 
-        className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#DBFE01] opacity-20 blur-3xl"
-        animate={reduceMotion ? {} : {
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.3, 0.2],
+        className="absolute bottom-[25%] left-[15%] w-[400px] h-[400px] rounded-full"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.1) 0%, transparent 70%)',
+          filter: 'blur(50px)',
         }}
-        transition={{ duration: 8, repeat: Infinity, delay: 1 }}
+        animate={reduceMotion ? {} : {
+          scale: [1.1, 1, 1.1],
+          opacity: [0.06, 0.1, 0.06],
+        }}
+        transition={{ duration: 9, repeat: Infinity, delay: 1 }}
+      />
+      
+      {/* Fine grain/noise texture */}
+      <div 
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+          mixBlendMode: 'overlay',
+        }}
+      />
+      
+      {/* Vignette */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(11, 16, 32, 0.3) 100%)',
+        }}
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
