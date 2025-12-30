@@ -69,13 +69,14 @@ export default function BrandCarousel() {
             <motion.div
               className="flex gap-12 items-center"
               animate={{
-                x: [0, -50 * logos.length + '%'],
+                x: ['0%', '-50%'],
               }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 50,
                   repeat: Infinity,
                   ease: "linear",
+                  repeatType: "loop",
                 },
               }}
             >
