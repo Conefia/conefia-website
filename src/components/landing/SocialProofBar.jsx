@@ -97,7 +97,7 @@ export default function SocialProofBar({ reduceMotion }) {
               <p className="text-sm font-bold text-[#1a1a1a] mb-1">
                 {metric.label}
               </p>
-              <p className="text-xs text-[#1a1a1a]/50 font-medium">
+              <p className="text-xs text-[#1a1a1a]/70 font-semibold">
                 {metric.subtext}
               </p>
             </motion.div>

@@ -85,7 +85,7 @@ export default function PackagesSection({ reduceMotion }) {
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
             Start at <span className="gradient-text">any phase</span>
           </h2>
-          <p className="text-lg text-[#2F2F2F]/60 max-w-2xl mx-auto">
+          <p className="text-lg text-[#2F2F2F]/80 max-w-2xl mx-auto font-medium">
             Modular engagement, one integrated team. Optional success kicker at activation/revenue milestones.
           </p>
         </motion.div>
@@ -126,7 +126,7 @@ export default function PackagesSection({ reduceMotion }) {
                 <span className="inline-block px-2 py-0.5 rounded bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-xs font-medium mb-3">
                   {pkg.pricing}
                 </span>
-                <p className="text-[#2F2F2F]/50 text-sm mb-6">{pkg.description}</p>
+                <p className="text-[#2F2F2F]/70 text-sm mb-6 font-medium">{pkg.description}</p>
 
                 {/* Features */}
                 <ul className="space-y-2">
@@ -135,7 +135,7 @@ export default function PackagesSection({ reduceMotion }) {
                       <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
                         pkg.highlight ? 'text-[#DBFE01]' : 'text-[#2F2F2F]/30'
                       }`} />
-                      <span className="text-[#2F2F2F]/70">{feature}</span>
+                      <span className="text-[#2F2F2F]/90 font-medium">{feature}</span>
                     </li>
                   ))}
                 </ul>

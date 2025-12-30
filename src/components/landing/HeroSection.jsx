@@ -278,7 +278,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Subhead */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-white/70 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             >
               Validate, build, and scale your digital venture with one partner. We turn concepts into market-leading AI, mobile apps, and healthcare products—faster, leaner, and all under one roof.
             </motion.p>

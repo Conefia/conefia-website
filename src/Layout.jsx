@@ -201,7 +201,7 @@ export default function Layout({ children, currentPageName }) {
                   className="h-10 brightness-0 invert"
                 />
               </div>
-              <p className="text-white/60 text-sm leading-relaxed max-w-sm">
+              <p className="text-white/80 text-sm leading-relaxed max-w-sm font-medium">
                 Founder Ops for Digital Businesses. We validate, build, launch, and grow — all in one place.
               </p>
             </div>

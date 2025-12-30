@@ -67,7 +67,7 @@ export default function ProblemSolution({ reduceMotion }) {
             Stop managing vendors.<br />
             <span className="gradient-text">Start shipping product.</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/60 font-medium max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto">
             Fragmented teams create fragmented outcomes. Get one integrated team 
             that owns your entire journey from idea to scale.
           </p>

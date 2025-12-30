@@ -194,7 +194,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
             Real outcomes.<br />
             <span className="text-[#DBFE01]">Real growth.</span>
           </h2>
-          <p className="text-white/50 max-w-2xl mx-auto font-medium">
+          <p className="text-white/80 max-w-2xl mx-auto font-medium">
             See how we've helped founders go from idea to live product with measurable results.
           </p>
         </motion.div>
@@ -270,7 +270,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                           {study.headline}
                         </h4>
 
-                        <p className="text-white/60 mb-6 leading-relaxed font-medium">
+                        <p className="text-white/80 mb-6 leading-relaxed font-medium">
                           {study.summary}
                         </p>
 

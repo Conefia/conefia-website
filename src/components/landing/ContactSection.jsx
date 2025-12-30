@@ -47,7 +47,7 @@ export default function ContactSection({ reduceMotion }) {
             <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
               Ready to <span className="gradient-text">launch</span>?
             </h2>
-            <p className="text-lg text-[#2F2F2F]/60 mb-8 leading-relaxed">
+            <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
               Book a roadmap call and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </p>
@@ -60,7 +60,7 @@ export default function ContactSection({ reduceMotion }) {
                   className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-[#2F2F2F]/5"
                 >
                   <item.icon className="w-4 h-4 text-[#DBFE01]" />
-                  <span className="text-sm text-[#2F2F2F]/70">{item.text}</span>
+                  <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -73,7 +73,7 @@ export default function ContactSection({ reduceMotion }) {
                 </div>
                 <div>
                   <h3 className="font-semibold text-[#2F2F2F] mb-1">Free: Founder Launch Checklist</h3>
-                  <p className="text-[#2F2F2F]/50 text-sm mb-3">
+                  <p className="text-[#2F2F2F]/70 text-sm mb-3 font-medium">
                     The exact checklist we use to take products from idea to launch. Yours free after booking a call.
                   </p>
                   <span className="text-xs text-[#2F2F2F]/40">PDF download • 12 pages</span>

@@ -49,7 +49,7 @@ export default function FAQSection({ reduceMotion }) {
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
             Common <span className="gradient-text">questions</span>
           </h2>
-          <p className="text-lg text-[#2F2F2F]/60">
+          <p className="text-lg text-[#2F2F2F]/80 font-medium">
             Everything you need to know before getting started.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ export default function FAQSection({ reduceMotion }) {
                       transition={{ duration: reduceMotion ? 0 : 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-[#2F2F2F]/60 mt-4 pl-14 leading-relaxed">
+                      <p className="text-[#2F2F2F]/80 mt-4 pl-14 leading-relaxed font-medium">
                         {faq.answer}
                       </p>
                     </motion.div>

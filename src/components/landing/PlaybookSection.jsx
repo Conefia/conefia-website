@@ -130,7 +130,7 @@ export default function PlaybookSection({ reduceMotion }) {
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
             From idea to <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">market leader</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/60 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
             Clear sequencing, reusable components, and strict stage gates — 
             so you ship faster without cutting corners or compromising quality.
           </p>
@@ -220,7 +220,7 @@ export default function PlaybookSection({ reduceMotion }) {
                 </div>
 
                 {/* Description */}
-                <p className="text-[#1a1a1a]/70 mb-6 text-sm leading-relaxed font-medium">
+                <p className="text-[#1a1a1a]/80 mb-6 text-sm leading-relaxed font-semibold">
                   {phase.description}
                 </p>
 
