@@ -16,12 +16,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
-      {/* Fine diagonal line pattern */}
+      {/* Wavy convoluted line pattern */}
       <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.06]"
+        className="fixed inset-0 pointer-events-none opacity-[0.05]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='diagonal' width='80' height='80' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 0 80 L 80 0 M -20 20 L 20 -20 M 60 100 L 100 60' fill='none' stroke='%231a1a1a' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23diagonal)'/%3E%3C/svg%3E")`,
-          backgroundSize: '80px 80px',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='waves' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 0 20 Q 25 5 50 20 T 100 20 T 150 20 T 200 20' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 0 60 Q 30 45 60 60 T 120 60 T 180 60 T 240 60' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 0 100 Q 40 85 80 100 T 160 100 T 240 100' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 0 140 Q 35 125 70 140 T 140 140 T 210 140' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 0 180 Q 50 165 100 180 T 200 180' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 20 0 Q 5 25 20 50 T 20 100 T 20 150 T 20 200' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 80 0 Q 65 35 80 70 T 80 140 T 80 210' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3Cpath d='M 140 0 Q 125 30 140 60 T 140 120 T 140 180 T 140 240' stroke='%231a1a1a' stroke-width='0.5' fill='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23waves)'/%3E%3C/svg%3E")`,
+          backgroundSize: '200px 200px',
         }}
       />
       
