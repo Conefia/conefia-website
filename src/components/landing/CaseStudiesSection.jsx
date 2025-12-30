@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../../utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import ContourBackground from '../visual/ContourBackground';
 
 export default function CaseStudiesSection({ reduceMotion }) {
   const ref = React.useRef(null);
@@ -158,6 +159,8 @@ export default function CaseStudiesSection({ reduceMotion }) {
       <div className="absolute inset-0 bg-[#1a1a1a]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-transparent" />
       
+      <ContourBackground className="opacity-40" />
+
       {/* Animated orbs */}
       <motion.div 
         className="absolute top-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"

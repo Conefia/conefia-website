@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
+import ContourBackground from '../visual/ContourBackground';
 
 export default function BrandCarousel() {
   const ref = React.useRef(null);
@@ -55,8 +56,9 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="py-12 bg-white/50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-12 bg-white/50 overflow-hidden relative">
+      <ContourBackground className="opacity-30" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}

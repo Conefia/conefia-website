@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from './utils';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import ContourBackground from '@/components/visual/ContourBackground';
 
 export default function Layout({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
@@ -189,8 +189,9 @@ export default function Layout({ children, currentPageName }) {
       {children}
 
       {/* Footer */}
-      <footer className="bg-[#1a1a1a] text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-[#1a1a1a] text-white py-16 relative overflow-hidden">
+        <ContourBackground className="opacity-40" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="mb-4">
