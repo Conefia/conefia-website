@@ -155,7 +155,11 @@ export default function Layout({ children, currentPageName }) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+              {mobileMenuOpen ? (
+                <X className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} />
+              ) : (
+                <Menu className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} />
+              )}
             </button>
           </div>
         </div>
