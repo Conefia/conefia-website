@@ -23,10 +23,7 @@ export default function TestimonialSlider({ reduceMotion }) {
     // Fetch testimonials
     const fetchTestimonials = async () => {
       try {
-        const data = await base44.entities.Testimonial.list({
-          sort: { created_date: -1 },
-          limit: 10
-        });
+        const data = await base44.entities.Testimonial.list('-created_date', 10);
         setTestimonials(data);
       } catch (error) {
         console.error("Failed to fetch testimonials:", error);
