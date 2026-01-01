@@ -6,6 +6,7 @@ import BrandCarousel from '@/components/landing/BrandCarousel';
 import ProblemSolution from '@/components/landing/ProblemSolution';
 import PlaybookSection from '@/components/landing/PlaybookSection';
 import CaseStudiesSection from '@/components/landing/CaseStudiesSection';
+import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import HowWeWork from '@/components/landing/HowWeWork';
 import PackagesSection from '@/components/landing/PackagesSection';
 import FAQSection from '@/components/landing/FAQSection';
@@ -35,6 +36,7 @@ export default function Home() {
         <ProblemSolution reduceMotion={shouldReduceMotion} />
         <PlaybookSection reduceMotion={shouldReduceMotion} />
         <CaseStudiesSection reduceMotion={shouldReduceMotion} />
+        <TestimonialSlider reduceMotion={shouldReduceMotion} />
         <HowWeWork reduceMotion={shouldReduceMotion} />
         <PackagesSection reduceMotion={shouldReduceMotion} />
         <FAQSection reduceMotion={shouldReduceMotion} />
