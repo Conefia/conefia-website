@@ -7,34 +7,34 @@ export default function AccelerateProcessVisual() {
     {
       id: 1,
       title: "Validate",
-      duration: "Weeks 1–2",
+      subtitle: "Idea to Blueprint",
+      duration: "2–4 weeks",
       icon: Lightbulb,
-      description: "We audit your current state, scope the opportunity, and map a roadmap that works.",
-      outcome: "A solid plan. Finite scope. A timeline we actually hit."
+      description: "Market research, prototyping, and technical strategy."
     },
     {
       id: 2,
       title: "Build",
-      duration: "Weeks 3–8",
+      subtitle: "High-Velocity Dev",
+      duration: "6–12 weeks",
       icon: Code2,
-      description: "High-velocity execution with weekly demos. We work in parallel to move fast.",
-      outcome: "A live product. A stunning digital presence. A growth strategy."
+      description: "Rapid MVP development with scalable architecture."
     },
     {
       id: 3,
       title: "Launch",
-      duration: "Weeks 9–10",
+      subtitle: "Go-to-Market",
+      duration: "Market Ready",
       icon: Rocket,
-      description: "We go live, measure performance, and set up the analytics you need.",
-      outcome: "Your product in the wild. Real users. Actionable data."
+      description: "Deployment, QA, and initial user acquisition."
     },
     {
       id: 4,
       title: "Scale",
-      duration: "Weeks 11+",
+      subtitle: "Growth Engine",
+      duration: "Ongoing",
       icon: TrendingUp,
-      description: "Our growth team embeds with you to optimize and scale continuously.",
-      outcome: "Predictable revenue. A trained team. Clear next steps.",
+      description: "Data-driven iteration and feature expansion.",
       highlight: true
     }
   ];
@@ -45,10 +45,8 @@ export default function AccelerateProcessVisual() {
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/10 via-blue-500/5 to-purple-500/10 rounded-3xl blur-2xl" />
       
       <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">
-        <h3 className="text-xl font-bold text-white mb-8 text-center">The 4-Phase Playbook</h3>
-        
         {/* Connecting Line Container */}
-        <div className="absolute left-[2.25rem] top-24 bottom-12 w-0.5 bg-white/10">
+        <div className="absolute left-[2.25rem] top-12 bottom-12 w-0.5 bg-white/10">
           <motion.div 
             className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#DBFE01] to-blue-500"
             initial={{ height: "0%" }}
@@ -101,14 +99,8 @@ export default function AccelerateProcessVisual() {
                     {step.duration}
                   </span>
                 </div>
-                <p className="text-sm text-white/80 mb-2 leading-relaxed">{step.description}</p>
-                <div className="flex items-start gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-[#DBFE01] mt-1.5 flex-shrink-0" />
-                  <p className="text-xs text-white/50 leading-relaxed">
-                    <span className="text-[#DBFE01]/80 font-medium">You leave with: </span>
-                    {step.outcome}
-                  </p>
-                </div>
+                <p className="text-sm font-medium text-white/80 mb-1">{step.subtitle}</p>
+                <p className="text-xs text-white/50 leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

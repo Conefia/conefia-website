@@ -49,14 +49,14 @@ export default function CaseStudyAlMahfza() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            Mobile App Shipped in 60 Days.<br className="hidden md:block" /> After 1 Year of Silence.
+            Mobile app shipped in 60 days after 1 year stuck
           </h1>
 
           <div className="flex flex-wrap gap-8 mb-8">
             {[
-              { icon: Clock, label: '60-Day Ship', color: 'text-emerald-600' },
-              { icon: Zap, label: '83% Acceleration', color: 'text-green-600' },
-              { icon: CheckCircle, label: 'Regulatory Roadmap', color: 'text-lime-600' },
+              { icon: Clock, label: 'Shipped in 60 days', color: 'text-emerald-600' },
+              { icon: Zap, label: '~83% faster', color: 'text-green-600' },
+              { icon: CheckCircle, label: 'Compliance guidance', color: 'text-lime-600' },
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
@@ -126,14 +126,11 @@ export default function CaseStudyAlMahfza() {
                     </h2>
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-emerald-500">
-                    <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6 font-medium">
-                      For a year, the project was at a standstill.
-                    </p>
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6">
-                      Al-Mahfza had a clear vision for their money transfer app, but multiple vendors had struggled to deliver. Technical issues were piling up, the scope kept changing, and launch dates came and went. On top of that, navigating complex U.S. money transmission regulations was proving to be a major roadblock that previous partners couldn't overcome.
+                      After one year and multiple vendor attempts, Al-Mahfza still couldn't launch their money transfer mobile app. Technical debt was mounting, scope kept changing, and delivery timelines were consistently missed. Meanwhile, regulatory requirements for U.S. money transmission added another layer of complexity that previous vendors couldn't navigate.
                     </p>
                     <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
-                      They didn't just need more developers. They needed a partner who understood the compliance landscape, could stabilize the tech, and actually get the product to market.
+                      The stakes were high: without a functioning app, they couldn't enter the market. They needed a partner who could not only deliver technically but also understand the compliance landscape and guide them through the regulatory maze—fast.
                     </p>
                   </div>
                 </div>
@@ -155,25 +152,25 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-teal-500">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      We started by hitting the reset button. Our goal was simple: clear the blockers and get shipping. Here's how we turned things around:
+                      We reset the delivery plan with three core principles: accountability, clarity, and speed. Here's how we got them unstuck:
                     </p>
                     <div className="space-y-6">
                       {[
                         {
-                          title: 'Focused Planning',
-                          desc: 'We audited the codebase, removed immediate blockers, and created a realistic 60-day plan. No distractions, just execution.'
+                          title: 'Took Ownership of Delivery',
+                          desc: 'Assessed the existing codebase, identified blockers, and created a clear 60-day execution plan with weekly milestones and no scope creep.'
                         },
                         {
-                          title: 'Fixing the Foundation',
-                          desc: 'We refactored key parts of the app to improve stability and performance, ensuring the tech could actually support their growth.'
+                          title: 'Stabilized Technical Foundation',
+                          desc: 'Refactored critical paths, resolved performance bottlenecks, and implemented best practices to ensure a stable, scalable codebase that could support long-term growth.'
                         },
                         {
-                          title: 'Navigating Regulations',
-                          desc: 'We mapped out the specific U.S. money transfer requirements and ensured the app was built to be compliant from day one.'
+                          title: 'Guided Regulatory Compliance',
+                          desc: 'Mapped U.S. money transfer requirements (state licensing, KYC/AML, reporting) and ensured implementation aligned with regulatory expectations—avoiding costly redesigns later.'
                         },
                         {
-                          title: 'Getting to Production',
-                          desc: 'We focused on quality assurance and release readiness, delivering a fully functional, polished mobile app.'
+                          title: 'Shipped Production-Ready App',
+                          desc: 'Delivered a fully functioning, optimized mobile app with comprehensive QA, performance testing, and release readiness documentation.'
                         }
                       ].map((item, i) => (
                         <div key={i} className="flex gap-4 items-start">
@@ -207,12 +204,12 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 bg-gradient-to-br from-[#DBFE01]/10 to-green-500/10 border-l-4 border-[#DBFE01]">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      In just 60 days, we achieved what had been stalled for a year. We delivered a fully functional, compliant fintech app that was ready for real users.
+                      In just 60 days, we delivered what multiple vendors couldn't in a year—a production-ready fintech app with regulatory guidance built in:
                     </p>
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
                       {[
-                        { label: '60 Days', desc: 'To Launch', color: 'from-emerald-500 to-teal-600' },
-                        { label: '83% Faster', desc: 'Than Previous Attempts', color: 'from-green-500 to-lime-600' },
+                        { label: '60 Days', desc: 'From reset to production', color: 'from-emerald-500 to-teal-600' },
+                        { label: '~83% Faster', desc: 'vs. 12-month vendor cycle', color: 'from-green-500 to-lime-600' },
                       ].map((stat, i) => (
                         <div key={i} className="glass-card rounded-2xl p-6 text-center border border-[#1a1a1a]/10">
                           <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
@@ -225,15 +222,15 @@ export default function CaseStudyAlMahfza() {
                     <div className="bg-white/50 rounded-2xl p-6 mb-6">
                       <h4 className="font-bold text-[#1a1a1a] mb-3 flex items-center gap-2">
                         <Shield className="w-5 h-5 text-emerald-600" />
-                        De-risking the Business
+                        Compliance Guidance Delivered
                       </h4>
                       <p className="text-[#1a1a1a]/70 leading-relaxed">
-                        Beyond the code, we helped de-risk the launch. We provided a clear roadmap for U.S. compliance—covering state licensing, KYC/AML, and reporting requirements—so they could go to market with confidence.
+                        Beyond the app itself, we provided a clear roadmap of U.S. money transfer requirements, helping the team understand state licensing needs, KYC/AML implementation, and reporting obligations—de-risking their go-to-market strategy.
                       </p>
                     </div>
                     <div className="bg-white/50 rounded-2xl p-6">
                       <p className="text-[#1a1a1a]/70 leading-relaxed italic">
-                        "After a year of stagnation, we needed more than just code—we needed accountability and direction. Conefia stepped in, reset the culture, and delivered. We finally have a live product and a clear path forward."
+                        "When execution stalls for a year, the problem isn't just technical—it's accountability, clarity, and speed. We reset all three. The result: a fintech app in production, regulatory confidence, and a partner who ships."
                       </p>
                     </div>
                   </div>
