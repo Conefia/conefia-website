@@ -127,13 +127,13 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-emerald-500">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6 font-medium">
-                      One year. Multiple vendors. Zero launches.
+                      For a year, the project was at a standstill.
                     </p>
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6">
-                      Al-Mahfza was stuck. Technical debt mounted, scope crept, and timelines vanished. To make matters worse, U.S. money transmission regulations were a minefield no previous partner could navigate.
+                      Al-Mahfza had a clear vision for their money transfer app, but multiple vendors had struggled to deliver. Technical issues were piling up, the scope kept changing, and launch dates came and went. On top of that, navigating complex U.S. money transmission regulations was proving to be a major roadblock that previous partners couldn't overcome.
                     </p>
                     <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
-                      The stakes? Existential. No app, no market entry. They didn't just need a dev shop. They needed a partner who could code, consult, and cut through the noise. Fast.
+                      They didn't just need more developers. They needed a partner who understood the compliance landscape, could stabilize the tech, and actually get the product to market.
                     </p>
                   </div>
                 </div>
@@ -155,25 +155,25 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-teal-500">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      We hit reset. Accountability. Clarity. Speed. Here is how we turned a stalled project into a shipping product:
+                      We started by hitting the reset button. Our goal was simple: clear the blockers and get shipping. Here's how we turned things around:
                     </p>
                     <div className="space-y-6">
                       {[
                         {
-                          title: 'Ruthless Prioritization',
-                          desc: 'Codebase audit. Blocker removal. A clear 60-day execution plan. Zero scope creep.'
+                          title: 'Focused Planning',
+                          desc: 'We audited the codebase, removed immediate blockers, and created a realistic 60-day plan. No distractions, just execution.'
                         },
                         {
-                          title: 'Technical Resurrection',
-                          desc: 'Refactored critical paths. Eliminated bottlenecks. Implemented a scalable architecture built for growth.'
+                          title: 'Fixing the Foundation',
+                          desc: 'We refactored key parts of the app to improve stability and performance, ensuring the tech could actually support their growth.'
                         },
                         {
-                          title: 'Compliance Demystified',
-                          desc: 'Mapped U.S. requirements. Aligned implementation. Avoided costly redesigns by tackling regulations head-on.'
+                          title: 'Navigating Regulations',
+                          desc: 'We mapped out the specific U.S. money transfer requirements and ensured the app was built to be compliant from day one.'
                         },
                         {
-                          title: 'Production Shipping',
-                          desc: 'Optimized build. Comprehensive QA. Release readiness. Delivered a fully functioning mobile app.'
+                          title: 'Getting to Production',
+                          desc: 'We focused on quality assurance and release readiness, delivering a fully functional, polished mobile app.'
                         }
                       ].map((item, i) => (
                         <div key={i} className="flex gap-4 items-start">
@@ -207,12 +207,12 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 bg-gradient-to-br from-[#DBFE01]/10 to-green-500/10 border-l-4 border-[#DBFE01]">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      60 days. That's all it took to do what others couldn't in a year. A production-ready fintech app, fully compliant and ready for users.
+                      In just 60 days, we achieved what had been stalled for a year. We delivered a fully functional, compliant fintech app that was ready for real users.
                     </p>
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
                       {[
-                        { label: '60 Days', desc: 'From Reset to Production', color: 'from-emerald-500 to-teal-600' },
-                        { label: '83% Faster', desc: 'Vs. 12-Month Vendor Cycle', color: 'from-green-500 to-lime-600' },
+                        { label: '60 Days', desc: 'To Launch', color: 'from-emerald-500 to-teal-600' },
+                        { label: '83% Faster', desc: 'Than Previous Attempts', color: 'from-green-500 to-lime-600' },
                       ].map((stat, i) => (
                         <div key={i} className="glass-card rounded-2xl p-6 text-center border border-[#1a1a1a]/10">
                           <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
@@ -225,15 +225,15 @@ export default function CaseStudyAlMahfza() {
                     <div className="bg-white/50 rounded-2xl p-6 mb-6">
                       <h4 className="font-bold text-[#1a1a1a] mb-3 flex items-center gap-2">
                         <Shield className="w-5 h-5 text-emerald-600" />
-                        Risk: Eliminated.
+                        De-risking the Business
                       </h4>
                       <p className="text-[#1a1a1a]/70 leading-relaxed">
-                        We didn't just code; we consulted. We handed over a clear regulatory roadmap covering state licensing, KYC/AML, and reporting. Go-to-market strategy? De-risked.
+                        Beyond the code, we helped de-risk the launch. We provided a clear roadmap for U.S. compliance—covering state licensing, KYC/AML, and reporting requirements—so they could go to market with confidence.
                       </p>
                     </div>
                     <div className="bg-white/50 rounded-2xl p-6">
                       <p className="text-[#1a1a1a]/70 leading-relaxed italic">
-                        "When execution stalls for a year, the problem isn't just technical—it's accountability. We reset the culture. The result? A fintech app in production, regulatory confidence, and a partner who actually ships."
+                        "After a year of stagnation, we needed more than just code—we needed accountability and direction. Conefia stepped in, reset the culture, and delivered. We finally have a live product and a clear path forward."
                       </p>
                     </div>
                   </div>
