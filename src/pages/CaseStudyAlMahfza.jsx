@@ -49,14 +49,14 @@ export default function CaseStudyAlMahfza() {
           </span>
 
           <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            Mobile app shipped in 60 days after 1 year stuck
+            Mobile App Shipped in 60 Days.<br className="hidden md:block" /> After 1 Year of Silence.
           </h1>
 
           <div className="flex flex-wrap gap-8 mb-8">
             {[
-              { icon: Clock, label: 'Shipped in 60 days', color: 'text-emerald-600' },
-              { icon: Zap, label: '~83% faster', color: 'text-green-600' },
-              { icon: CheckCircle, label: 'Compliance guidance', color: 'text-lime-600' },
+              { icon: Clock, label: '60-Day Ship', color: 'text-emerald-600' },
+              { icon: Zap, label: '83% Acceleration', color: 'text-green-600' },
+              { icon: CheckCircle, label: 'Regulatory Roadmap', color: 'text-lime-600' },
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
@@ -126,11 +126,14 @@ export default function CaseStudyAlMahfza() {
                     </h2>
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-emerald-500">
+                    <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6 font-medium">
+                      One year. Multiple vendors. Zero launches.
+                    </p>
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6">
-                      After one year and multiple vendor attempts, Al-Mahfza still couldn't launch their money transfer mobile app. Technical debt was mounting, scope kept changing, and delivery timelines were consistently missed. Meanwhile, regulatory requirements for U.S. money transmission added another layer of complexity that previous vendors couldn't navigate.
+                      Al-Mahfza was stuck. Technical debt mounted, scope crept, and timelines vanished. To make matters worse, U.S. money transmission regulations were a minefield no previous partner could navigate.
                     </p>
                     <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
-                      The stakes were high: without a functioning app, they couldn't enter the market. They needed a partner who could not only deliver technically but also understand the compliance landscape and guide them through the regulatory maze—fast.
+                      The stakes? Existential. No app, no market entry. They didn't just need a dev shop. They needed a partner who could code, consult, and cut through the noise. Fast.
                     </p>
                   </div>
                 </div>
@@ -152,25 +155,25 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-teal-500">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      We reset the delivery plan with three core principles: accountability, clarity, and speed. Here's how we got them unstuck:
+                      We hit reset. Accountability. Clarity. Speed. Here is how we turned a stalled project into a shipping product:
                     </p>
                     <div className="space-y-6">
                       {[
                         {
-                          title: 'Took Ownership of Delivery',
-                          desc: 'Assessed the existing codebase, identified blockers, and created a clear 60-day execution plan with weekly milestones and no scope creep.'
+                          title: 'Ruthless Prioritization',
+                          desc: 'Codebase audit. Blocker removal. A clear 60-day execution plan. Zero scope creep.'
                         },
                         {
-                          title: 'Stabilized Technical Foundation',
-                          desc: 'Refactored critical paths, resolved performance bottlenecks, and implemented best practices to ensure a stable, scalable codebase that could support long-term growth.'
+                          title: 'Technical Resurrection',
+                          desc: 'Refactored critical paths. Eliminated bottlenecks. Implemented a scalable architecture built for growth.'
                         },
                         {
-                          title: 'Guided Regulatory Compliance',
-                          desc: 'Mapped U.S. money transfer requirements (state licensing, KYC/AML, reporting) and ensured implementation aligned with regulatory expectations—avoiding costly redesigns later.'
+                          title: 'Compliance Demystified',
+                          desc: 'Mapped U.S. requirements. Aligned implementation. Avoided costly redesigns by tackling regulations head-on.'
                         },
                         {
-                          title: 'Shipped Production-Ready App',
-                          desc: 'Delivered a fully functioning, optimized mobile app with comprehensive QA, performance testing, and release readiness documentation.'
+                          title: 'Production Shipping',
+                          desc: 'Optimized build. Comprehensive QA. Release readiness. Delivered a fully functioning mobile app.'
                         }
                       ].map((item, i) => (
                         <div key={i} className="flex gap-4 items-start">
@@ -204,12 +207,12 @@ export default function CaseStudyAlMahfza() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 bg-gradient-to-br from-[#DBFE01]/10 to-green-500/10 border-l-4 border-[#DBFE01]">
                     <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
-                      In just 60 days, we delivered what multiple vendors couldn't in a year—a production-ready fintech app with regulatory guidance built in:
+                      60 days. That's all it took to do what others couldn't in a year. A production-ready fintech app, fully compliant and ready for users.
                     </p>
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
                       {[
-                        { label: '60 Days', desc: 'From reset to production', color: 'from-emerald-500 to-teal-600' },
-                        { label: '~83% Faster', desc: 'vs. 12-month vendor cycle', color: 'from-green-500 to-lime-600' },
+                        { label: '60 Days', desc: 'From Reset to Production', color: 'from-emerald-500 to-teal-600' },
+                        { label: '83% Faster', desc: 'Vs. 12-Month Vendor Cycle', color: 'from-green-500 to-lime-600' },
                       ].map((stat, i) => (
                         <div key={i} className="glass-card rounded-2xl p-6 text-center border border-[#1a1a1a]/10">
                           <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
@@ -222,15 +225,15 @@ export default function CaseStudyAlMahfza() {
                     <div className="bg-white/50 rounded-2xl p-6 mb-6">
                       <h4 className="font-bold text-[#1a1a1a] mb-3 flex items-center gap-2">
                         <Shield className="w-5 h-5 text-emerald-600" />
-                        Compliance Guidance Delivered
+                        Risk: Eliminated.
                       </h4>
                       <p className="text-[#1a1a1a]/70 leading-relaxed">
-                        Beyond the app itself, we provided a clear roadmap of U.S. money transfer requirements, helping the team understand state licensing needs, KYC/AML implementation, and reporting obligations—de-risking their go-to-market strategy.
+                        We didn't just code; we consulted. We handed over a clear regulatory roadmap covering state licensing, KYC/AML, and reporting. Go-to-market strategy? De-risked.
                       </p>
                     </div>
                     <div className="bg-white/50 rounded-2xl p-6">
                       <p className="text-[#1a1a1a]/70 leading-relaxed italic">
-                        "When execution stalls for a year, the problem isn't just technical—it's accountability, clarity, and speed. We reset all three. The result: a fintech app in production, regulatory confidence, and a partner who ships."
+                        "When execution stalls for a year, the problem isn't just technical—it's accountability. We reset the culture. The result? A fintech app in production, regulatory confidence, and a partner who actually ships."
                       </p>
                     </div>
                   </div>
