@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Search, Code2, Rocket, TrendingUp, CheckCircle2, Star, ArrowRight } from 'lucide-react';
-import { usePersona } from '@/context/PersonaContext';
+import { usePersona } from '@/components/context/PersonaContext';
 
 export default function PackagesSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();

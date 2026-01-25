@@ -5,7 +5,7 @@ import { ArrowRight, Send, CheckCircle2, Clock, Users, Shield, Mail, MessageSqua
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
-import { usePersona } from '@/context/PersonaContext';
+import { usePersona } from '@/components/context/PersonaContext';
 
 export default function ContactSection({ reduceMotion }) {
   const ref = React.useRef(null);

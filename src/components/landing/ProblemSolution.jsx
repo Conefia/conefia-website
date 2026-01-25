@@ -3,8 +3,8 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { X, Check, ArrowRight, Users, Target, Layers, BarChart3, Sparkles } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
-import { PERSONAS } from '@/utils/personas';
-import { usePersona } from '@/context/PersonaContext';
+import { PERSONAS } from '@/components/data/personas';
+import { usePersona } from '@/components/context/PersonaContext';
 
 const SOLUTION_ICONS = [
   { icon: Users, gradient: 'from-violet-500 via-purple-500 to-fuchsia-500', iconBg: 'from-violet-400 to-purple-500', glow: 'shadow-violet-500/50' },

@@ -4,7 +4,7 @@ import { createPageUrl } from './utils';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ContourBackground from '@/components/visual/ContourBackground';
-import { PersonaProvider, usePersona } from '@/context/PersonaContext';
+import { PersonaProvider, usePersona } from '@/components/context/PersonaContext';
 
 function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);

@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
-import { usePersona } from '@/context/PersonaContext';
+import { usePersona } from '@/components/context/PersonaContext';
 
 export default function HeroSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
