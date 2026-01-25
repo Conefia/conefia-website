@@ -9,32 +9,32 @@ export default function AccelerateProcessVisual() {
       title: "Validate",
       duration: "Weeks 1–2",
       icon: Lightbulb,
-      description: "Audit state. Scope opportunity. Map roadmap.",
-      outcome: "Clear plan. Finite scope. Achievable timeline."
+      description: "We audit your current state, scope the opportunity, and map a roadmap that works.",
+      outcome: "A solid plan. Finite scope. A timeline we actually hit."
     },
     {
       id: 2,
       title: "Build",
       duration: "Weeks 3–8",
       icon: Code2,
-      description: "High-velocity execution. Weekly demos. Parallel work.",
-      outcome: "Live product. Digital presence. Growth strategy."
+      description: "High-velocity execution with weekly demos. We work in parallel to move fast.",
+      outcome: "A live product. A stunning digital presence. A growth strategy."
     },
     {
       id: 3,
       title: "Launch",
       duration: "Weeks 9–10",
       icon: Rocket,
-      description: "Go live. Measure. Set up analytics.",
-      outcome: "Live product. First customers. Real data."
+      description: "We go live, measure performance, and set up the analytics you need.",
+      outcome: "Your product in the wild. Real users. Actionable data."
     },
     {
       id: 4,
       title: "Scale",
       duration: "Weeks 11+",
       icon: TrendingUp,
-      description: "Growth team embedded. Continuous optimization.",
-      outcome: "Predictable growth. Trained team. Clear next steps.",
+      description: "Our growth team embeds with you to optimize and scale continuously.",
+      outcome: "Predictable revenue. A trained team. Clear next steps.",
       highlight: true
     }
   ];
