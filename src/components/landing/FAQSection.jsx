@@ -1,87 +1,114 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export default function FAQSection({ reduceMotion }) {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqs = [
-    {
-      question: "What if my situation doesn't exactly match your playbook?",
-      answer: "We've adapted our framework across 50+ companies. Each founder's situation is different, but the core process is the same: Validate → Build → Launch → Scale. We customize timeline, scope, and focus areas to your specific situation. For persona-specific answers, see your landing page (link in the outcomes cards above)."
-    },
-    {
-      question: "How much hands-on involvement do I need?",
-      answer: "We need you 2–4 hours per week: weekly demo review, decision sign-offs, and GTM feedback. You're partnered with us, not delegated. We don't disappear into a cave for 12 weeks. You see progress every week."
-    },
-    {
-      question: "How much does this cost?",
-      answer: "Packages start at $35K–$60K depending on scope and complexity. Milestone-based pricing means you pay as we hit outcomes, not upfront. For persona-specific pricing details, see your landing page."
-    },
-    {
-      question: "What if you don't hit the outcome metrics?",
-      answer: "We do. Our average ship rate is 85%+. Our average traction metrics hit targets 70%+ of the time. But if we're not a good fit, we'll tell you early (week 2–3). We're confident in our playbook, and we back it with accountability."
-    },
-    {
-      question: "What if we're not the right fit?",
-      answer: "We'll know by week 2 of the Validate phase. If it's not a fit, we'll tell you directly and give you the roadmap we've built anyway. You won't be locked into a bad engagement."
-    },
-    {
-      question: "What if we want to keep building after the engagement ends?",
-      answer: "Many clients do. We offer continuation packages (embedded team, fractional CTO support, ongoing growth marketing) so you maintain momentum. Details available on your persona landing page."
-    }
-  ];
+  {
+    question: 'Can I start at any phase?',
+    answer: 'Yes — our engagement is modular. Start with a Validate Sprint if you need research and prototyping, jump straight to Build if you have validated specs, or engage us for Launch/Growth if you have a product ready. One integrated team handles all phases.'
+  },
+  {
+    question: 'Do you work with healthcare startups?',
+    answer: 'Absolutely. We design HIPAA-aware flows, consent and privacy by design, secure data handling, and compliant intake processes. Our team has experience building health-tech products with proper security and compliance considerations.'
+  },
+  {
+    question: 'Can you build AI agents?',
+    answer: 'Yes — we build agentic workflows with proper safety rails, memory management, and guardrails. From conversational AI to autonomous task agents, we scaffold reliable AI systems that handle edge cases gracefully.'
+  },
+  {
+    question: 'How do you measure success?',
+    answer: 'We track four key metrics: Time-to-MVP (shipping speed), Activation rate (user engagement), CAC/LTV ratio (unit economics), and Speed of learning (experiment velocity). We instrument analytics from day one so you can measure what matters.'
+  },
+  {
+    question: 'What if I just need help with one area?',
+    answer: 'That\'s fine! While we offer end-to-end services, you can engage us for specific phases. Need a brand refresh? Launch Presence. Need growth experiments? Growth Sprint. We flex to your needs.'
+  },
+  {
+    question: 'How do you handle communication?',
+    answer: 'Weekly demos (you see progress every week), daily async updates via Slack/Loom, and a shared backlog where you always know what\'s in progress. No black boxes, no surprises.'
+  }];
+
 
   return (
-    <section id="faq" className="py-24 bg-[#FAFAFA]">
+    <section ref={ref} id="faq" className="py-16 md:py-24 bg-white/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">
-            Questions Before You <span className="gradient-text">Book a Call</span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.7 }}
+          className="text-center mb-16">
+
+          <span className="bg-[#2F2F2F]/5 text-[#2F2F2F]/60 mb-4 px-4 py-1.5 text-lg font-semibold rounded-full inline-block">FAQ
+
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
+            Common <span className="gradient-text">questions</span>
           </h2>
-        </div>
+          <p className="text-lg text-[#2F2F2F]/80 font-medium">
+            Everything you need to know before getting started.
+          </p>
+        </motion.div>
 
         <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-2xl border border-gray-100 overflow-hidden"
-            >
+          {faqs.map((faq, index) =>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.6,
+              delay: reduceMotion ? 0 : 0.2 + index * 0.1
+            }}>
+
               <button
-                onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
-              >
-                <span className="text-lg font-semibold text-[#1a1a1a]">{faq.question}</span>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${openIndex === index ? 'bg-[#DBFE01] text-[#1a1a1a]' : 'bg-gray-100 text-gray-500'}`}>
-                  {openIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
-                </div>
-              </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                      {faq.answer}
+              onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
+              className={`w-full glass-card rounded-2xl p-6 text-left transition-all duration-300 ${
+              openIndex === index ?
+              'border-[#DBFE01]/30 shadow-lg shadow-black/5' :
+              'hover:border-[#2F2F2F]/10'}`
+              }>
+
+                <div className="flex items-center justify-between gap-4">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                  openIndex === index ? 'bg-[#DBFE01]' : 'bg-[#2F2F2F]/5'}`
+                  }>
+                      <HelpCircle className={`w-5 h-5 ${
+                    openIndex === index ? 'text-[#2F2F2F]' : 'text-[#2F2F2F]/50'}`
+                    } />
                     </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    <h3 className="text-lg font-semibold text-[#2F2F2F]">{faq.question}</h3>
+                  </div>
+                  <ChevronDown className={`w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 ${
+                openIndex === index ? 'rotate-180' : ''}`
+                } />
+                </div>
+                
+                <AnimatePresence>
+                  {openIndex === index &&
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.3 }}
+                  className="overflow-hidden">
+
+                      <p className="text-[#2F2F2F]/80 mt-4 pl-14 leading-relaxed font-medium">
+                        {faq.answer}
+                      </p>
+                    </motion.div>
+                }
+                </AnimatePresence>
+              </button>
             </motion.div>
-          ))}
-        </div>
-        
-        <div className="mt-12 text-center text-gray-500">
-          <p>For persona-specific questions (HIPAA compliance for clinics, ASO for apps, etc.), see your landing page for 4 additional targeted questions tailored to your situation.</p>
+          )}
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }

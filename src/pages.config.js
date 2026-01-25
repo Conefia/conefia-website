@@ -11,11 +11,6 @@ import caseStudyHartalega from './pages/case-study-hartalega';
 import caseStudyLarovie from './pages/case-study-larovie';
 import caseStudyMenovia from './pages/case-study-menovia';
 import caseStudyVascular from './pages/case-study-vascular';
-import ClinicGrowth from './pages/ClinicGrowth';
-import AiFounderSprint from './pages/AiFounderSprint';
-import AppRelaunch from './pages/AppRelaunch';
-import DtcGrowth from './pages/DtcGrowth';
-import AcceleratorSupport from './pages/AcceleratorSupport';
 import __Layout from './Layout.jsx';
 
 
@@ -33,11 +28,6 @@ export const PAGES = {
     "case-study-larovie": caseStudyLarovie,
     "case-study-menovia": caseStudyMenovia,
     "case-study-vascular": caseStudyVascular,
-    "ClinicGrowth": ClinicGrowth,
-    "AiFounderSprint": AiFounderSprint,
-    "AppRelaunch": AppRelaunch,
-    "DtcGrowth": DtcGrowth,
-    "AcceleratorSupport": AcceleratorSupport,
 }
 
 export const pagesConfig = {

@@ -11,12 +11,13 @@ export default function PlaybookSection({ reduceMotion }) {
     number: '01',
     icon: Search,
     title: 'Validate',
-    duration: 'Weeks 1-2',
-    description: 'Audit current state. Scope the opportunity. Map the roadmap.',
+    duration: '2–4 weeks',
+    description: 'De-risk your idea with research and validation before building anything.',
     tasks: [
-    'Clear roadmap (no ambiguity)',
-    'Scoped MVP/launch plan',
-    'Week-by-week timeline (finite, achievable)'],
+    'Discovery workshops & stakeholder alignment',
+    'Competitor analysis & market positioning scan',
+    'Interactive prototype for early user feedback',
+    'Clear MVP scope with success criteria defined'],
 
     gradient: 'from-blue-600 via-indigo-600 to-purple-600',
     bgGradient: 'from-blue-500/20 to-indigo-500/20',
@@ -29,12 +30,13 @@ export default function PlaybookSection({ reduceMotion }) {
     number: '02',
     icon: Code2,
     title: 'Build',
-    duration: 'Weeks 3-8',
-    description: 'High-velocity execution. Weekly demos. Parallel work (product + design + growth).',
+    duration: '6–12 weeks',
+    description: 'Ship a production-ready MVP with all the essentials baked in.',
     tasks: [
-    'Live product (MVP or V2 app)',
-    'Digital presence (website, social, SEO)',
-    'Growth strategy drafted'],
+    'Complete UX/UI design system and brand',
+    'Full-stack development: AI agent / app / web / store',
+    'Critical integrations, APIs & third-party services',
+    'Security, compliance (HIPAA), and analytics setup'],
 
     gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
     bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
@@ -47,13 +49,13 @@ export default function PlaybookSection({ reduceMotion }) {
     number: '03',
     icon: Rocket,
     title: 'Launch',
-    duration: 'Weeks 9-10',
-    description: 'Go live. Measure. Prepare next phase. Public launch with analytics wired in.',
+    duration: '2–4 weeks',
+    description: 'Go live with professional presence across all channels.',
     tasks: [
-    'Live product in market',
-    'Paying customers (or beta users)',
-    'Analytics dashboards showing real data',
-    'Growth momentum starting'],
+    'Complete brand kit, identity & style guide',
+    'Marketing website and conversion-optimized landing pages',
+    'App Store / Google Play / Shopify listing & launch',
+    'Google Business Profile and social media setup'],
 
     gradient: 'from-purple-600 via-pink-600 to-rose-600',
     bgGradient: 'from-purple-500/20 to-pink-500/20',
@@ -65,14 +67,14 @@ export default function PlaybookSection({ reduceMotion }) {
   {
     number: '04',
     icon: TrendingUp,
-    title: 'Scale',
-    duration: 'Weeks 11+',
-    description: 'Growth team embedded. Continuous optimization. You hit your metrics.',
+    title: 'Grow',
+    duration: 'Ongoing',
+    description: 'Scale smart with data-driven experiments and continuous optimization.',
     tasks: [
-    'Predictable growth metrics',
-    'Self-sustaining acquisition funnel',
-    'Team trained on your processes',
-    'Clear path to next milestone'],
+    'Paid advertising (Google, Meta), SEO & content marketing',
+    'CRM automation, email sequences & retention flows',
+    'Analytics instrumentation, dashboards & experimentation',
+    'Continuous iteration roadmap based on user data'],
 
     gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
     bgGradient: 'from-emerald-500/20 to-teal-500/20',
@@ -110,16 +112,28 @@ export default function PlaybookSection({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-20">
 
+          <motion.span className="bg-gradient-to-r text-[#1a1a1a] mb-6 px-4 py-2 text-lg font-semibold rounded-full inline-flex items-center gap-2 from-[#DBFE01]/30 via-purple-500/20 to-cyan-500/20 border-2 border-[#DBFE01]/30"
+
+          animate={reduceMotion ? {} : {
+            boxShadow: [
+            '0 0 20px rgba(219, 254, 1, 0.3)',
+            '0 0 40px rgba(139, 92, 246, 0.3)',
+            '0 0 20px rgba(6, 182, 212, 0.3)',
+            '0 0 20px rgba(219, 254, 1, 0.3)']
+
+          }}
+          transition={{ duration: 4, repeat: Infinity }}>The 4-Phase Playbook
+
+
+
+          </motion.span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            The 4-Phase <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">Playbook</span>
+            From idea to <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">market leader</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed mb-6">
-            Timeline and specific outcomes vary by situation. <br className="hidden md:block" />
-            To see your custom timeline, click your challenge in the "What's Blocking Your Growth?" section above.
+          <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
+            Clear sequencing, reusable components, and strict stage gates — 
+            so you ship faster without cutting corners or compromising quality.
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm font-semibold text-[#1a1a1a]/60">
-             <span>Clinic: 8–12w</span> • <span>AI: 12w</span> • <span>App: 8w</span> • <span>DTC: 6–12w</span> • <span>Accelerator: 12–16w</span>
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

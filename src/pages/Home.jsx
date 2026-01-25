@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import HeroSection from '@/components/landing/HeroSection';
 import SocialProofBar from '@/components/landing/SocialProofBar';
 import BrandCarousel from '@/components/landing/BrandCarousel';
-import PersonaSelector from '@/components/landing/PersonaSelector';
-import SolutionPillars from '@/components/landing/SolutionPillars';
+import ProblemSolution from '@/components/landing/ProblemSolution';
 import PlaybookSection from '@/components/landing/PlaybookSection';
-import OutcomesSection from '@/components/landing/OutcomesSection';
+import CaseStudiesSection from '@/components/landing/CaseStudiesSection';
 import TestimonialSlider from '@/components/landing/TestimonialSlider';
+import HowWeWork from '@/components/landing/HowWeWork';
+import PackagesSection from '@/components/landing/PackagesSection';
 import FAQSection from '@/components/landing/FAQSection';
 import ContactSection from '@/components/landing/ContactSection';
-import Seo from '@/components/Seo';
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
-      <Seo />
       {/* Subtle background texture */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-[0.03]"
@@ -34,11 +33,12 @@ export default function Home() {
         <HeroSection reduceMotion={shouldReduceMotion} />
         <SocialProofBar reduceMotion={shouldReduceMotion} />
         <BrandCarousel />
-        <PersonaSelector />
-        <SolutionPillars />
+        <ProblemSolution reduceMotion={shouldReduceMotion} />
         <PlaybookSection reduceMotion={shouldReduceMotion} />
-        <OutcomesSection />
+        <CaseStudiesSection reduceMotion={shouldReduceMotion} />
         <TestimonialSlider reduceMotion={shouldReduceMotion} />
+        <HowWeWork reduceMotion={shouldReduceMotion} />
+        <PackagesSection reduceMotion={shouldReduceMotion} />
         <FAQSection reduceMotion={shouldReduceMotion} />
         <ContactSection reduceMotion={shouldReduceMotion} />
       </main>
