@@ -259,28 +259,33 @@ export default function HeroSection({ reduceMotion }) {
             animate={isInView ? "visible" : "hidden"}
             className="text-center lg:text-left"
           >
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
-              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-              <span className="text-sm font-semibold text-[#DBFE01]">Your Founder Ops Partner</span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.2] tracking-tight mb-6"
             >
-              Build it.{' '}
-              <span className="text-[#DBFE01]">Launch it.</span>{' '}
-              Grow it.
+              Built for: Clinic Owners • AI Founders • App Founders • DTC Brands • Accelerator Directors
             </motion.h1>
 
-            {/* Subhead */}
+             {/* Subhead H2 */}
+            <motion.h2 
+              variants={itemVariants}
+              className="text-2xl md:text-3xl font-bold text-[#DBFE01] mb-6"
+            >
+              Stop Managing Vendors. Start Executing.
+            </motion.h2>
+
+            {/* Hook Copy */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-lg text-white/90 font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0"
             >
-              Validate, build, and scale your digital venture with one partner. We turn concepts into market-leading AI, mobile apps, and healthcare products—faster, leaner, and all under one roof.
+              If you're a clinic owner juggling 5 vendors... an AI founder racing the clock with prototype in hand... 
+              an app that needs rescue... a DTC brand bleeding CAC... or an accelerator director trying to get 40% of 
+              your cohort to ship—this is your answer.
+              <br /><br />
+              Conefia is one team that owns the entire execution from product validation through launch to growth. 
+              No more coordination tax. No more excuses. One accountable partner.
             </motion.p>
 
             {/* CTAs */}
@@ -289,18 +294,17 @@ export default function HeroSection({ reduceMotion }) {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('problem')}
                 className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2"
               >
-                Book roadmap call
+                Choose Your Challenge
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={() => scrollToSection('playbook')}
                 className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm"
               >
-                <Play className="w-4 h-4" />
-                See playbook
+                View How It Works
               </button>
             </motion.div>
 
