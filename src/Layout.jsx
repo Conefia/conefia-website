@@ -4,10 +4,12 @@ import { createPageUrl } from './utils';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ContourBackground from '@/components/visual/ContourBackground';
+import { PersonaProvider, usePersona } from '@/context/PersonaContext';
 
-export default function Layout({ children, currentPageName }) {
+function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { selectedPersona } = usePersona();
   
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
@@ -145,7 +147,7 @@ export default function Layout({ children, currentPageName }) {
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2"
               >
-                Book roadmap call
+                {selectedPersona.topNavCta || "Book roadmap call"}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -187,7 +189,7 @@ export default function Layout({ children, currentPageName }) {
                   onClick={() => scrollToSection('contact')}
                   className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4"
                 >
-                  Book roadmap call
+                  {selectedPersona.topNavCta || "Book roadmap call"}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -244,5 +246,13 @@ export default function Layout({ children, currentPageName }) {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function Layout(props) {
+  return (
+    <PersonaProvider>
+      <LayoutContent {...props} />
+    </PersonaProvider>
   );
 }

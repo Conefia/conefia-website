@@ -3,8 +3,10 @@ import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
+import { usePersona } from '@/context/PersonaContext';
 
 export default function HeroSection({ reduceMotion }) {
+  const { selectedPersona } = usePersona();
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -292,7 +294,7 @@ export default function HeroSection({ reduceMotion }) {
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2"
               >
-                Book roadmap call
+                {selectedPersona.heroPrimaryCta || "Book roadmap call"}
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
@@ -300,7 +302,7 @@ export default function HeroSection({ reduceMotion }) {
                 className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm"
               >
                 <Play className="w-4 h-4" />
-                See playbook
+                {selectedPersona.heroSecondaryCta || "See playbook"}
               </button>
             </motion.div>
 

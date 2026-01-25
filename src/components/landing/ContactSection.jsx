@@ -5,10 +5,12 @@ import { ArrowRight, Send, CheckCircle2, Clock, Users, Shield, Mail, MessageSqua
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
+import { usePersona } from '@/context/PersonaContext';
 
 export default function ContactSection({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { selectedPersona } = usePersona();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -118,7 +120,7 @@ export default function ContactSection({ reduceMotion }) {
 
                   <div>
                     <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
-                      What are you building?
+                      {selectedPersona.footerFormPrompt || "What are you building?"}
                     </label>
                     <Textarea
                       placeholder="Tell us about your idea or project..."
@@ -133,7 +135,7 @@ export default function ContactSection({ reduceMotion }) {
                     type="submit"
                     className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#2F2F2F] font-semibold text-base transition-all hover:shadow-lg hover:shadow-[#DBFE01]/30"
                   >
-                    Book roadmap call
+                    {selectedPersona.footerFormButton || "Book roadmap call"}
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Search, Code2, Rocket, TrendingUp, CheckCircle2, Star, ArrowRight } from 'lucide-react';
+import { usePersona } from '@/context/PersonaContext';
 
 export default function PackagesSection({ reduceMotion }) {
+  const { selectedPersona } = usePersona();
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const packages = [
@@ -155,7 +157,7 @@ export default function PackagesSection({ reduceMotion }) {
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#2F2F2F] text-white font-semibold hover:bg-[#2F2F2F]/90 transition-all hover:shadow-lg hover:-translate-y-0.5">
 
-            Discuss your project
+            {selectedPersona.packagesCta || "Discuss your project"}
             <ArrowRight className="w-4 h-4" />
           </button>
         </motion.div>
