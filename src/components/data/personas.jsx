@@ -1,3 +1,4 @@
+
 export const PERSONAS = [
   {
     id: 'clinic-growth',
@@ -28,15 +29,15 @@ export const PERSONAS = [
         desc: 'Demos every week with a single backlog and clear priorities.'
       }
     ],
-    topNavCta: 'Book Clinic Growth Call',
-    heroPrimaryCta: 'Get my Clinic Growth Roadmap',
-    heroSecondaryCta: 'See the 12-week plan',
-    packagesCta: 'Explore Clinic Package',
-    footerFormButton: 'Book Clinic Growth Call',
+    topNavCta: 'Book Clinic Call',
+    heroPrimaryCta: 'Get Growth Roadmap',
+    heroSecondaryCta: 'See 12-week plan',
+    packagesCta: 'Explore Package',
+    footerFormButton: 'Book Clinic Call',
     footerFormPrompt: 'Tell us your clinic specialty + location and your #1 growth bottleneck.',
     destination: '/solutions/clinic-growth',
-    primaryCta: 'Get my Clinic Growth Roadmap',
-    secondaryCta: 'See Clinic Package',
+    primaryCta: 'Get Growth Roadmap',
+    secondaryCta: 'See Package',
   },
   {
     id: 'ai-saas-mvp',
@@ -67,15 +68,15 @@ export const PERSONAS = [
         desc: 'Clear milestones and sign-offs so you keep momentum.'
       }
     ],
-    topNavCta: 'Book MVP Roadmap Call',
-    heroPrimaryCta: 'Get my MVP + Pilot Roadmap',
-    heroSecondaryCta: 'See the 12-week sprint',
-    packagesCta: 'Explore MVP Sprint',
-    footerFormButton: 'Book MVP Roadmap Call',
+    topNavCta: 'Book MVP Call',
+    heroPrimaryCta: 'Get MVP Roadmap',
+    heroSecondaryCta: 'See 12-week sprint',
+    packagesCta: 'Explore Sprint',
+    footerFormButton: 'Book MVP Call',
     footerFormPrompt: 'What are you building, who is the buyer, and what’s your target launch date?',
     destination: '/solutions/ai-saas-mvp-sprint',
-    primaryCta: 'Get my MVP + Pilot Roadmap',
-    secondaryCta: 'See MVP Sprint',
+    primaryCta: 'Get MVP Roadmap',
+    secondaryCta: 'See Sprint',
   },
   {
     id: 'app-relaunch',
@@ -107,14 +108,14 @@ export const PERSONAS = [
       }
     ],
     topNavCta: 'Book Relaunch Call',
-    heroPrimaryCta: 'Get my Relaunch Plan',
-    heroSecondaryCta: 'See the 8-week sprint',
-    packagesCta: 'Explore Relaunch Sprint',
+    heroPrimaryCta: 'Get Relaunch Plan',
+    heroSecondaryCta: 'See 8-week sprint',
+    packagesCta: 'Explore Sprint',
     footerFormButton: 'Book Relaunch Call',
     footerFormPrompt: 'Share your app link (store/website) and where users drop off today.',
     destination: '/solutions/app-relaunch-growth',
-    primaryCta: 'Get my Relaunch Plan',
-    secondaryCta: 'See Relaunch Sprint',
+    primaryCta: 'Get Relaunch Plan',
+    secondaryCta: 'See Sprint',
   },
   {
     id: 'dtc-growth',
@@ -145,15 +146,15 @@ export const PERSONAS = [
         desc: 'CAC, contribution margin, LTV, repeat rate — tracked consistently.'
       }
     ],
-    topNavCta: 'Get a DTC Growth Audit',
-    heroPrimaryCta: 'Get my DTC Growth Audit',
-    heroSecondaryCta: 'See the growth system',
-    packagesCta: 'Explore DTC Package',
-    footerFormButton: 'Request DTC Growth Audit',
+    topNavCta: 'Get Growth Audit',
+    heroPrimaryCta: 'Get Growth Audit',
+    heroSecondaryCta: 'See growth system',
+    packagesCta: 'Explore Package',
+    footerFormButton: 'Request Audit',
     footerFormPrompt: 'What do you sell, and what’s the biggest issue: traffic, conversion, or repeat purchases?',
     destination: '/solutions/dtc-growth',
-    primaryCta: 'Get my DTC Growth Audit',
-    secondaryCta: 'See DTC Package',
+    primaryCta: 'Get Growth Audit',
+    secondaryCta: 'See Package',
   },
   {
     id: 'enterprise-innovation',
@@ -184,15 +185,15 @@ export const PERSONAS = [
         desc: 'Analytics + rollout support to prove value quickly.'
       },
     ],
-    topNavCta: 'Discuss Innovation Roadmap',
-    heroPrimaryCta: 'Discuss My Innovation Roadmap',
-    heroSecondaryCta: 'See how we deliver',
-    packagesCta: 'Explore Corporate Program',
-    footerFormButton: 'Request Innovation Consult',
+    topNavCta: 'Discuss Roadmap',
+    heroPrimaryCta: 'Discuss Roadmap',
+    heroSecondaryCta: 'See delivery model',
+    packagesCta: 'Explore Program',
+    footerFormButton: 'Request Consult',
     footerFormPrompt: 'What initiative are you leading, and what constraints (security/timeline) matter most?',
     destination: '/solutions/corporate-innovation',
-    primaryCta: 'Discuss My Innovation Roadmap',
-    secondaryCta: 'See Corporate Program',
+    primaryCta: 'Discuss Roadmap',
+    secondaryCta: 'See Program',
   },
   {
     id: 'accelerator-support',
@@ -223,14 +224,14 @@ export const PERSONAS = [
         desc: 'Dashboards that make outcomes easy to communicate and renew funding.'
       }
     ],
-    topNavCta: 'Get Cohort Support Plan',
-    heroPrimaryCta: 'Get my Cohort Support Plan',
-    heroSecondaryCta: 'See how cohorts ship',
-    packagesCta: 'Explore Accelerator Support',
-    footerFormButton: 'Request Cohort Support Plan',
+    topNavCta: 'Get Cohort Plan',
+    heroPrimaryCta: 'Get Cohort Plan',
+    heroSecondaryCta: 'See cohort model',
+    packagesCta: 'Explore Support',
+    footerFormButton: 'Request Plan',
     footerFormPrompt: 'How many startups per cohort, and what outcomes do you track (MVPs, pilots, funding)?',
     destination: '/solutions/accelerator-support',
-    primaryCta: 'Get my Cohort Support Plan',
-    secondaryCta: 'See Accelerator Program',
+    primaryCta: 'Get Cohort Plan',
+    secondaryCta: 'See Program',
   }
 ];
