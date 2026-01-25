@@ -56,11 +56,13 @@ export default function ContactSection({ reduceMotion }) {
               Get Started
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
-              Ready to <span className="gradient-text">launch</span>?
+              Ready to Stop Managing and <span className="gradient-text">Start Executing?</span>
             </h2>
             <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
-              Book a roadmap call and let's discuss how we can take your idea from concept to market. 
-              No commitment, just a conversation about what's possible.
+              If you recognized your situation above—whether you're a clinic owner, an AI founder, 
+              an app that needs rescue, a DTC brand, or an accelerator director—let's map your specific path.
+              <br /><br />
+              This is a 30-minute diagnostic call. You'll leave with a clear roadmap. If we're not the right fit, that roadmap is yours anyway.
             </p>
 
             {/* Trust indicators */}
@@ -74,6 +76,17 @@ export default function ContactSection({ reduceMotion }) {
                   <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="mb-8 p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <p className="text-sm font-bold text-gray-800 mb-3">Or choose your path directly:</p>
+              <div className="flex flex-wrap gap-2">
+                 <a href="/clinic-growth" className="text-xs bg-white border border-gray-200 px-3 py-2 rounded-lg hover:border-[#DBFE01] hover:text-[#1a1a1a] transition-colors">🏥 Clinic Owner</a>
+                 <a href="/ai-founder-sprint" className="text-xs bg-white border border-gray-200 px-3 py-2 rounded-lg hover:border-[#DBFE01] hover:text-[#1a1a1a] transition-colors">🤖 AI Founder</a>
+                 <a href="/app-relaunch" className="text-xs bg-white border border-gray-200 px-3 py-2 rounded-lg hover:border-[#DBFE01] hover:text-[#1a1a1a] transition-colors">📱 App Founder</a>
+                 <a href="/dtc-growth" className="text-xs bg-white border border-gray-200 px-3 py-2 rounded-lg hover:border-[#DBFE01] hover:text-[#1a1a1a] transition-colors">🛍️ DTC Brand</a>
+                 <a href="/accelerator-support" className="text-xs bg-white border border-gray-200 px-3 py-2 rounded-lg hover:border-[#DBFE01] hover:text-[#1a1a1a] transition-colors">🚀 Accelerator Director</a>
+              </div>
             </div>
 
 
@@ -118,10 +131,10 @@ export default function ContactSection({ reduceMotion }) {
 
                   <div>
                     <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
-                      What are you building?
+                      What are you working on?
                     </label>
                     <Textarea
-                      placeholder="Tell us about your idea or project..."
+                      placeholder="Tell us about your company and main challenge..."
                       value={formData.project}
                       onChange={(e) => setFormData({ ...formData, project: e.target.value })}
                       className="min-h-[120px] rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none"
