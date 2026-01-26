@@ -200,11 +200,10 @@ export default function ProblemSolution({ reduceMotion }) {
                     <Link 
                         to={selectedPersona.destination}
                         onClick={() => handleCtaClick('primary')}
-                        className="group relative px-8 py-4 bg-[#DBFE01] text-[#1a1a1a] rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center transition-all hover:shadow-[0_0_30px_-5px_#DBFE01] hover:translate-y-[-2px] overflow-hidden shadow-lg shadow-[#DBFE01]/20"
+                        className="btn-primary px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center shadow-lg shadow-[#DBFE01]/20"
                     >
-                        <span className="relative z-10">{selectedPersona.primaryCta}</span>
-                        <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
-                        <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        {selectedPersona.primaryCta}
+                        <ArrowRight className="w-4 h-4" />
                     </Link>
                     {selectedPersona.secondaryCta && (
                         <Link 
