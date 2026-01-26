@@ -190,7 +190,7 @@ function LayoutContent({ children, currentPageName }) {
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2"
               >
-                {selectedPersona.topNavCta || "Book roadmap call"}
+                Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
@@ -256,7 +256,7 @@ function LayoutContent({ children, currentPageName }) {
                   onClick={() => scrollToSection('contact')}
                   className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4"
                 >
-                  {selectedPersona.topNavCta || "Book roadmap call"}
+                  Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

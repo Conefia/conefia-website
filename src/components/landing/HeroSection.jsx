@@ -301,7 +301,7 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
                 onClick={() => scrollToSection('track-selector')}
                 className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm">
 
-                Choose your track
+                Choose Your Track
               </button>
             </motion.div>
 
