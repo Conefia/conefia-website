@@ -1,9 +1,3 @@
-import CaseStudyAlMahfza from './pages/CaseStudyAlMahfza';
-import CaseStudyAviya from './pages/CaseStudyAviya';
-import CaseStudyHartalega from './pages/CaseStudyHartalega';
-import CaseStudyLarovie from './pages/CaseStudyLarovie';
-import CaseStudyMenovia from './pages/CaseStudyMenovia';
-import CaseStudyVascular from './pages/CaseStudyVascular';
 import Home from './pages/Home';
 import SolutionsAcceleratorSupport from './pages/SolutionsAcceleratorSupport';
 import SolutionsAiSaasMvpSprint from './pages/SolutionsAiSaasMvpSprint';
@@ -21,12 +15,6 @@ import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
-    "CaseStudyAlMahfza": CaseStudyAlMahfza,
-    "CaseStudyAviya": CaseStudyAviya,
-    "CaseStudyHartalega": CaseStudyHartalega,
-    "CaseStudyLarovie": CaseStudyLarovie,
-    "CaseStudyMenovia": CaseStudyMenovia,
-    "CaseStudyVascular": CaseStudyVascular,
     "Home": Home,
     "SolutionsAcceleratorSupport": SolutionsAcceleratorSupport,
     "SolutionsAiSaasMvpSprint": SolutionsAiSaasMvpSprint,
