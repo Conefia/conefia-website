@@ -10,15 +10,15 @@ export default function AccelerateProcessVisual() {
       subtitle: "Idea to Blueprint",
       duration: "2–4 weeks",
       icon: Lightbulb,
-      description: "Market research, prototyping, and technical strategy."
+      description: "Market + competitor research, rapid prototyping, and a scoped roadmap you can actually ship."
     },
     {
       id: 2,
       title: "Build",
-      subtitle: "High-Velocity Dev",
+      subtitle: "MVP Development Sprint",
       duration: "6–12 weeks",
       icon: Code2,
-      description: "Rapid MVP development with scalable architecture."
+      description: "Rapid MVP design and development with scalable architecture."
     },
     {
       id: 3,
@@ -26,7 +26,7 @@ export default function AccelerateProcessVisual() {
       subtitle: "Go-to-Market",
       duration: "Market Ready",
       icon: Rocket,
-      description: "Deployment, QA, and initial user acquisition."
+      description: "Go live with conversion-ready landing pages, onboarding, tracking, and social media presence."
     },
     {
       id: 4,
@@ -34,7 +34,7 @@ export default function AccelerateProcessVisual() {
       subtitle: "Growth Engine",
       duration: "Ongoing",
       icon: TrendingUp,
-      description: "Data-driven iteration and feature expansion.",
+      description: "Run CRO + SEO + paid ads, retention improvements, and a data-driven insights to scale traction.",
       highlight: true
     }
   ];
