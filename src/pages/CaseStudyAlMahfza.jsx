@@ -37,7 +37,7 @@ export default function CaseStudyAlMahfza() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Al-Mahfza' }]} />
+          <Breadcrumbs items={[{ label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' }, { label: 'Al-Mahfza' }]} />
 
           <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-6">
             Build

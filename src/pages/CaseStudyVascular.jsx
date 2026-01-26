@@ -37,7 +37,7 @@ export default function CaseStudyVascular() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Vascular Institute' }]} />
+          <Breadcrumbs items={[{ label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' }, { label: 'Vascular Institute' }]} />
 
           <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
             Growth

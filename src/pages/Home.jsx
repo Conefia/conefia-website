@@ -16,6 +16,18 @@ import ContactSection from '@/components/landing/ContactSection';
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
       {/* Subtle background texture */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from './utils';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,6 +10,7 @@ function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { selectedPersona } = usePersona();
+  const navigate = useNavigate();
   
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
@@ -26,9 +27,15 @@ function LayoutContent({ children, currentPageName }) {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home with hash
+      navigate('/#' + id);
+      // Fallback if navigate doesn't handle hash scroll immediately (handled by Home component)
     }
     setMobileMenuOpen(false);
   };

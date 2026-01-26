@@ -37,7 +37,7 @@ export default function CaseStudyAviya() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Aviya Telemed' }]} />
+          <Breadcrumbs items={[{ label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' }, { label: 'Aviya Telemed' }]} />
 
           <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6">
             Build
