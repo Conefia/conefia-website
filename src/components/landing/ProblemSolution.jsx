@@ -18,8 +18,24 @@ export default function ProblemSolution({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { selectedPersona, selectedPersonaId, setSelectedPersonaId } = usePersona();
 
-  const handlePersonaSelect = (id) => {
+  React.useEffect(() => {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#track=')) {
+      const trackId = hash.replace('#track=', '');
+      const personaExists = PERSONAS.find(p => p.id === trackId);
+      if (personaExists) {
+        setSelectedPersonaId(trackId);
+      }
+    }
+  }, [setSelectedPersonaId]);
+
+  const handlePersonaClick = (e, id) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+    
+    e.preventDefault();
     setSelectedPersonaId(id);
+    window.history.replaceState(null, null, `#track=${id}`);
+    
     base44.analytics.track({
       eventName: "persona_select",
       properties: { persona: id }
@@ -68,17 +84,18 @@ export default function ProblemSolution({ reduceMotion }) {
           className="flex flex-wrap justify-center gap-2 mb-16"
         >
           {PERSONAS.map((persona) => (
-            <button
+            <a
               key={persona.id}
-              onClick={() => handlePersonaSelect(persona.id)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+              href={persona.destination}
+              onClick={(e) => handlePersonaClick(e, persona.id)}
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
                 selectedPersonaId === persona.id 
                   ? 'bg-[#1a1a1a] text-white border-[#1a1a1a] shadow-lg scale-105' 
                   : 'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#1a1a1a]/30 hover:bg-gray-50'
               }`}
             >
               {persona.label}
-            </button>
+            </a>
           ))}
         </motion.div>
 
