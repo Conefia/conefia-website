@@ -18,7 +18,7 @@ export default function SocialProofBar({ reduceMotion }) {
         
         {/* Micro-line */}
         <motion.div 
-          key={`micro-${selectedPersona.id}`}
+          key={`micro-${selectedPersona?.id}`}
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.5 }}
@@ -30,54 +30,57 @@ export default function SocialProofBar({ reduceMotion }) {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={`${selectedPersona.id}-${index}`}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ 
-                duration: reduceMotion ? 0 : 0.6, 
-                delay: reduceMotion ? 0 : index * 0.12,
-                ease: [0.25, 0.46, 0.45, 0.94]
-              }}
-              className="text-center group"
-            >
-              <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${metric.bgColor} mb-6 transition-all duration-300 border ${metric.borderColor} group-hover:scale-110`}>
-                {!reduceMotion && (
-                  <motion.div 
-                    className="absolute inset-0 rounded-2xl"
-                    style={{ backgroundColor: metric.ringColor }}
-                    initial={{ opacity: 0, scale: 1 }}
-                    animate={{ 
-                      scale: [1, 1.5],
-                      opacity: [0.3, 0]
-                    }}
-                    transition={{ 
-                      duration: 4,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: index * 0.8
-                    }}
-                  />
-                )}
-                {metric.icon && <metric.icon className={`w-7 h-7 ${metric.color} relative z-10`} strokeWidth={1.5} />}
-              </div>
-              <motion.p 
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
-                transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 + index * 0.12 }}
-                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] mb-2 tracking-tight"
+          {metrics.map((metric, index) => {
+            const Icon = metric.icon;
+            return (
+              <motion.div
+                key={`${selectedPersona?.id}-${index}`}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                transition={{ 
+                  duration: reduceMotion ? 0 : 0.6, 
+                  delay: reduceMotion ? 0 : index * 0.12,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                className="text-center group"
               >
-                {metric.value}
-              </motion.p>
-              <p className="text-sm font-bold text-[#1a1a1a] mb-1">
-                {metric.label}
-              </p>
-              <p className="text-xs text-[#1a1a1a]/70 font-semibold">
-                {metric.subtext}
-              </p>
-            </motion.div>
-          ))}
+                <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${metric.bgColor} mb-6 transition-all duration-300 border ${metric.borderColor} group-hover:scale-110`}>
+                  {!reduceMotion && (
+                    <motion.div 
+                      className="absolute inset-0 rounded-2xl"
+                      style={{ backgroundColor: metric.ringColor }}
+                      initial={{ opacity: 0, scale: 1 }}
+                      animate={{ 
+                        scale: [1, 1.5],
+                        opacity: [0.3, 0]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: index * 0.8
+                      }}
+                    />
+                  )}
+                  {Icon && <Icon className={`w-7 h-7 ${metric.color} relative z-10`} strokeWidth={1.5} />}
+                </div>
+                <motion.p 
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
+                  transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 + index * 0.12 }}
+                  className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] mb-2 tracking-tight"
+                >
+                  {metric.value}
+                </motion.p>
+                <p className="text-sm font-bold text-[#1a1a1a] mb-1">
+                  {metric.label}
+                </p>
+                <p className="text-xs text-[#1a1a1a]/70 font-semibold">
+                  {metric.subtext}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
