@@ -74,7 +74,7 @@ export default function SeoLandingPage({ content }) {
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
           <div className="mb-8">
-            <Breadcrumbs items={[{ label: 'Solutions', path: null }, { label: hero.title }]} />
+            <Breadcrumbs items={[{ label: 'Solutions', path: null }, { label: hero.title }]} theme="dark" />
           </div>
           <div className="max-w-4xl mx-auto text-center">
             <motion.div 
