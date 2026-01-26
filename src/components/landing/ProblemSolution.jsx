@@ -1,16 +1,16 @@
 import React from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { X, Check, ArrowRight, Users, Target, Layers, BarChart3, Sparkles } from 'lucide-react';
+import { X, Check, ArrowRight, Sparkles, HelpCircle } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
 import { PERSONAS } from '@/components/data/personas';
 import { usePersona } from '@/components/context/PersonaContext';
 
-const SOLUTION_ICONS = [
-  { icon: Users, gradient: 'from-violet-500 via-purple-500 to-fuchsia-500', iconBg: 'from-violet-400 to-purple-500', glow: 'shadow-violet-500/50' },
-  { icon: Target, gradient: 'from-blue-500 via-cyan-500 to-teal-500', iconBg: 'from-blue-400 to-cyan-500', glow: 'shadow-cyan-500/50' },
-  { icon: Layers, gradient: 'from-emerald-500 via-green-500 to-lime-500', iconBg: 'from-emerald-400 to-green-500', glow: 'shadow-emerald-500/50' },
-  { icon: BarChart3, gradient: 'from-orange-500 via-amber-500 to-yellow-400', iconBg: 'from-orange-400 to-yellow-500', glow: 'shadow-amber-500/50' }
+const SOLUTION_STYLES = [
+  { gradient: 'from-violet-500 via-purple-500 to-fuchsia-500', iconBg: 'from-violet-400 to-purple-500', glow: 'shadow-violet-500/50' },
+  { gradient: 'from-blue-500 via-cyan-500 to-teal-500', iconBg: 'from-blue-400 to-cyan-500', glow: 'shadow-cyan-500/50' },
+  { gradient: 'from-emerald-500 via-green-500 to-lime-500', iconBg: 'from-emerald-400 to-green-500', glow: 'shadow-emerald-500/50' },
+  { gradient: 'from-orange-500 via-amber-500 to-yellow-400', iconBg: 'from-orange-400 to-yellow-500', glow: 'shadow-amber-500/50' }
 ];
 
 export default function ProblemSolution({ reduceMotion }) {
@@ -152,8 +152,8 @@ export default function ProblemSolution({ reduceMotion }) {
 
                 <div className="grid grid-cols-2 gap-4">
                   {selectedPersona.solutions.map((solution, index) => {
-                    const iconData = SOLUTION_ICONS[index % SOLUTION_ICONS.length];
-                    const Icon = iconData.icon;
+                    const styleData = SOLUTION_STYLES[index % SOLUTION_STYLES.length];
+                    const Icon = solution.icon || HelpCircle;
                     return (
                       <motion.div
                         key={index}
@@ -162,10 +162,10 @@ export default function ProblemSolution({ reduceMotion }) {
                         transition={{ delay: 0.2 + index * 0.05 }}
                         className="group relative"
                       >
-                        <div className={`absolute inset-0 bg-gradient-to-br ${iconData.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${styleData.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                         
                         <div className="relative p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 group-hover:border-gray-200 group-hover:shadow-lg transition-all duration-300 h-full">
-                          <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${iconData.iconBg} flex items-center justify-center mb-3 shadow-md ${iconData.glow}`}>
+                          <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${styleData.iconBg} flex items-center justify-center mb-3 shadow-md ${styleData.glow}`}>
                             <Icon className="w-5 h-5 text-white" />
                           </div>
                           

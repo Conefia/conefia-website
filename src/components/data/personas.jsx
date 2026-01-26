@@ -1,3 +1,12 @@
+import { 
+  Workflow, MapPin, Phone, Calendar, 
+  ShieldCheck, Brain, Rocket, Flag,
+  RefreshCw, Smartphone, Download, LineChart,
+  ShoppingBag, FlaskConical, Mail, BadgeDollarSign,
+  Lock, FileCheck, Users, Gauge,
+  Layout, Code2, Presentation, PieChart
+} from 'lucide-react';
+
 export const PERSONAS = [
   {
     id: 'clinic-growth',
@@ -14,19 +23,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'Patient journey upgrades',
-        desc: 'Portal + intake + website improvements that reduce friction and improve conversion.'
+        desc: 'Portal + intake + website improvements that reduce friction and improve conversion.',
+        icon: Workflow
       },
       {
         title: 'Local visibility + trust',
-        desc: 'Google Business Profile, local SEO, and reviews workflow to drive qualified demand.'
+        desc: 'Google Business Profile, local SEO, and reviews workflow to drive qualified demand.',
+        icon: MapPin
       },
       {
         title: 'Tracking that matters',
-        desc: 'Call/form/booking tracking with a simple dashboard your team actually uses.'
+        desc: 'Call/form/booking tracking with a simple dashboard your team actually uses.',
+        icon: Phone
       },
       {
         title: 'Weekly delivery cadence',
-        desc: 'Weekly demos, clear priorities, and one accountable team end-to-end.'
+        desc: 'Weekly demos, clear priorities, and one accountable team end-to-end.',
+        icon: Calendar
       }
     ],
     topNavCta: 'Book Clinic Call',
@@ -54,19 +67,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'MVP scope you can defend',
-        desc: 'Clear “must-have” scope + success metrics tied to real user value.'
+        desc: 'Clear “must-have” scope + success metrics tied to real user value.',
+        icon: ShieldCheck
       },
       {
         title: 'AI architecture done right',
-        desc: 'Practical LLM/agent design (RAG, evals, monitoring) that won’t create rework later.'
+        desc: 'Practical LLM/agent design (RAG, evals, monitoring) that won’t create rework later.',
+        icon: Brain
       },
       {
         title: 'Launch system included',
-        desc: 'Positioning + landing page + onboarding + analytics so pilots have somewhere to land.'
+        desc: 'Positioning + landing page + onboarding + analytics so pilots have somewhere to land.',
+        icon: Rocket
       },
       {
         title: 'Weekly demos + stage gates',
-        desc: 'Visible progress, clean milestones, and sign-offs that keep momentum.'
+        desc: 'Visible progress, clean milestones, and sign-offs that keep momentum.',
+        icon: Flag
       }
     ],
     topNavCta: 'Book MVP Call',
@@ -94,19 +111,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'Retention-led product fixes',
-        desc: 'Prioritize changes that improve activation and repeat usage.'
+        desc: 'Prioritize changes that improve activation and repeat usage.',
+        icon: RefreshCw
       },
       {
         title: 'UX refresh + performance',
-        desc: 'Clean up friction, speed, and quality to lift ratings.'
+        desc: 'Clean up friction, speed, and quality to lift ratings.',
+        icon: Smartphone
       },
       {
         title: 'ASO + store assets',
-        desc: 'Keywords, screenshots, and review strategy to grow organic installs.'
+        desc: 'Keywords, screenshots, and review strategy to grow organic installs.',
+        icon: Download
       },
       {
         title: 'Analytics you can act on',
-        desc: 'Funnels + cohorts (D1/D7/D30) so you know what’s working.'
+        desc: 'Funnels + cohorts (D1/D7/D30) so you know what’s working.',
+        icon: LineChart
       }
     ],
     topNavCta: 'Book Relaunch Call',
@@ -134,19 +155,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'Shopify CRO roadmap + weekly tests',
-        desc: 'Fix friction, improve PDP/checkout, and lift conversion rate.'
+        desc: 'Fix friction, improve PDP/checkout, and lift conversion rate.',
+        icon: ShoppingBag
       },
       {
         title: 'Paid testing system',
-        desc: 'Creative + audience experiments tied to clear hypotheses (not random tweaks).'
+        desc: 'Creative + audience experiments tied to clear hypotheses (not random tweaks).',
+        icon: FlaskConical
       },
       {
         title: 'Retention flows that sell',
-        desc: 'Email/SMS lifecycle: welcome, abandon, post-purchase, winback.'
+        desc: 'Email/SMS lifecycle: welcome, abandon, post-purchase, winback.',
+        icon: Mail
       },
       {
         title: 'Profit-first reporting',
-        desc: 'CAC, margin, LTV, repeat rate — tracked consistently.'
+        desc: 'CAC, margin, LTV, repeat rate — tracked consistently.',
+        icon: BadgeDollarSign
       }
     ],
     topNavCta: 'Get Growth Audit',
@@ -174,19 +199,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'Compliance-aware delivery',
-        desc: 'Security/privacy considered early — no last-minute rewrites.'
+        desc: 'Security/privacy considered early — no last-minute rewrites.',
+        icon: Lock
       },
       {
         title: 'Stage gates + audit trail',
-        desc: 'Clear checkpoints, documentation, and sign-offs.'
+        desc: 'Clear checkpoints, documentation, and sign-offs.',
+        icon: FileCheck
       },
       {
         title: 'End-to-end ownership',
-        desc: 'Product + engineering + launch enablement with one partner.'
+        desc: 'Product + engineering + launch enablement with one partner.',
+        icon: Users
       },
       {
         title: 'Measurement and adoption',
-        desc: 'Analytics + rollout support to prove value quickly.'
+        desc: 'Analytics + rollout support to prove value quickly.',
+        icon: Gauge
       },
     ],
     topNavCta: 'Discuss Roadmap',
@@ -214,19 +243,23 @@ export const PERSONAS = [
     solutions: [
       {
         title: 'Cohort execution system',
-        desc: 'Templates + cadence so every team knows what “good” looks like.'
+        desc: 'Templates + cadence so every team knows what “good” looks like.',
+        icon: Layout
       },
       {
         title: 'MVP build squads',
-        desc: 'Product + engineering support for founders who need delivery help.'
+        desc: 'Product + engineering support for founders who need delivery help.',
+        icon: Code2
       },
       {
         title: 'Demo Day readiness',
-        desc: 'Product polish, onboarding, landing page, and metrics story.'
+        desc: 'Product polish, onboarding, landing page, and metrics story.',
+        icon: Presentation
       },
       {
         title: 'Sponsor-friendly reporting',
-        desc: 'Dashboards that make outcomes easy to communicate and renew funding.'
+        desc: 'Dashboards that make outcomes easy to communicate and renew funding.',
+        icon: PieChart
       }
     ],
     topNavCta: 'Get Cohort Plan',
