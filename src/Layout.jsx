@@ -218,7 +218,30 @@ function LayoutContent({ children, currentPageName }) {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden bg-gradient-to-b from-[#121829] to-[#0B1020] border-t border-white/10 overflow-hidden relative"
             >
-              <div className="px-4 py-6 space-y-4">
+              <div className="px-4 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
+                 {/* Solutions (Mobile) */}
+                 <div className="pb-4 border-b border-white/10">
+                    <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Solutions</p>
+                    {solutionItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={createPageUrl(item.path)}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                 </div>
+
+                 {/* Choose your track */}
+                 <button
+                    onClick={() => scrollToSection('track-selector')}
+                    className="block w-full text-left text-[#DBFE01] text-lg font-bold py-2"
+                  >
+                    Choose your track
+                  </button>
+
                 {navItems.map((item) => (
                   <button
                     key={item.id}
