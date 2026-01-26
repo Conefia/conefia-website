@@ -8,6 +8,7 @@ import {
   Activity, Play
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
