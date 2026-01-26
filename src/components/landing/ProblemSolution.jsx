@@ -53,10 +53,10 @@ export default function ProblemSolution({ reduceMotion }) {
             Choose your track
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            What are you building?
+            What are you building right now?
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto">
-            Pick the closest match — we’ll show your biggest bottleneck and the plan we recommend.
+            Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
           </p>
         </motion.div>
 
