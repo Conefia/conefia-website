@@ -7,9 +7,13 @@ export default function SocialProofBar({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { selectedPersona } = usePersona();
 
-  // Fallback metrics if not found (shouldn't happen given the data update)
-  const metrics = selectedPersona?.metrics || [];
-  const microLine = selectedPersona?.microLine || "Outcomes when execution is owned end-to-end.";
+  // Safety check to prevent errors if context is not ready
+  if (!selectedPersona) {
+    return null;
+  }
+
+  const metrics = selectedPersona.metrics || [];
+  const microLine = selectedPersona.microLine || "Outcomes when execution is owned end-to-end.";
 
   return (
     <section ref={ref} className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10 transition-colors duration-500">
@@ -18,7 +22,7 @@ export default function SocialProofBar({ reduceMotion }) {
         
         {/* Micro-line */}
         <motion.div 
-          key={`micro-${selectedPersona?.id}`}
+          key={`micro-${selectedPersona.id}`}
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ duration: 0.5 }}
@@ -34,7 +38,7 @@ export default function SocialProofBar({ reduceMotion }) {
             const Icon = metric.icon;
             return (
               <motion.div
-                key={`${selectedPersona?.id}-${index}`}
+                key={`${selectedPersona.id}-${index}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                 transition={{ 
