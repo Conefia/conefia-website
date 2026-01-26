@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { X, Check, ArrowRight, Sparkles, HelpCircle } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { Link } from 'react-router-dom';
+import { createPageUrl } from '../../utils';
 import { PERSONAS } from '@/components/data/personas';
 import { usePersona } from '@/components/context/PersonaContext';
 
@@ -86,7 +87,7 @@ export default function ProblemSolution({ reduceMotion }) {
           {PERSONAS.map((persona) => (
             <a
               key={persona.id}
-              href={persona.destination}
+              href={createPageUrl(persona.destination)}
               onClick={(e) => handlePersonaClick(e, persona.id)}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
                 selectedPersonaId === persona.id 
@@ -198,7 +199,7 @@ export default function ProblemSolution({ reduceMotion }) {
                 {/* CTAs */}
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
                     <Link 
-                        to={selectedPersona.destination}
+                        to={createPageUrl(selectedPersona.destination)}
                         onClick={() => handleCtaClick('primary')}
                         className="btn-primary px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center shadow-lg shadow-[#DBFE01]/20"
                     >
@@ -207,7 +208,7 @@ export default function ProblemSolution({ reduceMotion }) {
                     </Link>
                     {selectedPersona.secondaryCta && (
                         <Link 
-                            to={selectedPersona.destination}
+                            to={createPageUrl(selectedPersona.destination)}
                             onClick={() => handleCtaClick('secondary')}
                             className="px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center border border-gray-200 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
                         >
