@@ -1,3 +1,4 @@
+// ... keep existing code (imports) ...
 import Home from './pages/Home';
 import SolutionsAcceleratorSupport from './pages/SolutionsAcceleratorSupport';
 import SolutionsAiSaasMvpSprint from './pages/SolutionsAiSaasMvpSprint';
@@ -15,6 +16,7 @@ import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
+
     "Home": Home,
     "SolutionsAcceleratorSupport": SolutionsAcceleratorSupport,
     "SolutionsAiSaasMvpSprint": SolutionsAiSaasMvpSprint,

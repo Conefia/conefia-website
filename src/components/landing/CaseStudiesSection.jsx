@@ -43,12 +43,12 @@ export default function CaseStudiesSection({ reduceMotion }) {
   }, [emblaApi, onSelect]);
 
   const caseStudyPages = {
-    'vascular-institute': 'CaseStudyVascular',
-    'menovia': 'CaseStudyMenovia',
-    'larovie': 'CaseStudyLarovie',
-    'al-mahfza': 'CaseStudyAlMahfza',
-    'hartalega': 'CaseStudyHartalega',
-    'aviya': 'CaseStudyAviya'
+    'vascular-institute': 'case-study-vascular',
+    'menovia': 'case-study-menovia',
+    'larovie': 'case-study-larovie',
+    'al-mahfza': 'case-study-al-mahfza',
+    'hartalega': 'case-study-hartalega',
+    'aviya': 'case-study-aviya'
   };
 
   const caseStudies = [
