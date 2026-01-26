@@ -48,12 +48,12 @@ function LayoutContent({ children, currentPageName }) {
   ];
 
   const solutionItems = [
-    { label: 'Clinic Growth', path: 'solutions/clinic-growth' },
-    { label: 'AI SaaS MVP Sprint', path: 'solutions/ai-saas-mvp-sprint' },
-    { label: 'App Relaunch & Growth', path: 'solutions/app-relaunch' },
-    { label: 'DTC Growth (Shopify CRO)', path: 'solutions/dtc-growth' },
-    { label: 'Enterprise Innovation', path: 'solutions/enterprise-innovation' },
-    { label: 'Accelerator Support', path: 'solutions/accelerator-support' },
+    { label: 'Clinic Growth', path: 'solutions-clinic-growth' },
+    { label: 'AI SaaS MVP Sprint', path: 'solutions-ai-saas-mvp-sprint' },
+    { label: 'App Relaunch & Growth', path: 'solutions-app-relaunch' },
+    { label: 'DTC Growth (Shopify CRO)', path: 'solutions-dtc-growth' },
+    { label: 'Enterprise Innovation', path: 'solutions-enterprise-innovation' },
+    { label: 'Accelerator Support', path: 'solutions-accelerator-support' },
   ];
 
   return (
