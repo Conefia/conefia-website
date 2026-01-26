@@ -54,9 +54,9 @@ export default function ProblemSolution({ reduceMotion }) {
   };
 
   return (
-    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden bg-gray-50/50">
+    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden bg-[#F4F4F5]">
       {/* Background accent */}
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-[#1a1a1a]/[0.02] to-transparent" />
+      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white to-transparent opacity-50" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -110,11 +110,11 @@ export default function ProblemSolution({ reduceMotion }) {
           >
             {/* Problem */}
             <div className="relative">
-              <div className="glass-card rounded-3xl p-8 md:p-10 h-full border-red-200/50 bg-red-50/30 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-100/50 to-transparent opacity-50" />
+              <div className="bg-white rounded-3xl p-8 md:p-10 h-full border border-red-100 shadow-xl shadow-red-900/5 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-50/50 to-transparent opacity-30" />
                 
                 <div className="relative">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 text-sm font-semibold mb-6 border border-red-200">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-50 text-red-600 text-sm font-bold mb-6 border border-red-100 shadow-sm">
                     <X className="w-4 h-4" />
                     The Problem
                   </div>
@@ -144,16 +144,15 @@ export default function ProblemSolution({ reduceMotion }) {
             {/* Solution */}
             <div className="relative">
                {/* Animated gradient glow background */}
-               <div className="absolute inset-0 opacity-20 blur-3xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-600 via-pink-600 to-blue-600" />
+               <div className="absolute inset-0 opacity-15 blur-3xl bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#DBFE01] via-emerald-400 to-cyan-400" />
 
-              <div className="relative glass-card rounded-3xl p-8 md:p-10 h-full border-2 border-transparent bg-gradient-to-br from-white via-white to-[#DBFE01]/5 overflow-hidden">
-                <div className="absolute inset-0 rounded-3xl p-[2px] bg-gradient-to-r from-violet-500 via-cyan-500 to-emerald-500 opacity-20" />
+              <div className="relative bg-white rounded-3xl p-8 md:p-10 h-full border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 overflow-hidden ring-1 ring-[#DBFE01]/20">
                 
                 <div className="absolute top-4 right-4">
                   <Sparkles className="w-6 h-6 text-[#DBFE01]" />
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#DBFE01]/30 to-[#DBFE01]/10 text-[#1a1a1a] text-sm font-semibold mb-6 border-2 border-[#DBFE01]/40">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 text-[#1a1a1a] text-sm font-bold mb-6 border border-[#DBFE01]/30 shadow-sm">
                   <Check className="w-4 h-4" />
                   The Solution
                 </div>
@@ -197,20 +196,21 @@ export default function ProblemSolution({ reduceMotion }) {
                 </div>
                 
                 {/* CTAs */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <div className="mt-10 flex flex-col sm:flex-row gap-4">
                     <Link 
                         to={selectedPersona.destination}
                         onClick={() => handleCtaClick('primary')}
-                        className="btn-primary px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center"
+                        className="group relative px-8 py-4 bg-[#DBFE01] text-[#1a1a1a] rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center transition-all hover:shadow-[0_0_30px_-5px_#DBFE01] hover:translate-y-[-2px] overflow-hidden shadow-lg shadow-[#DBFE01]/20"
                     >
-                        {selectedPersona.primaryCta}
-                        <ArrowRight className="w-4 h-4" />
+                        <span className="relative z-10">{selectedPersona.primaryCta}</span>
+                        <ArrowRight className="w-4 h-4 relative z-10 transition-transform group-hover:translate-x-1" />
+                        <div className="absolute inset-0 bg-white/40 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </Link>
                     {selectedPersona.secondaryCta && (
                         <Link 
                             to={selectedPersona.destination}
                             onClick={() => handleCtaClick('secondary')}
-                            className="btn-secondary px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center"
+                            className="px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center border border-gray-200 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
                         >
                             {selectedPersona.secondaryCta}
                         </Link>
