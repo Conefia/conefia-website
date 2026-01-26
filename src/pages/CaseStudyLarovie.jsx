@@ -37,7 +37,7 @@ export default function CaseStudyLarovie() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Larovie Beauty' }]} />
+          <Breadcrumbs items={[{ label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' }, { label: 'Larovie Beauty' }]} />
 
           <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-red-500 text-white text-sm font-bold mb-6">
             Idea → Growth
