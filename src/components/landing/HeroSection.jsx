@@ -314,7 +314,8 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
               {[
               { label: 'Typical MVP', value: '8–12 weeks' },
               { label: 'Weekly demos', value: 'Guaranteed' },
-              { label: 'Privacy-first', value: 'HIPAA-aware' }].
+              { label: 'Privacy-first', value: 'HIPAA-aware' },
+              { label: 'One backlog', value: 'One owner' }].
               map((item, i) =>
               <div key={i} className="text-center lg:text-left">
                   <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">{item.label}</p>
