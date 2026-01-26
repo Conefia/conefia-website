@@ -1,62 +1,38 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Timer, Rocket, Users, ShieldCheck } from 'lucide-react';
+import { usePersona } from '@/components/context/PersonaContext';
 
 export default function SocialProofBar({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { selectedPersona } = usePersona();
 
-  const metrics = [
-    { 
-      icon: Timer, 
-      value: '30-50%', 
-      label: 'Faster time-to-market', 
-      subtext: 'vs. fragmented vendors',
-      color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
-      borderColor: 'border-blue-100',
-      ringColor: '#2563eb'
-    },
-    { 
-      icon: Rocket, 
-      value: '8-12', 
-      label: 'Weeks to MVP', 
-      subtext: 'Full product launch',
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
-      borderColor: 'border-purple-100',
-      ringColor: '#9333ea'
-    },
-    { 
-      icon: Users, 
-      value: '100-500', 
-      label: 'Users in 30-60 days', 
-      subtext: 'Post-launch traction',
-      color: 'text-emerald-600',
-      bgColor: 'bg-emerald-50',
-      borderColor: 'border-emerald-100',
-      ringColor: '#059669'
-    },
-    { 
-      icon: ShieldCheck, 
-      value: '100%', 
-      label: 'HIPAA-aware flows', 
-      subtext: 'Privacy by design',
-      color: 'text-rose-600',
-      bgColor: 'bg-rose-50',
-      borderColor: 'border-rose-100',
-      ringColor: '#e11d48'
-    },
-  ];
+  // Fallback metrics if not found (shouldn't happen given the data update)
+  const metrics = selectedPersona?.metrics || [];
+  const microLine = selectedPersona?.microLine || "Outcomes when execution is owned end-to-end.";
 
   return (
-    <section ref={ref} className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10">
+    <section ref={ref} className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10 transition-colors duration-500">
       <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15] pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Micro-line */}
+        <motion.div 
+          key={`micro-${selectedPersona.id}`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+           <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto italic">
+             "{microLine}"
+           </p>
+        </motion.div>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           {metrics.map((metric, index) => (
             <motion.div
-              key={index}
+              key={`${selectedPersona.id}-${index}`}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ 
@@ -84,13 +60,13 @@ export default function SocialProofBar({ reduceMotion }) {
                     }}
                   />
                 )}
-                <metric.icon className={`w-7 h-7 ${metric.color} relative z-10`} strokeWidth={1.5} />
+                {metric.icon && <metric.icon className={`w-7 h-7 ${metric.color} relative z-10`} strokeWidth={1.5} />}
               </div>
               <motion.p 
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
                 transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 + index * 0.12 }}
-                className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2"
+                className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] mb-2 tracking-tight"
               >
                 {metric.value}
               </motion.p>

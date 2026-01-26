@@ -45,9 +45,9 @@ export default function Home() {
       <main className="relative">
         <Seo canonical="/" />
         <HeroSection reduceMotion={shouldReduceMotion} />
-        <SocialProofBar reduceMotion={shouldReduceMotion} />
         <BrandCarousel />
         <ProblemSolution reduceMotion={shouldReduceMotion} />
+        <SocialProofBar reduceMotion={shouldReduceMotion} />
         <PlaybookSection reduceMotion={shouldReduceMotion} />
         <CaseStudiesSection reduceMotion={shouldReduceMotion} />
         <TestimonialSlider reduceMotion={shouldReduceMotion} />

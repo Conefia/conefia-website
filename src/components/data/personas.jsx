@@ -4,7 +4,8 @@ import {
   RefreshCw, Smartphone, Download, LineChart,
   ShoppingBag, FlaskConical, Mail, BadgeDollarSign,
   Lock, FileCheck, Users, Gauge,
-  Layout, Code2, Presentation, PieChart
+  Layout, Code2, Presentation, PieChart,
+  Timer, TrendingUp
 } from 'lucide-react';
 
 export const PERSONAS = [
@@ -51,6 +52,49 @@ export const PERSONAS = [
     destination: 'solutions-clinic-growth',
     primaryCta: 'Get my Clinic Growth Roadmap',
     secondaryCta: 'See Clinic Package',
+    microLine: "Outcomes when the digital patient journey is redesigned for conversion.",
+    metrics: [
+      {
+        value: '+20–50%',
+        label: 'Booked appointments uplift',
+        subtext: 'Reduced friction across intake, portal, and booking.',
+        icon: Calendar,
+        color: 'text-blue-600',
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-100',
+        ringColor: '#2563eb'
+      },
+      {
+        value: '2–4 weeks',
+        label: 'Faster execution cycles',
+        subtext: 'One accountable team. Weekly shipping. No vendor lag.',
+        icon: Timer,
+        color: 'text-purple-600',
+        bgColor: 'bg-purple-50',
+        borderColor: 'border-purple-100',
+        ringColor: '#9333ea'
+      },
+      {
+        value: '+30–60%',
+        label: 'Qualified inquiries increase',
+        subtext: 'Local visibility + reviews + trust signals that convert.',
+        icon: Users,
+        color: 'text-emerald-600',
+        bgColor: 'bg-emerald-50',
+        borderColor: 'border-emerald-100',
+        ringColor: '#059669'
+      },
+      {
+        value: 'HIPAA-aware',
+        label: 'Privacy-first delivery',
+        subtext: 'Tracking and workflows designed with compliance in mind.',
+        icon: ShieldCheck,
+        color: 'text-rose-600',
+        bgColor: 'bg-rose-50',
+        borderColor: 'border-rose-100',
+        ringColor: '#e11d48'
+      }
+    ]
   },
   {
     id: 'ai-saas-mvp',
@@ -95,6 +139,49 @@ export const PERSONAS = [
     destination: 'solutions-ai-saas-mvp-sprint',
     primaryCta: 'Get my MVP + Pilot Roadmap',
     secondaryCta: 'See MVP Sprint',
+    microLine: "Outcomes when scope, build, and launch are owned end-to-end.",
+    metrics: [
+      {
+        value: '8–12 weeks',
+        label: 'Pilot-ready MVP delivery',
+        subtext: 'Production build with analytics and reliability foundations.',
+        icon: Rocket,
+        color: 'text-purple-600',
+        bgColor: 'bg-purple-50',
+        borderColor: 'border-purple-100',
+        ringColor: '#9333ea'
+      },
+      {
+        value: '2–3 weeks',
+        label: 'Defensible MVP scope',
+        subtext: 'Clear roadmap, architecture choices, and success metrics.',
+        icon: ShieldCheck,
+        color: 'text-blue-600',
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-100',
+        ringColor: '#2563eb'
+      },
+      {
+        value: 'First pilots',
+        label: 'Launch system included',
+        subtext: 'Positioning, onboarding, and measurement to support revenue.',
+        icon: Flag,
+        color: 'text-emerald-600',
+        bgColor: 'bg-emerald-50',
+        borderColor: 'border-emerald-100',
+        ringColor: '#059669'
+      },
+      {
+        value: 'Weekly demos',
+        label: 'Predictable delivery cadence',
+        subtext: 'Stage gates that protect speed and quality.',
+        icon: Calendar,
+        color: 'text-amber-600',
+        bgColor: 'bg-amber-50',
+        borderColor: 'border-amber-100',
+        ringColor: '#d97706'
+      }
+    ]
   },
   {
     id: 'app-relaunch',
@@ -139,6 +226,49 @@ export const PERSONAS = [
     destination: 'solutions-app-relaunch',
     primaryCta: 'Get my Relaunch Plan',
     secondaryCta: 'See Relaunch Sprint',
+    microLine: "Outcomes when retention is treated as a product system.",
+    metrics: [
+      {
+        value: '+15–40%',
+        label: 'Retention improvement target',
+        subtext: 'Activation + UX upgrades tied to cohort movement.',
+        icon: RefreshCw,
+        color: 'text-cyan-600',
+        bgColor: 'bg-cyan-50',
+        borderColor: 'border-cyan-100',
+        ringColor: '#0891b2'
+      },
+      {
+        value: '2–4 weeks',
+        label: 'ASO conversion lift',
+        subtext: 'Store assets and keyword alignment that drive installs.',
+        icon: Download,
+        color: 'text-blue-600',
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-100',
+        ringColor: '#2563eb'
+      },
+      {
+        value: 'D1 / D7 / D30',
+        label: 'Decision-grade analytics',
+        subtext: 'Funnels and cohorts that explain user behavior clearly.',
+        icon: LineChart,
+        color: 'text-violet-600',
+        bgColor: 'bg-violet-50',
+        borderColor: 'border-violet-100',
+        ringColor: '#7c3aed'
+      },
+      {
+        value: '4–6 weeks',
+        label: 'Relaunch readiness',
+        subtext: 'Performance, stability, and UX polish before release.',
+        icon: Smartphone,
+        color: 'text-pink-600',
+        bgColor: 'bg-pink-50',
+        borderColor: 'border-pink-100',
+        ringColor: '#db2777'
+      }
+    ]
   },
   {
     id: 'dtc-growth',
@@ -183,6 +313,49 @@ export const PERSONAS = [
     destination: 'solutions-dtc-growth',
     primaryCta: 'Get my DTC Growth Audit',
     secondaryCta: 'See DTC Package',
+    microLine: "Outcomes when CAC drops and ROAS stabilizes through disciplined testing.",
+    metrics: [
+      {
+        value: '↓10–25%',
+        label: 'CAC reduction target',
+        subtext: 'Funnel efficiency + offer clarity that lowers acquisition cost.',
+        icon: BadgeDollarSign,
+        color: 'text-emerald-600',
+        bgColor: 'bg-emerald-50',
+        borderColor: 'border-emerald-100',
+        ringColor: '#059669'
+      },
+      {
+        value: '↑15–40%',
+        label: 'ROAS stability uplift',
+        subtext: 'Disciplined creative + audience testing that makes spend predictable.',
+        icon: LineChart,
+        color: 'text-blue-600',
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-100',
+        ringColor: '#2563eb'
+      },
+      {
+        value: '+10–25%',
+        label: 'Conversion rate lift',
+        subtext: 'CRO across PDP, cart, checkout, speed, and trust signals.',
+        icon: ShoppingBag,
+        color: 'text-amber-600',
+        bgColor: 'bg-amber-50',
+        borderColor: 'border-amber-100',
+        ringColor: '#d97706'
+      },
+      {
+        value: '+10–30%',
+        label: 'AOV & RPV increase',
+        subtext: 'Bundles, pricing architecture, and UX that raise revenue per visit.',
+        icon: TrendingUp,
+        color: 'text-rose-600',
+        bgColor: 'bg-rose-50',
+        borderColor: 'border-rose-100',
+        ringColor: '#e11d48'
+      }
+    ]
   },
   {
     id: 'enterprise-innovation',
@@ -227,6 +400,49 @@ export const PERSONAS = [
     destination: 'solutions-enterprise-innovation',
     primaryCta: 'Discuss my Innovation Roadmap',
     secondaryCta: 'See Corporate Program',
+    microLine: "Outcomes when governance is built into delivery from day one.",
+    metrics: [
+      {
+        value: '6–10 weeks',
+        label: 'POC-to-pilot acceleration',
+        subtext: 'Move from prototype to pilot-ready MVP with rigor.',
+        icon: Rocket,
+        color: 'text-indigo-600',
+        bgColor: 'bg-indigo-50',
+        borderColor: 'border-indigo-100',
+        ringColor: '#4f46e5'
+      },
+      {
+        value: 'Stage gates',
+        label: 'Governance built in',
+        subtext: 'Documentation, checkpoints, and ownership—without slowdown.',
+        icon: ShieldCheck,
+        color: 'text-slate-600',
+        bgColor: 'bg-slate-50',
+        borderColor: 'border-slate-100',
+        ringColor: '#475569'
+      },
+      {
+        value: 'Fewer rewrites',
+        label: 'Compliance aligned early',
+        subtext: 'Security and privacy considered before build locks in.',
+        icon: Lock,
+        color: 'text-rose-600',
+        bgColor: 'bg-rose-50',
+        borderColor: 'border-rose-100',
+        ringColor: '#e11d48'
+      },
+      {
+        value: 'Measured adoption',
+        label: 'Value proven faster',
+        subtext: 'Instrumentation and rollout support leaders can trust.',
+        icon: Gauge,
+        color: 'text-emerald-600',
+        bgColor: 'bg-emerald-50',
+        borderColor: 'border-emerald-100',
+        ringColor: '#059669'
+      }
+    ]
   },
   {
     id: 'accelerator-support',
@@ -271,5 +487,48 @@ export const PERSONAS = [
     destination: 'solutions-accelerator-support',
     primaryCta: 'Get my Cohort Support Plan',
     secondaryCta: 'See Accelerator Program',
+    microLine: "Outcomes when cohorts execute with a repeatable shipping system.",
+    metrics: [
+      {
+        value: '2×',
+        label: 'More teams shipping MVPs',
+        subtext: 'Cadence + templates that drive consistency.',
+        icon: Users,
+        color: 'text-blue-600',
+        bgColor: 'bg-blue-50',
+        borderColor: 'border-blue-100',
+        ringColor: '#2563eb'
+      },
+      {
+        value: '4–8 weeks',
+        label: 'Demo Day readiness',
+        subtext: 'Product polish, onboarding, landing, and metrics story.',
+        icon: Flag,
+        color: 'text-purple-600',
+        bgColor: 'bg-purple-50',
+        borderColor: 'border-purple-100',
+        ringColor: '#9333ea'
+      },
+      {
+        value: 'Build squads',
+        label: 'Delivery support on demand',
+        subtext: 'Hands-on help for teams that need to ship.',
+        icon: Code2,
+        color: 'text-amber-600',
+        bgColor: 'bg-amber-50',
+        borderColor: 'border-amber-100',
+        ringColor: '#d97706'
+      },
+      {
+        value: 'Sponsor-ready',
+        label: 'Outcome reporting at scale',
+        subtext: 'Dashboards and summaries that reduce operational load.',
+        icon: PieChart,
+        color: 'text-emerald-600',
+        bgColor: 'bg-emerald-50',
+        borderColor: 'border-emerald-100',
+        ringColor: '#059669'
+      }
+    ]
   }
 ];
