@@ -34,12 +34,12 @@ export const PAGES = {
     "case-study-larovie": caseStudyLarovie,
     "case-study-menovia": caseStudyMenovia,
     "case-study-vascular": caseStudyVascular,
-    "solutions/clinic-growth": SolutionsClinicGrowth,
-    "solutions/ai-saas-mvp-sprint": SolutionsAiSaasMvpSprint,
-    "solutions/app-relaunch": SolutionsAppRelaunch,
-    "solutions/dtc-growth": SolutionsDtcGrowth,
-    "solutions/enterprise-innovation": SolutionsEnterpriseInnovation,
-    "solutions/accelerator-support": SolutionsAcceleratorSupport,
+    "SolutionsClinicGrowth": SolutionsClinicGrowth,
+    "SolutionsAiSaasMvpSprint": SolutionsAiSaasMvpSprint,
+    "SolutionsAppRelaunch": SolutionsAppRelaunch,
+    "SolutionsDtcGrowth": SolutionsDtcGrowth,
+    "SolutionsEnterpriseInnovation": SolutionsEnterpriseInnovation,
+    "SolutionsAcceleratorSupport": SolutionsAcceleratorSupport,
 }
 
 export const pagesConfig = {
