@@ -144,18 +144,44 @@ function LayoutContent({ children, currentPageName }) {
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-            <button
-            key={item.id}
-            onClick={() => scrollToSection(item.id)}
-            className={`text-sm font-semibold transition-colors relative group ${
-              useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
-            }`}
-            >
-            {item.label}
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
-            </button>
-            ))}
+              {/* Solutions Dropdown */}
+              <div className="relative group">
+                <button 
+                  className={`text-sm font-semibold transition-colors flex items-center gap-1 py-2 ${
+                    useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
+                  }`}
+                >
+                  Solutions
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                </button>
+                
+                <div className="absolute top-full left-0 mt-0 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="py-2">
+                    {solutionItems.map((item) => (
+                      <Link
+                        key={item.path}
+                        to={createPageUrl(item.path)}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-semibold transition-colors relative group ${
+                    useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
+                  }`}
+                >
+                  {item.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+                </button>
+              ))}
             </nav>
 
             {/* CTA */}
