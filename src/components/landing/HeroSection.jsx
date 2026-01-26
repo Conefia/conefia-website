@@ -274,7 +274,7 @@ export default function HeroSection({ reduceMotion }) {
 
               Build it.{' '}
               <span className="text-[#DBFE01]">Launch it.</span>{' '}
-              Grow it.
+              Scale it.
             </motion.h1>
 
             {/* Subhead */}
