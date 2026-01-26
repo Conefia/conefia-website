@@ -237,9 +237,10 @@ function LayoutContent({ children, currentPageName }) {
                  {/* Choose your track */}
                  <button
                     onClick={() => scrollToSection('track-selector')}
-                    className="block w-full text-left text-[#DBFE01] text-lg font-bold py-2"
+                    className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 my-4"
                   >
                     Choose your track
+                    <ArrowRight className="w-4 h-4" />
                   </button>
 
                 {navItems.map((item) => (
