@@ -4,12 +4,6 @@ import CaseStudyHartalega from './pages/CaseStudyHartalega';
 import CaseStudyLarovie from './pages/CaseStudyLarovie';
 import CaseStudyMenovia from './pages/CaseStudyMenovia';
 import CaseStudyVascular from './pages/CaseStudyVascular';
-import SolutionsClinicGrowth from './pages/SolutionsClinicGrowth';
-import SolutionsAiSaasMvpSprint from './pages/SolutionsAiSaasMvpSprint';
-import SolutionsAppRelaunch from './pages/SolutionsAppRelaunch';
-import SolutionsDtcGrowth from './pages/SolutionsDtcGrowth';
-import SolutionsEnterpriseInnovation from './pages/SolutionsEnterpriseInnovation';
-import SolutionsAcceleratorSupport from './pages/SolutionsAcceleratorSupport';
 import Home from './pages/Home';
 import caseStudyAlMahfza from './pages/case-study-al-mahfza';
 import caseStudyAviya from './pages/case-study-aviya';
@@ -17,6 +11,12 @@ import caseStudyHartalega from './pages/case-study-hartalega';
 import caseStudyLarovie from './pages/case-study-larovie';
 import caseStudyMenovia from './pages/case-study-menovia';
 import caseStudyVascular from './pages/case-study-vascular';
+import SolutionsClinicGrowth from './pages/SolutionsClinicGrowth';
+import SolutionsAiSaasMvpSprint from './pages/SolutionsAiSaasMvpSprint';
+import SolutionsAppRelaunch from './pages/SolutionsAppRelaunch';
+import SolutionsDtcGrowth from './pages/SolutionsDtcGrowth';
+import SolutionsEnterpriseInnovation from './pages/SolutionsEnterpriseInnovation';
+import SolutionsAcceleratorSupport from './pages/SolutionsAcceleratorSupport';
 import __Layout from './Layout.jsx';
 
 
@@ -27,12 +27,6 @@ export const PAGES = {
     "CaseStudyLarovie": CaseStudyLarovie,
     "CaseStudyMenovia": CaseStudyMenovia,
     "CaseStudyVascular": CaseStudyVascular,
-    "solutions/clinic-growth": SolutionsClinicGrowth,
-    "solutions/ai-saas-mvp-sprint": SolutionsAiSaasMvpSprint,
-    "solutions/app-relaunch": SolutionsAppRelaunch,
-    "solutions/dtc-growth": SolutionsDtcGrowth,
-    "solutions/enterprise-innovation": SolutionsEnterpriseInnovation,
-    "solutions/accelerator-support": SolutionsAcceleratorSupport,
     "Home": Home,
     "case-study-al-mahfza": caseStudyAlMahfza,
     "case-study-aviya": caseStudyAviya,
@@ -40,6 +34,12 @@ export const PAGES = {
     "case-study-larovie": caseStudyLarovie,
     "case-study-menovia": caseStudyMenovia,
     "case-study-vascular": caseStudyVascular,
+    "SolutionsClinicGrowth": SolutionsClinicGrowth,
+    "SolutionsAiSaasMvpSprint": SolutionsAiSaasMvpSprint,
+    "SolutionsAppRelaunch": SolutionsAppRelaunch,
+    "SolutionsDtcGrowth": SolutionsDtcGrowth,
+    "SolutionsEnterpriseInnovation": SolutionsEnterpriseInnovation,
+    "SolutionsAcceleratorSupport": SolutionsAcceleratorSupport,
 }
 
 export const pagesConfig = {

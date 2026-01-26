@@ -23,7 +23,8 @@ export default function SolutionTemplate({ persona }) {
     <div className="min-h-screen bg-gray-50 pt-20">
       <Seo 
         title={`${persona.label} - Solutions`} 
-        description={persona.solutionTitle} 
+        description={persona.solutionTitle}
+        canonical={persona.destination}
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

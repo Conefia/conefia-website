@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
 import SocialProofBar from '@/components/landing/SocialProofBar';
 import BrandCarousel from '@/components/landing/BrandCarousel';
@@ -30,6 +31,7 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px] pointer-events-none" />
       
       <main className="relative">
+        <Seo canonical="/" />
         <HeroSection reduceMotion={shouldReduceMotion} />
         <SocialProofBar reduceMotion={shouldReduceMotion} />
         <BrandCarousel />
