@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { ArrowLeft, CheckCircle, TrendingUp, Clock, Zap, ExternalLink, Target, Lightbulb, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 function Section({ children, delay = 0 }) {
   const ref = useRef(null);
@@ -36,13 +37,7 @@ export default function CaseStudyAlMahfza() {
           transition={{ duration: 8, repeat: Infinity }}
         />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Link 
-            to={createPageUrl('Home')}
-            className="inline-flex items-center gap-2 text-[#1a1a1a]/60 hover:text-[#1a1a1a] mb-8 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to home
-          </Link>
+          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Al-Mahfza' }]} />
 
           <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-bold mb-6">
             Build

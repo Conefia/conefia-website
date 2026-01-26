@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Seo from '@/components/Seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
@@ -72,6 +73,9 @@ export default function SeoLandingPage({ content }) {
         <div className="absolute top-[20%] right-[20%] w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[100px]" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
+          <div className="mb-8">
+            <Breadcrumbs items={[{ label: 'Solutions', path: null }, { label: hero.title }]} />
+          </div>
           <div className="max-w-4xl mx-auto text-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
