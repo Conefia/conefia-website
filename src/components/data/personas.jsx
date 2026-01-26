@@ -1,94 +1,96 @@
-
 export const PERSONAS = [
   {
     id: 'clinic-growth',
     label: 'Clinic Growth',
-    problemTitle: 'Patient growth is blocked by a fragmented digital journey',
+    problemTitle: 'Patient growth is leaking across your digital patient journey.',
     problems: [
-      'Portal, intake, website, and reviews don’t work together',
-      'Changes take weeks across multiple vendors',
-      'No clear owner for bookings, inquiries, and retention',
-      'You can’t see what’s driving calls, forms, and appointments'
+      'Portal + intake + website feel disconnected — patients drop before booking',
+      'Updates take weeks because every vendor owns a small piece',
+      'No single owner for bookings, inquiries, and patient retention',
+      'You can’t clearly see what drives calls, forms, and appointments'
     ],
-    solutionTitle: 'One team. One backlog. More appointments.',
+    solutionTitle: 'One team. One backlog. More booked appointments.',
+    solutionSubtitle: 'HIPAA-aware workflows. Weekly demos. One accountable team.',
     solutions: [
       {
         title: 'Patient journey upgrades',
-        desc: 'Portal + intake + website improvements that reduce friction and increase conversions.'
+        desc: 'Portal + intake + website improvements that reduce friction and improve conversion.'
       },
       {
-        title: 'Visibility + trust system',
-        desc: 'Local SEO basics, Google Business Profile, and reviews workflow to drive qualified demand.'
+        title: 'Local visibility + trust',
+        desc: 'Google Business Profile, local SEO, and reviews workflow to drive qualified demand.'
       },
       {
         title: 'Tracking that matters',
-        desc: 'Clear reporting for calls, forms, bookings, and channel performance.'
+        desc: 'Call/form/booking tracking with a simple dashboard your team actually uses.'
       },
       {
         title: 'Weekly delivery cadence',
-        desc: 'Demos every week with a single backlog and clear priorities.'
+        desc: 'Weekly demos, clear priorities, and one accountable team end-to-end.'
       }
     ],
     topNavCta: 'Book Clinic Call',
-    heroPrimaryCta: 'Get Growth Roadmap',
-    heroSecondaryCta: 'See 12-week plan',
-    packagesCta: 'Explore Package',
+    heroPrimaryCta: 'Get my Clinic Growth Roadmap',
+    heroSecondaryCta: 'See the 12-week plan',
+    packagesCta: 'Explore Clinic Package',
     footerFormButton: 'Book Clinic Call',
     footerFormPrompt: 'Tell us your clinic specialty + location and your #1 growth bottleneck.',
     destination: '/solutions/clinic-growth',
-    primaryCta: 'Get Growth Roadmap',
-    secondaryCta: 'See Package',
+    primaryCta: 'Get my Clinic Growth Roadmap',
+    secondaryCta: 'See Clinic Package',
   },
   {
     id: 'ai-saas-mvp',
     label: 'AI SaaS MVP Sprint',
-    problemTitle: 'You’re building — but traction is still unclear',
+    problemTitle: 'You’re building — but you’re not getting pilots yet.',
     problems: [
-      'MVP scope keeps changing and shipping slips',
-      'Risky technical choices (LLMs, architecture, data) slow decisions',
-      'Contractors are disconnected (dev, AI, design, marketing)',
-      'You need paying pilots — not more demos'
+      'MVP scope keeps changing and shipping keeps slipping',
+      'LLM/agent choices feel high-risk (architecture, data, evaluation)',
+      'Dev, AI, design, and marketing aren’t moving in one direction',
+      'You need paying pilots — not another prototype'
     ],
-    solutionTitle: 'Ship the MVP and launch for pilots — fast.',
+    solutionTitle: 'Ship an AI SaaS MVP and launch for pilots — fast.',
+    solutionSubtitle: 'From scope → MVP → pilot launch in one sprint.',
     solutions: [
       {
         title: 'MVP scope you can defend',
-        desc: 'Crisp definition of “must-have” + success criteria tied to real user value.'
+        desc: 'Clear “must-have” scope + success metrics tied to real user value.'
       },
       {
         title: 'AI architecture done right',
-        desc: 'Practical LLM/agent decisions that won’t create rework later.'
+        desc: 'Practical LLM/agent design (RAG, evals, monitoring) that won’t create rework later.'
       },
       {
         title: 'Launch system included',
-        desc: 'Positioning, landing page, onboarding, and analytics to start getting pilots.'
+        desc: 'Positioning + landing page + onboarding + analytics so pilots have somewhere to land.'
       },
       {
         title: 'Weekly demos + stage gates',
-        desc: 'Clear milestones and sign-offs so you keep momentum.'
+        desc: 'Visible progress, clean milestones, and sign-offs that keep momentum.'
       }
     ],
     topNavCta: 'Book MVP Call',
-    heroPrimaryCta: 'Get MVP Roadmap',
-    heroSecondaryCta: 'See 12-week sprint',
+    heroPrimaryCta: 'Get my MVP + Pilot Roadmap',
+    heroSecondaryCta: 'See the 12-week sprint',
     packagesCta: 'Explore Sprint',
     footerFormButton: 'Book MVP Call',
     footerFormPrompt: 'What are you building, who is the buyer, and what’s your target launch date?',
     destination: '/solutions/ai-saas-mvp-sprint',
-    primaryCta: 'Get MVP Roadmap',
-    secondaryCta: 'See Sprint',
+    primaryCta: 'Get my MVP + Pilot Roadmap',
+    secondaryCta: 'See MVP Sprint',
   },
   {
     id: 'app-relaunch',
     label: 'App Relaunch',
-    problemTitle: 'Your app is live — but users aren’t sticking',
+    problemTitle: 'Your app is live — but users aren’t sticking around.',
     problems: [
       'Retention is weak (users churn after install)',
-      'UX/performance issues hurt reviews and referrals',
-      'ASO is not driving consistent organic downloads',
-      'You don’t have clean analytics to guide decisions'
+      'UX/performance issues drag ratings and referrals down',
+      'ASO isn’t bringing consistent organic downloads',
+      'You don’t trust your analytics enough to decide what to fix'
     ],
-    solutionTitle: 'Fix retention, relaunch, then grow with data.',
+    solutionTitle: 'Fix retention, relaunch the app, then grow with data.',
+    solutionSubtitle: 'Retention first. ASO + analytics included.',
     solutions: [
       {
         title: 'Retention-led product fixes',
@@ -100,7 +102,7 @@ export const PERSONAS = [
       },
       {
         title: 'ASO + store assets',
-        desc: 'Keywords, screenshots, and review strategy for organic growth.'
+        desc: 'Keywords, screenshots, and review strategy to grow organic installs.'
       },
       {
         title: 'Analytics you can act on',
@@ -108,19 +110,19 @@ export const PERSONAS = [
       }
     ],
     topNavCta: 'Book Relaunch Call',
-    heroPrimaryCta: 'Get Relaunch Plan',
-    heroSecondaryCta: 'See 8-week sprint',
+    heroPrimaryCta: 'Get my Relaunch Plan',
+    heroSecondaryCta: 'See the 8-week sprint',
     packagesCta: 'Explore Sprint',
     footerFormButton: 'Book Relaunch Call',
     footerFormPrompt: 'Share your app link (store/website) and where users drop off today.',
     destination: '/solutions/app-relaunch-growth',
-    primaryCta: 'Get Relaunch Plan',
-    secondaryCta: 'See Sprint',
+    primaryCta: 'Get my Relaunch Plan',
+    secondaryCta: 'See Relaunch Sprint',
   },
   {
     id: 'dtc-growth',
     label: 'DTC Growth',
-    problemTitle: 'You’re spending — but profit isn’t scaling',
+    problemTitle: 'You’re spending — but profit isn’t scaling.',
     problems: [
       'CAC is rising and ROAS is unstable',
       'Shopify conversion leaks reduce revenue per visit',
@@ -128,49 +130,51 @@ export const PERSONAS = [
       'No single owner for the full funnel (ads → site → retention)'
     ],
     solutionTitle: 'Increase conversion and LTV — without guesswork.',
+    solutionSubtitle: 'CRO + paid + lifecycle in one owner.',
     solutions: [
       {
-        title: 'CRO roadmap + weekly tests',
+        title: 'Shopify CRO roadmap + weekly tests',
         desc: 'Fix friction, improve PDP/checkout, and lift conversion rate.'
       },
       {
         title: 'Paid testing system',
-        desc: 'Creative + audience experiments tied to clear hypotheses.'
+        desc: 'Creative + audience experiments tied to clear hypotheses (not random tweaks).'
       },
       {
         title: 'Retention flows that sell',
-        desc: 'Email/SMS lifecycle (welcome, abandon, post-purchase, winback).'
+        desc: 'Email/SMS lifecycle: welcome, abandon, post-purchase, winback.'
       },
       {
         title: 'Profit-first reporting',
-        desc: 'CAC, contribution margin, LTV, repeat rate — tracked consistently.'
+        desc: 'CAC, margin, LTV, repeat rate — tracked consistently.'
       }
     ],
     topNavCta: 'Get Growth Audit',
-    heroPrimaryCta: 'Get Growth Audit',
-    heroSecondaryCta: 'See growth system',
+    heroPrimaryCta: 'Get my DTC Growth Audit',
+    heroSecondaryCta: 'See the growth system',
     packagesCta: 'Explore Package',
     footerFormButton: 'Request Audit',
     footerFormPrompt: 'What do you sell, and what’s the biggest issue: traffic, conversion, or repeat purchases?',
     destination: '/solutions/dtc-growth',
-    primaryCta: 'Get Growth Audit',
-    secondaryCta: 'See Package',
+    primaryCta: 'Get my DTC Growth Audit',
+    secondaryCta: 'See DTC Package',
   },
   {
     id: 'enterprise-innovation',
     label: 'Enterprise Innovation',
-    problemTitle: 'Innovation is stuck between stakeholders and compliance',
+    problemTitle: 'Your MVP is stuck in alignment and approvals.',
     problems: [
-      'Alignment takes too long across teams',
+      'Alignment takes too long across teams and stakeholders',
       'POCs don’t become pilot-ready MVPs',
       'Vendor sprawl and unclear ownership slows execution',
       'Governance/security requirements create delivery friction'
     ],
-    solutionTitle: 'Pilot-ready MVPs with governance built in.',
+    solutionTitle: 'Pilot-ready MVPs — with governance built in.',
+    solutionSubtitle: 'Stage gates + audit trail from day one.',
     solutions: [
       {
         title: 'Compliance-aware delivery',
-        desc: 'Security/privacy considerations addressed early — no last-minute rewrites.'
+        desc: 'Security/privacy considered early — no last-minute rewrites.'
       },
       {
         title: 'Stage gates + audit trail',
@@ -178,7 +182,7 @@ export const PERSONAS = [
       },
       {
         title: 'End-to-end ownership',
-        desc: 'Product + engineering + launch enablement in one partner.'
+        desc: 'Product + engineering + launch enablement with one partner.'
       },
       {
         title: 'Measurement and adoption',
@@ -186,26 +190,27 @@ export const PERSONAS = [
       },
     ],
     topNavCta: 'Discuss Roadmap',
-    heroPrimaryCta: 'Discuss Roadmap',
-    heroSecondaryCta: 'See delivery model',
+    heroPrimaryCta: 'Discuss my Innovation Roadmap',
+    heroSecondaryCta: 'See how we deliver',
     packagesCta: 'Explore Program',
     footerFormButton: 'Request Consult',
     footerFormPrompt: 'What initiative are you leading, and what constraints (security/timeline) matter most?',
     destination: '/solutions/corporate-innovation',
-    primaryCta: 'Discuss Roadmap',
-    secondaryCta: 'See Program',
+    primaryCta: 'Discuss my Innovation Roadmap',
+    secondaryCta: 'See Corporate Program',
   },
   {
     id: 'accelerator-support',
     label: 'Accelerator Support',
-    problemTitle: 'Founders get advice — but execution doesn’t scale',
+    problemTitle: 'Founders get advice — but shipping doesn’t scale.',
     problems: [
-      'Too many teams stall without technical leadership',
+      'Teams stall without technical leadership or delivery support',
       'Demo Day deadlines create last-minute chaos',
-      'Quality varies across cohort MVPs',
+      'Quality varies across cohort MVPs and launch readiness',
       'Sponsor/funder reporting is manual and time-consuming'
     ],
-    solutionTitle: 'Cohorts that ship before Demo Day.',
+    solutionTitle: 'Cohorts that ship MVPs before Demo Day.',
+    solutionSubtitle: 'Cohort templates + delivery squads + reporting.',
     solutions: [
       {
         title: 'Cohort execution system',
@@ -225,13 +230,13 @@ export const PERSONAS = [
       }
     ],
     topNavCta: 'Get Cohort Plan',
-    heroPrimaryCta: 'Get Cohort Plan',
-    heroSecondaryCta: 'See cohort model',
+    heroPrimaryCta: 'Get my Cohort Support Plan',
+    heroSecondaryCta: 'See how cohorts ship',
     packagesCta: 'Explore Support',
     footerFormButton: 'Request Plan',
     footerFormPrompt: 'How many startups per cohort, and what outcomes do you track (MVPs, pilots, funding)?',
     destination: '/solutions/accelerator-support',
-    primaryCta: 'Get Cohort Plan',
-    secondaryCta: 'See Program',
+    primaryCta: 'Get my Cohort Support Plan',
+    secondaryCta: 'See Accelerator Program',
   }
 ];
