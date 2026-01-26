@@ -54,7 +54,7 @@ export default function ProblemSolution({ reduceMotion }) {
   };
 
   return (
-    <section ref={ref} className="py-16 md:py-24 relative overflow-hidden bg-[#F4F4F5]">
+    <section id="track-selector" ref={ref} className="py-16 md:py-24 relative overflow-hidden bg-[#F4F4F5]">
       {/* Background accent */}
       <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white to-transparent opacity-50" />
       
