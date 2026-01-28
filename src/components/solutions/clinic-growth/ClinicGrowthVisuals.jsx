@@ -5,7 +5,7 @@ import {
   MapPin, Star, TrendingUp, Users, Activity,
   CheckCircle2, XCircle, ArrowRight, BarChart3,
   LayoutDashboard, MessageSquare, MousePointerClick,
-  ChevronRight, ArrowUpRight
+  ChevronRight, ArrowUpRight, Clock
 } from 'lucide-react';
 
 // Hero Visual: Before -> After patient journey
