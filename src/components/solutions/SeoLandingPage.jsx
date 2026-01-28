@@ -30,6 +30,15 @@ const CheckListItem = ({ children }) => (
   </li>
 );
 
+const DarkCheckListItem = ({ children }) => (
+  <li className="flex items-start gap-3">
+    <div className="w-6 h-6 rounded-full bg-[#DBFE01]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+      <Check className="w-3.5 h-3.5 text-[#DBFE01]" />
+    </div>
+    <span className="text-white/80 font-medium leading-relaxed">{children}</span>
+  </li>
+);
+
 const ProblemItem = ({ children }) => (
   <li className="flex items-start gap-3">
     <div className="w-6 h-6 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -43,9 +52,12 @@ export default function SeoLandingPage({ content }) {
   const {
     meta,
     hero,
+    metrics,
+    trustedBy,
     problem,
     solution,
     howItWorks,
+    outcomes,
     proof,
     faq,
     finalCta
@@ -134,9 +146,56 @@ export default function SeoLandingPage({ content }) {
                 </div>
               ))}
             </motion.div>
+
+            {hero.visual && (
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mt-12"
+              >
+                {hero.visual}
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* METRICS SECTION */}
+      {metrics && (
+        <section className="py-20 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SectionHeading className="text-center">{metrics.title}</SectionHeading>
+            {metrics.visual && <div className="mb-12">{metrics.visual}</div>}
+            {metrics.items && metrics.items.length > 0 && (
+              <div className="grid md:grid-cols-4 gap-6">
+                 {metrics.items.map((item, i) => (
+                    <div key={i} className="bg-gray-50 border border-gray-100 p-6 rounded-2xl text-center shadow-sm">
+                       {item.includes('—') ? (
+                          <>
+                            <div className="text-3xl font-extrabold text-blue-600 mb-2 tracking-tight">{item.split('—')[0].trim()}</div>
+                            <div className="font-medium text-gray-700 text-sm">{item.split('—')[1].trim()}</div>
+                          </>
+                       ) : (
+                          <p className="font-semibold text-lg text-[#1a1a1a]">{item}</p>
+                       )}
+                    </div>
+                 ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* TRUSTED BY SECTION */}
+      {trustedBy && (
+        <section className="py-12 bg-gray-50 border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {trustedBy.title && <SectionHeading className="mb-8 text-2xl">{trustedBy.title}</SectionHeading>}
+            {trustedBy.visual}
+          </div>
+        </section>
+      )}
 
       {/* PROBLEM SECTION */}
       <section className="py-20 bg-white relative overflow-hidden">
@@ -160,21 +219,24 @@ export default function SeoLandingPage({ content }) {
               </div>
             </div>
             <div className="relative">
-               {/* Visual representation could go here - using abstract shape for now */}
-               <div className="aspect-square rounded-3xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-100 relative overflow-hidden flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
-                  <div className="grid grid-cols-2 gap-4 p-8 relative z-10 opacity-60 grayscale">
-                      <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full"></div>
-                      <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full mt-8"></div>
-                      <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full -mt-8"></div>
-                      <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full"></div>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-red-100/90 backdrop-blur-sm p-4 rounded-full border border-red-200 shadow-xl">
-                          <X className="w-12 h-12 text-red-500" />
-                      </div>
-                  </div>
-               </div>
+               {problem.visual ? (
+                 problem.visual
+               ) : (
+                 <div className="aspect-square rounded-3xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-100 relative overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
+                    <div className="grid grid-cols-2 gap-4 p-8 relative z-10 opacity-60 grayscale">
+                        <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full"></div>
+                        <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full mt-8"></div>
+                        <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full -mt-8"></div>
+                        <div className="p-4 bg-white rounded-xl shadow-sm border border-gray-200 h-32 w-full"></div>
+                    </div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="bg-red-100/90 backdrop-blur-sm p-4 rounded-full border border-red-200 shadow-xl">
+                            <X className="w-12 h-12 text-red-500" />
+                        </div>
+                    </div>
+                 </div>
+               )}
             </div>
           </div>
         </div>
@@ -187,24 +249,29 @@ export default function SeoLandingPage({ content }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1 relative">
-                <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10">
-                    <div className="space-y-6">
-                        {solution.items.map((item, i) => (
-                            <div key={i} className="flex gap-4">
-                                <div className="w-10 h-10 rounded-lg bg-[#DBFE01]/20 flex items-center justify-center flex-shrink-0 text-[#1a1a1a]">
-                                    {/* Map some icons based on text or random */}
-                                    <Check className="w-5 h-5" />
+                {solution.visual ? (
+                  solution.visual
+                ) : (
+                  <>
+                    <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10">
+                        <div className="space-y-6">
+                            {solution.items.map((item, i) => (
+                                <div key={i} className="flex gap-4">
+                                    <div className="w-10 h-10 rounded-lg bg-[#DBFE01]/20 flex items-center justify-center flex-shrink-0 text-[#1a1a1a]">
+                                        <Check className="w-5 h-5" />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-bold text-[#1a1a1a]">{item.split(' (')[0]}</h4>
+                                        <p className="text-sm text-gray-600 mt-1">{item}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="font-bold text-[#1a1a1a]">{item.split(' (')[0]}</h4>
-                                    <p className="text-sm text-gray-600 mt-1">{item}</p>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#DBFE01] rounded-full blur-[80px] opacity-20" />
+                    {/* Decorative Elements */}
+                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#DBFE01] rounded-full blur-[80px] opacity-20" />
+                  </>
+                )}
             </div>
 
             <div className="order-1 lg:order-2">
@@ -280,9 +347,38 @@ export default function SeoLandingPage({ content }) {
                 </div>
               ))}
             </div>
+            {howItWorks.visual && (
+              <div className="mt-16">
+                {howItWorks.visual}
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* OUTCOMES SECTION */}
+      {outcomes && (
+        <section className="py-20 bg-[#1a1a1a] text-white overflow-hidden relative">
+           <div className="absolute top-0 right-0 w-1/3 h-full bg-[#DBFE01]/5 blur-[100px] pointer-events-none" />
+           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+             <div className="grid lg:grid-cols-2 gap-12 items-center">
+               <div>
+                 <SectionHeading className="text-white">{outcomes.title}</SectionHeading>
+                 {outcomes.items && (
+                   <ul className="space-y-4">
+                     {outcomes.items.map((item, i) => (
+                       <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
+                     ))}
+                   </ul>
+                 )}
+               </div>
+               <div>
+                 {outcomes.visual}
+               </div>
+             </div>
+           </div>
+        </section>
+      )}
 
       {/* PROOF SECTION */}
       <section className="py-24 bg-[#0B1020] text-white relative overflow-hidden">
@@ -291,16 +387,19 @@ export default function SeoLandingPage({ content }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <SectionHeading className="text-white">{proof.title}</SectionHeading>
+            {proof.visual && <div className="mt-8">{proof.visual}</div>}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {proof.items.map((item, i) => (
-              <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                <Check className="w-8 h-8 text-[#DBFE01] mb-4" />
-                <p className="font-semibold text-lg">{item}</p>
-              </div>
-            ))}
-          </div>
+          {proof.items && proof.items.length > 0 && (
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {proof.items.map((item, i) => (
+                <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                  <Check className="w-8 h-8 text-[#DBFE01] mb-4" />
+                  <p className="font-semibold text-lg">{item}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* Testimonials */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -316,7 +415,7 @@ export default function SeoLandingPage({ content }) {
                   </div>
                   <div>
                     <div className="font-bold text-sm">{testimonial.author}</div>
-                    <div className="text-xs text-gray-500">Clinic Owner</div>
+                    <div className="text-xs text-gray-500">{testimonial.role || "Clinic Owner"}</div>
                   </div>
                 </div>
               </div>
@@ -325,7 +424,7 @@ export default function SeoLandingPage({ content }) {
 
           {/* Use Cases */}
           <div className="bg-[#1a1a1a] rounded-3xl p-8 md:p-12 border border-white/10">
-            <h3 className="text-2xl font-bold mb-8 text-center">Common Use Cases</h3>
+            <h3 className="text-2xl font-bold mb-8 text-center">{proof.useCasesTitle || "Common Use Cases"}</h3>
             <div className="grid sm:grid-cols-3 gap-8">
               {proof.useCases.map((useCase, i) => (
                 <div key={i} className="text-center">
@@ -344,6 +443,7 @@ export default function SeoLandingPage({ content }) {
       <section className="py-24 bg-[#FAFAFA]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
+            <span className="text-[#DBFE01] font-bold tracking-wider uppercase text-xs mb-2 block bg-[#1a1a1a] w-fit mx-auto px-3 py-1 rounded-full">Most asked by clinic owners</span>
             <SectionHeading>Frequently Asked Questions</SectionHeading>
           </div>
           
@@ -359,6 +459,9 @@ export default function SeoLandingPage({ content }) {
               </AccordionItem>
             ))}
           </Accordion>
+          <div className="mt-8 text-center">
+            <p className="text-sm text-gray-500">Still unsure? <Link to="/contact" className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2">Book a quick chat</Link></p>
+          </div>
         </div>
       </section>
 
@@ -383,6 +486,8 @@ export default function SeoLandingPage({ content }) {
               {finalCta.secondaryCta}
             </Link>
           </div>
+          {finalCta.visual && <div className="mt-12">{finalCta.visual}</div>}
+          <p className="text-[#1a1a1a]/60 text-xs font-semibold mt-8 uppercase tracking-wider">No spam. Clear next steps within 24 hours.</p>
         </div>
       </section>
     </div>
