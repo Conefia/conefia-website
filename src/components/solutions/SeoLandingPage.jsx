@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
+import ContourBackground from '@/components/visual/ContourBackground';
 import { 
   ArrowRight, Check, X, Sparkles, HelpCircle, 
   ChevronDown, ChevronUp, Star, ShieldCheck, 
@@ -61,6 +62,7 @@ const ProblemItem = ({ children }) => (
 );
 
 export default function SeoLandingPage({ content }) {
+  const reduceMotion = useReducedMotion();
   const {
     meta,
     hero,
@@ -85,17 +87,202 @@ export default function SeoLandingPage({ content }) {
 
       {/* HERO SECTION */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0B1020]">
-        {/* Background Elements */}
+        {/* Base layer - Deep navy */}
         <div className="absolute inset-0 bg-[#0B1020]" />
-        <div 
+        
+        {/* Dense Galaxy Lumination (Noise + Color Dodge) */}
+        <div
           className="absolute inset-0 opacity-40 pointer-events-none"
           style={{
-            backgroundImage: `radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%)`,
-            filter: 'contrast(150%) brightness(150%)',
+            background: `
+              radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(219, 254, 1, 0.1), transparent 50%)
+            `,
+            filter: 'url(#noiseFilter) contrast(150%) brightness(150%)',
+            mixBlendMode: 'color-dodge'
+          }} />
+
+        {/* Flowing topographic contour lines */}
+        <ContourBackground className="opacity-80" />
+        
+        {/* Galaxy-like lime glows - stronger and more focused */}
+        <motion.div
+          className="absolute top-[20%] right-[25%] w-[600px] h-[600px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.25) 0%, rgba(219, 254, 1, 0.15) 30%, transparent 60%)',
+            filter: 'blur(80px)'
           }}
-        />
-        {/* Glows */}
-        <div className="absolute top-[20%] right-[20%] w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[100px]" />
+          animate={reduceMotion ? {} : {
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.6, 0.4]
+          }}
+          transition={{ duration: 6, repeat: Infinity }} />
+
+        <motion.div
+          className="absolute bottom-[15%] right-[35%] w-[500px] h-[500px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, rgba(219, 254, 1, 0.1) 40%, transparent 70%)',
+            filter: 'blur(70px)'
+          }}
+          animate={reduceMotion ? {} : {
+            scale: [1.1, 0.9, 1.1],
+            opacity: [0.3, 0.5, 0.3]
+          }}
+          transition={{ duration: 7, repeat: Infinity, delay: 1 }} />
+
+        <motion.div
+          className="absolute bottom-[40%] left-[10%] w-[400px] h-[400px]"
+          style={{
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.18) 0%, rgba(219, 254, 1, 0.08) 40%, transparent 70%)',
+            filter: 'blur(60px)'
+          }}
+          animate={reduceMotion ? {} : {
+            scale: [0.9, 1.15, 0.9],
+            opacity: [0.25, 0.45, 0.25]
+          }}
+          transition={{ duration: 8, repeat: Infinity, delay: 2 }} />
+
+        {/* Galaxy Star Dust (High density) */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Dust Field 1 - Dense Main Galaxy Stream */}
+          <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.3)' }}>
+            {[...Array(450)].map((_, i) => {
+              // Create a band/stream of stars
+              const x = Math.random() * 100;
+              const yBand = 50 + (Math.random() - 0.5) * 60 * Math.sin(x / 30); // Wavy band
+              const y = yBand + (Math.random() - 0.5) * 40; // Scatter around band
+              const size = Math.random() * 1.5 + 0.2;
+              const opacity = Math.random() * 0.6 + 0.1;
+
+              return (
+                <motion.div
+                  key={`dust-${i}`}
+                  className="absolute rounded-full bg-[#DBFE01]"
+                  style={{
+                    left: `${x}%`,
+                    top: `${y}%`,
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    boxShadow: Math.random() > 0.8 ? '0 0 3px rgba(219, 254, 1, 0.8)' : 'none'
+                  }}
+                  animate={{
+                    opacity: [opacity, opacity * 1.5, opacity]
+                  }}
+                  transition={{
+                    duration: 2 + Math.random() * 3,
+                    repeat: Infinity,
+                    delay: Math.random() * 2
+                  }} />
+              );
+            })}
+          </div>
+
+          {/* Dust Field 2 - Luminous Concentrations */}
+          <div className="absolute inset-0">
+             {/* Top Right Concentration */}
+             {[...Array(100)].map((_, i) => {
+              const cx = 80;const cy = 20;
+              const r = Math.pow(Math.random(), 1.5) * 25;
+              const angle = Math.random() * Math.PI * 2;
+              const x = cx + Math.cos(angle) * r;
+              const y = cy + Math.sin(angle) * r;
+              return (
+                <motion.div
+                  key={`cluster-1-${i}`}
+                  className="absolute rounded-full bg-[#DBFE01]"
+                  style={{
+                    left: `${x}%`, top: `${y}%`,
+                    width: `${Math.random() * 1.5 + 0.5}px`,
+                    height: `${Math.random() * 1.5 + 0.5}px`,
+                    opacity: Math.random() * 0.7 + 0.2,
+                    boxShadow: '0 0 4px rgba(219, 254, 1, 0.6)'
+                  }}
+                  animate={{ opacity: [0.2, 0.8, 0.2], scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2 + Math.random() * 2, repeat: Infinity }} />
+              );
+            })}
+
+             {/* Bottom Left Stream Concentration */}
+             {[...Array(100)].map((_, i) => {
+              const cx = 20;const cy = 75;
+              const r = Math.pow(Math.random(), 1.5) * 30;
+              const angle = Math.random() * Math.PI * 2;
+              const x = cx + Math.cos(angle) * r;
+              const y = cy + Math.sin(angle) * r * 0.6;
+              return (
+                <motion.div
+                  key={`cluster-2-${i}`}
+                  className="absolute rounded-full bg-white"
+                  style={{
+                    left: `${x}%`, top: `${y}%`,
+                    width: `${Math.random() * 1.2 + 0.3}px`,
+                    height: `${Math.random() * 1.2 + 0.3}px`,
+                    opacity: Math.random() * 0.5 + 0.1
+                  }}
+                  animate={{ opacity: [0.1, 0.5, 0.1] }}
+                  transition={{ duration: 3 + Math.random() * 3, repeat: Infinity }} />
+              );
+            })}
+          </div>
+
+          {/* Stream Dust - Flow path */}
+          <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.05)' }}>
+            {[...Array(120)].map((_, i) => {
+              const t = Math.random();
+              const x = 20 + t * 60; // 20% to 80%
+              const base = 55 + Math.sin(t * Math.PI * 1.2 - Math.PI / 2) * 18 + Math.sin(t * Math.PI * 2) * 6;
+              const y = base + (Math.random() - 0.5) * 6;
+              const size = Math.random() * 1.4 + 0.4;
+              const opacity = 0.25 + Math.random() * 0.5;
+              return (
+                <motion.div
+                  key={`stream-${i}`}
+                  className="absolute rounded-full bg-[#DBFE01]"
+                  style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, boxShadow: '0 0 3px rgba(219,254,1,0.6)' }}
+                  animate={{ opacity: [opacity, opacity * 1.4, opacity] }}
+                  transition={{ duration: 2 + Math.random() * 2.5, repeat: Infinity, delay: Math.random() * 1.5 }} />
+              );
+            })}
+          </div>
+
+          {/* Bright Stars - Highlights */}
+          {[...Array(40)].map((_, i) =>
+          <motion.div
+            key={`bright-${i}`}
+            className="absolute rounded-full bg-[#DBFE01]"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              width: `${Math.random() * 2 + 1}px`,
+              height: `${Math.random() * 2 + 1}px`,
+              boxShadow: '0 0 6px rgba(219, 254, 1, 0.9), 0 0 12px rgba(219, 254, 1, 0.4)'
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.6, 1, 0.6]
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 5
+            }} />
+          )}
+        </div>
+        
+        {/* Fine grain texture */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+            mixBlendMode: 'overlay'
+          }} />
+
+        {/* Vignette */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)'
+          }} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
           <div className="mb-8">
