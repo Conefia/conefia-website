@@ -9,7 +9,7 @@ import {
 
 // Hero Visual: Before -> After patient journey
 export const HeroVisual = () => (
-  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-full max-w-lg mx-auto mt-8">
+  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-full max-w-lg mx-auto mt-12">
     <div className="text-xs text-white/60 font-semibold uppercase tracking-wider mb-4 text-center">
       The Connected Patient Journey
     </div>
@@ -33,6 +33,32 @@ export const HeroVisual = () => (
     <div className="mt-4 flex items-center justify-center gap-2 text-xs text-[#DBFE01] bg-[#DBFE01]/10 py-1.5 rounded-lg">
       <CheckCircle2 className="w-3 h-3" />
       <span>Zero leakage from search to schedule</span>
+    </div>
+  </div>
+);
+
+// Metrics Attribution Visual (Light Mode)
+export const AttributionVisual = () => (
+  <div className="flex items-center justify-center gap-2 md:gap-4 mt-8 opacity-80">
+    <div className="flex flex-col items-center">
+      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mb-2 border border-gray-200">
+        <MousePointerClick className="w-4 h-4 text-gray-600" />
+      </div>
+      <span className="text-[10px] text-gray-500">Traffic</span>
+    </div>
+    <div className="h-[1px] w-8 md:w-16 bg-gray-200" />
+    <div className="flex flex-col items-center">
+      <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mb-2 border border-gray-200">
+        <Phone className="w-4 h-4 text-gray-600" />
+      </div>
+      <span className="text-[10px] text-gray-500">Qualified Leads</span>
+    </div>
+    <div className="h-[1px] w-8 md:w-16 bg-gray-200" />
+    <div className="flex flex-col items-center">
+      <div className="w-8 h-8 rounded-full bg-[#DBFE01] text-[#1a1a1a] flex items-center justify-center mb-2 shadow-sm border border-[#DBFE01]">
+        <CalendarCheck className="w-4 h-4" />
+      </div>
+      <span className="text-[10px] text-gray-900 font-bold">Booked Patient</span>
     </div>
   </div>
 );
@@ -124,7 +150,19 @@ export const SolutionDashboardVisual = () => (
   </div>
 );
 
-// Outcomes Visual: Before/After
+// Process Visual: Deliverables
+export const ProcessVisual = () => (
+  <div className="flex flex-wrap justify-center gap-4 mt-8">
+    {["Roadmap", "Service Pages", "Tracking Setup", "CRO Experiments"].map((item, i) => (
+      <div key={i} className="bg-white/80 border border-gray-200 rounded-lg px-4 py-2 text-center shadow-sm">
+        <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Deliverable</div>
+        <div className="font-bold text-[#1a1a1a] text-sm">{item}</div>
+      </div>
+    ))}
+  </div>
+);
+
+// Outcomes Visual: Before/After (Dark Mode)
 export const OutcomesVisual = () => (
   <div className="grid grid-cols-2 gap-4">
     <div className="bg-white/5 border border-white/10 rounded-2xl p-4 opacity-60">
@@ -148,32 +186,6 @@ export const OutcomesVisual = () => (
           <span>Systemized Growth</span>
         </div>
       </div>
-    </div>
-  </div>
-);
-
-// Metrics Attribution Visual
-export const AttributionVisual = () => (
-  <div className="flex items-center justify-center gap-2 md:gap-4 mt-8 opacity-80">
-    <div className="flex flex-col items-center">
-      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mb-2">
-        <MousePointerClick className="w-4 h-4 text-[#DBFE01]" />
-      </div>
-      <span className="text-[10px] text-white/60">Traffic</span>
-    </div>
-    <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-white/10 to-white/30" />
-    <div className="flex flex-col items-center">
-      <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mb-2">
-        <Phone className="w-4 h-4 text-[#DBFE01]" />
-      </div>
-      <span className="text-[10px] text-white/60">Qualified Leads</span>
-    </div>
-    <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-white/10 to-white/30" />
-    <div className="flex flex-col items-center">
-      <div className="w-8 h-8 rounded-full bg-[#DBFE01] text-[#1a1a1a] flex items-center justify-center mb-2 shadow-[0_0_15px_rgba(219,254,1,0.3)]">
-        <CalendarCheck className="w-4 h-4" />
-      </div>
-      <span className="text-[10px] text-[#DBFE01] font-bold">Booked Patient</span>
     </div>
   </div>
 );
