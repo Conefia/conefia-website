@@ -1,115 +1,140 @@
 import React from 'react';
 import SeoLandingPage from '@/components/solutions/SeoLandingPage';
+import { HeroVisual, AttributionVisual, BrokenJourneyVisual, SolutionDashboardVisual, ProcessVisual, OutcomesVisual, RoadmapPreviewVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
+import BrandCarousel from '@/components/landing/BrandCarousel';
 
 const CONTENT = {
   meta: {
-    title: "Clinic Growth | Digital Patient Engagement | Conefia",
-    description: "HIPAA-aware digital patient engagement platform + clinic patient portal software to drive patient acquisition.",
+    title: "Clinic Growth: Digital Patient Engagement | Conefia",
+    description: "Digital patient engagement platform + clinic patient portal software + HIPAA growth marketing to book more patients. Get a roadmap.",
     url: "/solutions/clinic-growth"
   },
   hero: {
-    title: "Clinic Growth Package: Digital Patient Engagement Platform That Books Patients",
-    subtitle: "Stop losing patients in a fragmented digital journey. If your clinic patient portal software, intake, website, and reviews don’t work together, you’ll keep leaking bookings. Conefia fixes the full journey—HIPAA-compliant growth marketing for clinics, clean tracking, and weekly shipping.",
+    title: "Clinic Growth Package",
+    subtitle: "A digital patient engagement platform that books more patients. One partner to fix your patient journey, improve local visibility, and turn traffic into booked appointments. Website + portal + intake + tracking + local SEO — aligned under one plan.",
     primaryCta: "Get My Clinic Growth Roadmap",
-    secondaryCta: "See Clinic Package",
+    secondaryCta: "See the Package",
     trustChips: [
-      "HIPAA-aware flows",
-      "Weekly demos",
-      "One backlog",
-      "Measurable outcomes"
-    ]
+      "HIPAA-aware workflows",
+      "Local SEO + GBP",
+      "Conversion tracking",
+      "Weekly delivery"
+    ],
+    visual: <HeroVisual />
+  },
+  metrics: {
+    title: "Clinic growth, measured — not guessed.",
+    items: [
+      "+20–50% — More booked appointments",
+      "Top 3–10 — Higher local rankings (Google Maps)",
+      "+30–60% — More qualified calls & form leads",
+      "+10–25% — Better lead-to-appointment conversion"
+    ],
+    visual: <AttributionVisual />
+  },
+  trustedBy: {
+    title: "Trusted by clinics and digital health teams.",
+    visual: <div><BrandCarousel /><p className="text-center text-sm text-gray-500 mt-4 font-medium">Clinic growth + digital transformation + patient engagement.</p></div>
   },
   problem: {
-    title: "Patient acquisition gets blocked when the journey is broken",
-    quote: "“Marketing” happens without real clinic digital transformation",
+    title: "Patient acquisition breaks when the journey is broken.",
+    quote: "Most clinics don’t have a marketing problem. They have a journey + measurement problem.",
     items: [
-      "Portal, intake, website, and reviews don’t connect",
-      "Updates take weeks across multiple vendors",
-      "No single owner for bookings, inquiries, and retention",
-      "You can’t see what’s driving calls, forms, and appointments"
-    ]
+      "Patients drop when intake is slow or confusing",
+      "Calls get wasted when tracking is missing or messy",
+      "Local visibility slips when GBP + reviews aren’t managed",
+      "Vendors don’t align — and nothing improves end-to-end"
+    ],
+    visual: <BrokenJourneyVisual />
   },
   solution: {
     title: "One team. One backlog. More appointments.",
-    description: "We act as your integrated partner for patient acquisition clinic growth—product + UX + dev + marketing + analytics under one plan.",
+    description: "We run clinic digital transformation as one system: digital patient engagement platform + clinic patient portal software improvements + local SEO + conversion tracking.",
     primaryCta: "Get My Clinic Growth Roadmap",
     features: [
       "Patient journey upgrades (portal + intake + booking flow)",
-      "Local visibility + trust system (GBP, reviews, service pages)",
-      "HIPAA-aware growth workflows and reporting",
-      "Tracking that ties traffic → calls/forms → appointments",
+      "Local visibility system (Google Business Profile, reviews, service pages)",
+      "HIPAA-aware execution (privacy-first workflows and reporting)",
+      "Conversion tracking (traffic → calls/forms → booked appointments)",
       "Weekly delivery cadence (demos, priorities, stage gates)"
     ],
-    items: [
-        "Integrated Product & Marketing",
-        "HIPAA-Aware Execution",
-        "Transparent Reporting"
-    ]
+    items: [], // Handled by visual
+    visual: <SolutionDashboardVisual />
   },
   howItWorks: {
     steps: [
       {
         title: "Validate (Weeks 1–2)",
-        description: "Journey audit + local SEO audit + tracking plan + prioritized roadmap"
+        description: "Audit the patient journey + local SEO + tracking. Deliver a prioritized growth roadmap."
       },
       {
         title: "Build (Weeks 3–8)",
-        description: "Portal/intake improvements + website CRO + service pages + measurement setup"
+        description: "Fix portal/intake friction + CRO improvements + service pages + tracking setup."
       },
       {
         title: "Launch (Weeks 9–10)",
-        description: "QA + go-live + dashboards + team handover"
+        description: "QA + go-live + dashboards + handover (or keep us on to run growth)."
       },
       {
         title: "Scale (Monthly)",
-        description: "CRO experiments + SEO iteration + retention flows + continuous improvements"
+        description: "CRO experiments + local SEO iteration + review workflows + continuous improvements."
       }
-    ]
+    ],
+    visual: <ProcessVisual />
   },
-  proof: {
-    title: "What clinics typically improve in 8–12 weeks",
+  outcomes: {
+    title: "What clinics improve in 8–12 weeks",
     items: [
       "More bookings from the same traffic",
-      "Better local visibility and reviews performance",
-      "Faster iteration (no vendor ping-pong)",
-      "Clear attribution: what’s driving appointments"
+      "Better local visibility and review performance",
+      "Clear attribution: what’s driving appointments",
+      "Faster iteration (no vendor ping-pong)"
     ],
+    visual: <OutcomesVisual />
+  },
+  proof: {
+    title: "Real clinic growth. Real outcomes.",
+    items: [], // Moved to metrics section
     testimonials: [
       {
         quote: "We stopped coordinating vendors. Now improvements ship weekly.",
-        author: "Dr. Sarah M."
+        author: "Dr. Sarah M.",
+        role: "Clinic Owner, Vascular Care"
       },
       {
         quote: "Tracking finally showed what was driving appointments.",
-        author: "Mark T."
+        author: "Mark T.",
+        role: "Practice Manager, Multi-site Clinic"
       }
     ],
+    useCasesTitle: "Common clinic growth wins we deliver",
     useCases: [
       "Portal + intake conversion cleanup",
-      "Local SEO + GBP + review workflow system",
-      "Measurement + reporting for calls/forms/bookings"
+      "Local SEO + Google Business Profile + reviews workflow",
+      "Measurement & reporting for calls/forms/bookings"
     ]
   },
   faq: {
     items: [
       {
         question: "Do you support HIPAA requirements?",
-        answer: "Yes—HIPAA-aware delivery and workflows aligned to your environment."
+        answer: "We design HIPAA-aware workflows and privacy-first tracking. If you have specific compliance requirements, we align delivery and documentation accordingly."
       },
       {
         question: "Do you replace our portal/EHR?",
-        answer: "Not necessarily—we optimize the journey around what you use and integrate when needed."
+        answer: "Usually no. We improve the patient journey around it: intake, scheduling, website conversion, and tracking."
       },
       {
         question: "Do you run ads?",
-        answer: "Yes, but we start by fixing conversion + tracking first—then scale spend confidently."
+        answer: "Yes — but we start by fixing the journey and measurement first, so ad spend turns into booked patients (not wasted clicks)."
       }
     ]
   },
   finalCta: {
-    title: "Want more appointments without the chaos?",
+    title: "Want more bookings without adding more vendors?",
     primaryCta: "Get My Clinic Growth Roadmap",
-    secondaryCta: "See Clinic Package"
+    secondaryCta: "See the Package",
+    visual: <RoadmapPreviewVisual />
   }
 };
 
