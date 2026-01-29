@@ -10,6 +10,7 @@ const CONTENT = {
     url: "/solutions/clinic-growth"
   },
   hero: {
+    layout: "split",
     title: "Clinic Growth Package",
     subtitle: "A digital patient engagement platform that books more patients. One partner to fix your patient journey, improve local visibility, and turn traffic into booked appointments. Website + portal + intake + tracking + local SEO — aligned under one plan.",
     primaryCta: "Get My Clinic Growth Roadmap",

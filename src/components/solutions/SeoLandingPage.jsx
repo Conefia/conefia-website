@@ -288,75 +288,153 @@ export default function SeoLandingPage({ content }) {
           <div className="mb-8">
             <Breadcrumbs items={[{ label: 'Solutions', path: createPageUrl('Home') + '#playbook' }, { label: hero.title }]} theme="dark" />
           </div>
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-8 backdrop-blur-sm"
-            >
-              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-              <span className="text-sm font-semibold text-[#DBFE01]">Clinic Growth Package</span>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8"
-            >
-              {hero.title}
-            </motion.h1>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto"
-            >
-              {hero.subtitle}
-            </motion.p>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-            >
-              <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
-                {hero.primaryCta}
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
-                {hero.secondaryCta}
-              </button>
-            </motion.div>
 
-            {/* Trust Chips */}
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap justify-center gap-4 md:gap-8"
-            >
-              {hero.trustChips.map((chip, i) => (
-                <div key={i} className="flex items-center gap-2 text-white/70 text-sm font-medium bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
-                  <Check className="w-4 h-4 text-[#DBFE01]" />
-                  {chip}
-                </div>
-              ))}
-            </motion.div>
+          {hero.layout === 'split' ? (
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="text-left">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-8 backdrop-blur-sm"
+                >
+                  <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+                  <span className="text-sm font-semibold text-[#DBFE01]">Clinic Growth Package</span>
+                </motion.div>
+                
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6"
+                >
+                  {hero.title}
+                </motion.h1>
+                
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl"
+                >
+                  {hero.subtitle}
+                </motion.p>
+                
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="flex flex-col sm:flex-row gap-4 mb-10"
+                >
+                  <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+                    {hero.primaryCta}
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                    {hero.secondaryCta}
+                  </button>
+                </motion.div>
 
-            {hero.visual && (
-              <motion.div
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.7 }}
-                className="mt-12"
+                {/* Trust Chips - Left Aligned */}
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                  className="flex flex-wrap gap-3"
+                >
+                  {hero.trustChips.map((chip, i) => (
+                    <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                      <Check className="w-3 h-3 text-[#DBFE01]" />
+                      {chip}
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+
+              {/* Right Column Visual */}
+              <div className="relative">
+                 {hero.visual && (
+                  <motion.div
+                    initial={{ opacity: 0, x: 40 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5, duration: 0.7 }}
+                  >
+                    {hero.visual}
+                  </motion.div>
+                 )}
+              </div>
+            </div>
+          ) : (
+            /* CENTERED LAYOUT (DEFAULT) */
+            <div className="max-w-4xl mx-auto text-center">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-8 backdrop-blur-sm"
               >
-                {hero.visual}
+                <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+                <span className="text-sm font-semibold text-[#DBFE01]">Clinic Growth Package</span>
               </motion.div>
-            )}
-          </div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8"
+              >
+                {hero.title}
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto"
+              >
+                {hero.subtitle}
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+              >
+                <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+                  {hero.primaryCta}
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                  {hero.secondaryCta}
+                </button>
+              </motion.div>
+
+              {/* Trust Chips */}
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-wrap justify-center gap-4 md:gap-8"
+              >
+                {hero.trustChips.map((chip, i) => (
+                  <div key={i} className="flex items-center gap-2 text-white/70 text-sm font-medium bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                    <Check className="w-4 h-4 text-[#DBFE01]" />
+                    {chip}
+                  </div>
+                ))}
+              </motion.div>
+
+              {hero.visual && (
+                <motion.div
+                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ delay: 0.5, duration: 0.7 }}
+                  className="mt-12"
+                >
+                  {hero.visual}
+                </motion.div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 

@@ -14,7 +14,8 @@ function LayoutContent({ children, currentPageName }) {
   
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
-  const isSolutionPage = currentPageName && typeof currentPageName === 'string' && currentPageName.startsWith('solutions/');
+  // Check for both 'solutions/' (folder) and 'solutions-' (flat file naming convention)
+  const isSolutionPage = currentPageName && typeof currentPageName === 'string' && (currentPageName.startsWith('solutions/') || currentPageName.startsWith('solutions-'));
   // Use light text (dark mode header) if on Home page OR if scrolled (header becomes dark)
   const useLightText = isHomePage || isSolutionPage || scrolled || mobileMenuOpen;
 

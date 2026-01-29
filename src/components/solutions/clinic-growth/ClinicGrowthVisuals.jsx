@@ -8,72 +8,92 @@ import {
   ChevronRight, ArrowUpRight, Clock
 } from 'lucide-react';
 
-// Hero Visual: Before -> After patient journey
+// Hero Visual: Vertical Connected Patient Journey
 export const HeroVisual = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
+  const steps = [
+    { 
+      icon: Search, 
+      label: "Discovery", 
+      desc: "Patient finds you on Google Maps or Search.",
+      fix: "Top 3 Ranking + Review Mgmt" 
+    },
+    { 
+      icon: Globe, 
+      label: "Decision", 
+      desc: "Patient visits website to check credibility.",
+      fix: "High-Converting Service Pages" 
+    },
+    { 
+      icon: FileText, 
+      label: "Intake", 
+      desc: "Patient fills forms before or during booking.",
+      fix: "Mobile-First Digital Forms" 
+    },
+    { 
+      icon: CalendarCheck, 
+      label: "Booking", 
+      desc: "Patient schedules appointment directly.",
+      fix: "Integrated Self-Scheduling" 
     }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    show: { y: 0, opacity: 1 }
-  };
+  ];
 
   return (
-    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 w-full max-w-lg mx-auto mt-12 relative overflow-hidden group">
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />
+    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 w-full relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#DBFE01]/5 to-transparent pointer-events-none" />
       
-      <div className="text-xs text-white/60 font-semibold uppercase tracking-wider mb-6 text-center">
-        The Connected Patient Journey
+      <div className="flex items-center justify-between mb-8">
+        <div className="text-sm text-white font-bold uppercase tracking-wide flex items-center gap-2">
+          <Activity className="w-4 h-4 text-[#DBFE01]" />
+          Connected Journey
+        </div>
+        <div className="text-xs text-[#DBFE01] bg-[#DBFE01]/10 px-2 py-1 rounded-full font-mono border border-[#DBFE01]/20">
+          100% VISIBILITY
+        </div>
       </div>
-      
-      <motion.div 
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-        className="flex items-center justify-between relative px-2"
-      >
-        <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -z-10" />
-        <motion.div 
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-1/2 left-0 w-full h-0.5 bg-[#DBFE01] -z-10 origin-left opacity-30" 
-        />
-        
-        {[
-          { icon: Search, label: "Search" },
-          { icon: Globe, label: "Website" },
-          { icon: FileText, label: "Intake" },
-          { icon: CalendarCheck, label: "Booking" }
-        ].map((step, i) => (
+
+      <div className="relative space-y-8">
+        {/* Vertical connecting line */}
+        <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#DBFE01] to-white/10" />
+
+        {steps.map((step, i) => (
           <motion.div 
-            key={i} 
-            variants={itemVariants}
-            className="flex flex-col items-center gap-2 bg-[#0B1020] p-3 rounded-xl border border-white/10 relative z-10 hover:scale-110 transition-transform cursor-default hover:border-[#DBFE01]/50"
+            key={i}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: i * 0.15 }}
+            className="relative flex items-start gap-4"
           >
-            <div className="w-8 h-8 rounded-full bg-[#DBFE01]/20 flex items-center justify-center text-[#DBFE01]">
-              <step.icon className="w-4 h-4" />
+            <div className="relative z-10 w-10 h-10 rounded-full bg-[#0B1020] border border-[#DBFE01]/30 flex items-center justify-center shadow-[0_0_15px_rgba(219,254,1,0.15)] group hover:border-[#DBFE01] transition-colors">
+              <step.icon className="w-5 h-5 text-[#DBFE01]" />
             </div>
-            <span className="text-[10px] text-white/80 font-medium">{step.label}</span>
+            
+            <div className="flex-1 pt-1">
+              <div className="flex justify-between items-start mb-1">
+                <h4 className="text-white font-bold text-sm">{step.label}</h4>
+                <span className="text-[10px] font-bold text-[#DBFE01] uppercase tracking-wider bg-[#DBFE01]/5 px-2 py-0.5 rounded border border-[#DBFE01]/10">
+                  {step.fix}
+                </span>
+              </div>
+              <p className="text-white/60 text-xs leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
       
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        className="mt-6 flex items-center justify-center gap-2 text-xs text-[#DBFE01] bg-[#DBFE01]/10 py-2 rounded-lg border border-[#DBFE01]/20"
-      >
-        <CheckCircle2 className="w-3 h-3" />
-        <span>Zero leakage from search to schedule</span>
-      </motion.div>
+      <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-center">
+        <div className="flex items-center gap-2 text-xs font-medium text-white/80">
+          <div className="flex -space-x-2">
+            {[1,2,3].map(i => (
+              <div key={i} className="w-6 h-6 rounded-full bg-[#DBFE01] border-2 border-[#0B1020] flex items-center justify-center text-[8px] font-bold text-black">
+                <Check className="w-3 h-3" />
+              </div>
+            ))}
+          </div>
+          <span>Seamless data flow end-to-end</span>
+        </div>
+      </div>
     </div>
   );
 };
