@@ -4,7 +4,7 @@ import {
   Bot, Database, Code2, BrainCircuit, 
   Terminal, ShieldCheck, Zap, LineChart, 
   CheckCircle2, XCircle, ArrowRight, Layers,
-  GitBranch, Lock, Rocket, MessageSquare
+  GitBranch, Lock, Rocket, MessageSquare, Users
 } from 'lucide-react';
 
 // Hero Visual: AI Architecture Diagram
