@@ -10,23 +10,24 @@ import {
 // Enhanced Hero: 3D App Store + Glowing Retention
 export const HeroVisual = () => {
   return (
-    <div className="relative w-full h-[500px] flex items-center justify-center select-none perspective-[1200px] overflow-visible">
+    <div className="relative w-full min-h-[450px] md:h-[500px] flex items-center justify-center select-none perspective-[1200px] overflow-visible py-10 md:py-0">
       {/* Background Ambience - More realistic lighting */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-[#1a1f35] to-[#0B1020] rounded-3xl overflow-hidden border border-white/5">
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-[#1a1f35] to-[#0B1020] rounded-3xl overflow-hidden border border-white/5 mx-4 md:mx-0">
           <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen" />
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] mix-blend-screen" />
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
       </div>
       
       {/* Container for cards to manage spacing */}
-      <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-16 transform md:translate-y-4">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 w-full max-w-4xl px-4">
       
-          {/* Retention Graph Card - Tilted Left */}
+          {/* Retention Graph Card */}
           <motion.div 
-            initial={{ opacity: 0, x: -30, rotateY: 15 }}
-            animate={{ opacity: 1, x: 0, rotateY: 5 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0, rotateY: 5 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-80 md:w-96 bg-[#0B1020]/80 border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative group"
+            className="w-full max-w-[340px] md:w-96 bg-[#0B1020]/80 border border-white/10 rounded-2xl p-5 md:p-6 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative group md:rotate-y-6 transform-gpu"
           >
             {/* Glossy Reflection */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-2xl pointer-events-none" />
@@ -36,7 +37,7 @@ export const HeroVisual = () => {
                 <div className="p-1.5 bg-[#DBFE01]/10 rounded-md">
                     <Activity className="w-4 h-4 text-[#DBFE01]" />
                 </div>
-                <span className="text-xs font-bold text-white uppercase tracking-wider">Retention Health</span>
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Retention</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-red-500" /><span className="text-[10px] text-gray-400 font-medium">Before</span></div>
@@ -54,7 +55,7 @@ export const HeroVisual = () => {
                     </linearGradient>
                  </defs>
                  {/* Grid */}
-                 <path d="M0,0 H300 M0,44 H300 M0,88 H300 M0,132 H300 M0,176 H300" stroke="white" strokeOpacity="0.05" strokeDasharray="4 4" />
+                 <path d="M0,0 H300 M0,44 H300 M0,88 H300 M0,132 H300 M0,176 H300" stroke="white" strokeOpacity="0.05" strokeDasharray="4 4" vectorEffect="non-scaling-stroke" />
                  
                  {/* Before Curve */}
                  <motion.path 
@@ -67,6 +68,7 @@ export const HeroVisual = () => {
                    initial={{ pathLength: 0 }}
                    animate={{ pathLength: 1 }}
                    transition={{ duration: 1.5 }}
+                   vectorEffect="non-scaling-stroke"
                  />
     
                  {/* After Curve */}
@@ -80,12 +82,13 @@ export const HeroVisual = () => {
                    initial={{ pathLength: 0 }}
                    animate={{ pathLength: 1 }}
                    transition={{ duration: 1.5, delay: 0.5 }}
+                   vectorEffect="non-scaling-stroke"
                  />
                  
-                 {/* Interactive Point */}
+                 {/* Interactive Point - Adjusted for responsiveness, simplified */}
                  <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>
-                    <circle cx="300" cy="76" r="4" fill="#DBFE01" stroke="#0B1020" strokeWidth="2" />
-                    <foreignObject x="240" y="20" width="100" height="50">
+                    <circle cx="80%" cy="40%" r="4" fill="#DBFE01" stroke="#0B1020" strokeWidth="2" />
+                    <foreignObject x="65%" y="10%" width="100" height="50">
                         <div className="bg-[#DBFE01] text-[#1a1a1a] text-[10px] font-bold px-2 py-1 rounded shadow-lg text-center transform translate-y-2">
                            D30: 42%
                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#DBFE01] rotate-45" />
@@ -96,73 +99,69 @@ export const HeroVisual = () => {
             </div>
           </motion.div>
     
-          {/* App Store Mock - Tilted Right */}
+          {/* App Store Mock */}
           <motion.div 
-            initial={{ opacity: 0, x: 30, rotateY: -15 }}
-            animate={{ opacity: 1, x: 0, rotateY: -5 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0, rotateY: -5 }}
+            viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-72 bg-white rounded-[2.5rem] p-5 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] border-[6px] border-gray-50/50 z-20 relative overflow-hidden ring-1 ring-black/5"
+            className="w-full max-w-[280px] md:w-72 bg-white rounded-[2.5rem] p-5 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] border-[6px] border-gray-50/50 z-20 relative overflow-hidden ring-1 ring-black/5 transform-gpu"
           >
              {/* Screen Reflection */}
              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50 pointer-events-none z-30" />
             
             <div className="relative z-10">
                 {/* Header */}
-                <div className="flex items-center gap-4 mb-6">
-                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center text-white ring-4 ring-blue-50">
-                      <Zap className="w-8 h-8" />
+                <div className="flex items-center gap-3 mb-5">
+                   <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center text-white ring-4 ring-blue-50">
+                      <Zap className="w-7 h-7" />
                    </div>
                    <div className="flex-1">
-                      <div className="h-4 w-32 bg-gray-900 rounded-lg mb-2" />
-                      <div className="h-2.5 w-20 bg-gray-300 rounded-lg" />
+                      <div className="h-3 w-full bg-gray-900 rounded-lg mb-2" />
+                      <div className="h-2 w-2/3 bg-gray-300 rounded-lg" />
                    </div>
                 </div>
                 
                 {/* Stats */}
-                <div className="flex justify-between items-center mb-6 px-1">
+                <div className="flex justify-between items-center mb-5 px-1">
                    <div className="text-center">
-                      <div className="flex items-center justify-center gap-0.5 text-gray-900 font-black text-sm">
-                        5.0 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      <div className="flex items-center justify-center gap-0.5 text-gray-900 font-black text-xs">
+                        5.0 <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
                       </div>
-                      <div className="text-[10px] text-gray-400 font-bold uppercase">Ratings</div>
+                      <div className="text-[9px] text-gray-400 font-bold uppercase">Rate</div>
                    </div>
-                   <div className="w-px h-8 bg-gray-100" />
+                   <div className="w-px h-6 bg-gray-100" />
                    <div className="text-center">
-                      <div className="text-sm font-black text-blue-600">#1</div>
-                      <div className="text-[10px] text-gray-400 font-bold uppercase">Chart</div>
+                      <div className="text-xs font-black text-blue-600">#1</div>
+                      <div className="text-[9px] text-gray-400 font-bold uppercase">Top</div>
                    </div>
-                   <div className="w-px h-8 bg-gray-100" />
+                   <div className="w-px h-6 bg-gray-100" />
                    <div className="text-center">
-                      <div className="text-sm font-black text-gray-900">4+</div>
-                      <div className="text-[10px] text-gray-400 font-bold uppercase">Age</div>
+                      <div className="text-xs font-black text-gray-900">4+</div>
+                      <div className="text-[9px] text-gray-400 font-bold uppercase">Age</div>
                    </div>
                 </div>
     
                 {/* CTA */}
-                <button className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-200 hover:scale-[1.02] transition-transform mb-6 text-sm">
+                <button className="w-full bg-blue-600 text-white font-bold py-2.5 rounded-xl shadow-lg shadow-blue-200 hover:scale-[1.02] transition-transform mb-5 text-xs tracking-wide">
                     UPDATE
                 </button>
     
                 {/* Screenshots Carousel */}
-                <div className="flex gap-3 overflow-hidden mask-linear-fade pb-2">
+                <div className="flex gap-2 overflow-hidden mask-linear-fade pb-1">
                    {[1,2].map(i => (
-                     <div key={i} className="w-28 h-40 bg-gray-50 rounded-2xl flex-shrink-0 relative overflow-hidden border border-gray-100 shadow-inner">
+                     <div key={i} className="w-24 h-32 bg-gray-50 rounded-xl flex-shrink-0 relative overflow-hidden border border-gray-100 shadow-inner">
                         <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50" />
-                        
-                        {/* Mock UI Elements */}
-                        <div className="absolute top-4 left-3 right-3 h-2 bg-gray-200 rounded-full" />
-                        <div className="absolute top-8 left-3 w-8 h-8 bg-blue-100 rounded-full" />
-                        <div className="absolute top-8 right-3 bottom-12 left-14 space-y-2">
-                            <div className="h-2 bg-gray-100 rounded w-full" />
-                            <div className="h-2 bg-gray-100 rounded w-2/3" />
-                            <div className="h-2 bg-gray-100 rounded w-full" />
+                        <div className="absolute top-3 left-2 right-2 h-1.5 bg-gray-200 rounded-full" />
+                        <div className="absolute top-6 left-2 w-6 h-6 bg-blue-100 rounded-full" />
+                        <div className="absolute top-6 right-2 bottom-8 left-10 space-y-1.5">
+                            <div className="h-1.5 bg-gray-100 rounded w-full" />
+                            <div className="h-1.5 bg-gray-100 rounded w-2/3" />
                         </div>
-                        
-                        {/* New Tag */}
                         {i === 1 && (
                             <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                                <div className="bg-[#DBFE01] text-[#1a1a1a] text-[9px] font-extrabold px-2 py-1 rounded rotate-[-10deg] shadow-lg">
-                                    ASO WINNER
+                                <div className="bg-[#DBFE01] text-[#1a1a1a] text-[8px] font-extrabold px-1.5 py-0.5 rounded rotate-[-10deg] shadow-lg">
+                                    WINNER
                                 </div>
                             </div>
                         )}
