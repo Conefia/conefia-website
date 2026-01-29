@@ -1,114 +1,135 @@
 import React from 'react';
 import SeoLandingPage from '@/components/solutions/SeoLandingPage';
+import { HeroVisual, OutcomesVisual, ProblemVisual, SolutionVisual } from '@/components/solutions/dtc-growth/DtcGrowthVisuals';
+import { Check, X } from 'lucide-react';
 
 const CONTENT = {
   meta: {
-    title: "Shopify CRO & DTC Growth Services | Conefia",
-    description: "DTC brand growth marketing services: Shopify conversion rate optimization, paid ads management, and retention strategy.",
-    url: "/solutions/dtc-brand-growth"
+    title: "DTC Growth: Shopify CRO + Paid Ads | Conefia",
+    description: "DTC brand growth marketing services: Shopify CRO, paid ads management, retention flows, and profit-first tracking to cut CAC.",
+    url: "https://conefia.com/solutions/dtc-growth"
   },
   hero: {
-    title: "DTC Brand Growth Marketing Services (Shopify)",
-    subtitle: "Scale profitably—without guessing. If CAC is rising and ROAS is unstable, you need a system: Shopify conversion rate optimization agency + testing + retention—owned by one team.",
-    primaryCta: "Get My DTC Growth Audit",
-    secondaryCta: "See Package",
-    trustChips: [
-      "Shopify CRO",
-      "Paid testing",
-      "Email/SMS retention",
-      "Profit-first reporting"
+    title: "DTC Brand Growth",
+    subtitle: "Cut CAC. Stabilize ROAS. Lift conversion — profitably. If you’re spending but margins aren’t improving, you don’t need “more ads.” You need Shopify CRO + offer clarity + measurement that makes growth predictable.",
+    primaryCta: "Get My Growth Audit",
+    secondaryCta: "See the Package",
+    trustChips: ["Shopify Experts", "Profit-First", "Data-Driven"],
+    layout: "split",
+    visual: <HeroVisual />
+  },
+  metrics: {
+    title: "Outcomes",
+    visual: <OutcomesVisual />,
+    items: [
+      "↓10–25% — Lower CAC",
+      "↑15–40% — More stable ROAS",
+      "+10–25% — Higher conversion rate",
+      "+10–30% — Higher AOV / revenue per visit"
     ]
   },
   problem: {
-    title: "You’re spending—but profit isn’t scaling",
-    quote: "No testing discipline (creative and offers change without learning)",
+    title: "The Problem: You’re spending — but profit isn’t scaling.",
+    quote: "We have great months and terrible months, and we don't know why.",
     items: [
-      "CAC rising and ROAS unstable",
-      "Shopify conversion leaks (PDP, checkout, speed, trust)",
+      "CAC rises and ROAS swings week to week",
+      "Shopify conversion leaks (PDP/cart/checkout)",
       "Email/SMS isn’t driving repeat purchases",
       "No single owner across ads → site → retention"
-    ]
+    ],
+    visual: <ProblemVisual />
   },
   solution: {
-    title: "Increase conversion and LTV with a real system",
-    description: "We combine e-commerce CRO services with acquisition and retention so gains compound.",
-    primaryCta: "Get My DTC Growth Audit",
+    title: "The Solution: A growth system you can scale without guesswork.",
+    description: "We align your acquisition, conversion, and retention into a single profit engine.",
+    primaryCta: "Get My Growth Audit",
     features: [
-      "Shopify CRO roadmap + weekly tests",
-      "Shopify paid ads and marketing management (Meta/Google where relevant)",
-      "DTC retention strategy (welcome, abandon, post-purchase, winback)",
-      "E-commerce store redesign agency support when the site needs structural fixes",
-      "Profit-first reporting: CAC, contribution margin, repeat rate, LTV"
+      "Shopify conversion rate optimization agency execution (PDP → checkout)",
+      "Shopify paid ads and marketing management (testing cadence + discipline)",
+      "DTC retention strategy (email/SMS flows that actually sell)",
+      "Profit-first tracking (CAC, MER, LTV, contribution margin)"
     ],
-    items: [
-      "Shopify CRO",
-      "Paid Ads Management",
-      "Retention Strategy"
-    ]
+    visual: <SolutionVisual />
   },
   howItWorks: {
     steps: [
       {
-        title: "Validate (Weeks 1–2)",
-        description: "Tracking cleanup + funnel audit + test plan"
+        title: "Audit (Week 1–2)",
+        description: "Deep dive into your funnel, offer structure, tracking setup, and creative performance."
       },
       {
-        title: "Build (Weeks 3–8)",
-        description: "Ship CRO improvements weekly + launch testing system + deploy retention flows"
+        title: "Build (Weeks 3–6)",
+        description: "Implementing CRO fixes, site speed improvements, high-converting landing pages, and essential email flows."
       },
       {
-        title: "Launch (Weeks 9–10)",
-        description: "Scale winners + reporting cadence + decision rules"
+        title: "Launch (Weeks 7–8)",
+        description: "Rolling out the new testing system and establishing a consistent reporting cadence."
       },
       {
         title: "Scale (Monthly)",
-        description: "Continuous CRO + creative iteration + retention expansion"
+        description: "Ongoing experiments, rapid creative iteration, and strategies to lift LTV."
       }
     ]
   },
-  proof: {
-    title: "What brands typically see in 10–12 weeks",
+  outcomes: {
+    title: "Expected Results",
     items: [
-      "Higher conversion rate and revenue per visit",
-      "More stable CAC/ROAS due to disciplined testing",
-      "Higher repeat rate with lifecycle flows",
-      "Clear reporting that drives decisions"
+      "Predictable, scalable customer acquisition",
+      "Higher average order value",
+      "Increased repeat purchase rate",
+      "Clear attribution and profitability visibility"
+    ],
+    visual: null // Outcomes visual is used in metrics section for this layout
+  },
+  proof: {
+    title: "Why brands trust us",
+    items: [
+      "No long-term lock-in contracts",
+      "Weekly strategy syncs",
+      "Direct access to your growth team"
     ],
     testimonials: [
       {
-        quote: "We stopped guessing and started compounding wins.",
-        author: "DTC Founder"
+        quote: "They fixed our conversion rate in month one. The ad spend finally makes sense.",
+        author: "Sarah J.",
+        role: "Founder, Skincare Brand"
+      },
+      {
+        quote: "Finally a team that looks at the whole picture, not just ROAS.",
+        author: "Mike T.",
+        role: "CMO, Apparel Co"
       }
     ],
-    useCases: [
-      "Shopify PDP + checkout lift",
-      "Paid testing framework",
-      "Email/SMS lifecycle setup for repeat purchase"
-    ]
+    useCases: ["Fashion & Apparel", "Health & Wellness", "Beauty & Cosmetics"],
+    useCasesTitle: "Industries We Scale"
   },
   faq: {
     items: [
       {
-        question: "Do you run Meta and Google?",
-        answer: "Yes—aligned to the CRO and testing roadmap."
+        question: "Do you handle ad creative?",
+        answer: "Yes, we provide creative strategy, briefs, and can handle production depending on the package."
       },
       {
-        question: "Do you redesign Shopify stores?",
-        answer: "Yes—when needed. We prioritize conversion impact, not aesthetics."
+        question: "What platforms do you manage?",
+        answer: "Primarily Meta (Facebook/Instagram), Google (Search/Shopping), and TikTok. We focus on where your customers are."
       },
       {
-        question: "Do you do email/SMS?",
-        answer: "Yes—flows, segmentation, and lifecycle campaigns."
+        question: "How does the audit work?",
+        answer: "It's a comprehensive review of your ad account, store performance, and email setup to identify low-hanging fruit and long-term opportunities."
+      },
+      {
+        question: "What is your pricing model?",
+        answer: "We work on a flat monthly retainer based on the scope of services. No % of ad spend incentives that encourage waste."
       }
     ]
   },
   finalCta: {
-    title: "Want a profit-first growth plan for Shopify?",
-    primaryCta: "Get My DTC Growth Audit",
-    secondaryCta: "See Package"
+    title: "Want predictable growth — not random spikes?",
+    primaryCta: "Get My Growth Audit",
+    secondaryCta: "See the Package"
   }
 };
 
-export default function SolutionsDtcGrowth() {
+export default function DtcGrowthPage() {
   return <SeoLandingPage content={CONTENT} />;
 }
