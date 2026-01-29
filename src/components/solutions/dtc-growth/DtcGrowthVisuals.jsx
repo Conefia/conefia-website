@@ -23,9 +23,9 @@ export const HeroVisual = () => {
         {/* Floating Metrics Cards */}
         <div className="flex gap-4 mb-8">
             {[
-                { label: "ROAS", val: "4.2x", icon: Target, color: "text-green-500", bg: "bg-green-500/10" },
-                { label: "CAC", val: "$24", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
-                { label: "CVR", val: "3.8%", icon: MousePointerClick, color: "text-purple-500", bg: "bg-purple-500/10" },
+                { label: "ROAS", val: "7.5x", icon: Target, color: "text-green-500", bg: "bg-green-500/10" },
+                { label: "CAC", val: "$15", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
+                { label: "CVR", val: "4.8%", icon: MousePointerClick, color: "text-purple-500", bg: "bg-purple-500/10" },
             ].map((m, i) => (
                 <motion.div
                     key={i}
