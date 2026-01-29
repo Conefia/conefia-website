@@ -1,115 +1,134 @@
 import React from 'react';
 import SeoLandingPage from '@/components/solutions/SeoLandingPage';
+import { HeroVisual, OutcomesVisual, ProblemVisual, SolutionVisual } from '@/components/solutions/accelerator/AcceleratorVisuals';
 
 const CONTENT = {
   meta: {
-    title: "Startup Accelerator MVP Launch Support | Conefia",
-    description: "Startup accelerator MVP development services + cohort execution system: build squads, demo day preparation, sponsor reporting.",
-    url: "/solutions/accelerator-support"
+    title: "Accelerator Support: Cohorts That Ship | Conefia",
+    description: "Startup accelerator MVP development services: cohort execution system, build squads, Demo Day prep, and sponsor-ready reporting.",
+    url: "https://conefia.com/solutions/accelerator-support"
   },
   hero: {
-    title: "Startup Accelerator MVP Development Services That Help Cohorts Ship",
-    subtitle: "Advice is everywhere. Execution is what wins Demo Day. Conefia supports accelerators with a repeatable delivery system: cohort-based startup execution services, MVP build squads, and sponsor-ready reporting.",
-    primaryCta: "Get My Cohort Support Plan",
+    title: "Accelerator Support",
+    subtitle: "Cohorts that ship before Demo Day. Founders get advice — but execution doesn’t scale. We provide the cohort execution system: templates, build squads, and sponsor-ready reporting.",
+    primaryCta: "Get Cohort Plan",
     secondaryCta: "See Program",
-    trustChips: [
-      "Templates + stage gates",
-      "Build squads",
-      "Demo Day readiness",
-      "Sponsor reporting"
+    trustChips: ["Execution Partners", "Technical Due Diligence", "Sponsor Reporting"],
+    layout: "split",
+    visual: <HeroVisual />
+  },
+  metrics: {
+    title: "Outcomes",
+    visual: <OutcomesVisual />,
+    items: [
+      "2× — More teams shipping MVPs",
+      "4–8 weeks — Demo Day-ready outcomes",
+      "↓50–80% — Less ops time spent on founder follow-ups",
+      "Sponsor-ready — Cohort reporting that renews funding"
     ]
   },
   problem: {
-    title: "Founders get advice—but execution doesn’t scale",
-    quote: "Demo Day deadlines create last-minute chaos",
+    title: "The Problem: Advice scales. Execution doesn’t.",
+    quote: "We have great mentors, but teams still struggle to build a shippable product by Demo Day.",
     items: [
-      "Too many teams stall without technical leadership",
-      "MVP quality varies across the cohort",
-      "Launch assets are missing (landing page, onboarding, analytics)",
-      "Sponsor/funder updates are manual and inconsistent"
-    ]
+      "Teams stall without technical leadership",
+      "Demo Day creates last-minute chaos",
+      "Quality varies across cohort MVPs",
+      "Sponsor/founder reporting is manual"
+    ],
+    visual: <ProblemVisual />
   },
   solution: {
-    title: "A technical co-founder layer for accelerator cohorts—without hiring one",
-    description: "We act like a technical co-founder for accelerator cohorts through systems, squads, and delivery cadence.",
-    primaryCta: "Get My Cohort Support Plan",
+    title: "The Solution: The delivery layer your accelerator is missing.",
+    description: "We act as the technical backbone for your cohort, ensuring every team has the resources to build, launch, and measure progress.",
+    primaryCta: "Get Cohort Plan",
     features: [
-      "Accelerator founder MVP launch support (what “done” looks like, weekly shipping)",
-      "Startup accelerator MVP development services for teams that need build help",
-      "Accelerator demo day preparation services (pitch narrative + product polish + metrics story)",
-      "Sponsor-friendly reporting (dashboards + outcomes summaries)",
-      "Optional: startup technical due diligence for investors (readiness + risk clarity)",
-      "Optional: accelerator follow-on funding enablement (proof, story, traction packaging)"
+      "Technical co-founder for accelerator cohorts (playbook + delivery leadership)",
+      "MVP build squads for founders who need help",
+      "Accelerator demo day preparation services (product polish + story + metrics)",
+      "Sponsor-friendly reporting dashboards"
     ],
-    items: [
-      "Technical Co-founder Layer",
-      "MVP Build Squads",
-      "Sponsor Reporting"
-    ]
+    visual: <SolutionVisual />
   },
   howItWorks: {
     steps: [
       {
-        title: "Validate (Weeks 1–2)",
-        description: "Cohort kickoff + stage gates + triage for build support + definitions of done"
+        title: "Onboarding (Week 1)",
+        description: "We audit the cohort's technical needs and assign resources where gaps exist."
       },
       {
-        title: "Build (Weeks 3–6)",
-        description: "Weekly delivery cadence + squad support + unblock sessions + quality guardrails"
+        title: "Build Sprint (Weeks 2-6)",
+        description: "Intensive development phase with weekly check-ins, code reviews, and unblocking sessions."
       },
       {
-        title: "Launch (Weeks 7–8)",
-        description: "Demo Day readiness checklist + onboarding/landing + tracking + sponsor reporting live"
+        title: "Demo Prep (Weeks 7-8)",
+        description: "Focus shifts to polish, load testing, and finalizing the product narrative for investors."
       },
       {
-        title: "Scale (Next cohorts)",
-        description: "Playbook refinement + repeatable templates + reporting standards"
+        title: "Demo Day & Beyond",
+        description: "Live launch support and transition planning for post-program growth."
       }
     ]
   },
-  proof: {
-    title: "What accelerators get",
+  outcomes: {
+    title: "Program Benefits",
     items: [
-      "More teams shipping functional MVPs",
-      "Less Demo Day chaos",
-      "Stronger sponsor story and renewals",
-      "Better founder experience through consistency"
+      "Higher quality MVPs on stage",
+      "Data-driven investor reporting",
+      "Reduced program manager workload",
+      "Increased follow-on funding rates"
+    ],
+    visual: null 
+  },
+  proof: {
+    title: "Trusted by top programs",
+    items: [
+      "Standardized Tech Stack",
+      "White-labeled Support",
+      "Global Talent Pool"
     ],
     testimonials: [
       {
-        quote: "Our cohort finally had a real shipping cadence.",
-        author: "Accelerator Director"
+        quote: "Our best cohort ever. Every single team had a working product on Demo Day.",
+        author: "Program Director",
+        role: "Tier 1 Accelerator"
+      },
+      {
+        quote: "The reporting dashboard alone saved me 10 hours a week.",
+        author: "Operations Lead",
+        role: "Corporate Innovation Lab"
       }
     ],
-    useCases: [
-      "Cohort templates + stage gates + weekly demos",
-      "Squad support for delivery-lagging teams",
-      "Sponsor dashboards and outcomes reporting"
-    ]
+    useCases: ["Pre-Seed Accelerators", "Corporate Innovation", "Venture Studios"],
+    useCasesTitle: "Who We Help"
   },
   faq: {
     items: [
       {
-        question: "Do you build for every startup?",
-        answer: "No—we triage. We focus build squads where it improves cohort outcomes."
+        question: "Do you take equity?",
+        answer: "We typically work on a service fee basis paid by the program, but are open to discussion for select high-potential cohorts."
       },
       {
-        question: "Do you support non-technical founders?",
-        answer: "Yes—this is often the core need: non-technical founder technical support."
+        question: "Can founders bring their own devs?",
+        answer: "Absolutely. We provide the structure and leadership. Our build squads are optional for teams that lack technical talent."
       },
       {
-        question: "Can you help with investor readiness?",
-        answer: "Yes—product readiness + metrics story + optional due diligence support."
+        question: "How do you handle IP?",
+        answer: "All IP belongs 100% to the founders. We are a service provider/partner, not an owner."
+      },
+      {
+        question: "What does the 'Technical Co-founder' role entail?",
+        answer: "Think of it as a fractional CTO for the cohort. We guide architecture, stack choices, and roadmap prioritization."
       }
     ]
   },
   finalCta: {
-    title: "Want cohorts that consistently ship before Demo Day?",
-    primaryCta: "Get My Cohort Support Plan",
+    title: "Want a cohort that ships — consistently?",
+    primaryCta: "Get Cohort Plan",
     secondaryCta: "See Program"
   }
 };
 
-export default function SolutionsAcceleratorSupport() {
+export default function AcceleratorSupportPage() {
   return <SeoLandingPage content={CONTENT} />;
 }
