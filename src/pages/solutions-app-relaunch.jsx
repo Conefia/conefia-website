@@ -1,111 +1,135 @@
 import React from 'react';
 import SeoLandingPage from '@/components/solutions/SeoLandingPage';
+import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
+import BrandCarousel from '@/components/landing/BrandCarousel';
+import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap } from 'lucide-react';
 
 const CONTENT = {
   meta: {
-    title: "App Redesign & Growth Agency | Conefia",
-    description: "App relaunch strategy with mobile app retention and engagement, ASO services, analytics, and investor-ready launch.",
-    url: "/solutions/app-relaunch-growth"
+    title: "App Relaunch: Retention + ASO Sprint | Conefia",
+    description: "App redesign and growth agency for retention: relaunch plan, performance + UX refresh, and ASO services to grow organic installs.",
+    url: "/solutions/app-relaunch"
   },
   hero: {
-    title: "App Redesign and Growth Agency for Relaunches",
-    subtitle: "Your app is live—but users aren’t sticking. Let’s fix that. Conefia runs a retention-first relaunch: product fixes, UX refresh, and app store optimization (ASO) services—so growth is earned, not forced.",
+    layout: "split",
+    title: "App Relaunch & Growth",
+    subtitle: "Fix retention first. Relaunch with confidence. Grow organically. If your app is live but users aren’t sticking, growth is leaking. We’re an app redesign and growth agency built for mobile app retention and engagement + ASO services.",
     primaryCta: "Get My Relaunch Plan",
-    secondaryCta: "See Sprint",
+    secondaryCta: "See the Sprint",
     trustChips: [
-      "Retention-first",
-      "UX + performance",
-      "ASO included",
-      "Funnel + cohorts"
-    ]
+      "Retention-led redesign",
+      "ASO services",
+      "Investor ready",
+      "Organic growth"
+    ],
+    visual: <HeroVisual />
+  },
+  metrics: {
+    title: "Outcomes that matter",
+    items: [], // Handled by visual
+    visual: <MetricsVisual />
+  },
+  trustedBy: {
+    title: "Trusted by top mobile apps.",
+    visual: <BrandCarousel />
   },
   problem: {
-    title: "Why apps plateau after launch",
-    quote: "Teams ship features without a clear retention plan",
+    title: "Your app is live — but users aren’t staying.",
+    quote: "Acquisition without retention is just a very expensive way to burn your runway.",
     items: [
       "Retention is weak (users churn after install)",
       "UX/performance issues hurt reviews and referrals",
       "ASO isn’t driving consistent organic downloads",
-      "Analytics can’t answer “what’s working?”"
-    ]
+      "Analytics isn’t clean enough to make decisions"
+    ],
+    visual: <ProblemVisual />
   },
   solution: {
-    title: "Mobile app retention and engagement—then relaunch with confidence",
-    description: "Our app redesign services focus on activation, value moments, and measurable engagement.",
+    title: "A relaunch sprint that’s investor-ready.",
+    description: "We stop the leak. We fix the product experience to build habits, then we layer on organic growth engines to scale without relying solely on paid ads.",
     primaryCta: "Get My Relaunch Plan",
     features: [
-      "Retention-led product fixes (activation + repeat behaviors)",
-      "UX refresh + performance improvements",
-      "App user retention strategy backed by funnels + cohorts (D1/D7/D30)",
-      "App relaunch strategy investor ready: narrative, metrics story, rollout plan",
-      "ASO services: keywords, store copy, screenshots, reviews strategy"
+      "Retention-led product fixes (activation + habit loops)",
+      "App redesign services (UX refresh + performance cleanup)",
+      "App store optimization (ASO) services (keywords, assets, testing plan)",
+      "Analytics you can act on (funnels + cohorts + events)"
     ],
-    items: [
-      "Retention Focus",
-      "UX & Performance",
-      "ASO & Growth"
-    ]
+    visual: <SolutionVisual />
   },
   howItWorks: {
     steps: [
       {
-        title: "Validate (Weeks 1–2)",
-        description: "Retention + funnel audit + ASO audit + prioritized relaunch backlog"
+        title: "Diagnose (Week 1)",
+        description: "Deep dive audit: Retention metrics + App Store performance + Event tracking health check."
       },
       {
-        title: "Build (Weeks 3–6)",
-        description: "UX/performance fixes + onboarding + analytics instrumentation + store assets"
+        title: "Build (Weeks 2–4)",
+        description: "Execution sprint: UX friction removal, performance tuning, and implementation of core activation loops."
       },
       {
-        title: "Launch (Weeks 7–8)",
-        description: "Release + QA + tracking verification + post-launch experiment plan"
+        title: "Relaunch (Weeks 5–6)",
+        description: "Growth layer: New ASO visual assets, keyword optimization, and review management strategy."
       },
       {
         title: "Scale (Monthly)",
-        description: "Retention optimization + ASO iteration + growth tests driven by cohort data"
+        description: "Continuous improvement: Retention experiments, A/B testing store assets, and optimizing growth loops."
       }
-    ]
+    ],
+    visual: <div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><Search className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Audit</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Redesign</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Grow</span></div></div></div>
+  },
+  outcomes: {
+    title: "Common use cases",
+    items: [
+      "“We need a relaunch strategy that’s investor ready”",
+      "“We need organic growth from ASO, not only ads”",
+      "“We need an app user retention strategy that actually works”"
+    ],
+    visual: <div className="grid gap-4">{["Consumer Social Apps", "Subscription Utilities", "Fintech & Health"].map((u,i) => <div key={i} className="bg-white/10 p-4 rounded-lg border border-white/5 flex items-center gap-3"><Smartphone className="w-5 h-5 text-[#DBFE01]"/><span className="text-white font-medium">{u}</span></div>)}</div>
   },
   proof: {
-    title: "What improves after a proper relaunch",
-    items: [
-      "Higher activation and early retention",
-      "Better ratings and store conversion",
-      "Stronger organic installs via ASO",
-      "Clear measurement for roadmap decisions"
-    ],
+    title: "Turn installs into active users.",
+    items: ["Crash-free > 99.9%", "Native (Swift/Kotlin)", "React Native / Flutter"],
     testimonials: [
       {
-        quote: "We finally understood why users churned—and fixed it.",
-        author: "Mobile Founder"
+        quote: "Our retention Day-30 doubled after the redesign. The ASO work also lowered our CPA by 40%.",
+        author: "Michael T.",
+        role: "Head of Product, FinApp"
+      },
+      {
+        quote: "Finally, a team that understands that pretty screens don't matter if users don't stick.",
+        author: "Elena R.",
+        role: "Founder, HealthTrack"
       }
     ],
+    useCasesTitle: "Platforms We Master",
     useCases: [
-      "Onboarding redesign → retention lift",
-      "Performance + UX polish → better reviews",
-      "ASO refresh → organic downloads consistency"
+      "iOS (App Store)",
+      "Android (Google Play)",
+      "React Native",
+      "Flutter"
     ]
   },
   faq: {
     items: [
       {
-        question: "Do you cover iOS and Android?",
-        answer: "Yes—native or cross-platform."
+        question: "Do you do the design and the code?",
+        answer: "Yes. We handle the UX/UI redesign and the implementation (Native or Cross-platform) to ensure performance improvements are realized."
       },
       {
-        question: "Do you handle store assets?",
-        answer: "Yes—ASO services include copy + screenshots + keyword strategy."
+        question: "How long does a relaunch take?",
+        answer: "Typically 4-6 weeks for the core sprint. We focus on high-impact changes that move the needle on retention first."
       },
       {
-        question: "How do you measure success?",
-        answer: "Activation, retention cohorts, conversion rates, and review/store performance."
+        question: "Can you guarantee ASO results?",
+        answer: "We guarantee a data-driven process and implementation of best practices. While store algorithms change, our clients typically see 15-30% lift in conversion."
       }
     ]
   },
   finalCta: {
-    title: "Ready for a relaunch that actually changes retention?",
+    title: "Want users to stick after install?",
     primaryCta: "Get My Relaunch Plan",
-    secondaryCta: "See Sprint"
+    secondaryCta: "See the Sprint",
+    visual: <RelaunchPlanVisual />
   }
 };
 
