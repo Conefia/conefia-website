@@ -10,165 +10,168 @@ import {
 // Enhanced Hero: 3D App Store + Glowing Retention
 export const HeroVisual = () => {
   return (
-    <div className="relative w-full h-[450px] flex items-center justify-center select-none perspective-[1000px]">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-purple-500/5 rounded-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
+    <div className="relative w-full h-[500px] flex items-center justify-center select-none perspective-[1200px] overflow-visible">
+      {/* Background Ambience - More realistic lighting */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-[#1a1f35] to-[#0B1020] rounded-3xl overflow-hidden border border-white/5">
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] mix-blend-screen" />
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
+      </div>
       
-      {/* Retention Graph Card - Floating Layer */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40, rotateX: 10 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute left-4 bottom-12 w-96 bg-[#0B1020] border border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.5)] z-10 backdrop-blur-xl"
-      >
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-2">
-            <Activity className="w-4 h-4 text-[#DBFE01]" />
-            <span className="text-xs font-bold text-white uppercase tracking-wider">Retention Health</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-red-500/50" /><span className="text-[10px] text-gray-400 font-medium">Leaky</span></div>
-            <div className="flex items-center gap-1.5"><div className="w-2 h-2 rounded-full bg-[#DBFE01] shadow-[0_0_10px_#DBFE01]" /><span className="text-[10px] text-[#DBFE01] font-medium">Fixed</span></div>
-          </div>
-        </div>
-        
-        {/* Graph Area */}
-        <div className="relative h-40 w-full">
-           {/* Grid lines */}
-           <div className="absolute inset-0 flex flex-col justify-between opacity-10">
-              <div className="w-full h-px bg-white border-t border-dashed border-white/50" />
-              <div className="w-full h-px bg-white border-t border-dashed border-white/50" />
-              <div className="w-full h-px bg-white border-t border-dashed border-white/50" />
-              <div className="w-full h-px bg-white" />
-           </div>
-           
-           {/* "Before" Curve (Leaky) */}
-           <svg className="absolute inset-0 overflow-visible" preserveAspectRatio="none">
-             <defs>
-                <linearGradient id="leakyGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(239, 68, 68, 0.2)" />
-                    <stop offset="100%" stopColor="rgba(239, 68, 68, 0)" />
-                </linearGradient>
-             </defs>
-             <path d="M0,40 C40,120 100,150 320,155 V160 H0 Z" fill="url(#leakyGradient)" />
-             <motion.path 
-               d="M0,40 C40,120 100,150 320,155" 
-               fill="none" 
-               stroke="#EF4444" 
-               strokeWidth="2" 
-               strokeDasharray="4 4"
-               initial={{ pathLength: 0 }}
-               animate={{ pathLength: 1 }}
-               transition={{ duration: 1.5 }}
-             />
-           </svg>
-
-           {/* "After" Curve (Sticky) */}
-           <svg className="absolute inset-0 overflow-visible" preserveAspectRatio="none">
-             <defs>
-                <linearGradient id="stickyGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(219, 254, 1, 0.2)" />
-                    <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
-                </linearGradient>
-                <filter id="glow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                    <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                </filter>
-             </defs>
-             <path d="M0,40 C60,60 150,70 320,80 V160 H0 Z" fill="url(#stickyGradient)" />
-             <motion.path 
-               d="M0,40 C60,60 150,70 320,80" 
-               fill="none" 
-               stroke="#DBFE01" 
-               strokeWidth="3"
-               filter="url(#glow)"
-               initial={{ pathLength: 0 }}
-               animate={{ pathLength: 1 }}
-               transition={{ duration: 1.5, delay: 0.5 }}
-             />
-             {/* Data Points */}
-             <motion.circle cx="0" cy="40" r="4" fill="#DBFE01" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
-             <motion.circle cx="320" cy="80" r="4" fill="#DBFE01" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }} />
-           </svg>
-           
-           {/* Labels */}
-           <div className="absolute top-10 right-0 bg-[#DBFE01] text-[#1a1a1a] text-[10px] font-bold px-2 py-1 rounded shadow-lg transform translate-x-1/2 -translate-y-1/2">
-              D30: 42%
-           </div>
-        </div>
-      </motion.div>
-
-      {/* App Store Mock - Floating Layer */}
-      <motion.div 
-        initial={{ opacity: 0, x: 40, rotateY: -10 }}
-        animate={{ opacity: 1, x: 0, rotateY: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="absolute right-0 top-8 w-64 bg-white rounded-[2rem] p-5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.15)] border border-white/50 z-20 backdrop-blur-md"
-      >
-        <div className="flex items-center gap-4 mb-6">
-           <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center">
-              <Zap className="w-7 h-7 text-white" />
-           </div>
-           <div>
-              <div className="h-3 w-28 bg-gray-900 rounded-full mb-1.5" />
-              <div className="h-2 w-16 bg-gray-300 rounded-full" />
-           </div>
-           <motion.button 
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.95 }}
-             className="ml-auto bg-blue-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full shadow-lg shadow-blue-200"
-           >
-             GET
-           </motion.button>
-        </div>
-        
-        <div className="flex justify-between items-center mb-6 px-2 border-y border-gray-50 py-3">
-           <div className="text-center">
-              <div className="flex items-center gap-0.5 text-gray-900 font-bold text-sm">
-                4.9 <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+      {/* Container for cards to manage spacing */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-16 transform md:translate-y-4">
+      
+          {/* Retention Graph Card - Tilted Left */}
+          <motion.div 
+            initial={{ opacity: 0, x: -30, rotateY: 15 }}
+            animate={{ opacity: 1, x: 0, rotateY: 5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-80 md:w-96 bg-[#0B1020]/80 border border-white/10 rounded-2xl p-6 shadow-[0_30px_60px_-12px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative group"
+          >
+            {/* Glossy Reflection */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent rounded-2xl pointer-events-none" />
+            
+            <div className="flex justify-between items-center mb-6 relative z-10">
+              <div className="flex items-center gap-2">
+                <div className="p-1.5 bg-[#DBFE01]/10 rounded-md">
+                    <Activity className="w-4 h-4 text-[#DBFE01]" />
+                </div>
+                <span className="text-xs font-bold text-white uppercase tracking-wider">Retention Health</span>
               </div>
-              <div className="text-[9px] text-gray-400 font-medium">Ratings</div>
-           </div>
-           <div className="w-px h-6 bg-gray-100" />
-           <div className="text-center">
-              <div className="text-sm font-bold text-blue-600">#1</div>
-              <div className="text-[9px] text-gray-400 font-medium">Education</div>
-           </div>
-           <div className="w-px h-6 bg-gray-100" />
-           <div className="text-center">
-              <div className="text-sm font-bold text-gray-900">4+</div>
-              <div className="text-[9px] text-gray-400 font-medium">Years</div>
-           </div>
-        </div>
-
-        {/* Screenshots */}
-        <div className="flex gap-3 overflow-hidden mask-linear-fade">
-           {[1,2,3].map(i => (
-             <div key={i} className="w-24 h-40 bg-gray-50 rounded-xl flex-shrink-0 relative overflow-hidden group border border-gray-100 shadow-sm">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white" />
-                {/* Mock UI */}
-                <div className="absolute top-3 left-3 right-3 h-2 bg-gray-200/50 rounded-full" />
-                <div className="absolute top-8 left-3 h-8 w-8 bg-blue-100 rounded-full" />
-                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-blue-50/50 to-transparent" />
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-red-500" /><span className="text-[10px] text-gray-400 font-medium">Before</span></div>
+                <div className="flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-[#DBFE01] shadow-[0_0_8px_#DBFE01]" /><span className="text-[10px] text-[#DBFE01] font-medium">After</span></div>
+              </div>
+            </div>
+            
+            {/* Graph Area */}
+            <div className="relative h-44 w-full">
+               <svg className="absolute inset-0 overflow-visible" preserveAspectRatio="none">
+                 <defs>
+                    <linearGradient id="stickyGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="rgba(219, 254, 1, 0.15)" />
+                        <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
+                    </linearGradient>
+                 </defs>
+                 {/* Grid */}
+                 <path d="M0,0 H300 M0,44 H300 M0,88 H300 M0,132 H300 M0,176 H300" stroke="white" strokeOpacity="0.05" strokeDasharray="4 4" />
+                 
+                 {/* Before Curve */}
+                 <motion.path 
+                   d="M0,40 C40,140 100,160 350,170" 
+                   fill="none" 
+                   stroke="#EF4444" 
+                   strokeWidth="2" 
+                   strokeDasharray="4 4"
+                   strokeOpacity="0.6"
+                   initial={{ pathLength: 0 }}
+                   animate={{ pathLength: 1 }}
+                   transition={{ duration: 1.5 }}
+                 />
+    
+                 {/* After Curve */}
+                 <path d="M0,40 C60,60 150,70 350,80 V180 H0 Z" fill="url(#stickyGradient)" />
+                 <motion.path 
+                   d="M0,40 C60,60 150,70 350,80" 
+                   fill="none" 
+                   stroke="#DBFE01" 
+                   strokeWidth="3"
+                   filter="drop-shadow(0 0 4px rgba(219,254,1,0.5))"
+                   initial={{ pathLength: 0 }}
+                   animate={{ pathLength: 1 }}
+                   transition={{ duration: 1.5, delay: 0.5 }}
+                 />
+                 
+                 {/* Interactive Point */}
+                 <motion.g initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2 }}>
+                    <circle cx="300" cy="76" r="4" fill="#DBFE01" stroke="#0B1020" strokeWidth="2" />
+                    <foreignObject x="240" y="20" width="100" height="50">
+                        <div className="bg-[#DBFE01] text-[#1a1a1a] text-[10px] font-bold px-2 py-1 rounded shadow-lg text-center transform translate-y-2">
+                           D30: 42%
+                           <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-[#DBFE01] rotate-45" />
+                        </div>
+                    </foreignObject>
+                 </motion.g>
+               </svg>
+            </div>
+          </motion.div>
+    
+          {/* App Store Mock - Tilted Right */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30, rotateY: -15 }}
+            animate={{ opacity: 1, x: 0, rotateY: -5 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="w-72 bg-white rounded-[2.5rem] p-5 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.3)] border-[6px] border-gray-50/50 z-20 relative overflow-hidden ring-1 ring-black/5"
+          >
+             {/* Screen Reflection */}
+             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 to-transparent opacity-50 pointer-events-none z-30" />
+            
+            <div className="relative z-10">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                   <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center text-white ring-4 ring-blue-50">
+                      <Zap className="w-8 h-8" />
+                   </div>
+                   <div className="flex-1">
+                      <div className="h-4 w-32 bg-gray-900 rounded-lg mb-2" />
+                      <div className="h-2.5 w-20 bg-gray-300 rounded-lg" />
+                   </div>
+                </div>
                 
-                {i === 1 && (
-                    <motion.div 
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 1, type: "spring" }}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[8px] font-extrabold px-2 py-1 rounded shadow-sm z-10 whitespace-nowrap"
-                    >
-                        NEW DESIGN
-                    </motion.div>
-                )}
-             </div>
-           ))}
-        </div>
-      </motion.div>
+                {/* Stats */}
+                <div className="flex justify-between items-center mb-6 px-1">
+                   <div className="text-center">
+                      <div className="flex items-center justify-center gap-0.5 text-gray-900 font-black text-sm">
+                        5.0 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                      </div>
+                      <div className="text-[10px] text-gray-400 font-bold uppercase">Ratings</div>
+                   </div>
+                   <div className="w-px h-8 bg-gray-100" />
+                   <div className="text-center">
+                      <div className="text-sm font-black text-blue-600">#1</div>
+                      <div className="text-[10px] text-gray-400 font-bold uppercase">Chart</div>
+                   </div>
+                   <div className="w-px h-8 bg-gray-100" />
+                   <div className="text-center">
+                      <div className="text-sm font-black text-gray-900">4+</div>
+                      <div className="text-[10px] text-gray-400 font-bold uppercase">Age</div>
+                   </div>
+                </div>
+    
+                {/* CTA */}
+                <button className="w-full bg-blue-600 text-white font-bold py-3 rounded-xl shadow-lg shadow-blue-200 hover:scale-[1.02] transition-transform mb-6 text-sm">
+                    UPDATE
+                </button>
+    
+                {/* Screenshots Carousel */}
+                <div className="flex gap-3 overflow-hidden mask-linear-fade pb-2">
+                   {[1,2].map(i => (
+                     <div key={i} className="w-28 h-40 bg-gray-50 rounded-2xl flex-shrink-0 relative overflow-hidden border border-gray-100 shadow-inner">
+                        <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50" />
+                        
+                        {/* Mock UI Elements */}
+                        <div className="absolute top-4 left-3 right-3 h-2 bg-gray-200 rounded-full" />
+                        <div className="absolute top-8 left-3 w-8 h-8 bg-blue-100 rounded-full" />
+                        <div className="absolute top-8 right-3 bottom-12 left-14 space-y-2">
+                            <div className="h-2 bg-gray-100 rounded w-full" />
+                            <div className="h-2 bg-gray-100 rounded w-2/3" />
+                            <div className="h-2 bg-gray-100 rounded w-full" />
+                        </div>
+                        
+                        {/* New Tag */}
+                        {i === 1 && (
+                            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                                <div className="bg-[#DBFE01] text-[#1a1a1a] text-[9px] font-extrabold px-2 py-1 rounded rotate-[-10deg] shadow-lg">
+                                    ASO WINNER
+                                </div>
+                            </div>
+                        )}
+                     </div>
+                   ))}
+                </div>
+            </div>
+          </motion.div>
+      </div>
     </div>
   );
 };
