@@ -5,7 +5,7 @@ import {
   MapPin, Star, TrendingUp, Users, Activity,
   CheckCircle2, XCircle, ArrowRight, BarChart3,
   LayoutDashboard, MessageSquare, MousePointerClick,
-  ChevronRight, ArrowUpRight, Clock
+  ChevronRight, ArrowUpRight, Clock, Check
 } from 'lucide-react';
 
 // Hero Visual: Vertical Connected Patient Journey
