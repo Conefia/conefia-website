@@ -11,11 +11,11 @@ import {
 export const HeroVisual = () => {
   return (
     <div className="relative w-full min-h-[450px] md:h-[500px] flex items-center justify-center select-none perspective-[1200px] overflow-visible py-10 md:py-0">
-      {/* Background Ambience - More realistic lighting */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] via-[#1a1f35] to-[#0B1020] rounded-3xl overflow-hidden border border-white/5 mx-4 md:mx-0">
-          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] mix-blend-screen" />
-          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] mix-blend-screen" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
+      {/* Background Ambience - Glassmorphism like Home Page */}
+      <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 mx-4 md:mx-0 shadow-2xl">
+          <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px]" />
+          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 brightness-100 contrast-150 mix-blend-overlay" />
       </div>
       
       {/* Container for cards to manage spacing */}
