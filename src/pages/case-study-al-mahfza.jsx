@@ -85,6 +85,7 @@ export default function CaseStudyAlMahfza() {
           <img 
             src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&auto=format&fit=crop&q=80"
             alt="Mobile app development for fintech money transfer app"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/50 to-transparent" />
