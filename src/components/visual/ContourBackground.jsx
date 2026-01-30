@@ -53,24 +53,8 @@ export default function ContourBackground({ className = "" }) {
             fill="none"
             opacity={0.3 + Math.random() * 0.5}
             filter={i % 6 === 0 ? "url(#glow)" : "none"}
-            animate={shouldReduceMotion ? {} : {
-              d: isMobile ? [
-                // Mobile Animation: Subtle breathing of the two loops
-                `M ${110 + ox} ${-10 + oy} 
-                 C ${40 + ox} ${15 + oy}, ${40 + ox} ${35 + oy}, ${110 + ox} ${50 + oy}
-                 M ${110 + ox} ${50 + oy}
-                 C ${40 + ox} ${75 + oy}, ${40 + ox} ${95 + oy}, ${110 + ox} ${110 + oy}`,
-                
-                `M ${115 + ox} ${-10 + oy} 
-                 C ${45 + ox} ${10 + oy}, ${45 + ox} ${40 + oy}, ${115 + ox} ${50 + oy}
-                 M ${115 + ox} ${50 + oy}
-                 C ${45 + ox} ${70 + oy}, ${45 + ox} ${100 + oy}, ${115 + ox} ${110 + oy}`,
-                
-                `M ${110 + ox} ${-10 + oy} 
-                 C ${40 + ox} ${15 + oy}, ${40 + ox} ${35 + oy}, ${110 + ox} ${50 + oy}
-                 M ${110 + ox} ${50 + oy}
-                 C ${40 + ox} ${75 + oy}, ${40 + ox} ${95 + oy}, ${110 + ox} ${110 + oy}`
-              ] : [
+            animate={(shouldReduceMotion || isMobile) ? {} : {
+              d: [
                 // Desktop Animation (Original)
                  `M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`,
                  `M ${110 + ox} ${-20 + oy} C ${-20 + ox} ${95 + oy}, ${65 + ox} ${5 + oy}, ${120 + ox} ${120 + oy}`,
