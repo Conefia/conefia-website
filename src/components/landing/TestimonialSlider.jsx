@@ -6,11 +6,13 @@ import Autoplay from 'embla-carousel-autoplay';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 
-export default function TestimonialSlider({ reduceMotion }) {
+export default function TestimonialSlider({ reduceMotion, testimonials: propTestimonials, title }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [dbTestimonials, setDbTestimonials] = useState([]);
+  const [loading, setLoading] = useState(!propTestimonials);
+
+  const testimonials = propTestimonials || dbTestimonials;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'center', skipSnaps: false },
@@ -20,11 +22,15 @@ export default function TestimonialSlider({ reduceMotion }) {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    // Fetch testimonials
+    if (propTestimonials) {
+      setLoading(false);
+      return;
+    }
+    // Fetch testimonials if not provided via props
     const fetchTestimonials = async () => {
       try {
         const data = await base44.entities.Testimonial.list('-created_date', 10);
-        setTestimonials(data);
+        setDbTestimonials(data);
       } catch (error) {
         console.error("Failed to fetch testimonials:", error);
       } finally {
@@ -33,7 +39,7 @@ export default function TestimonialSlider({ reduceMotion }) {
     };
 
     fetchTestimonials();
-  }, []);
+  }, [propTestimonials]);
 
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
@@ -73,10 +79,16 @@ export default function TestimonialSlider({ reduceMotion }) {
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-sm font-medium mb-6 backdrop-blur-sm">
             Client Feedback
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-            Trusted by founders <br />
-            <span className="text-[#DBFE01]">worldwide.</span>
-          </h2>
+          {title ? (
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              {title}
+            </h2>
+          ) : (
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+              Trusted by founders <br />
+              <span className="text-[#DBFE01]">worldwide.</span>
+            </h2>
+          )}
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto">

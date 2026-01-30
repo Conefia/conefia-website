@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
 import { 
   ArrowRight, Check, X, Sparkles, HelpCircle, 
@@ -674,30 +675,25 @@ export default function SeoLandingPage({ content }) {
             </Reveal>
           )}
 
-          {/* Testimonials */}
-          <Reveal className="grid md:grid-cols-2 gap-8 mb-16">
-            {proof.testimonials.map((testimonial, i) => (
-              <motion.div 
-                key={i} 
-                whileHover={{ y: -5 }}
-                className="bg-white text-[#1a1a1a] p-8 rounded-2xl relative shadow-lg"
-              >
-                <div className="text-[#DBFE01] text-6xl font-serif absolute top-4 left-4 opacity-20">"</div>
-                <p className="text-lg font-medium relative z-10 mb-6 italic">
-                  {testimonial.quote}
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center font-bold text-gray-400 text-lg">
-                    {testimonial.author[0]}
-                  </div>
-                  <div>
-                    <div className="font-bold text-base">{testimonial.author}</div>
-                    <div className="text-sm text-gray-500">{testimonial.role || "Clinic Owner"}</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </Reveal>
+          {/* Testimonials Slider */}
+        </div>
+      </section>
+      
+      <TestimonialSlider 
+        testimonials={proof.testimonials.map(t => ({
+          id: t.author,
+          content: t.quote,
+          client_name: t.author,
+          client_role: t.role,
+          client_company: "", // Assuming company is part of role or not provided separately in current data structure
+          rating: 5
+        }))} 
+        title={proof.title}
+        reduceMotion={reduceMotion}
+      />
+
+      <section className="py-24 bg-[#0B1020] text-white relative overflow-hidden pt-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
           {/* Use Cases */}
           <Reveal delay={0.2} className="bg-[#1a1a1a] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
