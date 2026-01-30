@@ -97,16 +97,16 @@ const CONTENT = {
     title: "Real clinic growth. Real outcomes.",
     items: [], // Moved to metrics section
     testimonials: [
-      {
-        quote: "We stopped coordinating vendors. Now improvements ship weekly.",
-        author: "Dr. Sarah M.",
-        role: "Clinic Owner, Vascular Care"
-      },
-      {
-        quote: "Tracking finally showed what was driving appointments.",
-        author: "Mark T.",
-        role: "Practice Manager, Multi-site Clinic"
-      }
+      { quote: "We stopped coordinating vendors. Now improvements ship weekly.", author: "Dr. Sarah M.", role: "Clinic Owner, Vascular Care" },
+      { quote: "Tracking finally showed what was driving appointments.", author: "Mark T.", role: "Practice Manager, Multi-site Clinic" },
+      { quote: "Our patient intake is now 100% digital and our front desk is so much happier.", author: "James R.", role: "Ops Director, Dental Group" },
+      { quote: "Local SEO results were visible in month 2. We own the map pack now.", author: "Elena V.", role: "Marketing Lead, Physio Chain" },
+      { quote: "Finally a partner that speaks HIPAA and conversion in the same sentence.", author: "Dr. Chen", role: "Founder, Dermatology Practice" },
+      { quote: "The booking flow optimization increased our conversion by 35%.", author: "Lisa K.", role: "Clinic Manager, Fertility Center" },
+      { quote: "No more ghosting patients. The automated follow-ups are a game changer.", author: "Robert B.", role: "Owner, MedSpa" },
+      { quote: "Best investment we made for our multi-location expansion.", author: "Amanda L.", role: "Regional Director, Urgent Care" },
+      { quote: "They cleaned up our messy data and gave us a dashboard we actually use.", author: "Tom H.", role: "CEO, Orthopedic Group" },
+      { quote: "Professional, fast, and they actually care about patient outcomes.", author: "Dr. Patel", role: "Founder, Pediatric Clinic" }
     ],
     useCasesTitle: "Common clinic growth wins we deliver",
     useCases: [

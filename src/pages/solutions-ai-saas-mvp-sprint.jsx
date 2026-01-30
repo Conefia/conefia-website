@@ -91,16 +91,16 @@ const CONTENT = {
     title: "Built for speed and scale.",
     items: ["Modern Stack (React/Node/Python)", "Scalable Vector DBs", "Enterprise-grade Auth"],
     testimonials: [
-      {
-        quote: "We went from idea to paying pilot in 9 weeks. The architecture held up perfectly.",
-        author: "James L.",
-        role: "Founder, LegalTech AI"
-      },
-      {
-        quote: "They didn't just build the bot, they built the system to sell it.",
-        author: "Sarah K.",
-        role: "CEO, MarketingFlow"
-      }
+      { quote: "We went from idea to paying pilot in 9 weeks. The architecture held up perfectly.", author: "James L.", role: "Founder, LegalTech AI" },
+      { quote: "They didn't just build the bot, they built the system to sell it.", author: "Sarah K.", role: "CEO, MarketingFlow" },
+      { quote: "The scope lock saved us. We would have been building features for months.", author: "David R.", role: "CTO, FinTech AI" },
+      { quote: "Investors loved the pilot metrics. Closed our seed round 2 weeks later.", author: "Emily W.", role: "Founder, EdTech Startup" },
+      { quote: "Real engineering, not just a wrapper around GPT-4.", author: "Michael T.", role: "VP Eng, Enterprise SaaS" },
+      { quote: "The launch system got us our first 10 paying customers in week 1.", author: "Jessica M.", role: "Founder, HR Tech" },
+      { quote: "Fastest team we've ever worked with. The daily updates were amazing.", author: "Chris P.", role: "Founder, Sales AI" },
+      { quote: "They handled the RAG complexity so we could focus on the user experience.", author: "Alex B.", role: "Technical Founder, Research Tool" },
+      { quote: "A true partner. They challenged our assumptions and made the product better.", author: "Nina S.", role: "CEO, Creative AI" },
+      { quote: "Pilot-ready meant actually pilot-ready. No bugs, no downtime.", author: "Tom D.", role: "Founder, Logistics AI" }
     ],
     useCasesTitle: "AI Models We Work With",
     useCases: [

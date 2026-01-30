@@ -88,16 +88,16 @@ const CONTENT = {
       "Zero Data Leakage"
     ],
     testimonials: [
-      {
-        quote: "They speak the language of our security team. That made all the difference.",
-        author: "VP of Innovation",
-        role: "Healthcare Provider"
-      },
-      {
-        quote: "Finally, an agency that understands 'move fast and break things' doesn't work in fintech.",
-        author: "Director of Product",
-        role: "Fintech Enterprise"
-      }
+      { quote: "They speak the language of our security team. That made all the difference.", author: "VP of Innovation", role: "Healthcare Provider" },
+      { quote: "Finally, an agency that understands 'move fast and break things' doesn't work in fintech.", author: "Director of Product", role: "Fintech Enterprise" },
+      { quote: "The pilot launch was flawless. Compliance was happy, users were happy.", author: "Sarah M.", role: "Head of Digital, Insurance Co" },
+      { quote: "We cut our stakeholder alignment time in half.", author: "David K.", role: "Innovation Lead, Pharma" },
+      { quote: "Audit-ready documentation saved us weeks during the security review.", author: "James L.", role: "CISO, Regional Bank" },
+      { quote: "A true partner for regulated innovation. They get the constraints.", author: "Elena R.", role: "VP Product, MedTech" },
+      { quote: "From POC to pilot in 8 weeks. Unheard of in our org.", author: "Tom B.", role: "Director, Supply Chain Corp" },
+      { quote: "The stage-gate process gave our board the confidence to approve the budget.", author: "Rachel G.", role: "CIO, Logistics Enterprise" },
+      { quote: "Top-tier engineering talent with enterprise discipline.", author: "Mark S.", role: "VP Engineering, Energy Corp" },
+      { quote: "They navigated our procurement process with patience and professionalism.", author: "Lisa D.", role: "Procurement Lead, Global Retailer" }
     ],
     useCases: ["Digital Health", "Fintech", "Insurtech", "Supply Chain"],
     useCasesTitle: "Regulated Industries"

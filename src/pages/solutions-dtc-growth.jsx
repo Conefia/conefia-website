@@ -89,16 +89,16 @@ const CONTENT = {
       "Direct access to your growth team"
     ],
     testimonials: [
-      {
-        quote: "They fixed our conversion rate in month one. The ad spend finally makes sense.",
-        author: "Sarah J.",
-        role: "Founder, Skincare Brand"
-      },
-      {
-        quote: "Finally a team that looks at the whole picture, not just ROAS.",
-        author: "Mike T.",
-        role: "CMO, Apparel Co"
-      }
+      { quote: "They fixed our conversion rate in month one. The ad spend finally makes sense.", author: "Sarah J.", role: "Founder, Skincare Brand" },
+      { quote: "Finally a team that looks at the whole picture, not just ROAS.", author: "Mike T.", role: "CMO, Apparel Co" },
+      { quote: "Our CAC dropped by 20% in the first 6 weeks.", author: "Jessica L.", role: "Founder, Home Goods" },
+      { quote: "The email flows they built are generating 30% of our revenue now.", author: "David R.", role: "Marketing Director, Supplement Brand" },
+      { quote: "Profit-first tracking changed how we spend. We're finally scaling profitably.", author: "Tom B.", role: "CEO, Footwear Brand" },
+      { quote: "No more vanity metrics. Just real revenue growth.", author: "Amanda K.", role: "Founder, Jewelry Line" },
+      { quote: "The landing pages convert like crazy. Best investment we made.", author: "Chris P.", role: "Growth Lead, Tech Accessories" },
+      { quote: "They act like owners. The strategy syncs are the highlight of my week.", author: "Rachel M.", role: "Founder, Pet Brand" },
+      { quote: "We scaled from $50k to $200k/mo with their help.", author: "James H.", role: "Founder, Coffee Brand" },
+      { quote: "Detailed, data-driven, and creative. The perfect mix.", author: "Emma S.", role: "CMO, Luxury Brand" }
     ],
     useCases: ["Fashion & Apparel", "Health & Wellness", "Beauty & Cosmetics"],
     useCasesTitle: "Industries We Scale"

@@ -88,16 +88,16 @@ const CONTENT = {
       "Global Talent Pool"
     ],
     testimonials: [
-      {
-        quote: "Our best cohort ever. Every single team had a working product on Demo Day.",
-        author: "Program Director",
-        role: "Tier 1 Accelerator"
-      },
-      {
-        quote: "The reporting dashboard alone saved me 10 hours a week.",
-        author: "Operations Lead",
-        role: "Corporate Innovation Lab"
-      }
+      { quote: "Our best cohort ever. Every single team had a working product on Demo Day.", author: "Program Director", role: "Tier 1 Accelerator" },
+      { quote: "The reporting dashboard alone saved me 10 hours a week.", author: "Operations Lead", role: "Corporate Innovation Lab" },
+      { quote: "Founders loved the technical support. It filled a huge gap in our program.", author: "Managing Director", role: "University Accelerator" },
+      { quote: "We saw a 2x increase in follow-on funding for this cohort.", author: "Partner", role: "Venture Studio" },
+      { quote: "The build squads were a lifesaver for our non-technical founders.", author: "Program Manager", role: "GovTech Accelerator" },
+      { quote: "Standardized tech stacks made due diligence so much easier for investors.", author: "Investment Committee Member", role: "Seed Fund" },
+      { quote: "They delivered 15 MVPs in 6 weeks. Incredible execution.", author: "Director", role: "FinTech Lab" },
+      { quote: "The best partner we've brought in. They actually ship.", author: "Head of Platform", role: "VC Firm" },
+      { quote: "Demo Day was flawless. No broken demos on stage.", author: "Events Lead", role: "Global Accelerator" },
+      { quote: "Sponsors were impressed by the data visibility. We renewed our grant easily.", author: "Executive Director", role: "Non-Profit Incubator" }
     ],
     useCases: ["Pre-Seed Accelerators", "Corporate Innovation", "Venture Studios"],
     useCasesTitle: "Who We Help"

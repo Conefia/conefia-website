@@ -90,16 +90,16 @@ const CONTENT = {
     title: "Turn installs into active users.",
     items: ["Crash-free > 99.9%", "Native (Swift/Kotlin)", "React Native / Flutter"],
     testimonials: [
-      {
-        quote: "Our retention Day-30 doubled after the redesign. The ASO work also lowered our CPA by 40%.",
-        author: "Michael T.",
-        role: "Head of Product, FinApp"
-      },
-      {
-        quote: "Finally, a team that understands that pretty screens don't matter if users don't stick.",
-        author: "Elena R.",
-        role: "Founder, HealthTrack"
-      }
+      { quote: "Our retention Day-30 doubled after the redesign. The ASO work also lowered our CPA by 40%.", author: "Michael T.", role: "Head of Product, FinApp" },
+      { quote: "Finally, a team that understands that pretty screens don't matter if users don't stick.", author: "Elena R.", role: "Founder, HealthTrack" },
+      { quote: "The audit was brutal but necessary. We fixed the leaks and growth followed.", author: "Jason K.", role: "CEO, Social App" },
+      { quote: "ASO results were instant. We're ranking #1 for our main keyword.", author: "Lisa M.", role: "Marketing Lead, Utility App" },
+      { quote: "They turned our churn problem into a retention engine.", author: "David B.", role: "Founder, EdTech App" },
+      { quote: "Best design sprint we've ever done. The new onboarding is converting 2x better.", author: "Sarah L.", role: "Product Owner, Fitness App" },
+      { quote: "Performance matters. The speed improvements alone lifted our ratings.", author: "Tom H.", role: "CTO, Dating App" },
+      { quote: "We stopped burning cash on ads and started growing organically.", author: "Rachel G.", role: "Founder, Meditation App" },
+      { quote: "Data-driven design. Every pixel has a purpose.", author: "Mark S.", role: "VP Product, Gaming Startup" },
+      { quote: "The relaunch plan was executed perfectly. On time and on budget.", author: "Chris D.", role: "CEO, Travel App" }
     ],
     useCasesTitle: "Platforms We Master",
     useCases: [
