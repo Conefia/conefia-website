@@ -230,6 +230,9 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         loading="lazy"
                         width="800"
                         height="600"
+                        loading="lazy"
+                        width="800"
+                        height="600"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                         <div className={`absolute inset-0 bg-gradient-to-t ${study.gradient} opacity-60`} />
