@@ -2,16 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
-import SocialProofBar from '@/components/landing/SocialProofBar';
-import BrandCarousel from '@/components/landing/BrandCarousel';
-import ProblemSolution from '@/components/landing/ProblemSolution';
-import PlaybookSection from '@/components/landing/PlaybookSection';
-import CaseStudiesSection from '@/components/landing/CaseStudiesSection';
-import TestimonialSlider from '@/components/landing/TestimonialSlider';
-import HowWeWork from '@/components/landing/HowWeWork';
-import PackagesSection from '@/components/landing/PackagesSection';
-import FAQSection from '@/components/landing/FAQSection';
-import ContactSection from '@/components/landing/ContactSection';
+
+// Lazy load below-the-fold components
+const SocialProofBar = React.lazy(() => import('@/components/landing/SocialProofBar'));
+const BrandCarousel = React.lazy(() => import('@/components/landing/BrandCarousel'));
+const ProblemSolution = React.lazy(() => import('@/components/landing/ProblemSolution'));
+const PlaybookSection = React.lazy(() => import('@/components/landing/PlaybookSection'));
+const CaseStudiesSection = React.lazy(() => import('@/components/landing/CaseStudiesSection'));
+const TestimonialSlider = React.lazy(() => import('@/components/landing/TestimonialSlider'));
+const HowWeWork = React.lazy(() => import('@/components/landing/HowWeWork'));
+const PackagesSection = React.lazy(() => import('@/components/landing/PackagesSection'));
+const FAQSection = React.lazy(() => import('@/components/landing/FAQSection'));
+const ContactSection = React.lazy(() => import('@/components/landing/ContactSection'));
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
@@ -45,16 +47,46 @@ export default function Home() {
       <main className="relative">
         <Seo canonical="/" />
         <HeroSection reduceMotion={shouldReduceMotion} />
-        <BrandCarousel />
-        <ProblemSolution reduceMotion={shouldReduceMotion} />
-        <SocialProofBar reduceMotion={shouldReduceMotion} />
-        <PlaybookSection reduceMotion={shouldReduceMotion} />
-        <CaseStudiesSection reduceMotion={shouldReduceMotion} />
-        <TestimonialSlider reduceMotion={shouldReduceMotion} />
-        <HowWeWork reduceMotion={shouldReduceMotion} />
-        <PackagesSection reduceMotion={shouldReduceMotion} />
-        <FAQSection reduceMotion={shouldReduceMotion} />
-        <ContactSection reduceMotion={shouldReduceMotion} />
+        
+        <React.Suspense fallback={<div className="h-24 bg-[#0B1020]" />}>
+          <BrandCarousel />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <ProblemSolution reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-48" />}>
+          <SocialProofBar reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <PlaybookSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <CaseStudiesSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <TestimonialSlider reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <HowWeWork reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <PackagesSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <FAQSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+        
+        <React.Suspense fallback={<div className="h-96" />}>
+          <ContactSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
       </main>
     </div>
   );
