@@ -2,7 +2,7 @@ import React from 'react';
 import SeoLandingPage from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
 import BrandCarousel from '@/components/landing/BrandCarousel';
-import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap } from 'lucide-react';
+import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
 
 const CONTENT = {
   meta: {
@@ -17,10 +17,14 @@ const CONTENT = {
     primaryCta: "Get My Relaunch Plan",
     secondaryCta: "See the Sprint",
     trustChips: [
-      "Retention-led redesign",
-      "ASO services",
-      "Investor ready",
-      "Organic growth"
+      { name: "Swift / SwiftUI", icon: Smartphone },
+      { name: "Kotlin / Jetpack", icon: Smartphone },
+      { name: "React Native", icon: Code2 },
+      { name: "Flutter", icon: Layers },
+      { name: "RevenueCat", icon: CreditCard },
+      { name: "Amplitude", icon: BarChart3 },
+      { name: "Firebase", icon: Database },
+      { name: "Mixpanel", icon: TrendingUp }
     ],
     visual: <HeroVisual />
   },
