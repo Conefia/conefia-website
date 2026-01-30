@@ -7,8 +7,16 @@ import { usePersona } from '@/components/context/PersonaContext';
 
 export default function HeroSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
+  const [isMobile, setIsMobile] = React.useState(false);
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -234,6 +242,7 @@ export default function HeroSection({ reduceMotion }) {
 
         )}
       </div>
+      )}
       
       {/* Fine grain texture */}
       <div
@@ -331,7 +340,7 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
             transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
             className="relative flex items-center justify-center">
 
-            <AccelerateProcessVisual />
+            <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
         </div>
       </div>

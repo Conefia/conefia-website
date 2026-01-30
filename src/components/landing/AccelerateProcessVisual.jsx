@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Code2, Rocket, TrendingUp, Zap } from 'lucide-react';
 
-export default function AccelerateProcessVisual() {
+export default function AccelerateProcessVisual({ reduceMotion }) {
   const steps = [
     {
       id: 1,
@@ -49,9 +49,9 @@ export default function AccelerateProcessVisual() {
         <div className="absolute left-[2.25rem] top-12 bottom-12 w-0.5 bg-white/10">
           <motion.div 
             className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#DBFE01] to-blue-500"
-            initial={{ height: "0%" }}
+            initial={{ height: reduceMotion ? "100%" : "0%" }}
             animate={{ height: "100%" }}
-            transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+            transition={{ duration: reduceMotion ? 0 : 2, ease: "easeInOut", delay: reduceMotion ? 0 : 0.5 }}
           />
         </div>
 
@@ -59,18 +59,18 @@ export default function AccelerateProcessVisual() {
           {steps.map((step, index) => (
             <motion.div
               key={step.id}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: reduceMotion ? 0 : index * 0.2 }}
               className="flex gap-6 relative"
             >
               {/* Icon Node */}
               <div className="relative z-10 flex-shrink-0">
                 <motion.div
-                  initial={{ scale: 0 }}
+                  initial={{ scale: reduceMotion ? 1 : 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ type: "spring", delay: index * 0.2 + 0.1 }}
+                  transition={{ type: "spring", delay: reduceMotion ? 0 : index * 0.2 + 0.1 }}
                   className={`w-12 h-12 rounded-xl flex items-center justify-center border-2 ${
                     step.highlight 
                       ? 'bg-[#DBFE01] border-[#DBFE01] text-black shadow-[0_0_20px_rgba(219,254,1,0.4)]' 
@@ -83,7 +83,7 @@ export default function AccelerateProcessVisual() {
                 {step.highlight && (
                   <motion.div
                     className="absolute inset-0 bg-[#DBFE01] rounded-xl -z-10"
-                    animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
+                    animate={reduceMotion ? {} : { scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
                 )}
@@ -109,7 +109,7 @@ export default function AccelerateProcessVisual() {
         {/* Floating Accent Elements */}
         <motion.div
           className="absolute top-4 right-4 text-[#DBFE01]/20"
-          animate={{ rotate: 360 }}
+          animate={reduceMotion ? {} : { rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
           <Zap className="w-24 h-24" />
