@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import ContourBackground from '@/components/visual/ContourBackground';
 import { 
@@ -63,6 +63,11 @@ const ProblemItem = ({ children }) => (
 
 export default function SeoLandingPage({ content }) {
   const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const {
     meta,
     hero,
