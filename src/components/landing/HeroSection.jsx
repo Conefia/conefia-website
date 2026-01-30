@@ -112,6 +112,7 @@ export default function HeroSection({ reduceMotion }) {
 
       
       {/* Galaxy Star Dust (High density) */}
+      {!isMobile && (
       <div className="absolute inset-0 overflow-hidden">
         {/* Dust Field 1 - Dense Main Galaxy Stream */}
         <div className="absolute inset-0" style={{ transform: 'rotate(-25deg) scale(1.3)' }}>
