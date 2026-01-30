@@ -96,6 +96,9 @@ export default function BrandCarousel() {
                   <img
                     src={logo.url}
                     alt={logo.alt}
+                    loading="lazy"
+                    width="128"
+                    height="64"
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>

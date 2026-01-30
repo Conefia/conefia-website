@@ -139,7 +139,10 @@ function LayoutContent({ children, currentPageName }) {
             <img 
             src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
             alt="Conefia" 
-            className={`h-10 transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`}
+            width="134"
+            height="40"
+            loading="eager"
+            className={`h-10 w-auto transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`}
             />
             </Link>
 
@@ -279,7 +282,10 @@ function LayoutContent({ children, currentPageName }) {
                 <img 
                   src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
                   alt="Conefia" 
-                  className="h-10 brightness-0 invert"
+                  width="134"
+                  height="40"
+                  loading="lazy"
+                  className="h-10 w-auto brightness-0 invert"
                 />
               </div>
               <p className="text-white/80 text-sm leading-relaxed max-w-sm font-medium">

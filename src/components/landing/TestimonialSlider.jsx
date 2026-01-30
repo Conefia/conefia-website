@@ -127,7 +127,10 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
                           {item.image_url ? (
                             <img 
                               src={item.image_url} 
-                              alt={item.client_name} 
+                              alt={item.client_name}
+                              loading="lazy"
+                              width="48"
+                              height="48"
                               className="w-12 h-12 rounded-full object-cover border-2 border-white/10"
                             />
                           ) : (

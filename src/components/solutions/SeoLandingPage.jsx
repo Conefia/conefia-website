@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
+
+// Lazy load heavy components
+const TestimonialSlider = React.lazy(() => import('@/components/landing/TestimonialSlider'));
 import { 
   ArrowRight, Check, X, Sparkles, HelpCircle, 
   ChevronDown, ChevronUp, Star, ShieldCheck, 
@@ -679,18 +681,20 @@ export default function SeoLandingPage({ content }) {
         </div>
       </section>
       
-      <TestimonialSlider 
-        testimonials={proof.testimonials.map(t => ({
-          id: t.author,
-          content: t.quote,
-          client_name: t.author,
-          client_role: t.role,
-          client_company: "", // Assuming company is part of role or not provided separately in current data structure
-          rating: 5
-        }))} 
-        title={proof.title}
-        reduceMotion={reduceMotion}
-      />
+      <Suspense fallback={<div className="h-96 flex items-center justify-center bg-[#0B1020]"><div className="w-8 h-8 border-4 border-[#DBFE01] border-t-transparent rounded-full animate-spin"></div></div>}>
+        <TestimonialSlider 
+          testimonials={proof.testimonials.map(t => ({
+            id: t.author,
+            content: t.quote,
+            client_name: t.author,
+            client_role: t.role,
+            client_company: "",
+            rating: 5
+          }))} 
+          title={proof.title}
+          reduceMotion={reduceMotion}
+        />
+      </Suspense>
 
       <section className="py-24 bg-[#0B1020] text-white relative overflow-hidden pt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
