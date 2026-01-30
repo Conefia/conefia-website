@@ -78,7 +78,7 @@ export default function HeroSection({ reduceMotion }) {
           background: 'radial-gradient(circle, rgba(219, 254, 1, 0.25) 0%, rgba(219, 254, 1, 0.15) 30%, transparent 60%)',
           filter: 'blur(80px)'
         }}
-        animate={reduceMotion ? {} : {
+        animate={reduceMotion || isMobile ? {} : {
           scale: [1, 1.2, 1],
           opacity: [0.4, 0.6, 0.4]
         }}
@@ -91,7 +91,7 @@ export default function HeroSection({ reduceMotion }) {
           background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, rgba(219, 254, 1, 0.1) 40%, transparent 70%)',
           filter: 'blur(70px)'
         }}
-        animate={reduceMotion ? {} : {
+        animate={reduceMotion || isMobile ? {} : {
           scale: [1.1, 0.9, 1.1],
           opacity: [0.3, 0.5, 0.3]
         }}
@@ -104,7 +104,7 @@ export default function HeroSection({ reduceMotion }) {
           background: 'radial-gradient(circle, rgba(219, 254, 1, 0.18) 0%, rgba(219, 254, 1, 0.08) 40%, transparent 70%)',
           filter: 'blur(60px)'
         }}
-        animate={reduceMotion ? {} : {
+        animate={reduceMotion || isMobile ? {} : {
           scale: [0.9, 1.15, 0.9],
           opacity: [0.25, 0.45, 0.25]
         }}
