@@ -142,6 +142,8 @@ function LayoutContent({ children, currentPageName }) {
             width="134"
             height="40"
             loading="eager"
+            fetchpriority="high"
+            decoding="async"
             className={`h-10 w-auto transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`}
             />
             </Link>

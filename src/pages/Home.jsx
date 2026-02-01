@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
+import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 
 // Lazy load below-the-fold components
 const SocialProofBar = React.lazy(() => import('@/components/landing/SocialProofBar'));
@@ -47,44 +48,44 @@ export default function Home() {
       <main className="relative">
         <Seo canonical="/" />
         <HeroSection reduceMotion={shouldReduceMotion} />
-        
-        <React.Suspense fallback={<div className="h-24 bg-[#0B1020]" />}>
+
+        <React.Suspense fallback={<DarkSectionSkeleton height="h-24" />}>
           <BrandCarousel />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <ProblemSolution reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-48" />}>
+
+        <React.Suspense fallback={<SectionSkeleton height="h-48" />}>
           <SocialProofBar reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <PlaybookSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<DarkSectionSkeleton />}>
           <CaseStudiesSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <TestimonialSlider reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <HowWeWork reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <PackagesSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <FAQSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
-        
-        <React.Suspense fallback={<div className="h-96" />}>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
           <ContactSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
       </main>
