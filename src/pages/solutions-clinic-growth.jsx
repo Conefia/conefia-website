@@ -67,7 +67,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
           title="Patient acquisition breaks when the journey is broken."
           quote="Most clinics don’t have a marketing problem. They have a journey + measurement problem."
@@ -81,7 +81,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
           title="One team. One backlog. More appointments."
           description="We run clinic digital transformation as one system: digital patient engagement platform + clinic patient portal software improvements + local SEO + conversion tracking."
@@ -97,7 +97,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
           steps={[
             {
@@ -120,7 +120,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
           title="What clinics improve in 8–12 weeks"
           items={[
@@ -133,7 +133,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Real clinic growth. Real outcomes."
           items={[]}
@@ -158,7 +158,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFAQ 
           items={[
             {
@@ -177,7 +177,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFinalCta 
           title="Want more bookings without adding more vendors?"
           primaryCta="Get My Clinic Growth Roadmap"

@@ -50,7 +50,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
           title="The Problem: Innovation gets stuck between stakeholders and compliance."
           quote="We have the budget and the idea, but it's been 6 months and we're still in security review."
@@ -64,7 +64,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
           title="The Solution: End-to-end delivery for regulated environments."
           description="We bridge the gap between agility and compliance, delivering software that pleases both innovation leaders and the CISO."
@@ -79,7 +79,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
           steps={[
             {
@@ -102,7 +102,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
           title="Enterprise Value"
           items={[
@@ -115,7 +115,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Enterprise Trust"
           items={[
@@ -140,7 +140,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFAQ 
           items={[
             {
@@ -163,7 +163,7 @@ export default function EnterpriseInnovationPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFinalCta 
           title="Want pilots that survive real governance?"
           primaryCta="Discuss Roadmap"

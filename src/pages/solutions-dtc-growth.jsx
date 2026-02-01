@@ -50,7 +50,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
           title="The Problem: You’re spending — but profit isn’t scaling."
           quote="We have great months and terrible months, and we don't know why."
@@ -64,7 +64,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
           title="The Solution: A growth system you can scale without guesswork."
           description="We align your acquisition, conversion, and retention into a single profit engine."
@@ -79,7 +79,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
           steps={[
             {
@@ -102,7 +102,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
           title="Expected Results"
           items={[
@@ -115,7 +115,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Why brands trust us"
           items={[
@@ -140,7 +140,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFAQ 
           items={[
             {
@@ -163,7 +163,7 @@ export default function DtcGrowthPage() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-96" />}>
+      <Suspense fallback={<SectionSkeleton />}>
         <SolutionFinalCta 
           title="Want predictable growth — not random spikes?"
           primaryCta="Get My Growth Audit"
