@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
 
 function Section({ children, delay = 0 }) {
   const ref = useRef(null);
@@ -32,6 +33,13 @@ export default function CaseStudyVascular() {
       <Seo 
         title="Vascular Institute Case Study - Healthcare Growth" 
         description="Conefia helped Vascular Institute of Michigan acquire 200+ patients at $20 CAC in 6 months using a multi-channel growth strategy."
+        canonical="/case-study-vascular"
+      />
+      <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Case Studies', path: '/#case-studies' }, { label: 'Vascular Institute' }]} />
+      <ServiceStructuredData 
+        name="Healthcare Growth Strategy - Vascular Institute Case Study" 
+        description="200+ patients at $20 CAC in 6 months using multi-channel growth strategy" 
+        url="/case-study-vascular" 
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
@@ -48,7 +56,7 @@ export default function CaseStudyVascular() {
             Growth
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-[#2F2F2F] mb-6 leading-tight">
             200+ patients at $20 CAC in 6 months
           </h1>
 
@@ -62,7 +70,7 @@ export default function CaseStudyVascular() {
                 <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
                   <stat.icon className={`w-5 h-5 ${stat.color}`} />
                 </div>
-                <span className="font-bold text-[#1a1a1a]">{stat.label}</span>
+                <span className="font-bold text-[#2F2F2F]">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -71,7 +79,7 @@ export default function CaseStudyVascular() {
             href="https://vascularim.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#1a1a1a]/60 hover:text-[#DBFE01] transition-colors"
+            className="inline-flex items-center gap-2 text-[#2F2F2F]/60 hover:text-[#DBFE01] transition-colors"
           >
             vascularim.com
             <ExternalLink className="w-4 h-4" />
@@ -88,7 +96,7 @@ export default function CaseStudyVascular() {
             loading="lazy"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2F2F2F] via-[#2F2F2F]/50 to-transparent" />
         </div>
       </Section>
 
@@ -98,16 +106,16 @@ export default function CaseStudyVascular() {
           <Section>
             <div className="grid md:grid-cols-3 gap-12 mb-16">
               <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Client</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">Vascular Institute of Michigan</p>
+                <h3 className="text-sm font-bold text-[#2F2F2F]/40 uppercase tracking-wider mb-3">Client</h3>
+                <p className="text-lg font-semibold text-[#2F2F2F]">Vascular Institute of Michigan</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Industry</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">Healthcare (vascular care)</p>
+                <h3 className="text-sm font-bold text-[#2F2F2F]/40 uppercase tracking-wider mb-3">Industry</h3>
+                <p className="text-lg font-semibold text-[#2F2F2F]">Healthcare (vascular care)</p>
               </div>
               <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Timeline</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">6 months</p>
+                <h3 className="text-sm font-bold text-[#2F2F2F]/40 uppercase tracking-wider mb-3">Timeline</h3>
+                <p className="text-lg font-semibold text-[#2F2F2F]">6 months</p>
               </div>
             </div>
           </Section>
@@ -127,10 +135,9 @@ export default function CaseStudyVascular() {
                     </h2>
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-blue-500">
-                    <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-6">
-                      Vascular Institute of Michigan needed to scale patient awareness for their advanced GAE (Genicular Artery Embolization) procedure—a minimally invasive treatment that dramatically improves quality of life for patients with chronic knee pain.
-                    </p>
-                    <p className="text-[#1a1a1a]/70 text-lg leading-relaxed">
+                    <p className="text-[#2F2F2F]/80 text-lg leading-relaxed mb-6">
+...
+                    <p className="text-[#2F2F2F]/70 text-lg leading-relaxed">
                       The challenge was to reach and convert the right audience across multiple digital channels while maintaining healthcare industry cost-efficiency standards—particularly difficult in a specialized medical field with strict compliance requirements and a need for educational content.
                     </p>
                   </div>
@@ -152,7 +159,7 @@ export default function CaseStudyVascular() {
                     </h2>
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-emerald-500">
-                    <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
+                    <p className="text-[#2F2F2F]/80 text-lg leading-relaxed mb-8">
                       We deployed a comprehensive multi-channel growth strategy, treating each platform as part of an integrated acquisition ecosystem:
                     </p>
                     <div className="space-y-6">
@@ -179,8 +186,8 @@ export default function CaseStudyVascular() {
                             <CheckCircle className="w-5 h-5 text-white" />
                           </div>
                           <div>
-                            <h3 className="font-bold text-[#1a1a1a] mb-1">{item.title}</h3>
-                            <p className="text-[#1a1a1a]/70 leading-relaxed">{item.desc}</p>
+                            <h3 className="font-bold text-[#2F2F2F] mb-1">{item.title}</h3>
+                            <p className="text-[#2F2F2F]/70 leading-relaxed">{item.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -197,14 +204,14 @@ export default function CaseStudyVascular() {
                 <div className="pl-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#DBFE01] to-amber-500 flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-[#1a1a1a]" />
+                      <Zap className="w-6 h-6 text-[#2F2F2F]" />
                     </div>
                     <h2 className="text-3xl font-bold bg-gradient-to-r from-[#DBFE01] to-amber-600 bg-clip-text text-transparent">
                       The Results
                     </h2>
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 bg-gradient-to-br from-[#DBFE01]/10 to-amber-500/10 border-l-4 border-[#DBFE01]">
-                    <p className="text-[#1a1a1a]/80 text-lg leading-relaxed mb-8">
+                    <p className="text-[#2F2F2F]/80 text-lg leading-relaxed mb-8">
                       Within 6 months, we delivered measurable growth across all key metrics—proving that strategic, data-driven acquisition works even in specialized healthcare verticals:
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -213,16 +220,16 @@ export default function CaseStudyVascular() {
                         { label: '$20 CAC', desc: 'Industry-leading cost efficiency', color: 'from-emerald-500 to-emerald-600' },
                         { label: '+100% Followers', desc: 'Social media growth', color: 'from-purple-500 to-purple-600' },
                       ].map((stat, i) => (
-                        <div key={i} className="glass-card rounded-2xl p-6 text-center border border-[#1a1a1a]/10">
+                        <div key={i} className="glass-card rounded-2xl p-6 text-center border border-[#2F2F2F]/10">
                           <div className={`text-3xl font-extrabold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
                             {stat.label}
                           </div>
-                          <p className="text-[#1a1a1a]/60 text-sm font-medium">{stat.desc}</p>
+                          <p className="text-[#2F2F2F]/60 text-sm font-medium">{stat.desc}</p>
                         </div>
                       ))}
                     </div>
                     <div className="bg-white/50 rounded-2xl p-6">
-                      <p className="text-[#1a1a1a]/70 leading-relaxed italic">
+                      <p className="text-[#2F2F2F]/70 leading-relaxed italic">
                         "This wasn't just lead generation—it was sustainable growth. The $20 CAC in healthcare proves that with the right strategy, precision targeting, and continuous optimization, you can scale patient acquisition profitably while building long-term brand equity."
                       </p>
                     </div>
@@ -235,7 +242,7 @@ export default function CaseStudyVascular() {
           {/* CTA */}
           <Section delay={0.4}>
             <div className="mt-16 text-center glass-card rounded-3xl p-12 bg-gradient-to-br from-blue-500/5 to-teal-500/5">
-            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Want similar results?</h3>
+            <h3 className="text-2xl font-bold text-[#2F2F2F] mb-4">Want similar results?</h3>
             <button 
               onClick={scrollToContact}
               className="btn-primary px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2"
