@@ -156,7 +156,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
   return (
     <section ref={ref} id="case-studies" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#1a1a1a]" />
+      <div className="absolute inset-0 bg-[#2F2F2F]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-transparent" />
       
       <ContourBackground className="opacity-40" />
@@ -236,7 +236,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
 
                         <div className={`absolute inset-0 bg-gradient-to-t ${study.gradient} opacity-60`} />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#2F2F2F] via-transparent to-transparent" />
                         
                         {/* Stage badge */}
                         <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
@@ -354,7 +354,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
           <p className="text-white/40 text-sm mb-4 font-medium">Want results like these?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#DBFE01] text-[#1a1a1a] font-bold hover:shadow-lg hover:shadow-[#DBFE01]/30 transition-all hover:-translate-y-0.5">
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#DBFE01] text-[#2F2F2F] font-bold hover:shadow-lg hover:shadow-[#DBFE01]/30 transition-all hover:-translate-y-0.5">
 
             Book a roadmap call
             <ArrowRight className="w-4 h-4" />
