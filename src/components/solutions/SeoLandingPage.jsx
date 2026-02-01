@@ -68,25 +68,38 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         {/* Base layer - Deep navy */}
         <div className="absolute inset-0 bg-[#0B1020]" />
         
-        {/* Simplified static background */}
+        {/* Static luminous galaxy effect */}
         <div
-          className="absolute inset-0 opacity-30 pointer-events-none"
+          className="absolute inset-0 opacity-50 pointer-events-none"
           style={{
             background: `
-              radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.12), transparent 60%),
-              radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.08), transparent 50%)
+              radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.2), transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(219, 254, 1, 0.12), transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.15), transparent 55%)
             `
           }} />
 
-        {/* Contour lines */}
-        <ContourBackground className="opacity-50" />
+        {/* Contour lines - increased opacity */}
+        <ContourBackground className="opacity-80" />
 
-        {/* Static glow */}
+        {/* Static galaxy glows */}
         <div
-          className="absolute top-[20%] right-[25%] w-[500px] h-[500px] pointer-events-none"
+          className="absolute top-[20%] right-[25%] w-[600px] h-[600px] pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.15) 0%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.25) 0%, rgba(219, 254, 1, 0.15) 30%, transparent 60%)',
             filter: 'blur(80px)'
+          }} />
+        <div
+          className="absolute bottom-[15%] right-[35%] w-[500px] h-[500px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, rgba(219, 254, 1, 0.1) 40%, transparent 70%)',
+            filter: 'blur(70px)'
+          }} />
+        <div
+          className="absolute bottom-[40%] left-[10%] w-[400px] h-[400px] pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.18) 0%, rgba(219, 254, 1, 0.08) 40%, transparent 70%)',
+            filter: 'blur(60px)'
           }} />
 
         {/* Fine grain texture */}

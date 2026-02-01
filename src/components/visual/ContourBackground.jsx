@@ -10,8 +10,8 @@ export default function ContourBackground({ className = "" }) {
       <defs>
         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-          <stop offset="40%" stopColor="rgba(219, 254, 1, 0.3)" />
-          <stop offset="60%" stopColor="rgba(219, 254, 1, 0.3)" />
+          <stop offset="40%" stopColor="rgba(219, 254, 1, 0.5)" />
+          <stop offset="60%" stopColor="rgba(219, 254, 1, 0.5)" />
           <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
         </linearGradient>
       </defs>
@@ -24,9 +24,9 @@ export default function ContourBackground({ className = "" }) {
             key={i}
             d={`M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`}
             stroke="url(#lineGradient)"
-            strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
+            strokeWidth={i % 4 === 0 ? 0.4 : 0.15}
             fill="none"
-            opacity={0.2 + Math.random() * 0.3}
+            opacity={0.4 + Math.random() * 0.4}
           />
         );
       })}
