@@ -68,33 +68,26 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         {/* Base layer - Deep navy */}
         <div className="absolute inset-0 bg-[#0B1020]" />
         
-        {/* Dense Galaxy Lumination */}
+        {/* Simplified static background */}
         <div
-          className="absolute inset-0 opacity-40 pointer-events-none"
+          className="absolute inset-0 opacity-30 pointer-events-none"
           style={{
             background: `
-              radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%),
-              radial-gradient(circle at 80% 60%, rgba(219, 254, 1, 0.1), transparent 50%)
-            `,
-            filter: 'url(#noiseFilter) contrast(150%) brightness(150%)',
-            mixBlendMode: 'color-dodge'
+              radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.12), transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.08), transparent 50%)
+            `
           }} />
 
-        {/* Flowing topographic contour lines */}
-        <ContourBackground className="opacity-80" />
-        
-        {/* Galaxy-like lime glows */}
-        <motion.div
-          className="absolute top-[20%] right-[25%] w-[600px] h-[600px]"
+        {/* Contour lines */}
+        <ContourBackground className="opacity-50" />
+
+        {/* Static glow */}
+        <div
+          className="absolute top-[20%] right-[25%] w-[500px] h-[500px] pointer-events-none"
           style={{
-            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.25) 0%, rgba(219, 254, 1, 0.15) 30%, transparent 60%)',
+            background: 'radial-gradient(circle, rgba(219, 254, 1, 0.15) 0%, transparent 60%)',
             filter: 'blur(80px)'
-          }}
-          animate={reduceMotion ? {} : {
-            scale: [1, 1.2, 1],
-            opacity: [0.4, 0.6, 0.4]
-          }}
-          transition={{ duration: 6, repeat: Infinity }} />
+          }} />
 
         {/* Fine grain texture */}
         <div
