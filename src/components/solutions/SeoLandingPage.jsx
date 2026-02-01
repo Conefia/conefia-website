@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
 
@@ -64,9 +65,9 @@ export const ProblemItem = ({ children }) => (
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], visual, layout = "center" }) => {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#0B1020]">
-        {/* Base layer - Deep navy */}
-        <div className="absolute inset-0 bg-[#0B1020]" />
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#2F2F2F]">
+          {/* Base layer */}
+          <div className="absolute inset-0 bg-[#2F2F2F]" />
         
         {/* Simplified static background */}
         <div
@@ -454,7 +455,7 @@ export const SolutionProcess = ({ steps = [], visual }) => (
 );
 
 export const SolutionOutcomes = ({ title, items = [], visual }) => (
-  <section className="py-24 bg-[#1a1a1a] text-white overflow-hidden relative">
+  <section className="py-24 bg-[#2F2F2F] text-white overflow-hidden relative">
      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#DBFE01]/5 blur-[120px] pointer-events-none" />
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -480,7 +481,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-24 bg-[#0B1020] text-white relative overflow-hidden">
+      <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -515,9 +516,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         reduceMotion={reduceMotion}
       />
 
-      <section className="py-24 bg-[#0B1020] text-white relative overflow-hidden pt-0">
+      <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden pt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Reveal delay={0.2} className="bg-[#1a1a1a] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
+          <Reveal delay={0.2} className="bg-[#2F2F2F] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
             <h3 className="text-2xl font-bold mb-8 text-center">{useCasesTitle || "Common Use Cases"}</h3>
             <div className="grid sm:grid-cols-3 gap-8">
               {useCases.map((useCase, i) => (
@@ -628,7 +629,9 @@ export default function SeoLandingPage({ content, children }) {
   return (
     <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
       <Seo title={meta.title} description={meta.description} canonical={meta.url} />
-      
+      <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Solutions', path: '/#playbook' }, { label: meta.title }]} />
+      <ServiceStructuredData name={meta.title} description={meta.description} url={meta.url} />
+
       <SolutionHero {...hero} />
       {metrics && <SolutionMetrics {...metrics} />}
       {trustedBy && <SolutionTrustedBy {...trustedBy} />}

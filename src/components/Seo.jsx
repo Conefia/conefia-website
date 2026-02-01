@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { OrganizationStructuredData } from './StructuredData';
 
 export default function Seo({ title, description, canonical }) {
   useEffect(() => {
@@ -28,5 +29,5 @@ export default function Seo({ title, description, canonical }) {
     }
   }, [title, description, canonical]);
 
-  return null;
+  return <OrganizationStructuredData />;
 }

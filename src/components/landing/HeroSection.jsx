@@ -51,30 +51,62 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden bg-[#0B1020]">
-      {/* Base layer - Deep navy */}
-      <div className="absolute inset-0 bg-[#0B1020]" />
+    <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden bg-[#2F2F2F]">
+      {/* Base layer */}
+      <div className="absolute inset-0 bg-[#2F2F2F]" />
       
-      {/* Simplified static background gradient */}
+      {/* Static background gradient */}
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background: `
-            radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.12), transparent 60%),
-            radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.08), transparent 50%)
+            radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%),
+            radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.1), transparent 50%)
           `
         }} />
 
-      {/* Contour lines - already optimized */}
-      {!reduceMotion && <ContourBackground className="opacity-50" />}
+      {/* Contour lines */}
+      <ContourBackground className="opacity-50" />
       
-      {/* Single static glow - no animation */}
+      {/* Static glows */}
       <div
-        className="absolute top-[20%] right-[25%] w-[500px] h-[500px] pointer-events-none"
+        className="absolute top-[20%] right-[25%] w-[600px] h-[600px] pointer-events-none"
         style={{
-          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.15) 0%, transparent 60%)',
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, transparent 60%)',
           filter: 'blur(80px)'
         }} />
+      <div
+        className="absolute bottom-[15%] left-[15%] w-[500px] h-[500px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.15) 0%, transparent 60%)',
+          filter: 'blur(70px)'
+        }} />
+
+      {/* Static Star Dust */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(150)].map((_, i) => {
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const size = Math.random() * 2 + 0.3;
+          const opacity = Math.random() * 0.6 + 0.2;
+          const hasGlow = Math.random() > 0.85;
+          
+          return (
+            <div
+              key={`star-${i}`}
+              className="absolute rounded-full bg-[#DBFE01]"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                width: `${size}px`,
+                height: `${size}px`,
+                opacity,
+                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+              }}
+            />
+          );
+        })}
+      </div>
       
       {/* Fine grain texture */}
       <div
