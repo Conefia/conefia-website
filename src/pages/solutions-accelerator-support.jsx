@@ -1,4 +1,5 @@
 import React from 'react';
+import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 import SeoLandingPage, { 
   SolutionHero, SolutionMetrics, SolutionTrustedBy, 
   SolutionProblem, SolutionDetails, SolutionProcess, 
