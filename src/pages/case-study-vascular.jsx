@@ -136,7 +136,8 @@ export default function CaseStudyVascular() {
                   </div>
                   <div className="glass-card rounded-3xl p-8 md:p-10 border-l-4 border-blue-500">
                     <p className="text-[#2F2F2F]/80 text-lg leading-relaxed mb-6">
-...
+                      Vascular Institute of Michigan needed to scale patient awareness for their advanced GAE (Genicular Artery Embolization) procedure—a minimally invasive treatment that dramatically improves quality of life for patients with chronic knee pain.
+                    </p>
                     <p className="text-[#2F2F2F]/70 text-lg leading-relaxed">
                       The challenge was to reach and convert the right audience across multiple digital channels while maintaining healthcare industry cost-efficiency standards—particularly difficult in a specialized medical field with strict compliance requirements and a need for educational content.
                     </p>
