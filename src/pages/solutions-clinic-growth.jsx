@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
 import Seo from '@/components/Seo';
+import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
@@ -46,7 +47,7 @@ export default function SolutionsClinicGrowth() {
         visual={<HeroVisual />}
       />
       
-      <Suspense fallback={<div className="h-64" />}>
+      <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
           title="Clinic growth, measured — not guessed."
           visual={<AttributionVisual />}
@@ -59,7 +60,7 @@ export default function SolutionsClinicGrowth() {
         />
       </Suspense>
 
-      <Suspense fallback={<div className="h-48" />}>
+      <Suspense fallback={<SectionSkeleton height="h-48" />}>
         <SolutionTrustedBy 
           title="Trusted by clinics and digital health teams."
           visual={<div><BrandCarousel /><p className="text-center text-sm text-gray-500 mt-4 font-medium">Clinic growth + digital transformation + patient engagement.</p></div>}

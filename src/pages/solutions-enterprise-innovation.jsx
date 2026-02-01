@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/enterprise/EnterpriseVisuals';
 import Seo from '@/components/Seo';
+import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
@@ -36,7 +37,7 @@ export default function EnterpriseInnovationPage() {
         visual={<HeroVisual />}
       />
       
-      <Suspense fallback={<div className="h-64" />}>
+      <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
           title="Outcomes"
           visual={<OutcomesVisual />}
