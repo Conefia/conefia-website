@@ -157,7 +157,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
     <section ref={ref} id="case-studies" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-[#2F2F2F]" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-transparent" />
+      <div className="bg-stone-950 absolute inset-0 from-[#DBFE01]/5 via-transparent to-transparent" />
       
       <ContourBackground className="opacity-40" />
 
