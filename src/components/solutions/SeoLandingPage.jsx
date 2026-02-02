@@ -80,7 +80,32 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           }} />
 
         {/* Contour lines */}
-        <ContourBackground className="opacity-50" />
+        <ContourBackground className="opacity-80" />
+
+        {/* Static Star Dust */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(150)].map((_, i) => {
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 0.3;
+            const opacity = Math.random() * 0.6 + 0.2;
+            const hasGlow = Math.random() > 0.85;
+
+            return (
+              <div
+                key={`star-${i}`}
+                className="absolute rounded-full bg-[#DBFE01]"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  opacity,
+                  boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+                }} />
+            );
+          })}
+        </div>
 
         {/* Static glow */}
         <div
@@ -456,6 +481,37 @@ export const SolutionProcess = ({ steps = [], visual }) => (
 
 export const SolutionOutcomes = ({ title, items = [], visual }) => (
   <section className="py-24 bg-[#2F2F2F] text-white overflow-hidden relative">
+     {/* Base layer */}
+     <div className="bg-stone-950 absolute inset-0" />
+     
+     {/* Contour lines */}
+     <ContourBackground className="opacity-80" />
+
+     {/* Static Star Dust */}
+     <div className="absolute inset-0 overflow-hidden pointer-events-none">
+       {[...Array(150)].map((_, i) => {
+         const x = Math.random() * 100;
+         const y = Math.random() * 100;
+         const size = Math.random() * 2 + 0.3;
+         const opacity = Math.random() * 0.6 + 0.2;
+         const hasGlow = Math.random() > 0.85;
+
+         return (
+           <div
+             key={`star-${i}`}
+             className="absolute rounded-full bg-[#DBFE01]"
+             style={{
+               left: `${x}%`,
+               top: `${y}%`,
+               width: `${size}px`,
+               height: `${size}px`,
+               opacity,
+               boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+             }} />
+         );
+       })}
+     </div>
+
      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#DBFE01]/5 blur-[120px] pointer-events-none" />
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -482,6 +538,37 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   return (
     <>
       <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
+        {/* Base layer */}
+        <div className="bg-stone-950 absolute inset-0" />
+        
+        {/* Contour lines */}
+        <ContourBackground className="opacity-80" />
+
+        {/* Static Star Dust */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(150)].map((_, i) => {
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 0.3;
+            const opacity = Math.random() * 0.6 + 0.2;
+            const hasGlow = Math.random() > 0.85;
+
+            return (
+              <div
+                key={`star-${i}`}
+                className="absolute rounded-full bg-[#DBFE01]"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  opacity,
+                  boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+                }} />
+            );
+          })}
+        </div>
+
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -517,6 +604,36 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
       />
 
       <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden pt-0">
+        {/* Base layer */}
+        <div className="bg-stone-950 absolute inset-0" />
+        
+        {/* Contour lines */}
+        <ContourBackground className="opacity-80" />
+
+        {/* Static Star Dust */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(150)].map((_, i) => {
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 0.3;
+            const opacity = Math.random() * 0.6 + 0.2;
+            const hasGlow = Math.random() > 0.85;
+
+            return (
+              <div
+                key={`star-${i}`}
+                className="absolute rounded-full bg-[#DBFE01]"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  opacity,
+                  boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+                }} />
+            );
+          })}
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal delay={0.2} className="bg-[#2F2F2F] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
             <h3 className="text-2xl font-bold mb-8 text-center">{useCasesTitle || "Common Use Cases"}</h3>
