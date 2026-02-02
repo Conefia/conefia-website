@@ -1,18 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 export default function PostCard({ post, index = 0 }) {
+  const navigate = useNavigate();
+  
   const personaLinkMap = {
     founder: 'solutions-ai-saas-mvp-sprint',
     clinic: 'solutions-clinic-growth',
     dtc: 'solutions-dtc-growth',
     accelerator: 'solutions-accelerator-support',
     enterprise: 'solutions-enterprise-innovation'
+  };
+
+  const handleReadClick = () => {
+    navigate(`/blog/${post.slug}`);
   };
 
   return (
@@ -25,7 +31,7 @@ export default function PostCard({ post, index = 0 }) {
       
       {/* Thumbnail */}
       {post.featuredImage && (
-        <div className="relative overflow-hidden aspect-[16/10]">
+        <div className="relative overflow-hidden aspect-[16/10] cursor-pointer" onClick={handleReadClick}>
           <img
             src={post.featuredImage}
             alt={post.title}
@@ -40,7 +46,7 @@ export default function PostCard({ post, index = 0 }) {
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-[#1a1a1a] mb-3 line-clamp-2 group-hover:text-[#DBFE01] transition-colors leading-tight">
+        <h3 className="text-xl font-bold text-[#1a1a1a] mb-3 line-clamp-2 group-hover:text-[#DBFE01] transition-colors leading-tight cursor-pointer" onClick={handleReadClick}>
           {post.title}
         </h3>
         
@@ -60,6 +66,7 @@ export default function PostCard({ post, index = 0 }) {
         {/* Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           <Button
+            onClick={handleReadClick}
             variant="ghost"
             className="text-[#1a1a1a] font-bold group-hover:text-[#DBFE01] transition-colors p-0 h-auto">
             Read Article

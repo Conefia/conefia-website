@@ -1,12 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Clock, Star, TrendingUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export default function FeaturedGrid({ posts }) {
+  const navigate = useNavigate();
   const featuredPosts = posts.filter(p => p.featured).slice(0, 3);
 
   const personaLinks = [
@@ -59,7 +60,7 @@ export default function FeaturedGrid({ posts }) {
                 className="group bg-white border-2 border-gray-200 rounded-2xl overflow-hidden hover:border-[#DBFE01] hover:shadow-xl transition-all duration-300">
                 
                 <div className="md:flex">
-                  <div className="md:w-2/5 relative overflow-hidden">
+                  <div className="md:w-2/5 relative overflow-hidden cursor-pointer" onClick={() => navigate(`/blog/${post.slug}`)}>
                     <img
                       src={post.featuredImage}
                       alt={post.title}
@@ -71,7 +72,7 @@ export default function FeaturedGrid({ posts }) {
                   </div>
                   
                   <div className="md:w-3/5 p-6">
-                    <h4 className="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#DBFE01] transition-colors line-clamp-2">
+                    <h4 className="text-xl font-bold text-[#1a1a1a] mb-3 group-hover:text-[#DBFE01] transition-colors line-clamp-2 cursor-pointer" onClick={() => navigate(`/blog/${post.slug}`)}>
                       {post.title}
                     </h4>
                     <p className="text-gray-600 mb-4 line-clamp-2 leading-relaxed">
@@ -86,6 +87,7 @@ export default function FeaturedGrid({ posts }) {
                         <span>{post.date}</span>
                       </div>
                       <Button
+                        onClick={() => navigate(`/blog/${post.slug}`)}
                         variant="ghost"
                         className="text-[#1a1a1a] font-bold group-hover:text-[#DBFE01] transition-colors">
                         Read
