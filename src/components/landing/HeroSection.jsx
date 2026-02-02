@@ -53,7 +53,7 @@ export default function HeroSection({ reduceMotion }) {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden bg-[#2F2F2F]">
       {/* Base layer */}
-      <div className="absolute inset-0 bg-[#2F2F2F]" />
+      <div className="bg-stone-950 absolute inset-0" />
       
       {/* Contour lines */}
       <ContourBackground className="opacity-50" />
