@@ -11,7 +11,7 @@ function LayoutContent({ children, currentPageName }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { selectedPersona } = usePersona();
   const navigate = useNavigate();
-  
+
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
   // Check for both 'solutions/' (folder) and 'solutions-' (flat file naming convention)
@@ -42,20 +42,20 @@ function LayoutContent({ children, currentPageName }) {
   };
 
   const navItems = [
-    { label: 'Playbook', id: 'playbook' },
-    { label: 'Case Studies', id: 'case-studies' },
-    { label: 'Pricing', id: 'packages' },
-    { label: 'FAQ', id: 'faq' },
-  ];
+  { label: 'Playbook', id: 'playbook' },
+  { label: 'Case Studies', id: 'case-studies' },
+  { label: 'Pricing', id: 'packages' },
+  { label: 'FAQ', id: 'faq' }];
+
 
   const solutionItems = [
-    { label: 'Clinic Growth', path: 'solutions-clinic-growth' },
-    { label: 'AI SaaS MVP Sprint', path: 'solutions-ai-saas-mvp-sprint' },
-    { label: 'App Relaunch & Growth', path: 'solutions-app-relaunch' },
-    { label: 'DTC Growth (Shopify CRO)', path: 'solutions-dtc-growth' },
-    { label: 'Enterprise Innovation', path: 'solutions-enterprise-innovation' },
-    { label: 'Accelerator Support', path: 'solutions-accelerator-support' },
-  ];
+  { label: 'Clinic Growth', path: 'solutions-clinic-growth' },
+  { label: 'AI SaaS MVP Sprint', path: 'solutions-ai-saas-mvp-sprint' },
+  { label: 'App Relaunch & Growth', path: 'solutions-app-relaunch' },
+  { label: 'DTC Growth (Shopify CRO)', path: 'solutions-dtc-growth' },
+  { label: 'Enterprise Innovation', path: 'solutions-enterprise-innovation' },
+  { label: 'Accelerator Support', path: 'solutions-accelerator-support' }];
+
 
   return (
     <div className="font-['Poppins',sans-serif]">
@@ -125,77 +125,77 @@ function LayoutContent({ children, currentPageName }) {
       `}</style>
 
       {/* Sticky Header */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-[#0B1020]/80 backdrop-blur-xl shadow-lg border-b border-white/5' 
-            : 'bg-transparent'
-        }`}
-      >
+      <header className="bg-stone-950 fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+
+
+
+
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link to={createPageUrl('Home')} className="flex items-center">
-            <img 
-            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
-            alt="Conefia" 
-            width="134"
-            height="40"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            className={`h-10 w-auto transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`}
-            />
+            <img
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png"
+                alt="Conefia"
+                width="134"
+                height="40"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                className={`h-10 w-auto transition-all duration-300 ${useLightText ? '' : 'brightness-0'}`} />
+
             </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-8">
               {/* Solutions Dropdown */}
               <div className="relative group">
-                <button 
+                <button
                   className={`text-sm font-semibold transition-colors flex items-center gap-1 py-2 ${
-                    useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
-                  }`}
-                >
+                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                  }>
+
                   Solutions
                   <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                 </button>
                 
                 <div className="absolute top-full left-0 mt-0 w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                   <div className="py-2">
-                    {solutionItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={createPageUrl(item.path)}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors"
-                      >
+                    {solutionItems.map((item) =>
+                    <Link
+                      key={item.path}
+                      to={createPageUrl(item.path)}
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
+
                         {item.label}
                       </Link>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
 
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-semibold transition-colors relative group ${
-                    useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'
-                  }`}
-                >
+              {navItems.map((item) =>
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-sm font-semibold transition-colors relative group ${
+                useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                }>
+
                   {item.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
                 </button>
-              ))}
+              )}
             </nav>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <button 
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2"
-              >
+                className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
+
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
               </button>
@@ -204,70 +204,70 @@ function LayoutContent({ children, currentPageName }) {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              {mobileMenuOpen ? (
-                <X className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} />
-              ) : (
-                <Menu className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} />
-              )}
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors">
+
+              {mobileMenuOpen ?
+              <X className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} /> :
+
+              <Menu className={`w-6 h-6 ${useLightText ? 'text-white' : 'text-[#1a1a1a]'}`} />
+              }
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-gradient-to-b from-[#121829] to-[#0B1020] border-t border-white/10 overflow-hidden relative"
-            >
+          {mobileMenuOpen &&
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-gradient-to-b from-[#121829] to-[#0B1020] border-t border-white/10 overflow-hidden relative">
+
               <div className="px-4 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
                  {/* Solutions (Mobile) */}
                  <div className="pb-4 border-b border-white/10">
                     <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Solutions</p>
-                    {solutionItems.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={createPageUrl(item.path)}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors"
-                      >
+                    {solutionItems.map((item) =>
+                <Link
+                  key={item.path}
+                  to={createPageUrl(item.path)}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors">
+
                         {item.label}
                       </Link>
-                    ))}
+                )}
                  </div>
 
                  {/* Choose your track */}
                  <button
-                    onClick={() => scrollToSection('track-selector')}
-                    className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 my-4"
-                  >
+                onClick={() => scrollToSection('track-selector')}
+                className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 my-4">
+
                     Choose your track
                     <ArrowRight className="w-4 h-4" />
                   </button>
 
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="block w-full text-left text-white text-lg font-semibold py-2"
-                  >
+                {navItems.map((item) =>
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className="block w-full text-left text-white text-lg font-semibold py-2">
+
                     {item.label}
                   </button>
-                ))}
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4"
-                >
+              )}
+                <button
+                onClick={() => scrollToSection('contact')}
+                className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
+
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </motion.div>
-          )}
+          }
         </AnimatePresence>
       </header>
 
@@ -281,14 +281,14 @@ function LayoutContent({ children, currentPageName }) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="md:col-span-2">
               <div className="mb-4">
-                <img 
-                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png" 
-                  alt="Conefia" 
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png"
+                  alt="Conefia"
                   width="134"
                   height="40"
                   loading="lazy"
-                  className="h-10 w-auto brightness-0 invert"
-                />
+                  className="h-10 w-auto brightness-0 invert" />
+
               </div>
               <p className="text-white/80 text-sm leading-relaxed max-w-sm font-medium">
                 Founder Ops for Digital Businesses. We validate, build, launch, and grow — all in one place.
@@ -321,14 +321,14 @@ function LayoutContent({ children, currentPageName }) {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>);
+
 }
 
 export default function Layout(props) {
   return (
     <PersonaProvider>
       <LayoutContent {...props} />
-    </PersonaProvider>
-  );
+    </PersonaProvider>);
+
 }
