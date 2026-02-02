@@ -143,7 +143,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-[1.05] mb-8">
+              className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
 
                   {title}
                 </motion.h1>
@@ -152,7 +152,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-white/80 leading-relaxed mb-8 max-w-2xl">
+              className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl">
 
                   {subtitle}
                 </motion.p>
@@ -221,7 +221,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-8xl font-extrabold text-white leading-[1.05] mb-10">
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
 
                 {title}
               </motion.h1>
@@ -230,7 +230,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/80 leading-relaxed mb-10 max-w-3xl mx-auto">
+            className="text-lg md:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl mx-auto">
 
                 {subtitle}
               </motion.p>

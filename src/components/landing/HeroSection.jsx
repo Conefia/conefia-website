@@ -110,7 +110,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-white leading-[1.05] tracking-tight mb-8">
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
 
               Build it.{' '}
               <span className="text-[#DBFE01]">Launch it.</span>{' '}
@@ -119,7 +119,7 @@ export default function HeroSection({ reduceMotion }) {
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">AI MVP development, launch systems, and growth execution—done by one integrated team.
+              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">AI MVP development, launch systems, and growth execution—done by one integrated team.
 For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship fast and measure outcomes.
 
 
