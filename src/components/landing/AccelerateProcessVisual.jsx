@@ -7,7 +7,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
   {
     id: 1,
     title: "Validate",
-    subtitle: "Idea → Blueprint",
+    subtitle: "De-risk before you build",
     duration: "2–4 weeks",
     icon: Lightbulb,
     description: "Market + competitor research, rapid prototyping, and a scoped roadmap you can actually ship."
@@ -15,7 +15,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
   {
     id: 2,
     title: "Build",
-    subtitle: "MVP Development Sprint",
+    subtitle: "Ship the MVP fast",
     duration: "6–12 weeks",
     icon: Code2,
     description: "Design and build a production-ready AI or mobile app MVP with scalable architecture and clean analytics."
@@ -23,7 +23,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
   {
     id: 3,
     title: "Launch",
-    subtitle: "Go-to-Market",
+    subtitle: "Start acquiring users",
     duration: "Market Ready",
     icon: Rocket,
     description: "Go live with conversion-ready landing pages, onboarding, tracking, and the channel setup to start acquiring users."
@@ -31,7 +31,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
   {
     id: 4,
     title: "Scale",
-    subtitle: "Growth Engine",
+    subtitle: "Make growth predictable",
     duration: "Ongoing",
     icon: TrendingUp,
     description: "Run CRO, SEO, and paid experiments—plus retention improvements—so growth becomes predictable and measurable.",
