@@ -117,17 +117,10 @@ export default function HeroSection({ reduceMotion }) {
               Scale it.
             </motion.h1>
 
-            {/* Subheader */}
-            <motion.h2
-              variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-white/95 mb-4 max-w-xl mx-auto lg:mx-0">
-              Your End-to-End Founder Ops Partner
-            </motion.h2>
-
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">AI MVP development, launch systems, and growth execution—done by one integrated team.
-For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship fast and measure outcomes.
+              variants={itemVariants} className="text-white/95 mb-4 mx-auto text-lg font-bold md:text-3xl max-w-xl lg:mx-0">AI + mobile app development—plus launch and scale in one team.
+
 
 
             </motion.p>
