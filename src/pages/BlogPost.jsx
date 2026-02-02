@@ -1,17 +1,24 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
 import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { blogPosts } from '@/components/blog/blogData';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 export default function BlogPost() {
   const { slug } = useParams();
-  const post = blogPosts.find(p => p.slug === slug);
+
+  const { data: posts = [], isLoading } = useQuery({
+    queryKey: ['blogPosts', slug],
+    queryFn: () => base44.entities.BlogPost.filter({ slug, published: true }),
+  });
+
+  const post = posts[0];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,10 +43,6 @@ export default function BlogPost() {
       </div>
     );
   }
-
-  const relatedPosts = blogPosts
-    .filter(p => p.id !== post.id && (p.category === post.category || p.persona === post.persona))
-    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
@@ -116,48 +119,10 @@ export default function BlogPost() {
             </motion.div>
           )}
 
-          <div className="prose prose-lg max-w-none">
-            <p className="lead text-xl text-gray-700 leading-relaxed mb-8">
-              {post.excerpt}
-            </p>
-
-            <h2>Why this matters</h2>
-            <p>
-              This is placeholder content for the blog post. In a real implementation, you would fetch the full content
-              from your CMS or database. The structure supports rich formatting, images, code blocks, and more.
-            </p>
-
-            <h2>Key Takeaways</h2>
-            <ul>
-              <li>Ship fast, validate faster—no over-engineering</li>
-              <li>Focus on one metric that matters most</li>
-              <li>Weekly demos keep everyone aligned</li>
-              <li>Build systems, not heroics</li>
-            </ul>
-
-            <h2>How to implement</h2>
-            <p>
-              Follow these steps to implement this strategy in your own business. Remember: progress over perfection.
-              The goal is to ship, learn, and iterate—not to build the perfect product on day one.
-            </p>
-
-            <h3>Step 1: Define your scope</h3>
-            <p>
-              Lock your MVP scope in one sitting. What's the absolute minimum feature set that proves your core value prop?
-              That's your v1.0. Everything else goes in the backlog.
-            </p>
-
-            <h3>Step 2: Set up weekly demos</h3>
-            <p>
-              Weekly demos create forcing functions. They keep the team honest and the client engaged. No surprises at launch.
-            </p>
-
-            <h2>Real results</h2>
-            <p>
-              We've used this exact playbook with 50+ clients. The pattern holds: fast validation → focused build → 
-              smooth launch → measurable growth. No magic, just systems.
-            </p>
-          </div>
+          <div 
+            className="prose prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-8 prose-h3:text-xl prose-h3:mt-6 prose-p:leading-relaxed prose-p:mb-4 prose-ul:mb-4 prose-ol:mb-4 prose-li:mb-2"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
 
           {/* CTA */}
           <div className="mt-16 p-8 bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] rounded-3xl border-2 border-[#DBFE01] text-center">

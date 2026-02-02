@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { base44 } from '@/api/base44Client';
+import { useQuery } from '@tanstack/react-query';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { BreadcrumbStructuredData } from '@/components/StructuredData';
@@ -10,20 +12,29 @@ import PostCard from '@/components/blog/PostCard';
 import SolutionsInterstitial from '@/components/blog/SolutionsInterstitial';
 import LeadMagnetCTA from '@/components/blog/LeadMagnetCTA';
 import BlogSidebar from '@/components/blog/BlogSidebar';
-import { blogPosts } from '@/components/blog/blogData';
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [sortBy, setSortBy] = useState('recent');
   const [showTemplatesOnly, setShowTemplatesOnly] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [filteredPosts, setFilteredPosts] = useState(blogPosts);
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  const { data: blogPosts = [], isLoading } = useQuery({
+    queryKey: ['blogPosts'],
+    queryFn: () => base44.entities.BlogPost.filter({ published: true }, '-publishDate'),
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   useEffect(() => {
+    if (!blogPosts.length) {
+      setFilteredPosts([]);
+      return;
+    }
+    
     let filtered = [...blogPosts];
 
     // Filter by category
@@ -73,7 +84,7 @@ export default function Blog() {
     }
 
     setFilteredPosts(filtered);
-  }, [activeCategory, sortBy, searchQuery, showTemplatesOnly]);
+  }, [activeCategory, sortBy, searchQuery, showTemplatesOnly, blogPosts]);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -131,6 +142,11 @@ export default function Blog() {
       {/* Main Content Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {isLoading ? (
+            <div className="text-center py-20">
+              <p className="text-gray-500">Loading posts...</p>
+            </div>
+          ) : (
           <div className="grid lg:grid-cols-4 gap-8">
             
             {/* Main Content - 3 columns */}
@@ -175,6 +191,7 @@ export default function Blog() {
               <BlogSidebar />
             </div>
           </div>
+          )}
         </div>
       </section>
     </div>
