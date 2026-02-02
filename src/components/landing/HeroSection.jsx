@@ -121,7 +121,7 @@ export default function HeroSection({ reduceMotion }) {
             <motion.h2
               variants={itemVariants}
               className="text-2xl md:text-3xl font-bold text-white/95 mb-4 max-w-xl mx-auto lg:mx-0">
-              Your End-to-End Founder Ops Partner
+              AI + mobile app development—plus launch and scale in one team.
             </motion.h2>
 
             {/* Subhead */}
