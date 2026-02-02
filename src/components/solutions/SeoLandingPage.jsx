@@ -115,9 +115,6 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           filter: 'blur(80px)'
         }} />
 
-        {/* Fine grain texture */}
-        <div className="bg-stone-950 opacity-[0.04] absolute inset-0" />
-
         {/* Vignette */}
         <div
         className="absolute inset-0 pointer-events-none"
