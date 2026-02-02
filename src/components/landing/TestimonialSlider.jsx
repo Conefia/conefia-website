@@ -63,7 +63,7 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
     <section ref={ref} className="py-20 md:py-32 relative overflow-hidden bg-[#0B1020]">
        {/* Background */}
        <div className="bg-stone-950 absolute inset-0 from-[#0B1020] to-[#121829]" />
-       <ContourBackground className="opacity-30" />
+       <ContourBackground className="opacity-80" />
        
        {/* Decorative blobs */}
        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
