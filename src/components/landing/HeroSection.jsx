@@ -117,17 +117,12 @@ export default function HeroSection({ reduceMotion }) {
               Scale it.
             </motion.h1>
 
-            {/* Eyebrow */}
-            <motion.p
-              variants={itemVariants}
-              className="text-sm md:text-base font-semibold text-white/70 uppercase tracking-wider mb-4 max-w-xl mx-auto lg:mx-0">
-              AI + mobile app development—plus launch and scale in one team.
-            </motion.p>
-
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              We ship production-ready apps, conversion-ready landing pages, and measurable growth for app founders, clinics, and Shopify brands.
+              variants={itemVariants} className="text-white/70 mb-4 mx-auto text-lg font-semibold uppercase tracking-wider md:text-base max-w-xl lg:mx-0">AI + MOBILE APP DEVELOPMENT—PLUS LAUNCH AND SCALE IN ONE TEAM.
+
+
+
             </motion.p>
 
             {/* CTAs */}
