@@ -55,8 +55,32 @@ export default function HeroSection({ reduceMotion }) {
       {/* Base layer */}
       <div className="absolute inset-0 bg-[#2F2F2F]" />
       
+      {/* Static background gradient */}
+      <div
+        className="absolute inset-0 opacity-30 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(circle at 60% 40%, rgba(219, 254, 1, 0.15), transparent 60%),
+            radial-gradient(circle at 20% 80%, rgba(219, 254, 1, 0.1), transparent 50%)
+          `
+        }} />
+
       {/* Contour lines */}
       <ContourBackground className="opacity-50" />
+      
+      {/* Static glows */}
+      <div
+        className="absolute top-[20%] right-[25%] w-[600px] h-[600px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.2) 0%, transparent 60%)',
+          filter: 'blur(80px)'
+        }} />
+      <div
+        className="absolute bottom-[15%] left-[15%] w-[500px] h-[500px] pointer-events-none"
+        style={{
+          background: 'radial-gradient(circle, rgba(219, 254, 1, 0.15) 0%, transparent 60%)',
+          filter: 'blur(70px)'
+        }} />
 
       {/* Static Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
