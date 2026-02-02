@@ -120,7 +120,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Eyebrow */}
             <motion.p
               variants={itemVariants}
-              className="text-sm md:text-base font-semibold text-white/70 uppercase tracking-wider mb-4 max-w-xl mx-auto lg:mx-0">
+              className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
               AI + mobile app development—plus launch and scale in one team.
             </motion.p>
 
