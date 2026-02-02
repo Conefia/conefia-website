@@ -10,8 +10,8 @@ export default function ContourBackground({ className = "" }) {
       <defs>
         <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-          <stop offset="40%" stopColor="rgba(219, 254, 1, 0.3)" />
-          <stop offset="60%" stopColor="rgba(219, 254, 1, 0.3)" />
+          <stop offset="40%" stopColor="rgba(219, 254, 1, 1)" />
+          <stop offset="60%" stopColor="rgba(219, 254, 1, 1)" />
           <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
         </linearGradient>
       </defs>
