@@ -44,6 +44,7 @@ function LayoutContent({ children, currentPageName }) {
   const navItems = [
   { label: 'Playbook', id: 'playbook' },
   { label: 'Case Studies', id: 'case-studies' },
+  { label: 'Blog', page: 'Blog' },
   { label: 'Pricing', id: 'packages' },
   { label: 'FAQ', id: 'faq' }];
 
@@ -177,16 +178,29 @@ function LayoutContent({ children, currentPageName }) {
               </div>
 
               {navItems.map((item) =>
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-semibold transition-colors relative group ${
-                useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
-                }>
+              item.page ? (
+                <Link
+                  key={item.label}
+                  to={createPageUrl(item.page)}
+                  className={`text-sm font-semibold transition-colors relative group ${
+                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                  }>
 
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
-                </button>
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+                  </Link>
+              ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`text-sm font-semibold transition-colors relative group ${
+                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                  }>
+
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+                  </button>
+              )
               )}
             </nav>
 
@@ -250,14 +264,25 @@ function LayoutContent({ children, currentPageName }) {
                   </button>
 
                 {navItems.map((item) =>
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left text-white text-lg font-semibold py-2">
+                item.page ? (
+                <Link
+                  key={item.label}
+                  to={createPageUrl(item.page)}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left text-white text-lg font-semibold py-2">
+
+                    {item.label}
+                  </Link>
+                ) : (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block w-full text-left text-white text-lg font-semibold py-2">
 
                     {item.label}
                   </button>
-              )}
+                )
+                )}
                 <button
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
