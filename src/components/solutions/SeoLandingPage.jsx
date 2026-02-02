@@ -65,9 +65,9 @@ export const ProblemItem = ({ children }) =>
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], visual, layout = "center" }) => {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-[#2F2F2F]">
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-stone-950">
           {/* Base layer */}
-          <div className="absolute inset-0 bg-[#2F2F2F]" />
+          <div className="absolute inset-0 bg-stone-950" />
         
         {/* Simplified static background */}
         <div
@@ -81,31 +81,6 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
         {/* Contour lines */}
         <ContourBackground className="opacity-80" />
-
-        {/* Static Star Dust */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(150)].map((_, i) => {
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          const hasGlow = Math.random() > 0.85;
-
-          return (
-            <div
-              key={`star-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity,
-                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
-              }} />);
-
-        })}
-        </div>
 
         {/* Static glow */}
         <div
