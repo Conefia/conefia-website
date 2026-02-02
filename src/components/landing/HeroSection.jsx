@@ -92,7 +92,7 @@ export default function HeroSection({ reduceMotion }) {
         }} />
 
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-24 pb-8 md:pb-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-8 pb-8 md:pb-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <motion.div
@@ -148,7 +148,7 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
             {/* Trust indicators */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
+              className="flex flex-wrap gap-8 mt-6 md:mt-8 justify-center lg:justify-start">
 
               <div className="text-center lg:text-left">
                 <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
