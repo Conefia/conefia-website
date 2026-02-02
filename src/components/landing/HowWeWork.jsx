@@ -60,38 +60,101 @@ export default function HowWeWork({ reduceMotion }) {
 
         {/* Workflow cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {workflowSteps.map((step, index) =>
           <motion.div
-            key={index}
             initial={{ opacity: 0, y: 30, scale: 0.9 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
             transition={{
               duration: reduceMotion ? 0 : 0.6,
-              delay: reduceMotion ? 0 : 0.2 + index * 0.12,
+              delay: reduceMotion ? 0 : 0.2,
               type: "spring",
               stiffness: 100
             }}
             whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
             className="text-center p-6 group">
-
-              <motion.div
-              className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${step.gradient} flex items-center justify-center mx-auto mb-4 shadow-lg ${step.glow} group-hover:shadow-2xl transition-all duration-300`}
+            <motion.div
+              className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-violet-500/30 group-hover:shadow-2xl transition-all duration-300"
               whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}>
-
-                <step.icon className="w-8 h-8 text-white relative z-10" />
-                <motion.div
+              <Calendar className="w-8 h-8 text-white relative z-10" />
+              <motion.div
                 className="absolute inset-0 rounded-2xl bg-white/20"
-                animate={reduceMotion ? {} : {
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0, 0.5]
-                }}
+                animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                 transition={{ duration: 2, repeat: Infinity }} />
-
-              </motion.div>
-              <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">{step.title}</h3>
-              <p className="text-[#1a1a1a]/80 text-sm font-medium">{step.description}</p>
             </motion.div>
-          )}
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">Weekly Demos</h3>
+            <p className="text-[#1a1a1a]/80 text-sm font-medium">See progress every week. No black boxes, no surprises.</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.6,
+              delay: reduceMotion ? 0 : 0.32,
+              type: "spring",
+              stiffness: 100
+            }}
+            whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
+            className="text-center p-6 group">
+            <motion.div
+              className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-cyan-500/30 group-hover:shadow-2xl transition-all duration-300"
+              whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}>
+              <GitBranch className="w-8 h-8 text-white relative z-10" />
+              <motion.div
+                className="absolute inset-0 rounded-2xl bg-white/20"
+                animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }} />
+            </motion.div>
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">Single Backlog</h3>
+            <p className="text-[#1a1a1a]/80 text-sm font-medium">All priorities in one place. You always know what's next.</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.6,
+              delay: reduceMotion ? 0 : 0.44,
+              type: "spring",
+              stiffness: 100
+            }}
+            whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
+            className="text-center p-6 group">
+            <motion.div
+              className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-500/30 group-hover:shadow-2xl transition-all duration-300"
+              whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}>
+              <MessageSquare className="w-8 h-8 text-white relative z-10" />
+              <motion.div
+                className="absolute inset-0 rounded-2xl bg-white/20"
+                animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }} />
+            </motion.div>
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">Async Updates</h3>
+            <p className="text-[#1a1a1a]/80 text-sm font-medium">Daily Loom/Slack updates. Stay informed without meetings.</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+            transition={{
+              duration: reduceMotion ? 0 : 0.6,
+              delay: reduceMotion ? 0 : 0.56,
+              type: "spring",
+              stiffness: 100
+            }}
+            whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
+            className="text-center p-6 group">
+            <motion.div
+              className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center mx-auto mb-4 shadow-lg shadow-orange-500/30 group-hover:shadow-2xl transition-all duration-300"
+              whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}>
+              <BarChart3 className="w-8 h-8 text-white relative z-10" />
+              <motion.div
+                className="absolute inset-0 rounded-2xl bg-white/20"
+                animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }} />
+            </motion.div>
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">Stage Gates</h3>
+            <p className="text-[#1a1a1a]/80 text-sm font-medium">Clear milestones and sign-offs before moving forward.</p>
+          </motion.div>
         </div>
 
 

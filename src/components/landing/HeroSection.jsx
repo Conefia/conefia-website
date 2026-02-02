@@ -150,17 +150,22 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
               variants={itemVariants}
               className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
 
-              {[
-              { label: 'Typical MVP', value: '8–12 weeks' },
-              { label: 'Weekly demos', value: 'Guaranteed' },
-              { label: 'Privacy-first', value: 'HIPAA-aware' },
-              { label: 'One backlog', value: 'One owner' }].
-              map((item, i) =>
-              <div key={i} className="text-center lg:text-left">
-                  <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">{item.label}</p>
-                  <p className="text-white font-bold text-lg">{item.value}</p>
-                </div>
-              )}
+              <div className="text-center lg:text-left">
+                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Typical MVP</p>
+                <p className="text-white font-bold text-lg">8–12 weeks</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Weekly demos</p>
+                <p className="text-white font-bold text-lg">Guaranteed</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Privacy-first</p>
+                <p className="text-white font-bold text-lg">HIPAA-aware</p>
+              </div>
+              <div className="text-center lg:text-left">
+                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">One backlog</p>
+                <p className="text-white font-bold text-lg">One owner</p>
+              </div>
             </motion.div>
           </motion.div>
 
