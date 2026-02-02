@@ -82,6 +82,31 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         {/* Contour lines */}
         <ContourBackground className="opacity-80" />
 
+        {/* Static Star Dust */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(150)].map((_, i) => {
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const size = Math.random() * 2 + 0.3;
+          const opacity = Math.random() * 0.6 + 0.2;
+          const hasGlow = Math.random() > 0.85;
+
+          return (
+            <div
+              key={`star-${i}`}
+              className="absolute rounded-full bg-[#DBFE01]"
+              style={{
+                left: `${x}%`,
+                top: `${y}%`,
+                width: `${size}px`,
+                height: `${size}px`,
+                opacity,
+                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+              }} />);
+
+        })}
+        </div>
+
         {/* Static glow */}
         <div
         className="absolute top-[20%] right-[25%] w-[500px] h-[500px] pointer-events-none"
