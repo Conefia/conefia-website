@@ -52,14 +52,14 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden relative">
+    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden relative w-screen">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="relative z-10">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
-          className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-4">
+          className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-4 px-4">
 
           Trusted by
         </motion.p>
