@@ -58,32 +58,6 @@ export default function HeroSection({ reduceMotion }) {
       {/* Contour lines */}
       <ContourBackground className="opacity-50" />
 
-      {/* Static Star Dust */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(150)].map((_, i) => {
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          const hasGlow = Math.random() > 0.85;
-
-          return (
-            <div
-              key={`star-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity,
-                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
-              }} />);
-
-
-        })}
-      </div>
-      
       {/* Vignette */}
       <div
         className="absolute inset-0 pointer-events-none"
