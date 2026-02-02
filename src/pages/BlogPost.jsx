@@ -94,9 +94,9 @@ export default function BlogPost() {
             </span>
             <span className="flex items-center gap-2">
               <Calendar className="w-4 h-4" />
-              {post.date}
-            </span>
-            <span>By {post.author}</span>
+              {post.publishDate}
+              </span>
+              <span>By {post.author}</span>
           </motion.div>
         </div>
       </section>
