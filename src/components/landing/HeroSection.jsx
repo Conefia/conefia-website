@@ -151,19 +151,19 @@ For AI SaaS founders, clinics, Shopify brands, and accelerators who want to ship
               className="flex flex-wrap gap-8 mt-10 justify-center lg:justify-start">
 
               <div className="text-center lg:text-left">
-                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Typical MVP</p>
+                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
                 <p className="text-white font-bold text-lg">8–12 weeks</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Weekly demos</p>
+                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">WEEKLY DEMOS</p>
                 <p className="text-white font-bold text-lg">Guaranteed</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">Privacy-first</p>
+                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">PRIVACY-FIRST</p>
                 <p className="text-white font-bold text-lg">HIPAA-aware</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="text-xs text-white/40 uppercase tracking-wider font-semibold mb-1">One backlog</p>
+                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">ONE BACKLOG</p>
                 <p className="text-white font-bold text-lg">One owner</p>
               </div>
             </motion.div>
