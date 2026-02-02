@@ -52,7 +52,7 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden relative w-screen">
+    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
 
       <div className="relative z-10">
         <motion.p
