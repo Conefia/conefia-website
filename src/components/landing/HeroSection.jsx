@@ -117,12 +117,12 @@ export default function HeroSection({ reduceMotion }) {
               Scale it.
             </motion.h1>
 
-            {/* Subheader */}
-            <motion.h2
+            {/* Eyebrow */}
+            <motion.p
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-bold text-white/95 mb-4 max-w-xl mx-auto lg:mx-0">
+              className="text-sm md:text-base font-semibold text-white/70 uppercase tracking-wider mb-4 max-w-xl mx-auto lg:mx-0">
               AI + mobile app development—plus launch and scale in one team.
-            </motion.h2>
+            </motion.p>
 
             {/* Subhead */}
             <motion.p
