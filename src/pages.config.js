@@ -60,6 +60,7 @@ import solutionsAppRelaunch from './pages/solutions-app-relaunch';
 import solutionsClinicGrowth from './pages/solutions-clinic-growth';
 import solutionsDtcGrowth from './pages/solutions-dtc-growth';
 import solutionsEnterpriseInnovation from './pages/solutions-enterprise-innovation';
+import Blog from './pages/Blog';
 import __Layout from './Layout.jsx';
 
 
@@ -77,6 +78,7 @@ export const PAGES = {
     "solutions-clinic-growth": solutionsClinicGrowth,
     "solutions-dtc-growth": solutionsDtcGrowth,
     "solutions-enterprise-innovation": solutionsEnterpriseInnovation,
+    "Blog": Blog,
 }
 
 export const pagesConfig = {
