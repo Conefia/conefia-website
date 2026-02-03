@@ -1,7 +1,8 @@
+"use client";
 import React, { createContext, useContext, useState } from 'react';
 import { PERSONAS } from '../data/personas';
 
-const PersonaContext = createContext();
+const PersonaContext = createContext(null);
 
 export function PersonaProvider({ children }) {
   const [selectedPersonaId, setSelectedPersonaId] = useState(PERSONAS[0].id);

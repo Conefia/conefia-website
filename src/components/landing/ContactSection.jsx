@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
@@ -45,7 +46,7 @@ export default function ContactSection({ reduceMotion }) {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] to-white" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px]" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left content */}
@@ -61,7 +62,7 @@ export default function ContactSection({ reduceMotion }) {
               Ready to <span className="gradient-text">launch</span>?
             </h2>
             <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
-              Book a roadmap call and let's discuss how we can take your idea from concept to market. 
+              Book a roadmap call and let's discuss how we can take your idea from concept to market.
               No commitment, just a conversation about what's possible.
             </p>
 
@@ -163,8 +164,8 @@ export default function ContactSection({ reduceMotion }) {
 
             {/* Alternative contact */}
             <div className="flex items-center justify-center gap-6 mt-6 text-sm text-[#2F2F2F]/50">
-              <a 
-                href="mailto:info@conefia.com" 
+              <a
+                href="mailto:info@conefia.com"
                 className="flex items-center gap-2 hover:text-[#2F2F2F] transition-colors"
               >
                 <Mail className="w-4 h-4" />

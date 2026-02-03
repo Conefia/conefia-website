@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function ContourBackground({ className = "" }) {
   return (
-    <svg 
-      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`} 
-      viewBox="0 0 100 100" 
+    <svg
+      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
+      viewBox="0 0 100 100"
       preserveAspectRatio="none"
     >
       <defs>
@@ -16,9 +16,9 @@ export default function ContourBackground({ className = "" }) {
         </linearGradient>
       </defs>
       {[...Array(20)].map((_, i) => {
-        const ox = i * 2 - 10; 
+        const ox = i * 2 - 10;
         const oy = i * 1.2 - 5;
-        
+
         return (
           <path
             key={i}
@@ -26,7 +26,7 @@ export default function ContourBackground({ className = "" }) {
             stroke="url(#lineGradient)"
             strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
             fill="none"
-            opacity={0.2 + Math.random() * 0.3}
+            opacity={0.2 + 0.3}
           />
         );
       })}

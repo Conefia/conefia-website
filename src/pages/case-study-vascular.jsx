@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ArrowLeft, CheckCircle, TrendingUp, Users, DollarSign, ExternalLink, Target, Lightbulb, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
 import { createPageUrl } from '../utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
@@ -9,7 +9,7 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 function Section({ children, delay = 0 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   return (
     <motion.div
       ref={ref}
@@ -29,14 +29,15 @@ export default function CaseStudyVascular() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-[#FAFAFA]">
-      <Seo 
-        title="Vascular Institute Case Study - Healthcare Growth" 
+      <Seo
+        title="Vascular Institute Case Study - Healthcare Growth"
         description="Conefia helped Vascular Institute of Michigan acquire 200+ patients at $20 CAC in 6 months using a multi-channel growth strategy."
+        canonical="/case-studies/vascular-institute"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-teal-500/10" />
-        <motion.div 
+        <motion.div
           className="absolute top-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
           transition={{ duration: 8, repeat: Infinity }}
@@ -67,7 +68,7 @@ export default function CaseStudyVascular() {
             ))}
           </div>
 
-          <a 
+          <a
             href="https://vascularim.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -82,7 +83,7 @@ export default function CaseStudyVascular() {
       {/* Hero Image */}
       <Section>
         <div className="relative h-[400px] -mt-8 mb-16 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80"
             alt="Healthcare facility for vascular care"
             loading="lazy"
@@ -235,14 +236,14 @@ export default function CaseStudyVascular() {
           {/* CTA */}
           <Section delay={0.4}>
             <div className="mt-16 text-center glass-card rounded-3xl p-12 bg-gradient-to-br from-blue-500/5 to-teal-500/5">
-            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Want similar results?</h3>
-            <button 
-              onClick={scrollToContact}
-              className="btn-primary px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2"
-            >
-              Book roadmap call
-              <TrendingUp className="w-5 h-5" />
-            </button>
+              <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Want similar results?</h3>
+              <button
+                onClick={scrollToContact}
+                className="btn-primary px-8 py-4 rounded-full text-base font-semibold inline-flex items-center gap-2"
+              >
+                Book roadmap call
+                <TrendingUp className="w-5 h-5" />
+              </button>
             </div>
           </Section>
         </div>

@@ -1,6 +1,28 @@
 const isNode = typeof window === 'undefined';
-const windowObj = isNode ? { localStorage: new Map() } : window;
-const storage = windowObj.localStorage;
+
+class MemoryStorage {
+	constructor() {
+		this.store = new Map();
+	}
+
+	getItem(key) {
+		return this.store.get(key) || null;
+	}
+
+	setItem(key, value) {
+		this.store.set(key, String(value));
+	}
+
+	removeItem(key) {
+		this.store.delete(key);
+	}
+
+	clear() {
+		this.store.clear();
+	}
+}
+
+const storage = isNode ? new MemoryStorage() : window.localStorage;
 
 const toSnakeCase = (str) => {
 	return str.replace(/([A-Z])/g, '_$1').toLowerCase();
@@ -40,12 +62,33 @@ const getAppParams = () => {
 		storage.removeItem('token');
 	}
 	return {
-		appId: getAppParamValue("app_id", { defaultValue: import.meta.env.VITE_BASE44_APP_ID }),
+		appId: "693107181477744640",
+		// appId: getAppParamValue("app_id", { defaultValue: getEnv("VITE_BASE44_APP_ID") }),
 		token: getAppParamValue("access_token", { removeFromUrl: true }),
-		fromUrl: getAppParamValue("from_url", { defaultValue: window.location.href }),
-		functionsVersion: getAppParamValue("functions_version", { defaultValue: import.meta.env.VITE_BASE44_FUNCTIONS_VERSION }),
-		appBaseUrl: getAppParamValue("app_base_url", { defaultValue: import.meta.env.VITE_BASE44_APP_BASE_URL }),
+		fromUrl: getAppParamValue("from_url", { defaultValue: typeof window !== 'undefined' ? window.location.href : undefined }),
+		functionsVersion: getAppParamValue("functions_version", { defaultValue: getEnv("VITE_BASE44_FUNCTIONS_VERSION") }),
+		appBaseUrl: getAppParamValue("app_base_url", { defaultValue: getEnv("VITE_BASE44_APP_BASE_URL") }),
 	}
+}
+
+const getEnv = (key) => {
+	// Try process.env first (Next.js/Node)
+	// @ts-ignore
+	if (typeof process !== 'undefined' && process.env && process.env[key]) {
+		// @ts-ignore
+		return process.env[key];
+	}
+	// Try import.meta.env (Vite)
+	try {
+		// @ts-ignore
+		if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env[key]) {
+			// @ts-ignore
+			return import.meta.env[key];
+		}
+	} catch (e) {
+		// Ignore
+	}
+	return undefined;
 }
 
 

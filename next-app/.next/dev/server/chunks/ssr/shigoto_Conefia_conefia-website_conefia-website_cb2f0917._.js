@@ -1,0 +1,12784 @@
+module.exports = [
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "PopChild",
+    ()=>PopChild
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$MotionConfigContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/context/MotionConfigContext.mjs [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+/**
+ * Measurement functionality has to be within a separate component
+ * to leverage snapshot lifecycle.
+ */ class PopChildMeasure extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Component"] {
+    getSnapshotBeforeUpdate(prevProps) {
+        const element = this.props.childRef.current;
+        if (element && prevProps.isPresent && !this.props.isPresent) {
+            const size = this.props.sizeRef.current;
+            size.height = element.offsetHeight || 0;
+            size.width = element.offsetWidth || 0;
+            size.top = element.offsetTop;
+            size.left = element.offsetLeft;
+        }
+        return null;
+    }
+    /**
+     * Required with getSnapshotBeforeUpdate to stop React complaining.
+     */ componentDidUpdate() {}
+    render() {
+        return this.props.children;
+    }
+}
+function PopChild({ children, isPresent }) {
+    const id = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useId"])();
+    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const size = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({
+        width: 0,
+        height: 0,
+        top: 0,
+        left: 0
+    });
+    const { nonce } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$MotionConfigContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["MotionConfigContext"]);
+    /**
+     * We create and inject a style block so we can apply this explicit
+     * sizing in a non-destructive manner by just deleting the style block.
+     *
+     * We can't apply size via render as the measurement happens
+     * in getSnapshotBeforeUpdate (post-render), likewise if we apply the
+     * styles directly on the DOM node, we might be overwriting
+     * styles set via the style prop.
+     */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useInsertionEffect"])(()=>{
+        const { width, height, top, left } = size.current;
+        if (isPresent || !ref.current || !width || !height) return;
+        ref.current.dataset.motionPopId = id;
+        const style = document.createElement("style");
+        if (nonce) style.nonce = nonce;
+        document.head.appendChild(style);
+        if (style.sheet) {
+            style.sheet.insertRule(`
+          [data-motion-pop-id="${id}"] {
+            position: absolute !important;
+            width: ${width}px !important;
+            height: ${height}px !important;
+            top: ${top}px !important;
+            left: ${left}px !important;
+          }
+        `);
+        }
+        return ()=>{
+            document.head.removeChild(style);
+        };
+    }, [
+        isPresent
+    ]);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(PopChildMeasure, {
+        isPresent: isPresent,
+        childRef: ref,
+        sizeRef: size,
+        children: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cloneElement"](children, {
+            ref
+        })
+    });
+}
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "PresenceChild",
+    ()=>PresenceChild
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$PresenceContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/context/PresenceContext.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$constant$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/utils/use-constant.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$PopChild$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/PopChild.mjs [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+;
+;
+const PresenceChild = ({ children, initial, isPresent, onExitComplete, custom, presenceAffectsLayout, mode })=>{
+    const presenceChildren = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$constant$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useConstant"])(newChildrenMap);
+    const id = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useId"])();
+    const memoizedOnExitComplete = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCallback"])((childId)=>{
+        presenceChildren.set(childId, true);
+        for (const isComplete of presenceChildren.values()){
+            if (!isComplete) return; // can stop searching when any is incomplete
+        }
+        onExitComplete && onExitComplete();
+    }, [
+        presenceChildren,
+        onExitComplete
+    ]);
+    const context = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>({
+            id,
+            initial,
+            isPresent,
+            custom,
+            onExitComplete: memoizedOnExitComplete,
+            register: (childId)=>{
+                presenceChildren.set(childId, false);
+                return ()=>presenceChildren.delete(childId);
+            }
+        }), /**
+     * If the presence of a child affects the layout of the components around it,
+     * we want to make a new context value to ensure they get re-rendered
+     * so they can detect that layout change.
+     */ presenceAffectsLayout ? [
+        Math.random(),
+        memoizedOnExitComplete
+    ] : [
+        isPresent,
+        memoizedOnExitComplete
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>{
+        presenceChildren.forEach((_, key)=>presenceChildren.set(key, false));
+    }, [
+        isPresent
+    ]);
+    /**
+     * If there's no `motion` components to fire exit animations, we want to remove this
+     * component immediately.
+     */ __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"](()=>{
+        !isPresent && !presenceChildren.size && onExitComplete && onExitComplete();
+    }, [
+        isPresent
+    ]);
+    if (mode === "popLayout") {
+        children = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$PopChild$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PopChild"], {
+            isPresent: isPresent,
+            children: children
+        });
+    }
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$PresenceContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PresenceContext"].Provider, {
+        value: context,
+        children: children
+    });
+};
+function newChildrenMap() {
+    return new Map();
+}
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/utils.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getChildKey",
+    ()=>getChildKey,
+    "onlyElements",
+    ()=>onlyElements
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+;
+const getChildKey = (child)=>child.key || "";
+function onlyElements(children) {
+    const filtered = [];
+    // We use forEach here instead of map as map mutates the component key by preprending `.$`
+    __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Children"].forEach(children, (child)=>{
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isValidElement"])(child)) filtered.push(child);
+    });
+    return filtered;
+}
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "AnimatePresence",
+    ()=>AnimatePresence
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$PresenceChild$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/PresenceChild.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$LayoutGroupContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/context/LayoutGroupContext.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$index$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/motion-utils/dist/es/index.mjs [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$errors$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/motion-utils/dist/es/errors.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$constant$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/utils/use-constant.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/components/AnimatePresence/utils.mjs [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$isomorphic$2d$effect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/framer-motion/dist/es/utils/use-isomorphic-effect.mjs [app-ssr] (ecmascript)");
+"use client";
+;
+;
+;
+;
+;
+;
+;
+;
+/**
+ * `AnimatePresence` enables the animation of components that have been removed from the tree.
+ *
+ * When adding/removing more than a single child, every child **must** be given a unique `key` prop.
+ *
+ * Any `motion` components that have an `exit` property defined will animate out when removed from
+ * the tree.
+ *
+ * ```jsx
+ * import { motion, AnimatePresence } from 'framer-motion'
+ *
+ * export const Items = ({ items }) => (
+ *   <AnimatePresence>
+ *     {items.map(item => (
+ *       <motion.div
+ *         key={item.id}
+ *         initial={{ opacity: 0 }}
+ *         animate={{ opacity: 1 }}
+ *         exit={{ opacity: 0 }}
+ *       />
+ *     ))}
+ *   </AnimatePresence>
+ * )
+ * ```
+ *
+ * You can sequence exit animations throughout a tree using variants.
+ *
+ * If a child contains multiple `motion` components with `exit` props, it will only unmount the child
+ * once all `motion` components have finished animating out. Likewise, any components using
+ * `usePresence` all need to call `safeToRemove`.
+ *
+ * @public
+ */ const AnimatePresence = ({ children, exitBeforeEnter, custom, initial = true, onExitComplete, presenceAffectsLayout = true, mode = "sync" })=>{
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$errors$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["invariant"])(!exitBeforeEnter, "Replace exitBeforeEnter with mode='wait'");
+    /**
+     * Filter any children that aren't ReactElements. We can only track components
+     * between renders with a props.key.
+     */ const presentChildren = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMemo"])(()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onlyElements"])(children), [
+        children
+    ]);
+    /**
+     * Track the keys of the currently rendered children. This is used to
+     * determine which children are exiting.
+     */ const presentKeys = presentChildren.map(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getChildKey"]);
+    /**
+     * If `initial={false}` we only want to pass this to components in the first render.
+     */ const isInitialRender = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(true);
+    /**
+     * A ref containing the currently present children. When all exit animations
+     * are complete, we use this to re-render the component with the latest children
+     * *committed* rather than the latest children *rendered*.
+     */ const pendingPresentChildren = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(presentChildren);
+    /**
+     * Track which exiting children have finished animating out.
+     */ const exitComplete = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$constant$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useConstant"])(()=>new Map());
+    /**
+     * Save children to render as React state. To ensure this component is concurrent-safe,
+     * we check for exiting children via an effect.
+     */ const [diffedChildren, setDiffedChildren] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(presentChildren);
+    const [renderedChildren, setRenderedChildren] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(presentChildren);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$isomorphic$2d$effect$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useIsomorphicLayoutEffect"])(()=>{
+        isInitialRender.current = false;
+        pendingPresentChildren.current = presentChildren;
+        /**
+         * Update complete status of exiting children.
+         */ for(let i = 0; i < renderedChildren.length; i++){
+            const key = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getChildKey"])(renderedChildren[i]);
+            if (!presentKeys.includes(key)) {
+                if (exitComplete.get(key) !== true) {
+                    exitComplete.set(key, false);
+                }
+            } else {
+                exitComplete.delete(key);
+            }
+        }
+    }, [
+        renderedChildren,
+        presentKeys.length,
+        presentKeys.join("-")
+    ]);
+    const exitingChildren = [];
+    if (presentChildren !== diffedChildren) {
+        let nextChildren = [
+            ...presentChildren
+        ];
+        /**
+         * Loop through all the currently rendered components and decide which
+         * are exiting.
+         */ for(let i = 0; i < renderedChildren.length; i++){
+            const child = renderedChildren[i];
+            const key = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getChildKey"])(child);
+            if (!presentKeys.includes(key)) {
+                nextChildren.splice(i, 0, child);
+                exitingChildren.push(child);
+            }
+        }
+        /**
+         * If we're in "wait" mode, and we have exiting children, we want to
+         * only render these until they've all exited.
+         */ if (mode === "wait" && exitingChildren.length) {
+            nextChildren = exitingChildren;
+        }
+        setRenderedChildren((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["onlyElements"])(nextChildren));
+        setDiffedChildren(presentChildren);
+        /**
+         * Early return to ensure once we've set state with the latest diffed
+         * children, we can immediately re-render.
+         */ return;
+    }
+    if (("TURBOPACK compile-time value", "development") !== "production" && mode === "wait" && renderedChildren.length > 1) {
+        console.warn(`You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour.`);
+    }
+    /**
+     * If we've been provided a forceRender function by the LayoutGroupContext,
+     * we can use it to force a re-render amongst all surrounding components once
+     * all components have finished animating out.
+     */ const { forceRender } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$context$2f$LayoutGroupContext$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["LayoutGroupContext"]);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: renderedChildren.map((child)=>{
+            const key = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$utils$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getChildKey"])(child);
+            const isPresent = presentChildren === renderedChildren || presentKeys.includes(key);
+            const onExit = ()=>{
+                if (exitComplete.has(key)) {
+                    exitComplete.set(key, true);
+                } else {
+                    return;
+                }
+                let isEveryExitComplete = true;
+                exitComplete.forEach((isExitComplete)=>{
+                    if (!isExitComplete) isEveryExitComplete = false;
+                });
+                if (isEveryExitComplete) {
+                    forceRender === null || forceRender === void 0 ? void 0 : forceRender();
+                    setRenderedChildren(pendingPresentChildren.current);
+                    onExitComplete && onExitComplete();
+                }
+            };
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$next$2d$app$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsx"])(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$PresenceChild$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PresenceChild"], {
+                isPresent: isPresent,
+                initial: !isInitialRender.current || initial ? undefined : false,
+                custom: isPresent ? undefined : custom,
+                presenceAffectsLayout: presenceAffectsLayout,
+                mode: mode,
+                onExitComplete: isPresent ? undefined : onExit,
+                children: child
+            }, key);
+        })
+    });
+};
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>X
+]);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M18 6 6 18",
+            key: "1bl5f8"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "m6 6 12 12",
+            key: "d8bk6v"
+        }
+    ]
+];
+const X = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("X", __iconNode);
+;
+ //# sourceMappingURL=x.js.map
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript) <export default as X>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "X",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/x.js [app-ssr] (ecmascript)");
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>Check
+]);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "path",
+        {
+            d: "M20 6 9 17l-5-5",
+            key: "1gmf2c"
+        }
+    ]
+];
+const Check = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("Check", __iconNode);
+;
+ //# sourceMappingURL=check.js.map
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript) <export default as Check>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Check",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/check.js [app-ssr] (ecmascript)");
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/circle-help.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "__iconNode",
+    ()=>__iconNode,
+    "default",
+    ()=>CircleHelp
+]);
+/**
+ * @license lucide-react v0.475.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/createLucideIcon.js [app-ssr] (ecmascript)");
+;
+const __iconNode = [
+    [
+        "circle",
+        {
+            cx: "12",
+            cy: "12",
+            r: "10",
+            key: "1mglay"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3",
+            key: "1u773s"
+        }
+    ],
+    [
+        "path",
+        {
+            d: "M12 17h.01",
+            key: "p32p05"
+        }
+    ]
+];
+const CircleHelp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$createLucideIcon$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("CircleHelp", __iconNode);
+;
+ //# sourceMappingURL=circle-help.js.map
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/circle-help.js [app-ssr] (ecmascript) <export default as HelpCircle>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "HelpCircle",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$help$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/lucide-react/dist/esm/icons/circle-help.js [app-ssr] (ecmascript)");
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/delayed-stream/lib/delayed_stream.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var Stream = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)").Stream;
+var util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+module.exports = DelayedStream;
+function DelayedStream() {
+    this.source = null;
+    this.dataSize = 0;
+    this.maxDataSize = 1024 * 1024;
+    this.pauseStream = true;
+    this._maxDataSizeExceeded = false;
+    this._released = false;
+    this._bufferedEvents = [];
+}
+util.inherits(DelayedStream, Stream);
+DelayedStream.create = function(source, options) {
+    var delayedStream = new this();
+    options = options || {};
+    for(var option in options){
+        delayedStream[option] = options[option];
+    }
+    delayedStream.source = source;
+    var realEmit = source.emit;
+    source.emit = function() {
+        delayedStream._handleEmit(arguments);
+        return realEmit.apply(source, arguments);
+    };
+    source.on('error', function() {});
+    if (delayedStream.pauseStream) {
+        source.pause();
+    }
+    return delayedStream;
+};
+Object.defineProperty(DelayedStream.prototype, 'readable', {
+    configurable: true,
+    enumerable: true,
+    get: function() {
+        return this.source.readable;
+    }
+});
+DelayedStream.prototype.setEncoding = function() {
+    return this.source.setEncoding.apply(this.source, arguments);
+};
+DelayedStream.prototype.resume = function() {
+    if (!this._released) {
+        this.release();
+    }
+    this.source.resume();
+};
+DelayedStream.prototype.pause = function() {
+    this.source.pause();
+};
+DelayedStream.prototype.release = function() {
+    this._released = true;
+    this._bufferedEvents.forEach((function(args) {
+        this.emit.apply(this, args);
+    }).bind(this));
+    this._bufferedEvents = [];
+};
+DelayedStream.prototype.pipe = function() {
+    var r = Stream.prototype.pipe.apply(this, arguments);
+    this.resume();
+    return r;
+};
+DelayedStream.prototype._handleEmit = function(args) {
+    if (this._released) {
+        this.emit.apply(this, args);
+        return;
+    }
+    if (args[0] === 'data') {
+        this.dataSize += args[1].length;
+        this._checkIfMaxDataSizeExceeded();
+    }
+    this._bufferedEvents.push(args);
+};
+DelayedStream.prototype._checkIfMaxDataSizeExceeded = function() {
+    if (this._maxDataSizeExceeded) {
+        return;
+    }
+    if (this.dataSize <= this.maxDataSize) {
+        return;
+    }
+    this._maxDataSizeExceeded = true;
+    var message = 'DelayedStream#maxDataSize of ' + this.maxDataSize + ' bytes exceeded.';
+    this.emit('error', new Error(message));
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/combined-stream/lib/combined_stream.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+var Stream = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)").Stream;
+var DelayedStream = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/delayed-stream/lib/delayed_stream.js [app-ssr] (ecmascript)");
+module.exports = CombinedStream;
+function CombinedStream() {
+    this.writable = false;
+    this.readable = true;
+    this.dataSize = 0;
+    this.maxDataSize = 2 * 1024 * 1024;
+    this.pauseStreams = true;
+    this._released = false;
+    this._streams = [];
+    this._currentStream = null;
+    this._insideLoop = false;
+    this._pendingNext = false;
+}
+util.inherits(CombinedStream, Stream);
+CombinedStream.create = function(options) {
+    var combinedStream = new this();
+    options = options || {};
+    for(var option in options){
+        combinedStream[option] = options[option];
+    }
+    return combinedStream;
+};
+CombinedStream.isStreamLike = function(stream) {
+    return typeof stream !== 'function' && typeof stream !== 'string' && typeof stream !== 'boolean' && typeof stream !== 'number' && !Buffer.isBuffer(stream);
+};
+CombinedStream.prototype.append = function(stream) {
+    var isStreamLike = CombinedStream.isStreamLike(stream);
+    if (isStreamLike) {
+        if (!(stream instanceof DelayedStream)) {
+            var newStream = DelayedStream.create(stream, {
+                maxDataSize: Infinity,
+                pauseStream: this.pauseStreams
+            });
+            stream.on('data', this._checkDataSize.bind(this));
+            stream = newStream;
+        }
+        this._handleErrors(stream);
+        if (this.pauseStreams) {
+            stream.pause();
+        }
+    }
+    this._streams.push(stream);
+    return this;
+};
+CombinedStream.prototype.pipe = function(dest, options) {
+    Stream.prototype.pipe.call(this, dest, options);
+    this.resume();
+    return dest;
+};
+CombinedStream.prototype._getNext = function() {
+    this._currentStream = null;
+    if (this._insideLoop) {
+        this._pendingNext = true;
+        return; // defer call
+    }
+    this._insideLoop = true;
+    try {
+        do {
+            this._pendingNext = false;
+            this._realGetNext();
+        }while (this._pendingNext)
+    } finally{
+        this._insideLoop = false;
+    }
+};
+CombinedStream.prototype._realGetNext = function() {
+    var stream = this._streams.shift();
+    if (typeof stream == 'undefined') {
+        this.end();
+        return;
+    }
+    if (typeof stream !== 'function') {
+        this._pipeNext(stream);
+        return;
+    }
+    var getStream = stream;
+    getStream((function(stream) {
+        var isStreamLike = CombinedStream.isStreamLike(stream);
+        if (isStreamLike) {
+            stream.on('data', this._checkDataSize.bind(this));
+            this._handleErrors(stream);
+        }
+        this._pipeNext(stream);
+    }).bind(this));
+};
+CombinedStream.prototype._pipeNext = function(stream) {
+    this._currentStream = stream;
+    var isStreamLike = CombinedStream.isStreamLike(stream);
+    if (isStreamLike) {
+        stream.on('end', this._getNext.bind(this));
+        stream.pipe(this, {
+            end: false
+        });
+        return;
+    }
+    var value = stream;
+    this.write(value);
+    this._getNext();
+};
+CombinedStream.prototype._handleErrors = function(stream) {
+    var self = this;
+    stream.on('error', function(err) {
+        self._emitError(err);
+    });
+};
+CombinedStream.prototype.write = function(data) {
+    this.emit('data', data);
+};
+CombinedStream.prototype.pause = function() {
+    if (!this.pauseStreams) {
+        return;
+    }
+    if (this.pauseStreams && this._currentStream && typeof this._currentStream.pause == 'function') this._currentStream.pause();
+    this.emit('pause');
+};
+CombinedStream.prototype.resume = function() {
+    if (!this._released) {
+        this._released = true;
+        this.writable = true;
+        this._getNext();
+    }
+    if (this.pauseStreams && this._currentStream && typeof this._currentStream.resume == 'function') this._currentStream.resume();
+    this.emit('resume');
+};
+CombinedStream.prototype.end = function() {
+    this._reset();
+    this.emit('end');
+};
+CombinedStream.prototype.destroy = function() {
+    this._reset();
+    this.emit('close');
+};
+CombinedStream.prototype._reset = function() {
+    this.writable = false;
+    this._streams = [];
+    this._currentStream = null;
+};
+CombinedStream.prototype._checkDataSize = function() {
+    this._updateDataSize();
+    if (this.dataSize <= this.maxDataSize) {
+        return;
+    }
+    var message = 'DelayedStream#maxDataSize of ' + this.maxDataSize + ' bytes exceeded.';
+    this._emitError(new Error(message));
+};
+CombinedStream.prototype._updateDataSize = function() {
+    this.dataSize = 0;
+    var self = this;
+    this._streams.forEach(function(stream) {
+        if (!stream.dataSize) {
+            return;
+        }
+        self.dataSize += stream.dataSize;
+    });
+    if (this._currentStream && this._currentStream.dataSize) {
+        this.dataSize += this._currentStream.dataSize;
+    }
+};
+CombinedStream.prototype._emitError = function(err) {
+    this._reset();
+    this.emit('error', err);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/mime-types/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/*!
+ * mime-types
+ * Copyright(c) 2014 Jonathan Ong
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */ /**
+ * Module dependencies.
+ * @private
+ */ var db = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/mime-db/index.js [app-ssr] (ecmascript)");
+var extname = __turbopack_context__.r("[externals]/path [external] (path, cjs)").extname;
+/**
+ * Module variables.
+ * @private
+ */ var EXTRACT_TYPE_REGEXP = /^\s*([^;\s]*)(?:;|\s|$)/;
+var TEXT_TYPE_REGEXP = /^text\//i;
+/**
+ * Module exports.
+ * @public
+ */ exports.charset = charset;
+exports.charsets = {
+    lookup: charset
+};
+exports.contentType = contentType;
+exports.extension = extension;
+exports.extensions = Object.create(null);
+exports.lookup = lookup;
+exports.types = Object.create(null);
+// Populate the extensions/types maps
+populateMaps(exports.extensions, exports.types);
+/**
+ * Get the default charset for a MIME type.
+ *
+ * @param {string} type
+ * @return {boolean|string}
+ */ function charset(type) {
+    if (!type || typeof type !== 'string') {
+        return false;
+    }
+    // TODO: use media-typer
+    var match = EXTRACT_TYPE_REGEXP.exec(type);
+    var mime = match && db[match[1].toLowerCase()];
+    if (mime && mime.charset) {
+        return mime.charset;
+    }
+    // default text/* to utf-8
+    if (match && TEXT_TYPE_REGEXP.test(match[1])) {
+        return 'UTF-8';
+    }
+    return false;
+}
+/**
+ * Create a full Content-Type header given a MIME type or extension.
+ *
+ * @param {string} str
+ * @return {boolean|string}
+ */ function contentType(str) {
+    // TODO: should this even be in this module?
+    if (!str || typeof str !== 'string') {
+        return false;
+    }
+    var mime = str.indexOf('/') === -1 ? exports.lookup(str) : str;
+    if (!mime) {
+        return false;
+    }
+    // TODO: use content-type or other module
+    if (mime.indexOf('charset') === -1) {
+        var charset = exports.charset(mime);
+        if (charset) mime += '; charset=' + charset.toLowerCase();
+    }
+    return mime;
+}
+/**
+ * Get the default extension for a MIME type.
+ *
+ * @param {string} type
+ * @return {boolean|string}
+ */ function extension(type) {
+    if (!type || typeof type !== 'string') {
+        return false;
+    }
+    // TODO: use media-typer
+    var match = EXTRACT_TYPE_REGEXP.exec(type);
+    // get extensions
+    var exts = match && exports.extensions[match[1].toLowerCase()];
+    if (!exts || !exts.length) {
+        return false;
+    }
+    return exts[0];
+}
+/**
+ * Lookup the MIME type for a file path/extension.
+ *
+ * @param {string} path
+ * @return {boolean|string}
+ */ function lookup(path) {
+    if (!path || typeof path !== 'string') {
+        return false;
+    }
+    // get the extension ("ext" or ".ext" or full path)
+    var extension = extname('x.' + path).toLowerCase().substr(1);
+    if (!extension) {
+        return false;
+    }
+    return exports.types[extension] || false;
+}
+/**
+ * Populate the extensions and types maps.
+ * @private
+ */ function populateMaps(extensions, types) {
+    // source preference (least -> most)
+    var preference = [
+        'nginx',
+        'apache',
+        undefined,
+        'iana'
+    ];
+    Object.keys(db).forEach(function forEachMimeType(type) {
+        var mime = db[type];
+        var exts = mime.extensions;
+        if (!exts || !exts.length) {
+            return;
+        }
+        // mime -> extensions
+        extensions[type] = exts;
+        // extension -> mime
+        for(var i = 0; i < exts.length; i++){
+            var extension = exts[i];
+            if (types[extension]) {
+                var from = preference.indexOf(db[types[extension]].source);
+                var to = preference.indexOf(mime.source);
+                if (types[extension] !== 'application/octet-stream' && (from > to || from === to && types[extension].substr(0, 12) === 'application/')) {
+                    continue;
+                }
+            }
+            // set the extension -> mime
+            types[extension] = type;
+        }
+    });
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/defer.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = defer;
+/**
+ * Runs provided function on next iteration of the event loop
+ *
+ * @param {function} fn - function to run
+ */ function defer(fn) {
+    var nextTick = typeof setImmediate == 'function' ? setImmediate : typeof process == 'object' && typeof process.nextTick == 'function' ? process.nextTick : null;
+    if (nextTick) {
+        nextTick(fn);
+    } else {
+        setTimeout(fn, 0);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/async.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var defer = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/defer.js [app-ssr] (ecmascript)");
+// API
+module.exports = async;
+/**
+ * Runs provided callback asynchronously
+ * even if callback itself is not
+ *
+ * @param   {function} callback - callback to invoke
+ * @returns {function} - augmented callback
+ */ function async(callback) {
+    var isAsync = false;
+    // check if async happened
+    defer(function() {
+        isAsync = true;
+    });
+    return function async_callback(err, result) {
+        if (isAsync) {
+            callback(err, result);
+        } else {
+            defer(function nextTick_callback() {
+                callback(err, result);
+            });
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/abort.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+// API
+module.exports = abort;
+/**
+ * Aborts leftover active jobs
+ *
+ * @param {object} state - current state object
+ */ function abort(state) {
+    Object.keys(state.jobs).forEach(clean.bind(state));
+    // reset leftover jobs
+    state.jobs = {};
+}
+/**
+ * Cleans up leftover job by invoking abort function for the provided job id
+ *
+ * @this  state
+ * @param {string|number} key - job id to abort
+ */ function clean(key) {
+    if (typeof this.jobs[key] == 'function') {
+        this.jobs[key]();
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/iterate.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var async = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/async.js [app-ssr] (ecmascript)"), abort = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/abort.js [app-ssr] (ecmascript)");
+// API
+module.exports = iterate;
+/**
+ * Iterates over each job object
+ *
+ * @param {array|object} list - array or object (named list) to iterate over
+ * @param {function} iterator - iterator to run
+ * @param {object} state - current job status
+ * @param {function} callback - invoked when all elements processed
+ */ function iterate(list, iterator, state, callback) {
+    // store current index
+    var key = state['keyedList'] ? state['keyedList'][state.index] : state.index;
+    state.jobs[key] = runJob(iterator, key, list[key], function(error, output) {
+        // don't repeat yourself
+        // skip secondary callbacks
+        if (!(key in state.jobs)) {
+            return;
+        }
+        // clean up jobs
+        delete state.jobs[key];
+        if (error) {
+            // don't process rest of the results
+            // stop still active jobs
+            // and reset the list
+            abort(state);
+        } else {
+            state.results[key] = output;
+        }
+        // return salvaged results
+        callback(error, state.results);
+    });
+}
+/**
+ * Runs iterator over provided job element
+ *
+ * @param   {function} iterator - iterator to invoke
+ * @param   {string|number} key - key/index of the element in the list of jobs
+ * @param   {mixed} item - job description
+ * @param   {function} callback - invoked after iterator is done with the job
+ * @returns {function|mixed} - job abort function or something else
+ */ function runJob(iterator, key, item, callback) {
+    var aborter;
+    // allow shortcut if iterator expects only two arguments
+    if (iterator.length == 2) {
+        aborter = iterator(item, async(callback));
+    } else {
+        aborter = iterator(item, key, async(callback));
+    }
+    return aborter;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/state.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+// API
+module.exports = state;
+/**
+ * Creates initial state object
+ * for iteration over list
+ *
+ * @param   {array|object} list - list to iterate over
+ * @param   {function|null} sortMethod - function to use for keys sort,
+ *                                     or `null` to keep them as is
+ * @returns {object} - initial state object
+ */ function state(list, sortMethod) {
+    var isNamedList = !Array.isArray(list), initState = {
+        index: 0,
+        keyedList: isNamedList || sortMethod ? Object.keys(list) : null,
+        jobs: {},
+        results: isNamedList ? {} : [],
+        size: isNamedList ? Object.keys(list).length : list.length
+    };
+    if (sortMethod) {
+        // sort array keys based on it's values
+        // sort object's keys just on own merit
+        initState.keyedList.sort(isNamedList ? sortMethod : function(a, b) {
+            return sortMethod(list[a], list[b]);
+        });
+    }
+    return initState;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/terminator.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var abort = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/abort.js [app-ssr] (ecmascript)"), async = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/async.js [app-ssr] (ecmascript)");
+// API
+module.exports = terminator;
+/**
+ * Terminates jobs in the attached state context
+ *
+ * @this  AsyncKitState#
+ * @param {function} callback - final callback to invoke after termination
+ */ function terminator(callback) {
+    if (!Object.keys(this.jobs).length) {
+        return;
+    }
+    // fast forward iteration index
+    this.index = this.size;
+    // abort jobs
+    abort(this);
+    // send back results we have so far
+    async(callback)(null, this.results);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/parallel.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var iterate = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/iterate.js [app-ssr] (ecmascript)"), initState = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/state.js [app-ssr] (ecmascript)"), terminator = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/terminator.js [app-ssr] (ecmascript)");
+// Public API
+module.exports = parallel;
+/**
+ * Runs iterator over provided array elements in parallel
+ *
+ * @param   {array|object} list - array or object (named list) to iterate over
+ * @param   {function} iterator - iterator to run
+ * @param   {function} callback - invoked when all elements processed
+ * @returns {function} - jobs terminator
+ */ function parallel(list, iterator, callback) {
+    var state = initState(list);
+    while(state.index < (state['keyedList'] || list).length){
+        iterate(list, iterator, state, function(error, result) {
+            if (error) {
+                callback(error, result);
+                return;
+            }
+            // looks like it's the last one
+            if (Object.keys(state.jobs).length === 0) {
+                callback(null, state.results);
+                return;
+            }
+        });
+        state.index++;
+    }
+    return terminator.bind(state, callback);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/serialOrdered.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var iterate = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/iterate.js [app-ssr] (ecmascript)"), initState = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/state.js [app-ssr] (ecmascript)"), terminator = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/lib/terminator.js [app-ssr] (ecmascript)");
+// Public API
+module.exports = serialOrdered;
+// sorting helpers
+module.exports.ascending = ascending;
+module.exports.descending = descending;
+/**
+ * Runs iterator over provided sorted array elements in series
+ *
+ * @param   {array|object} list - array or object (named list) to iterate over
+ * @param   {function} iterator - iterator to run
+ * @param   {function} sortMethod - custom sort function
+ * @param   {function} callback - invoked when all elements processed
+ * @returns {function} - jobs terminator
+ */ function serialOrdered(list, iterator, sortMethod, callback) {
+    var state = initState(list, sortMethod);
+    iterate(list, iterator, state, function iteratorHandler(error, result) {
+        if (error) {
+            callback(error, result);
+            return;
+        }
+        state.index++;
+        // are we there yet?
+        if (state.index < (state['keyedList'] || list).length) {
+            iterate(list, iterator, state, iteratorHandler);
+            return;
+        }
+        // done here
+        callback(null, state.results);
+    });
+    return terminator.bind(state, callback);
+}
+/*
+ * -- Sort methods
+ */ /**
+ * sort helper to sort array elements in ascending order
+ *
+ * @param   {mixed} a - an item to compare
+ * @param   {mixed} b - an item to compare
+ * @returns {number} - comparison result
+ */ function ascending(a, b) {
+    return a < b ? -1 : a > b ? 1 : 0;
+}
+/**
+ * sort helper to sort array elements in descending order
+ *
+ * @param   {mixed} a - an item to compare
+ * @param   {mixed} b - an item to compare
+ * @returns {number} - comparison result
+ */ function descending(a, b) {
+    return -1 * ascending(a, b);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/serial.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var serialOrdered = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/serialOrdered.js [app-ssr] (ecmascript)");
+// Public API
+module.exports = serial;
+/**
+ * Runs iterator over provided array elements in series
+ *
+ * @param   {array|object} list - array or object (named list) to iterate over
+ * @param   {function} iterator - iterator to run
+ * @param   {function} callback - invoked when all elements processed
+ * @returns {function} - jobs terminator
+ */ function serial(list, iterator, callback) {
+    return serialOrdered(list, iterator, null, callback);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = {
+    parallel: __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/parallel.js [app-ssr] (ecmascript)"),
+    serial: __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/serial.js [app-ssr] (ecmascript)"),
+    serialOrdered: __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/serialOrdered.js [app-ssr] (ecmascript)")
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-object-atoms/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('.')} */ module.exports = Object;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('.')} */ module.exports = Error;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/eval.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./eval')} */ module.exports = EvalError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/range.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./range')} */ module.exports = RangeError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/ref.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./ref')} */ module.exports = ReferenceError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/syntax.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./syntax')} */ module.exports = SyntaxError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/type.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./type')} */ module.exports = TypeError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/uri.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./uri')} */ module.exports = URIError;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/abs.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./abs')} */ module.exports = Math.abs;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/floor.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./floor')} */ module.exports = Math.floor;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/max.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./max')} */ module.exports = Math.max;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/min.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./min')} */ module.exports = Math.min;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/pow.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./pow')} */ module.exports = Math.pow;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/round.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./round')} */ module.exports = Math.round;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/isNaN.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./isNaN')} */ module.exports = Number.isNaN || function isNaN(a) {
+    return a !== a;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/sign.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var $isNaN = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/isNaN.js [app-ssr] (ecmascript)");
+/** @type {import('./sign')} */ module.exports = function sign(number) {
+    if ($isNaN(number) || number === 0) {
+        return number;
+    }
+    return number < 0 ? -1 : +1;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/gopd/gOPD.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./gOPD')} */ module.exports = Object.getOwnPropertyDescriptor;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/gopd/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('.')} */ var $gOPD = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/gopd/gOPD.js [app-ssr] (ecmascript)");
+if ($gOPD) {
+    try {
+        $gOPD([], 'length');
+    } catch (e) {
+        // IE 8 has a broken gOPD
+        $gOPD = null;
+    }
+}
+module.exports = $gOPD;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-define-property/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('.')} */ var $defineProperty = Object.defineProperty || false;
+if ($defineProperty) {
+    try {
+        $defineProperty({}, 'a', {
+            value: 1
+        });
+    } catch (e) {
+        // IE 8 has a broken defineProperty
+        $defineProperty = false;
+    }
+}
+module.exports = $defineProperty;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-symbols/shams.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./shams')} */ /* eslint complexity: [2, 18], max-statements: [2, 33] */ module.exports = function hasSymbols() {
+    if (typeof Symbol !== 'function' || typeof Object.getOwnPropertySymbols !== 'function') {
+        return false;
+    }
+    if (typeof Symbol.iterator === 'symbol') {
+        return true;
+    }
+    /** @type {{ [k in symbol]?: unknown }} */ var obj = {};
+    var sym = Symbol('test');
+    var symObj = Object(sym);
+    if (typeof sym === 'string') {
+        return false;
+    }
+    if (Object.prototype.toString.call(sym) !== '[object Symbol]') {
+        return false;
+    }
+    if (Object.prototype.toString.call(symObj) !== '[object Symbol]') {
+        return false;
+    }
+    // temp disabled per https://github.com/ljharb/object.assign/issues/17
+    // if (sym instanceof Symbol) { return false; }
+    // temp disabled per https://github.com/WebReflection/get-own-property-symbols/issues/4
+    // if (!(symObj instanceof Symbol)) { return false; }
+    // if (typeof Symbol.prototype.toString !== 'function') { return false; }
+    // if (String(sym) !== Symbol.prototype.toString.call(sym)) { return false; }
+    var symVal = 42;
+    obj[sym] = symVal;
+    for(var _ in obj){
+        return false;
+    } // eslint-disable-line no-restricted-syntax, no-unreachable-loop
+    if (typeof Object.keys === 'function' && Object.keys(obj).length !== 0) {
+        return false;
+    }
+    if (typeof Object.getOwnPropertyNames === 'function' && Object.getOwnPropertyNames(obj).length !== 0) {
+        return false;
+    }
+    var syms = Object.getOwnPropertySymbols(obj);
+    if (syms.length !== 1 || syms[0] !== sym) {
+        return false;
+    }
+    if (!Object.prototype.propertyIsEnumerable.call(obj, sym)) {
+        return false;
+    }
+    if (typeof Object.getOwnPropertyDescriptor === 'function') {
+        // eslint-disable-next-line no-extra-parens
+        var descriptor = Object.getOwnPropertyDescriptor(obj, sym);
+        if (descriptor.value !== symVal || descriptor.enumerable !== true) {
+            return false;
+        }
+    }
+    return true;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-symbols/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var origSymbol = typeof Symbol !== 'undefined' && Symbol;
+var hasSymbolSham = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-symbols/shams.js [app-ssr] (ecmascript)");
+/** @type {import('.')} */ module.exports = function hasNativeSymbols() {
+    if (typeof origSymbol !== 'function') {
+        return false;
+    }
+    if (typeof Symbol !== 'function') {
+        return false;
+    }
+    if (typeof origSymbol('foo') !== 'symbol') {
+        return false;
+    }
+    if (typeof Symbol('bar') !== 'symbol') {
+        return false;
+    }
+    return hasSymbolSham();
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Reflect.getPrototypeOf.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./Reflect.getPrototypeOf')} */ module.exports = typeof Reflect !== 'undefined' && Reflect.getPrototypeOf || null;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Object.getPrototypeOf.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var $Object = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-object-atoms/index.js [app-ssr] (ecmascript)");
+/** @type {import('./Object.getPrototypeOf')} */ module.exports = $Object.getPrototypeOf || null;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var reflectGetProto = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Reflect.getPrototypeOf.js [app-ssr] (ecmascript)");
+var originalGetProto = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Object.getPrototypeOf.js [app-ssr] (ecmascript)");
+var getDunderProto = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/dunder-proto/get.js [app-ssr] (ecmascript)");
+/** @type {import('.')} */ module.exports = reflectGetProto ? function getProto(O) {
+    // @ts-expect-error TS can't narrow inside a closure, for some reason
+    return reflectGetProto(O);
+} : originalGetProto ? function getProto(O) {
+    if (!O || typeof O !== 'object' && typeof O !== 'function') {
+        throw new TypeError('getProto: not an object');
+    }
+    // @ts-expect-error TS can't narrow inside a closure, for some reason
+    return originalGetProto(O);
+} : getDunderProto ? function getProto(O) {
+    // @ts-expect-error TS can't narrow inside a closure, for some reason
+    return getDunderProto(O);
+} : null;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/implementation.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/* eslint no-invalid-this: 1 */ var ERROR_MESSAGE = 'Function.prototype.bind called on incompatible ';
+var toStr = Object.prototype.toString;
+var max = Math.max;
+var funcType = '[object Function]';
+var concatty = function concatty(a, b) {
+    var arr = [];
+    for(var i = 0; i < a.length; i += 1){
+        arr[i] = a[i];
+    }
+    for(var j = 0; j < b.length; j += 1){
+        arr[j + a.length] = b[j];
+    }
+    return arr;
+};
+var slicy = function slicy(arrLike, offset) {
+    var arr = [];
+    for(var i = offset || 0, j = 0; i < arrLike.length; i += 1, j += 1){
+        arr[j] = arrLike[i];
+    }
+    return arr;
+};
+var joiny = function(arr, joiner) {
+    var str = '';
+    for(var i = 0; i < arr.length; i += 1){
+        str += arr[i];
+        if (i + 1 < arr.length) {
+            str += joiner;
+        }
+    }
+    return str;
+};
+module.exports = function bind(that) {
+    var target = this;
+    if (typeof target !== 'function' || toStr.apply(target) !== funcType) {
+        throw new TypeError(ERROR_MESSAGE + target);
+    }
+    var args = slicy(arguments, 1);
+    var bound;
+    var binder = function() {
+        if (this instanceof bound) {
+            var result = target.apply(this, concatty(args, arguments));
+            if (Object(result) === result) {
+                return result;
+            }
+            return this;
+        }
+        return target.apply(that, concatty(args, arguments));
+    };
+    var boundLength = max(0, target.length - args.length);
+    var boundArgs = [];
+    for(var i = 0; i < boundLength; i++){
+        boundArgs[i] = '$' + i;
+    }
+    bound = Function('binder', 'return function (' + joiny(boundArgs, ',') + '){ return binder.apply(this,arguments); }')(binder);
+    if (target.prototype) {
+        var Empty = function Empty() {};
+        Empty.prototype = target.prototype;
+        bound.prototype = new Empty();
+        Empty.prototype = null;
+    }
+    return bound;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var implementation = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/implementation.js [app-ssr] (ecmascript)");
+module.exports = Function.prototype.bind || implementation;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionCall.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./functionCall')} */ module.exports = Function.prototype.call;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionApply.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./functionApply')} */ module.exports = Function.prototype.apply;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/reflectApply.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @type {import('./reflectApply')} */ module.exports = typeof Reflect !== 'undefined' && Reflect && Reflect.apply;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/actualApply.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var bind = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/index.js [app-ssr] (ecmascript)");
+var $apply = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionApply.js [app-ssr] (ecmascript)");
+var $call = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionCall.js [app-ssr] (ecmascript)");
+var $reflectApply = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/reflectApply.js [app-ssr] (ecmascript)");
+/** @type {import('./actualApply')} */ module.exports = $reflectApply || bind.call($call, $apply);
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var bind = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/index.js [app-ssr] (ecmascript)");
+var $TypeError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/type.js [app-ssr] (ecmascript)");
+var $call = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionCall.js [app-ssr] (ecmascript)");
+var $actualApply = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/actualApply.js [app-ssr] (ecmascript)");
+/** @type {(args: [Function, thisArg?: unknown, ...args: unknown[]]) => Function} TODO FIXME, find a way to use import('.') */ module.exports = function callBindBasic(args) {
+    if (args.length < 1 || typeof args[0] !== 'function') {
+        throw new $TypeError('a function is required');
+    }
+    return $actualApply(bind, $call, args);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/dunder-proto/get.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var callBind = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/index.js [app-ssr] (ecmascript)");
+var gOPD = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/gopd/index.js [app-ssr] (ecmascript)");
+var hasProtoAccessor;
+try {
+    // eslint-disable-next-line no-extra-parens, no-proto
+    hasProtoAccessor = /** @type {{ __proto__?: typeof Array.prototype }} */ [].__proto__ === Array.prototype;
+} catch (e) {
+    if (!e || typeof e !== 'object' || !('code' in e) || e.code !== 'ERR_PROTO_ACCESS') {
+        throw e;
+    }
+}
+// eslint-disable-next-line no-extra-parens
+var desc = !!hasProtoAccessor && gOPD && gOPD(Object.prototype, '__proto__');
+var $Object = Object;
+var $getPrototypeOf = $Object.getPrototypeOf;
+/** @type {import('./get')} */ module.exports = desc && typeof desc.get === 'function' ? callBind([
+    desc.get
+]) : typeof $getPrototypeOf === 'function' ? /** @type {import('./get')} */ function getDunder(value) {
+    // eslint-disable-next-line eqeqeq
+    return $getPrototypeOf(value == null ? value : $Object(value));
+} : false;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/hasown/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var call = Function.prototype.call;
+var $hasOwn = Object.prototype.hasOwnProperty;
+var bind = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/index.js [app-ssr] (ecmascript)");
+/** @type {import('.')} */ module.exports = bind.call(call, $hasOwn);
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-intrinsic/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var undefined1;
+var $Object = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-object-atoms/index.js [app-ssr] (ecmascript)");
+var $Error = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/index.js [app-ssr] (ecmascript)");
+var $EvalError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/eval.js [app-ssr] (ecmascript)");
+var $RangeError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/range.js [app-ssr] (ecmascript)");
+var $ReferenceError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/ref.js [app-ssr] (ecmascript)");
+var $SyntaxError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/syntax.js [app-ssr] (ecmascript)");
+var $TypeError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/type.js [app-ssr] (ecmascript)");
+var $URIError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/uri.js [app-ssr] (ecmascript)");
+var abs = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/abs.js [app-ssr] (ecmascript)");
+var floor = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/floor.js [app-ssr] (ecmascript)");
+var max = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/max.js [app-ssr] (ecmascript)");
+var min = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/min.js [app-ssr] (ecmascript)");
+var pow = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/pow.js [app-ssr] (ecmascript)");
+var round = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/round.js [app-ssr] (ecmascript)");
+var sign = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/math-intrinsics/sign.js [app-ssr] (ecmascript)");
+var $Function = Function;
+// eslint-disable-next-line consistent-return
+var getEvalledConstructor = function(expressionSyntax) {
+    try {
+        return $Function('"use strict"; return (' + expressionSyntax + ').constructor;')();
+    } catch (e) {}
+};
+var $gOPD = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/gopd/index.js [app-ssr] (ecmascript)");
+var $defineProperty = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-define-property/index.js [app-ssr] (ecmascript)");
+var throwTypeError = function() {
+    throw new $TypeError();
+};
+var ThrowTypeError = $gOPD ? function() {
+    try {
+        // eslint-disable-next-line no-unused-expressions, no-caller, no-restricted-properties
+        arguments.callee; // IE 8 does not throw here
+        return throwTypeError;
+    } catch (calleeThrows) {
+        try {
+            // IE 8 throws on Object.getOwnPropertyDescriptor(arguments, '')
+            return $gOPD(arguments, 'callee').get;
+        } catch (gOPDthrows) {
+            return throwTypeError;
+        }
+    }
+}() : throwTypeError;
+var hasSymbols = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-symbols/index.js [app-ssr] (ecmascript)")();
+var getProto = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/index.js [app-ssr] (ecmascript)");
+var $ObjectGPO = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Object.getPrototypeOf.js [app-ssr] (ecmascript)");
+var $ReflectGPO = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-proto/Reflect.getPrototypeOf.js [app-ssr] (ecmascript)");
+var $apply = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionApply.js [app-ssr] (ecmascript)");
+var $call = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/call-bind-apply-helpers/functionCall.js [app-ssr] (ecmascript)");
+var needsEval = {};
+var TypedArray = typeof Uint8Array === 'undefined' || !getProto ? undefined : getProto(Uint8Array);
+var INTRINSICS = {
+    __proto__: null,
+    '%AggregateError%': typeof AggregateError === 'undefined' ? undefined : AggregateError,
+    '%Array%': Array,
+    '%ArrayBuffer%': typeof ArrayBuffer === 'undefined' ? undefined : ArrayBuffer,
+    '%ArrayIteratorPrototype%': hasSymbols && getProto ? getProto([][Symbol.iterator]()) : undefined,
+    '%AsyncFromSyncIteratorPrototype%': undefined,
+    '%AsyncFunction%': needsEval,
+    '%AsyncGenerator%': needsEval,
+    '%AsyncGeneratorFunction%': needsEval,
+    '%AsyncIteratorPrototype%': needsEval,
+    '%Atomics%': typeof Atomics === 'undefined' ? undefined : Atomics,
+    '%BigInt%': typeof BigInt === 'undefined' ? undefined : BigInt,
+    '%BigInt64Array%': typeof BigInt64Array === 'undefined' ? undefined : BigInt64Array,
+    '%BigUint64Array%': typeof BigUint64Array === 'undefined' ? undefined : BigUint64Array,
+    '%Boolean%': Boolean,
+    '%DataView%': typeof DataView === 'undefined' ? undefined : DataView,
+    '%Date%': Date,
+    '%decodeURI%': decodeURI,
+    '%decodeURIComponent%': decodeURIComponent,
+    '%encodeURI%': encodeURI,
+    '%encodeURIComponent%': encodeURIComponent,
+    '%Error%': $Error,
+    '%eval%': eval,
+    '%EvalError%': $EvalError,
+    '%Float16Array%': typeof Float16Array === 'undefined' ? undefined : Float16Array,
+    '%Float32Array%': typeof Float32Array === 'undefined' ? undefined : Float32Array,
+    '%Float64Array%': typeof Float64Array === 'undefined' ? undefined : Float64Array,
+    '%FinalizationRegistry%': typeof FinalizationRegistry === 'undefined' ? undefined : FinalizationRegistry,
+    '%Function%': $Function,
+    '%GeneratorFunction%': needsEval,
+    '%Int8Array%': typeof Int8Array === 'undefined' ? undefined : Int8Array,
+    '%Int16Array%': typeof Int16Array === 'undefined' ? undefined : Int16Array,
+    '%Int32Array%': typeof Int32Array === 'undefined' ? undefined : Int32Array,
+    '%isFinite%': isFinite,
+    '%isNaN%': isNaN,
+    '%IteratorPrototype%': hasSymbols && getProto ? getProto(getProto([][Symbol.iterator]())) : undefined,
+    '%JSON%': typeof JSON === 'object' ? JSON : undefined,
+    '%Map%': typeof Map === 'undefined' ? undefined : Map,
+    '%MapIteratorPrototype%': typeof Map === 'undefined' || !hasSymbols || !getProto ? undefined : getProto(new Map()[Symbol.iterator]()),
+    '%Math%': Math,
+    '%Number%': Number,
+    '%Object%': $Object,
+    '%Object.getOwnPropertyDescriptor%': $gOPD,
+    '%parseFloat%': parseFloat,
+    '%parseInt%': parseInt,
+    '%Promise%': typeof Promise === 'undefined' ? undefined : Promise,
+    '%Proxy%': typeof Proxy === 'undefined' ? undefined : Proxy,
+    '%RangeError%': $RangeError,
+    '%ReferenceError%': $ReferenceError,
+    '%Reflect%': typeof Reflect === 'undefined' ? undefined : Reflect,
+    '%RegExp%': RegExp,
+    '%Set%': typeof Set === 'undefined' ? undefined : Set,
+    '%SetIteratorPrototype%': typeof Set === 'undefined' || !hasSymbols || !getProto ? undefined : getProto(new Set()[Symbol.iterator]()),
+    '%SharedArrayBuffer%': typeof SharedArrayBuffer === 'undefined' ? undefined : SharedArrayBuffer,
+    '%String%': String,
+    '%StringIteratorPrototype%': hasSymbols && getProto ? getProto(''[Symbol.iterator]()) : undefined,
+    '%Symbol%': hasSymbols ? Symbol : undefined,
+    '%SyntaxError%': $SyntaxError,
+    '%ThrowTypeError%': ThrowTypeError,
+    '%TypedArray%': TypedArray,
+    '%TypeError%': $TypeError,
+    '%Uint8Array%': typeof Uint8Array === 'undefined' ? undefined : Uint8Array,
+    '%Uint8ClampedArray%': typeof Uint8ClampedArray === 'undefined' ? undefined : Uint8ClampedArray,
+    '%Uint16Array%': typeof Uint16Array === 'undefined' ? undefined : Uint16Array,
+    '%Uint32Array%': typeof Uint32Array === 'undefined' ? undefined : Uint32Array,
+    '%URIError%': $URIError,
+    '%WeakMap%': typeof WeakMap === 'undefined' ? undefined : WeakMap,
+    '%WeakRef%': typeof WeakRef === 'undefined' ? undefined : WeakRef,
+    '%WeakSet%': typeof WeakSet === 'undefined' ? undefined : WeakSet,
+    '%Function.prototype.call%': $call,
+    '%Function.prototype.apply%': $apply,
+    '%Object.defineProperty%': $defineProperty,
+    '%Object.getPrototypeOf%': $ObjectGPO,
+    '%Math.abs%': abs,
+    '%Math.floor%': floor,
+    '%Math.max%': max,
+    '%Math.min%': min,
+    '%Math.pow%': pow,
+    '%Math.round%': round,
+    '%Math.sign%': sign,
+    '%Reflect.getPrototypeOf%': $ReflectGPO
+};
+if (getProto) {
+    try {
+        null.error; // eslint-disable-line no-unused-expressions
+    } catch (e) {
+        // https://github.com/tc39/proposal-shadowrealm/pull/384#issuecomment-1364264229
+        var errorProto = getProto(getProto(e));
+        INTRINSICS['%Error.prototype%'] = errorProto;
+    }
+}
+var doEval = function doEval(name) {
+    var value;
+    if (name === '%AsyncFunction%') {
+        value = getEvalledConstructor('async function () {}');
+    } else if (name === '%GeneratorFunction%') {
+        value = getEvalledConstructor('function* () {}');
+    } else if (name === '%AsyncGeneratorFunction%') {
+        value = getEvalledConstructor('async function* () {}');
+    } else if (name === '%AsyncGenerator%') {
+        var fn = doEval('%AsyncGeneratorFunction%');
+        if (fn) {
+            value = fn.prototype;
+        }
+    } else if (name === '%AsyncIteratorPrototype%') {
+        var gen = doEval('%AsyncGenerator%');
+        if (gen && getProto) {
+            value = getProto(gen.prototype);
+        }
+    }
+    INTRINSICS[name] = value;
+    return value;
+};
+var LEGACY_ALIASES = {
+    __proto__: null,
+    '%ArrayBufferPrototype%': [
+        'ArrayBuffer',
+        'prototype'
+    ],
+    '%ArrayPrototype%': [
+        'Array',
+        'prototype'
+    ],
+    '%ArrayProto_entries%': [
+        'Array',
+        'prototype',
+        'entries'
+    ],
+    '%ArrayProto_forEach%': [
+        'Array',
+        'prototype',
+        'forEach'
+    ],
+    '%ArrayProto_keys%': [
+        'Array',
+        'prototype',
+        'keys'
+    ],
+    '%ArrayProto_values%': [
+        'Array',
+        'prototype',
+        'values'
+    ],
+    '%AsyncFunctionPrototype%': [
+        'AsyncFunction',
+        'prototype'
+    ],
+    '%AsyncGenerator%': [
+        'AsyncGeneratorFunction',
+        'prototype'
+    ],
+    '%AsyncGeneratorPrototype%': [
+        'AsyncGeneratorFunction',
+        'prototype',
+        'prototype'
+    ],
+    '%BooleanPrototype%': [
+        'Boolean',
+        'prototype'
+    ],
+    '%DataViewPrototype%': [
+        'DataView',
+        'prototype'
+    ],
+    '%DatePrototype%': [
+        'Date',
+        'prototype'
+    ],
+    '%ErrorPrototype%': [
+        'Error',
+        'prototype'
+    ],
+    '%EvalErrorPrototype%': [
+        'EvalError',
+        'prototype'
+    ],
+    '%Float32ArrayPrototype%': [
+        'Float32Array',
+        'prototype'
+    ],
+    '%Float64ArrayPrototype%': [
+        'Float64Array',
+        'prototype'
+    ],
+    '%FunctionPrototype%': [
+        'Function',
+        'prototype'
+    ],
+    '%Generator%': [
+        'GeneratorFunction',
+        'prototype'
+    ],
+    '%GeneratorPrototype%': [
+        'GeneratorFunction',
+        'prototype',
+        'prototype'
+    ],
+    '%Int8ArrayPrototype%': [
+        'Int8Array',
+        'prototype'
+    ],
+    '%Int16ArrayPrototype%': [
+        'Int16Array',
+        'prototype'
+    ],
+    '%Int32ArrayPrototype%': [
+        'Int32Array',
+        'prototype'
+    ],
+    '%JSONParse%': [
+        'JSON',
+        'parse'
+    ],
+    '%JSONStringify%': [
+        'JSON',
+        'stringify'
+    ],
+    '%MapPrototype%': [
+        'Map',
+        'prototype'
+    ],
+    '%NumberPrototype%': [
+        'Number',
+        'prototype'
+    ],
+    '%ObjectPrototype%': [
+        'Object',
+        'prototype'
+    ],
+    '%ObjProto_toString%': [
+        'Object',
+        'prototype',
+        'toString'
+    ],
+    '%ObjProto_valueOf%': [
+        'Object',
+        'prototype',
+        'valueOf'
+    ],
+    '%PromisePrototype%': [
+        'Promise',
+        'prototype'
+    ],
+    '%PromiseProto_then%': [
+        'Promise',
+        'prototype',
+        'then'
+    ],
+    '%Promise_all%': [
+        'Promise',
+        'all'
+    ],
+    '%Promise_reject%': [
+        'Promise',
+        'reject'
+    ],
+    '%Promise_resolve%': [
+        'Promise',
+        'resolve'
+    ],
+    '%RangeErrorPrototype%': [
+        'RangeError',
+        'prototype'
+    ],
+    '%ReferenceErrorPrototype%': [
+        'ReferenceError',
+        'prototype'
+    ],
+    '%RegExpPrototype%': [
+        'RegExp',
+        'prototype'
+    ],
+    '%SetPrototype%': [
+        'Set',
+        'prototype'
+    ],
+    '%SharedArrayBufferPrototype%': [
+        'SharedArrayBuffer',
+        'prototype'
+    ],
+    '%StringPrototype%': [
+        'String',
+        'prototype'
+    ],
+    '%SymbolPrototype%': [
+        'Symbol',
+        'prototype'
+    ],
+    '%SyntaxErrorPrototype%': [
+        'SyntaxError',
+        'prototype'
+    ],
+    '%TypedArrayPrototype%': [
+        'TypedArray',
+        'prototype'
+    ],
+    '%TypeErrorPrototype%': [
+        'TypeError',
+        'prototype'
+    ],
+    '%Uint8ArrayPrototype%': [
+        'Uint8Array',
+        'prototype'
+    ],
+    '%Uint8ClampedArrayPrototype%': [
+        'Uint8ClampedArray',
+        'prototype'
+    ],
+    '%Uint16ArrayPrototype%': [
+        'Uint16Array',
+        'prototype'
+    ],
+    '%Uint32ArrayPrototype%': [
+        'Uint32Array',
+        'prototype'
+    ],
+    '%URIErrorPrototype%': [
+        'URIError',
+        'prototype'
+    ],
+    '%WeakMapPrototype%': [
+        'WeakMap',
+        'prototype'
+    ],
+    '%WeakSetPrototype%': [
+        'WeakSet',
+        'prototype'
+    ]
+};
+var bind = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/function-bind/index.js [app-ssr] (ecmascript)");
+var hasOwn = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/hasown/index.js [app-ssr] (ecmascript)");
+var $concat = bind.call($call, Array.prototype.concat);
+var $spliceApply = bind.call($apply, Array.prototype.splice);
+var $replace = bind.call($call, String.prototype.replace);
+var $strSlice = bind.call($call, String.prototype.slice);
+var $exec = bind.call($call, RegExp.prototype.exec);
+/* adapted from https://github.com/lodash/lodash/blob/4.17.15/dist/lodash.js#L6735-L6744 */ var rePropName = /[^%.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|%$))/g;
+var reEscapeChar = /\\(\\)?/g; /** Used to match backslashes in property paths. */ 
+var stringToPath = function stringToPath(string) {
+    var first = $strSlice(string, 0, 1);
+    var last = $strSlice(string, -1);
+    if (first === '%' && last !== '%') {
+        throw new $SyntaxError('invalid intrinsic syntax, expected closing `%`');
+    } else if (last === '%' && first !== '%') {
+        throw new $SyntaxError('invalid intrinsic syntax, expected opening `%`');
+    }
+    var result = [];
+    $replace(string, rePropName, function(match, number, quote, subString) {
+        result[result.length] = quote ? $replace(subString, reEscapeChar, '$1') : number || match;
+    });
+    return result;
+};
+/* end adaptation */ var getBaseIntrinsic = function getBaseIntrinsic(name, allowMissing) {
+    var intrinsicName = name;
+    var alias;
+    if (hasOwn(LEGACY_ALIASES, intrinsicName)) {
+        alias = LEGACY_ALIASES[intrinsicName];
+        intrinsicName = '%' + alias[0] + '%';
+    }
+    if (hasOwn(INTRINSICS, intrinsicName)) {
+        var value = INTRINSICS[intrinsicName];
+        if (value === needsEval) {
+            value = doEval(intrinsicName);
+        }
+        if (typeof value === 'undefined' && !allowMissing) {
+            throw new $TypeError('intrinsic ' + name + ' exists, but is not available. Please file an issue!');
+        }
+        return {
+            alias: alias,
+            name: intrinsicName,
+            value: value
+        };
+    }
+    throw new $SyntaxError('intrinsic ' + name + ' does not exist!');
+};
+module.exports = function GetIntrinsic(name, allowMissing) {
+    if (typeof name !== 'string' || name.length === 0) {
+        throw new $TypeError('intrinsic name must be a non-empty string');
+    }
+    if (arguments.length > 1 && typeof allowMissing !== 'boolean') {
+        throw new $TypeError('"allowMissing" argument must be a boolean');
+    }
+    if ($exec(/^%?[^%]*%?$/, name) === null) {
+        throw new $SyntaxError('`%` may not be present anywhere but at the beginning and end of the intrinsic name');
+    }
+    var parts = stringToPath(name);
+    var intrinsicBaseName = parts.length > 0 ? parts[0] : '';
+    var intrinsic = getBaseIntrinsic('%' + intrinsicBaseName + '%', allowMissing);
+    var intrinsicRealName = intrinsic.name;
+    var value = intrinsic.value;
+    var skipFurtherCaching = false;
+    var alias = intrinsic.alias;
+    if (alias) {
+        intrinsicBaseName = alias[0];
+        $spliceApply(parts, $concat([
+            0,
+            1
+        ], alias));
+    }
+    for(var i = 1, isOwn = true; i < parts.length; i += 1){
+        var part = parts[i];
+        var first = $strSlice(part, 0, 1);
+        var last = $strSlice(part, -1);
+        if ((first === '"' || first === "'" || first === '`' || last === '"' || last === "'" || last === '`') && first !== last) {
+            throw new $SyntaxError('property names with quotes must have matching quotes');
+        }
+        if (part === 'constructor' || !isOwn) {
+            skipFurtherCaching = true;
+        }
+        intrinsicBaseName += '.' + part;
+        intrinsicRealName = '%' + intrinsicBaseName + '%';
+        if (hasOwn(INTRINSICS, intrinsicRealName)) {
+            value = INTRINSICS[intrinsicRealName];
+        } else if (value != null) {
+            if (!(part in value)) {
+                if (!allowMissing) {
+                    throw new $TypeError('base intrinsic for ' + name + ' exists, but the property is not available.');
+                }
+                return void undefined;
+            }
+            if ($gOPD && i + 1 >= parts.length) {
+                var desc = $gOPD(value, part);
+                isOwn = !!desc;
+                // By convention, when a data property is converted to an accessor
+                // property to emulate a data property that does not suffer from
+                // the override mistake, that accessor's getter is marked with
+                // an `originalValue` property. Here, when we detect this, we
+                // uphold the illusion by pretending to see that original data
+                // property, i.e., returning the value rather than the getter
+                // itself.
+                if (isOwn && 'get' in desc && !('originalValue' in desc.get)) {
+                    value = desc.get;
+                } else {
+                    value = value[part];
+                }
+            } else {
+                isOwn = hasOwn(value, part);
+                value = value[part];
+            }
+            if (isOwn && !skipFurtherCaching) {
+                INTRINSICS[intrinsicRealName] = value;
+            }
+        }
+    }
+    return value;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-tostringtag/shams.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var hasSymbols = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-symbols/shams.js [app-ssr] (ecmascript)");
+/** @type {import('.')} */ module.exports = function hasToStringTagShams() {
+    return hasSymbols() && !!Symbol.toStringTag;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-set-tostringtag/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var GetIntrinsic = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/get-intrinsic/index.js [app-ssr] (ecmascript)");
+var $defineProperty = GetIntrinsic('%Object.defineProperty%', true);
+var hasToStringTag = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-tostringtag/shams.js [app-ssr] (ecmascript)")();
+var hasOwn = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/hasown/index.js [app-ssr] (ecmascript)");
+var $TypeError = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-errors/type.js [app-ssr] (ecmascript)");
+var toStringTag = hasToStringTag ? Symbol.toStringTag : null;
+/** @type {import('.')} */ module.exports = function setToStringTag(object, value) {
+    var overrideIfSet = arguments.length > 2 && !!arguments[2] && arguments[2].force;
+    var nonConfigurable = arguments.length > 2 && !!arguments[2] && arguments[2].nonConfigurable;
+    if (typeof overrideIfSet !== 'undefined' && typeof overrideIfSet !== 'boolean' || typeof nonConfigurable !== 'undefined' && typeof nonConfigurable !== 'boolean') {
+        throw new $TypeError('if provided, the `overrideIfSet` and `nonConfigurable` options must be booleans');
+    }
+    if (toStringTag && (overrideIfSet || !hasOwn(object, toStringTag))) {
+        if ($defineProperty) {
+            $defineProperty(object, toStringTag, {
+                configurable: !nonConfigurable,
+                enumerable: false,
+                value: value,
+                writable: false
+            });
+        } else {
+            object[toStringTag] = value; // eslint-disable-line no-param-reassign
+        }
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/form-data/lib/populate.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// populates missing values
+module.exports = function(dst, src) {
+    Object.keys(src).forEach(function(prop) {
+        dst[prop] = dst[prop] || src[prop]; // eslint-disable-line no-param-reassign
+    });
+    return dst;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/form-data/lib/form_data.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var CombinedStream = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/combined-stream/lib/combined_stream.js [app-ssr] (ecmascript)");
+var util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+var path = __turbopack_context__.r("[externals]/path [external] (path, cjs)");
+var http = __turbopack_context__.r("[externals]/http [external] (http, cjs)");
+var https = __turbopack_context__.r("[externals]/https [external] (https, cjs)");
+var parseUrl = __turbopack_context__.r("[externals]/url [external] (url, cjs)").parse;
+var fs = __turbopack_context__.r("[externals]/fs [external] (fs, cjs)");
+var Stream = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)").Stream;
+var crypto = __turbopack_context__.r("[externals]/crypto [external] (crypto, cjs)");
+var mime = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/mime-types/index.js [app-ssr] (ecmascript)");
+var asynckit = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/asynckit/index.js [app-ssr] (ecmascript)");
+var setToStringTag = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/es-set-tostringtag/index.js [app-ssr] (ecmascript)");
+var hasOwn = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/hasown/index.js [app-ssr] (ecmascript)");
+var populate = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/form-data/lib/populate.js [app-ssr] (ecmascript)");
+/**
+ * Create readable "multipart/form-data" streams.
+ * Can be used to submit forms
+ * and file uploads to other web applications.
+ *
+ * @constructor
+ * @param {object} options - Properties to be added/overriden for FormData and CombinedStream
+ */ function FormData(options) {
+    if (!(this instanceof FormData)) {
+        return new FormData(options);
+    }
+    this._overheadLength = 0;
+    this._valueLength = 0;
+    this._valuesToMeasure = [];
+    CombinedStream.call(this);
+    options = options || {}; // eslint-disable-line no-param-reassign
+    for(var option in options){
+        this[option] = options[option];
+    }
+}
+// make it a Stream
+util.inherits(FormData, CombinedStream);
+FormData.LINE_BREAK = '\r\n';
+FormData.DEFAULT_CONTENT_TYPE = 'application/octet-stream';
+FormData.prototype.append = function(field, value, options) {
+    options = options || {}; // eslint-disable-line no-param-reassign
+    // allow filename as single option
+    if (typeof options === 'string') {
+        options = {
+            filename: options
+        }; // eslint-disable-line no-param-reassign
+    }
+    var append = CombinedStream.prototype.append.bind(this);
+    // all that streamy business can't handle numbers
+    if (typeof value === 'number' || value == null) {
+        value = String(value); // eslint-disable-line no-param-reassign
+    }
+    // https://github.com/felixge/node-form-data/issues/38
+    if (Array.isArray(value)) {
+        /*
+     * Please convert your array into string
+     * the way web server expects it
+     */ this._error(new Error('Arrays are not supported.'));
+        return;
+    }
+    var header = this._multiPartHeader(field, value, options);
+    var footer = this._multiPartFooter();
+    append(header);
+    append(value);
+    append(footer);
+    // pass along options.knownLength
+    this._trackLength(header, value, options);
+};
+FormData.prototype._trackLength = function(header, value, options) {
+    var valueLength = 0;
+    /*
+   * used w/ getLengthSync(), when length is known.
+   * e.g. for streaming directly from a remote server,
+   * w/ a known file a size, and not wanting to wait for
+   * incoming file to finish to get its size.
+   */ if (options.knownLength != null) {
+        valueLength += Number(options.knownLength);
+    } else if (Buffer.isBuffer(value)) {
+        valueLength = value.length;
+    } else if (typeof value === 'string') {
+        valueLength = Buffer.byteLength(value);
+    }
+    this._valueLength += valueLength;
+    // @check why add CRLF? does this account for custom/multiple CRLFs?
+    this._overheadLength += Buffer.byteLength(header) + FormData.LINE_BREAK.length;
+    // empty or either doesn't have path or not an http response or not a stream
+    if (!value || !value.path && !(value.readable && hasOwn(value, 'httpVersion')) && !(value instanceof Stream)) {
+        return;
+    }
+    // no need to bother with the length
+    if (!options.knownLength) {
+        this._valuesToMeasure.push(value);
+    }
+};
+FormData.prototype._lengthRetriever = function(value, callback) {
+    if (hasOwn(value, 'fd')) {
+        // take read range into a account
+        // `end` = Infinity –> read file till the end
+        //
+        // TODO: Looks like there is bug in Node fs.createReadStream
+        // it doesn't respect `end` options without `start` options
+        // Fix it when node fixes it.
+        // https://github.com/joyent/node/issues/7819
+        if (value.end != undefined && value.end != Infinity && value.start != undefined) {
+            // when end specified
+            // no need to calculate range
+            // inclusive, starts with 0
+            callback(null, value.end + 1 - (value.start ? value.start : 0)); // eslint-disable-line callback-return
+        // not that fast snoopy
+        } else {
+            // still need to fetch file size from fs
+            fs.stat(value.path, function(err, stat) {
+                if (err) {
+                    callback(err);
+                    return;
+                }
+                // update final size based on the range options
+                var fileSize = stat.size - (value.start ? value.start : 0);
+                callback(null, fileSize);
+            });
+        }
+    // or http response
+    } else if (hasOwn(value, 'httpVersion')) {
+        callback(null, Number(value.headers['content-length'])); // eslint-disable-line callback-return
+    // or request stream http://github.com/mikeal/request
+    } else if (hasOwn(value, 'httpModule')) {
+        // wait till response come back
+        value.on('response', function(response) {
+            value.pause();
+            callback(null, Number(response.headers['content-length']));
+        });
+        value.resume();
+    // something else
+    } else {
+        callback('Unknown stream'); // eslint-disable-line callback-return
+    }
+};
+FormData.prototype._multiPartHeader = function(field, value, options) {
+    /*
+   * custom header specified (as string)?
+   * it becomes responsible for boundary
+   * (e.g. to handle extra CRLFs on .NET servers)
+   */ if (typeof options.header === 'string') {
+        return options.header;
+    }
+    var contentDisposition = this._getContentDisposition(value, options);
+    var contentType = this._getContentType(value, options);
+    var contents = '';
+    var headers = {
+        // add custom disposition as third element or keep it two elements if not
+        'Content-Disposition': [
+            'form-data',
+            'name="' + field + '"'
+        ].concat(contentDisposition || []),
+        // if no content type. allow it to be empty array
+        'Content-Type': [].concat(contentType || [])
+    };
+    // allow custom headers.
+    if (typeof options.header === 'object') {
+        populate(headers, options.header);
+    }
+    var header;
+    for(var prop in headers){
+        if (hasOwn(headers, prop)) {
+            header = headers[prop];
+            // skip nullish headers.
+            if (header == null) {
+                continue; // eslint-disable-line no-restricted-syntax, no-continue
+            }
+            // convert all headers to arrays.
+            if (!Array.isArray(header)) {
+                header = [
+                    header
+                ];
+            }
+            // add non-empty headers.
+            if (header.length) {
+                contents += prop + ': ' + header.join('; ') + FormData.LINE_BREAK;
+            }
+        }
+    }
+    return '--' + this.getBoundary() + FormData.LINE_BREAK + contents + FormData.LINE_BREAK;
+};
+FormData.prototype._getContentDisposition = function(value, options) {
+    var filename;
+    if (typeof options.filepath === 'string') {
+        // custom filepath for relative paths
+        filename = path.normalize(options.filepath).replace(/\\/g, '/');
+    } else if (options.filename || value && (value.name || value.path)) {
+        /*
+     * custom filename take precedence
+     * formidable and the browser add a name property
+     * fs- and request- streams have path property
+     */ filename = path.basename(options.filename || value && (value.name || value.path));
+    } else if (value && value.readable && hasOwn(value, 'httpVersion')) {
+        // or try http response
+        filename = path.basename(value.client._httpMessage.path || '');
+    }
+    if (filename) {
+        return 'filename="' + filename + '"';
+    }
+};
+FormData.prototype._getContentType = function(value, options) {
+    // use custom content-type above all
+    var contentType = options.contentType;
+    // or try `name` from formidable, browser
+    if (!contentType && value && value.name) {
+        contentType = mime.lookup(value.name);
+    }
+    // or try `path` from fs-, request- streams
+    if (!contentType && value && value.path) {
+        contentType = mime.lookup(value.path);
+    }
+    // or if it's http-reponse
+    if (!contentType && value && value.readable && hasOwn(value, 'httpVersion')) {
+        contentType = value.headers['content-type'];
+    }
+    // or guess it from the filepath or filename
+    if (!contentType && (options.filepath || options.filename)) {
+        contentType = mime.lookup(options.filepath || options.filename);
+    }
+    // fallback to the default content type if `value` is not simple value
+    if (!contentType && value && typeof value === 'object') {
+        contentType = FormData.DEFAULT_CONTENT_TYPE;
+    }
+    return contentType;
+};
+FormData.prototype._multiPartFooter = function() {
+    return (function(next) {
+        var footer = FormData.LINE_BREAK;
+        var lastPart = this._streams.length === 0;
+        if (lastPart) {
+            footer += this._lastBoundary();
+        }
+        next(footer);
+    }).bind(this);
+};
+FormData.prototype._lastBoundary = function() {
+    return '--' + this.getBoundary() + '--' + FormData.LINE_BREAK;
+};
+FormData.prototype.getHeaders = function(userHeaders) {
+    var header;
+    var formHeaders = {
+        'content-type': 'multipart/form-data; boundary=' + this.getBoundary()
+    };
+    for(header in userHeaders){
+        if (hasOwn(userHeaders, header)) {
+            formHeaders[header.toLowerCase()] = userHeaders[header];
+        }
+    }
+    return formHeaders;
+};
+FormData.prototype.setBoundary = function(boundary) {
+    if (typeof boundary !== 'string') {
+        throw new TypeError('FormData boundary must be a string');
+    }
+    this._boundary = boundary;
+};
+FormData.prototype.getBoundary = function() {
+    if (!this._boundary) {
+        this._generateBoundary();
+    }
+    return this._boundary;
+};
+FormData.prototype.getBuffer = function() {
+    var dataBuffer = new Buffer.alloc(0); // eslint-disable-line new-cap
+    var boundary = this.getBoundary();
+    // Create the form content. Add Line breaks to the end of data.
+    for(var i = 0, len = this._streams.length; i < len; i++){
+        if (typeof this._streams[i] !== 'function') {
+            // Add content to the buffer.
+            if (Buffer.isBuffer(this._streams[i])) {
+                dataBuffer = Buffer.concat([
+                    dataBuffer,
+                    this._streams[i]
+                ]);
+            } else {
+                dataBuffer = Buffer.concat([
+                    dataBuffer,
+                    Buffer.from(this._streams[i])
+                ]);
+            }
+            // Add break after content.
+            if (typeof this._streams[i] !== 'string' || this._streams[i].substring(2, boundary.length + 2) !== boundary) {
+                dataBuffer = Buffer.concat([
+                    dataBuffer,
+                    Buffer.from(FormData.LINE_BREAK)
+                ]);
+            }
+        }
+    }
+    // Add the footer and return the Buffer object.
+    return Buffer.concat([
+        dataBuffer,
+        Buffer.from(this._lastBoundary())
+    ]);
+};
+FormData.prototype._generateBoundary = function() {
+    // This generates a 50 character boundary similar to those used by Firefox.
+    // They are optimized for boyer-moore parsing.
+    this._boundary = '--------------------------' + crypto.randomBytes(12).toString('hex');
+};
+// Note: getLengthSync DOESN'T calculate streams length
+// As workaround one can calculate file size manually and add it as knownLength option
+FormData.prototype.getLengthSync = function() {
+    var knownLength = this._overheadLength + this._valueLength;
+    // Don't get confused, there are 3 "internal" streams for each keyval pair so it basically checks if there is any value added to the form
+    if (this._streams.length) {
+        knownLength += this._lastBoundary().length;
+    }
+    // https://github.com/form-data/form-data/issues/40
+    if (!this.hasKnownLength()) {
+        /*
+     * Some async length retrievers are present
+     * therefore synchronous length calculation is false.
+     * Please use getLength(callback) to get proper length
+     */ this._error(new Error('Cannot calculate proper length in synchronous way.'));
+    }
+    return knownLength;
+};
+// Public API to check if length of added values is known
+// https://github.com/form-data/form-data/issues/196
+// https://github.com/form-data/form-data/issues/262
+FormData.prototype.hasKnownLength = function() {
+    var hasKnownLength = true;
+    if (this._valuesToMeasure.length) {
+        hasKnownLength = false;
+    }
+    return hasKnownLength;
+};
+FormData.prototype.getLength = function(cb) {
+    var knownLength = this._overheadLength + this._valueLength;
+    if (this._streams.length) {
+        knownLength += this._lastBoundary().length;
+    }
+    if (!this._valuesToMeasure.length) {
+        process.nextTick(cb.bind(this, null, knownLength));
+        return;
+    }
+    asynckit.parallel(this._valuesToMeasure, this._lengthRetriever, function(err, values) {
+        if (err) {
+            cb(err);
+            return;
+        }
+        values.forEach(function(length) {
+            knownLength += length;
+        });
+        cb(null, knownLength);
+    });
+};
+FormData.prototype.submit = function(params, cb) {
+    var request;
+    var options;
+    var defaults = {
+        method: 'post'
+    };
+    // parse provided url if it's string or treat it as options object
+    if (typeof params === 'string') {
+        params = parseUrl(params); // eslint-disable-line no-param-reassign
+        /* eslint sort-keys: 0 */ options = populate({
+            port: params.port,
+            path: params.pathname,
+            host: params.hostname,
+            protocol: params.protocol
+        }, defaults);
+    } else {
+        options = populate(params, defaults);
+        // if no port provided use default one
+        if (!options.port) {
+            options.port = options.protocol === 'https:' ? 443 : 80;
+        }
+    }
+    // put that good code in getHeaders to some use
+    options.headers = this.getHeaders(params.headers);
+    // https if specified, fallback to http in any other case
+    if (options.protocol === 'https:') {
+        request = https.request(options);
+    } else {
+        request = http.request(options);
+    }
+    // get content length and fire away
+    this.getLength((function(err, length) {
+        if (err && err !== 'Unknown stream') {
+            this._error(err);
+            return;
+        }
+        // add content length
+        if (length) {
+            request.setHeader('Content-Length', length);
+        }
+        this.pipe(request);
+        if (cb) {
+            var onResponse;
+            var callback = function(error, responce) {
+                request.removeListener('error', callback);
+                request.removeListener('response', onResponse);
+                return cb.call(this, error, responce); // eslint-disable-line no-invalid-this
+            };
+            onResponse = callback.bind(this, null);
+            request.on('error', callback);
+            request.on('response', onResponse);
+        }
+    }).bind(this));
+    return request;
+};
+FormData.prototype._error = function(err) {
+    if (!this.error) {
+        this.error = err;
+        this.pause();
+        this.emit('error', err);
+    }
+};
+FormData.prototype.toString = function() {
+    return '[object FormData]';
+};
+setToStringTag(FormData, 'FormData');
+// Public API
+module.exports = FormData;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/proxy-from-env/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var parseUrl = __turbopack_context__.r("[externals]/url [external] (url, cjs)").parse;
+var DEFAULT_PORTS = {
+    ftp: 21,
+    gopher: 70,
+    http: 80,
+    https: 443,
+    ws: 80,
+    wss: 443
+};
+var stringEndsWith = String.prototype.endsWith || function(s) {
+    return s.length <= this.length && this.indexOf(s, this.length - s.length) !== -1;
+};
+/**
+ * @param {string|object} url - The URL, or the result from url.parse.
+ * @return {string} The URL of the proxy that should handle the request to the
+ *  given URL. If no proxy is set, this will be an empty string.
+ */ function getProxyForUrl(url) {
+    var parsedUrl = typeof url === 'string' ? parseUrl(url) : url || {};
+    var proto = parsedUrl.protocol;
+    var hostname = parsedUrl.host;
+    var port = parsedUrl.port;
+    if (typeof hostname !== 'string' || !hostname || typeof proto !== 'string') {
+        return ''; // Don't proxy URLs without a valid scheme or host.
+    }
+    proto = proto.split(':', 1)[0];
+    // Stripping ports in this way instead of using parsedUrl.hostname to make
+    // sure that the brackets around IPv6 addresses are kept.
+    hostname = hostname.replace(/:\d*$/, '');
+    port = parseInt(port) || DEFAULT_PORTS[proto] || 0;
+    if (!shouldProxy(hostname, port)) {
+        return ''; // Don't proxy URLs that match NO_PROXY.
+    }
+    var proxy = getEnv('npm_config_' + proto + '_proxy') || getEnv(proto + '_proxy') || getEnv('npm_config_proxy') || getEnv('all_proxy');
+    if (proxy && proxy.indexOf('://') === -1) {
+        // Missing scheme in proxy, default to the requested URL's scheme.
+        proxy = proto + '://' + proxy;
+    }
+    return proxy;
+}
+/**
+ * Determines whether a given URL should be proxied.
+ *
+ * @param {string} hostname - The host name of the URL.
+ * @param {number} port - The effective port of the URL.
+ * @returns {boolean} Whether the given URL should be proxied.
+ * @private
+ */ function shouldProxy(hostname, port) {
+    var NO_PROXY = (getEnv('npm_config_no_proxy') || getEnv('no_proxy')).toLowerCase();
+    if (!NO_PROXY) {
+        return true; // Always proxy if NO_PROXY is not set.
+    }
+    if (NO_PROXY === '*') {
+        return false; // Never proxy if wildcard is set.
+    }
+    return NO_PROXY.split(/[,\s]/).every(function(proxy) {
+        if (!proxy) {
+            return true; // Skip zero-length hosts.
+        }
+        var parsedProxy = proxy.match(/^(.+):(\d+)$/);
+        var parsedProxyHostname = parsedProxy ? parsedProxy[1] : proxy;
+        var parsedProxyPort = parsedProxy ? parseInt(parsedProxy[2]) : 0;
+        if (parsedProxyPort && parsedProxyPort !== port) {
+            return true; // Skip if ports don't match.
+        }
+        if (!/^[.*]/.test(parsedProxyHostname)) {
+            // No wildcards, so stop proxying if there is an exact match.
+            return hostname !== parsedProxyHostname;
+        }
+        if (parsedProxyHostname.charAt(0) === '*') {
+            // Remove leading wildcard.
+            parsedProxyHostname = parsedProxyHostname.slice(1);
+        }
+        // Stop proxying if the hostname ends with the no_proxy host.
+        return !stringEndsWith.call(hostname, parsedProxyHostname);
+    });
+}
+/**
+ * Get the value for an environment variable.
+ *
+ * @param {string} key - The name of the environment variable.
+ * @return {string} The value of the environment variable.
+ * @private
+ */ function getEnv(key) {
+    return process.env[key.toLowerCase()] || process.env[key.toUpperCase()] || '';
+}
+exports.getProxyForUrl = getProxyForUrl;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ms/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Helpers.
+ */ var s = 1000;
+var m = s * 60;
+var h = m * 60;
+var d = h * 24;
+var w = d * 7;
+var y = d * 365.25;
+/**
+ * Parse or format the given `val`.
+ *
+ * Options:
+ *
+ *  - `long` verbose formatting [false]
+ *
+ * @param {String|Number} val
+ * @param {Object} [options]
+ * @throws {Error} throw an error if val is not a non-empty string or a number
+ * @return {String|Number}
+ * @api public
+ */ module.exports = function(val, options) {
+    options = options || {};
+    var type = typeof val;
+    if (type === 'string' && val.length > 0) {
+        return parse(val);
+    } else if (type === 'number' && isFinite(val)) {
+        return options.long ? fmtLong(val) : fmtShort(val);
+    }
+    throw new Error('val is not a non-empty string or a valid number. val=' + JSON.stringify(val));
+};
+/**
+ * Parse the given `str` and return milliseconds.
+ *
+ * @param {String} str
+ * @return {Number}
+ * @api private
+ */ function parse(str) {
+    str = String(str);
+    if (str.length > 100) {
+        return;
+    }
+    var match = /^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|years?|yrs?|y)?$/i.exec(str);
+    if (!match) {
+        return;
+    }
+    var n = parseFloat(match[1]);
+    var type = (match[2] || 'ms').toLowerCase();
+    switch(type){
+        case 'years':
+        case 'year':
+        case 'yrs':
+        case 'yr':
+        case 'y':
+            return n * y;
+        case 'weeks':
+        case 'week':
+        case 'w':
+            return n * w;
+        case 'days':
+        case 'day':
+        case 'd':
+            return n * d;
+        case 'hours':
+        case 'hour':
+        case 'hrs':
+        case 'hr':
+        case 'h':
+            return n * h;
+        case 'minutes':
+        case 'minute':
+        case 'mins':
+        case 'min':
+        case 'm':
+            return n * m;
+        case 'seconds':
+        case 'second':
+        case 'secs':
+        case 'sec':
+        case 's':
+            return n * s;
+        case 'milliseconds':
+        case 'millisecond':
+        case 'msecs':
+        case 'msec':
+        case 'ms':
+            return n;
+        default:
+            return undefined;
+    }
+}
+/**
+ * Short format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */ function fmtShort(ms) {
+    var msAbs = Math.abs(ms);
+    if (msAbs >= d) {
+        return Math.round(ms / d) + 'd';
+    }
+    if (msAbs >= h) {
+        return Math.round(ms / h) + 'h';
+    }
+    if (msAbs >= m) {
+        return Math.round(ms / m) + 'm';
+    }
+    if (msAbs >= s) {
+        return Math.round(ms / s) + 's';
+    }
+    return ms + 'ms';
+}
+/**
+ * Long format for `ms`.
+ *
+ * @param {Number} ms
+ * @return {String}
+ * @api private
+ */ function fmtLong(ms) {
+    var msAbs = Math.abs(ms);
+    if (msAbs >= d) {
+        return plural(ms, msAbs, d, 'day');
+    }
+    if (msAbs >= h) {
+        return plural(ms, msAbs, h, 'hour');
+    }
+    if (msAbs >= m) {
+        return plural(ms, msAbs, m, 'minute');
+    }
+    if (msAbs >= s) {
+        return plural(ms, msAbs, s, 'second');
+    }
+    return ms + ' ms';
+}
+/**
+ * Pluralization helper.
+ */ function plural(ms, msAbs, n, name) {
+    var isPlural = msAbs >= n * 1.5;
+    return Math.round(ms / n) + ' ' + name + (isPlural ? 's' : '');
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/common.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */ function setup(env) {
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ms/index.js [app-ssr] (ecmascript)");
+    createDebug.destroy = destroy;
+    Object.keys(env).forEach((key)=>{
+        createDebug[key] = env[key];
+    });
+    /**
+	* The currently active debug mode names, and names to skip.
+	*/ createDebug.names = [];
+    createDebug.skips = [];
+    /**
+	* Map of special "%n" handling functions, for the debug "format" argument.
+	*
+	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	*/ createDebug.formatters = {};
+    /**
+	* Selects a color for a debug namespace
+	* @param {String} namespace The namespace string for the debug instance to be colored
+	* @return {Number|String} An ANSI color code for the given namespace
+	* @api private
+	*/ function selectColor(namespace) {
+        let hash = 0;
+        for(let i = 0; i < namespace.length; i++){
+            hash = (hash << 5) - hash + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
+    /**
+	* Create a debugger with the given `namespace`.
+	*
+	* @param {String} namespace
+	* @return {Function}
+	* @api public
+	*/ function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
+            const self = debug;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
+            args[0] = createDebug.coerce(args[0]);
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format)=>{
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: ()=>{
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
+                return enabledCache;
+            },
+            set: (v)=>{
+                enableOverride = v;
+            }
+        });
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
+        return debug;
+    }
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
+    /**
+	* Enables a debug mode by namespaces. This can include modes
+	* separated by a colon and wildcards.
+	*
+	* @param {String} namespaces
+	* @api public
+	*/ function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
+        createDebug.names = [];
+        createDebug.skips = [];
+        const split = (typeof namespaces === 'string' ? namespaces : '').trim().replace(/\s+/g, ',').split(',').filter(Boolean);
+        for (const ns of split){
+            if (ns[0] === '-') {
+                createDebug.skips.push(ns.slice(1));
+            } else {
+                createDebug.names.push(ns);
+            }
+        }
+    }
+    /**
+	 * Checks if the given string matches a namespace template, honoring
+	 * asterisks as wildcards.
+	 *
+	 * @param {String} search
+	 * @param {String} template
+	 * @return {Boolean}
+	 */ function matchesTemplate(search, template) {
+        let searchIndex = 0;
+        let templateIndex = 0;
+        let starIndex = -1;
+        let matchIndex = 0;
+        while(searchIndex < search.length){
+            if (templateIndex < template.length && (template[templateIndex] === search[searchIndex] || template[templateIndex] === '*')) {
+                // Match character or proceed with wildcard
+                if (template[templateIndex] === '*') {
+                    starIndex = templateIndex;
+                    matchIndex = searchIndex;
+                    templateIndex++; // Skip the '*'
+                } else {
+                    searchIndex++;
+                    templateIndex++;
+                }
+            } else if (starIndex !== -1) {
+                // Backtrack to the last '*' and try to match more characters
+                templateIndex = starIndex + 1;
+                matchIndex++;
+                searchIndex = matchIndex;
+            } else {
+                return false; // No match
+            }
+        }
+        // Handle trailing '*' in template
+        while(templateIndex < template.length && template[templateIndex] === '*'){
+            templateIndex++;
+        }
+        return templateIndex === template.length;
+    }
+    /**
+	* Disable debug output.
+	*
+	* @return {String} namespaces
+	* @api public
+	*/ function disable() {
+        const namespaces = [
+            ...createDebug.names,
+            ...createDebug.skips.map((namespace)=>'-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
+    /**
+	* Returns true if the given mode name is enabled, false otherwise.
+	*
+	* @param {String} name
+	* @return {Boolean}
+	* @api public
+	*/ function enabled(name) {
+        for (const skip of createDebug.skips){
+            if (matchesTemplate(name, skip)) {
+                return false;
+            }
+        }
+        for (const ns of createDebug.names){
+            if (matchesTemplate(name, ns)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+	* Coerce `val`.
+	*
+	* @param {Mixed} val
+	* @return {Mixed}
+	* @api private
+	*/ function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
+    /**
+	* XXX DO NOT USE. This is a temporary stub function.
+	* XXX It WILL be removed in the next major release.
+	*/ function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
+    createDebug.enable(createDebug.load());
+    return createDebug;
+}
+module.exports = setup;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Module dependencies.
+ */ const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+/**
+ * This is the Node.js implementation of `debug()`.
+ */ exports.init = init;
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.destroy = util.deprecate(()=>{}, 'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+/**
+ * Colors.
+ */ exports.colors = [
+    6,
+    2,
+    3,
+    4,
+    5,
+    1
+];
+try {
+    // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const supportsColor = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/supports-color/index.js [app-ssr] (ecmascript)");
+    if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+        exports.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ];
+    }
+} catch (error) {
+// Swallow - we only care if `supports-color` is available; it doesn't have to be.
+}
+/**
+ * Build up the default `inspectOpts` object from the environment variables.
+ *
+ *   $ DEBUG_COLORS=no DEBUG_DEPTH=10 DEBUG_SHOW_HIDDEN=enabled node script.js
+ */ exports.inspectOpts = Object.keys(process.env).filter((key)=>{
+    return /^debug_/i.test(key);
+}).reduce((obj, key)=>{
+    // Camel-case
+    const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_, k)=>{
+        return k.toUpperCase();
+    });
+    // Coerce string value into JS value
+    let val = process.env[key];
+    if (/^(yes|on|true|enabled)$/i.test(val)) {
+        val = true;
+    } else if (/^(no|off|false|disabled)$/i.test(val)) {
+        val = false;
+    } else if (val === 'null') {
+        val = null;
+    } else {
+        val = Number(val);
+    }
+    obj[prop] = val;
+    return obj;
+}, {});
+/**
+ * Is stdout a TTY? Colored output is enabled when `true`.
+ */ function useColors() {
+    return 'colors' in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(process.stderr.fd);
+}
+/**
+ * Adds ANSI color escape codes if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    const { namespace: name, useColors } = this;
+    if (useColors) {
+        const c = this.color;
+        const colorCode = '\u001B[3' + (c < 8 ? c : '8;5;' + c);
+        const prefix = `  ${colorCode};1m${name} \u001B[0m`;
+        args[0] = prefix + args[0].split('\n').join('\n' + prefix);
+        args.push(colorCode + 'm+' + module.exports.humanize(this.diff) + '\u001B[0m');
+    } else {
+        args[0] = getDate() + name + ' ' + args[0];
+    }
+}
+function getDate() {
+    if (exports.inspectOpts.hideDate) {
+        return '';
+    }
+    return new Date().toISOString() + ' ';
+}
+/**
+ * Invokes `util.formatWithOptions()` with the specified arguments and writes to stderr.
+ */ function log(...args) {
+    return process.stderr.write(util.formatWithOptions(exports.inspectOpts, ...args) + '\n');
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    if (namespaces) {
+        process.env.DEBUG = namespaces;
+    } else {
+        // If you set a process.env field to null or undefined, it gets cast to the
+        // string 'null' or 'undefined'. Just delete instead.
+        delete process.env.DEBUG;
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    return process.env.DEBUG;
+}
+/**
+ * Init logic for `debug` instances.
+ *
+ * Create a new `inspectOpts` object in case `useColors` is set
+ * differently for a particular `debug` instance.
+ */ function init(debug) {
+    debug.inspectOpts = {};
+    const keys = Object.keys(exports.inspectOpts);
+    for(let i = 0; i < keys.length; i++){
+        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %o to `util.inspect()`, all on a single line.
+ */ formatters.o = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts).split('\n').map((str)=>str.trim()).join(' ');
+};
+/**
+ * Map %O to `util.inspect()`, allowing multiple lines if needed.
+ */ formatters.O = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/* eslint-env browser */ /**
+ * This is the web browser implementation of `debug()`.
+ */ exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+exports.destroy = (()=>{
+    let warned = false;
+    return ()=>{
+        if (!warned) {
+            warned = true;
+            console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+        }
+    };
+})();
+/**
+ * Colors.
+ */ exports.colors = [
+    '#0000CC',
+    '#0000FF',
+    '#0033CC',
+    '#0033FF',
+    '#0066CC',
+    '#0066FF',
+    '#0099CC',
+    '#0099FF',
+    '#00CC00',
+    '#00CC33',
+    '#00CC66',
+    '#00CC99',
+    '#00CCCC',
+    '#00CCFF',
+    '#3300CC',
+    '#3300FF',
+    '#3333CC',
+    '#3333FF',
+    '#3366CC',
+    '#3366FF',
+    '#3399CC',
+    '#3399FF',
+    '#33CC00',
+    '#33CC33',
+    '#33CC66',
+    '#33CC99',
+    '#33CCCC',
+    '#33CCFF',
+    '#6600CC',
+    '#6600FF',
+    '#6633CC',
+    '#6633FF',
+    '#66CC00',
+    '#66CC33',
+    '#9900CC',
+    '#9900FF',
+    '#9933CC',
+    '#9933FF',
+    '#99CC00',
+    '#99CC33',
+    '#CC0000',
+    '#CC0033',
+    '#CC0066',
+    '#CC0099',
+    '#CC00CC',
+    '#CC00FF',
+    '#CC3300',
+    '#CC3333',
+    '#CC3366',
+    '#CC3399',
+    '#CC33CC',
+    '#CC33FF',
+    '#CC6600',
+    '#CC6633',
+    '#CC9900',
+    '#CC9933',
+    '#CCCC00',
+    '#CCCC33',
+    '#FF0000',
+    '#FF0033',
+    '#FF0066',
+    '#FF0099',
+    '#FF00CC',
+    '#FF00FF',
+    '#FF3300',
+    '#FF3333',
+    '#FF3366',
+    '#FF3399',
+    '#FF33CC',
+    '#FF33FF',
+    '#FF6600',
+    '#FF6633',
+    '#FF9900',
+    '#FF9933',
+    '#FFCC00',
+    '#FFCC33'
+];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */ // eslint-disable-next-line complexity
+function useColors() {
+    // NB: In an Electron preload script, document will be defined but not fully
+    // initialized. Since we know we're in Chrome, we'll just detect this case
+    // explicitly
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Internet Explorer and Edge do not support colors.
+    if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+        return false;
+    }
+    let m;
+    // Is webkit? http://stackoverflow.com/a/16459606/376773
+    // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+    // eslint-disable-next-line no-return-assign
+    return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31 || typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+    if (!this.useColors) {
+        return;
+    }
+    const c = 'color: ' + this.color;
+    args.splice(1, 0, c, 'color: inherit');
+    // The final "%c" is somewhat tricky, because there could be other
+    // arguments passed either before or after the %c, so we need to
+    // figure out the correct index to insert the CSS into
+    let index = 0;
+    let lastC = 0;
+    args[0].replace(/%[a-zA-Z%]/g, (match)=>{
+        if (match === '%%') {
+            return;
+        }
+        index++;
+        if (match === '%c') {
+            // We only are interested in the *last* %c
+            // (the user may have provided their own)
+            lastC = index;
+        }
+    });
+    args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.debug()` when available.
+ * No-op when `console.debug` is not a "function".
+ * If `console.debug` is not available, falls back
+ * to `console.log`.
+ *
+ * @api public
+ */ exports.log = console.debug || console.log || (()=>{});
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    try {
+        if (namespaces) {
+            exports.storage.setItem('debug', namespaces);
+        } else {
+            exports.storage.removeItem('debug');
+        }
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    let r;
+    try {
+        r = exports.storage.getItem('debug') || exports.storage.getItem('DEBUG');
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+    // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+    if (!r && typeof process !== 'undefined' && 'env' in process) {
+        r = process.env.DEBUG;
+    }
+    return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */ function localstorage() {
+    try {
+        // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+        // The Browser also has localStorage in the global context.
+        return localStorage;
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */ formatters.j = function(v) {
+    try {
+        return JSON.stringify(v);
+    } catch (error) {
+        return '[UnexpectedJSONParseError]: ' + error.message;
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Detect Electron renderer / nwjs process, which is node, but we should
+ * treat as a browser.
+ */ if (typeof process === 'undefined' || process.type === 'renderer' || ("TURBOPACK compile-time value", false) === true || process.__nwjs) {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/browser.js [app-ssr] (ecmascript)");
+} else {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/node.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */ function setup(env) {
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ms/index.js [app-ssr] (ecmascript)");
+    createDebug.destroy = destroy;
+    Object.keys(env).forEach((key)=>{
+        createDebug[key] = env[key];
+    });
+    /**
+	* The currently active debug mode names, and names to skip.
+	*/ createDebug.names = [];
+    createDebug.skips = [];
+    /**
+	* Map of special "%n" handling functions, for the debug "format" argument.
+	*
+	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	*/ createDebug.formatters = {};
+    /**
+	* Selects a color for a debug namespace
+	* @param {String} namespace The namespace string for the debug instance to be colored
+	* @return {Number|String} An ANSI color code for the given namespace
+	* @api private
+	*/ function selectColor(namespace) {
+        let hash = 0;
+        for(let i = 0; i < namespace.length; i++){
+            hash = (hash << 5) - hash + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
+    /**
+	* Create a debugger with the given `namespace`.
+	*
+	* @param {String} namespace
+	* @return {Function}
+	* @api public
+	*/ function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
+            const self = debug;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
+            args[0] = createDebug.coerce(args[0]);
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format)=>{
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: ()=>{
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
+                return enabledCache;
+            },
+            set: (v)=>{
+                enableOverride = v;
+            }
+        });
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
+        return debug;
+    }
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
+    /**
+	* Enables a debug mode by namespaces. This can include modes
+	* separated by a colon and wildcards.
+	*
+	* @param {String} namespaces
+	* @api public
+	*/ function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
+        createDebug.names = [];
+        createDebug.skips = [];
+        let i;
+        const split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+        const len = split.length;
+        for(i = 0; i < len; i++){
+            if (!split[i]) {
+                continue;
+            }
+            namespaces = split[i].replace(/\*/g, '.*?');
+            if (namespaces[0] === '-') {
+                createDebug.skips.push(new RegExp('^' + namespaces.slice(1) + '$'));
+            } else {
+                createDebug.names.push(new RegExp('^' + namespaces + '$'));
+            }
+        }
+    }
+    /**
+	* Disable debug output.
+	*
+	* @return {String} namespaces
+	* @api public
+	*/ function disable() {
+        const namespaces = [
+            ...createDebug.names.map(toNamespace),
+            ...createDebug.skips.map(toNamespace).map((namespace)=>'-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
+    /**
+	* Returns true if the given mode name is enabled, false otherwise.
+	*
+	* @param {String} name
+	* @return {Boolean}
+	* @api public
+	*/ function enabled(name) {
+        if (name[name.length - 1] === '*') {
+            return true;
+        }
+        let i;
+        let len;
+        for(i = 0, len = createDebug.skips.length; i < len; i++){
+            if (createDebug.skips[i].test(name)) {
+                return false;
+            }
+        }
+        for(i = 0, len = createDebug.names.length; i < len; i++){
+            if (createDebug.names[i].test(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+	* Convert regexp to namespace
+	*
+	* @param {RegExp} regxep
+	* @return {String} namespace
+	* @api private
+	*/ function toNamespace(regexp) {
+        return regexp.toString().substring(2, regexp.toString().length - 2).replace(/\.\*\?$/, '*');
+    }
+    /**
+	* Coerce `val`.
+	*
+	* @param {Mixed} val
+	* @return {Mixed}
+	* @api private
+	*/ function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
+    /**
+	* XXX DO NOT USE. This is a temporary stub function.
+	* XXX It WILL be removed in the next major release.
+	*/ function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
+    createDebug.enable(createDebug.load());
+    return createDebug;
+}
+module.exports = setup;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Module dependencies.
+ */ const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+/**
+ * This is the Node.js implementation of `debug()`.
+ */ exports.init = init;
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.destroy = util.deprecate(()=>{}, 'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+/**
+ * Colors.
+ */ exports.colors = [
+    6,
+    2,
+    3,
+    4,
+    5,
+    1
+];
+try {
+    // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const supportsColor = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/supports-color/index.js [app-ssr] (ecmascript)");
+    if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+        exports.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ];
+    }
+} catch (error) {
+// Swallow - we only care if `supports-color` is available; it doesn't have to be.
+}
+/**
+ * Build up the default `inspectOpts` object from the environment variables.
+ *
+ *   $ DEBUG_COLORS=no DEBUG_DEPTH=10 DEBUG_SHOW_HIDDEN=enabled node script.js
+ */ exports.inspectOpts = Object.keys(process.env).filter((key)=>{
+    return /^debug_/i.test(key);
+}).reduce((obj, key)=>{
+    // Camel-case
+    const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_, k)=>{
+        return k.toUpperCase();
+    });
+    // Coerce string value into JS value
+    let val = process.env[key];
+    if (/^(yes|on|true|enabled)$/i.test(val)) {
+        val = true;
+    } else if (/^(no|off|false|disabled)$/i.test(val)) {
+        val = false;
+    } else if (val === 'null') {
+        val = null;
+    } else {
+        val = Number(val);
+    }
+    obj[prop] = val;
+    return obj;
+}, {});
+/**
+ * Is stdout a TTY? Colored output is enabled when `true`.
+ */ function useColors() {
+    return 'colors' in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(process.stderr.fd);
+}
+/**
+ * Adds ANSI color escape codes if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    const { namespace: name, useColors } = this;
+    if (useColors) {
+        const c = this.color;
+        const colorCode = '\u001B[3' + (c < 8 ? c : '8;5;' + c);
+        const prefix = `  ${colorCode};1m${name} \u001B[0m`;
+        args[0] = prefix + args[0].split('\n').join('\n' + prefix);
+        args.push(colorCode + 'm+' + module.exports.humanize(this.diff) + '\u001B[0m');
+    } else {
+        args[0] = getDate() + name + ' ' + args[0];
+    }
+}
+function getDate() {
+    if (exports.inspectOpts.hideDate) {
+        return '';
+    }
+    return new Date().toISOString() + ' ';
+}
+/**
+ * Invokes `util.formatWithOptions()` with the specified arguments and writes to stderr.
+ */ function log(...args) {
+    return process.stderr.write(util.formatWithOptions(exports.inspectOpts, ...args) + '\n');
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    if (namespaces) {
+        process.env.DEBUG = namespaces;
+    } else {
+        // If you set a process.env field to null or undefined, it gets cast to the
+        // string 'null' or 'undefined'. Just delete instead.
+        delete process.env.DEBUG;
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    return process.env.DEBUG;
+}
+/**
+ * Init logic for `debug` instances.
+ *
+ * Create a new `inspectOpts` object in case `useColors` is set
+ * differently for a particular `debug` instance.
+ */ function init(debug) {
+    debug.inspectOpts = {};
+    const keys = Object.keys(exports.inspectOpts);
+    for(let i = 0; i < keys.length; i++){
+        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %o to `util.inspect()`, all on a single line.
+ */ formatters.o = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts).split('\n').map((str)=>str.trim()).join(' ');
+};
+/**
+ * Map %O to `util.inspect()`, allowing multiple lines if needed.
+ */ formatters.O = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/* eslint-env browser */ /**
+ * This is the web browser implementation of `debug()`.
+ */ exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+exports.destroy = (()=>{
+    let warned = false;
+    return ()=>{
+        if (!warned) {
+            warned = true;
+            console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+        }
+    };
+})();
+/**
+ * Colors.
+ */ exports.colors = [
+    '#0000CC',
+    '#0000FF',
+    '#0033CC',
+    '#0033FF',
+    '#0066CC',
+    '#0066FF',
+    '#0099CC',
+    '#0099FF',
+    '#00CC00',
+    '#00CC33',
+    '#00CC66',
+    '#00CC99',
+    '#00CCCC',
+    '#00CCFF',
+    '#3300CC',
+    '#3300FF',
+    '#3333CC',
+    '#3333FF',
+    '#3366CC',
+    '#3366FF',
+    '#3399CC',
+    '#3399FF',
+    '#33CC00',
+    '#33CC33',
+    '#33CC66',
+    '#33CC99',
+    '#33CCCC',
+    '#33CCFF',
+    '#6600CC',
+    '#6600FF',
+    '#6633CC',
+    '#6633FF',
+    '#66CC00',
+    '#66CC33',
+    '#9900CC',
+    '#9900FF',
+    '#9933CC',
+    '#9933FF',
+    '#99CC00',
+    '#99CC33',
+    '#CC0000',
+    '#CC0033',
+    '#CC0066',
+    '#CC0099',
+    '#CC00CC',
+    '#CC00FF',
+    '#CC3300',
+    '#CC3333',
+    '#CC3366',
+    '#CC3399',
+    '#CC33CC',
+    '#CC33FF',
+    '#CC6600',
+    '#CC6633',
+    '#CC9900',
+    '#CC9933',
+    '#CCCC00',
+    '#CCCC33',
+    '#FF0000',
+    '#FF0033',
+    '#FF0066',
+    '#FF0099',
+    '#FF00CC',
+    '#FF00FF',
+    '#FF3300',
+    '#FF3333',
+    '#FF3366',
+    '#FF3399',
+    '#FF33CC',
+    '#FF33FF',
+    '#FF6600',
+    '#FF6633',
+    '#FF9900',
+    '#FF9933',
+    '#FFCC00',
+    '#FFCC33'
+];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */ // eslint-disable-next-line complexity
+function useColors() {
+    // NB: In an Electron preload script, document will be defined but not fully
+    // initialized. Since we know we're in Chrome, we'll just detect this case
+    // explicitly
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Internet Explorer and Edge do not support colors.
+    if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+        return false;
+    }
+    let m;
+    // Is webkit? http://stackoverflow.com/a/16459606/376773
+    // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+    return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31 || typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+    if (!this.useColors) {
+        return;
+    }
+    const c = 'color: ' + this.color;
+    args.splice(1, 0, c, 'color: inherit');
+    // The final "%c" is somewhat tricky, because there could be other
+    // arguments passed either before or after the %c, so we need to
+    // figure out the correct index to insert the CSS into
+    let index = 0;
+    let lastC = 0;
+    args[0].replace(/%[a-zA-Z%]/g, (match)=>{
+        if (match === '%%') {
+            return;
+        }
+        index++;
+        if (match === '%c') {
+            // We only are interested in the *last* %c
+            // (the user may have provided their own)
+            lastC = index;
+        }
+    });
+    args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.debug()` when available.
+ * No-op when `console.debug` is not a "function".
+ * If `console.debug` is not available, falls back
+ * to `console.log`.
+ *
+ * @api public
+ */ exports.log = console.debug || console.log || (()=>{});
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    try {
+        if (namespaces) {
+            exports.storage.setItem('debug', namespaces);
+        } else {
+            exports.storage.removeItem('debug');
+        }
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    let r;
+    try {
+        r = exports.storage.getItem('debug');
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+    // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+    if (!r && typeof process !== 'undefined' && 'env' in process) {
+        r = process.env.DEBUG;
+    }
+    return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */ function localstorage() {
+    try {
+        // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+        // The Browser also has localStorage in the global context.
+        return localStorage;
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */ formatters.j = function(v) {
+    try {
+        return JSON.stringify(v);
+    } catch (error) {
+        return '[UnexpectedJSONParseError]: ' + error.message;
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Detect Electron renderer / nwjs process, which is node, but we should
+ * treat as a browser.
+ */ if (typeof process === 'undefined' || process.type === 'renderer' || ("TURBOPACK compile-time value", false) === true || process.__nwjs) {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/browser.js [app-ssr] (ecmascript)");
+} else {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/node.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */ function setup(env) {
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ms/index.js [app-ssr] (ecmascript)");
+    createDebug.destroy = destroy;
+    Object.keys(env).forEach((key)=>{
+        createDebug[key] = env[key];
+    });
+    /**
+	* The currently active debug mode names, and names to skip.
+	*/ createDebug.names = [];
+    createDebug.skips = [];
+    /**
+	* Map of special "%n" handling functions, for the debug "format" argument.
+	*
+	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	*/ createDebug.formatters = {};
+    /**
+	* Selects a color for a debug namespace
+	* @param {String} namespace The namespace string for the debug instance to be colored
+	* @return {Number|String} An ANSI color code for the given namespace
+	* @api private
+	*/ function selectColor(namespace) {
+        let hash = 0;
+        for(let i = 0; i < namespace.length; i++){
+            hash = (hash << 5) - hash + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
+    /**
+	* Create a debugger with the given `namespace`.
+	*
+	* @param {String} namespace
+	* @return {Function}
+	* @api public
+	*/ function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
+            const self = debug;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
+            args[0] = createDebug.coerce(args[0]);
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format)=>{
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: ()=>{
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
+                return enabledCache;
+            },
+            set: (v)=>{
+                enableOverride = v;
+            }
+        });
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
+        return debug;
+    }
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
+    /**
+	* Enables a debug mode by namespaces. This can include modes
+	* separated by a colon and wildcards.
+	*
+	* @param {String} namespaces
+	* @api public
+	*/ function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
+        createDebug.names = [];
+        createDebug.skips = [];
+        let i;
+        const split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+        const len = split.length;
+        for(i = 0; i < len; i++){
+            if (!split[i]) {
+                continue;
+            }
+            namespaces = split[i].replace(/\*/g, '.*?');
+            if (namespaces[0] === '-') {
+                createDebug.skips.push(new RegExp('^' + namespaces.slice(1) + '$'));
+            } else {
+                createDebug.names.push(new RegExp('^' + namespaces + '$'));
+            }
+        }
+    }
+    /**
+	* Disable debug output.
+	*
+	* @return {String} namespaces
+	* @api public
+	*/ function disable() {
+        const namespaces = [
+            ...createDebug.names.map(toNamespace),
+            ...createDebug.skips.map(toNamespace).map((namespace)=>'-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
+    /**
+	* Returns true if the given mode name is enabled, false otherwise.
+	*
+	* @param {String} name
+	* @return {Boolean}
+	* @api public
+	*/ function enabled(name) {
+        if (name[name.length - 1] === '*') {
+            return true;
+        }
+        let i;
+        let len;
+        for(i = 0, len = createDebug.skips.length; i < len; i++){
+            if (createDebug.skips[i].test(name)) {
+                return false;
+            }
+        }
+        for(i = 0, len = createDebug.names.length; i < len; i++){
+            if (createDebug.names[i].test(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+	* Convert regexp to namespace
+	*
+	* @param {RegExp} regxep
+	* @return {String} namespace
+	* @api private
+	*/ function toNamespace(regexp) {
+        return regexp.toString().substring(2, regexp.toString().length - 2).replace(/\.\*\?$/, '*');
+    }
+    /**
+	* Coerce `val`.
+	*
+	* @param {Mixed} val
+	* @return {Mixed}
+	* @api private
+	*/ function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
+    /**
+	* XXX DO NOT USE. This is a temporary stub function.
+	* XXX It WILL be removed in the next major release.
+	*/ function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
+    createDebug.enable(createDebug.load());
+    return createDebug;
+}
+module.exports = setup;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Module dependencies.
+ */ const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+/**
+ * This is the Node.js implementation of `debug()`.
+ */ exports.init = init;
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.destroy = util.deprecate(()=>{}, 'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+/**
+ * Colors.
+ */ exports.colors = [
+    6,
+    2,
+    3,
+    4,
+    5,
+    1
+];
+try {
+    // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const supportsColor = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/supports-color/index.js [app-ssr] (ecmascript)");
+    if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+        exports.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ];
+    }
+} catch (error) {
+// Swallow - we only care if `supports-color` is available; it doesn't have to be.
+}
+/**
+ * Build up the default `inspectOpts` object from the environment variables.
+ *
+ *   $ DEBUG_COLORS=no DEBUG_DEPTH=10 DEBUG_SHOW_HIDDEN=enabled node script.js
+ */ exports.inspectOpts = Object.keys(process.env).filter((key)=>{
+    return /^debug_/i.test(key);
+}).reduce((obj, key)=>{
+    // Camel-case
+    const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_, k)=>{
+        return k.toUpperCase();
+    });
+    // Coerce string value into JS value
+    let val = process.env[key];
+    if (/^(yes|on|true|enabled)$/i.test(val)) {
+        val = true;
+    } else if (/^(no|off|false|disabled)$/i.test(val)) {
+        val = false;
+    } else if (val === 'null') {
+        val = null;
+    } else {
+        val = Number(val);
+    }
+    obj[prop] = val;
+    return obj;
+}, {});
+/**
+ * Is stdout a TTY? Colored output is enabled when `true`.
+ */ function useColors() {
+    return 'colors' in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(process.stderr.fd);
+}
+/**
+ * Adds ANSI color escape codes if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    const { namespace: name, useColors } = this;
+    if (useColors) {
+        const c = this.color;
+        const colorCode = '\u001B[3' + (c < 8 ? c : '8;5;' + c);
+        const prefix = `  ${colorCode};1m${name} \u001B[0m`;
+        args[0] = prefix + args[0].split('\n').join('\n' + prefix);
+        args.push(colorCode + 'm+' + module.exports.humanize(this.diff) + '\u001B[0m');
+    } else {
+        args[0] = getDate() + name + ' ' + args[0];
+    }
+}
+function getDate() {
+    if (exports.inspectOpts.hideDate) {
+        return '';
+    }
+    return new Date().toISOString() + ' ';
+}
+/**
+ * Invokes `util.formatWithOptions()` with the specified arguments and writes to stderr.
+ */ function log(...args) {
+    return process.stderr.write(util.formatWithOptions(exports.inspectOpts, ...args) + '\n');
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    if (namespaces) {
+        process.env.DEBUG = namespaces;
+    } else {
+        // If you set a process.env field to null or undefined, it gets cast to the
+        // string 'null' or 'undefined'. Just delete instead.
+        delete process.env.DEBUG;
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    return process.env.DEBUG;
+}
+/**
+ * Init logic for `debug` instances.
+ *
+ * Create a new `inspectOpts` object in case `useColors` is set
+ * differently for a particular `debug` instance.
+ */ function init(debug) {
+    debug.inspectOpts = {};
+    const keys = Object.keys(exports.inspectOpts);
+    for(let i = 0; i < keys.length; i++){
+        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %o to `util.inspect()`, all on a single line.
+ */ formatters.o = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts).split('\n').map((str)=>str.trim()).join(' ');
+};
+/**
+ * Map %O to `util.inspect()`, allowing multiple lines if needed.
+ */ formatters.O = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/* eslint-env browser */ /**
+ * This is the web browser implementation of `debug()`.
+ */ exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+exports.destroy = (()=>{
+    let warned = false;
+    return ()=>{
+        if (!warned) {
+            warned = true;
+            console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+        }
+    };
+})();
+/**
+ * Colors.
+ */ exports.colors = [
+    '#0000CC',
+    '#0000FF',
+    '#0033CC',
+    '#0033FF',
+    '#0066CC',
+    '#0066FF',
+    '#0099CC',
+    '#0099FF',
+    '#00CC00',
+    '#00CC33',
+    '#00CC66',
+    '#00CC99',
+    '#00CCCC',
+    '#00CCFF',
+    '#3300CC',
+    '#3300FF',
+    '#3333CC',
+    '#3333FF',
+    '#3366CC',
+    '#3366FF',
+    '#3399CC',
+    '#3399FF',
+    '#33CC00',
+    '#33CC33',
+    '#33CC66',
+    '#33CC99',
+    '#33CCCC',
+    '#33CCFF',
+    '#6600CC',
+    '#6600FF',
+    '#6633CC',
+    '#6633FF',
+    '#66CC00',
+    '#66CC33',
+    '#9900CC',
+    '#9900FF',
+    '#9933CC',
+    '#9933FF',
+    '#99CC00',
+    '#99CC33',
+    '#CC0000',
+    '#CC0033',
+    '#CC0066',
+    '#CC0099',
+    '#CC00CC',
+    '#CC00FF',
+    '#CC3300',
+    '#CC3333',
+    '#CC3366',
+    '#CC3399',
+    '#CC33CC',
+    '#CC33FF',
+    '#CC6600',
+    '#CC6633',
+    '#CC9900',
+    '#CC9933',
+    '#CCCC00',
+    '#CCCC33',
+    '#FF0000',
+    '#FF0033',
+    '#FF0066',
+    '#FF0099',
+    '#FF00CC',
+    '#FF00FF',
+    '#FF3300',
+    '#FF3333',
+    '#FF3366',
+    '#FF3399',
+    '#FF33CC',
+    '#FF33FF',
+    '#FF6600',
+    '#FF6633',
+    '#FF9900',
+    '#FF9933',
+    '#FFCC00',
+    '#FFCC33'
+];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */ // eslint-disable-next-line complexity
+function useColors() {
+    // NB: In an Electron preload script, document will be defined but not fully
+    // initialized. Since we know we're in Chrome, we'll just detect this case
+    // explicitly
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Internet Explorer and Edge do not support colors.
+    if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+        return false;
+    }
+    let m;
+    // Is webkit? http://stackoverflow.com/a/16459606/376773
+    // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+    return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31 || typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+    if (!this.useColors) {
+        return;
+    }
+    const c = 'color: ' + this.color;
+    args.splice(1, 0, c, 'color: inherit');
+    // The final "%c" is somewhat tricky, because there could be other
+    // arguments passed either before or after the %c, so we need to
+    // figure out the correct index to insert the CSS into
+    let index = 0;
+    let lastC = 0;
+    args[0].replace(/%[a-zA-Z%]/g, (match)=>{
+        if (match === '%%') {
+            return;
+        }
+        index++;
+        if (match === '%c') {
+            // We only are interested in the *last* %c
+            // (the user may have provided their own)
+            lastC = index;
+        }
+    });
+    args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.debug()` when available.
+ * No-op when `console.debug` is not a "function".
+ * If `console.debug` is not available, falls back
+ * to `console.log`.
+ *
+ * @api public
+ */ exports.log = console.debug || console.log || (()=>{});
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    try {
+        if (namespaces) {
+            exports.storage.setItem('debug', namespaces);
+        } else {
+            exports.storage.removeItem('debug');
+        }
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    let r;
+    try {
+        r = exports.storage.getItem('debug');
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+    // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+    if (!r && typeof process !== 'undefined' && 'env' in process) {
+        r = process.env.DEBUG;
+    }
+    return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */ function localstorage() {
+    try {
+        // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+        // The Browser also has localStorage in the global context.
+        return localStorage;
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */ formatters.j = function(v) {
+    try {
+        return JSON.stringify(v);
+    } catch (error) {
+        return '[UnexpectedJSONParseError]: ' + error.message;
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Detect Electron renderer / nwjs process, which is node, but we should
+ * treat as a browser.
+ */ if (typeof process === 'undefined' || process.type === 'renderer' || ("TURBOPACK compile-time value", false) === true || process.__nwjs) {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/browser.js [app-ssr] (ecmascript)");
+} else {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/node.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/common.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This is the common logic for both the Node.js and web browser
+ * implementations of `debug()`.
+ */ function setup(env) {
+    createDebug.debug = createDebug;
+    createDebug.default = createDebug;
+    createDebug.coerce = coerce;
+    createDebug.disable = disable;
+    createDebug.enable = enable;
+    createDebug.enabled = enabled;
+    createDebug.humanize = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ms/index.js [app-ssr] (ecmascript)");
+    createDebug.destroy = destroy;
+    Object.keys(env).forEach((key)=>{
+        createDebug[key] = env[key];
+    });
+    /**
+	* The currently active debug mode names, and names to skip.
+	*/ createDebug.names = [];
+    createDebug.skips = [];
+    /**
+	* Map of special "%n" handling functions, for the debug "format" argument.
+	*
+	* Valid key names are a single, lower or upper-case letter, i.e. "n" and "N".
+	*/ createDebug.formatters = {};
+    /**
+	* Selects a color for a debug namespace
+	* @param {String} namespace The namespace string for the debug instance to be colored
+	* @return {Number|String} An ANSI color code for the given namespace
+	* @api private
+	*/ function selectColor(namespace) {
+        let hash = 0;
+        for(let i = 0; i < namespace.length; i++){
+            hash = (hash << 5) - hash + namespace.charCodeAt(i);
+            hash |= 0; // Convert to 32bit integer
+        }
+        return createDebug.colors[Math.abs(hash) % createDebug.colors.length];
+    }
+    createDebug.selectColor = selectColor;
+    /**
+	* Create a debugger with the given `namespace`.
+	*
+	* @param {String} namespace
+	* @return {Function}
+	* @api public
+	*/ function createDebug(namespace) {
+        let prevTime;
+        let enableOverride = null;
+        let namespacesCache;
+        let enabledCache;
+        function debug(...args) {
+            // Disabled?
+            if (!debug.enabled) {
+                return;
+            }
+            const self = debug;
+            // Set `diff` timestamp
+            const curr = Number(new Date());
+            const ms = curr - (prevTime || curr);
+            self.diff = ms;
+            self.prev = prevTime;
+            self.curr = curr;
+            prevTime = curr;
+            args[0] = createDebug.coerce(args[0]);
+            if (typeof args[0] !== 'string') {
+                // Anything else let's inspect with %O
+                args.unshift('%O');
+            }
+            // Apply any `formatters` transformations
+            let index = 0;
+            args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format)=>{
+                // If we encounter an escaped % then don't increase the array index
+                if (match === '%%') {
+                    return '%';
+                }
+                index++;
+                const formatter = createDebug.formatters[format];
+                if (typeof formatter === 'function') {
+                    const val = args[index];
+                    match = formatter.call(self, val);
+                    // Now we need to remove `args[index]` since it's inlined in the `format`
+                    args.splice(index, 1);
+                    index--;
+                }
+                return match;
+            });
+            // Apply env-specific formatting (colors, etc.)
+            createDebug.formatArgs.call(self, args);
+            const logFn = self.log || createDebug.log;
+            logFn.apply(self, args);
+        }
+        debug.namespace = namespace;
+        debug.useColors = createDebug.useColors();
+        debug.color = createDebug.selectColor(namespace);
+        debug.extend = extend;
+        debug.destroy = createDebug.destroy; // XXX Temporary. Will be removed in the next major release.
+        Object.defineProperty(debug, 'enabled', {
+            enumerable: true,
+            configurable: false,
+            get: ()=>{
+                if (enableOverride !== null) {
+                    return enableOverride;
+                }
+                if (namespacesCache !== createDebug.namespaces) {
+                    namespacesCache = createDebug.namespaces;
+                    enabledCache = createDebug.enabled(namespace);
+                }
+                return enabledCache;
+            },
+            set: (v)=>{
+                enableOverride = v;
+            }
+        });
+        // Env-specific initialization logic for debug instances
+        if (typeof createDebug.init === 'function') {
+            createDebug.init(debug);
+        }
+        return debug;
+    }
+    function extend(namespace, delimiter) {
+        const newDebug = createDebug(this.namespace + (typeof delimiter === 'undefined' ? ':' : delimiter) + namespace);
+        newDebug.log = this.log;
+        return newDebug;
+    }
+    /**
+	* Enables a debug mode by namespaces. This can include modes
+	* separated by a colon and wildcards.
+	*
+	* @param {String} namespaces
+	* @api public
+	*/ function enable(namespaces) {
+        createDebug.save(namespaces);
+        createDebug.namespaces = namespaces;
+        createDebug.names = [];
+        createDebug.skips = [];
+        let i;
+        const split = (typeof namespaces === 'string' ? namespaces : '').split(/[\s,]+/);
+        const len = split.length;
+        for(i = 0; i < len; i++){
+            if (!split[i]) {
+                continue;
+            }
+            namespaces = split[i].replace(/\*/g, '.*?');
+            if (namespaces[0] === '-') {
+                createDebug.skips.push(new RegExp('^' + namespaces.slice(1) + '$'));
+            } else {
+                createDebug.names.push(new RegExp('^' + namespaces + '$'));
+            }
+        }
+    }
+    /**
+	* Disable debug output.
+	*
+	* @return {String} namespaces
+	* @api public
+	*/ function disable() {
+        const namespaces = [
+            ...createDebug.names.map(toNamespace),
+            ...createDebug.skips.map(toNamespace).map((namespace)=>'-' + namespace)
+        ].join(',');
+        createDebug.enable('');
+        return namespaces;
+    }
+    /**
+	* Returns true if the given mode name is enabled, false otherwise.
+	*
+	* @param {String} name
+	* @return {Boolean}
+	* @api public
+	*/ function enabled(name) {
+        if (name[name.length - 1] === '*') {
+            return true;
+        }
+        let i;
+        let len;
+        for(i = 0, len = createDebug.skips.length; i < len; i++){
+            if (createDebug.skips[i].test(name)) {
+                return false;
+            }
+        }
+        for(i = 0, len = createDebug.names.length; i < len; i++){
+            if (createDebug.names[i].test(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+	* Convert regexp to namespace
+	*
+	* @param {RegExp} regxep
+	* @return {String} namespace
+	* @api private
+	*/ function toNamespace(regexp) {
+        return regexp.toString().substring(2, regexp.toString().length - 2).replace(/\.\*\?$/, '*');
+    }
+    /**
+	* Coerce `val`.
+	*
+	* @param {Mixed} val
+	* @return {Mixed}
+	* @api private
+	*/ function coerce(val) {
+        if (val instanceof Error) {
+            return val.stack || val.message;
+        }
+        return val;
+    }
+    /**
+	* XXX DO NOT USE. This is a temporary stub function.
+	* XXX It WILL be removed in the next major release.
+	*/ function destroy() {
+        console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+    }
+    createDebug.enable(createDebug.load());
+    return createDebug;
+}
+module.exports = setup;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/node.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Module dependencies.
+ */ const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+/**
+ * This is the Node.js implementation of `debug()`.
+ */ exports.init = init;
+exports.log = log;
+exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.destroy = util.deprecate(()=>{}, 'Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+/**
+ * Colors.
+ */ exports.colors = [
+    6,
+    2,
+    3,
+    4,
+    5,
+    1
+];
+try {
+    // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+    // eslint-disable-next-line import/no-extraneous-dependencies
+    const supportsColor = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/supports-color/index.js [app-ssr] (ecmascript)");
+    if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+        exports.colors = [
+            20,
+            21,
+            26,
+            27,
+            32,
+            33,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            56,
+            57,
+            62,
+            63,
+            68,
+            69,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            92,
+            93,
+            98,
+            99,
+            112,
+            113,
+            128,
+            129,
+            134,
+            135,
+            148,
+            149,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            178,
+            179,
+            184,
+            185,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            214,
+            215,
+            220,
+            221
+        ];
+    }
+} catch (error) {
+// Swallow - we only care if `supports-color` is available; it doesn't have to be.
+}
+/**
+ * Build up the default `inspectOpts` object from the environment variables.
+ *
+ *   $ DEBUG_COLORS=no DEBUG_DEPTH=10 DEBUG_SHOW_HIDDEN=enabled node script.js
+ */ exports.inspectOpts = Object.keys(process.env).filter((key)=>{
+    return /^debug_/i.test(key);
+}).reduce((obj, key)=>{
+    // Camel-case
+    const prop = key.substring(6).toLowerCase().replace(/_([a-z])/g, (_, k)=>{
+        return k.toUpperCase();
+    });
+    // Coerce string value into JS value
+    let val = process.env[key];
+    if (/^(yes|on|true|enabled)$/i.test(val)) {
+        val = true;
+    } else if (/^(no|off|false|disabled)$/i.test(val)) {
+        val = false;
+    } else if (val === 'null') {
+        val = null;
+    } else {
+        val = Number(val);
+    }
+    obj[prop] = val;
+    return obj;
+}, {});
+/**
+ * Is stdout a TTY? Colored output is enabled when `true`.
+ */ function useColors() {
+    return 'colors' in exports.inspectOpts ? Boolean(exports.inspectOpts.colors) : tty.isatty(process.stderr.fd);
+}
+/**
+ * Adds ANSI color escape codes if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    const { namespace: name, useColors } = this;
+    if (useColors) {
+        const c = this.color;
+        const colorCode = '\u001B[3' + (c < 8 ? c : '8;5;' + c);
+        const prefix = `  ${colorCode};1m${name} \u001B[0m`;
+        args[0] = prefix + args[0].split('\n').join('\n' + prefix);
+        args.push(colorCode + 'm+' + module.exports.humanize(this.diff) + '\u001B[0m');
+    } else {
+        args[0] = getDate() + name + ' ' + args[0];
+    }
+}
+function getDate() {
+    if (exports.inspectOpts.hideDate) {
+        return '';
+    }
+    return new Date().toISOString() + ' ';
+}
+/**
+ * Invokes `util.formatWithOptions()` with the specified arguments and writes to stderr.
+ */ function log(...args) {
+    return process.stderr.write(util.formatWithOptions(exports.inspectOpts, ...args) + '\n');
+}
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    if (namespaces) {
+        process.env.DEBUG = namespaces;
+    } else {
+        // If you set a process.env field to null or undefined, it gets cast to the
+        // string 'null' or 'undefined'. Just delete instead.
+        delete process.env.DEBUG;
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    return process.env.DEBUG;
+}
+/**
+ * Init logic for `debug` instances.
+ *
+ * Create a new `inspectOpts` object in case `useColors` is set
+ * differently for a particular `debug` instance.
+ */ function init(debug) {
+    debug.inspectOpts = {};
+    const keys = Object.keys(exports.inspectOpts);
+    for(let i = 0; i < keys.length; i++){
+        debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %o to `util.inspect()`, all on a single line.
+ */ formatters.o = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts).split('\n').map((str)=>str.trim()).join(' ');
+};
+/**
+ * Map %O to `util.inspect()`, allowing multiple lines if needed.
+ */ formatters.O = function(v) {
+    this.inspectOpts.colors = this.useColors;
+    return util.inspect(v, this.inspectOpts);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/browser.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/* eslint-env browser */ /**
+ * This is the web browser implementation of `debug()`.
+ */ exports.formatArgs = formatArgs;
+exports.save = save;
+exports.load = load;
+exports.useColors = useColors;
+exports.storage = localstorage();
+exports.destroy = (()=>{
+    let warned = false;
+    return ()=>{
+        if (!warned) {
+            warned = true;
+            console.warn('Instance method `debug.destroy()` is deprecated and no longer does anything. It will be removed in the next major version of `debug`.');
+        }
+    };
+})();
+/**
+ * Colors.
+ */ exports.colors = [
+    '#0000CC',
+    '#0000FF',
+    '#0033CC',
+    '#0033FF',
+    '#0066CC',
+    '#0066FF',
+    '#0099CC',
+    '#0099FF',
+    '#00CC00',
+    '#00CC33',
+    '#00CC66',
+    '#00CC99',
+    '#00CCCC',
+    '#00CCFF',
+    '#3300CC',
+    '#3300FF',
+    '#3333CC',
+    '#3333FF',
+    '#3366CC',
+    '#3366FF',
+    '#3399CC',
+    '#3399FF',
+    '#33CC00',
+    '#33CC33',
+    '#33CC66',
+    '#33CC99',
+    '#33CCCC',
+    '#33CCFF',
+    '#6600CC',
+    '#6600FF',
+    '#6633CC',
+    '#6633FF',
+    '#66CC00',
+    '#66CC33',
+    '#9900CC',
+    '#9900FF',
+    '#9933CC',
+    '#9933FF',
+    '#99CC00',
+    '#99CC33',
+    '#CC0000',
+    '#CC0033',
+    '#CC0066',
+    '#CC0099',
+    '#CC00CC',
+    '#CC00FF',
+    '#CC3300',
+    '#CC3333',
+    '#CC3366',
+    '#CC3399',
+    '#CC33CC',
+    '#CC33FF',
+    '#CC6600',
+    '#CC6633',
+    '#CC9900',
+    '#CC9933',
+    '#CCCC00',
+    '#CCCC33',
+    '#FF0000',
+    '#FF0033',
+    '#FF0066',
+    '#FF0099',
+    '#FF00CC',
+    '#FF00FF',
+    '#FF3300',
+    '#FF3333',
+    '#FF3366',
+    '#FF3399',
+    '#FF33CC',
+    '#FF33FF',
+    '#FF6600',
+    '#FF6633',
+    '#FF9900',
+    '#FF9933',
+    '#FFCC00',
+    '#FFCC33'
+];
+/**
+ * Currently only WebKit-based Web Inspectors, Firefox >= v31,
+ * and the Firebug extension (any Firefox version) are known
+ * to support "%c" CSS customizations.
+ *
+ * TODO: add a `localStorage` variable to explicitly enable/disable colors
+ */ // eslint-disable-next-line complexity
+function useColors() {
+    // NB: In an Electron preload script, document will be defined but not fully
+    // initialized. Since we know we're in Chrome, we'll just detect this case
+    // explicitly
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Internet Explorer and Edge do not support colors.
+    if (typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/(edge|trident)\/(\d+)/)) {
+        return false;
+    }
+    let m;
+    // Is webkit? http://stackoverflow.com/a/16459606/376773
+    // document is undefined in react-native: https://github.com/facebook/react-native/pull/1632
+    return typeof document !== 'undefined' && document.documentElement && document.documentElement.style && document.documentElement.style.WebkitAppearance || ("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.console && (window.console.firebug || window.console.exception && window.console.table) || typeof navigator !== 'undefined' && navigator.userAgent && (m = navigator.userAgent.toLowerCase().match(/firefox\/(\d+)/)) && parseInt(m[1], 10) >= 31 || typeof navigator !== 'undefined' && navigator.userAgent && navigator.userAgent.toLowerCase().match(/applewebkit\/(\d+)/);
+}
+/**
+ * Colorize log arguments if enabled.
+ *
+ * @api public
+ */ function formatArgs(args) {
+    args[0] = (this.useColors ? '%c' : '') + this.namespace + (this.useColors ? ' %c' : ' ') + args[0] + (this.useColors ? '%c ' : ' ') + '+' + module.exports.humanize(this.diff);
+    if (!this.useColors) {
+        return;
+    }
+    const c = 'color: ' + this.color;
+    args.splice(1, 0, c, 'color: inherit');
+    // The final "%c" is somewhat tricky, because there could be other
+    // arguments passed either before or after the %c, so we need to
+    // figure out the correct index to insert the CSS into
+    let index = 0;
+    let lastC = 0;
+    args[0].replace(/%[a-zA-Z%]/g, (match)=>{
+        if (match === '%%') {
+            return;
+        }
+        index++;
+        if (match === '%c') {
+            // We only are interested in the *last* %c
+            // (the user may have provided their own)
+            lastC = index;
+        }
+    });
+    args.splice(lastC, 0, c);
+}
+/**
+ * Invokes `console.debug()` when available.
+ * No-op when `console.debug` is not a "function".
+ * If `console.debug` is not available, falls back
+ * to `console.log`.
+ *
+ * @api public
+ */ exports.log = console.debug || console.log || (()=>{});
+/**
+ * Save `namespaces`.
+ *
+ * @param {String} namespaces
+ * @api private
+ */ function save(namespaces) {
+    try {
+        if (namespaces) {
+            exports.storage.setItem('debug', namespaces);
+        } else {
+            exports.storage.removeItem('debug');
+        }
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+/**
+ * Load `namespaces`.
+ *
+ * @return {String} returns the previously persisted debug modes
+ * @api private
+ */ function load() {
+    let r;
+    try {
+        r = exports.storage.getItem('debug');
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+    // If debug isn't set in LS, and we're in Electron, try to load $DEBUG
+    if (!r && typeof process !== 'undefined' && 'env' in process) {
+        r = process.env.DEBUG;
+    }
+    return r;
+}
+/**
+ * Localstorage attempts to return the localstorage.
+ *
+ * This is necessary because safari throws
+ * when a user disables cookies/localstorage
+ * and you attempt to access it.
+ *
+ * @return {LocalStorage}
+ * @api private
+ */ function localstorage() {
+    try {
+        // TVMLKit (Apple TV JS Runtime) does not have a window object, just localStorage in the global context
+        // The Browser also has localStorage in the global context.
+        return localStorage;
+    } catch (error) {
+    // Swallow
+    // XXX (@Qix-) should we be logging these?
+    }
+}
+module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/common.js [app-ssr] (ecmascript)")(exports);
+const { formatters } = module.exports;
+/**
+ * Map %j to `JSON.stringify()`, since no Web Inspectors do that by default.
+ */ formatters.j = function(v) {
+    try {
+        return JSON.stringify(v);
+    } catch (error) {
+        return '[UnexpectedJSONParseError]: ' + error.message;
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Detect Electron renderer / nwjs process, which is node, but we should
+ * treat as a browser.
+ */ if (typeof process === 'undefined' || process.type === 'renderer' || ("TURBOPACK compile-time value", false) === true || process.__nwjs) {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/browser.js [app-ssr] (ecmascript)");
+} else {
+    module.exports = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/node.js [app-ssr] (ecmascript)");
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-flag/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+module.exports = (flag, argv = process.argv)=>{
+    const prefix = flag.startsWith('-') ? '' : flag.length === 1 ? '-' : '--';
+    const position = argv.indexOf(prefix + flag);
+    const terminatorPosition = argv.indexOf('--');
+    return position !== -1 && (terminatorPosition === -1 || position < terminatorPosition);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/supports-color/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+const os = __turbopack_context__.r("[externals]/os [external] (os, cjs)");
+const tty = __turbopack_context__.r("[externals]/tty [external] (tty, cjs)");
+const hasFlag = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/has-flag/index.js [app-ssr] (ecmascript)");
+const { env } = process;
+let forceColor;
+if (hasFlag('no-color') || hasFlag('no-colors') || hasFlag('color=false') || hasFlag('color=never')) {
+    forceColor = 0;
+} else if (hasFlag('color') || hasFlag('colors') || hasFlag('color=true') || hasFlag('color=always')) {
+    forceColor = 1;
+}
+if ('FORCE_COLOR' in env) {
+    if (env.FORCE_COLOR === 'true') {
+        forceColor = 1;
+    } else if (env.FORCE_COLOR === 'false') {
+        forceColor = 0;
+    } else {
+        forceColor = env.FORCE_COLOR.length === 0 ? 1 : Math.min(parseInt(env.FORCE_COLOR, 10), 3);
+    }
+}
+function translateLevel(level) {
+    if (level === 0) {
+        return false;
+    }
+    return {
+        level,
+        hasBasic: true,
+        has256: level >= 2,
+        has16m: level >= 3
+    };
+}
+function supportsColor(haveStream, streamIsTTY) {
+    if (forceColor === 0) {
+        return 0;
+    }
+    if (hasFlag('color=16m') || hasFlag('color=full') || hasFlag('color=truecolor')) {
+        return 3;
+    }
+    if (hasFlag('color=256')) {
+        return 2;
+    }
+    if (haveStream && !streamIsTTY && forceColor === undefined) {
+        return 0;
+    }
+    const min = forceColor || 0;
+    if (env.TERM === 'dumb') {
+        return min;
+    }
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    if ('CI' in env) {
+        if ([
+            'TRAVIS',
+            'CIRCLECI',
+            'APPVEYOR',
+            'GITLAB_CI',
+            'GITHUB_ACTIONS',
+            'BUILDKITE'
+        ].some((sign)=>sign in env) || env.CI_NAME === 'codeship') {
+            return 1;
+        }
+        return min;
+    }
+    if ('TEAMCITY_VERSION' in env) {
+        return /^(9\.(0*[1-9]\d*)\.|\d{2,}\.)/.test(env.TEAMCITY_VERSION) ? 1 : 0;
+    }
+    if (env.COLORTERM === 'truecolor') {
+        return 3;
+    }
+    if ('TERM_PROGRAM' in env) {
+        const version = parseInt((env.TERM_PROGRAM_VERSION || '').split('.')[0], 10);
+        switch(env.TERM_PROGRAM){
+            case 'iTerm.app':
+                return version >= 3 ? 3 : 2;
+            case 'Apple_Terminal':
+                return 2;
+        }
+    }
+    if (/-256(color)?$/i.test(env.TERM)) {
+        return 2;
+    }
+    if (/^screen|^xterm|^vt100|^vt220|^rxvt|color|ansi|cygwin|linux/i.test(env.TERM)) {
+        return 1;
+    }
+    if ('COLORTERM' in env) {
+        return 1;
+    }
+    return min;
+}
+function getSupportLevel(stream) {
+    const level = supportsColor(stream, stream && stream.isTTY);
+    return translateLevel(level);
+}
+module.exports = {
+    supportsColor: getSupportLevel,
+    stdout: translateLevel(supportsColor(true, tty.isatty(1))),
+    stderr: translateLevel(supportsColor(true, tty.isatty(2)))
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/follow-redirects/debug.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var debug;
+module.exports = function() {
+    if (!debug) {
+        try {
+            /* eslint global-require: off */ debug = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/debug/src/index.js [app-ssr] (ecmascript)")("follow-redirects");
+        } catch (error) {}
+        if (typeof debug !== "function") {
+            debug = function() {};
+        }
+    }
+    debug.apply(null, arguments);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/follow-redirects/index.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var url = __turbopack_context__.r("[externals]/url [external] (url, cjs)");
+var URL = url.URL;
+var http = __turbopack_context__.r("[externals]/http [external] (http, cjs)");
+var https = __turbopack_context__.r("[externals]/https [external] (https, cjs)");
+var Writable = __turbopack_context__.r("[externals]/stream [external] (stream, cjs)").Writable;
+var assert = __turbopack_context__.r("[externals]/assert [external] (assert, cjs)");
+var debug = __turbopack_context__.r("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/follow-redirects/debug.js [app-ssr] (ecmascript)");
+// Preventive platform detection
+// istanbul ignore next
+(function detectUnsupportedEnvironment() {
+    var looksLikeNode = typeof process !== "undefined";
+    var looksLikeBrowser = ("TURBOPACK compile-time value", "undefined") !== "undefined" && typeof document !== "undefined";
+    var looksLikeV8 = isFunction(Error.captureStackTrace);
+    if (!looksLikeNode && (looksLikeBrowser || !looksLikeV8)) {
+        console.warn("The follow-redirects package should be excluded from browser builds.");
+    }
+})();
+// Whether to use the native URL object or the legacy url module
+var useNativeURL = false;
+try {
+    assert(new URL(""));
+} catch (error) {
+    useNativeURL = error.code === "ERR_INVALID_URL";
+}
+// URL fields to preserve in copy operations
+var preservedUrlFields = [
+    "auth",
+    "host",
+    "hostname",
+    "href",
+    "path",
+    "pathname",
+    "port",
+    "protocol",
+    "query",
+    "search",
+    "hash"
+];
+// Create handlers that pass events from native requests
+var events = [
+    "abort",
+    "aborted",
+    "connect",
+    "error",
+    "socket",
+    "timeout"
+];
+var eventHandlers = Object.create(null);
+events.forEach(function(event) {
+    eventHandlers[event] = function(arg1, arg2, arg3) {
+        this._redirectable.emit(event, arg1, arg2, arg3);
+    };
+});
+// Error types with codes
+var InvalidUrlError = createErrorType("ERR_INVALID_URL", "Invalid URL", TypeError);
+var RedirectionError = createErrorType("ERR_FR_REDIRECTION_FAILURE", "Redirected request failed");
+var TooManyRedirectsError = createErrorType("ERR_FR_TOO_MANY_REDIRECTS", "Maximum number of redirects exceeded", RedirectionError);
+var MaxBodyLengthExceededError = createErrorType("ERR_FR_MAX_BODY_LENGTH_EXCEEDED", "Request body larger than maxBodyLength limit");
+var WriteAfterEndError = createErrorType("ERR_STREAM_WRITE_AFTER_END", "write after end");
+// istanbul ignore next
+var destroy = Writable.prototype.destroy || noop;
+// An HTTP(S) request that can be redirected
+function RedirectableRequest(options, responseCallback) {
+    // Initialize the request
+    Writable.call(this);
+    this._sanitizeOptions(options);
+    this._options = options;
+    this._ended = false;
+    this._ending = false;
+    this._redirectCount = 0;
+    this._redirects = [];
+    this._requestBodyLength = 0;
+    this._requestBodyBuffers = [];
+    // Attach a callback if passed
+    if (responseCallback) {
+        this.on("response", responseCallback);
+    }
+    // React to responses of native requests
+    var self = this;
+    this._onNativeResponse = function(response) {
+        try {
+            self._processResponse(response);
+        } catch (cause) {
+            self.emit("error", cause instanceof RedirectionError ? cause : new RedirectionError({
+                cause: cause
+            }));
+        }
+    };
+    // Perform the first request
+    this._performRequest();
+}
+RedirectableRequest.prototype = Object.create(Writable.prototype);
+RedirectableRequest.prototype.abort = function() {
+    destroyRequest(this._currentRequest);
+    this._currentRequest.abort();
+    this.emit("abort");
+};
+RedirectableRequest.prototype.destroy = function(error) {
+    destroyRequest(this._currentRequest, error);
+    destroy.call(this, error);
+    return this;
+};
+// Writes buffered data to the current native request
+RedirectableRequest.prototype.write = function(data, encoding, callback) {
+    // Writing is not allowed if end has been called
+    if (this._ending) {
+        throw new WriteAfterEndError();
+    }
+    // Validate input and shift parameters if necessary
+    if (!isString(data) && !isBuffer(data)) {
+        throw new TypeError("data should be a string, Buffer or Uint8Array");
+    }
+    if (isFunction(encoding)) {
+        callback = encoding;
+        encoding = null;
+    }
+    // Ignore empty buffers, since writing them doesn't invoke the callback
+    // https://github.com/nodejs/node/issues/22066
+    if (data.length === 0) {
+        if (callback) {
+            callback();
+        }
+        return;
+    }
+    // Only write when we don't exceed the maximum body length
+    if (this._requestBodyLength + data.length <= this._options.maxBodyLength) {
+        this._requestBodyLength += data.length;
+        this._requestBodyBuffers.push({
+            data: data,
+            encoding: encoding
+        });
+        this._currentRequest.write(data, encoding, callback);
+    } else {
+        this.emit("error", new MaxBodyLengthExceededError());
+        this.abort();
+    }
+};
+// Ends the current native request
+RedirectableRequest.prototype.end = function(data, encoding, callback) {
+    // Shift parameters if necessary
+    if (isFunction(data)) {
+        callback = data;
+        data = encoding = null;
+    } else if (isFunction(encoding)) {
+        callback = encoding;
+        encoding = null;
+    }
+    // Write data if needed and end
+    if (!data) {
+        this._ended = this._ending = true;
+        this._currentRequest.end(null, null, callback);
+    } else {
+        var self = this;
+        var currentRequest = this._currentRequest;
+        this.write(data, encoding, function() {
+            self._ended = true;
+            currentRequest.end(null, null, callback);
+        });
+        this._ending = true;
+    }
+};
+// Sets a header value on the current native request
+RedirectableRequest.prototype.setHeader = function(name, value) {
+    this._options.headers[name] = value;
+    this._currentRequest.setHeader(name, value);
+};
+// Clears a header value on the current native request
+RedirectableRequest.prototype.removeHeader = function(name) {
+    delete this._options.headers[name];
+    this._currentRequest.removeHeader(name);
+};
+// Global timeout for all underlying requests
+RedirectableRequest.prototype.setTimeout = function(msecs, callback) {
+    var self = this;
+    // Destroys the socket on timeout
+    function destroyOnTimeout(socket) {
+        socket.setTimeout(msecs);
+        socket.removeListener("timeout", socket.destroy);
+        socket.addListener("timeout", socket.destroy);
+    }
+    // Sets up a timer to trigger a timeout event
+    function startTimer(socket) {
+        if (self._timeout) {
+            clearTimeout(self._timeout);
+        }
+        self._timeout = setTimeout(function() {
+            self.emit("timeout");
+            clearTimer();
+        }, msecs);
+        destroyOnTimeout(socket);
+    }
+    // Stops a timeout from triggering
+    function clearTimer() {
+        // Clear the timeout
+        if (self._timeout) {
+            clearTimeout(self._timeout);
+            self._timeout = null;
+        }
+        // Clean up all attached listeners
+        self.removeListener("abort", clearTimer);
+        self.removeListener("error", clearTimer);
+        self.removeListener("response", clearTimer);
+        self.removeListener("close", clearTimer);
+        if (callback) {
+            self.removeListener("timeout", callback);
+        }
+        if (!self.socket) {
+            self._currentRequest.removeListener("socket", startTimer);
+        }
+    }
+    // Attach callback if passed
+    if (callback) {
+        this.on("timeout", callback);
+    }
+    // Start the timer if or when the socket is opened
+    if (this.socket) {
+        startTimer(this.socket);
+    } else {
+        this._currentRequest.once("socket", startTimer);
+    }
+    // Clean up on events
+    this.on("socket", destroyOnTimeout);
+    this.on("abort", clearTimer);
+    this.on("error", clearTimer);
+    this.on("response", clearTimer);
+    this.on("close", clearTimer);
+    return this;
+};
+// Proxy all other public ClientRequest methods
+[
+    "flushHeaders",
+    "getHeader",
+    "setNoDelay",
+    "setSocketKeepAlive"
+].forEach(function(method) {
+    RedirectableRequest.prototype[method] = function(a, b) {
+        return this._currentRequest[method](a, b);
+    };
+});
+// Proxy all public ClientRequest properties
+[
+    "aborted",
+    "connection",
+    "socket"
+].forEach(function(property) {
+    Object.defineProperty(RedirectableRequest.prototype, property, {
+        get: function() {
+            return this._currentRequest[property];
+        }
+    });
+});
+RedirectableRequest.prototype._sanitizeOptions = function(options) {
+    // Ensure headers are always present
+    if (!options.headers) {
+        options.headers = {};
+    }
+    // Since http.request treats host as an alias of hostname,
+    // but the url module interprets host as hostname plus port,
+    // eliminate the host property to avoid confusion.
+    if (options.host) {
+        // Use hostname if set, because it has precedence
+        if (!options.hostname) {
+            options.hostname = options.host;
+        }
+        delete options.host;
+    }
+    // Complete the URL object when necessary
+    if (!options.pathname && options.path) {
+        var searchPos = options.path.indexOf("?");
+        if (searchPos < 0) {
+            options.pathname = options.path;
+        } else {
+            options.pathname = options.path.substring(0, searchPos);
+            options.search = options.path.substring(searchPos);
+        }
+    }
+};
+// Executes the next native request (initial or redirect)
+RedirectableRequest.prototype._performRequest = function() {
+    // Load the native protocol
+    var protocol = this._options.protocol;
+    var nativeProtocol = this._options.nativeProtocols[protocol];
+    if (!nativeProtocol) {
+        throw new TypeError("Unsupported protocol " + protocol);
+    }
+    // If specified, use the agent corresponding to the protocol
+    // (HTTP and HTTPS use different types of agents)
+    if (this._options.agents) {
+        var scheme = protocol.slice(0, -1);
+        this._options.agent = this._options.agents[scheme];
+    }
+    // Create the native request and set up its event handlers
+    var request = this._currentRequest = nativeProtocol.request(this._options, this._onNativeResponse);
+    request._redirectable = this;
+    for (var event of events){
+        request.on(event, eventHandlers[event]);
+    }
+    // RFC7230§5.3.1: When making a request directly to an origin server, […]
+    // a client MUST send only the absolute path […] as the request-target.
+    this._currentUrl = /^\//.test(this._options.path) ? url.format(this._options) : // When making a request to a proxy, […]
+    // a client MUST send the target URI in absolute-form […].
+    this._options.path;
+    // End a redirected request
+    // (The first request must be ended explicitly with RedirectableRequest#end)
+    if (this._isRedirect) {
+        // Write the request entity and end
+        var i = 0;
+        var self = this;
+        var buffers = this._requestBodyBuffers;
+        (function writeNext(error) {
+            // Only write if this request has not been redirected yet
+            // istanbul ignore else
+            if (request === self._currentRequest) {
+                // Report any write errors
+                // istanbul ignore if
+                if (error) {
+                    self.emit("error", error);
+                } else if (i < buffers.length) {
+                    var buffer = buffers[i++];
+                    // istanbul ignore else
+                    if (!request.finished) {
+                        request.write(buffer.data, buffer.encoding, writeNext);
+                    }
+                } else if (self._ended) {
+                    request.end();
+                }
+            }
+        })();
+    }
+};
+// Processes a response from the current native request
+RedirectableRequest.prototype._processResponse = function(response) {
+    // Store the redirected response
+    var statusCode = response.statusCode;
+    if (this._options.trackRedirects) {
+        this._redirects.push({
+            url: this._currentUrl,
+            headers: response.headers,
+            statusCode: statusCode
+        });
+    }
+    // RFC7231§6.4: The 3xx (Redirection) class of status code indicates
+    // that further action needs to be taken by the user agent in order to
+    // fulfill the request. If a Location header field is provided,
+    // the user agent MAY automatically redirect its request to the URI
+    // referenced by the Location field value,
+    // even if the specific status code is not understood.
+    // If the response is not a redirect; return it as-is
+    var location = response.headers.location;
+    if (!location || this._options.followRedirects === false || statusCode < 300 || statusCode >= 400) {
+        response.responseUrl = this._currentUrl;
+        response.redirects = this._redirects;
+        this.emit("response", response);
+        // Clean up
+        this._requestBodyBuffers = [];
+        return;
+    }
+    // The response is a redirect, so abort the current request
+    destroyRequest(this._currentRequest);
+    // Discard the remainder of the response to avoid waiting for data
+    response.destroy();
+    // RFC7231§6.4: A client SHOULD detect and intervene
+    // in cyclical redirections (i.e., "infinite" redirection loops).
+    if (++this._redirectCount > this._options.maxRedirects) {
+        throw new TooManyRedirectsError();
+    }
+    // Store the request headers if applicable
+    var requestHeaders;
+    var beforeRedirect = this._options.beforeRedirect;
+    if (beforeRedirect) {
+        requestHeaders = Object.assign({
+            // The Host header was set by nativeProtocol.request
+            Host: response.req.getHeader("host")
+        }, this._options.headers);
+    }
+    // RFC7231§6.4: Automatic redirection needs to done with
+    // care for methods not known to be safe, […]
+    // RFC7231§6.4.2–3: For historical reasons, a user agent MAY change
+    // the request method from POST to GET for the subsequent request.
+    var method = this._options.method;
+    if ((statusCode === 301 || statusCode === 302) && this._options.method === "POST" || // RFC7231§6.4.4: The 303 (See Other) status code indicates that
+    // the server is redirecting the user agent to a different resource […]
+    // A user agent can perform a retrieval request targeting that URI
+    // (a GET or HEAD request if using HTTP) […]
+    statusCode === 303 && !/^(?:GET|HEAD)$/.test(this._options.method)) {
+        this._options.method = "GET";
+        // Drop a possible entity and headers related to it
+        this._requestBodyBuffers = [];
+        removeMatchingHeaders(/^content-/i, this._options.headers);
+    }
+    // Drop the Host header, as the redirect might lead to a different host
+    var currentHostHeader = removeMatchingHeaders(/^host$/i, this._options.headers);
+    // If the redirect is relative, carry over the host of the last request
+    var currentUrlParts = parseUrl(this._currentUrl);
+    var currentHost = currentHostHeader || currentUrlParts.host;
+    var currentUrl = /^\w+:/.test(location) ? this._currentUrl : url.format(Object.assign(currentUrlParts, {
+        host: currentHost
+    }));
+    // Create the redirected request
+    var redirectUrl = resolveUrl(location, currentUrl);
+    debug("redirecting to", redirectUrl.href);
+    this._isRedirect = true;
+    spreadUrlObject(redirectUrl, this._options);
+    // Drop confidential headers when redirecting to a less secure protocol
+    // or to a different domain that is not a superdomain
+    if (redirectUrl.protocol !== currentUrlParts.protocol && redirectUrl.protocol !== "https:" || redirectUrl.host !== currentHost && !isSubdomain(redirectUrl.host, currentHost)) {
+        removeMatchingHeaders(/^(?:(?:proxy-)?authorization|cookie)$/i, this._options.headers);
+    }
+    // Evaluate the beforeRedirect callback
+    if (isFunction(beforeRedirect)) {
+        var responseDetails = {
+            headers: response.headers,
+            statusCode: statusCode
+        };
+        var requestDetails = {
+            url: currentUrl,
+            method: method,
+            headers: requestHeaders
+        };
+        beforeRedirect(this._options, responseDetails, requestDetails);
+        this._sanitizeOptions(this._options);
+    }
+    // Perform the redirected request
+    this._performRequest();
+};
+// Wraps the key/value object of protocols with redirect functionality
+function wrap(protocols) {
+    // Default settings
+    var exports = {
+        maxRedirects: 21,
+        maxBodyLength: 10 * 1024 * 1024
+    };
+    // Wrap each protocol
+    var nativeProtocols = {};
+    Object.keys(protocols).forEach(function(scheme) {
+        var protocol = scheme + ":";
+        var nativeProtocol = nativeProtocols[protocol] = protocols[scheme];
+        var wrappedProtocol = exports[scheme] = Object.create(nativeProtocol);
+        // Executes a request, following redirects
+        function request(input, options, callback) {
+            // Parse parameters, ensuring that input is an object
+            if (isURL(input)) {
+                input = spreadUrlObject(input);
+            } else if (isString(input)) {
+                input = spreadUrlObject(parseUrl(input));
+            } else {
+                callback = options;
+                options = validateUrl(input);
+                input = {
+                    protocol: protocol
+                };
+            }
+            if (isFunction(options)) {
+                callback = options;
+                options = null;
+            }
+            // Set defaults
+            options = Object.assign({
+                maxRedirects: exports.maxRedirects,
+                maxBodyLength: exports.maxBodyLength
+            }, input, options);
+            options.nativeProtocols = nativeProtocols;
+            if (!isString(options.host) && !isString(options.hostname)) {
+                options.hostname = "::1";
+            }
+            assert.equal(options.protocol, protocol, "protocol mismatch");
+            debug("options", options);
+            return new RedirectableRequest(options, callback);
+        }
+        // Executes a GET request, following redirects
+        function get(input, options, callback) {
+            var wrappedRequest = wrappedProtocol.request(input, options, callback);
+            wrappedRequest.end();
+            return wrappedRequest;
+        }
+        // Expose the properties on the wrapped protocol
+        Object.defineProperties(wrappedProtocol, {
+            request: {
+                value: request,
+                configurable: true,
+                enumerable: true,
+                writable: true
+            },
+            get: {
+                value: get,
+                configurable: true,
+                enumerable: true,
+                writable: true
+            }
+        });
+    });
+    return exports;
+}
+function noop() {}
+function parseUrl(input) {
+    var parsed;
+    // istanbul ignore else
+    if (useNativeURL) {
+        parsed = new URL(input);
+    } else {
+        // Ensure the URL is valid and absolute
+        parsed = validateUrl(url.parse(input));
+        if (!isString(parsed.protocol)) {
+            throw new InvalidUrlError({
+                input
+            });
+        }
+    }
+    return parsed;
+}
+function resolveUrl(relative, base) {
+    // istanbul ignore next
+    return useNativeURL ? new URL(relative, base) : parseUrl(url.resolve(base, relative));
+}
+function validateUrl(input) {
+    if (/^\[/.test(input.hostname) && !/^\[[:0-9a-f]+\]$/i.test(input.hostname)) {
+        throw new InvalidUrlError({
+            input: input.href || input
+        });
+    }
+    if (/^\[/.test(input.host) && !/^\[[:0-9a-f]+\](:\d+)?$/i.test(input.host)) {
+        throw new InvalidUrlError({
+            input: input.href || input
+        });
+    }
+    return input;
+}
+function spreadUrlObject(urlObject, target) {
+    var spread = target || {};
+    for (var key of preservedUrlFields){
+        spread[key] = urlObject[key];
+    }
+    // Fix IPv6 hostname
+    if (spread.hostname.startsWith("[")) {
+        spread.hostname = spread.hostname.slice(1, -1);
+    }
+    // Ensure port is a number
+    if (spread.port !== "") {
+        spread.port = Number(spread.port);
+    }
+    // Concatenate path
+    spread.path = spread.search ? spread.pathname + spread.search : spread.pathname;
+    return spread;
+}
+function removeMatchingHeaders(regex, headers) {
+    var lastValue;
+    for(var header in headers){
+        if (regex.test(header)) {
+            lastValue = headers[header];
+            delete headers[header];
+        }
+    }
+    return lastValue === null || typeof lastValue === "undefined" ? undefined : String(lastValue).trim();
+}
+function createErrorType(code, message, baseClass) {
+    // Create constructor
+    function CustomError(properties) {
+        // istanbul ignore else
+        if (isFunction(Error.captureStackTrace)) {
+            Error.captureStackTrace(this, this.constructor);
+        }
+        Object.assign(this, properties || {});
+        this.code = code;
+        this.message = this.cause ? message + ": " + this.cause.message : message;
+    }
+    // Attach constructor and set default properties
+    CustomError.prototype = new (baseClass || Error)();
+    Object.defineProperties(CustomError.prototype, {
+        constructor: {
+            value: CustomError,
+            enumerable: false
+        },
+        name: {
+            value: "Error [" + code + "]",
+            enumerable: false
+        }
+    });
+    return CustomError;
+}
+function destroyRequest(request, error) {
+    for (var event of events){
+        request.removeListener(event, eventHandlers[event]);
+    }
+    request.on("error", noop);
+    request.destroy(error);
+}
+function isSubdomain(subdomain, domain) {
+    assert(isString(subdomain) && isString(domain));
+    var dot = subdomain.length - domain.length - 1;
+    return dot > 0 && subdomain[dot] === "." && subdomain.endsWith(domain);
+}
+function isString(value) {
+    return typeof value === "string" || value instanceof String;
+}
+function isFunction(value) {
+    return typeof value === "function";
+}
+function isBuffer(value) {
+    return typeof value === "object" && "length" in value;
+}
+function isURL(value) {
+    return URL && value instanceof URL;
+}
+// Exports
+module.exports = wrap({
+    http: http,
+    https: https
+});
+module.exports.wrap = wrap;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/common.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "generateUuid",
+    ()=>generateUuid,
+    "isInIFrame",
+    ()=>isInIFrame,
+    "isNode",
+    ()=>isNode
+]);
+const isNode = ("TURBOPACK compile-time value", "undefined") === "undefined";
+const isInIFrame = !isNode && window.self !== window.top;
+const generateUuid = ()=>{
+    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/axios-client.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Base44Error",
+    ()=>Base44Error,
+    "createAxiosClient",
+    ()=>createAxiosClient
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/axios/lib/axios.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$common$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/common.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$v4$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/v4.js [app-ssr] (ecmascript) <export default as v4>");
+;
+;
+;
+class Base44Error extends Error {
+    /**
+     * Creates a new Base44Error instance.
+     *
+     * @param message - Human-readable error message
+     * @param status - HTTP status code
+     * @param code - Error code from the API
+     * @param data - Full response data from the server
+     * @param originalError - Original axios error object
+     * @internal
+     */ constructor(message, status, code, data, originalError){
+        super(message);
+        this.name = "Base44Error";
+        this.status = status;
+        this.code = code;
+        this.data = data;
+        this.originalError = originalError;
+    }
+    /**
+     * Serializes the error to a JSON-safe object.
+     *
+     * Useful for logging or sending error information to external services
+     * without circular reference issues.
+     *
+     * @returns JSON-safe representation of the error.
+     *
+     * @example
+     * ```typescript
+     * try {
+     *   await client.entities.Todo.get('invalid-id');
+     * } catch (error) {
+     *   if (error instanceof Base44Error) {
+     *     const json = error.toJSON();
+     *     console.log(json);
+     *     // {
+     *     //   name: "Base44Error",
+     *     //   message: "Not found",
+     *     //   status: 404,
+     *     //   code: "NOT_FOUND",
+     *     //   data: { ... }
+     *     // }
+     *   }
+     * }
+     * ```
+     */ toJSON() {
+        return {
+            name: this.name,
+            message: this.message,
+            status: this.status,
+            code: this.code,
+            data: this.data
+        };
+    }
+}
+/**
+ * Safely logs error information without circular references.
+ *
+ * @param prefix - Prefix for the log message
+ * @param error - The error to log
+ * @internal
+ */ function safeErrorLog(prefix, error) {
+    if (error instanceof Base44Error) {
+        console.error(`${prefix} ${error.status}: ${error.message}`);
+        if (error.data) {
+            try {
+                console.error("Error data:", JSON.stringify(error.data, null, 2));
+            } catch (e) {
+                console.error("Error data: [Cannot stringify error data]");
+            }
+        }
+    } else {
+        console.error(`${prefix} ${error instanceof Error ? error.message : String(error)}`);
+    }
+}
+function createAxiosClient({ baseURL, headers = {}, token, interceptResponses = true, onError }) {
+    const client = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$axios$2f$lib$2f$axios$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].create({
+        baseURL,
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            ...headers
+        }
+    });
+    // Add token to requests if available
+    if (token) {
+        client.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    }
+    // Add origin URL in browser environment
+    client.interceptors.request.use((config)=>{
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+        const requestId = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$v4$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__v4$3e$__["v4"])();
+        config.requestId = requestId;
+        if (__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$common$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isInIFrame"]) {
+            try {
+                window.parent.postMessage({
+                    type: "api-request-start",
+                    requestId,
+                    data: {
+                        url: baseURL + config.url,
+                        method: config.method,
+                        body: config.data instanceof FormData ? "[FormData object]" : config.data
+                    }
+                }, "*");
+            } catch (_a) {
+            /* skip the logging */ }
+        }
+        return config;
+    });
+    // Handle responses
+    if (interceptResponses) {
+        client.interceptors.response.use((response)=>{
+            var _a;
+            const requestId = (_a = response.config) === null || _a === void 0 ? void 0 : _a.requestId;
+            try {
+                if (__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$common$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isInIFrame"] && requestId) {
+                    window.parent.postMessage({
+                        type: "api-request-end",
+                        requestId,
+                        data: {
+                            statusCode: response.status,
+                            response: response.data
+                        }
+                    }, "*");
+                }
+            } catch (_b) {
+            /* do nothing */ }
+            return response.data;
+        }, (error)=>{
+            var _a, _b, _c, _d, _e, _f, _g, _h;
+            const message = ((_b = (_a = error.response) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b.message) || ((_d = (_c = error.response) === null || _c === void 0 ? void 0 : _c.data) === null || _d === void 0 ? void 0 : _d.detail) || error.message;
+            const base44Error = new Base44Error(message, (_e = error.response) === null || _e === void 0 ? void 0 : _e.status, (_g = (_f = error.response) === null || _f === void 0 ? void 0 : _f.data) === null || _g === void 0 ? void 0 : _g.code, (_h = error.response) === null || _h === void 0 ? void 0 : _h.data, error);
+            // Log errors in development
+            if ("TURBOPACK compile-time truthy", 1) {
+                safeErrorLog("[Base44 SDK Error]", base44Error);
+            }
+            onError === null || onError === void 0 ? void 0 : onError(base44Error);
+            return Promise.reject(base44Error);
+        });
+    }
+    return client;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/entities.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the entities module for the Base44 SDK.
+ *
+ * @param config - Configuration object containing axios, appId, and getSocket
+ * @returns Entities module with dynamic entity access
+ * @internal
+ */ __turbopack_context__.s([
+    "createEntitiesModule",
+    ()=>createEntitiesModule
+]);
+function createEntitiesModule(config) {
+    const { axios, appId, getSocket } = config;
+    // Using Proxy to dynamically handle entity names
+    return new Proxy({}, {
+        get (target, entityName) {
+            // Don't create handlers for internal properties
+            if (typeof entityName !== "string" || entityName === "then" || entityName.startsWith("_")) {
+                return undefined;
+            }
+            // Create entity handler
+            return createEntityHandler(axios, appId, entityName, getSocket);
+        }
+    });
+}
+/**
+ * Parses the realtime message data and extracts event information.
+ * @internal
+ */ function parseRealtimeMessage(dataStr) {
+    var _a;
+    try {
+        const parsed = JSON.parse(dataStr);
+        return {
+            type: parsed.type,
+            data: parsed.data,
+            id: parsed.id || ((_a = parsed.data) === null || _a === void 0 ? void 0 : _a.id),
+            timestamp: parsed.timestamp || new Date().toISOString()
+        };
+    } catch (error) {
+        console.warn("[Base44 SDK] Failed to parse realtime message:", error);
+        return null;
+    }
+}
+/**
+ * Creates a handler for a specific entity.
+ *
+ * @param axios - Axios instance
+ * @param appId - Application ID
+ * @param entityName - Entity name
+ * @param getSocket - Function to get the socket instance
+ * @returns Entity handler with CRUD methods
+ * @internal
+ */ function createEntityHandler(axios, appId, entityName, getSocket) {
+    const baseURL = `/apps/${appId}/entities/${entityName}`;
+    return {
+        // List entities with optional pagination and sorting
+        async list (sort, limit, skip, fields) {
+            const params = {};
+            if (sort) params.sort = sort;
+            if (limit) params.limit = limit;
+            if (skip) params.skip = skip;
+            if (fields) params.fields = Array.isArray(fields) ? fields.join(",") : fields;
+            return axios.get(baseURL, {
+                params
+            });
+        },
+        // Filter entities based on query
+        async filter (query, sort, limit, skip, fields) {
+            const params = {
+                q: JSON.stringify(query)
+            };
+            if (sort) params.sort = sort;
+            if (limit) params.limit = limit;
+            if (skip) params.skip = skip;
+            if (fields) params.fields = Array.isArray(fields) ? fields.join(",") : fields;
+            return axios.get(baseURL, {
+                params
+            });
+        },
+        // Get entity by ID
+        async get (id) {
+            return axios.get(`${baseURL}/${id}`);
+        },
+        // Create new entity
+        async create (data) {
+            return axios.post(baseURL, data);
+        },
+        // Update entity by ID
+        async update (id, data) {
+            return axios.put(`${baseURL}/${id}`, data);
+        },
+        // Delete entity by ID
+        async delete (id) {
+            return axios.delete(`${baseURL}/${id}`);
+        },
+        // Delete multiple entities based on query
+        async deleteMany (query) {
+            return axios.delete(baseURL, {
+                data: query
+            });
+        },
+        // Create multiple entities in a single request
+        async bulkCreate (data) {
+            return axios.post(`${baseURL}/bulk`, data);
+        },
+        // Import entities from a file
+        async importEntities (file) {
+            const formData = new FormData();
+            formData.append("file", file, file.name);
+            return axios.post(`${baseURL}/import`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            });
+        },
+        // Subscribe to realtime updates
+        subscribe (callback) {
+            const room = `entities:${appId}:${entityName}`;
+            // Get the socket and subscribe to the room
+            const socket = getSocket();
+            const unsubscribe = socket.subscribeToRoom(room, {
+                update_model: (msg)=>{
+                    const event = parseRealtimeMessage(msg.data);
+                    if (!event) {
+                        return;
+                    }
+                    try {
+                        callback(event);
+                    } catch (error) {
+                        console.error("[Base44 SDK] Subscription callback error:", error);
+                    }
+                }
+            });
+            return unsubscribe;
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/custom-integrations.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the custom integrations module for the Base44 SDK.
+ *
+ * @param axios - Axios instance for making HTTP requests
+ * @param appId - Application ID
+ * @returns Custom integrations module with `call()` method
+ * @internal
+ */ __turbopack_context__.s([
+    "createCustomIntegrationsModule",
+    ()=>createCustomIntegrationsModule
+]);
+function createCustomIntegrationsModule(axios, appId) {
+    return {
+        async call (slug, operationId, params) {
+            // Validate required parameters
+            if (!(slug === null || slug === void 0 ? void 0 : slug.trim())) {
+                throw new Error("Integration slug is required and cannot be empty");
+            }
+            if (!(operationId === null || operationId === void 0 ? void 0 : operationId.trim())) {
+                throw new Error("Operation ID is required and cannot be empty");
+            }
+            // Convert camelCase to snake_case for Python backend
+            const { pathParams, queryParams, ...rest } = params !== null && params !== void 0 ? params : {};
+            const body = {
+                ...rest,
+                ...pathParams && {
+                    path_params: pathParams
+                },
+                ...queryParams && {
+                    query_params: queryParams
+                }
+            };
+            // Make the API call
+            const response = await axios.post(`/apps/${appId}/integrations/custom/${slug}/${operationId}`, body);
+            // The axios interceptor extracts response.data, so we get the payload directly
+            return response;
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/integrations.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createIntegrationsModule",
+    ()=>createIntegrationsModule
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$custom$2d$integrations$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/custom-integrations.js [app-ssr] (ecmascript)");
+;
+function createIntegrationsModule(axios, appId) {
+    // Create the custom integrations module once
+    const customModule = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$custom$2d$integrations$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createCustomIntegrationsModule"])(axios, appId);
+    return new Proxy({}, {
+        get (target, packageName) {
+            // Skip internal properties
+            if (typeof packageName !== "string" || packageName === "then" || packageName.startsWith("_")) {
+                return undefined;
+            }
+            // Handle 'custom' specially - return the custom integrations module
+            if (packageName === "custom") {
+                return customModule;
+            }
+            // Create a proxy for integration endpoints
+            return new Proxy({}, {
+                get (target, endpointName) {
+                    // Skip internal properties
+                    if (typeof endpointName !== "string" || endpointName === "then" || endpointName.startsWith("_")) {
+                        return undefined;
+                    }
+                    // Return a function that calls the integration endpoint
+                    // This allows: client.integrations.PackageName.EndpointName(data)
+                    return async (data)=>{
+                        // Validate input
+                        if (typeof data === "string") {
+                            throw new Error(`Integration ${endpointName} must receive an object with named parameters, received: ${data}`);
+                        }
+                        let formData;
+                        let contentType;
+                        // Handle file uploads with FormData
+                        if (data instanceof FormData || data && Object.values(data).some((value)=>value instanceof File)) {
+                            formData = new FormData();
+                            Object.keys(data).forEach((key)=>{
+                                if (data[key] instanceof File) {
+                                    formData.append(key, data[key], data[key].name);
+                                } else if (typeof data[key] === "object" && data[key] !== null) {
+                                    formData.append(key, JSON.stringify(data[key]));
+                                } else {
+                                    formData.append(key, data[key]);
+                                }
+                            });
+                            contentType = "multipart/form-data";
+                        } else {
+                            formData = data;
+                            contentType = "application/json";
+                        }
+                        // For Core package
+                        if (packageName === "Core") {
+                            return axios.post(`/apps/${appId}/integration-endpoints/Core/${endpointName}`, formData || data, {
+                                headers: {
+                                    "Content-Type": contentType
+                                }
+                            });
+                        }
+                        // For other packages
+                        return axios.post(`/apps/${appId}/integration-endpoints/installable/${packageName}/integration-endpoints/${endpointName}`, formData || data, {
+                            headers: {
+                                "Content-Type": contentType
+                            }
+                        });
+                    };
+                }
+            });
+        }
+    });
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/auth.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the auth module for the Base44 SDK.
+ *
+ * @param axios - Axios instance for API requests
+ * @param functionsAxiosClient - Axios instance for functions API requests
+ * @param appId - Application ID
+ * @param options - Configuration options including server URLs
+ * @returns Auth module with authentication and user management methods
+ * @internal
+ */ __turbopack_context__.s([
+    "createAuthModule",
+    ()=>createAuthModule
+]);
+function createAuthModule(axios, functionsAxiosClient, appId, options) {
+    return {
+        // Get current user information
+        async me () {
+            return axios.get(`/apps/${appId}/entities/User/me`);
+        },
+        // Update current user data
+        async updateMe (data) {
+            return axios.put(`/apps/${appId}/entities/User/me`, data);
+        },
+        // Redirects the user to the app's login page
+        redirectToLogin (nextUrl) {
+            var _a;
+            // This function only works in a browser environment
+            if ("TURBOPACK compile-time truthy", 1) {
+                throw new Error("Login method can only be used in a browser environment");
+            }
+            // If nextUrl is not provided, use the current URL
+            const redirectUrl = nextUrl ? new URL(nextUrl, window.location.origin).toString() : window.location.href;
+            // Build the login URL
+            const loginUrl = `${(_a = options.appBaseUrl) !== null && _a !== void 0 ? _a : ""}/login?from_url=${encodeURIComponent(redirectUrl)}`;
+            // Redirect to the login page
+            window.location.href = loginUrl;
+        },
+        // Redirects the user to a provider's login page
+        loginWithProvider (provider, fromUrl = "/") {
+            // Build the full redirect URL
+            const redirectUrl = new URL(fromUrl, window.location.origin).toString();
+            // Build the provider login URL (google is the default, so no provider path needed)
+            const providerPath = provider === "google" ? "" : `/${provider}`;
+            const loginUrl = `${options.serverUrl}/api/apps/auth${providerPath}/login?app_id=${appId}&from_url=${encodeURIComponent(redirectUrl)}`;
+            // Redirect to the provider login page
+            window.location.href = loginUrl;
+        },
+        // Logout the current user
+        // Removes the token from localStorage and optionally redirects to a URL or reloads the page
+        logout (redirectUrl) {
+            // Remove token from axios headers
+            delete axios.defaults.headers.common["Authorization"];
+            // Remove token from localStorage
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+            // Redirect if a URL is provided
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+        },
+        // Set authentication token
+        setToken (token, saveToStorage = true) {
+            if (!token) return;
+            // handle token change for axios clients
+            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+            functionsAxiosClient.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+            // Save token to localStorage if requested
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
+        },
+        // Login using username and password
+        async loginViaEmailPassword (email, password, turnstileToken) {
+            var _a;
+            try {
+                const response = await axios.post(`/apps/${appId}/auth/login`, {
+                    email,
+                    password,
+                    ...turnstileToken && {
+                        turnstile_token: turnstileToken
+                    }
+                });
+                const { access_token, user } = response;
+                if (access_token) {
+                    this.setToken(access_token);
+                }
+                return {
+                    access_token,
+                    user
+                };
+            } catch (error) {
+                // Handle authentication errors and cleanup
+                if (((_a = error.response) === null || _a === void 0 ? void 0 : _a.status) === 401) {
+                    await this.logout();
+                }
+                throw error;
+            }
+        },
+        // Verify if the current token is valid
+        async isAuthenticated () {
+            try {
+                await this.me();
+                return true;
+            } catch (error) {
+                return false;
+            }
+        },
+        // Invite a user to the app
+        inviteUser (userEmail, role) {
+            return axios.post(`/apps/${appId}/users/invite-user`, {
+                user_email: userEmail,
+                role
+            });
+        },
+        // Register a new user account
+        register (payload) {
+            return axios.post(`/apps/${appId}/auth/register`, payload);
+        },
+        // Verify an OTP (One-time password) code
+        verifyOtp ({ email, otpCode }) {
+            return axios.post(`/apps/${appId}/auth/verify-otp`, {
+                email,
+                otp_code: otpCode
+            });
+        },
+        // Resend an OTP code to the user's email
+        resendOtp (email) {
+            return axios.post(`/apps/${appId}/auth/resend-otp`, {
+                email
+            });
+        },
+        // Request a password reset
+        resetPasswordRequest (email) {
+            return axios.post(`/apps/${appId}/auth/reset-password-request`, {
+                email
+            });
+        },
+        // Reset password using a reset token
+        resetPassword ({ resetToken, newPassword }) {
+            return axios.post(`/apps/${appId}/auth/reset-password`, {
+                reset_token: resetToken,
+                new_password: newPassword
+            });
+        },
+        // Change the user's password
+        changePassword ({ userId, currentPassword, newPassword }) {
+            return axios.post(`/apps/${appId}/auth/change-password`, {
+                user_id: userId,
+                current_password: currentPassword,
+                new_password: newPassword
+            });
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/sso.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the SSO module for the Base44 SDK.
+ *
+ * @param axios - Axios instance
+ * @param appId - Application ID
+ * @param userToken - User authentication token
+ * @returns SSO module with authentication methods
+ * @internal
+ */ __turbopack_context__.s([
+    "createSsoModule",
+    ()=>createSsoModule
+]);
+function createSsoModule(axios, appId, userToken) {
+    return {
+        // Get SSO access token for a specific user
+        async getAccessToken (userid) {
+            const url = `/apps/${appId}/auth/sso/accesstoken/${userid}`;
+            // Prepare headers with both tokens if available
+            const headers = {};
+            if (userToken) {
+                headers["on-behalf-of"] = `Bearer ${userToken}`;
+            }
+            return axios.get(url, {
+                headers
+            });
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/connectors.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the Connectors module for the Base44 SDK.
+ *
+ * @param axios - Axios instance (should be service role client)
+ * @param appId - Application ID
+ * @returns Connectors module with methods to retrieve OAuth tokens
+ * @internal
+ */ __turbopack_context__.s([
+    "createConnectorsModule",
+    ()=>createConnectorsModule
+]);
+function createConnectorsModule(axios, appId) {
+    return {
+        // Retrieve an OAuth access token for a specific external integration type
+        // @ts-expect-error Return type mismatch with interface - implementation returns object, interface expects string
+        async getAccessToken (integrationType) {
+            if (!integrationType || typeof integrationType !== "string") {
+                throw new Error("Integration type is required and must be a string");
+            }
+            const response = await axios.get(`/apps/${appId}/external-auth/tokens/${integrationType}`);
+            // @ts-expect-error
+            return response.access_token;
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/auth-utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Retrieves an access token from URL parameters or local storage.
+ *
+ * Low-level utility for manually retrieving tokens. In most cases, the Base44 client handles
+ * token management automatically. This function is useful for custom authentication flows or when you need direct access to stored tokens. Requires a browser environment and can't be used in the backend.
+ *
+ * @internal
+ *
+ * @param options - Configuration options for token retrieval.
+ * @returns The access token string if found, null otherwise.
+ *
+ * @example
+ * ```typescript
+ * // Get access token from URL or local storage
+ * const token = getAccessToken();
+ *
+ * if (token) {
+ *   console.log('User is authenticated');
+ * } else {
+ *   console.log('No token found, redirect to login');
+ * }
+ * ```
+ * @example
+ * ```typescript
+ * // Get access token from custom local storage key
+ * const token = getAccessToken({ storageKey: 'my_app_token' });
+ * ```
+ * @example
+ * ```typescript
+ * // Get access token from URL but don't save or remove it
+ * const token = getAccessToken({
+ *   saveToStorage: false,
+ *   removeFromUrl: false
+ * });
+ * ```
+ */ __turbopack_context__.s([
+    "getAccessToken",
+    ()=>getAccessToken,
+    "getLoginUrl",
+    ()=>getLoginUrl,
+    "removeAccessToken",
+    ()=>removeAccessToken,
+    "saveAccessToken",
+    ()=>saveAccessToken
+]);
+function getAccessToken(options = {}) {
+    const { storageKey = "base44_access_token", paramName = "access_token", saveToStorage = true, removeFromUrl = true } = options;
+    let token = null;
+    // Try to get token from URL parameters
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // If no token in URL, try local storage
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    return null;
+}
+function saveAccessToken(token, options) {
+    const { storageKey = "base44_access_token" } = options;
+    if ("TURBOPACK compile-time truthy", 1) {
+        return false;
+    }
+    //TURBOPACK unreachable
+    ;
+}
+function removeAccessToken(options) {
+    const { storageKey = "base44_access_token" } = options;
+    if ("TURBOPACK compile-time truthy", 1) {
+        return false;
+    }
+    //TURBOPACK unreachable
+    ;
+}
+function getLoginUrl(nextUrl, options) {
+    const { serverUrl, appId, loginPath = "/login" } = options;
+    if (!serverUrl || !appId) {
+        throw new Error("serverUrl and appId are required to construct login URL");
+    }
+    const encodedRedirectUrl = encodeURIComponent(nextUrl || (("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : ""));
+    return `${serverUrl}${loginPath}?from_url=${encodedRedirectUrl}&app_id=${appId}`;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/functions.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the functions module for the Base44 SDK.
+ *
+ * @param axios - Axios instance
+ * @param appId - Application ID
+ * @returns Functions module with methods to invoke custom backend functions
+ * @internal
+ */ __turbopack_context__.s([
+    "createFunctionsModule",
+    ()=>createFunctionsModule
+]);
+function createFunctionsModule(axios, appId) {
+    return {
+        // Invoke a custom backend function by name
+        async invoke (functionName, data) {
+            // Validate input
+            if (typeof data === "string") {
+                throw new Error(`Function ${functionName} must receive an object with named parameters, received: ${data}`);
+            }
+            let formData;
+            let contentType;
+            // Handle file uploads with FormData
+            if (data instanceof FormData || data && Object.values(data).some((value)=>value instanceof File)) {
+                formData = new FormData();
+                Object.keys(data).forEach((key)=>{
+                    if (data[key] instanceof File) {
+                        formData.append(key, data[key], data[key].name);
+                    } else if (typeof data[key] === "object" && data[key] !== null) {
+                        formData.append(key, JSON.stringify(data[key]));
+                    } else {
+                        formData.append(key, data[key]);
+                    }
+                });
+                contentType = "multipart/form-data";
+            } else {
+                formData = data;
+                contentType = "application/json";
+            }
+            return axios.post(`/apps/${appId}/functions/${functionName}`, formData || data, {
+                headers: {
+                    "Content-Type": contentType
+                }
+            });
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/agents.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createAgentsModule",
+    ()=>createAgentsModule
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/auth-utils.js [app-ssr] (ecmascript)");
+;
+function createAgentsModule({ axios, getSocket, appId, serverUrl, token }) {
+    const baseURL = `/apps/${appId}/agents`;
+    // Track active conversations
+    const currentConversations = {};
+    const getConversations = ()=>{
+        return axios.get(`${baseURL}/conversations`);
+    };
+    const getConversation = (conversationId)=>{
+        return axios.get(`${baseURL}/conversations/${conversationId}`);
+    };
+    const listConversations = (filterParams)=>{
+        return axios.get(`${baseURL}/conversations`, {
+            params: filterParams
+        });
+    };
+    const createConversation = (conversation)=>{
+        return axios.post(`${baseURL}/conversations`, conversation);
+    };
+    const addMessage = async (conversation, message)=>{
+        return axios.post(`${baseURL}/conversations/v2/${conversation.id}/messages`, message);
+    };
+    const subscribeToConversation = (conversationId, onUpdate)=>{
+        const room = `/agent-conversations/${conversationId}`;
+        const socket = getSocket();
+        // Store the promise for initial conversation state
+        const conversationPromise = getConversation(conversationId).then((conv)=>{
+            currentConversations[conversationId] = conv;
+            return conv;
+        });
+        return socket.subscribeToRoom(room, {
+            connect: ()=>{},
+            update_model: async ({ data: jsonStr })=>{
+                const data = JSON.parse(jsonStr);
+                if (data._message) {
+                    // Wait for initial conversation to be loaded
+                    await conversationPromise;
+                    const message = data._message;
+                    // Update shared conversation state
+                    const currentConversation = currentConversations[conversationId];
+                    if (currentConversation) {
+                        const messages = currentConversation.messages || [];
+                        const existingIndex = messages.findIndex((m)=>m.id === message.id);
+                        const updatedMessages = existingIndex !== -1 ? messages.map((m, i)=>i === existingIndex ? message : m) : [
+                            ...messages,
+                            message
+                        ];
+                        currentConversations[conversationId] = {
+                            ...currentConversation,
+                            messages: updatedMessages
+                        };
+                        onUpdate === null || onUpdate === void 0 ? void 0 : onUpdate(currentConversations[conversationId]);
+                    }
+                }
+            }
+        });
+    };
+    const getWhatsAppConnectURL = (agentName)=>{
+        const baseUrl = `${serverUrl}/api/apps/${appId}/agents/${encodeURIComponent(agentName)}/whatsapp`;
+        const accessToken = token !== null && token !== void 0 ? token : (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAccessToken"])();
+        if (accessToken) {
+            return `${baseUrl}?token=${accessToken}`;
+        } else {
+            // No token - URL will redirect to login automatically
+            return baseUrl;
+        }
+    };
+    return {
+        getConversations,
+        getConversation,
+        listConversations,
+        createConversation,
+        addMessage,
+        subscribeToConversation,
+        getWhatsAppConnectURL
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/app-logs.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the app logs module for the Base44 SDK.
+ *
+ * @param axios - Axios instance
+ * @param appId - Application ID
+ * @returns App logs module with methods for tracking and analyzing app usage
+ * @internal
+ */ __turbopack_context__.s([
+    "createAppLogsModule",
+    ()=>createAppLogsModule
+]);
+function createAppLogsModule(axios, appId) {
+    const baseURL = `/app-logs/${appId}`;
+    return {
+        // Log user activity in the app
+        async logUserInApp (pageName) {
+            await axios.post(`${baseURL}/log-user-in-app/${pageName}`);
+        },
+        // Fetch app logs with optional parameters
+        async fetchLogs (params = {}) {
+            const response = await axios.get(baseURL, {
+                params
+            });
+            return response;
+        },
+        // Get app statistics
+        async getStats (params = {}) {
+            const response = await axios.get(`${baseURL}/stats`, {
+                params
+            });
+            return response;
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/users.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Creates the users module for the Base44 SDK
+ * @param {AxiosInstance} axios - Axios instance
+ * @param {string} appId - Application ID
+ * @returns {Object} Users module
+ */ __turbopack_context__.s([
+    "createUsersModule",
+    ()=>createUsersModule
+]);
+function createUsersModule(axios, appId) {
+    return {
+        /**
+         * Invite a user to the application
+         * @param {string} user_email - User's email address
+         * @param {'user'|'admin'} role - User's role (user or admin)
+         * @returns {Promise<any>}
+         */ async inviteUser (user_email, role) {
+            if (role !== "user" && role !== "admin") {
+                throw new Error(`Invalid role: "${role}". Role must be either "user" or "admin".`);
+            }
+            const response = await axios.post(`/apps/${appId}/runtime/users/invite-user`, {
+                user_email,
+                role
+            });
+            return response;
+        }
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/socket-utils.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "RoomsSocket",
+    ()=>RoomsSocket
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/auth-utils.js [app-ssr] (ecmascript)");
+;
+;
+function initializeSocket(config, handlers) {
+    var _a;
+    const socket = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["io"])(config.serverUrl, {
+        path: config.mountPath,
+        transports: config.transports,
+        query: {
+            app_id: config.appId,
+            token: (_a = config.token) !== null && _a !== void 0 ? _a : (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getAccessToken"])()
+        }
+    });
+    socket.on("connect", async ()=>{
+        var _a;
+        console.log("connect", socket.id);
+        return (_a = handlers.connect) === null || _a === void 0 ? void 0 : _a.call(handlers);
+    });
+    socket.on("update_model", async (msg)=>{
+        var _a;
+        return (_a = handlers.update_model) === null || _a === void 0 ? void 0 : _a.call(handlers, msg);
+    });
+    socket.on("error", async (error)=>{
+        var _a;
+        return (_a = handlers.error) === null || _a === void 0 ? void 0 : _a.call(handlers, error);
+    });
+    socket.on("connect_error", async (error)=>{
+        var _a;
+        console.error("connect_error", error);
+        return (_a = handlers.error) === null || _a === void 0 ? void 0 : _a.call(handlers, error);
+    });
+    return socket;
+}
+function RoomsSocket({ config }) {
+    let currentConfig = {
+        ...config
+    };
+    const roomsToListeners = {};
+    const handlers = {
+        connect: async ()=>{
+            const promises = [];
+            Object.keys(roomsToListeners).forEach((room)=>{
+                joinRoom(room);
+                const listeners = getListeners(room);
+                listeners === null || listeners === void 0 ? void 0 : listeners.forEach(({ connect })=>{
+                    const promise = async ()=>connect === null || connect === void 0 ? void 0 : connect();
+                    promises.push(promise());
+                });
+            });
+            await Promise.all(promises);
+        },
+        update_model: async (msg)=>{
+            const listeners = getListeners(msg.room);
+            const promises = listeners.map((listener)=>{
+                var _a;
+                return (_a = listener.update_model) === null || _a === void 0 ? void 0 : _a.call(listener, msg);
+            });
+            await Promise.all(promises);
+        },
+        error: async (error)=>{
+            console.error("error", error);
+            const promises = Object.values(roomsToListeners).flat().map((listener)=>{
+                var _a;
+                return (_a = listener.error) === null || _a === void 0 ? void 0 : _a.call(listener, error);
+            });
+            await Promise.all(promises);
+        }
+    };
+    let socket = initializeSocket(config, handlers);
+    function cleanup() {
+        disconnect();
+    }
+    function disconnect() {
+        if (socket) {
+            socket.disconnect();
+        }
+    }
+    function updateConfig(config) {
+        cleanup();
+        currentConfig = {
+            ...currentConfig,
+            ...config
+        };
+        socket = initializeSocket(currentConfig, handlers);
+    }
+    function joinRoom(room) {
+        socket.emit("join", room);
+    }
+    function leaveRoom(room) {
+        socket.emit("leave", room);
+    }
+    async function updateModel(room, data) {
+        var _a;
+        const dataStr = JSON.stringify(data);
+        return (_a = handlers.update_model) === null || _a === void 0 ? void 0 : _a.call(handlers, {
+            room,
+            data: dataStr
+        });
+    }
+    function getListeners(room) {
+        return roomsToListeners[room];
+    }
+    const subscribeToRoom = (room, handlers)=>{
+        if (!roomsToListeners[room]) {
+            joinRoom(room);
+            roomsToListeners[room] = [];
+        }
+        roomsToListeners[room].push(handlers);
+        return ()=>{
+            var _a, _b;
+            roomsToListeners[room] = (_b = (_a = roomsToListeners[room]) === null || _a === void 0 ? void 0 : _a.filter((listener)=>listener !== handlers)) !== null && _b !== void 0 ? _b : [];
+            if (roomsToListeners[room].length === 0) {
+                leaveRoom(room);
+            }
+        };
+    };
+    return {
+        socket,
+        subscribeToRoom,
+        updateConfig,
+        updateModel,
+        disconnect
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/sharedInstance.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getSharedInstance",
+    ()=>getSharedInstance
+]);
+const windowObj = ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : {
+    base44SharedInstances: {}
+};
+function getSharedInstance(name, factory) {
+    if (!windowObj.base44SharedInstances) {
+        windowObj.base44SharedInstances = {};
+    }
+    if (!windowObj.base44SharedInstances[name]) {
+        windowObj.base44SharedInstances[name] = {
+            instance: factory()
+        };
+    }
+    return windowObj.base44SharedInstances[name].instance;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/analytics.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ANALYTICS_CONFIG_ENABLE_URL_PARAM_KEY",
+    ()=>ANALYTICS_CONFIG_ENABLE_URL_PARAM_KEY,
+    "ANALYTICS_INITIALIZATION_EVENT_NAME",
+    ()=>ANALYTICS_INITIALIZATION_EVENT_NAME,
+    "ANALYTICS_SESSION_DURATION_EVENT_NAME",
+    ()=>ANALYTICS_SESSION_DURATION_EVENT_NAME,
+    "ANALYTICS_SESSION_ID_LOCAL_STORAGE_KEY",
+    ()=>ANALYTICS_SESSION_ID_LOCAL_STORAGE_KEY,
+    "USER_HEARTBEAT_EVENT_NAME",
+    ()=>USER_HEARTBEAT_EVENT_NAME,
+    "createAnalyticsModule",
+    ()=>createAnalyticsModule,
+    "getAnalyticsConfigFromUrlParams",
+    ()=>getAnalyticsConfigFromUrlParams,
+    "getAnalyticsSessionId",
+    ()=>getAnalyticsSessionId
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$sharedInstance$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/sharedInstance.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$common$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/common.js [app-ssr] (ecmascript)");
+;
+;
+const USER_HEARTBEAT_EVENT_NAME = "__user_heartbeat_event__";
+const ANALYTICS_INITIALIZATION_EVENT_NAME = "__initialization_event__";
+const ANALYTICS_SESSION_DURATION_EVENT_NAME = "__session_duration_event__";
+const ANALYTICS_CONFIG_ENABLE_URL_PARAM_KEY = "analytics-enable";
+const ANALYTICS_SESSION_ID_LOCAL_STORAGE_KEY = "base44_analytics_session_id";
+const defaultConfiguration = {
+    // default to enabled //
+    enabled: true,
+    maxQueueSize: 1000,
+    throttleTime: 1000,
+    batchSize: 30,
+    heartBeatInterval: 60 * 1000
+};
+///////////////////////////////////////////////
+//// shared queue for analytics events     ////
+///////////////////////////////////////////////
+const ANALYTICS_SHARED_STATE_NAME = "analytics";
+// shared state//
+const analyticsSharedState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$sharedInstance$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["getSharedInstance"])(ANALYTICS_SHARED_STATE_NAME, ()=>({
+        requestsQueue: [],
+        isProcessing: false,
+        isHeartBeatProcessing: false,
+        wasInitializationTracked: false,
+        sessionContext: null,
+        sessionStartTime: null,
+        config: {
+            ...defaultConfiguration,
+            ...getAnalyticsConfigFromUrlParams()
+        }
+    }));
+const createAnalyticsModule = ({ axiosClient, serverUrl, appId, userAuthModule })=>{
+    var _a;
+    // prevent overflow of events //
+    const { maxQueueSize, throttleTime, batchSize } = analyticsSharedState.config;
+    if (!((_a = analyticsSharedState.config) === null || _a === void 0 ? void 0 : _a.enabled)) {
+        return {
+            track: ()=>{},
+            cleanup: ()=>{}
+        };
+    }
+    let clearHeartBeatProcessor = undefined;
+    const trackBatchUrl = `${serverUrl}/api/apps/${appId}/analytics/track/batch`;
+    const batchRequestFallback = async (events)=>{
+        await axiosClient.request({
+            method: "POST",
+            url: `/apps/${appId}/analytics/track/batch`,
+            data: {
+                events
+            }
+        });
+    };
+    // currently disabled, until fully tested  //
+    const beaconRequest = (events)=>{
+        try {
+            const beaconPayload = JSON.stringify({
+                events
+            });
+            const blob = new Blob([
+                beaconPayload
+            ], {
+                type: "application/json"
+            });
+            return typeof navigator === "undefined" || beaconPayload.length > 60000 || !navigator.sendBeacon(trackBatchUrl, blob);
+        } catch (_a) {
+            return false;
+        }
+    };
+    const flush = async (eventsData, options = {})=>{
+        if (eventsData.length === 0) return;
+        const sessionContext_ = await getSessionContext(userAuthModule);
+        const events = eventsData.map(transformEventDataToApiRequestData(sessionContext_));
+        try {
+            if (!options.isBeacon || !beaconRequest(events)) {
+                await batchRequestFallback(events);
+            }
+        } catch (_a) {
+        // do nothing
+        }
+    };
+    const startProcessing = ()=>{
+        startAnalyticsProcessor(flush, {
+            throttleTime,
+            batchSize
+        });
+    };
+    const track = (params)=>{
+        if (analyticsSharedState.requestsQueue.length >= maxQueueSize) {
+            return;
+        }
+        const intrinsicData = getEventIntrinsicData();
+        analyticsSharedState.requestsQueue.push({
+            ...params,
+            ...intrinsicData
+        });
+        startProcessing();
+    };
+    const onDocVisible = ()=>{
+        startAnalyticsProcessor(flush, {
+            throttleTime,
+            batchSize
+        });
+        clearHeartBeatProcessor = startHeartBeatProcessor(track);
+        setSessionDurationTimerStart();
+    };
+    const onDocHidden = ()=>{
+        stopAnalyticsProcessor();
+        clearHeartBeatProcessor === null || clearHeartBeatProcessor === void 0 ? void 0 : clearHeartBeatProcessor();
+        trackSessionDurationEvent(track);
+        //  flush entire queue on visibility change and hope for the best //
+        const eventsData = analyticsSharedState.requestsQueue.splice(0);
+        flush(eventsData, {
+            isBeacon: true
+        });
+    };
+    const onVisibilityChange = ()=>{
+        if ("TURBOPACK compile-time truthy", 1) return;
+        //TURBOPACK unreachable
+        ;
+    };
+    const cleanup = ()=>{
+        stopAnalyticsProcessor();
+        clearHeartBeatProcessor === null || clearHeartBeatProcessor === void 0 ? void 0 : clearHeartBeatProcessor();
+        if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+        ;
+    };
+    // start the flusing process ///
+    startProcessing();
+    // start the heart beat processor //
+    clearHeartBeatProcessor = startHeartBeatProcessor(track);
+    // track the referrer event //
+    trackInitializationEvent(track);
+    // start the visibility change listener //
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    return {
+        track,
+        cleanup
+    };
+};
+function stopAnalyticsProcessor() {
+    analyticsSharedState.isProcessing = false;
+}
+async function startAnalyticsProcessor(handleTrack, options) {
+    if (analyticsSharedState.isProcessing) {
+        // only one instance of the analytics processor can be running at a time //
+        return;
+    }
+    analyticsSharedState.isProcessing = true;
+    const { throttleTime = 1000, batchSize = 30 } = options !== null && options !== void 0 ? options : {};
+    while(analyticsSharedState.isProcessing && analyticsSharedState.requestsQueue.length > 0){
+        const requests = analyticsSharedState.requestsQueue.splice(0, batchSize);
+        requests.length && await handleTrack(requests);
+        await new Promise((resolve)=>setTimeout(resolve, throttleTime));
+    }
+    analyticsSharedState.isProcessing = false;
+}
+function startHeartBeatProcessor(track) {
+    var _a;
+    if (analyticsSharedState.isHeartBeatProcessing || ((_a = analyticsSharedState.config.heartBeatInterval) !== null && _a !== void 0 ? _a : 0) < 10) {
+        return ()=>{};
+    }
+    analyticsSharedState.isHeartBeatProcessing = true;
+    const interval = setInterval(()=>{
+        track({
+            eventName: USER_HEARTBEAT_EVENT_NAME
+        });
+    }, analyticsSharedState.config.heartBeatInterval);
+    return ()=>{
+        clearInterval(interval);
+        analyticsSharedState.isHeartBeatProcessing = false;
+    };
+}
+function trackInitializationEvent(track) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        return;
+    }
+    //TURBOPACK unreachable
+    ;
+}
+function setSessionDurationTimerStart() {
+    if ("TURBOPACK compile-time truthy", 1) {
+        return;
+    }
+    //TURBOPACK unreachable
+    ;
+}
+function trackSessionDurationEvent(track) {
+    if ("TURBOPACK compile-time truthy", 1) return;
+    //TURBOPACK unreachable
+    ;
+    const sessionDuration = undefined;
+}
+function getEventIntrinsicData() {
+    return {
+        timestamp: new Date().toISOString(),
+        pageUrl: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : null
+    };
+}
+function transformEventDataToApiRequestData(sessionContext) {
+    return (eventData)=>({
+            event_name: eventData.eventName,
+            properties: eventData.properties,
+            timestamp: eventData.timestamp,
+            page_url: eventData.pageUrl,
+            ...sessionContext
+        });
+}
+let sessionContextPromise = null;
+async function getSessionContext(userAuthModule) {
+    if (!analyticsSharedState.sessionContext) {
+        if (!sessionContextPromise) {
+            const sessionId = getAnalyticsSessionId();
+            sessionContextPromise = userAuthModule.me().then((user)=>({
+                    user_id: user.id,
+                    session_id: sessionId
+                })).catch(()=>({
+                    user_id: null,
+                    session_id: sessionId
+                }));
+        }
+        analyticsSharedState.sessionContext = await sessionContextPromise;
+    }
+    return analyticsSharedState.sessionContext;
+}
+function getAnalyticsConfigFromUrlParams() {
+    if ("TURBOPACK compile-time truthy", 1) return undefined;
+    //TURBOPACK unreachable
+    ;
+    const urlParams = undefined;
+    const analyticsEnable = undefined;
+    // remove the url param from the url //
+    const newUrlParams = undefined;
+    const newUrl = undefined;
+}
+function getAnalyticsSessionId() {
+    if ("TURBOPACK compile-time truthy", 1) {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$common$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["generateUuid"])();
+    }
+    //TURBOPACK unreachable
+    ;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/client.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createClient",
+    ()=>createClient,
+    "createClientFromRequest",
+    ()=>createClientFromRequest
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/axios-client.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$entities$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/entities.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$integrations$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/integrations.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$auth$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/auth.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$sso$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/sso.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$connectors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/connectors.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/auth-utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$functions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/functions.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$agents$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/agents.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$app$2d$logs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/app-logs.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/users.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$socket$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/socket-utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$analytics$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/analytics.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+function createClient(config) {
+    const { serverUrl = "https://base44.app", appId, token, serviceToken, requiresAuth = false, appBaseUrl, options, functionsVersion, headers: optionalHeaders } = config;
+    const socketConfig = {
+        serverUrl,
+        mountPath: "/ws-user-apps/socket.io/",
+        transports: [
+            "websocket"
+        ],
+        appId,
+        token
+    };
+    let socket = null;
+    const getSocket = ()=>{
+        if (!socket) {
+            socket = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$socket$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["RoomsSocket"])({
+                config: socketConfig
+            });
+        }
+        return socket;
+    };
+    const headers = {
+        ...optionalHeaders,
+        "X-App-Id": String(appId)
+    };
+    const functionHeaders = functionsVersion ? {
+        ...headers,
+        "Base44-Functions-Version": functionsVersion
+    } : headers;
+    const axiosClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAxiosClient"])({
+        baseURL: `${serverUrl}/api`,
+        headers,
+        token,
+        onError: options === null || options === void 0 ? void 0 : options.onError
+    });
+    const functionsAxiosClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAxiosClient"])({
+        baseURL: `${serverUrl}/api`,
+        headers: functionHeaders,
+        token,
+        interceptResponses: false,
+        onError: options === null || options === void 0 ? void 0 : options.onError
+    });
+    const serviceRoleAxiosClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAxiosClient"])({
+        baseURL: `${serverUrl}/api`,
+        headers,
+        token: serviceToken,
+        onError: options === null || options === void 0 ? void 0 : options.onError
+    });
+    const serviceRoleFunctionsAxiosClient = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAxiosClient"])({
+        baseURL: `${serverUrl}/api`,
+        headers: functionHeaders,
+        token: serviceToken,
+        interceptResponses: false
+    });
+    const userAuthModule = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$auth$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAuthModule"])(axiosClient, functionsAxiosClient, appId, {
+        appBaseUrl,
+        serverUrl
+    });
+    const userModules = {
+        entities: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$entities$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createEntitiesModule"])({
+            axios: axiosClient,
+            appId,
+            getSocket
+        }),
+        integrations: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$integrations$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createIntegrationsModule"])(axiosClient, appId),
+        auth: userAuthModule,
+        functions: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$functions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createFunctionsModule"])(functionsAxiosClient, appId),
+        agents: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$agents$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAgentsModule"])({
+            axios: axiosClient,
+            getSocket,
+            appId,
+            serverUrl,
+            token
+        }),
+        appLogs: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$app$2d$logs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAppLogsModule"])(axiosClient, appId),
+        users: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$users$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createUsersModule"])(axiosClient, appId),
+        analytics: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$analytics$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAnalyticsModule"])({
+            axiosClient,
+            serverUrl,
+            appId,
+            userAuthModule
+        }),
+        cleanup: ()=>{
+            userModules.analytics.cleanup();
+            if (socket) {
+                socket.disconnect();
+            }
+        }
+    };
+    const serviceRoleModules = {
+        entities: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$entities$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createEntitiesModule"])({
+            axios: serviceRoleAxiosClient,
+            appId,
+            getSocket
+        }),
+        integrations: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$integrations$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createIntegrationsModule"])(serviceRoleAxiosClient, appId),
+        sso: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$sso$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createSsoModule"])(serviceRoleAxiosClient, appId, token),
+        connectors: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$connectors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createConnectorsModule"])(serviceRoleAxiosClient, appId),
+        functions: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$functions$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createFunctionsModule"])(serviceRoleFunctionsAxiosClient, appId),
+        agents: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$agents$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAgentsModule"])({
+            axios: serviceRoleAxiosClient,
+            getSocket,
+            appId,
+            serverUrl,
+            token
+        }),
+        appLogs: (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$app$2d$logs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createAppLogsModule"])(serviceRoleAxiosClient, appId),
+        cleanup: ()=>{
+            if (socket) {
+                socket.disconnect();
+            }
+        }
+    };
+    // Always try to get token from localStorage or URL parameters
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // If authentication is required, verify token and redirect to login if needed
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    // Assemble and return the client
+    const client = {
+        ...userModules,
+        /**
+         * Sets a new authentication token for all subsequent requests.
+         *
+         * @param newToken - The new authentication token
+         *
+         * @example
+         * ```typescript
+         * // Update token after login
+         * const { access_token } = await base44.auth.loginViaEmailPassword(
+         *   'user@example.com',
+         *   'password'
+         * );
+         * base44.setToken(access_token);
+         * ```
+         */ setToken (newToken) {
+            userModules.auth.setToken(newToken);
+            if (socket) {
+                socket.updateConfig({
+                    token: newToken
+                });
+            }
+            socketConfig.token = newToken;
+        },
+        /**
+         * Gets the current client configuration.
+         *
+         * @internal
+         */ getConfig () {
+            return {
+                serverUrl,
+                appId,
+                requiresAuth
+            };
+        },
+        /**
+         * Provides access to service role modules.
+         *
+         * Service role authentication provides elevated permissions for server-side operations. Unlike user authentication, which is scoped to a specific user's permissions, service role authentication has access to the data and operations available to the app's admin.
+         *
+         * @throws {Error} When accessed without providing a serviceToken during client creation.
+         *
+         * @example
+         * ```typescript
+         * const base44 = createClient({
+         *   appId: 'my-app-id',
+         *   serviceToken: 'service-role-token'
+         * });
+         *
+         * // Also access a module with elevated permissions
+         * const allUsers = await base44.asServiceRole.entities.User.list();
+         * ```
+         */ get asServiceRole () {
+            if (!serviceToken) {
+                throw new Error("Service token is required to use asServiceRole. Please provide a serviceToken when creating the client.");
+            }
+            return serviceRoleModules;
+        }
+    };
+    return client;
+}
+function createClientFromRequest(request) {
+    const authHeader = request.headers.get("Authorization");
+    const serviceRoleAuthHeader = request.headers.get("Base44-Service-Authorization");
+    const appId = request.headers.get("Base44-App-Id");
+    const serverUrlHeader = request.headers.get("Base44-Api-Url");
+    const functionsVersion = request.headers.get("Base44-Functions-Version");
+    const stateHeader = request.headers.get("Base44-State");
+    if (!appId) {
+        throw new Error("Base44-App-Id header is required, but is was not found on the request");
+    }
+    // Validate authorization header formats
+    let serviceRoleToken;
+    let userToken;
+    if (serviceRoleAuthHeader !== null) {
+        if (serviceRoleAuthHeader === "" || !serviceRoleAuthHeader.startsWith("Bearer ") || serviceRoleAuthHeader.split(" ").length !== 2) {
+            throw new Error('Invalid authorization header format. Expected "Bearer <token>"');
+        }
+        serviceRoleToken = serviceRoleAuthHeader.split(" ")[1];
+    }
+    if (authHeader !== null) {
+        if (authHeader === "" || !authHeader.startsWith("Bearer ") || authHeader.split(" ").length !== 2) {
+            throw new Error('Invalid authorization header format. Expected "Bearer <token>"');
+        }
+        userToken = authHeader.split(" ")[1];
+    }
+    // Prepare additional headers to propagate
+    const additionalHeaders = {};
+    if (stateHeader) {
+        additionalHeaders["Base44-State"] = stateHeader;
+    }
+    return createClient({
+        serverUrl: serverUrlHeader || "https://base44.app",
+        appId,
+        token: userToken,
+        serviceToken: serviceRoleToken,
+        functionsVersion: functionsVersion !== null && functionsVersion !== void 0 ? functionsVersion : undefined,
+        headers: additionalHeaders
+    });
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/app.types.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/agents.types.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/connectors.types.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/analytics.types.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/types.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$app$2e$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/app.types.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$agents$2e$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/agents.types.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$connectors$2e$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/connectors.types.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$analytics$2e$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/analytics.types.js [app-ssr] (ecmascript)");
+;
+;
+;
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/types.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$modules$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/modules/types.js [app-ssr] (ecmascript) <locals>");
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/client.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$axios$2d$client$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/axios-client.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$utils$2f$auth$2d$utils$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/utils/auth-utils.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$base44$2f$sdk$2f$dist$2f$types$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@base44/sdk/dist/types.js [app-ssr] (ecmascript) <locals>");
+;
+;
+;
+;
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/native.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$crypto__$5b$external$5d$__$28$node$3a$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/node:crypto [external] (node:crypto, cjs)");
+;
+const __TURBOPACK__default__export__ = {
+    randomUUID: __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$crypto__$5b$external$5d$__$28$node$3a$crypto$2c$__cjs$29$__["randomUUID"]
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/rng.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>rng
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$crypto__$5b$external$5d$__$28$node$3a$crypto$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/node:crypto [external] (node:crypto, cjs)");
+;
+const rnds8Pool = new Uint8Array(256);
+let poolPtr = rnds8Pool.length;
+function rng() {
+    if (poolPtr > rnds8Pool.length - 16) {
+        (0, __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$crypto__$5b$external$5d$__$28$node$3a$crypto$2c$__cjs$29$__["randomFillSync"])(rnds8Pool);
+        poolPtr = 0;
+    }
+    return rnds8Pool.slice(poolPtr, poolPtr += 16);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/regex.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+const __TURBOPACK__default__export__ = /^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000|ffffffff-ffff-ffff-ffff-ffffffffffff)$/i;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/validate.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$regex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/regex.js [app-ssr] (ecmascript)");
+;
+function validate(uuid) {
+    return typeof uuid === 'string' && __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$regex$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].test(uuid);
+}
+const __TURBOPACK__default__export__ = validate;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/stringify.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__,
+    "unsafeStringify",
+    ()=>unsafeStringify
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$validate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/validate.js [app-ssr] (ecmascript)");
+;
+const byteToHex = [];
+for(let i = 0; i < 256; ++i){
+    byteToHex.push((i + 0x100).toString(16).slice(1));
+}
+function unsafeStringify(arr, offset = 0) {
+    return (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase();
+}
+function stringify(arr, offset = 0) {
+    const uuid = unsafeStringify(arr, offset);
+    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$validate$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])(uuid)) {
+        throw TypeError('Stringified UUID is invalid');
+    }
+    return uuid;
+}
+const __TURBOPACK__default__export__ = stringify;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/v4.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$native$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/native.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$rng$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/rng.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$stringify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/stringify.js [app-ssr] (ecmascript)");
+;
+;
+;
+function _v4(options, buf, offset) {
+    options = options || {};
+    const rnds = options.random ?? options.rng?.() ?? (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$rng$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])();
+    if (rnds.length < 16) {
+        throw new Error('Random bytes length must be >= 16');
+    }
+    rnds[6] = rnds[6] & 0x0f | 0x40;
+    rnds[8] = rnds[8] & 0x3f | 0x80;
+    if (buf) {
+        offset = offset || 0;
+        if (offset < 0 || offset + 16 > buf.length) {
+            throw new RangeError(`UUID byte range ${offset}:${offset + 15} is out of buffer bounds`);
+        }
+        for(let i = 0; i < 16; ++i){
+            buf[offset + i] = rnds[i];
+        }
+        return buf;
+    }
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$stringify$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["unsafeStringify"])(rnds);
+}
+function v4(options, buf, offset) {
+    if (__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$native$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].randomUUID && !buf && !options) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$native$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"].randomUUID();
+    }
+    return _v4(options, buf, offset);
+}
+const __TURBOPACK__default__export__ = v4;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/v4.js [app-ssr] (ecmascript) <export default as v4>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "v4",
+    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$v4$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$uuid$2f$dist$2d$node$2f$v4$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/uuid/dist-node/v4.js [app-ssr] (ecmascript)");
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * Wrapper for built-in http.js to emulate the browser XMLHttpRequest object.
+ *
+ * This can be used with JS designed for browsers to improve reuse of code and
+ * allow the use of existing libraries.
+ *
+ * Usage: include("XMLHttpRequest.js") and use XMLHttpRequest per W3C specs.
+ *
+ * @author Dan DeFelippi <dan@driverdan.com>
+ * @contributor David Ellis <d.f.ellis@ieee.org>
+ * @license MIT
+ */ var fs = __turbopack_context__.r("[externals]/fs [external] (fs, cjs)");
+var Url = __turbopack_context__.r("[externals]/url [external] (url, cjs)");
+var spawn = __turbopack_context__.r("[externals]/child_process [external] (child_process, cjs)").spawn;
+/**
+ * Module exports.
+ */ module.exports = XMLHttpRequest;
+// backwards-compat
+XMLHttpRequest.XMLHttpRequest = XMLHttpRequest;
+/**
+ * `XMLHttpRequest` constructor.
+ *
+ * Supported options for the `opts` object are:
+ *
+ *  - `agent`: An http.Agent instance; http.globalAgent may be used; if 'undefined', agent usage is disabled
+ *
+ * @param {Object} opts optional "options" object
+ */ function XMLHttpRequest(opts) {
+    "use strict";
+    opts = opts || {};
+    /**
+   * Private variables
+   */ var self = this;
+    var http = __turbopack_context__.r("[externals]/http [external] (http, cjs)");
+    var https = __turbopack_context__.r("[externals]/https [external] (https, cjs)");
+    // Holds http.js objects
+    var request;
+    var response;
+    // Request settings
+    var settings = {};
+    // Disable header blacklist.
+    // Not part of XHR specs.
+    var disableHeaderCheck = false;
+    // Set some default headers
+    var defaultHeaders = {
+        "User-Agent": "node-XMLHttpRequest",
+        "Accept": "*/*"
+    };
+    var headers = Object.assign({}, defaultHeaders);
+    // These headers are not user setable.
+    // The following are allowed but banned in the spec:
+    // * user-agent
+    var forbiddenRequestHeaders = [
+        "accept-charset",
+        "accept-encoding",
+        "access-control-request-headers",
+        "access-control-request-method",
+        "connection",
+        "content-length",
+        "content-transfer-encoding",
+        "cookie",
+        "cookie2",
+        "date",
+        "expect",
+        "host",
+        "keep-alive",
+        "origin",
+        "referer",
+        "te",
+        "trailer",
+        "transfer-encoding",
+        "upgrade",
+        "via"
+    ];
+    // These request methods are not allowed
+    var forbiddenRequestMethods = [
+        "TRACE",
+        "TRACK",
+        "CONNECT"
+    ];
+    // Send flag
+    var sendFlag = false;
+    // Error flag, used when errors occur or abort is called
+    var errorFlag = false;
+    var abortedFlag = false;
+    // Event listeners
+    var listeners = {};
+    /**
+   * Constants
+   */ this.UNSENT = 0;
+    this.OPENED = 1;
+    this.HEADERS_RECEIVED = 2;
+    this.LOADING = 3;
+    this.DONE = 4;
+    /**
+   * Public vars
+   */ // Current state
+    this.readyState = this.UNSENT;
+    // default ready state change handler in case one is not set or is set late
+    this.onreadystatechange = null;
+    // Result & response
+    this.responseText = "";
+    this.responseXML = "";
+    this.response = Buffer.alloc(0);
+    this.status = null;
+    this.statusText = null;
+    /**
+   * Private methods
+   */ /**
+   * Check if the specified header is allowed.
+   *
+   * @param string header Header to validate
+   * @return boolean False if not allowed, otherwise true
+   */ var isAllowedHttpHeader = function(header) {
+        return disableHeaderCheck || header && forbiddenRequestHeaders.indexOf(header.toLowerCase()) === -1;
+    };
+    /**
+   * Check if the specified method is allowed.
+   *
+   * @param string method Request method to validate
+   * @return boolean False if not allowed, otherwise true
+   */ var isAllowedHttpMethod = function(method) {
+        return method && forbiddenRequestMethods.indexOf(method) === -1;
+    };
+    /**
+   * Public methods
+   */ /**
+   * Open the connection. Currently supports local server requests.
+   *
+   * @param string method Connection method (eg GET, POST)
+   * @param string url URL for the connection.
+   * @param boolean async Asynchronous connection. Default is true.
+   * @param string user Username for basic authentication (optional)
+   * @param string password Password for basic authentication (optional)
+   */ this.open = function(method, url, async, user, password) {
+        this.abort();
+        errorFlag = false;
+        abortedFlag = false;
+        // Check for valid request method
+        if (!isAllowedHttpMethod(method)) {
+            throw new Error("SecurityError: Request method not allowed");
+        }
+        settings = {
+            "method": method,
+            "url": url.toString(),
+            "async": typeof async !== "boolean" ? true : async,
+            "user": user || null,
+            "password": password || null
+        };
+        setState(this.OPENED);
+    };
+    /**
+   * Disables or enables isAllowedHttpHeader() check the request. Enabled by default.
+   * This does not conform to the W3C spec.
+   *
+   * @param boolean state Enable or disable header checking.
+   */ this.setDisableHeaderCheck = function(state) {
+        disableHeaderCheck = state;
+    };
+    /**
+   * Sets a header for the request.
+   *
+   * @param string header Header name
+   * @param string value Header value
+   * @return boolean Header added
+   */ this.setRequestHeader = function(header, value) {
+        if (this.readyState != this.OPENED) {
+            throw new Error("INVALID_STATE_ERR: setRequestHeader can only be called when state is OPEN");
+        }
+        if (!isAllowedHttpHeader(header)) {
+            console.warn('Refused to set unsafe header "' + header + '"');
+            return false;
+        }
+        if (sendFlag) {
+            throw new Error("INVALID_STATE_ERR: send flag is true");
+        }
+        headers[header] = value;
+        return true;
+    };
+    /**
+   * Gets a header from the server response.
+   *
+   * @param string header Name of header to get.
+   * @return string Text of the header or null if it doesn't exist.
+   */ this.getResponseHeader = function(header) {
+        if (typeof header === "string" && this.readyState > this.OPENED && response.headers[header.toLowerCase()] && !errorFlag) {
+            return response.headers[header.toLowerCase()];
+        }
+        return null;
+    };
+    /**
+   * Gets all the response headers.
+   *
+   * @return string A string with all response headers separated by CR+LF
+   */ this.getAllResponseHeaders = function() {
+        if (this.readyState < this.HEADERS_RECEIVED || errorFlag) {
+            return "";
+        }
+        var result = "";
+        for(var i in response.headers){
+            // Cookie headers are excluded
+            if (i !== "set-cookie" && i !== "set-cookie2") {
+                result += i + ": " + response.headers[i] + "\r\n";
+            }
+        }
+        return result.substr(0, result.length - 2);
+    };
+    /**
+   * Gets a request header
+   *
+   * @param string name Name of header to get
+   * @return string Returns the request header or empty string if not set
+   */ this.getRequestHeader = function(name) {
+        // @TODO Make this case insensitive
+        if (typeof name === "string" && headers[name]) {
+            return headers[name];
+        }
+        return "";
+    };
+    /**
+   * Sends the request to the server.
+   *
+   * @param string data Optional data to send as request body.
+   */ this.send = function(data) {
+        if (this.readyState != this.OPENED) {
+            throw new Error("INVALID_STATE_ERR: connection must be opened before send() is called");
+        }
+        if (sendFlag) {
+            throw new Error("INVALID_STATE_ERR: send has already been called");
+        }
+        var ssl = false, local = false;
+        var url = Url.parse(settings.url);
+        var host;
+        // Determine the server
+        switch(url.protocol){
+            case 'https:':
+                ssl = true;
+            // SSL & non-SSL both need host, no break here.
+            case 'http:':
+                host = url.hostname;
+                break;
+            case 'file:':
+                local = true;
+                break;
+            case undefined:
+            case '':
+                host = "localhost";
+                break;
+            default:
+                throw new Error("Protocol not supported.");
+        }
+        // Load files off the local filesystem (file://)
+        if (local) {
+            if (settings.method !== "GET") {
+                throw new Error("XMLHttpRequest: Only GET method is supported");
+            }
+            if (settings.async) {
+                fs.readFile(unescape(url.pathname), function(error, data) {
+                    if (error) {
+                        self.handleError(error, error.errno || -1);
+                    } else {
+                        self.status = 200;
+                        self.responseText = data.toString('utf8');
+                        self.response = data;
+                        setState(self.DONE);
+                    }
+                });
+            } else {
+                try {
+                    this.response = fs.readFileSync(unescape(url.pathname));
+                    this.responseText = this.response.toString('utf8');
+                    this.status = 200;
+                    setState(self.DONE);
+                } catch (e) {
+                    this.handleError(e, e.errno || -1);
+                }
+            }
+            return;
+        }
+        // Default to port 80. If accessing localhost on another port be sure
+        // to use http://localhost:port/path
+        var port = url.port || (ssl ? 443 : 80);
+        // Add query string if one is used
+        var uri = url.pathname + (url.search ? url.search : '');
+        // Set the Host header or the server may reject the request
+        headers["Host"] = host;
+        if (!(ssl && port === 443 || port === 80)) {
+            headers["Host"] += ':' + url.port;
+        }
+        // Set Basic Auth if necessary
+        if (settings.user) {
+            if (typeof settings.password == "undefined") {
+                settings.password = "";
+            }
+            var authBuf = new Buffer(settings.user + ":" + settings.password);
+            headers["Authorization"] = "Basic " + authBuf.toString("base64");
+        }
+        // Set content length header
+        if (settings.method === "GET" || settings.method === "HEAD") {
+            data = null;
+        } else if (data) {
+            headers["Content-Length"] = Buffer.isBuffer(data) ? data.length : Buffer.byteLength(data);
+            var headersKeys = Object.keys(headers);
+            if (!headersKeys.some(function(h) {
+                return h.toLowerCase() === 'content-type';
+            })) {
+                headers["Content-Type"] = "text/plain;charset=UTF-8";
+            }
+        } else if (settings.method === "POST") {
+            // For a post with no data set Content-Length: 0.
+            // This is required by buggy servers that don't meet the specs.
+            headers["Content-Length"] = 0;
+        }
+        var agent = opts.agent || false;
+        var options = {
+            host: host,
+            port: port,
+            path: uri,
+            method: settings.method,
+            headers: headers,
+            agent: agent
+        };
+        if (ssl) {
+            options.pfx = opts.pfx;
+            options.key = opts.key;
+            options.passphrase = opts.passphrase;
+            options.cert = opts.cert;
+            options.ca = opts.ca;
+            options.ciphers = opts.ciphers;
+            options.rejectUnauthorized = opts.rejectUnauthorized === false ? false : true;
+        }
+        // Reset error flag
+        errorFlag = false;
+        // Handle async requests
+        if (settings.async) {
+            // Use the proper protocol
+            var doRequest = ssl ? https.request : http.request;
+            // Request is being sent, set send flag
+            sendFlag = true;
+            // As per spec, this is called here for historical reasons.
+            self.dispatchEvent("readystatechange");
+            // Handler for the response
+            var responseHandler = function(resp) {
+                // Set response var to the response we got back
+                // This is so it remains accessable outside this scope
+                response = resp;
+                // Check for redirect
+                // @TODO Prevent looped redirects
+                if (response.statusCode === 302 || response.statusCode === 303 || response.statusCode === 307) {
+                    // Change URL to the redirect location
+                    settings.url = response.headers.location;
+                    var url = Url.parse(settings.url);
+                    // Set host var in case it's used later
+                    host = url.hostname;
+                    // Options for the new request
+                    var newOptions = {
+                        hostname: url.hostname,
+                        port: url.port,
+                        path: url.path,
+                        method: response.statusCode === 303 ? 'GET' : settings.method,
+                        headers: headers
+                    };
+                    if (ssl) {
+                        newOptions.pfx = opts.pfx;
+                        newOptions.key = opts.key;
+                        newOptions.passphrase = opts.passphrase;
+                        newOptions.cert = opts.cert;
+                        newOptions.ca = opts.ca;
+                        newOptions.ciphers = opts.ciphers;
+                        newOptions.rejectUnauthorized = opts.rejectUnauthorized === false ? false : true;
+                    }
+                    // Issue the new request
+                    request = doRequest(newOptions, responseHandler).on('error', errorHandler);
+                    request.end();
+                    // @TODO Check if an XHR event needs to be fired here
+                    return;
+                }
+                setState(self.HEADERS_RECEIVED);
+                self.status = response.statusCode;
+                response.on('data', function(chunk) {
+                    // Make sure there's some data
+                    if (chunk) {
+                        var data = Buffer.from(chunk);
+                        self.response = Buffer.concat([
+                            self.response,
+                            data
+                        ]);
+                    }
+                    // Don't emit state changes if the connection has been aborted.
+                    if (sendFlag) {
+                        setState(self.LOADING);
+                    }
+                });
+                response.on('end', function() {
+                    if (sendFlag) {
+                        // The sendFlag needs to be set before setState is called.  Otherwise if we are chaining callbacks
+                        // there can be a timing issue (the callback is called and a new call is made before the flag is reset).
+                        sendFlag = false;
+                        // Discard the 'end' event if the connection has been aborted
+                        setState(self.DONE);
+                        // Construct responseText from response
+                        self.responseText = self.response.toString('utf8');
+                    }
+                });
+                response.on('error', function(error) {
+                    self.handleError(error);
+                });
+            };
+            // Error handler for the request
+            var errorHandler = function(error) {
+                // In the case of https://nodejs.org/api/http.html#requestreusedsocket triggering an ECONNRESET,
+                // don't fail the xhr request, attempt again.
+                if (request.reusedSocket && error.code === 'ECONNRESET') return doRequest(options, responseHandler).on('error', errorHandler);
+                self.handleError(error);
+            };
+            // Create the request
+            request = doRequest(options, responseHandler).on('error', errorHandler);
+            if (opts.autoUnref) {
+                request.on('socket', (socket)=>{
+                    socket.unref();
+                });
+            }
+            // Node 0.4 and later won't accept empty data. Make sure it's needed.
+            if (data) {
+                request.write(data);
+            }
+            request.end();
+            self.dispatchEvent("loadstart");
+        } else {
+            // Create a temporary file for communication with the other Node process
+            var contentFile = ".node-xmlhttprequest-content-" + process.pid;
+            var syncFile = ".node-xmlhttprequest-sync-" + process.pid;
+            fs.writeFileSync(syncFile, "", "utf8");
+            // The async request the other Node process executes
+            var execString = "var http = require('http'), https = require('https'), fs = require('fs');" + "var doRequest = http" + (ssl ? "s" : "") + ".request;" + "var options = " + JSON.stringify(options) + ";" + "var responseText = '';" + "var responseData = Buffer.alloc(0);" + "var req = doRequest(options, function(response) {" + "response.on('data', function(chunk) {" + "  var data = Buffer.from(chunk);" + "  responseText += data.toString('utf8');" + "  responseData = Buffer.concat([responseData, data]);" + "});" + "response.on('end', function() {" + "fs.writeFileSync('" + contentFile + "', JSON.stringify({err: null, data: {statusCode: response.statusCode, headers: response.headers, text: responseText, data: responseData.toString('base64')}}), 'utf8');" + "fs.unlinkSync('" + syncFile + "');" + "});" + "response.on('error', function(error) {" + "fs.writeFileSync('" + contentFile + "', 'NODE-XMLHTTPREQUEST-ERROR:' + JSON.stringify(error), 'utf8');" + "fs.unlinkSync('" + syncFile + "');" + "});" + "}).on('error', function(error) {" + "fs.writeFileSync('" + contentFile + "', 'NODE-XMLHTTPREQUEST-ERROR:' + JSON.stringify(error), 'utf8');" + "fs.unlinkSync('" + syncFile + "');" + "});" + (data ? "req.write('" + JSON.stringify(data).slice(1, -1).replace(/'/g, "\\'") + "');" : "") + "req.end();";
+            // Start the other Node Process, executing this string
+            var syncProc = spawn(process.argv[0], [
+                "-e",
+                execString
+            ]);
+            var statusText;
+            while(fs.existsSync(syncFile)){
+            // Wait while the sync file is empty
+            }
+            self.responseText = fs.readFileSync(contentFile, 'utf8');
+            // Kill the child process once the file has data
+            syncProc.stdin.end();
+            // Remove the temporary file
+            fs.unlinkSync(contentFile);
+            if (self.responseText.match(/^NODE-XMLHTTPREQUEST-ERROR:/)) {
+                // If the file returned an error, handle it
+                var errorObj = JSON.parse(self.responseText.replace(/^NODE-XMLHTTPREQUEST-ERROR:/, ""));
+                self.handleError(errorObj, 503);
+            } else {
+                // If the file returned okay, parse its data and move to the DONE state
+                self.status = self.responseText.replace(/^NODE-XMLHTTPREQUEST-STATUS:([0-9]*),.*/, "$1");
+                var resp = JSON.parse(self.responseText.replace(/^NODE-XMLHTTPREQUEST-STATUS:[0-9]*,(.*)/, "$1"));
+                response = {
+                    statusCode: self.status,
+                    headers: resp.data.headers
+                };
+                self.responseText = resp.data.text;
+                self.response = Buffer.from(resp.data.data, 'base64');
+                setState(self.DONE, true);
+            }
+        }
+    };
+    /**
+   * Called when an error is encountered to deal with it.
+   * @param  status  {number}    HTTP status code to use rather than the default (0) for XHR errors.
+   */ this.handleError = function(error, status) {
+        this.status = status || 0;
+        this.statusText = error;
+        this.responseText = error.stack;
+        errorFlag = true;
+        setState(this.DONE);
+    };
+    /**
+   * Aborts a request.
+   */ this.abort = function() {
+        if (request) {
+            request.abort();
+            request = null;
+        }
+        headers = Object.assign({}, defaultHeaders);
+        this.responseText = "";
+        this.responseXML = "";
+        this.response = Buffer.alloc(0);
+        errorFlag = abortedFlag = true;
+        if (this.readyState !== this.UNSENT && (this.readyState !== this.OPENED || sendFlag) && this.readyState !== this.DONE) {
+            sendFlag = false;
+            setState(this.DONE);
+        }
+        this.readyState = this.UNSENT;
+    };
+    /**
+   * Adds an event listener. Preferred method of binding to events.
+   */ this.addEventListener = function(event, callback) {
+        if (!(event in listeners)) {
+            listeners[event] = [];
+        }
+        // Currently allows duplicate callbacks. Should it?
+        listeners[event].push(callback);
+    };
+    /**
+   * Remove an event callback that has already been bound.
+   * Only works on the matching funciton, cannot be a copy.
+   */ this.removeEventListener = function(event, callback) {
+        if (event in listeners) {
+            // Filter will return a new array with the callback removed
+            listeners[event] = listeners[event].filter(function(ev) {
+                return ev !== callback;
+            });
+        }
+    };
+    /**
+   * Dispatch any events, including both "on" methods and events attached using addEventListener.
+   */ this.dispatchEvent = function(event) {
+        if (typeof self["on" + event] === "function") {
+            if (this.readyState === this.DONE && settings.async) setTimeout(function() {
+                self["on" + event]();
+            }, 0);
+            else self["on" + event]();
+        }
+        if (event in listeners) {
+            for(let i = 0, len = listeners[event].length; i < len; i++){
+                if (this.readyState === this.DONE) setTimeout(function() {
+                    listeners[event][i].call(self);
+                }, 0);
+                else listeners[event][i].call(self);
+            }
+        }
+    };
+    /**
+   * Changes readyState and calls onreadystatechange.
+   *
+   * @param int state New state
+   */ var setState = function(state) {
+        if (self.readyState === state || self.readyState === self.UNSENT && abortedFlag) return;
+        self.readyState = state;
+        if (settings.async || self.readyState < self.OPENED || self.readyState === self.DONE) {
+            self.dispatchEvent("readystatechange");
+        }
+        if (self.readyState === self.DONE) {
+            let fire;
+            if (abortedFlag) fire = "abort";
+            else if (errorFlag) fire = "error";
+            else fire = "load";
+            self.dispatchEvent(fire);
+            // @TODO figure out InspectorInstrumentation::didLoadXHR(cookie)
+            self.dispatchEvent("loadend");
+        }
+    };
+}
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/commons.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "ERROR_PACKET",
+    ()=>ERROR_PACKET,
+    "PACKET_TYPES",
+    ()=>PACKET_TYPES,
+    "PACKET_TYPES_REVERSE",
+    ()=>PACKET_TYPES_REVERSE
+]);
+const PACKET_TYPES = Object.create(null); // no Map = no polyfill
+PACKET_TYPES["open"] = "0";
+PACKET_TYPES["close"] = "1";
+PACKET_TYPES["ping"] = "2";
+PACKET_TYPES["pong"] = "3";
+PACKET_TYPES["message"] = "4";
+PACKET_TYPES["upgrade"] = "5";
+PACKET_TYPES["noop"] = "6";
+const PACKET_TYPES_REVERSE = Object.create(null);
+Object.keys(PACKET_TYPES).forEach((key)=>{
+    PACKET_TYPES_REVERSE[PACKET_TYPES[key]] = key;
+});
+const ERROR_PACKET = {
+    type: "error",
+    data: "parser error"
+};
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/encodePacket.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "encodePacket",
+    ()=>encodePacket,
+    "encodePacketToBinary",
+    ()=>encodePacketToBinary
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/commons.js [app-ssr] (ecmascript)");
+;
+const encodePacket = ({ type, data }, supportsBinary, callback)=>{
+    if (data instanceof ArrayBuffer || ArrayBuffer.isView(data)) {
+        return callback(supportsBinary ? data : "b" + toBuffer(data, true).toString("base64"));
+    }
+    // plain string
+    return callback(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PACKET_TYPES"][type] + (data || ""));
+};
+const toBuffer = (data, forceBufferConversion)=>{
+    if (Buffer.isBuffer(data) || data instanceof Uint8Array && !forceBufferConversion) {
+        return data;
+    } else if (data instanceof ArrayBuffer) {
+        return Buffer.from(data);
+    } else {
+        return Buffer.from(data.buffer, data.byteOffset, data.byteLength);
+    }
+};
+let TEXT_ENCODER;
+function encodePacketToBinary(packet, callback) {
+    if (packet.data instanceof ArrayBuffer || ArrayBuffer.isView(packet.data)) {
+        return callback(toBuffer(packet.data, false));
+    }
+    encodePacket(packet, true, (encoded)=>{
+        if (!TEXT_ENCODER) {
+            // lazily created for compatibility with Node.js 10
+            TEXT_ENCODER = new TextEncoder();
+        }
+        callback(TEXT_ENCODER.encode(encoded));
+    });
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/decodePacket.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "decodePacket",
+    ()=>decodePacket
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/commons.js [app-ssr] (ecmascript)");
+;
+const decodePacket = (encodedPacket, binaryType)=>{
+    if (typeof encodedPacket !== "string") {
+        return {
+            type: "message",
+            data: mapBinary(encodedPacket, binaryType)
+        };
+    }
+    const type = encodedPacket.charAt(0);
+    if (type === "b") {
+        const buffer = Buffer.from(encodedPacket.substring(1), "base64");
+        return {
+            type: "message",
+            data: mapBinary(buffer, binaryType)
+        };
+    }
+    if (!__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PACKET_TYPES_REVERSE"][type]) {
+        return __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ERROR_PACKET"];
+    }
+    return encodedPacket.length > 1 ? {
+        type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PACKET_TYPES_REVERSE"][type],
+        data: encodedPacket.substring(1)
+    } : {
+        type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PACKET_TYPES_REVERSE"][type]
+    };
+};
+const mapBinary = (data, binaryType)=>{
+    switch(binaryType){
+        case "arraybuffer":
+            if (data instanceof ArrayBuffer) {
+                // from WebSocket & binaryType "arraybuffer"
+                return data;
+            } else if (Buffer.isBuffer(data)) {
+                // from HTTP long-polling
+                return data.buffer.slice(data.byteOffset, data.byteOffset + data.byteLength);
+            } else {
+                // from WebTransport (Uint8Array)
+                return data.buffer;
+            }
+        case "nodebuffer":
+        default:
+            if (Buffer.isBuffer(data)) {
+                // from HTTP long-polling or WebSocket & binaryType "nodebuffer" (default)
+                return data;
+            } else {
+                // from WebTransport (Uint8Array)
+                return Buffer.from(data);
+            }
+    }
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createPacketDecoderStream",
+    ()=>createPacketDecoderStream,
+    "createPacketEncoderStream",
+    ()=>createPacketEncoderStream,
+    "decodePayload",
+    ()=>decodePayload,
+    "encodePayload",
+    ()=>encodePayload,
+    "protocol",
+    ()=>protocol
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$encodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/encodePacket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$decodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/decodePacket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/commons.js [app-ssr] (ecmascript)");
+;
+;
+;
+const SEPARATOR = String.fromCharCode(30); // see https://en.wikipedia.org/wiki/Delimiter#ASCII_delimited_text
+const encodePayload = (packets, callback)=>{
+    // some packets may be added to the array while encoding, so the initial length must be saved
+    const length = packets.length;
+    const encodedPackets = new Array(length);
+    let count = 0;
+    packets.forEach((packet, i)=>{
+        // force base64 encoding for binary packets
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$encodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["encodePacket"])(packet, false, (encodedPacket)=>{
+            encodedPackets[i] = encodedPacket;
+            if (++count === length) {
+                callback(encodedPackets.join(SEPARATOR));
+            }
+        });
+    });
+};
+const decodePayload = (encodedPayload, binaryType)=>{
+    const encodedPackets = encodedPayload.split(SEPARATOR);
+    const packets = [];
+    for(let i = 0; i < encodedPackets.length; i++){
+        const decodedPacket = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$decodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["decodePacket"])(encodedPackets[i], binaryType);
+        packets.push(decodedPacket);
+        if (decodedPacket.type === "error") {
+            break;
+        }
+    }
+    return packets;
+};
+function createPacketEncoderStream() {
+    return new TransformStream({
+        transform (packet, controller) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$encodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["encodePacketToBinary"])(packet, (encodedPacket)=>{
+                const payloadLength = encodedPacket.length;
+                let header;
+                // inspired by the WebSocket format: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API/Writing_WebSocket_servers#decoding_payload_length
+                if (payloadLength < 126) {
+                    header = new Uint8Array(1);
+                    new DataView(header.buffer).setUint8(0, payloadLength);
+                } else if (payloadLength < 65536) {
+                    header = new Uint8Array(3);
+                    const view = new DataView(header.buffer);
+                    view.setUint8(0, 126);
+                    view.setUint16(1, payloadLength);
+                } else {
+                    header = new Uint8Array(9);
+                    const view = new DataView(header.buffer);
+                    view.setUint8(0, 127);
+                    view.setBigUint64(1, BigInt(payloadLength));
+                }
+                // first bit indicates whether the payload is plain text (0) or binary (1)
+                if (packet.data && typeof packet.data !== "string") {
+                    header[0] |= 0x80;
+                }
+                controller.enqueue(header);
+                controller.enqueue(encodedPacket);
+            });
+        }
+    });
+}
+let TEXT_DECODER;
+function totalLength(chunks) {
+    return chunks.reduce((acc, chunk)=>acc + chunk.length, 0);
+}
+function concatChunks(chunks, size) {
+    if (chunks[0].length === size) {
+        return chunks.shift();
+    }
+    const buffer = new Uint8Array(size);
+    let j = 0;
+    for(let i = 0; i < size; i++){
+        buffer[i] = chunks[0][j++];
+        if (j === chunks[0].length) {
+            chunks.shift();
+            j = 0;
+        }
+    }
+    if (chunks.length && j < chunks[0].length) {
+        chunks[0] = chunks[0].slice(j);
+    }
+    return buffer;
+}
+function createPacketDecoderStream(maxPayload, binaryType) {
+    if (!TEXT_DECODER) {
+        TEXT_DECODER = new TextDecoder();
+    }
+    const chunks = [];
+    let state = 0 /* State.READ_HEADER */ ;
+    let expectedLength = -1;
+    let isBinary = false;
+    return new TransformStream({
+        transform (chunk, controller) {
+            chunks.push(chunk);
+            while(true){
+                if (state === 0 /* State.READ_HEADER */ ) {
+                    if (totalLength(chunks) < 1) {
+                        break;
+                    }
+                    const header = concatChunks(chunks, 1);
+                    isBinary = (header[0] & 0x80) === 0x80;
+                    expectedLength = header[0] & 0x7f;
+                    if (expectedLength < 126) {
+                        state = 3 /* State.READ_PAYLOAD */ ;
+                    } else if (expectedLength === 126) {
+                        state = 1 /* State.READ_EXTENDED_LENGTH_16 */ ;
+                    } else {
+                        state = 2 /* State.READ_EXTENDED_LENGTH_64 */ ;
+                    }
+                } else if (state === 1 /* State.READ_EXTENDED_LENGTH_16 */ ) {
+                    if (totalLength(chunks) < 2) {
+                        break;
+                    }
+                    const headerArray = concatChunks(chunks, 2);
+                    expectedLength = new DataView(headerArray.buffer, headerArray.byteOffset, headerArray.length).getUint16(0);
+                    state = 3 /* State.READ_PAYLOAD */ ;
+                } else if (state === 2 /* State.READ_EXTENDED_LENGTH_64 */ ) {
+                    if (totalLength(chunks) < 8) {
+                        break;
+                    }
+                    const headerArray = concatChunks(chunks, 8);
+                    const view = new DataView(headerArray.buffer, headerArray.byteOffset, headerArray.length);
+                    const n = view.getUint32(0);
+                    if (n > Math.pow(2, 53 - 32) - 1) {
+                        // the maximum safe integer in JavaScript is 2^53 - 1
+                        controller.enqueue(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ERROR_PACKET"]);
+                        break;
+                    }
+                    expectedLength = n * Math.pow(2, 32) + view.getUint32(4);
+                    state = 3 /* State.READ_PAYLOAD */ ;
+                } else {
+                    if (totalLength(chunks) < expectedLength) {
+                        break;
+                    }
+                    const data = concatChunks(chunks, expectedLength);
+                    controller.enqueue((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$decodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["decodePacket"])(isBinary ? data : TEXT_DECODER.decode(data), binaryType));
+                    state = 0 /* State.READ_HEADER */ ;
+                }
+                if (expectedLength === 0 || expectedLength > maxPayload) {
+                    controller.enqueue(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$commons$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ERROR_PACKET"]);
+                    break;
+                }
+            }
+        }
+    });
+}
+const protocol = 4;
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Initialize a new `Emitter`.
+ *
+ * @api public
+ */ __turbopack_context__.s([
+    "Emitter",
+    ()=>Emitter
+]);
+function Emitter(obj) {
+    if (obj) return mixin(obj);
+}
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */ function mixin(obj) {
+    for(var key in Emitter.prototype){
+        obj[key] = Emitter.prototype[key];
+    }
+    return obj;
+}
+/**
+ * Listen on the given `event` with `fn`.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */ Emitter.prototype.on = Emitter.prototype.addEventListener = function(event, fn) {
+    this._callbacks = this._callbacks || {};
+    (this._callbacks['$' + event] = this._callbacks['$' + event] || []).push(fn);
+    return this;
+};
+/**
+ * Adds an `event` listener that will be invoked a single
+ * time then automatically removed.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */ Emitter.prototype.once = function(event, fn) {
+    function on() {
+        this.off(event, on);
+        fn.apply(this, arguments);
+    }
+    on.fn = fn;
+    this.on(event, on);
+    return this;
+};
+/**
+ * Remove the given callback for `event` or all
+ * registered callbacks.
+ *
+ * @param {String} event
+ * @param {Function} fn
+ * @return {Emitter}
+ * @api public
+ */ Emitter.prototype.off = Emitter.prototype.removeListener = Emitter.prototype.removeAllListeners = Emitter.prototype.removeEventListener = function(event, fn) {
+    this._callbacks = this._callbacks || {};
+    // all
+    if (0 == arguments.length) {
+        this._callbacks = {};
+        return this;
+    }
+    // specific event
+    var callbacks = this._callbacks['$' + event];
+    if (!callbacks) return this;
+    // remove all handlers
+    if (1 == arguments.length) {
+        delete this._callbacks['$' + event];
+        return this;
+    }
+    // remove specific handler
+    var cb;
+    for(var i = 0; i < callbacks.length; i++){
+        cb = callbacks[i];
+        if (cb === fn || cb.fn === fn) {
+            callbacks.splice(i, 1);
+            break;
+        }
+    }
+    // Remove event specific arrays for event types that no
+    // one is subscribed for to avoid memory leak.
+    if (callbacks.length === 0) {
+        delete this._callbacks['$' + event];
+    }
+    return this;
+};
+/**
+ * Emit `event` with the given args.
+ *
+ * @param {String} event
+ * @param {Mixed} ...
+ * @return {Emitter}
+ */ Emitter.prototype.emit = function(event) {
+    this._callbacks = this._callbacks || {};
+    var args = new Array(arguments.length - 1), callbacks = this._callbacks['$' + event];
+    for(var i = 1; i < arguments.length; i++){
+        args[i - 1] = arguments[i];
+    }
+    if (callbacks) {
+        callbacks = callbacks.slice(0);
+        for(var i = 0, len = callbacks.length; i < len; ++i){
+            callbacks[i].apply(this, args);
+        }
+    }
+    return this;
+};
+// alias used for reserved events (protected method)
+Emitter.prototype.emitReserved = Emitter.prototype.emit;
+/**
+ * Return array of callbacks for `event`.
+ *
+ * @param {String} event
+ * @return {Array}
+ * @api public
+ */ Emitter.prototype.listeners = function(event) {
+    this._callbacks = this._callbacks || {};
+    return this._callbacks['$' + event] || [];
+};
+/**
+ * Check if this emitter has `event` handlers.
+ *
+ * @param {String} event
+ * @return {Boolean}
+ * @api public
+ */ Emitter.prototype.hasListeners = function(event) {
+    return !!this.listeners(event).length;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "CookieJar",
+    ()=>CookieJar,
+    "createCookieJar",
+    ()=>createCookieJar,
+    "defaultBinaryType",
+    ()=>defaultBinaryType,
+    "globalThisShim",
+    ()=>globalThisShim,
+    "nextTick",
+    ()=>nextTick,
+    "parse",
+    ()=>parse
+]);
+const nextTick = process.nextTick;
+const globalThisShim = /*TURBOPACK member replacement*/ __turbopack_context__.g;
+const defaultBinaryType = "nodebuffer";
+function createCookieJar() {
+    return new CookieJar();
+}
+function parse(setCookieString) {
+    const parts = setCookieString.split("; ");
+    const i = parts[0].indexOf("=");
+    if (i === -1) {
+        return;
+    }
+    const name = parts[0].substring(0, i).trim();
+    if (!name.length) {
+        return;
+    }
+    let value = parts[0].substring(i + 1).trim();
+    if (value.charCodeAt(0) === 0x22) {
+        // remove double quotes
+        value = value.slice(1, -1);
+    }
+    const cookie = {
+        name,
+        value
+    };
+    for(let j = 1; j < parts.length; j++){
+        const subParts = parts[j].split("=");
+        if (subParts.length !== 2) {
+            continue;
+        }
+        const key = subParts[0].trim();
+        const value = subParts[1].trim();
+        switch(key){
+            case "Expires":
+                cookie.expires = new Date(value);
+                break;
+            case "Max-Age":
+                const expiration = new Date();
+                expiration.setUTCSeconds(expiration.getUTCSeconds() + parseInt(value, 10));
+                cookie.expires = expiration;
+                break;
+            default:
+        }
+    }
+    return cookie;
+}
+class CookieJar {
+    constructor(){
+        this._cookies = new Map();
+    }
+    parseCookies(values) {
+        if (!values) {
+            return;
+        }
+        values.forEach((value)=>{
+            const parsed = parse(value);
+            if (parsed) {
+                this._cookies.set(parsed.name, parsed);
+            }
+        });
+    }
+    get cookies() {
+        const now = Date.now();
+        this._cookies.forEach((cookie, name)=>{
+            var _a;
+            if (((_a = cookie.expires) === null || _a === void 0 ? void 0 : _a.getTime()) < now) {
+                this._cookies.delete(name);
+            }
+        });
+        return this._cookies.entries();
+    }
+    addCookies(xhr) {
+        const cookies = [];
+        for (const [name, cookie] of this.cookies){
+            cookies.push(`${name}=${cookie.value}`);
+        }
+        if (cookies.length) {
+            xhr.setDisableHeaderCheck(true);
+            xhr.setRequestHeader("cookie", cookies.join("; "));
+        }
+    }
+    appendCookies(headers) {
+        for (const [name, cookie] of this.cookies){
+            headers.append("cookie", `${name}=${cookie.value}`);
+        }
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "byteLength",
+    ()=>byteLength,
+    "installTimerFunctions",
+    ()=>installTimerFunctions,
+    "pick",
+    ()=>pick,
+    "randomString",
+    ()=>randomString
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+;
+function pick(obj, ...attr) {
+    return attr.reduce((acc, k)=>{
+        if (obj.hasOwnProperty(k)) {
+            acc[k] = obj[k];
+        }
+        return acc;
+    }, {});
+}
+// Keep a reference to the real timeout functions so they can be used when overridden
+const NATIVE_SET_TIMEOUT = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].setTimeout;
+const NATIVE_CLEAR_TIMEOUT = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].clearTimeout;
+function installTimerFunctions(obj, opts) {
+    if (opts.useNativeTimers) {
+        obj.setTimeoutFn = NATIVE_SET_TIMEOUT.bind(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"]);
+        obj.clearTimeoutFn = NATIVE_CLEAR_TIMEOUT.bind(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"]);
+    } else {
+        obj.setTimeoutFn = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].setTimeout.bind(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"]);
+        obj.clearTimeoutFn = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].clearTimeout.bind(__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"]);
+    }
+}
+// base64 encoded buffers are about 33% bigger (https://en.wikipedia.org/wiki/Base64)
+const BASE64_OVERHEAD = 1.33;
+function byteLength(obj) {
+    if (typeof obj === "string") {
+        return utf8Length(obj);
+    }
+    // arraybuffer or blob
+    return Math.ceil((obj.byteLength || obj.size) * BASE64_OVERHEAD);
+}
+function utf8Length(str) {
+    let c = 0, length = 0;
+    for(let i = 0, l = str.length; i < l; i++){
+        c = str.charCodeAt(i);
+        if (c < 0x80) {
+            length += 1;
+        } else if (c < 0x800) {
+            length += 2;
+        } else if (c < 0xd800 || c >= 0xe000) {
+            length += 3;
+        } else {
+            i++;
+            length += 4;
+        }
+    }
+    return length;
+}
+function randomString() {
+    return Date.now().toString(36).substring(3) + Math.random().toString(36).substring(2, 5);
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseqs.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// imported from https://github.com/galkn/querystring
+/**
+ * Compiles a querystring
+ * Returns string representation of the object
+ *
+ * @param {Object}
+ * @api private
+ */ __turbopack_context__.s([
+    "decode",
+    ()=>decode,
+    "encode",
+    ()=>encode
+]);
+function encode(obj) {
+    let str = '';
+    for(let i in obj){
+        if (obj.hasOwnProperty(i)) {
+            if (str.length) str += '&';
+            str += encodeURIComponent(i) + '=' + encodeURIComponent(obj[i]);
+        }
+    }
+    return str;
+}
+function decode(qs) {
+    let qry = {};
+    let pairs = qs.split('&');
+    for(let i = 0, l = pairs.length; i < l; i++){
+        let pair = pairs[i].split('=');
+        qry[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+    }
+    return qry;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transport.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Transport",
+    ()=>Transport,
+    "TransportError",
+    ()=>TransportError
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$decodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/decodePacket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseqs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseqs.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:transport"); // debug()
+class TransportError extends Error {
+    constructor(reason, description, context){
+        super(reason);
+        this.description = description;
+        this.context = context;
+        this.type = "TransportError";
+    }
+}
+class Transport extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    /**
+     * Transport abstract constructor.
+     *
+     * @param {Object} opts - options
+     * @protected
+     */ constructor(opts){
+        super();
+        this.writable = false;
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["installTimerFunctions"])(this, opts);
+        this.opts = opts;
+        this.query = opts.query;
+        this.socket = opts.socket;
+        this.supportsBinary = !opts.forceBase64;
+    }
+    /**
+     * Emits an error.
+     *
+     * @param {String} reason
+     * @param description
+     * @param context - the error context
+     * @return {Transport} for chaining
+     * @protected
+     */ onError(reason, description, context) {
+        super.emitReserved("error", new TransportError(reason, description, context));
+        return this;
+    }
+    /**
+     * Opens the transport.
+     */ open() {
+        this.readyState = "opening";
+        this.doOpen();
+        return this;
+    }
+    /**
+     * Closes the transport.
+     */ close() {
+        if (this.readyState === "opening" || this.readyState === "open") {
+            this.doClose();
+            this.onClose();
+        }
+        return this;
+    }
+    /**
+     * Sends multiple packets.
+     *
+     * @param {Array} packets
+     */ send(packets) {
+        if (this.readyState === "open") {
+            this.write(packets);
+        } else {
+            // this might happen if the transport was silently closed in the beforeunload event handler
+            debug("transport is not open, discarding packets");
+        }
+    }
+    /**
+     * Called upon open
+     *
+     * @protected
+     */ onOpen() {
+        this.readyState = "open";
+        this.writable = true;
+        super.emitReserved("open");
+    }
+    /**
+     * Called with data.
+     *
+     * @param {String} data
+     * @protected
+     */ onData(data) {
+        const packet = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$decodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["decodePacket"])(data, this.socket.binaryType);
+        this.onPacket(packet);
+    }
+    /**
+     * Called with a decoded packet.
+     *
+     * @protected
+     */ onPacket(packet) {
+        super.emitReserved("packet", packet);
+    }
+    /**
+     * Called upon close.
+     *
+     * @protected
+     */ onClose(details) {
+        this.readyState = "closed";
+        super.emitReserved("close", details);
+    }
+    /**
+     * Pauses the transport, in order not to lose packets during an upgrade.
+     *
+     * @param onPause
+     */ pause(onPause) {}
+    createUri(schema, query = {}) {
+        return schema + "://" + this._hostname() + this._port() + this.opts.path + this._query(query);
+    }
+    _hostname() {
+        const hostname = this.opts.hostname;
+        return hostname.indexOf(":") === -1 ? hostname : "[" + hostname + "]";
+    }
+    _port() {
+        if (this.opts.port && (this.opts.secure && Number(this.opts.port !== 443) || !this.opts.secure && Number(this.opts.port) !== 80)) {
+            return ":" + this.opts.port;
+        } else {
+            return "";
+        }
+    }
+    _query(query) {
+        const encodedQuery = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseqs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["encode"])(query);
+        return encodedQuery.length ? "?" + encodedQuery : "";
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Polling",
+    ()=>Polling
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transport.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:polling"); // debug()
+class Polling extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Transport"] {
+    constructor(){
+        super(...arguments);
+        this._polling = false;
+    }
+    get name() {
+        return "polling";
+    }
+    /**
+     * Opens the socket (triggers polling). We write a PING message to determine
+     * when the transport is open.
+     *
+     * @protected
+     */ doOpen() {
+        this._poll();
+    }
+    /**
+     * Pauses polling.
+     *
+     * @param {Function} onPause - callback upon buffers are flushed and transport is paused
+     * @package
+     */ pause(onPause) {
+        this.readyState = "pausing";
+        const pause = ()=>{
+            debug("paused");
+            this.readyState = "paused";
+            onPause();
+        };
+        if (this._polling || !this.writable) {
+            let total = 0;
+            if (this._polling) {
+                debug("we are currently polling - waiting to pause");
+                total++;
+                this.once("pollComplete", function() {
+                    debug("pre-pause polling complete");
+                    --total || pause();
+                });
+            }
+            if (!this.writable) {
+                debug("we are currently writing - waiting to pause");
+                total++;
+                this.once("drain", function() {
+                    debug("pre-pause writing complete");
+                    --total || pause();
+                });
+            }
+        } else {
+            pause();
+        }
+    }
+    /**
+     * Starts polling cycle.
+     *
+     * @private
+     */ _poll() {
+        debug("polling");
+        this._polling = true;
+        this.doPoll();
+        this.emitReserved("poll");
+    }
+    /**
+     * Overloads onData to detect payloads.
+     *
+     * @protected
+     */ onData(data) {
+        debug("polling got data %s", data);
+        const callback = (packet)=>{
+            // if its the first message we consider the transport open
+            if ("opening" === this.readyState && packet.type === "open") {
+                this.onOpen();
+            }
+            // if its a close packet, we close the ongoing requests
+            if ("close" === packet.type) {
+                this.onClose({
+                    description: "transport closed by the server"
+                });
+                return false;
+            }
+            // otherwise bypass onData and handle the message
+            this.onPacket(packet);
+        };
+        // decode payload
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["decodePayload"])(data, this.socket.binaryType).forEach(callback);
+        // if an event did not trigger closing
+        if ("closed" !== this.readyState) {
+            // if we got data we're not polling
+            this._polling = false;
+            this.emitReserved("pollComplete");
+            if ("open" === this.readyState) {
+                this._poll();
+            } else {
+                debug('ignoring poll - transport state "%s"', this.readyState);
+            }
+        }
+    }
+    /**
+     * For polling, send a close packet.
+     *
+     * @protected
+     */ doClose() {
+        const close = ()=>{
+            debug("writing close packet");
+            this.write([
+                {
+                    type: "close"
+                }
+            ]);
+        };
+        if ("open" === this.readyState) {
+            debug("transport open - closing");
+            close();
+        } else {
+            // in case we're trying to close while
+            // handshaking is in progress (GH-164)
+            debug("transport not open - deferring close");
+            this.once("open", close);
+        }
+    }
+    /**
+     * Writes a packets payload.
+     *
+     * @param {Array} packets - data packets
+     * @protected
+     */ write(packets) {
+        this.writable = false;
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["encodePayload"])(packets, (data)=>{
+            this.doWrite(data, ()=>{
+                this.writable = true;
+                this.emitReserved("drain");
+            });
+        });
+    }
+    /**
+     * Generates uri for connection.
+     *
+     * @private
+     */ uri() {
+        const schema = this.opts.secure ? "https" : "http";
+        const query = this.query || {};
+        // cache busting is forced
+        if (false !== this.opts.timestampRequests) {
+            query[this.opts.timestampParam] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["randomString"])();
+        }
+        if (!this.supportsBinary && !query.sid) {
+            query.b64 = 1;
+        }
+        return this.createUri(schema, query);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/has-cors.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "hasCORS",
+    ()=>hasCORS
+]);
+// imported from https://github.com/component/has-cors
+let value = false;
+try {
+    value = typeof XMLHttpRequest !== 'undefined' && 'withCredentials' in new XMLHttpRequest();
+} catch (err) {
+// if XMLHttp support is disabled in IE then it will throw
+// when trying to create
+}
+const hasCORS = value;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BaseXHR",
+    ()=>BaseXHR,
+    "Request",
+    ()=>Request,
+    "XHR",
+    ()=>XHR
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$has$2d$cors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/has-cors.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:polling"); // debug()
+function empty() {}
+class BaseXHR extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Polling"] {
+    /**
+     * XHR Polling constructor.
+     *
+     * @param {Object} opts
+     * @package
+     */ constructor(opts){
+        super(opts);
+        if (typeof location !== "undefined") {
+            const isSSL = "https:" === location.protocol;
+            let port = location.port;
+            // some user agents have empty `location.port`
+            if (!port) {
+                port = isSSL ? "443" : "80";
+            }
+            this.xd = typeof location !== "undefined" && opts.hostname !== location.hostname || port !== opts.port;
+        }
+    }
+    /**
+     * Sends data.
+     *
+     * @param {String} data to send.
+     * @param {Function} called upon flush.
+     * @private
+     */ doWrite(data, fn) {
+        const req = this.request({
+            method: "POST",
+            data: data
+        });
+        req.on("success", fn);
+        req.on("error", (xhrStatus, context)=>{
+            this.onError("xhr post error", xhrStatus, context);
+        });
+    }
+    /**
+     * Starts a poll cycle.
+     *
+     * @private
+     */ doPoll() {
+        debug("xhr poll");
+        const req = this.request();
+        req.on("data", this.onData.bind(this));
+        req.on("error", (xhrStatus, context)=>{
+            this.onError("xhr poll error", xhrStatus, context);
+        });
+        this.pollXhr = req;
+    }
+}
+class Request extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    /**
+     * Request constructor
+     *
+     * @param {Object} options
+     * @package
+     */ constructor(createRequest, uri, opts){
+        super();
+        this.createRequest = createRequest;
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["installTimerFunctions"])(this, opts);
+        this._opts = opts;
+        this._method = opts.method || "GET";
+        this._uri = uri;
+        this._data = undefined !== opts.data ? opts.data : null;
+        this._create();
+    }
+    /**
+     * Creates the XHR object and sends the request.
+     *
+     * @private
+     */ _create() {
+        var _a;
+        const opts = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["pick"])(this._opts, "agent", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "autoUnref");
+        opts.xdomain = !!this._opts.xd;
+        const xhr = this._xhr = this.createRequest(opts);
+        try {
+            debug("xhr open %s: %s", this._method, this._uri);
+            xhr.open(this._method, this._uri, true);
+            try {
+                if (this._opts.extraHeaders) {
+                    // @ts-ignore
+                    xhr.setDisableHeaderCheck && xhr.setDisableHeaderCheck(true);
+                    for(let i in this._opts.extraHeaders){
+                        if (this._opts.extraHeaders.hasOwnProperty(i)) {
+                            xhr.setRequestHeader(i, this._opts.extraHeaders[i]);
+                        }
+                    }
+                }
+            } catch (e) {}
+            if ("POST" === this._method) {
+                try {
+                    xhr.setRequestHeader("Content-type", "text/plain;charset=UTF-8");
+                } catch (e) {}
+            }
+            try {
+                xhr.setRequestHeader("Accept", "*/*");
+            } catch (e) {}
+            (_a = this._opts.cookieJar) === null || _a === void 0 ? void 0 : _a.addCookies(xhr);
+            // ie6 check
+            if ("withCredentials" in xhr) {
+                xhr.withCredentials = this._opts.withCredentials;
+            }
+            if (this._opts.requestTimeout) {
+                xhr.timeout = this._opts.requestTimeout;
+            }
+            xhr.onreadystatechange = ()=>{
+                var _a;
+                if (xhr.readyState === 3) {
+                    (_a = this._opts.cookieJar) === null || _a === void 0 ? void 0 : _a.parseCookies(// @ts-ignore
+                    xhr.getResponseHeader("set-cookie"));
+                }
+                if (4 !== xhr.readyState) return;
+                if (200 === xhr.status || 1223 === xhr.status) {
+                    this._onLoad();
+                } else {
+                    // make sure the `error` event handler that's user-set
+                    // does not throw in the same tick and gets caught here
+                    this.setTimeoutFn(()=>{
+                        this._onError(typeof xhr.status === "number" ? xhr.status : 0);
+                    }, 0);
+                }
+            };
+            debug("xhr data %s", this._data);
+            xhr.send(this._data);
+        } catch (e) {
+            // Need to defer since .create() is called directly from the constructor
+            // and thus the 'error' event can only be only bound *after* this exception
+            // occurs.  Therefore, also, we cannot throw here at all.
+            this.setTimeoutFn(()=>{
+                this._onError(e);
+            }, 0);
+            return;
+        }
+        if (typeof document !== "undefined") {
+            this._index = Request.requestsCount++;
+            Request.requests[this._index] = this;
+        }
+    }
+    /**
+     * Called upon error.
+     *
+     * @private
+     */ _onError(err) {
+        this.emitReserved("error", err, this._xhr);
+        this._cleanup(true);
+    }
+    /**
+     * Cleans up house.
+     *
+     * @private
+     */ _cleanup(fromError) {
+        if ("undefined" === typeof this._xhr || null === this._xhr) {
+            return;
+        }
+        this._xhr.onreadystatechange = empty;
+        if (fromError) {
+            try {
+                this._xhr.abort();
+            } catch (e) {}
+        }
+        if (typeof document !== "undefined") {
+            delete Request.requests[this._index];
+        }
+        this._xhr = null;
+    }
+    /**
+     * Called upon load.
+     *
+     * @private
+     */ _onLoad() {
+        const data = this._xhr.responseText;
+        if (data !== null) {
+            this.emitReserved("data", data);
+            this.emitReserved("success");
+            this._cleanup();
+        }
+    }
+    /**
+     * Aborts the request.
+     *
+     * @package
+     */ abort() {
+        this._cleanup();
+    }
+}
+Request.requestsCount = 0;
+Request.requests = {};
+/**
+ * Aborts pending requests when unloading the window. This is needed to prevent
+ * memory leaks (e.g. when using IE) and to ensure that no spurious error is
+ * emitted.
+ */ if (typeof document !== "undefined") {
+    // @ts-ignore
+    if (typeof attachEvent === "function") {
+        // @ts-ignore
+        attachEvent("onunload", unloadHandler);
+    } else if (typeof addEventListener === "function") {
+        const terminationEvent = "onpagehide" in __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"] ? "pagehide" : "unload";
+        addEventListener(terminationEvent, unloadHandler, false);
+    }
+}
+function unloadHandler() {
+    for(let i in Request.requests){
+        if (Request.requests.hasOwnProperty(i)) {
+            Request.requests[i].abort();
+        }
+    }
+}
+const hasXHR2 = function() {
+    const xhr = newRequest({
+        xdomain: false
+    });
+    return xhr && xhr.responseType !== null;
+}();
+class XHR extends BaseXHR {
+    constructor(opts){
+        super(opts);
+        const forceBase64 = opts && opts.forceBase64;
+        this.supportsBinary = hasXHR2 && !forceBase64;
+    }
+    request(opts = {}) {
+        Object.assign(opts, {
+            xd: this.xd
+        }, this.opts);
+        return new Request(newRequest, this.uri(), opts);
+    }
+}
+function newRequest(opts) {
+    const xdomain = opts.xdomain;
+    // XMLHttpRequest can be disabled on IE
+    try {
+        if ("undefined" !== typeof XMLHttpRequest && (!xdomain || __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$has$2d$cors$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["hasCORS"])) {
+            return new XMLHttpRequest();
+        }
+    } catch (e) {}
+    if (!xdomain) {
+        try {
+            return new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"][[
+                "Active"
+            ].concat("Object").join("X")]("Microsoft.XMLHTTP");
+        } catch (e) {}
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.node.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "XHR",
+    ()=>XHR
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$xmlhttprequest$2d$ssl$2f$lib$2f$XMLHttpRequest$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/xmlhttprequest-ssl/lib/XMLHttpRequest.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.js [app-ssr] (ecmascript)");
+;
+;
+const XMLHttpRequest = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$xmlhttprequest$2d$ssl$2f$lib$2f$XMLHttpRequest$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__.default || __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$xmlhttprequest$2d$ssl$2f$lib$2f$XMLHttpRequest$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__;
+class XHR extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BaseXHR"] {
+    request(opts = {}) {
+        var _a;
+        Object.assign(opts, {
+            xd: this.xd,
+            cookieJar: (_a = this.socket) === null || _a === void 0 ? void 0 : _a._cookieJar
+        }, this.opts);
+        return new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Request"]((opts)=>new XMLHttpRequest(opts), this.uri(), opts);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "BaseWS",
+    ()=>BaseWS,
+    "WS",
+    ()=>WS
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transport.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$encodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/encodePacket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:websocket"); // debug()
+// detect ReactNative environment
+const isReactNative = typeof navigator !== "undefined" && typeof navigator.product === "string" && navigator.product.toLowerCase() === "reactnative";
+class BaseWS extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Transport"] {
+    get name() {
+        return "websocket";
+    }
+    doOpen() {
+        const uri = this.uri();
+        const protocols = this.opts.protocols;
+        // React Native only supports the 'headers' option, and will print a warning if anything else is passed
+        const opts = isReactNative ? {} : (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["pick"])(this.opts, "agent", "perMessageDeflate", "pfx", "key", "passphrase", "cert", "ca", "ciphers", "rejectUnauthorized", "localAddress", "protocolVersion", "origin", "maxPayload", "family", "checkServerIdentity");
+        if (this.opts.extraHeaders) {
+            opts.headers = this.opts.extraHeaders;
+        }
+        try {
+            this.ws = this.createSocket(uri, protocols, opts);
+        } catch (err) {
+            return this.emitReserved("error", err);
+        }
+        this.ws.binaryType = this.socket.binaryType;
+        this.addEventListeners();
+    }
+    /**
+     * Adds event listeners to the socket
+     *
+     * @private
+     */ addEventListeners() {
+        this.ws.onopen = ()=>{
+            if (this.opts.autoUnref) {
+                this.ws._socket.unref();
+            }
+            this.onOpen();
+        };
+        this.ws.onclose = (closeEvent)=>this.onClose({
+                description: "websocket connection closed",
+                context: closeEvent
+            });
+        this.ws.onmessage = (ev)=>this.onData(ev.data);
+        this.ws.onerror = (e)=>this.onError("websocket error", e);
+    }
+    write(packets) {
+        this.writable = false;
+        // encodePacket efficient as it uses WS framing
+        // no need for encodePayload
+        for(let i = 0; i < packets.length; i++){
+            const packet = packets[i];
+            const lastPacket = i === packets.length - 1;
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$encodePacket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["encodePacket"])(packet, this.supportsBinary, (data)=>{
+                // Sometimes the websocket has already been closed but the browser didn't
+                // have a chance of informing us about it yet, in that case send will
+                // throw an error
+                try {
+                    this.doWrite(packet, data);
+                } catch (e) {
+                    debug("websocket closed before onclose event");
+                }
+                if (lastPacket) {
+                    // fake drain
+                    // defer to next tick to allow Socket to clear writeBuffer
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nextTick"])(()=>{
+                        this.writable = true;
+                        this.emitReserved("drain");
+                    }, this.setTimeoutFn);
+                }
+            });
+        }
+    }
+    doClose() {
+        if (typeof this.ws !== "undefined") {
+            this.ws.onerror = ()=>{};
+            this.ws.close();
+            this.ws = null;
+        }
+    }
+    /**
+     * Generates uri for connection.
+     *
+     * @private
+     */ uri() {
+        const schema = this.opts.secure ? "wss" : "ws";
+        const query = this.query || {};
+        // append timestamp to URI
+        if (this.opts.timestampRequests) {
+            query[this.opts.timestampParam] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["randomString"])();
+        }
+        // communicate binary support capabilities
+        if (!this.supportsBinary) {
+            query.b64 = 1;
+        }
+        return this.createUri(schema, query);
+    }
+}
+const WebSocketCtor = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].WebSocket || __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["globalThisShim"].MozWebSocket;
+class WS extends BaseWS {
+    createSocket(uri, protocols, opts) {
+        return !isReactNative ? protocols ? new WebSocketCtor(uri, protocols) : new WebSocketCtor(uri) : new WebSocketCtor(uri, protocols, opts);
+    }
+    doWrite(_packet, data) {
+        this.ws.send(data);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.node.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "WS",
+    ()=>WS
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$ws$2f$wrapper$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ws/wrapper.mjs [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$ws$2f$lib$2f$websocket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__WebSocket$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/ws/lib/websocket.js [app-ssr] (ecmascript) <export default as WebSocket>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.js [app-ssr] (ecmascript)");
+;
+;
+class WS extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BaseWS"] {
+    createSocket(uri, protocols, opts) {
+        var _a;
+        if ((_a = this.socket) === null || _a === void 0 ? void 0 : _a._cookieJar) {
+            opts.headers = opts.headers || {};
+            opts.headers.cookie = typeof opts.headers.cookie === "string" ? [
+                opts.headers.cookie
+            ] : opts.headers.cookie || [];
+            for (const [name, cookie] of this.socket._cookieJar.cookies){
+                opts.headers.cookie.push(`${name}=${cookie.value}`);
+            }
+        }
+        return new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$ws$2f$lib$2f$websocket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__WebSocket$3e$__["WebSocket"](uri, protocols, opts);
+    }
+    doWrite(packet, data) {
+        const opts = {};
+        if (packet.options) {
+            opts.compress = packet.options.compress;
+        }
+        if (this.opts.perMessageDeflate) {
+            const len = // @ts-ignore
+            "string" === typeof data ? Buffer.byteLength(data) : data.length;
+            if (len < this.opts.perMessageDeflate.threshold) {
+                opts.compress = false;
+            }
+        }
+        this.ws.send(data, opts);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/webtransport.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "WT",
+    ()=>WT
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transport.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:webtransport"); // debug()
+class WT extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Transport"] {
+    get name() {
+        return "webtransport";
+    }
+    doOpen() {
+        try {
+            // @ts-ignore
+            this._transport = new WebTransport(this.createUri("https"), this.opts.transportOptions[this.name]);
+        } catch (err) {
+            return this.emitReserved("error", err);
+        }
+        this._transport.closed.then(()=>{
+            debug("transport closed gracefully");
+            this.onClose();
+        }).catch((err)=>{
+            debug("transport closed due to %s", err);
+            this.onError("webtransport error", err);
+        });
+        // note: we could have used async/await, but that would require some additional polyfills
+        this._transport.ready.then(()=>{
+            this._transport.createBidirectionalStream().then((stream)=>{
+                const decoderStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createPacketDecoderStream"])(Number.MAX_SAFE_INTEGER, this.socket.binaryType);
+                const reader = stream.readable.pipeThrough(decoderStream).getReader();
+                const encoderStream = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["createPacketEncoderStream"])();
+                encoderStream.readable.pipeTo(stream.writable);
+                this._writer = encoderStream.writable.getWriter();
+                const read = ()=>{
+                    reader.read().then(({ done, value })=>{
+                        if (done) {
+                            debug("session is closed");
+                            return;
+                        }
+                        debug("received chunk: %o", value);
+                        this.onPacket(value);
+                        read();
+                    }).catch((err)=>{
+                        debug("an error occurred while reading: %s", err);
+                    });
+                };
+                read();
+                const packet = {
+                    type: "open"
+                };
+                if (this.query.sid) {
+                    packet.data = `{"sid":"${this.query.sid}"}`;
+                }
+                this._writer.write(packet).then(()=>this.onOpen());
+            });
+        });
+    }
+    write(packets) {
+        this.writable = false;
+        for(let i = 0; i < packets.length; i++){
+            const packet = packets[i];
+            const lastPacket = i === packets.length - 1;
+            this._writer.write(packet).then(()=>{
+                if (lastPacket) {
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nextTick"])(()=>{
+                        this.writable = true;
+                        this.emitReserved("drain");
+                    }, this.setTimeoutFn);
+                }
+            });
+        }
+    }
+    doClose() {
+        var _a;
+        (_a = this._transport) === null || _a === void 0 ? void 0 : _a.close();
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "transports",
+    ()=>transports
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$webtransport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/webtransport.js [app-ssr] (ecmascript)");
+;
+;
+;
+const transports = {
+    websocket: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["WS"],
+    webtransport: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$webtransport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["WT"],
+    polling: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["XHR"]
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseuri.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "parse",
+    ()=>parse
+]);
+// imported from https://github.com/galkn/parseuri
+/**
+ * Parses a URI
+ *
+ * Note: we could also have used the built-in URL object, but it isn't supported on all platforms.
+ *
+ * See:
+ * - https://developer.mozilla.org/en-US/docs/Web/API/URL
+ * - https://caniuse.com/url
+ * - https://www.rfc-editor.org/rfc/rfc3986#appendix-B
+ *
+ * History of the parse() method:
+ * - first commit: https://github.com/socketio/socket.io-client/commit/4ee1d5d94b3906a9c052b459f1a818b15f38f91c
+ * - export into its own module: https://github.com/socketio/engine.io-client/commit/de2c561e4564efeb78f1bdb1ba39ef81b2822cb3
+ * - reimport: https://github.com/socketio/engine.io-client/commit/df32277c3f6d622eec5ed09f493cae3f3391d242
+ *
+ * @author Steven Levithan <stevenlevithan.com> (MIT license)
+ * @api private
+ */ const re = /^(?:(?![^:@\/?#]+:[^:@\/]*@)(http|https|ws|wss):\/\/)?((?:(([^:@\/?#]*)(?::([^:@\/?#]*))?)?@)?((?:[a-f0-9]{0,4}:){2,7}[a-f0-9]{0,4}|[^:\/?#]*)(?::(\d*))?)(((\/(?:[^?#](?![^?#\/]*\.[^?#\/.]+(?:[?#]|$)))*\/?)?([^?#\/]*))(?:\?([^#]*))?(?:#(.*))?)/;
+const parts = [
+    'source',
+    'protocol',
+    'authority',
+    'userInfo',
+    'user',
+    'password',
+    'host',
+    'port',
+    'relative',
+    'path',
+    'directory',
+    'file',
+    'query',
+    'anchor'
+];
+function parse(str) {
+    if (str.length > 8000) {
+        throw "URI too long";
+    }
+    const src = str, b = str.indexOf('['), e = str.indexOf(']');
+    if (b != -1 && e != -1) {
+        str = str.substring(0, b) + str.substring(b, e).replace(/:/g, ';') + str.substring(e, str.length);
+    }
+    let m = re.exec(str || ''), uri = {}, i = 14;
+    while(i--){
+        uri[parts[i]] = m[i] || '';
+    }
+    if (b != -1 && e != -1) {
+        uri.source = src;
+        uri.host = uri.host.substring(1, uri.host.length - 1).replace(/;/g, ':');
+        uri.authority = uri.authority.replace('[', '').replace(']', '').replace(/;/g, ':');
+        uri.ipv6uri = true;
+    }
+    uri.pathNames = pathNames(uri, uri['path']);
+    uri.queryKey = queryKey(uri, uri['query']);
+    return uri;
+}
+function pathNames(obj, path) {
+    const regx = /\/{2,9}/g, names = path.replace(regx, "/").split("/");
+    if (path.slice(0, 1) == '/' || path.length === 0) {
+        names.splice(0, 1);
+    }
+    if (path.slice(-1) == '/') {
+        names.splice(names.length - 1, 1);
+    }
+    return names;
+}
+function queryKey(uri, query) {
+    const data = {};
+    query.replace(/(?:^|&)([^&=]*)=?([^&]*)/g, function($0, $1, $2) {
+        if ($1) {
+            data[$1] = $2;
+        }
+    });
+    return data;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Socket",
+    ()=>Socket,
+    "SocketWithUpgrade",
+    ()=>SocketWithUpgrade,
+    "SocketWithoutUpgrade",
+    ()=>SocketWithoutUpgrade
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseqs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseqs.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseuri.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-parser/build/esm/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("engine.io-client:socket"); // debug()
+const withEventListeners = typeof addEventListener === "function" && typeof removeEventListener === "function";
+const OFFLINE_EVENT_LISTENERS = [];
+if (withEventListeners) {
+    // within a ServiceWorker, any event handler for the 'offline' event must be added on the initial evaluation of the
+    // script, so we create one single event listener here which will forward the event to the socket instances
+    addEventListener("offline", ()=>{
+        debug("closing %d connection(s) because the network was lost", OFFLINE_EVENT_LISTENERS.length);
+        OFFLINE_EVENT_LISTENERS.forEach((listener)=>listener());
+    }, false);
+}
+class SocketWithoutUpgrade extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    /**
+     * Socket constructor.
+     *
+     * @param {String|Object} uri - uri or options
+     * @param {Object} opts - options
+     */ constructor(uri, opts){
+        super();
+        this.binaryType = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["defaultBinaryType"];
+        this.writeBuffer = [];
+        this._prevBufferLen = 0;
+        this._pingInterval = -1;
+        this._pingTimeout = -1;
+        this._maxPayload = -1;
+        /**
+         * The expiration timestamp of the {@link _pingTimeoutTimer} object is tracked, in case the timer is throttled and the
+         * callback is not fired on time. This can happen for example when a laptop is suspended or when a phone is locked.
+         */ this._pingTimeoutTime = Infinity;
+        if (uri && "object" === typeof uri) {
+            opts = uri;
+            uri = null;
+        }
+        if (uri) {
+            const parsedUri = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["parse"])(uri);
+            opts.hostname = parsedUri.host;
+            opts.secure = parsedUri.protocol === "https" || parsedUri.protocol === "wss";
+            opts.port = parsedUri.port;
+            if (parsedUri.query) opts.query = parsedUri.query;
+        } else if (opts.host) {
+            opts.hostname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["parse"])(opts.host).host;
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["installTimerFunctions"])(this, opts);
+        this.secure = null != opts.secure ? opts.secure : typeof location !== "undefined" && "https:" === location.protocol;
+        if (opts.hostname && !opts.port) {
+            // if no port is specified manually, use the protocol default
+            opts.port = this.secure ? "443" : "80";
+        }
+        this.hostname = opts.hostname || (typeof location !== "undefined" ? location.hostname : "localhost");
+        this.port = opts.port || (typeof location !== "undefined" && location.port ? location.port : this.secure ? "443" : "80");
+        this.transports = [];
+        this._transportsByName = {};
+        opts.transports.forEach((t)=>{
+            const transportName = t.prototype.name;
+            this.transports.push(transportName);
+            this._transportsByName[transportName] = t;
+        });
+        this.opts = Object.assign({
+            path: "/engine.io",
+            agent: false,
+            withCredentials: false,
+            upgrade: true,
+            timestampParam: "t",
+            rememberUpgrade: false,
+            addTrailingSlash: true,
+            rejectUnauthorized: true,
+            perMessageDeflate: {
+                threshold: 1024
+            },
+            transportOptions: {},
+            closeOnBeforeunload: false
+        }, opts);
+        this.opts.path = this.opts.path.replace(/\/$/, "") + (this.opts.addTrailingSlash ? "/" : "");
+        if (typeof this.opts.query === "string") {
+            this.opts.query = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseqs$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["decode"])(this.opts.query);
+        }
+        if (withEventListeners) {
+            if (this.opts.closeOnBeforeunload) {
+                // Firefox closes the connection when the "beforeunload" event is emitted but not Chrome. This event listener
+                // ensures every browser behaves the same (no "disconnect" event at the Socket.IO level when the page is
+                // closed/reloaded)
+                this._beforeunloadEventListener = ()=>{
+                    if (this.transport) {
+                        // silently close the transport
+                        this.transport.removeAllListeners();
+                        this.transport.close();
+                    }
+                };
+                addEventListener("beforeunload", this._beforeunloadEventListener, false);
+            }
+            if (this.hostname !== "localhost") {
+                debug("adding listener for the 'offline' event");
+                this._offlineEventListener = ()=>{
+                    this._onClose("transport close", {
+                        description: "network connection lost"
+                    });
+                };
+                OFFLINE_EVENT_LISTENERS.push(this._offlineEventListener);
+            }
+        }
+        if (this.opts.withCredentials) {
+            this._cookieJar = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["createCookieJar"])();
+        }
+        this._open();
+    }
+    /**
+     * Creates transport of the given type.
+     *
+     * @param {String} name - transport name
+     * @return {Transport}
+     * @private
+     */ createTransport(name) {
+        debug('creating transport "%s"', name);
+        const query = Object.assign({}, this.opts.query);
+        // append engine.io protocol identifier
+        query.EIO = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["protocol"];
+        // transport name
+        query.transport = name;
+        // session id if we already have one
+        if (this.id) query.sid = this.id;
+        const opts = Object.assign({}, this.opts, {
+            query,
+            socket: this,
+            hostname: this.hostname,
+            secure: this.secure,
+            port: this.port
+        }, this.opts.transportOptions[name]);
+        debug("options: %j", opts);
+        return new this._transportsByName[name](opts);
+    }
+    /**
+     * Initializes transport to use and starts probe.
+     *
+     * @private
+     */ _open() {
+        if (this.transports.length === 0) {
+            // Emit error on next tick so it can be listened to
+            this.setTimeoutFn(()=>{
+                this.emitReserved("error", "No transports available");
+            }, 0);
+            return;
+        }
+        const transportName = this.opts.rememberUpgrade && SocketWithoutUpgrade.priorWebsocketSuccess && this.transports.indexOf("websocket") !== -1 ? "websocket" : this.transports[0];
+        this.readyState = "opening";
+        const transport = this.createTransport(transportName);
+        transport.open();
+        this.setTransport(transport);
+    }
+    /**
+     * Sets the current transport. Disables the existing one (if any).
+     *
+     * @private
+     */ setTransport(transport) {
+        debug("setting transport %s", transport.name);
+        if (this.transport) {
+            debug("clearing existing transport %s", this.transport.name);
+            this.transport.removeAllListeners();
+        }
+        // set up transport
+        this.transport = transport;
+        // set up transport listeners
+        transport.on("drain", this._onDrain.bind(this)).on("packet", this._onPacket.bind(this)).on("error", this._onError.bind(this)).on("close", (reason)=>this._onClose("transport close", reason));
+    }
+    /**
+     * Called when connection is deemed open.
+     *
+     * @private
+     */ onOpen() {
+        debug("socket open");
+        this.readyState = "open";
+        SocketWithoutUpgrade.priorWebsocketSuccess = "websocket" === this.transport.name;
+        this.emitReserved("open");
+        this.flush();
+    }
+    /**
+     * Handles a packet.
+     *
+     * @private
+     */ _onPacket(packet) {
+        if ("opening" === this.readyState || "open" === this.readyState || "closing" === this.readyState) {
+            debug('socket receive: type "%s", data "%s"', packet.type, packet.data);
+            this.emitReserved("packet", packet);
+            // Socket is live - any packet counts
+            this.emitReserved("heartbeat");
+            switch(packet.type){
+                case "open":
+                    this.onHandshake(JSON.parse(packet.data));
+                    break;
+                case "ping":
+                    this._sendPacket("pong");
+                    this.emitReserved("ping");
+                    this.emitReserved("pong");
+                    this._resetPingTimeout();
+                    break;
+                case "error":
+                    const err = new Error("server error");
+                    // @ts-ignore
+                    err.code = packet.data;
+                    this._onError(err);
+                    break;
+                case "message":
+                    this.emitReserved("data", packet.data);
+                    this.emitReserved("message", packet.data);
+                    break;
+            }
+        } else {
+            debug('packet received with socket readyState "%s"', this.readyState);
+        }
+    }
+    /**
+     * Called upon handshake completion.
+     *
+     * @param {Object} data - handshake obj
+     * @private
+     */ onHandshake(data) {
+        this.emitReserved("handshake", data);
+        this.id = data.sid;
+        this.transport.query.sid = data.sid;
+        this._pingInterval = data.pingInterval;
+        this._pingTimeout = data.pingTimeout;
+        this._maxPayload = data.maxPayload;
+        this.onOpen();
+        // In case open handler closes socket
+        if ("closed" === this.readyState) return;
+        this._resetPingTimeout();
+    }
+    /**
+     * Sets and resets ping timeout timer based on server pings.
+     *
+     * @private
+     */ _resetPingTimeout() {
+        this.clearTimeoutFn(this._pingTimeoutTimer);
+        const delay = this._pingInterval + this._pingTimeout;
+        this._pingTimeoutTime = Date.now() + delay;
+        this._pingTimeoutTimer = this.setTimeoutFn(()=>{
+            this._onClose("ping timeout");
+        }, delay);
+        if (this.opts.autoUnref) {
+            this._pingTimeoutTimer.unref();
+        }
+    }
+    /**
+     * Called on `drain` event
+     *
+     * @private
+     */ _onDrain() {
+        this.writeBuffer.splice(0, this._prevBufferLen);
+        // setting prevBufferLen = 0 is very important
+        // for example, when upgrading, upgrade packet is sent over,
+        // and a nonzero prevBufferLen could cause problems on `drain`
+        this._prevBufferLen = 0;
+        if (0 === this.writeBuffer.length) {
+            this.emitReserved("drain");
+        } else {
+            this.flush();
+        }
+    }
+    /**
+     * Flush write buffers.
+     *
+     * @private
+     */ flush() {
+        if ("closed" !== this.readyState && this.transport.writable && !this.upgrading && this.writeBuffer.length) {
+            const packets = this._getWritablePackets();
+            debug("flushing %d packets in socket", packets.length);
+            this.transport.send(packets);
+            // keep track of current length of writeBuffer
+            // splice writeBuffer and callbackBuffer on `drain`
+            this._prevBufferLen = packets.length;
+            this.emitReserved("flush");
+        }
+    }
+    /**
+     * Ensure the encoded size of the writeBuffer is below the maxPayload value sent by the server (only for HTTP
+     * long-polling)
+     *
+     * @private
+     */ _getWritablePackets() {
+        const shouldCheckPayloadSize = this._maxPayload && this.transport.name === "polling" && this.writeBuffer.length > 1;
+        if (!shouldCheckPayloadSize) {
+            return this.writeBuffer;
+        }
+        let payloadSize = 1; // first packet type
+        for(let i = 0; i < this.writeBuffer.length; i++){
+            const data = this.writeBuffer[i].data;
+            if (data) {
+                payloadSize += (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["byteLength"])(data);
+            }
+            if (i > 0 && payloadSize > this._maxPayload) {
+                debug("only send %d out of %d packets", i, this.writeBuffer.length);
+                return this.writeBuffer.slice(0, i);
+            }
+            payloadSize += 2; // separator + packet type
+        }
+        debug("payload size is %d (max: %d)", payloadSize, this._maxPayload);
+        return this.writeBuffer;
+    }
+    /**
+     * Checks whether the heartbeat timer has expired but the socket has not yet been notified.
+     *
+     * Note: this method is private for now because it does not really fit the WebSocket API, but if we put it in the
+     * `write()` method then the message would not be buffered by the Socket.IO client.
+     *
+     * @return {boolean}
+     * @private
+     */ /* private */ _hasPingExpired() {
+        if (!this._pingTimeoutTime) return true;
+        const hasExpired = Date.now() > this._pingTimeoutTime;
+        if (hasExpired) {
+            debug("throttled timer detected, scheduling connection close");
+            this._pingTimeoutTime = 0;
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nextTick"])(()=>{
+                this._onClose("ping timeout");
+            }, this.setTimeoutFn);
+        }
+        return hasExpired;
+    }
+    /**
+     * Sends a message.
+     *
+     * @param {String} msg - message.
+     * @param {Object} options.
+     * @param {Function} fn - callback function.
+     * @return {Socket} for chaining.
+     */ write(msg, options, fn) {
+        this._sendPacket("message", msg, options, fn);
+        return this;
+    }
+    /**
+     * Sends a message. Alias of {@link Socket#write}.
+     *
+     * @param {String} msg - message.
+     * @param {Object} options.
+     * @param {Function} fn - callback function.
+     * @return {Socket} for chaining.
+     */ send(msg, options, fn) {
+        this._sendPacket("message", msg, options, fn);
+        return this;
+    }
+    /**
+     * Sends a packet.
+     *
+     * @param {String} type: packet type.
+     * @param {String} data.
+     * @param {Object} options.
+     * @param {Function} fn - callback function.
+     * @private
+     */ _sendPacket(type, data, options, fn) {
+        if ("function" === typeof data) {
+            fn = data;
+            data = undefined;
+        }
+        if ("function" === typeof options) {
+            fn = options;
+            options = null;
+        }
+        if ("closing" === this.readyState || "closed" === this.readyState) {
+            return;
+        }
+        options = options || {};
+        options.compress = false !== options.compress;
+        const packet = {
+            type: type,
+            data: data,
+            options: options
+        };
+        this.emitReserved("packetCreate", packet);
+        this.writeBuffer.push(packet);
+        if (fn) this.once("flush", fn);
+        this.flush();
+    }
+    /**
+     * Closes the connection.
+     */ close() {
+        const close = ()=>{
+            this._onClose("forced close");
+            debug("socket closing - telling transport to close");
+            this.transport.close();
+        };
+        const cleanupAndClose = ()=>{
+            this.off("upgrade", cleanupAndClose);
+            this.off("upgradeError", cleanupAndClose);
+            close();
+        };
+        const waitForUpgrade = ()=>{
+            // wait for upgrade to finish since we can't send packets while pausing a transport
+            this.once("upgrade", cleanupAndClose);
+            this.once("upgradeError", cleanupAndClose);
+        };
+        if ("opening" === this.readyState || "open" === this.readyState) {
+            this.readyState = "closing";
+            if (this.writeBuffer.length) {
+                this.once("drain", ()=>{
+                    if (this.upgrading) {
+                        waitForUpgrade();
+                    } else {
+                        close();
+                    }
+                });
+            } else if (this.upgrading) {
+                waitForUpgrade();
+            } else {
+                close();
+            }
+        }
+        return this;
+    }
+    /**
+     * Called upon transport error
+     *
+     * @private
+     */ _onError(err) {
+        debug("socket error %j", err);
+        SocketWithoutUpgrade.priorWebsocketSuccess = false;
+        if (this.opts.tryAllTransports && this.transports.length > 1 && this.readyState === "opening") {
+            debug("trying next transport");
+            this.transports.shift();
+            return this._open();
+        }
+        this.emitReserved("error", err);
+        this._onClose("transport error", err);
+    }
+    /**
+     * Called upon transport close.
+     *
+     * @private
+     */ _onClose(reason, description) {
+        if ("opening" === this.readyState || "open" === this.readyState || "closing" === this.readyState) {
+            debug('socket close with reason: "%s"', reason);
+            // clear timers
+            this.clearTimeoutFn(this._pingTimeoutTimer);
+            // stop event from firing again for transport
+            this.transport.removeAllListeners("close");
+            // ensure transport won't stay open
+            this.transport.close();
+            // ignore further transport communication
+            this.transport.removeAllListeners();
+            if (withEventListeners) {
+                if (this._beforeunloadEventListener) {
+                    removeEventListener("beforeunload", this._beforeunloadEventListener, false);
+                }
+                if (this._offlineEventListener) {
+                    const i = OFFLINE_EVENT_LISTENERS.indexOf(this._offlineEventListener);
+                    if (i !== -1) {
+                        debug("removing listener for the 'offline' event");
+                        OFFLINE_EVENT_LISTENERS.splice(i, 1);
+                    }
+                }
+            }
+            // set ready state
+            this.readyState = "closed";
+            // clear session id
+            this.id = null;
+            // emit close event
+            this.emitReserved("close", reason, description);
+            // clean buffers after, so users can still
+            // grab the buffers on `close` event
+            this.writeBuffer = [];
+            this._prevBufferLen = 0;
+        }
+    }
+}
+SocketWithoutUpgrade.protocol = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$parser$2f$build$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["protocol"];
+class SocketWithUpgrade extends SocketWithoutUpgrade {
+    constructor(){
+        super(...arguments);
+        this._upgrades = [];
+    }
+    onOpen() {
+        super.onOpen();
+        if ("open" === this.readyState && this.opts.upgrade) {
+            debug("starting upgrade probes");
+            for(let i = 0; i < this._upgrades.length; i++){
+                this._probe(this._upgrades[i]);
+            }
+        }
+    }
+    /**
+     * Probes a transport.
+     *
+     * @param {String} name - transport name
+     * @private
+     */ _probe(name) {
+        debug('probing transport "%s"', name);
+        let transport = this.createTransport(name);
+        let failed = false;
+        SocketWithoutUpgrade.priorWebsocketSuccess = false;
+        const onTransportOpen = ()=>{
+            if (failed) return;
+            debug('probe transport "%s" opened', name);
+            transport.send([
+                {
+                    type: "ping",
+                    data: "probe"
+                }
+            ]);
+            transport.once("packet", (msg)=>{
+                if (failed) return;
+                if ("pong" === msg.type && "probe" === msg.data) {
+                    debug('probe transport "%s" pong', name);
+                    this.upgrading = true;
+                    this.emitReserved("upgrading", transport);
+                    if (!transport) return;
+                    SocketWithoutUpgrade.priorWebsocketSuccess = "websocket" === transport.name;
+                    debug('pausing current transport "%s"', this.transport.name);
+                    this.transport.pause(()=>{
+                        if (failed) return;
+                        if ("closed" === this.readyState) return;
+                        debug("changing transport and sending upgrade packet");
+                        cleanup();
+                        this.setTransport(transport);
+                        transport.send([
+                            {
+                                type: "upgrade"
+                            }
+                        ]);
+                        this.emitReserved("upgrade", transport);
+                        transport = null;
+                        this.upgrading = false;
+                        this.flush();
+                    });
+                } else {
+                    debug('probe transport "%s" failed', name);
+                    const err = new Error("probe error");
+                    // @ts-ignore
+                    err.transport = transport.name;
+                    this.emitReserved("upgradeError", err);
+                }
+            });
+        };
+        function freezeTransport() {
+            if (failed) return;
+            // Any callback called by transport should be ignored since now
+            failed = true;
+            cleanup();
+            transport.close();
+            transport = null;
+        }
+        // Handle any error that happens while probing
+        const onerror = (err)=>{
+            const error = new Error("probe error: " + err);
+            // @ts-ignore
+            error.transport = transport.name;
+            freezeTransport();
+            debug('probe transport "%s" failed because of error: %s', name, err);
+            this.emitReserved("upgradeError", error);
+        };
+        function onTransportClose() {
+            onerror("transport closed");
+        }
+        // When the socket is closed while we're probing
+        function onclose() {
+            onerror("socket closed");
+        }
+        // When the socket is upgraded while we're probing
+        function onupgrade(to) {
+            if (transport && to.name !== transport.name) {
+                debug('"%s" works - aborting "%s"', to.name, transport.name);
+                freezeTransport();
+            }
+        }
+        // Remove all listeners on the transport and on self
+        const cleanup = ()=>{
+            transport.removeListener("open", onTransportOpen);
+            transport.removeListener("error", onerror);
+            transport.removeListener("close", onTransportClose);
+            this.off("close", onclose);
+            this.off("upgrading", onupgrade);
+        };
+        transport.once("open", onTransportOpen);
+        transport.once("error", onerror);
+        transport.once("close", onTransportClose);
+        this.once("close", onclose);
+        this.once("upgrading", onupgrade);
+        if (this._upgrades.indexOf("webtransport") !== -1 && name !== "webtransport") {
+            // favor WebTransport
+            this.setTimeoutFn(()=>{
+                if (!failed) {
+                    transport.open();
+                }
+            }, 200);
+        } else {
+            transport.open();
+        }
+    }
+    onHandshake(data) {
+        this._upgrades = this._filterUpgrades(data.upgrades);
+        super.onHandshake(data);
+    }
+    /**
+     * Filters upgrades, returning only those matching client transports.
+     *
+     * @param {Array} upgrades - server upgrades
+     * @private
+     */ _filterUpgrades(upgrades) {
+        const filteredUpgrades = [];
+        for(let i = 0; i < upgrades.length; i++){
+            if (~this.transports.indexOf(upgrades[i])) filteredUpgrades.push(upgrades[i]);
+        }
+        return filteredUpgrades;
+    }
+}
+class Socket extends SocketWithUpgrade {
+    constructor(uri, opts = {}){
+        const o = typeof uri === "object" ? uri : opts;
+        if (!o.transports || o.transports && typeof o.transports[0] === "string") {
+            o.transports = (o.transports || [
+                "polling",
+                "websocket",
+                "webtransport"
+            ]).map((transportName)=>__TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["transports"][transportName]).filter((t)=>!!t);
+        }
+        super(uri, o);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-fetch.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Fetch",
+    ()=>Fetch
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling.js [app-ssr] (ecmascript)");
+;
+class Fetch extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Polling"] {
+    doPoll() {
+        this._fetch().then((res)=>{
+            if (!res.ok) {
+                return this.onError("fetch read error", res.status, res);
+            }
+            res.text().then((data)=>this.onData(data));
+        }).catch((err)=>{
+            this.onError("fetch read error", err);
+        });
+    }
+    doWrite(data, callback) {
+        this._fetch(data).then((res)=>{
+            if (!res.ok) {
+                return this.onError("fetch write error", res.status, res);
+            }
+            callback();
+        }).catch((err)=>{
+            this.onError("fetch write error", err);
+        });
+    }
+    _fetch(data) {
+        var _a;
+        const isPost = data !== undefined;
+        const headers = new Headers(this.opts.extraHeaders);
+        if (isPost) {
+            headers.set("content-type", "text/plain;charset=UTF-8");
+        }
+        (_a = this.socket._cookieJar) === null || _a === void 0 ? void 0 : _a.appendCookies(headers);
+        return fetch(this.uri(), {
+            method: isPost ? "POST" : "GET",
+            body: isPost ? data : null,
+            headers,
+            credentials: this.opts.withCredentials ? "include" : "omit"
+        }).then((res)=>{
+            var _a;
+            // @ts-ignore getSetCookie() was added in Node.js v19.7.0
+            (_a = this.socket._cookieJar) === null || _a === void 0 ? void 0 : _a.parseCookies(res.headers.getSetCookie());
+            return res;
+        });
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "protocol",
+    ()=>protocol
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transport.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseuri.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$fetch$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-fetch.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$polling$2d$xhr$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/polling-xhr.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$websocket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/websocket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$transports$2f$webtransport$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/transports/webtransport.js [app-ssr] (ecmascript)");
+;
+;
+;
+const protocol = __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Socket"].protocol;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/url.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "url",
+    ()=>url
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/contrib/parseuri.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("socket.io-client:url"); // debug()
+function url(uri, path = "", loc) {
+    let obj = uri;
+    // default to window.location
+    loc = loc || typeof location !== "undefined" && location;
+    if (null == uri) uri = loc.protocol + "//" + loc.host;
+    // relative path support
+    if (typeof uri === "string") {
+        if ("/" === uri.charAt(0)) {
+            if ("/" === uri.charAt(1)) {
+                uri = loc.protocol + uri;
+            } else {
+                uri = loc.host + uri;
+            }
+        }
+        if (!/^(https?|wss?):\/\//.test(uri)) {
+            debug("protocol-less url %s", uri);
+            if ("undefined" !== typeof loc) {
+                uri = loc.protocol + "//" + uri;
+            } else {
+                uri = "https://" + uri;
+            }
+        }
+        // parse
+        debug("parse %s", uri);
+        obj = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$parseuri$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["parse"])(uri);
+    }
+    // make sure we treat `localhost:80` and `localhost` equally
+    if (!obj.port) {
+        if (/^(http|ws)$/.test(obj.protocol)) {
+            obj.port = "80";
+        } else if (/^(http|ws)s$/.test(obj.protocol)) {
+            obj.port = "443";
+        }
+    }
+    obj.path = obj.path || "/";
+    const ipv6 = obj.host.indexOf(":") !== -1;
+    const host = ipv6 ? "[" + obj.host + "]" : obj.host;
+    // define unique id
+    obj.id = obj.protocol + "://" + host + ":" + obj.port + path;
+    // define href
+    obj.href = obj.protocol + "://" + host + (loc && loc.port === obj.port ? "" : ":" + obj.port);
+    return obj;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/on.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "on",
+    ()=>on
+]);
+function on(obj, ev, fn) {
+    obj.on(ev, fn);
+    return function subDestroy() {
+        obj.off(ev, fn);
+    };
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Socket",
+    ()=>Socket
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/on.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("socket.io-client:socket"); // debug()
+/**
+ * Internal events.
+ * These events can't be emitted by the user.
+ */ const RESERVED_EVENTS = Object.freeze({
+    connect: 1,
+    connect_error: 1,
+    disconnect: 1,
+    disconnecting: 1,
+    // EventEmitter reserved events: https://nodejs.org/api/events.html#events_event_newlistener
+    newListener: 1,
+    removeListener: 1
+});
+class Socket extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    /**
+     * `Socket` constructor.
+     */ constructor(io, nsp, opts){
+        super();
+        /**
+         * Whether the socket is currently connected to the server.
+         *
+         * @example
+         * const socket = io();
+         *
+         * socket.on("connect", () => {
+         *   console.log(socket.connected); // true
+         * });
+         *
+         * socket.on("disconnect", () => {
+         *   console.log(socket.connected); // false
+         * });
+         */ this.connected = false;
+        /**
+         * Whether the connection state was recovered after a temporary disconnection. In that case, any missed packets will
+         * be transmitted by the server.
+         */ this.recovered = false;
+        /**
+         * Buffer for packets received before the CONNECT packet
+         */ this.receiveBuffer = [];
+        /**
+         * Buffer for packets that will be sent once the socket is connected
+         */ this.sendBuffer = [];
+        /**
+         * The queue of packets to be sent with retry in case of failure.
+         *
+         * Packets are sent one by one, each waiting for the server acknowledgement, in order to guarantee the delivery order.
+         * @private
+         */ this._queue = [];
+        /**
+         * A sequence to generate the ID of the {@link QueuedPacket}.
+         * @private
+         */ this._queueSeq = 0;
+        this.ids = 0;
+        /**
+         * A map containing acknowledgement handlers.
+         *
+         * The `withError` attribute is used to differentiate handlers that accept an error as first argument:
+         *
+         * - `socket.emit("test", (err, value) => { ... })` with `ackTimeout` option
+         * - `socket.timeout(5000).emit("test", (err, value) => { ... })`
+         * - `const value = await socket.emitWithAck("test")`
+         *
+         * From those that don't:
+         *
+         * - `socket.emit("test", (value) => { ... });`
+         *
+         * In the first case, the handlers will be called with an error when:
+         *
+         * - the timeout is reached
+         * - the socket gets disconnected
+         *
+         * In the second case, the handlers will be simply discarded upon disconnection, since the client will never receive
+         * an acknowledgement from the server.
+         *
+         * @private
+         */ this.acks = {};
+        this.flags = {};
+        this.io = io;
+        this.nsp = nsp;
+        if (opts && opts.auth) {
+            this.auth = opts.auth;
+        }
+        this._opts = Object.assign({}, opts);
+        if (this.io._autoConnect) this.open();
+    }
+    /**
+     * Whether the socket is currently disconnected
+     *
+     * @example
+     * const socket = io();
+     *
+     * socket.on("connect", () => {
+     *   console.log(socket.disconnected); // false
+     * });
+     *
+     * socket.on("disconnect", () => {
+     *   console.log(socket.disconnected); // true
+     * });
+     */ get disconnected() {
+        return !this.connected;
+    }
+    /**
+     * Subscribe to open, close and packet events
+     *
+     * @private
+     */ subEvents() {
+        if (this.subs) return;
+        const io = this.io;
+        this.subs = [
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(io, "open", this.onopen.bind(this)),
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(io, "packet", this.onpacket.bind(this)),
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(io, "error", this.onerror.bind(this)),
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(io, "close", this.onclose.bind(this))
+        ];
+    }
+    /**
+     * Whether the Socket will try to reconnect when its Manager connects or reconnects.
+     *
+     * @example
+     * const socket = io();
+     *
+     * console.log(socket.active); // true
+     *
+     * socket.on("disconnect", (reason) => {
+     *   if (reason === "io server disconnect") {
+     *     // the disconnection was initiated by the server, you need to manually reconnect
+     *     console.log(socket.active); // false
+     *   }
+     *   // else the socket will automatically try to reconnect
+     *   console.log(socket.active); // true
+     * });
+     */ get active() {
+        return !!this.subs;
+    }
+    /**
+     * "Opens" the socket.
+     *
+     * @example
+     * const socket = io({
+     *   autoConnect: false
+     * });
+     *
+     * socket.connect();
+     */ connect() {
+        if (this.connected) return this;
+        this.subEvents();
+        if (!this.io["_reconnecting"]) this.io.open(); // ensure open
+        if ("open" === this.io._readyState) this.onopen();
+        return this;
+    }
+    /**
+     * Alias for {@link connect()}.
+     */ open() {
+        return this.connect();
+    }
+    /**
+     * Sends a `message` event.
+     *
+     * This method mimics the WebSocket.send() method.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send
+     *
+     * @example
+     * socket.send("hello");
+     *
+     * // this is equivalent to
+     * socket.emit("message", "hello");
+     *
+     * @return self
+     */ send(...args) {
+        args.unshift("message");
+        this.emit.apply(this, args);
+        return this;
+    }
+    /**
+     * Override `emit`.
+     * If the event is in `events`, it's emitted normally.
+     *
+     * @example
+     * socket.emit("hello", "world");
+     *
+     * // all serializable datastructures are supported (no need to call JSON.stringify)
+     * socket.emit("hello", 1, "2", { 3: ["4"], 5: Uint8Array.from([6]) });
+     *
+     * // with an acknowledgement from the server
+     * socket.emit("hello", "world", (val) => {
+     *   // ...
+     * });
+     *
+     * @return self
+     */ emit(ev, ...args) {
+        var _a, _b, _c;
+        if (RESERVED_EVENTS.hasOwnProperty(ev)) {
+            throw new Error('"' + ev.toString() + '" is a reserved event name');
+        }
+        args.unshift(ev);
+        if (this._opts.retries && !this.flags.fromQueue && !this.flags.volatile) {
+            this._addToQueue(args);
+            return this;
+        }
+        const packet = {
+            type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].EVENT,
+            data: args
+        };
+        packet.options = {};
+        packet.options.compress = this.flags.compress !== false;
+        // event ack callback
+        if ("function" === typeof args[args.length - 1]) {
+            const id = this.ids++;
+            debug("emitting packet with ack id %d", id);
+            const ack = args.pop();
+            this._registerAckCallback(id, ack);
+            packet.id = id;
+        }
+        const isTransportWritable = (_b = (_a = this.io.engine) === null || _a === void 0 ? void 0 : _a.transport) === null || _b === void 0 ? void 0 : _b.writable;
+        const isConnected = this.connected && !((_c = this.io.engine) === null || _c === void 0 ? void 0 : _c._hasPingExpired());
+        const discardPacket = this.flags.volatile && !isTransportWritable;
+        if (discardPacket) {
+            debug("discard packet as the transport is not currently writable");
+        } else if (isConnected) {
+            this.notifyOutgoingListeners(packet);
+            this.packet(packet);
+        } else {
+            this.sendBuffer.push(packet);
+        }
+        this.flags = {};
+        return this;
+    }
+    /**
+     * @private
+     */ _registerAckCallback(id, ack) {
+        var _a;
+        const timeout = (_a = this.flags.timeout) !== null && _a !== void 0 ? _a : this._opts.ackTimeout;
+        if (timeout === undefined) {
+            this.acks[id] = ack;
+            return;
+        }
+        // @ts-ignore
+        const timer = this.io.setTimeoutFn(()=>{
+            delete this.acks[id];
+            for(let i = 0; i < this.sendBuffer.length; i++){
+                if (this.sendBuffer[i].id === id) {
+                    debug("removing packet with ack id %d from the buffer", id);
+                    this.sendBuffer.splice(i, 1);
+                }
+            }
+            debug("event with ack id %d has timed out after %d ms", id, timeout);
+            ack.call(this, new Error("operation has timed out"));
+        }, timeout);
+        const fn = (...args)=>{
+            // @ts-ignore
+            this.io.clearTimeoutFn(timer);
+            ack.apply(this, args);
+        };
+        fn.withError = true;
+        this.acks[id] = fn;
+    }
+    /**
+     * Emits an event and waits for an acknowledgement
+     *
+     * @example
+     * // without timeout
+     * const response = await socket.emitWithAck("hello", "world");
+     *
+     * // with a specific timeout
+     * try {
+     *   const response = await socket.timeout(1000).emitWithAck("hello", "world");
+     * } catch (err) {
+     *   // the server did not acknowledge the event in the given delay
+     * }
+     *
+     * @return a Promise that will be fulfilled when the server acknowledges the event
+     */ emitWithAck(ev, ...args) {
+        return new Promise((resolve, reject)=>{
+            const fn = (arg1, arg2)=>{
+                return arg1 ? reject(arg1) : resolve(arg2);
+            };
+            fn.withError = true;
+            args.push(fn);
+            this.emit(ev, ...args);
+        });
+    }
+    /**
+     * Add the packet to the queue.
+     * @param args
+     * @private
+     */ _addToQueue(args) {
+        let ack;
+        if (typeof args[args.length - 1] === "function") {
+            ack = args.pop();
+        }
+        const packet = {
+            id: this._queueSeq++,
+            tryCount: 0,
+            pending: false,
+            args,
+            flags: Object.assign({
+                fromQueue: true
+            }, this.flags)
+        };
+        args.push((err, ...responseArgs)=>{
+            if (packet !== this._queue[0]) {
+                // the packet has already been acknowledged
+                return;
+            }
+            const hasError = err !== null;
+            if (hasError) {
+                if (packet.tryCount > this._opts.retries) {
+                    debug("packet [%d] is discarded after %d tries", packet.id, packet.tryCount);
+                    this._queue.shift();
+                    if (ack) {
+                        ack(err);
+                    }
+                }
+            } else {
+                debug("packet [%d] was successfully sent", packet.id);
+                this._queue.shift();
+                if (ack) {
+                    ack(null, ...responseArgs);
+                }
+            }
+            packet.pending = false;
+            return this._drainQueue();
+        });
+        this._queue.push(packet);
+        this._drainQueue();
+    }
+    /**
+     * Send the first packet of the queue, and wait for an acknowledgement from the server.
+     * @param force - whether to resend a packet that has not been acknowledged yet
+     *
+     * @private
+     */ _drainQueue(force = false) {
+        debug("draining queue");
+        if (!this.connected || this._queue.length === 0) {
+            return;
+        }
+        const packet = this._queue[0];
+        if (packet.pending && !force) {
+            debug("packet [%d] has already been sent and is waiting for an ack", packet.id);
+            return;
+        }
+        packet.pending = true;
+        packet.tryCount++;
+        debug("sending packet [%d] (try n°%d)", packet.id, packet.tryCount);
+        this.flags = packet.flags;
+        this.emit.apply(this, packet.args);
+    }
+    /**
+     * Sends a packet.
+     *
+     * @param packet
+     * @private
+     */ packet(packet) {
+        packet.nsp = this.nsp;
+        this.io._packet(packet);
+    }
+    /**
+     * Called upon engine `open`.
+     *
+     * @private
+     */ onopen() {
+        debug("transport is open - connecting");
+        if (typeof this.auth == "function") {
+            this.auth((data)=>{
+                this._sendConnectPacket(data);
+            });
+        } else {
+            this._sendConnectPacket(this.auth);
+        }
+    }
+    /**
+     * Sends a CONNECT packet to initiate the Socket.IO session.
+     *
+     * @param data
+     * @private
+     */ _sendConnectPacket(data) {
+        this.packet({
+            type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].CONNECT,
+            data: this._pid ? Object.assign({
+                pid: this._pid,
+                offset: this._lastOffset
+            }, data) : data
+        });
+    }
+    /**
+     * Called upon engine or manager `error`.
+     *
+     * @param err
+     * @private
+     */ onerror(err) {
+        if (!this.connected) {
+            this.emitReserved("connect_error", err);
+        }
+    }
+    /**
+     * Called upon engine `close`.
+     *
+     * @param reason
+     * @param description
+     * @private
+     */ onclose(reason, description) {
+        debug("close (%s)", reason);
+        this.connected = false;
+        delete this.id;
+        this.emitReserved("disconnect", reason, description);
+        this._clearAcks();
+    }
+    /**
+     * Clears the acknowledgement handlers upon disconnection, since the client will never receive an acknowledgement from
+     * the server.
+     *
+     * @private
+     */ _clearAcks() {
+        Object.keys(this.acks).forEach((id)=>{
+            const isBuffered = this.sendBuffer.some((packet)=>String(packet.id) === id);
+            if (!isBuffered) {
+                // note: handlers that do not accept an error as first argument are ignored here
+                const ack = this.acks[id];
+                delete this.acks[id];
+                if (ack.withError) {
+                    ack.call(this, new Error("socket has been disconnected"));
+                }
+            }
+        });
+    }
+    /**
+     * Called with socket packet.
+     *
+     * @param packet
+     * @private
+     */ onpacket(packet) {
+        const sameNamespace = packet.nsp === this.nsp;
+        if (!sameNamespace) return;
+        switch(packet.type){
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].CONNECT:
+                if (packet.data && packet.data.sid) {
+                    this.onconnect(packet.data.sid, packet.data.pid);
+                } else {
+                    this.emitReserved("connect_error", new Error("It seems you are trying to reach a Socket.IO server in v2.x with a v3.x client, but they are not compatible (more information here: https://socket.io/docs/v3/migrating-from-2-x-to-3-0/)"));
+                }
+                break;
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].EVENT:
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].BINARY_EVENT:
+                this.onevent(packet);
+                break;
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].ACK:
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].BINARY_ACK:
+                this.onack(packet);
+                break;
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].DISCONNECT:
+                this.ondisconnect();
+                break;
+            case __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].CONNECT_ERROR:
+                this.destroy();
+                const err = new Error(packet.data.message);
+                // @ts-ignore
+                err.data = packet.data.data;
+                this.emitReserved("connect_error", err);
+                break;
+        }
+    }
+    /**
+     * Called upon a server event.
+     *
+     * @param packet
+     * @private
+     */ onevent(packet) {
+        const args = packet.data || [];
+        debug("emitting event %j", args);
+        if (null != packet.id) {
+            debug("attaching ack callback to event");
+            args.push(this.ack(packet.id));
+        }
+        if (this.connected) {
+            this.emitEvent(args);
+        } else {
+            this.receiveBuffer.push(Object.freeze(args));
+        }
+    }
+    emitEvent(args) {
+        if (this._anyListeners && this._anyListeners.length) {
+            const listeners = this._anyListeners.slice();
+            for (const listener of listeners){
+                listener.apply(this, args);
+            }
+        }
+        super.emit.apply(this, args);
+        if (this._pid && args.length && typeof args[args.length - 1] === "string") {
+            this._lastOffset = args[args.length - 1];
+        }
+    }
+    /**
+     * Produces an ack callback to emit with an event.
+     *
+     * @private
+     */ ack(id) {
+        const self = this;
+        let sent = false;
+        return function(...args) {
+            // prevent double callbacks
+            if (sent) return;
+            sent = true;
+            debug("sending ack %j", args);
+            self.packet({
+                type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].ACK,
+                id: id,
+                data: args
+            });
+        };
+    }
+    /**
+     * Called upon a server acknowledgement.
+     *
+     * @param packet
+     * @private
+     */ onack(packet) {
+        const ack = this.acks[packet.id];
+        if (typeof ack !== "function") {
+            debug("bad ack %s", packet.id);
+            return;
+        }
+        delete this.acks[packet.id];
+        debug("calling ack %s with %j", packet.id, packet.data);
+        // @ts-ignore FIXME ack is incorrectly inferred as 'never'
+        if (ack.withError) {
+            packet.data.unshift(null);
+        }
+        // @ts-ignore
+        ack.apply(this, packet.data);
+    }
+    /**
+     * Called upon server connect.
+     *
+     * @private
+     */ onconnect(id, pid) {
+        debug("socket connected with id %s", id);
+        this.id = id;
+        this.recovered = pid && this._pid === pid;
+        this._pid = pid; // defined only if connection state recovery is enabled
+        this.connected = true;
+        this.emitBuffered();
+        this.emitReserved("connect");
+        this._drainQueue(true);
+    }
+    /**
+     * Emit buffered events (received and emitted).
+     *
+     * @private
+     */ emitBuffered() {
+        this.receiveBuffer.forEach((args)=>this.emitEvent(args));
+        this.receiveBuffer = [];
+        this.sendBuffer.forEach((packet)=>{
+            this.notifyOutgoingListeners(packet);
+            this.packet(packet);
+        });
+        this.sendBuffer = [];
+    }
+    /**
+     * Called upon server disconnect.
+     *
+     * @private
+     */ ondisconnect() {
+        debug("server disconnect (%s)", this.nsp);
+        this.destroy();
+        this.onclose("io server disconnect");
+    }
+    /**
+     * Called upon forced client/server side disconnections,
+     * this method ensures the manager stops tracking us and
+     * that reconnections don't get triggered for this.
+     *
+     * @private
+     */ destroy() {
+        if (this.subs) {
+            // clean subscriptions to avoid reconnections
+            this.subs.forEach((subDestroy)=>subDestroy());
+            this.subs = undefined;
+        }
+        this.io["_destroy"](this);
+    }
+    /**
+     * Disconnects the socket manually. In that case, the socket will not try to reconnect.
+     *
+     * If this is the last active Socket instance of the {@link Manager}, the low-level connection will be closed.
+     *
+     * @example
+     * const socket = io();
+     *
+     * socket.on("disconnect", (reason) => {
+     *   // console.log(reason); prints "io client disconnect"
+     * });
+     *
+     * socket.disconnect();
+     *
+     * @return self
+     */ disconnect() {
+        if (this.connected) {
+            debug("performing disconnect (%s)", this.nsp);
+            this.packet({
+                type: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["PacketType"].DISCONNECT
+            });
+        }
+        // remove socket from pool
+        this.destroy();
+        if (this.connected) {
+            // fire events
+            this.onclose("io client disconnect");
+        }
+        return this;
+    }
+    /**
+     * Alias for {@link disconnect()}.
+     *
+     * @return self
+     */ close() {
+        return this.disconnect();
+    }
+    /**
+     * Sets the compress flag.
+     *
+     * @example
+     * socket.compress(false).emit("hello");
+     *
+     * @param compress - if `true`, compresses the sending data
+     * @return self
+     */ compress(compress) {
+        this.flags.compress = compress;
+        return this;
+    }
+    /**
+     * Sets a modifier for a subsequent event emission that the event message will be dropped when this socket is not
+     * ready to send messages.
+     *
+     * @example
+     * socket.volatile.emit("hello"); // the server may or may not receive it
+     *
+     * @returns self
+     */ get volatile() {
+        this.flags.volatile = true;
+        return this;
+    }
+    /**
+     * Sets a modifier for a subsequent event emission that the callback will be called with an error when the
+     * given number of milliseconds have elapsed without an acknowledgement from the server:
+     *
+     * @example
+     * socket.timeout(5000).emit("my-event", (err) => {
+     *   if (err) {
+     *     // the server did not acknowledge the event in the given delay
+     *   }
+     * });
+     *
+     * @returns self
+     */ timeout(timeout) {
+        this.flags.timeout = timeout;
+        return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback.
+     *
+     * @example
+     * socket.onAny((event, ...args) => {
+     *   console.log(`got ${event}`);
+     * });
+     *
+     * @param listener
+     */ onAny(listener) {
+        this._anyListeners = this._anyListeners || [];
+        this._anyListeners.push(listener);
+        return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback. The listener is added to the beginning of the listeners array.
+     *
+     * @example
+     * socket.prependAny((event, ...args) => {
+     *   console.log(`got event ${event}`);
+     * });
+     *
+     * @param listener
+     */ prependAny(listener) {
+        this._anyListeners = this._anyListeners || [];
+        this._anyListeners.unshift(listener);
+        return this;
+    }
+    /**
+     * Removes the listener that will be fired when any event is emitted.
+     *
+     * @example
+     * const catchAllListener = (event, ...args) => {
+     *   console.log(`got event ${event}`);
+     * }
+     *
+     * socket.onAny(catchAllListener);
+     *
+     * // remove a specific listener
+     * socket.offAny(catchAllListener);
+     *
+     * // or remove all listeners
+     * socket.offAny();
+     *
+     * @param listener
+     */ offAny(listener) {
+        if (!this._anyListeners) {
+            return this;
+        }
+        if (listener) {
+            const listeners = this._anyListeners;
+            for(let i = 0; i < listeners.length; i++){
+                if (listener === listeners[i]) {
+                    listeners.splice(i, 1);
+                    return this;
+                }
+            }
+        } else {
+            this._anyListeners = [];
+        }
+        return this;
+    }
+    /**
+     * Returns an array of listeners that are listening for any event that is specified. This array can be manipulated,
+     * e.g. to remove listeners.
+     */ listenersAny() {
+        return this._anyListeners || [];
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback.
+     *
+     * Note: acknowledgements sent to the server are not included.
+     *
+     * @example
+     * socket.onAnyOutgoing((event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * });
+     *
+     * @param listener
+     */ onAnyOutgoing(listener) {
+        this._anyOutgoingListeners = this._anyOutgoingListeners || [];
+        this._anyOutgoingListeners.push(listener);
+        return this;
+    }
+    /**
+     * Adds a listener that will be fired when any event is emitted. The event name is passed as the first argument to the
+     * callback. The listener is added to the beginning of the listeners array.
+     *
+     * Note: acknowledgements sent to the server are not included.
+     *
+     * @example
+     * socket.prependAnyOutgoing((event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * });
+     *
+     * @param listener
+     */ prependAnyOutgoing(listener) {
+        this._anyOutgoingListeners = this._anyOutgoingListeners || [];
+        this._anyOutgoingListeners.unshift(listener);
+        return this;
+    }
+    /**
+     * Removes the listener that will be fired when any event is emitted.
+     *
+     * @example
+     * const catchAllListener = (event, ...args) => {
+     *   console.log(`sent event ${event}`);
+     * }
+     *
+     * socket.onAnyOutgoing(catchAllListener);
+     *
+     * // remove a specific listener
+     * socket.offAnyOutgoing(catchAllListener);
+     *
+     * // or remove all listeners
+     * socket.offAnyOutgoing();
+     *
+     * @param [listener] - the catch-all listener (optional)
+     */ offAnyOutgoing(listener) {
+        if (!this._anyOutgoingListeners) {
+            return this;
+        }
+        if (listener) {
+            const listeners = this._anyOutgoingListeners;
+            for(let i = 0; i < listeners.length; i++){
+                if (listener === listeners[i]) {
+                    listeners.splice(i, 1);
+                    return this;
+                }
+            }
+        } else {
+            this._anyOutgoingListeners = [];
+        }
+        return this;
+    }
+    /**
+     * Returns an array of listeners that are listening for any event that is specified. This array can be manipulated,
+     * e.g. to remove listeners.
+     */ listenersAnyOutgoing() {
+        return this._anyOutgoingListeners || [];
+    }
+    /**
+     * Notify the listeners for each packet sent
+     *
+     * @param packet
+     *
+     * @private
+     */ notifyOutgoingListeners(packet) {
+        if (this._anyOutgoingListeners && this._anyOutgoingListeners.length) {
+            const listeners = this._anyOutgoingListeners.slice();
+            for (const listener of listeners){
+                listener.apply(this, packet.data);
+            }
+        }
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/contrib/backo2.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Initialize backoff timer with `opts`.
+ *
+ * - `min` initial timeout in milliseconds [100]
+ * - `max` max timeout [10000]
+ * - `jitter` [0]
+ * - `factor` [2]
+ *
+ * @param {Object} opts
+ * @api public
+ */ __turbopack_context__.s([
+    "Backoff",
+    ()=>Backoff
+]);
+function Backoff(opts) {
+    opts = opts || {};
+    this.ms = opts.min || 100;
+    this.max = opts.max || 10000;
+    this.factor = opts.factor || 2;
+    this.jitter = opts.jitter > 0 && opts.jitter <= 1 ? opts.jitter : 0;
+    this.attempts = 0;
+}
+/**
+ * Return the backoff duration.
+ *
+ * @return {Number}
+ * @api public
+ */ Backoff.prototype.duration = function() {
+    var ms = this.ms * Math.pow(this.factor, this.attempts++);
+    if (this.jitter) {
+        var rand = Math.random();
+        var deviation = Math.floor(rand * this.jitter * ms);
+        ms = (Math.floor(rand * 10) & 1) == 0 ? ms - deviation : ms + deviation;
+    }
+    return Math.min(ms, this.max) | 0;
+};
+/**
+ * Reset the number of attempts.
+ *
+ * @api public
+ */ Backoff.prototype.reset = function() {
+    this.attempts = 0;
+};
+/**
+ * Set the minimum duration
+ *
+ * @api public
+ */ Backoff.prototype.setMin = function(min) {
+    this.ms = min;
+};
+/**
+ * Set the maximum duration
+ *
+ * @api public
+ */ Backoff.prototype.setMax = function(max) {
+    this.max = max;
+};
+/**
+ * Set the jitter
+ *
+ * @api public
+ */ Backoff.prototype.setJitter = function(jitter) {
+    this.jitter = jitter;
+};
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/manager.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Manager",
+    ()=>Manager
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/util.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/globals.node.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/on.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$backo2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/contrib/backo2.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("socket.io-client:manager"); // debug()
+class Manager extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    constructor(uri, opts){
+        var _a;
+        super();
+        this.nsps = {};
+        this.subs = [];
+        if (uri && "object" === typeof uri) {
+            opts = uri;
+            uri = undefined;
+        }
+        opts = opts || {};
+        opts.path = opts.path || "/socket.io";
+        this.opts = opts;
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$util$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["installTimerFunctions"])(this, opts);
+        this.reconnection(opts.reconnection !== false);
+        this.reconnectionAttempts(opts.reconnectionAttempts || Infinity);
+        this.reconnectionDelay(opts.reconnectionDelay || 1000);
+        this.reconnectionDelayMax(opts.reconnectionDelayMax || 5000);
+        this.randomizationFactor((_a = opts.randomizationFactor) !== null && _a !== void 0 ? _a : 0.5);
+        this.backoff = new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$contrib$2f$backo2$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Backoff"]({
+            min: this.reconnectionDelay(),
+            max: this.reconnectionDelayMax(),
+            jitter: this.randomizationFactor()
+        });
+        this.timeout(null == opts.timeout ? 20000 : opts.timeout);
+        this._readyState = "closed";
+        this.uri = uri;
+        const _parser = opts.parser || __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__;
+        this.encoder = new _parser.Encoder();
+        this.decoder = new _parser.Decoder();
+        this._autoConnect = opts.autoConnect !== false;
+        if (this._autoConnect) this.open();
+    }
+    reconnection(v) {
+        if (!arguments.length) return this._reconnection;
+        this._reconnection = !!v;
+        if (!v) {
+            this.skipReconnect = true;
+        }
+        return this;
+    }
+    reconnectionAttempts(v) {
+        if (v === undefined) return this._reconnectionAttempts;
+        this._reconnectionAttempts = v;
+        return this;
+    }
+    reconnectionDelay(v) {
+        var _a;
+        if (v === undefined) return this._reconnectionDelay;
+        this._reconnectionDelay = v;
+        (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setMin(v);
+        return this;
+    }
+    randomizationFactor(v) {
+        var _a;
+        if (v === undefined) return this._randomizationFactor;
+        this._randomizationFactor = v;
+        (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setJitter(v);
+        return this;
+    }
+    reconnectionDelayMax(v) {
+        var _a;
+        if (v === undefined) return this._reconnectionDelayMax;
+        this._reconnectionDelayMax = v;
+        (_a = this.backoff) === null || _a === void 0 ? void 0 : _a.setMax(v);
+        return this;
+    }
+    timeout(v) {
+        if (!arguments.length) return this._timeout;
+        this._timeout = v;
+        return this;
+    }
+    /**
+     * Starts trying to reconnect if reconnection is enabled and we have not
+     * started reconnecting yet
+     *
+     * @private
+     */ maybeReconnectOnOpen() {
+        // Only try to reconnect if it's the first time we're connecting
+        if (!this._reconnecting && this._reconnection && this.backoff.attempts === 0) {
+            // keeps reconnection from firing twice for the same reconnection loop
+            this.reconnect();
+        }
+    }
+    /**
+     * Sets the current transport `socket`.
+     *
+     * @param {Function} fn - optional, callback
+     * @return self
+     * @public
+     */ open(fn) {
+        debug("readyState %s", this._readyState);
+        if (~this._readyState.indexOf("open")) return this;
+        debug("opening %s", this.uri);
+        this.engine = new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Socket"](this.uri, this.opts);
+        const socket = this.engine;
+        const self = this;
+        this._readyState = "opening";
+        this.skipReconnect = false;
+        // emit `open`
+        const openSubDestroy = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "open", function() {
+            self.onopen();
+            fn && fn();
+        });
+        const onError = (err)=>{
+            debug("error");
+            this.cleanup();
+            this._readyState = "closed";
+            this.emitReserved("error", err);
+            if (fn) {
+                fn(err);
+            } else {
+                // Only do this if there is no fn to handle the error
+                this.maybeReconnectOnOpen();
+            }
+        };
+        // emit `error`
+        const errorSub = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "error", onError);
+        if (false !== this._timeout) {
+            const timeout = this._timeout;
+            debug("connect attempt will timeout after %d", timeout);
+            // set timer
+            const timer = this.setTimeoutFn(()=>{
+                debug("connect attempt timed out after %d", timeout);
+                openSubDestroy();
+                onError(new Error("timeout"));
+                socket.close();
+            }, timeout);
+            if (this.opts.autoUnref) {
+                timer.unref();
+            }
+            this.subs.push(()=>{
+                this.clearTimeoutFn(timer);
+            });
+        }
+        this.subs.push(openSubDestroy);
+        this.subs.push(errorSub);
+        return this;
+    }
+    /**
+     * Alias for open()
+     *
+     * @return self
+     * @public
+     */ connect(fn) {
+        return this.open(fn);
+    }
+    /**
+     * Called upon transport open.
+     *
+     * @private
+     */ onopen() {
+        debug("open");
+        // clear old subs
+        this.cleanup();
+        // mark as open
+        this._readyState = "open";
+        this.emitReserved("open");
+        // add new subs
+        const socket = this.engine;
+        this.subs.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "ping", this.onping.bind(this)), (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "data", this.ondata.bind(this)), (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "error", this.onerror.bind(this)), (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(socket, "close", this.onclose.bind(this)), // @ts-ignore
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$on$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["on"])(this.decoder, "decoded", this.ondecoded.bind(this)));
+    }
+    /**
+     * Called upon a ping.
+     *
+     * @private
+     */ onping() {
+        this.emitReserved("ping");
+    }
+    /**
+     * Called with data.
+     *
+     * @private
+     */ ondata(data) {
+        try {
+            this.decoder.add(data);
+        } catch (e) {
+            this.onclose("parse error", e);
+        }
+    }
+    /**
+     * Called when parser fully decodes a packet.
+     *
+     * @private
+     */ ondecoded(packet) {
+        // the nextTick call prevents an exception in a user-provided event listener from triggering a disconnection due to a "parse error"
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$globals$2e$node$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["nextTick"])(()=>{
+            this.emitReserved("packet", packet);
+        }, this.setTimeoutFn);
+    }
+    /**
+     * Called upon socket error.
+     *
+     * @private
+     */ onerror(err) {
+        debug("error", err);
+        this.emitReserved("error", err);
+    }
+    /**
+     * Creates a new socket for the given `nsp`.
+     *
+     * @return {Socket}
+     * @public
+     */ socket(nsp, opts) {
+        let socket = this.nsps[nsp];
+        if (!socket) {
+            socket = new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Socket"](this, nsp, opts);
+            this.nsps[nsp] = socket;
+        } else if (this._autoConnect && !socket.active) {
+            socket.connect();
+        }
+        return socket;
+    }
+    /**
+     * Called upon a socket close.
+     *
+     * @param socket
+     * @private
+     */ _destroy(socket) {
+        const nsps = Object.keys(this.nsps);
+        for (const nsp of nsps){
+            const socket = this.nsps[nsp];
+            if (socket.active) {
+                debug("socket %s is still active, skipping close", nsp);
+                return;
+            }
+        }
+        this._close();
+    }
+    /**
+     * Writes a packet.
+     *
+     * @param packet
+     * @private
+     */ _packet(packet) {
+        debug("writing packet %j", packet);
+        const encodedPackets = this.encoder.encode(packet);
+        for(let i = 0; i < encodedPackets.length; i++){
+            this.engine.write(encodedPackets[i], packet.options);
+        }
+    }
+    /**
+     * Clean up transport subscriptions and packet buffer.
+     *
+     * @private
+     */ cleanup() {
+        debug("cleanup");
+        this.subs.forEach((subDestroy)=>subDestroy());
+        this.subs.length = 0;
+        this.decoder.destroy();
+    }
+    /**
+     * Close the current socket.
+     *
+     * @private
+     */ _close() {
+        debug("disconnect");
+        this.skipReconnect = true;
+        this._reconnecting = false;
+        this.onclose("forced close");
+    }
+    /**
+     * Alias for close()
+     *
+     * @private
+     */ disconnect() {
+        return this._close();
+    }
+    /**
+     * Called when:
+     *
+     * - the low-level engine is closed
+     * - the parser encountered a badly formatted packet
+     * - all sockets are disconnected
+     *
+     * @private
+     */ onclose(reason, description) {
+        var _a;
+        debug("closed due to %s", reason);
+        this.cleanup();
+        (_a = this.engine) === null || _a === void 0 ? void 0 : _a.close();
+        this.backoff.reset();
+        this._readyState = "closed";
+        this.emitReserved("close", reason, description);
+        if (this._reconnection && !this.skipReconnect) {
+            this.reconnect();
+        }
+    }
+    /**
+     * Attempt a reconnection.
+     *
+     * @private
+     */ reconnect() {
+        if (this._reconnecting || this.skipReconnect) return this;
+        const self = this;
+        if (this.backoff.attempts >= this._reconnectionAttempts) {
+            debug("reconnect failed");
+            this.backoff.reset();
+            this.emitReserved("reconnect_failed");
+            this._reconnecting = false;
+        } else {
+            const delay = this.backoff.duration();
+            debug("will wait %dms before reconnect attempt", delay);
+            this._reconnecting = true;
+            const timer = this.setTimeoutFn(()=>{
+                if (self.skipReconnect) return;
+                debug("attempting reconnect");
+                this.emitReserved("reconnect_attempt", self.backoff.attempts);
+                // check again for the case socket closed in above events
+                if (self.skipReconnect) return;
+                self.open((err)=>{
+                    if (err) {
+                        debug("reconnect attempt error");
+                        self._reconnecting = false;
+                        self.reconnect();
+                        this.emitReserved("reconnect_error", err);
+                    } else {
+                        debug("reconnect success");
+                        self.onreconnect();
+                    }
+                });
+            }, delay);
+            if (this.opts.autoUnref) {
+                timer.unref();
+            }
+            this.subs.push(()=>{
+                this.clearTimeoutFn(timer);
+            });
+        }
+    }
+    /**
+     * Called upon successful reconnect.
+     *
+     * @private
+     */ onreconnect() {
+        const attempt = this.backoff.attempts;
+        this._reconnecting = false;
+        this.backoff.reset();
+        this.emitReserved("reconnect", attempt);
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "connect",
+    ()=>lookup,
+    "default",
+    ()=>lookup,
+    "io",
+    ()=>lookup
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$url$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/url.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$manager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/manager.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/build/esm-debug/socket.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-client/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+/**
+ * Protocol version.
+ *
+ * @public
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$engine$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/engine.io-client/build/esm-debug/index.js [app-ssr] (ecmascript) <locals>");
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("socket.io-client"); // debug()
+/**
+ * Managers cache.
+ */ const cache = {};
+function lookup(uri, opts) {
+    if (typeof uri === "object") {
+        opts = uri;
+        uri = undefined;
+    }
+    opts = opts || {};
+    const parsed = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$url$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["url"])(uri, opts.path || "/socket.io");
+    const source = parsed.source;
+    const id = parsed.id;
+    const path = parsed.path;
+    const sameNamespace = cache[id] && path in cache[id]["nsps"];
+    const newConnection = opts.forceNew || opts["force new connection"] || false === opts.multiplex || sameNamespace;
+    let io;
+    if (newConnection) {
+        debug("ignoring socket cache for %s", source);
+        io = new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$manager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Manager"](source, opts);
+    } else {
+        if (!cache[id]) {
+            debug("new io instance for %s", source);
+            cache[id] = new __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$manager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Manager"](source, opts);
+        }
+        io = cache[id];
+    }
+    if (parsed.query && !opts.query) {
+        opts.query = parsed.queryKey;
+    }
+    return io.socket(parsed.path, opts);
+}
+// so that "lookup" can be used both as a function (e.g. `io(...)`) and as a
+// namespace (e.g. `io.connect(...)`), for backward compatibility
+Object.assign(lookup, {
+    Manager: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$manager$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Manager"],
+    Socket: __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$client$2f$build$2f$esm$2d$debug$2f$socket$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Socket"],
+    io: lookup,
+    connect: lookup
+});
+;
+;
+;
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/is-binary.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "hasBinary",
+    ()=>hasBinary,
+    "isBinary",
+    ()=>isBinary
+]);
+const withNativeArrayBuffer = typeof ArrayBuffer === "function";
+const isView = (obj)=>{
+    return typeof ArrayBuffer.isView === "function" ? ArrayBuffer.isView(obj) : obj.buffer instanceof ArrayBuffer;
+};
+const toString = Object.prototype.toString;
+const withNativeBlob = typeof Blob === "function" || typeof Blob !== "undefined" && toString.call(Blob) === "[object BlobConstructor]";
+const withNativeFile = typeof File === "function" || typeof File !== "undefined" && toString.call(File) === "[object FileConstructor]";
+function isBinary(obj) {
+    return withNativeArrayBuffer && (obj instanceof ArrayBuffer || isView(obj)) || withNativeBlob && obj instanceof Blob || withNativeFile && obj instanceof File;
+}
+function hasBinary(obj, toJSON) {
+    if (!obj || typeof obj !== "object") {
+        return false;
+    }
+    if (Array.isArray(obj)) {
+        for(let i = 0, l = obj.length; i < l; i++){
+            if (hasBinary(obj[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+    if (isBinary(obj)) {
+        return true;
+    }
+    if (obj.toJSON && typeof obj.toJSON === "function" && arguments.length === 1) {
+        return hasBinary(obj.toJSON(), true);
+    }
+    for(const key in obj){
+        if (Object.prototype.hasOwnProperty.call(obj, key) && hasBinary(obj[key])) {
+            return true;
+        }
+    }
+    return false;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/binary.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "deconstructPacket",
+    ()=>deconstructPacket,
+    "reconstructPacket",
+    ()=>reconstructPacket
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$is$2d$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/is-binary.js [app-ssr] (ecmascript)");
+;
+function deconstructPacket(packet) {
+    const buffers = [];
+    const packetData = packet.data;
+    const pack = packet;
+    pack.data = _deconstructPacket(packetData, buffers);
+    pack.attachments = buffers.length; // number of binary 'attachments'
+    return {
+        packet: pack,
+        buffers: buffers
+    };
+}
+function _deconstructPacket(data, buffers) {
+    if (!data) return data;
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$is$2d$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isBinary"])(data)) {
+        const placeholder = {
+            _placeholder: true,
+            num: buffers.length
+        };
+        buffers.push(data);
+        return placeholder;
+    } else if (Array.isArray(data)) {
+        const newData = new Array(data.length);
+        for(let i = 0; i < data.length; i++){
+            newData[i] = _deconstructPacket(data[i], buffers);
+        }
+        return newData;
+    } else if (typeof data === "object" && !(data instanceof Date)) {
+        const newData = {};
+        for(const key in data){
+            if (Object.prototype.hasOwnProperty.call(data, key)) {
+                newData[key] = _deconstructPacket(data[key], buffers);
+            }
+        }
+        return newData;
+    }
+    return data;
+}
+function reconstructPacket(packet, buffers) {
+    packet.data = _reconstructPacket(packet.data, buffers);
+    delete packet.attachments; // no longer useful
+    return packet;
+}
+function _reconstructPacket(data, buffers) {
+    if (!data) return data;
+    if (data && data._placeholder === true) {
+        const isIndexValid = typeof data.num === "number" && data.num >= 0 && data.num < buffers.length;
+        if (isIndexValid) {
+            return buffers[data.num]; // appropriate buffer (should be natural order anyway)
+        } else {
+            throw new Error("illegal attachments");
+        }
+    } else if (Array.isArray(data)) {
+        for(let i = 0; i < data.length; i++){
+            data[i] = _reconstructPacket(data[i], buffers);
+        }
+    } else if (typeof data === "object") {
+        for(const key in data){
+            if (Object.prototype.hasOwnProperty.call(data, key)) {
+                data[key] = _reconstructPacket(data[key], buffers);
+            }
+        }
+    }
+    return data;
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/index.js [app-ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Decoder",
+    ()=>Decoder,
+    "Encoder",
+    ()=>Encoder,
+    "PacketType",
+    ()=>PacketType,
+    "protocol",
+    ()=>protocol
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/@socket.io/component-emitter/lib/esm/index.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/binary.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$is$2d$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/build/esm-debug/is-binary.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/shigoto/Conefia/conefia-website/conefia-website/node_modules/socket.io-parser/node_modules/debug/src/index.js [app-ssr] (ecmascript)"); // debug()
+;
+;
+;
+;
+const debug = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$node_modules$2f$debug$2f$src$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"])("socket.io-parser"); // debug()
+/**
+ * These strings must not be used as event names, as they have a special meaning.
+ */ const RESERVED_EVENTS = [
+    "connect",
+    "connect_error",
+    "disconnect",
+    "disconnecting",
+    "newListener",
+    "removeListener"
+];
+const protocol = 5;
+var PacketType;
+(function(PacketType) {
+    PacketType[PacketType["CONNECT"] = 0] = "CONNECT";
+    PacketType[PacketType["DISCONNECT"] = 1] = "DISCONNECT";
+    PacketType[PacketType["EVENT"] = 2] = "EVENT";
+    PacketType[PacketType["ACK"] = 3] = "ACK";
+    PacketType[PacketType["CONNECT_ERROR"] = 4] = "CONNECT_ERROR";
+    PacketType[PacketType["BINARY_EVENT"] = 5] = "BINARY_EVENT";
+    PacketType[PacketType["BINARY_ACK"] = 6] = "BINARY_ACK";
+})(PacketType || (PacketType = {}));
+class Encoder {
+    /**
+     * Encoder constructor
+     *
+     * @param {function} replacer - custom replacer to pass down to JSON.parse
+     */ constructor(replacer){
+        this.replacer = replacer;
+    }
+    /**
+     * Encode a packet as a single string if non-binary, or as a
+     * buffer sequence, depending on packet type.
+     *
+     * @param {Object} obj - packet object
+     */ encode(obj) {
+        debug("encoding packet %j", obj);
+        if (obj.type === PacketType.EVENT || obj.type === PacketType.ACK) {
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$is$2d$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["hasBinary"])(obj)) {
+                return this.encodeAsBinary({
+                    type: obj.type === PacketType.EVENT ? PacketType.BINARY_EVENT : PacketType.BINARY_ACK,
+                    nsp: obj.nsp,
+                    data: obj.data,
+                    id: obj.id
+                });
+            }
+        }
+        return [
+            this.encodeAsString(obj)
+        ];
+    }
+    /**
+     * Encode packet as string.
+     */ encodeAsString(obj) {
+        // first is type
+        let str = "" + obj.type;
+        // attachments if we have them
+        if (obj.type === PacketType.BINARY_EVENT || obj.type === PacketType.BINARY_ACK) {
+            str += obj.attachments + "-";
+        }
+        // if we have a namespace other than `/`
+        // we append it followed by a comma `,`
+        if (obj.nsp && "/" !== obj.nsp) {
+            str += obj.nsp + ",";
+        }
+        // immediately followed by the id
+        if (null != obj.id) {
+            str += obj.id;
+        }
+        // json data
+        if (null != obj.data) {
+            str += JSON.stringify(obj.data, this.replacer);
+        }
+        debug("encoded %j as %s", obj, str);
+        return str;
+    }
+    /**
+     * Encode packet as 'buffer sequence' by removing blobs, and
+     * deconstructing packet into object with placeholders and
+     * a list of buffers.
+     */ encodeAsBinary(obj) {
+        const deconstruction = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["deconstructPacket"])(obj);
+        const pack = this.encodeAsString(deconstruction.packet);
+        const buffers = deconstruction.buffers;
+        buffers.unshift(pack); // add packet info to beginning of data list
+        return buffers; // write all the buffers
+    }
+}
+// see https://stackoverflow.com/questions/8511281/check-if-a-value-is-an-object-in-javascript
+function isObject(value) {
+    return Object.prototype.toString.call(value) === "[object Object]";
+}
+class Decoder extends __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f40$socket$2e$io$2f$component$2d$emitter$2f$lib$2f$esm$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Emitter"] {
+    /**
+     * Decoder constructor
+     *
+     * @param {function} reviver - custom reviver to pass down to JSON.stringify
+     */ constructor(reviver){
+        super();
+        this.reviver = reviver;
+    }
+    /**
+     * Decodes an encoded packet string into packet JSON.
+     *
+     * @param {String} obj - encoded packet
+     */ add(obj) {
+        let packet;
+        if (typeof obj === "string") {
+            if (this.reconstructor) {
+                throw new Error("got plaintext data when reconstructing a packet");
+            }
+            packet = this.decodeString(obj);
+            const isBinaryEvent = packet.type === PacketType.BINARY_EVENT;
+            if (isBinaryEvent || packet.type === PacketType.BINARY_ACK) {
+                packet.type = isBinaryEvent ? PacketType.EVENT : PacketType.ACK;
+                // binary packet's json
+                this.reconstructor = new BinaryReconstructor(packet);
+                // no attachments, labeled binary but no binary data to follow
+                if (packet.attachments === 0) {
+                    super.emitReserved("decoded", packet);
+                }
+            } else {
+                // non-binary full packet
+                super.emitReserved("decoded", packet);
+            }
+        } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$is$2d$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["isBinary"])(obj) || obj.base64) {
+            // raw binary data
+            if (!this.reconstructor) {
+                throw new Error("got binary data when not reconstructing a packet");
+            } else {
+                packet = this.reconstructor.takeBinaryData(obj);
+                if (packet) {
+                    // received final buffer
+                    this.reconstructor = null;
+                    super.emitReserved("decoded", packet);
+                }
+            }
+        } else {
+            throw new Error("Unknown type: " + obj);
+        }
+    }
+    /**
+     * Decode a packet String (JSON data)
+     *
+     * @param {String} str
+     * @return {Object} packet
+     */ decodeString(str) {
+        let i = 0;
+        // look up type
+        const p = {
+            type: Number(str.charAt(0))
+        };
+        if (PacketType[p.type] === undefined) {
+            throw new Error("unknown packet type " + p.type);
+        }
+        // look up attachments if type binary
+        if (p.type === PacketType.BINARY_EVENT || p.type === PacketType.BINARY_ACK) {
+            const start = i + 1;
+            while(str.charAt(++i) !== "-" && i != str.length){}
+            const buf = str.substring(start, i);
+            if (buf != Number(buf) || str.charAt(i) !== "-") {
+                throw new Error("Illegal attachments");
+            }
+            p.attachments = Number(buf);
+        }
+        // look up namespace (if any)
+        if ("/" === str.charAt(i + 1)) {
+            const start = i + 1;
+            while(++i){
+                const c = str.charAt(i);
+                if ("," === c) break;
+                if (i === str.length) break;
+            }
+            p.nsp = str.substring(start, i);
+        } else {
+            p.nsp = "/";
+        }
+        // look up id
+        const next = str.charAt(i + 1);
+        if ("" !== next && Number(next) == next) {
+            const start = i + 1;
+            while(++i){
+                const c = str.charAt(i);
+                if (null == c || Number(c) != c) {
+                    --i;
+                    break;
+                }
+                if (i === str.length) break;
+            }
+            p.id = Number(str.substring(start, i + 1));
+        }
+        // look up json data
+        if (str.charAt(++i)) {
+            const payload = this.tryParse(str.substr(i));
+            if (Decoder.isPayloadValid(p.type, payload)) {
+                p.data = payload;
+            } else {
+                throw new Error("invalid payload");
+            }
+        }
+        debug("decoded %s as %j", str, p);
+        return p;
+    }
+    tryParse(str) {
+        try {
+            return JSON.parse(str, this.reviver);
+        } catch (e) {
+            return false;
+        }
+    }
+    static isPayloadValid(type, payload) {
+        switch(type){
+            case PacketType.CONNECT:
+                return isObject(payload);
+            case PacketType.DISCONNECT:
+                return payload === undefined;
+            case PacketType.CONNECT_ERROR:
+                return typeof payload === "string" || isObject(payload);
+            case PacketType.EVENT:
+            case PacketType.BINARY_EVENT:
+                return Array.isArray(payload) && (typeof payload[0] === "number" || typeof payload[0] === "string" && RESERVED_EVENTS.indexOf(payload[0]) === -1);
+            case PacketType.ACK:
+            case PacketType.BINARY_ACK:
+                return Array.isArray(payload);
+        }
+    }
+    /**
+     * Deallocates a parser's resources
+     */ destroy() {
+        if (this.reconstructor) {
+            this.reconstructor.finishedReconstruction();
+            this.reconstructor = null;
+        }
+    }
+}
+/**
+ * A manager of a binary event's 'buffer sequence'. Should
+ * be constructed whenever a packet of type BINARY_EVENT is
+ * decoded.
+ *
+ * @param {Object} packet
+ * @return {BinaryReconstructor} initialized reconstructor
+ */ class BinaryReconstructor {
+    constructor(packet){
+        this.packet = packet;
+        this.buffers = [];
+        this.reconPack = packet;
+    }
+    /**
+     * Method to be called when binary data received from connection
+     * after a BINARY_EVENT packet.
+     *
+     * @param {Buffer | ArrayBuffer} binData - the raw binary data received
+     * @return {null | Object} returns null if more binary data is expected or
+     *   a reconstructed packet object if all buffers have been received.
+     */ takeBinaryData(binData) {
+        this.buffers.push(binData);
+        if (this.buffers.length === this.reconPack.attachments) {
+            // done with buffer list
+            const packet = (0, __TURBOPACK__imported__module__$5b$project$5d2f$shigoto$2f$Conefia$2f$conefia$2d$website$2f$conefia$2d$website$2f$node_modules$2f$socket$2e$io$2d$parser$2f$build$2f$esm$2d$debug$2f$binary$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["reconstructPacket"])(this.reconPack, this.buffers);
+            this.finishedReconstruction();
+            return packet;
+        }
+        return null;
+    }
+    /**
+     * Cleans up binary packet reconstruction variables.
+     */ finishedReconstruction() {
+        this.reconPack = null;
+        this.buffers = [];
+    }
+}
+}),
+"[project]/shigoto/Conefia/conefia-website/conefia-website/next-app/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-ssr] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+function _getRequireWildcardCache(nodeInterop) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop);
+}
+function _interop_require_wildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || typeof obj !== "object" && typeof obj !== "function") return {
+        default: obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+        __proto__: null
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj){
+        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+            if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+            else newObj[key] = obj[key];
+        }
+    }
+    newObj.default = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+exports._ = _interop_require_wildcard;
+}),
+];
+
+//# sourceMappingURL=shigoto_Conefia_conefia-website_conefia-website_cb2f0917._.js.map

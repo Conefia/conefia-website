@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useCallback } from 'react';
 import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
@@ -50,7 +51,7 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
     if (!emblaApi) return;
     onSelect();
     emblaApi.on('select', onSelect);
-    return () => emblaApi.off('select', onSelect);
+    return () => { emblaApi.off('select', onSelect); };
   }, [emblaApi, onSelect]);
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
@@ -61,13 +62,13 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
 
   return (
     <section ref={ref} className="py-20 md:py-32 relative overflow-hidden bg-[#0B1020]">
-       {/* Background */}
-       <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] to-[#121829]" />
-       <ContourBackground className="opacity-30" />
-       
-       {/* Decorative blobs */}
-       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
-       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020] to-[#121829]" />
+      <ContourBackground className="opacity-30" />
+
+      {/* Decorative blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -104,19 +105,19 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
               ) : (
                 testimonials.map((item, index) => (
                   <div key={item.id} className="flex-[0_0_100%] md:flex-[0_0_100%] lg:flex-[0_0_80%] min-w-0 px-4 pl-4 md:pl-10">
-                    <motion.div 
+                    <motion.div
                       className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 relative group hover:border-white/20 transition-all duration-300"
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                       <Quote className="absolute top-8 left-8 w-10 h-10 text-[#DBFE01]/20 rotate-180" />
-                      
+
                       <div className="relative z-10 flex flex-col items-center text-center">
                         <div className="flex gap-1 mb-6">
-                           {[...Array(item.rating || 5)].map((_, i) => (
-                             <Star key={i} className="w-5 h-5 fill-[#DBFE01] text-[#DBFE01]" />
-                           ))}
+                          {[...Array(item.rating || 5)].map((_, i) => (
+                            <Star key={i} className="w-5 h-5 fill-[#DBFE01] text-[#DBFE01]" />
+                          ))}
                         </div>
 
                         <blockquote className="text-xl md:text-2xl font-medium text-white/90 leading-relaxed mb-8">
@@ -125,8 +126,8 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
 
                         <div className="flex items-center gap-4">
                           {item.image_url ? (
-                            <img 
-                              src={item.image_url} 
+                            <img
+                              src={item.image_url}
                               alt={item.client_name}
                               loading="lazy"
                               width="48"
@@ -176,9 +177,8 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
                   <button
                     key={index}
                     onClick={() => scrollTo(index)}
-                    className={`h-1.5 rounded-full transition-all duration-300 ${
-                      index === selectedIndex ? 'w-8 bg-[#DBFE01]' : 'w-2 bg-white/10 hover:bg-white/20'
-                    }`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${index === selectedIndex ? 'w-8 bg-[#DBFE01]' : 'w-2 bg-white/10 hover:bg-white/20'
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

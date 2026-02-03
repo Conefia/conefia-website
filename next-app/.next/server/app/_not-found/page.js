@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/shigoto_Conefia_conefia-website_conefia-website_next-app_a50e1641._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a8b174dd._.js")
+R.c("server/chunks/ssr/53701_next_dist_esm_build_templates_app-page_6f53a68a.js")
+R.c("server/chunks/ssr/[root-of-the-server]__5514aaa3._.js")
+R.c("server/chunks/ssr/53701_next_dist_4b922871._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__2266a7a5._.js")
+R.c("server/chunks/ssr/shigoto_Conefia_conefia-website_conefia-website_a1a94673._.js")
+R.c("server/chunks/ssr/53701_next_dist_client_components_6b7dcbfd._.js")
+R.c("server/chunks/ssr/53701_next_dist_client_components_builtin_forbidden_4e3ab507.js")
+R.c("server/chunks/ssr/7f59a_next-app__next-internal_server_app__not-found_page_actions_c7042027.js")
+R.m(17849)
+module.exports=R.m(17849).exports
