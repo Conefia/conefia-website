@@ -3,6 +3,13 @@ import { motion } from 'framer-motion';
 import { Lightbulb, Code2, Rocket, TrendingUp, Zap } from 'lucide-react';
 
 export default function AccelerateProcessVisual({ reduceMotion }) {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const steps = [
   {
     id: 1,
@@ -63,7 +70,8 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: reduceMotion ? 0 : index * 0.2 }}
-            className="flex gap-6 relative">
+            onClick={() => scrollToSection(step.title.toLowerCase())}
+            className="flex gap-6 relative cursor-pointer hover:scale-[1.02] transition-transform">
 
               {/* Icon Node */}
               <div className="relative z-10 flex-shrink-0">
