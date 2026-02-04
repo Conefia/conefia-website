@@ -46,7 +46,10 @@ export default function Home() {
       <div className="fixed bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px] pointer-events-none" />
       
       <main className="relative">
-        <Seo canonical="/" />
+        <Seo 
+          canonical="/" 
+          description="AI & mobile apps built fast, launched right, scaled with data—for tech founders, clinics, and Shopify brands (SEO, ads, social)"
+        />
         <HeroSection reduceMotion={shouldReduceMotion} />
 
         <React.Suspense fallback={<DarkSectionSkeleton height="h-24" />}>
