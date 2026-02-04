@@ -47,6 +47,9 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
+import AdminBlog from './pages/AdminBlog';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
 import caseStudyAlMahfza from './pages/case-study-al-mahfza';
 import caseStudyAviya from './pages/case-study-aviya';
@@ -60,13 +63,13 @@ import solutionsAppRelaunch from './pages/solutions-app-relaunch';
 import solutionsClinicGrowth from './pages/solutions-clinic-growth';
 import solutionsDtcGrowth from './pages/solutions-dtc-growth';
 import solutionsEnterpriseInnovation from './pages/solutions-enterprise-innovation';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import AdminBlog from './pages/AdminBlog';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
+    "AdminBlog": AdminBlog,
+    "Blog": Blog,
+    "BlogPost": BlogPost,
     "Home": Home,
     "case-study-al-mahfza": caseStudyAlMahfza,
     "case-study-aviya": caseStudyAviya,
@@ -80,9 +83,6 @@ export const PAGES = {
     "solutions-clinic-growth": solutionsClinicGrowth,
     "solutions-dtc-growth": solutionsDtcGrowth,
     "solutions-enterprise-innovation": solutionsEnterpriseInnovation,
-    "Blog": Blog,
-    "BlogPost": BlogPost,
-    "AdminBlog": AdminBlog,
 }
 
 export const pagesConfig = {
