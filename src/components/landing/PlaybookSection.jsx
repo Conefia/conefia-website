@@ -140,6 +140,7 @@ export default function PlaybookSection({ reduceMotion }) {
           {phases.map((phase, index) =>
           <motion.div
             key={index}
+            id={phase.title.toLowerCase()}
             initial={{ opacity: 0, y: 40, rotateX: -15 }}
             animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 40, rotateX: -15 }}
             transition={{

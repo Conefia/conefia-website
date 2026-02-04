@@ -37,7 +37,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
   },
   {
     id: 4,
-    title: "Scale",
+    title: "Grow",
     subtitle: "Make growth predictable",
     duration: "Ongoing",
     icon: TrendingUp,
