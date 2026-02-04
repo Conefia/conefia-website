@@ -1,4 +1,3 @@
-
 import { 
   Workflow, MapPin, Phone, Calendar, 
   ShieldCheck, Brain, Rocket, Flag,
@@ -18,7 +17,7 @@ import {
 export const PERSONAS = [
   {
     id: 'clinic-growth',
-    label: 'Clinic Growth',
+    label: 'Clinic Growth System',
     problemTitle: 'Patient growth is leaking across your digital patient journey.',
     problems: [
       'Portal + intake + website feel disconnected — patients drop before booking',
@@ -105,7 +104,7 @@ export const PERSONAS = [
   },
   {
     id: 'ai-saas-mvp',
-    label: 'AI SaaS MVP Sprint',
+    label: 'AI SaaS MVP Launch',
     problemTitle: 'You’re building — but you’re not getting pilots yet.',
     problems: [
       'MVP scope keeps changing and shipping keeps slipping',
@@ -192,7 +191,7 @@ export const PERSONAS = [
   },
   {
     id: 'app-relaunch',
-    label: 'App Relaunch',
+    label: 'App Relaunch & Retention',
     problemTitle: 'Your app is live — but users aren’t sticking around.',
     problems: [
       'Retention is weak (users churn after install)',
@@ -279,7 +278,7 @@ export const PERSONAS = [
   },
   {
     id: 'dtc-growth',
-    label: 'DTC Growth',
+    label: 'Shopify Growth System',
     problemTitle: 'You’re spending — but profit isn’t scaling.',
     problems: [
       'CAC is rising and ROAS is unstable',
@@ -366,7 +365,7 @@ export const PERSONAS = [
   },
   {
     id: 'enterprise-innovation',
-    label: 'Enterprise Innovation',
+    label: 'Corporate Innovation',
     problemTitle: 'Your MVP is stuck in alignment and approvals.',
     problems: [
       'Alignment takes too long across teams and stakeholders',
@@ -453,7 +452,7 @@ export const PERSONAS = [
   },
   {
     id: 'accelerator-support',
-    label: 'Accelerator Support',
+    label: 'Startup Accelerator Support',
     problemTitle: 'Founders get advice — but shipping doesn’t scale.',
     problems: [
       'Teams stall without technical leadership or delivery support',

@@ -18,7 +18,7 @@ export default function SolutionsAiSaasMvpSprint() {
         canonical="/solutions/ai-saas-mvp-sprint"
       />
       <SolutionHero 
-        title="AI SaaS Founder Sprint"
+        title="AI SaaS MVP Launch"
         subtitle="Ship a pilot-ready AI MVP — and start winning paying customers. You’re building fast, but scope and architecture decisions are slowing you down. We’re your AI SaaS MVP development agency: product + AI + full-stack + launch system, under one plan."
         primaryCta="Get My MVP Roadmap"
         secondaryCta="See the Sprint"

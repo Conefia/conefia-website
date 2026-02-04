@@ -33,7 +33,7 @@ export default function SolutionsClinicGrowth() {
         canonical="/solutions/clinic-growth"
       />
       <SolutionHero 
-        title="Clinic Growth Package"
+        title="Clinic Growth System"
         subtitle="A digital patient engagement platform that books more patients. One partner to fix your patient journey, improve local visibility, and turn traffic into booked appointments. Website + portal + intake + tracking + local SEO — aligned under one plan."
         primaryCta="Get My Clinic Growth Roadmap"
         secondaryCta="See the Package"

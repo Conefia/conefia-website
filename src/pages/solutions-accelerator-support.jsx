@@ -17,7 +17,7 @@ export default function AcceleratorSupportPage() {
         canonical="https://conefia.com/solutions/accelerator-support"
       />
       <SolutionHero 
-        title="Accelerator Support"
+        title="Startup Accelerator Support"
         subtitle="Cohorts that ship before Demo Day. Founders get advice — but execution doesn’t scale. We provide the cohort execution system: templates, build squads, and sponsor-ready reporting."
         primaryCta="Get Cohort Plan"
         secondaryCta="See Program"
