@@ -52,22 +52,19 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
 import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
+import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
 import appRelaunchRetention from './pages/app-relaunch-retention';
+import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
 import clinicGrowthSystem from './pages/clinic-growth-system';
 import corporateInnovation from './pages/corporate-innovation';
+import hartalegaAiPlatform from './pages/hartalega-ai-platform';
+import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
+import larovie from './pages/larovie';
+import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
+import menovia from './pages/menovia';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
-import alMahfza from './pages/al-mahfza';
-import aviya from './pages/aviya';
-import hartalega from './pages/hartalega';
-import larovie from './pages/larovie';
-import menovia from './pages/menovia';
 import vascular from './pages/vascular';
-import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
-import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
-import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
-import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
-import hartalegaAiPlatform from './pages/hartalega-ai-platform';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
 import __Layout from './Layout.jsx';
 
@@ -78,22 +75,19 @@ export const PAGES = {
     "BlogPost": BlogPost,
     "Home": Home,
     "ai-saas-mvp-launch": aiSaasMvpLaunch,
+    "al-mahfza-fintech-app": alMahfzaFintechApp,
     "app-relaunch-retention": appRelaunchRetention,
+    "aviya-digital-health-app": aviyaDigitalHealthApp,
     "clinic-growth-system": clinicGrowthSystem,
     "corporate-innovation": corporateInnovation,
+    "hartalega-ai-platform": hartalegaAiPlatform,
+    "larovie-beauty-ecommerce": larovieBeautyEcommerce,
+    "larovie": larovie,
+    "menovia-ai-femtech-app": menoviaAiFemtechApp,
+    "menovia": menovia,
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
-    "al-mahfza": alMahfza,
-    "aviya": aviya,
-    "hartalega": hartalega,
-    "larovie": larovie,
-    "menovia": menovia,
     "vascular": vascular,
-    "aviya-digital-health-app": aviyaDigitalHealthApp,
-    "larovie-beauty-ecommerce": larovieBeautyEcommerce,
-    "al-mahfza-fintech-app": alMahfzaFintechApp,
-    "menovia-ai-femtech-app": menoviaAiFemtechApp,
-    "hartalega-ai-platform": hartalegaAiPlatform,
     "vascularim-clinic-growth": vascularimClinicGrowth,
 }
 
