@@ -65,6 +65,10 @@ import menovia from './pages/menovia';
 import vascular from './pages/vascular';
 import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
 import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
+import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
+import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
+import hartalegaAiPlatform from './pages/hartalega-ai-platform';
+import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
 import __Layout from './Layout.jsx';
 
 
@@ -87,6 +91,10 @@ export const PAGES = {
     "vascular": vascular,
     "aviya-digital-health-app": aviyaDigitalHealthApp,
     "larovie-beauty-ecommerce": larovieBeautyEcommerce,
+    "al-mahfza-fintech-app": alMahfzaFintechApp,
+    "menovia-ai-femtech-app": menoviaAiFemtechApp,
+    "hartalega-ai-platform": hartalegaAiPlatform,
+    "vascularim-clinic-growth": vascularimClinicGrowth,
 }
 
 export const pagesConfig = {
