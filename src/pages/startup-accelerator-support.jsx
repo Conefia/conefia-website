@@ -1,35 +1,20 @@
-import React, { Suspense } from 'react';
-import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
-import { HeroVisual } from '@/components/solutions/accelerator/AcceleratorVisuals';
-import Seo from '@/components/Seo';
+import React from 'react';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
-
-// Lazy load below-the-fold components
-const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
-const SolutionProblem = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProblem })));
-const SolutionDetails = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionDetails })));
-const SolutionProcess = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProcess })));
-const SolutionOutcomes = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionOutcomes })));
-const SolutionProof = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProof })));
-const SolutionFAQ = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFAQ })));
-const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFinalCta })));
-
-// Lazy load visuals
-const OutcomesVisual = React.lazy(() => import('@/components/solutions/accelerator/AcceleratorVisuals').then(m => ({ default: m.OutcomesVisual })));
-const ProblemVisual = React.lazy(() => import('@/components/solutions/accelerator/AcceleratorVisuals').then(m => ({ default: m.ProblemVisual })));
-const SolutionVisual = React.lazy(() => import('@/components/solutions/accelerator/AcceleratorVisuals').then(m => ({ default: m.SolutionVisual })));
+import SeoLandingPage, { 
+  SolutionHero, SolutionMetrics, SolutionTrustedBy, 
+  SolutionProblem, SolutionDetails, SolutionProcess, 
+  SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta 
+} from '@/components/solutions/SeoLandingPage';
+import { HeroVisual, OutcomesVisual, ProblemVisual, SolutionVisual } from '@/components/solutions/accelerator/AcceleratorVisuals';
+import Seo from '@/components/Seo';
 
 export default function StartupAcceleratorSupport() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="Accelerator Support: Cohorts That Ship | Conefia"
         description="Startup accelerator MVP development services: cohort execution system, build squads, Demo Day prep, and sponsor-ready reporting."
-        canonical="https://conefia.com/solutions/startup-accelerator-support"
+        canonical="/solutions/startup-accelerator-support"
       />
       <SolutionHero 
         title="Startup Accelerator Support"
@@ -140,7 +125,7 @@ export default function StartupAcceleratorSupport() {
             answer: "All IP belongs 100% to the founders. We are a service provider/partner, not an owner."
           },
           {
-            question: "What does the 'Technical Co-Founder' role entail?",
+            question: "What does the 'Technical Co-founder' role entail?",
             answer: "Think of it as a fractional CTO for the cohort. We guide architecture, stack choices, and roadmap prioritization."
           }
         ]}

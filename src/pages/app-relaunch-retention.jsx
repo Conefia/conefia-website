@@ -10,16 +10,12 @@ import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Co
 import Seo from '@/components/Seo';
 
 export default function AppRelaunchRetention() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="App Relaunch: Retention + ASO Sprint | Conefia"
         description="App redesign and growth agency for retention: relaunch plan, performance + UX refresh, and ASO services to grow organic installs."
-        canonical="https://conefia.com/solutions/app-relaunch-retention"
+        canonical="/solutions/app-relaunch-retention"
       />
       <SolutionHero 
         title="App Relaunch & Retention"

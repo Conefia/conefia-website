@@ -25,16 +25,12 @@ const RoadmapPreviewVisual = React.lazy(() => import('@/components/solutions/cli
 const BrandCarousel = React.lazy(() => import('@/components/landing/BrandCarousel'));
 
 export default function ClinicGrowthSystem() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="Clinic Growth: Digital Patient Engagement | Conefia"
         description="Digital patient engagement platform + clinic patient portal software + HIPAA growth marketing to book more patients. Get a roadmap."
-        canonical="https://conefia.com/solutions/clinic-growth-system"
+        canonical="/solutions/clinic-growth-system"
       />
       <SolutionHero 
         title="Clinic Growth System"

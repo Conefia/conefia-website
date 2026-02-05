@@ -20,16 +20,12 @@ const ProblemVisual = React.lazy(() => import('@/components/solutions/dtc-growth
 const SolutionVisual = React.lazy(() => import('@/components/solutions/dtc-growth/DtcGrowthVisuals').then(m => ({ default: m.SolutionVisual })));
 
 export default function ShopifyGrowthSystem() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="DTC Growth: Shopify CRO + Paid Ads | Conefia"
         description="DTC brand growth marketing services: Shopify CRO, paid ads management, retention flows, and profit-first tracking to cut CAC."
-        canonical="https://conefia.com/solutions/shopify-growth-system"
+        canonical="/solutions/shopify-growth-system"
       />
       <SolutionHero 
         title="Shopify Growth System"

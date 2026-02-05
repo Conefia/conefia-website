@@ -20,16 +20,12 @@ const ProblemVisual = React.lazy(() => import('@/components/solutions/enterprise
 const SolutionVisual = React.lazy(() => import('@/components/solutions/enterprise/EnterpriseVisuals').then(m => ({ default: m.SolutionVisual })));
 
 export default function CorporateInnovation() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="Corporate Innovation: Regulated MVPs | Conefia"
         description="Regulated software development partner for healthcare and enterprise: HIPAA-aware delivery, governance, and pilot-ready MVPs."
-        canonical="https://conefia.com/solutions/corporate-innovation"
+        canonical="/solutions/corporate-innovation"
       />
       <SolutionHero 
         title="Corporate Innovation"

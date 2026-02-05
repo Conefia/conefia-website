@@ -10,16 +10,12 @@ import { Code2, Zap, Layout, Bot, GitBranch, Layers, Rocket } from 'lucide-react
 import Seo from '@/components/Seo';
 
 export default function AiSaasMvpLaunch() {
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
         title="AI SaaS MVP Sprint: AI MVP Development | Conefia"
         description="AI SaaS MVP development agency for founders: AI agent + LLM integration + launch system to win your first paying pilots."
-        canonical="https://conefia.com/solutions/ai-saas-mvp-launch"
+        canonical="/solutions/ai-saas-mvp-launch"
       />
       <SolutionHero 
         title="AI SaaS MVP Launch"
