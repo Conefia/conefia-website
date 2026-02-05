@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
+import { ServiceStructuredData } from '@/components/StructuredData';
 
 // Lazy load below-the-fold components
 const SocialProofBar = React.lazy(() => import('@/components/landing/SocialProofBar'));
@@ -54,6 +55,14 @@ export default function Home() {
           canonical="/" 
           description="AI & mobile apps built fast, launched right, scaled with data—for tech founders, clinics, and Shopify brands (SEO, ads, social)"
         />
+        
+        {/* Enhanced JSON-LD Schema */}
+        <ServiceStructuredData 
+          name="Founder Operations & Digital Business Development"
+          description="End-to-end digital business services: AI & mobile app development, launch strategy, and growth marketing for tech founders, medical practices, and e-commerce brands"
+          url="/"
+        />
+        
         <HeroSection reduceMotion={shouldReduceMotion} />
 
         <React.Suspense fallback={<DarkSectionSkeleton height="h-24" />}>
