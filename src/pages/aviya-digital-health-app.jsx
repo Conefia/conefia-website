@@ -164,7 +164,7 @@ export default function Aviya() {
                       {[
                         {
                           title: 'Ruthless Prioritization',
-                          desc: 'Audited the existing codebase, identified what was salvageable, and built a focused MVP roadmap. We cut features that weren't critical to launch and focused only on core telemedicine functionality: patient registration, doctor consultations, and secure video calls.'
+                          desc: 'Audited the existing codebase, identified what was salvageable, and built a focused MVP roadmap. We cut features that weren\'t critical to launch and focused only on core telemedicine functionality: patient registration, doctor consultations, and secure video calls.'
                         },
                         {
                           title: 'Technical Reset',
