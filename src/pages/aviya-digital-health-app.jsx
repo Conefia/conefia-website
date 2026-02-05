@@ -176,7 +176,7 @@ export default function Aviya() {
                         },
                         {
                           title: 'Launch Readiness',
-                          desc: 'Comprehensive testing, performance optimization, and documentation. We didn't just build features—we delivered a production-ready platform ready to serve real patients from day one.'
+                          desc: 'Comprehensive testing, performance optimization, and documentation. We didn\'t just build features—we delivered a production-ready platform ready to serve real patients from day one.'
                         }
                       ].map((item, i) => (
                         <div key={i} className="flex gap-4 items-start">
