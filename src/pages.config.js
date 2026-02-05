@@ -59,6 +59,10 @@ import corporateInnovation from './pages/corporate-innovation';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import alMahfza from './pages/al-mahfza';
 import aviya from './pages/aviya';
+import hartalega from './pages/hartalega';
+import larovie from './pages/larovie';
+import menovia from './pages/menovia';
+import vascular from './pages/vascular';
 import __Layout from './Layout.jsx';
 
 
@@ -75,6 +79,10 @@ export const PAGES = {
     "startup-accelerator-support": startupAcceleratorSupport,
     "al-mahfza": alMahfza,
     "aviya": aviya,
+    "hartalega": hartalega,
+    "larovie": larovie,
+    "menovia": menovia,
+    "vascular": vascular,
 }
 
 export const pagesConfig = {
