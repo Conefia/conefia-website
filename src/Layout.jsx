@@ -71,12 +71,12 @@ function LayoutContent({ children, currentPageName }) {
 
 
   const solutionItems = [
-  { label: 'Clinic Growth System', path: 'clinic-growth-system' },
-  { label: 'AI SaaS MVP Launch', path: 'ai-saas-mvp-launch' },
-  { label: 'App Relaunch & Retention', path: 'app-relaunch-retention' },
-  { label: 'Shopify Growth System', path: 'shopify-growth-system' },
-  { label: 'Corporate Innovation', path: 'corporate-innovation' },
-  { label: 'Startup Accelerator Support', path: 'startup-accelerator-support' }];
+  { label: 'Clinic Growth System', path: 'solutions-clinic-growth-system' },
+  { label: 'AI SaaS MVP Launch', path: 'solutions-ai-saas-mvp-launch' },
+  { label: 'App Relaunch & Retention', path: 'solutions-app-relaunch-retention' },
+  { label: 'Shopify Growth System', path: 'solutions-shopify-growth-system' },
+  { label: 'Corporate Innovation', path: 'solutions-corporate-innovation' },
+  { label: 'Startup Accelerator Support', path: 'solutions-startup-accelerator-support' }];
 
 
   return (
