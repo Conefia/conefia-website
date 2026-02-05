@@ -15,7 +15,7 @@ export default function SolutionsAppRelaunch() {
       <Seo 
         title="App Relaunch: Retention + ASO Sprint | Conefia"
         description="App redesign and growth agency for retention: relaunch plan, performance + UX refresh, and ASO services to grow organic installs."
-        canonical="/solutions/app-relaunch"
+        canonical="/solutions/app-relaunch-retention"
       />
       <SolutionHero 
         title="App Relaunch & Retention"

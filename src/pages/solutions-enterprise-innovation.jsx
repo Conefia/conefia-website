@@ -25,7 +25,7 @@ export default function EnterpriseInnovationPage() {
       <Seo 
         title="Corporate Innovation: Regulated MVPs | Conefia"
         description="Regulated software development partner for healthcare and enterprise: HIPAA-aware delivery, governance, and pilot-ready MVPs."
-        canonical="https://conefia.com/solutions/enterprise-innovation"
+        canonical="https://conefia.com/solutions/corporate-innovation"
       />
       <SolutionHero 
         title="Corporate Innovation"

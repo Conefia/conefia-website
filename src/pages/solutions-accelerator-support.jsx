@@ -14,7 +14,7 @@ export default function AcceleratorSupportPage() {
       <Seo 
         title="Accelerator Support: Cohorts That Ship | Conefia"
         description="Startup accelerator MVP development services: cohort execution system, build squads, Demo Day prep, and sponsor-ready reporting."
-        canonical="https://conefia.com/solutions/accelerator-support"
+        canonical="https://conefia.com/solutions/startup-accelerator-support"
       />
       <SolutionHero 
         title="Startup Accelerator Support"

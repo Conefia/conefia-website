@@ -25,7 +25,7 @@ export default function DtcGrowthPage() {
       <Seo 
         title="DTC Growth: Shopify CRO + Paid Ads | Conefia"
         description="DTC brand growth marketing services: Shopify CRO, paid ads management, retention flows, and profit-first tracking to cut CAC."
-        canonical="https://conefia.com/solutions/dtc-growth"
+        canonical="https://conefia.com/solutions/shopify-growth-system"
       />
       <SolutionHero 
         title="Shopify Growth System"

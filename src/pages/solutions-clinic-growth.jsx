@@ -30,7 +30,7 @@ export default function SolutionsClinicGrowth() {
       <Seo 
         title="Clinic Growth: Digital Patient Engagement | Conefia"
         description="Digital patient engagement platform + clinic patient portal software + HIPAA growth marketing to book more patients. Get a roadmap."
-        canonical="/solutions/clinic-growth"
+        canonical="/solutions/clinic-growth-system"
       />
       <SolutionHero 
         title="Clinic Growth System"

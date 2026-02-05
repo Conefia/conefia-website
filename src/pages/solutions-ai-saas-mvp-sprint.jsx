@@ -15,7 +15,7 @@ export default function SolutionsAiSaasMvpSprint() {
       <Seo 
         title="AI SaaS MVP Sprint: AI MVP Development | Conefia"
         description="AI SaaS MVP development agency for founders: AI agent + LLM integration + launch system to win your first paying pilots."
-        canonical="/solutions/ai-saas-mvp-sprint"
+        canonical="/solutions/ai-saas-mvp-launch"
       />
       <SolutionHero 
         title="AI SaaS MVP Launch"
