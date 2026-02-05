@@ -88,9 +88,9 @@ export default function AiSaasMvpLaunch() {
       <SolutionOutcomes 
         title="Common use cases"
         items={[
-          ""We need an AI agent users can trust"",
-          ""We need LLM + product architecture done right"",
-          ""We need first 100 paying customers for an AI startup""
+          "We need an AI agent users can trust",
+          "We need LLM + product architecture done right",
+          "We need first 100 paying customers for an AI startup"
         ]}
         visual={<div className="grid gap-4">{["B2B Agent Workflows", "Generative Content Platforms", "Data Analysis Copilots"].map((u,i) => <div key={i} className="bg-white/10 p-4 rounded-lg border border-white/5 flex items-center gap-3"><Bot className="w-5 h-5 text-[#DBFE01]"/><span className="text-white font-medium">{u}</span></div>)}</div>}
       />

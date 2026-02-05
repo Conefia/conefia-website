@@ -91,9 +91,9 @@ export default function AppRelaunchRetention() {
       <SolutionOutcomes 
         title="Common use cases"
         items={[
-          ""We need a relaunch strategy that's investor ready"",
-          ""We need organic growth from ASO, not only ads"",
-          ""We need an app user retention strategy that actually works""
+          "We need a relaunch strategy that's investor ready",
+          "We need organic growth from ASO, not only ads",
+          "We need an app user retention strategy that actually works"
         ]}
         visual={<div className="grid gap-4">{["Consumer Social Apps", "Subscription Utilities", "Fintech & Health"].map((u,i) => <div key={i} className="bg-white/10 p-4 rounded-lg border border-white/5 flex items-center gap-3"><Smartphone className="w-5 h-5 text-[#DBFE01]"/><span className="text-white font-medium">{u}</span></div>)}</div>}
       />
