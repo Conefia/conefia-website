@@ -52,18 +52,17 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
 import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
-import alMahfza from './pages/al-mahfza';
 import appRelaunchRetention from './pages/app-relaunch-retention';
-import aviya from './pages/aviya';
 import clinicGrowthSystem from './pages/clinic-growth-system';
 import corporateInnovation from './pages/corporate-innovation';
-import hartalega from './pages/hartalega';
-import larovie from './pages/larovie';
-import menovia from './pages/menovia';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
-import vascular from './pages/vascular';
 import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
+import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
+import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
+import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
+import hartalegaAiPlatform from './pages/hartalega-ai-platform';
+import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
 import __Layout from './Layout.jsx';
 
 
@@ -73,18 +72,17 @@ export const PAGES = {
     "BlogPost": BlogPost,
     "Home": Home,
     "ai-saas-mvp-launch": aiSaasMvpLaunch,
-    "al-mahfza": alMahfza,
     "app-relaunch-retention": appRelaunchRetention,
-    "aviya": aviya,
     "clinic-growth-system": clinicGrowthSystem,
     "corporate-innovation": corporateInnovation,
-    "hartalega": hartalega,
-    "larovie": larovie,
-    "menovia": menovia,
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
-    "vascular": vascular,
     "aviya-digital-health-app": aviyaDigitalHealthApp,
+    "larovie-beauty-ecommerce": larovieBeautyEcommerce,
+    "al-mahfza-fintech-app": alMahfzaFintechApp,
+    "menovia-ai-femtech-app": menoviaAiFemtechApp,
+    "hartalega-ai-platform": hartalegaAiPlatform,
+    "vascularim-clinic-growth": vascularimClinicGrowth,
 }
 
 export const pagesConfig = {
