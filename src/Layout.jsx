@@ -32,8 +32,13 @@ function LayoutContent({ children, currentPageName }) {
     currentPageName === 'hartalega' ||
     currentPageName === 'aviya'
   );
-  // Always use light text for case studies and solutions (dark backgrounds)
-  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || scrolled || mobileMenuOpen;
+  // Check for blog pages
+  const isBlogPage = currentPageName && typeof currentPageName === 'string' && (
+    currentPageName === 'Blog' ||
+    currentPageName === 'BlogPost'
+  );
+  // Always use light text for case studies, solutions, and blog pages (dark backgrounds)
+  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
