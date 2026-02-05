@@ -32,7 +32,7 @@ export default function Aviya() {
       <Seo 
         title="Aviya Telemed Case Study - Telemedicine MVP" 
         description="Conefia delivered a production-ready telemedicine MVP in 3 months after the project was stalled for 2 years. 87.5% faster time-to-market."
-        canonical="/aviya"
+        canonical="https://conefia.com/case-studies/aviya-digital-health-app"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">

@@ -32,7 +32,7 @@ export default function Menovia() {
       <Seo 
         title="Menovia AI Case Study - Women's Health Tech" 
         description="Conefia built and launched Menovia AI's MVP in 3 months. AI agent, mobile app, and digital presence for a women's health startup."
-        canonical="/menovia"
+        canonical="https://conefia.com/case-studies/menovia-ai-femtech-app"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">

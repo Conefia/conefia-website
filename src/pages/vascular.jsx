@@ -33,7 +33,7 @@ export default function Vascular() {
       <Seo 
         title="Vascular Institute Case Study - Healthcare Growth" 
         description="Conefia helped Vascular Institute of Michigan acquire 200+ patients at $20 CAC in 6 months using a multi-channel growth strategy."
-        canonical="/vascular"
+        canonical="https://conefia.com/case-studies/vascularim-clinic-growth"
       />
       <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Case Studies', path: '/#case-studies' }, { label: 'Vascular Institute' }]} />
       <ServiceStructuredData 

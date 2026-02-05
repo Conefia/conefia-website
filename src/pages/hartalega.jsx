@@ -32,7 +32,7 @@ export default function Hartalega() {
       <Seo 
         title="Hartalega Case Study - AI Transformation & PoCs" 
         description="Conefia delivered validated AI PoCs for Hartalega in 3 months with 5× ROI. Multi-use-case program across predictive maintenance and quality."
-        canonical="/hartalega"
+        canonical="https://conefia.com/case-studies/hartalega-ai-platform"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">

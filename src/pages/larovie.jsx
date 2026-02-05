@@ -32,7 +32,7 @@ export default function Larovie() {
       <Seo 
         title="Larovie Beauty Case Study - E-commerce Growth" 
         description="Conefia helped Larovie Beauty acquire 1,500+ customers in 3 months with AED 32 CAC. End-to-end Shopify build and growth marketing."
-        canonical="/larovie"
+        canonical="https://conefia.com/case-studies/larovie-beauty-ecommerce"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">

@@ -32,7 +32,7 @@ export default function AlMahfza() {
       <Seo 
         title="Al-Mahfza Case Study - Fintech App Development" 
         description="How Conefia helped Al-Mahfza ship a mobile money transfer app in 60 days after being stuck for a year. 83% faster delivery with compliance guidance."
-        canonical="/al-mahfza"
+        canonical="https://conefia.com/case-studies/al-mahfza-fintech-app"
       />
       {/* Hero */}
       <section className="relative pt-32 pb-20 overflow-hidden">
