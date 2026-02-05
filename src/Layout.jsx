@@ -25,12 +25,12 @@ function LayoutContent({ children, currentPageName }) {
   );
   // Check for case study pages
   const isCaseStudyPage = currentPageName && typeof currentPageName === 'string' && (
-    currentPageName === 'vascularim-clinic-growth' ||
-    currentPageName === 'menovia-ai-femtech-app' ||
-    currentPageName === 'larovie-beauty-ecommerce' ||
-    currentPageName === 'al-mahfza-fintech-app' ||
-    currentPageName === 'hartalega-ai-platform' ||
-    currentPageName === 'aviya-digital-health-app'
+    currentPageName === 'vascular' ||
+    currentPageName === 'menovia' ||
+    currentPageName === 'larovie' ||
+    currentPageName === 'al-mahfza' ||
+    currentPageName === 'hartalega' ||
+    currentPageName === 'aviya'
   );
   // Check for blog pages
   const isBlogPage = currentPageName && typeof currentPageName === 'string' && (
