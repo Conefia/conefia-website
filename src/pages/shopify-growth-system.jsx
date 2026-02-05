@@ -29,7 +29,7 @@ export default function ShopifyGrowthSystem() {
       />
       <SolutionHero 
         title="Shopify Growth System"
-        subtitle="Cut CAC. Stabilize ROAS. Lift conversion — profitably. If you're spending but margins aren't improving, you don't need "more ads." You need Shopify CRO + offer clarity + measurement that makes growth predictable."
+        subtitle="Cut CAC. Stabilize ROAS. Lift conversion — profitably. If you're spending but margins aren't improving, you don't need 'more ads.' You need Shopify CRO + offer clarity + measurement that makes growth predictable."
         primaryCta="Get My Growth Audit"
         secondaryCta="See the Package"
         trustChips={["Shopify Experts", "Profit-First", "Data-Driven"]}
