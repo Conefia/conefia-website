@@ -43,12 +43,12 @@ export default function CaseStudiesSection({ reduceMotion }) {
   }, [emblaApi, onSelect]);
 
   const caseStudyPages = {
-    'vascular-institute': 'vascular',
-    'menovia': 'menovia',
-    'larovie': 'larovie',
-    'al-mahfza': 'al-mahfza',
-    'hartalega': 'hartalega',
-    'aviya': 'aviya'
+    'vascular-institute': 'vascularim-clinic-growth',
+    'menovia': 'menovia-ai-femtech-app',
+    'larovie': 'larovie-beauty-ecommerce',
+    'al-mahfza': 'al-mahfza-fintech-app',
+    'hartalega': 'hartalega-ai-platform',
+    'aviya': 'aviya-digital-health-app'
   };
 
   const caseStudies = [
