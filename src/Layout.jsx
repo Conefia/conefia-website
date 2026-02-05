@@ -14,10 +14,26 @@ function LayoutContent({ children, currentPageName }) {
 
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
-  // Check for both 'solutions/' (folder) and 'solutions-' (flat file naming convention)
-  const isSolutionPage = currentPageName && typeof currentPageName === 'string' && (currentPageName.startsWith('solutions/') || currentPageName.startsWith('solutions-'));
-  // Use light text (dark mode header) if on Home page OR if scrolled (header becomes dark)
-  const useLightText = isHomePage || isSolutionPage || scrolled || mobileMenuOpen;
+  // Check for solution pages
+  const isSolutionPage = currentPageName && typeof currentPageName === 'string' && (
+    currentPageName === 'clinic-growth-system' ||
+    currentPageName === 'ai-saas-mvp-launch' ||
+    currentPageName === 'app-relaunch-retention' ||
+    currentPageName === 'shopify-growth-system' ||
+    currentPageName === 'corporate-innovation' ||
+    currentPageName === 'startup-accelerator-support'
+  );
+  // Check for case study pages
+  const isCaseStudyPage = currentPageName && typeof currentPageName === 'string' && (
+    currentPageName === 'vascular' ||
+    currentPageName === 'menovia' ||
+    currentPageName === 'larovie' ||
+    currentPageName === 'al-mahfza' ||
+    currentPageName === 'hartalega' ||
+    currentPageName === 'aviya'
+  );
+  // Always use light text for case studies and solutions (dark backgrounds)
+  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {

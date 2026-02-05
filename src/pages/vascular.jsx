@@ -24,6 +24,10 @@ function Section({ children, delay = 0 }) {
 }
 
 export default function Vascular() {
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const scrollToContact = () => {
     window.location.href = createPageUrl('Home') + '#contact';
   };
