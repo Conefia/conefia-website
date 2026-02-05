@@ -57,6 +57,12 @@ import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
 import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import hartalegaAiPlatform from './pages/hartalega-ai-platform';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
+import solutionsClinicGrowthSystem from './pages/solutions-clinic-growth-system';
+import solutionsAiSaasMvpLaunch from './pages/solutions-ai-saas-mvp-launch';
+import solutionsAppRelaunchRetention from './pages/solutions-app-relaunch-retention';
+import solutionsShopifyGrowthSystem from './pages/solutions-shopify-growth-system';
+import solutionsCorporateInnovation from './pages/solutions-corporate-innovation';
+import solutionsStartupAcceleratorSupport from './pages/solutions-startup-accelerator-support';
 import __Layout from './Layout.jsx';
 
 
@@ -71,6 +77,12 @@ export const PAGES = {
     "menovia-ai-femtech-app": menoviaAiFemtechApp,
     "hartalega-ai-platform": hartalegaAiPlatform,
     "vascularim-clinic-growth": vascularimClinicGrowth,
+    "solutions-clinic-growth-system": solutionsClinicGrowthSystem,
+    "solutions-ai-saas-mvp-launch": solutionsAiSaasMvpLaunch,
+    "solutions-app-relaunch-retention": solutionsAppRelaunchRetention,
+    "solutions-shopify-growth-system": solutionsShopifyGrowthSystem,
+    "solutions-corporate-innovation": solutionsCorporateInnovation,
+    "solutions-startup-accelerator-support": solutionsStartupAcceleratorSupport,
 }
 
 export const pagesConfig = {

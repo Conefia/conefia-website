@@ -16,12 +16,12 @@ function LayoutContent({ children, currentPageName }) {
   const isHomePage = currentPageName === 'Home';
   // Check for solution pages
   const isSolutionPage = currentPageName && typeof currentPageName === 'string' && (
-    currentPageName === 'solutions/clinic-growth-system' ||
-    currentPageName === 'solutions/ai-saas-mvp-launch' ||
-    currentPageName === 'solutions/app-relaunch-retention' ||
-    currentPageName === 'solutions/shopify-growth-system' ||
-    currentPageName === 'solutions/corporate-innovation' ||
-    currentPageName === 'solutions/startup-accelerator-support'
+    currentPageName === 'solutions-clinic-growth-system' ||
+    currentPageName === 'solutions-ai-saas-mvp-launch' ||
+    currentPageName === 'solutions-app-relaunch-retention' ||
+    currentPageName === 'solutions-shopify-growth-system' ||
+    currentPageName === 'solutions-corporate-innovation' ||
+    currentPageName === 'solutions-startup-accelerator-support'
   );
   // Check for case study pages
   const isCaseStudyPage = currentPageName && typeof currentPageName === 'string' && (
