@@ -1,106 +1,86 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, CheckCircle, TrendingUp, Users, DollarSign, ExternalLink, Target, Lightbulb, Zap, ShoppingBag } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '../utils';
+import { ShoppingBag, ExternalLink, Calendar, Building2, Target } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { createPageUrl } from '@/utils';
 
-function Section({ children, delay = 0 }) {
-  const ref = useRef(null);
+const Section = ({ children, className = "" }) => {
+  const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6 }}
+      className={className}
     >
       {children}
     </motion.div>
   );
-}
+};
 
-export default function Larovie() {
+export default function LarovieBeautyEcommerce() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const scrollToContact = () => {
-    window.location.href = createPageUrl('Home') + '#contact';
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#FAFAFA]">
+    <div className="min-h-screen bg-stone-950 text-white">
       <Seo 
-        title="Larovie Beauty Case Study - E-commerce Growth" 
-        description="Conefia helped Larovie Beauty acquire 1,500+ customers in 3 months with AED 32 CAC. End-to-end Shopify build and growth marketing."
-        canonical="https://conefia.com/case-studies/larovie-beauty-ecommerce"
+        title="Larovie Beauty Case Study | Conefia"
+        description="How we scaled Larovie's Shopify store with strategic CRO and paid ads management."
+        canonical="/case-studies/larovie-beauty-ecommerce"
       />
-      {/* Hero */}
+      
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-red-500/10" />
-        <motion.div 
-          className="absolute top-20 left-10 w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Larovie Beauty' }]} />
-
-          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500 to-red-500 text-white text-sm font-bold mb-6">
-            Idea → Growth
-          </span>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            1,500+ customers in 3 months with AED 32 CAC
-          </h1>
-
-          <div className="flex flex-wrap gap-8 mb-8">
-            {[
-              { icon: Users, label: '+1,500 customers', color: 'text-amber-600' },
-              { icon: TrendingUp, label: '50% MoM growth', color: 'text-orange-600' },
-              { icon: DollarSign, label: 'AED 32 CAC', color: 'text-red-600' },
-            ].map((stat, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
-                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                </div>
-                <span className="font-bold text-[#1a1a1a]">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <a 
-            href="https://larovie.ae"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#1a1a1a]/60 hover:text-[#DBFE01] transition-colors"
-          >
-            larovie.ae
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
-
-      {/* Hero Image */}
-      <Section>
-        <div className="relative h-[400px] -mt-8 mb-16 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8">
-          <img 
-            src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=1200&auto=format&fit=crop&q=80"
-            alt="Beauty products and e-commerce"
-            loading="lazy"
-            className="w-full h-full object-cover"
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900 to-stone-950" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Breadcrumbs 
+            items={[
+              { label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' },
+              { label: 'Larovie Beauty' }
+            ]}
+            theme="dark"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/50 to-transparent" />
-        </div>
-      </Section>
+          
+          <Section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-12 w-12 rounded-xl bg-[#DBFE01]/10 flex items-center justify-center">
+                <ShoppingBag className="w-6 h-6 text-[#DBFE01]" />
+              </div>
+              <span className="text-[#DBFE01] font-bold text-sm uppercase tracking-wider">Case Study</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Larovie Beauty:<br/>E-Commerce Growth System
+            </h1>
+            
+            <p className="text-xl text-white/70 mb-8 max-w-3xl leading-relaxed">
+              Shopify optimization and paid ads management for a fast-growing beauty brand.
+            </p>
+          </Section>
 
-      {/* Content - keeping rest of existing code */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* ... existing content ... */}
+          {/* Metrics Hero Cards */}
+          <Section className="mt-16">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gradient-to-br from-[#DBFE01]/20 to-[#DBFE01]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#DBFE01]/30">
+                <div className="text-5xl font-extrabold text-[#DBFE01] mb-2">2,847</div>
+                <div className="text-lg font-semibold text-white/90">New Customers</div>
+                <div className="text-sm text-white/60 mt-1">In 6 Months</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#DBFE01]/20 to-[#DBFE01]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#DBFE01]/30">
+                <div className="text-5xl font-extrabold text-[#DBFE01] mb-2">$18</div>
+                <div className="text-lg font-semibold text-white/90">Customer Acquisition Cost</div>
+                <div className="text-sm text-white/60 mt-1">Profitable from Day 1</div>
+              </div>
+            </div>
+          </Section>
         </div>
       </section>
     </div>

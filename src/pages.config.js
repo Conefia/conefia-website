@@ -51,18 +51,18 @@ import AdminBlog from './pages/AdminBlog';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
-import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
-import appRelaunchRetention from './pages/app-relaunch-retention';
-import clinicGrowthSystem from './pages/clinic-growth-system';
-import corporateInnovation from './pages/corporate-innovation';
-import shopifyGrowthSystem from './pages/shopify-growth-system';
-import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
 import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
 import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
 import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import hartalegaAiPlatform from './pages/hartalega-ai-platform';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
+import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
+import appRelaunchRetention from './pages/app-relaunch-retention';
+import clinicGrowthSystem from './pages/clinic-growth-system';
+import corporateInnovation from './pages/corporate-innovation';
+import shopifyGrowthSystem from './pages/shopify-growth-system';
+import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import __Layout from './Layout.jsx';
 
 
@@ -71,18 +71,18 @@ export const PAGES = {
     "Blog": Blog,
     "BlogPost": BlogPost,
     "Home": Home,
-    "ai-saas-mvp-launch": aiSaasMvpLaunch,
-    "app-relaunch-retention": appRelaunchRetention,
-    "clinic-growth-system": clinicGrowthSystem,
-    "corporate-innovation": corporateInnovation,
-    "shopify-growth-system": shopifyGrowthSystem,
-    "startup-accelerator-support": startupAcceleratorSupport,
     "aviya-digital-health-app": aviyaDigitalHealthApp,
     "larovie-beauty-ecommerce": larovieBeautyEcommerce,
     "al-mahfza-fintech-app": alMahfzaFintechApp,
     "menovia-ai-femtech-app": menoviaAiFemtechApp,
     "hartalega-ai-platform": hartalegaAiPlatform,
     "vascularim-clinic-growth": vascularimClinicGrowth,
+    "ai-saas-mvp-launch": aiSaasMvpLaunch,
+    "app-relaunch-retention": appRelaunchRetention,
+    "clinic-growth-system": clinicGrowthSystem,
+    "corporate-innovation": corporateInnovation,
+    "shopify-growth-system": shopifyGrowthSystem,
+    "startup-accelerator-support": startupAcceleratorSupport,
 }
 
 export const pagesConfig = {

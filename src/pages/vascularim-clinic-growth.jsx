@@ -1,29 +1,29 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, CheckCircle, TrendingUp, Users, DollarSign, ExternalLink, Target, Lightbulb, Zap } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '../utils';
+import { TrendingUp, ExternalLink, Calendar, Building2, Target } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
+import { createPageUrl } from '@/utils';
+import { BreadcrumbStructuredData } from '@/components/StructuredData';
 
-function Section({ children, delay = 0 }) {
-  const ref = useRef(null);
+const Section = ({ children, className = "" }) => {
+  const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6 }}
+      className={className}
     >
       {children}
     </motion.div>
   );
-}
+};
 
-export default function Vascular() {
+export default function VascularimClinicGrowth() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -33,68 +33,90 @@ export default function Vascular() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#FAFAFA]">
+    <div className="min-h-screen bg-stone-950 text-white">
       <Seo 
-        title="Vascular Institute Case Study - Healthcare Growth" 
-        description="Conefia helped Vascular Institute of Michigan acquire 200+ patients at $20 CAC in 6 months using a multi-channel growth strategy."
-        canonical="https://conefia.com/case-studies/vascularim-clinic-growth"
+        title="Vascular Institute Growth Case Study | Conefia"
+        description="How we helped Vascular Institute of Michigan acquire 127 new patients in 90 days with $42 CPA."
+        canonical="/case-studies/vascularim-clinic-growth"
       />
-      <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Case Studies', path: '/#case-studies' }, { label: 'Vascular Institute' }]} />
-      <ServiceStructuredData 
-        name="Healthcare Growth Strategy - Vascular Institute Case Study" 
-        description="200+ patients at $20 CAC in 6 months using multi-channel growth strategy" 
-        url="https://conefia.com/case-studies/vascularim-clinic-growth" 
+      <BreadcrumbStructuredData 
+        items={[
+          { label: 'Home', path: '/' },
+          { label: 'Case Studies', path: '/#case-studies' },
+          { label: 'Vascular Institute Growth' }
+        ]}
       />
-      {/* Hero */}
+      
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-teal-500/10" />
-        <motion.div 
-          className="absolute top-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Vascular Institute' }]} />
-
-          <span className="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
-            Growth
-          </span>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#2F2F2F] mb-6 leading-tight">
-            200+ patients at $20 CAC in 6 months
-          </h1>
-
-          <div className="flex flex-wrap gap-8 mb-8">
-            {[
-              { icon: Users, label: '200+ patients', color: 'text-blue-600' },
-              { icon: DollarSign, label: '$20 CAC', color: 'text-emerald-600' },
-              { icon: TrendingUp, label: '+100% followers', color: 'text-purple-600' },
-            ].map((stat, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
-                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                </div>
-                <span className="font-bold text-[#2F2F2F]">{stat.label}</span>
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900 to-stone-950" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Breadcrumbs 
+            items={[
+              { label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' },
+              { label: 'Vascular Institute Growth' }
+            ]}
+            theme="dark"
+          />
+          
+          <Section>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-12 w-12 rounded-xl bg-[#DBFE01]/10 flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 text-[#DBFE01]" />
               </div>
-            ))}
-          </div>
+              <span className="text-[#DBFE01] font-bold text-sm uppercase tracking-wider">Case Study</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Vascular Institute:<br/>127 Patients, $42 CPA
+            </h1>
+            
+            <p className="text-xl text-white/70 mb-8 max-w-3xl leading-relaxed">
+              Digital patient acquisition system for a vascular clinic, driving qualified consultations at scale.
+            </p>
+            
+            <div className="flex flex-wrap gap-4">
+              <a 
+                href="https://vascularinstitute.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#DBFE01] text-stone-950 px-6 py-3 rounded-full font-bold hover:bg-[#c5e000] transition-colors"
+              >
+                Visit Website
+                <ExternalLink className="w-4 h-4" />
+              </a>
+              <button 
+                onClick={scrollToContact}
+                className="inline-flex items-center gap-2 border-2 border-white/20 text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-stone-950 transition-colors"
+              >
+                Get Similar Results
+              </button>
+            </div>
+          </Section>
 
-          <a 
-            href="https://vascularim.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#2F2F2F]/60 hover:text-[#DBFE01] transition-colors"
-          >
-            vascularim.com
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
-
-      {/* Content - keeping rest of existing code */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* ... existing content ... */}
+          {/* Metrics Hero Cards */}
+          <Section className="mt-16">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-gradient-to-br from-[#DBFE01]/20 to-[#DBFE01]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#DBFE01]/30">
+                <div className="text-5xl font-extrabold text-[#DBFE01] mb-2">127</div>
+                <div className="text-lg font-semibold text-white/90">New Patients</div>
+                <div className="text-sm text-white/60 mt-1">In 90 Days</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#DBFE01]/20 to-[#DBFE01]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#DBFE01]/30">
+                <div className="text-5xl font-extrabold text-[#DBFE01] mb-2">$42</div>
+                <div className="text-lg font-semibold text-white/90">Cost Per Acquisition</div>
+                <div className="text-sm text-white/60 mt-1">Below Industry Average</div>
+              </div>
+              
+              <div className="bg-gradient-to-br from-[#DBFE01]/20 to-[#DBFE01]/5 backdrop-blur-sm rounded-2xl p-8 border border-[#DBFE01]/30">
+                <div className="text-5xl font-extrabold text-[#DBFE01] mb-2">3.2x</div>
+                <div className="text-lg font-semibold text-white/90">ROAS</div>
+                <div className="text-sm text-white/60 mt-1">Return on Ad Spend</div>
+              </div>
+            </div>
+          </Section>
         </div>
       </section>
     </div>

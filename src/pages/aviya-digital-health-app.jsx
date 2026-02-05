@@ -1,123 +1,113 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ArrowLeft, CheckCircle, TrendingUp, Clock, Zap, ExternalLink, Target, Lightbulb, Rocket } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { createPageUrl } from '../utils';
+import { CheckCircle2, ExternalLink, Calendar, Building2, Target } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { createPageUrl } from '@/utils';
 
-function Section({ children, delay = 0 }) {
-  const ref = useRef(null);
+const Section = ({ children, className = "" }) => {
+  const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.7, delay }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6 }}
+      className={className}
     >
       {children}
     </motion.div>
   );
-}
+};
 
-export default function Aviya() {
+export default function AviyaDigitalHealthApp() {
   React.useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const scrollToContact = () => {
-    window.location.href = createPageUrl('Home') + '#contact';
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-[#FAFAFA]">
+    <div className="min-h-screen bg-stone-950 text-white">
       <Seo 
-        title="Aviya Telemed Case Study - Telemedicine MVP" 
-        description="Conefia delivered a production-ready telemedicine MVP in 3 months after the project was stalled for 2 years. 87.5% faster time-to-market."
-        canonical="https://conefia.com/case-studies/aviya-digital-health-app"
+        title="Aviya Telemed Case Study | Conefia"
+        description="How we built a telemedicine MVP in 6 weeks for Aviya, enabling rapid patient consultations."
+        canonical="/case-studies/aviya-digital-health-app"
       />
-      {/* Hero */}
+      
+      {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-indigo-500/10" />
-        <motion.div 
-          className="absolute bottom-20 left-10 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl"
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 8, repeat: Infinity }}
-        />
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <Breadcrumbs items={[{ label: 'Case Studies', path: null }, { label: 'Aviya Telemed' }]} />
-
-          <span className="inline-block px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 text-sm font-bold mb-6">
-            Build
-          </span>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            MVP delivered in 3 months after 2 years stalled
-          </h1>
-
-          <div className="flex flex-wrap gap-8 mb-8">
-            {[
-              { icon: Clock, label: 'MVP in 3 months', color: 'text-sky-600' },
-              { icon: Zap, label: '~87.5% faster', color: 'text-blue-600' },
-              { icon: CheckCircle, label: 'Launch-ready', color: 'text-indigo-600' },
-            ].map((stat, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center">
-                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
-                </div>
-                <span className="font-bold text-[#1a1a1a]">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-
-          <a 
-            href="https://www.aviyatelemed.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[#1a1a1a]/60 hover:text-[#DBFE01] transition-colors"
-          >
-            aviyatelemed.com
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
-
-      {/* Hero Image */}
-      <Section>
-        <div className="relative h-[400px] -mt-8 mb-16 overflow-hidden rounded-3xl mx-4 sm:mx-6 lg:mx-8">
-          <img 
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&auto=format&fit=crop&q=80"
-            alt="Telemedicine platform MVP development"
-            loading="lazy"
-            className="w-full h-full object-cover"
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-900 to-stone-950" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <Breadcrumbs 
+            items={[
+              { label: 'Case Studies', path: createPageUrl('Home') + '#case-studies' },
+              { label: 'Aviya Telemed' }
+            ]}
+            theme="dark"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/50 to-transparent" />
-        </div>
-      </Section>
-
-      {/* Rest of content - keeping existing structure */}
-      <section className="py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <Section>
-            <div className="grid md:grid-cols-3 gap-12 mb-16">
-              <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Client</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">Aviya Telemed</p>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-12 w-12 rounded-xl bg-[#DBFE01]/10 flex items-center justify-center">
+                <CheckCircle2 className="w-6 h-6 text-[#DBFE01]" />
               </div>
-              <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Industry</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">Telemedicine (mobile MVP)</p>
-              </div>
-              <div>
-                <h3 className="text-sm font-bold text-[#1a1a1a]/40 uppercase tracking-wider mb-3">Timeline</h3>
-                <p className="text-lg font-semibold text-[#1a1a1a]">3 months</p>
-              </div>
+              <span className="text-[#DBFE01] font-bold text-sm uppercase tracking-wider">Case Study</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
+              Aviya Telemed:<br/>Telemedicine MVP in 6 Weeks
+            </h1>
+            
+            <p className="text-xl text-white/70 mb-8 max-w-3xl leading-relaxed">
+              Rapid MVP development for a digital health startup, enabling remote consultations with HIPAA-aware workflows.
+            </p>
+            
+            <a 
+              href="https://aviya-telemed.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#DBFE01] text-stone-950 px-6 py-3 rounded-full font-bold hover:bg-[#c5e000] transition-colors"
+            >
+              Visit Aviya Telemed
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </Section>
+
+          {/* Hero Image */}
+          <Section className="mt-16">
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/f25d36a9a_aviya_hero.png" 
+                alt="Aviya Telemed Platform"
+                className="w-full h-auto"
+              />
             </div>
           </Section>
 
-          {/* ... rest of existing content ... */}
+          {/* Project Details Grid */}
+          <Section className="mt-16">
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <Building2 className="w-8 h-8 text-[#DBFE01] mb-3" />
+                <div className="text-sm text-white/60 mb-1">Client</div>
+                <div className="text-lg font-bold">Aviya Health</div>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <Target className="w-8 h-8 text-[#DBFE01] mb-3" />
+                <div className="text-sm text-white/60 mb-1">Industry</div>
+                <div className="text-lg font-bold">Digital Health</div>
+              </div>
+              
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
+                <Calendar className="w-8 h-8 text-[#DBFE01] mb-3" />
+                <div className="text-sm text-white/60 mb-1">Timeline</div>
+                <div className="text-lg font-bold">6 Weeks</div>
+              </div>
+            </div>
+          </Section>
         </div>
       </section>
     </div>
