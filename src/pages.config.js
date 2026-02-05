@@ -59,12 +59,9 @@ import clinicGrowthSystem from './pages/clinic-growth-system';
 import corporateInnovation from './pages/corporate-innovation';
 import hartalegaAiPlatform from './pages/hartalega-ai-platform';
 import larovieBeautyEcommerce from './pages/larovie-beauty-ecommerce';
-import larovie from './pages/larovie';
 import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
-import menovia from './pages/menovia';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
-import vascular from './pages/vascular';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
 import __Layout from './Layout.jsx';
 
@@ -82,12 +79,9 @@ export const PAGES = {
     "corporate-innovation": corporateInnovation,
     "hartalega-ai-platform": hartalegaAiPlatform,
     "larovie-beauty-ecommerce": larovieBeautyEcommerce,
-    "larovie": larovie,
     "menovia-ai-femtech-app": menoviaAiFemtechApp,
-    "menovia": menovia,
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
-    "vascular": vascular,
     "vascularim-clinic-growth": vascularimClinicGrowth,
 }
 
