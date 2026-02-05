@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
@@ -18,18 +19,21 @@ const ContactSection = React.lazy(() => import('@/components/landing/ContactSect
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
+  const location = useLocation();
 
   useEffect(() => {
-    if (window.location.hash) {
-      const id = window.location.hash.replace('#', '');
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
       const element = document.getElementById(id);
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       }
+    } else {
+      window.scrollTo(0, 0);
     }
-  }, []);
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">

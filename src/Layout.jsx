@@ -10,7 +10,6 @@ function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { selectedPersona } = usePersona();
-  const navigate = useNavigate();
 
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
@@ -47,20 +46,6 @@ function LayoutContent({ children, currentPageName }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const scrollToSection = (id) => {
-    if (isHomePage) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // Navigate to home with hash
-      navigate('/#' + id);
-      // Fallback if navigate doesn't handle hash scroll immediately (handled by Home component)
-    }
-    setMobileMenuOpen(false);
-  };
 
   const navItems = [
   { label: 'Playbook', id: 'playbook' },
@@ -148,12 +133,6 @@ function LayoutContent({ children, currentPageName }) {
 
       {/* Sticky Header */}
       <header className="bg-stone-950 fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-
-
-
-
-
-
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
@@ -199,10 +178,9 @@ function LayoutContent({ children, currentPageName }) {
               </div>
 
               {navItems.map((item) =>
-              item.page ? (
                 <Link
                   key={item.label}
-                  to={createPageUrl(item.page)}
+                  to={item.page ? createPageUrl(item.page) : createPageUrl('Home') + '#' + item.id}
                   className={`text-sm font-semibold transition-colors relative group ${
                   useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
                   }>
@@ -210,30 +188,18 @@ function LayoutContent({ children, currentPageName }) {
                     {item.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
                   </Link>
-              ) : (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-semibold transition-colors relative group ${
-                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
-                  }>
-
-                    {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
-                  </button>
-              )
               )}
             </nav>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
-              <button
-                onClick={() => scrollToSection('contact')}
+              <Link
+                to={createPageUrl('Home') + '#contact'}
                 className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
 
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -276,41 +242,33 @@ function LayoutContent({ children, currentPageName }) {
                  </div>
 
                  {/* Choose your track */}
-                 <button
-                onClick={() => scrollToSection('track-selector')}
+                 <Link
+                to={createPageUrl('Home') + '#track-selector'}
+                onClick={() => setMobileMenuOpen(false)}
                 className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 my-4">
 
                     Choose your track
                     <ArrowRight className="w-4 h-4" />
-                  </button>
+                  </Link>
 
                 {navItems.map((item) =>
-                item.page ? (
-                <Link
-                  key={item.label}
-                  to={createPageUrl(item.page)}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-left text-white text-lg font-semibold py-2">
+                  <Link
+                    key={item.label}
+                    to={item.page ? createPageUrl(item.page) : createPageUrl('Home') + '#' + item.id}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-left text-white text-lg font-semibold py-2">
 
                     {item.label}
                   </Link>
-                ) : (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left text-white text-lg font-semibold py-2">
-
-                    {item.label}
-                  </button>
-                )
                 )}
-                <button
-                onClick={() => scrollToSection('contact')}
+                <Link
+                to={createPageUrl('Home') + '#contact'}
+                onClick={() => setMobileMenuOpen(false)}
                 className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
 
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           }
@@ -343,18 +301,18 @@ function LayoutContent({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Services</h4>
               <ul className="space-y-3 text-sm text-white/80 font-medium">
-                <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Validate</button></li>
-                <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Build</button></li>
-                <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Launch</button></li>
-                <li><button onClick={() => scrollToSection('playbook')} className="hover:text-[#DBFE01] transition-colors">Grow</button></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Validate</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Build</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Launch</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Grow</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Company</h4>
               <ul className="space-y-3 text-sm text-white/80 font-medium">
-                <li><button onClick={() => scrollToSection('case-studies')} className="hover:text-[#DBFE01] transition-colors">Case Studies</button></li>
-                <li><button onClick={() => scrollToSection('packages')} className="hover:text-[#DBFE01] transition-colors">Packages</button></li>
-                <li><button onClick={() => scrollToSection('contact')} className="hover:text-[#DBFE01] transition-colors">Contact</button></li>
+                <li><Link to={createPageUrl('Home') + '#case-studies'} className="hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
+                <li><Link to={createPageUrl('Home') + '#packages'} className="hover:text-[#DBFE01] transition-colors">Packages</Link></li>
+                <li><Link to={createPageUrl('Home') + '#contact'} className="hover:text-[#DBFE01] transition-colors">Contact</Link></li>
               </ul>
             </div>
           </div>
