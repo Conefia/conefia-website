@@ -84,24 +84,27 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(300)].map((_, i) => {
+          {[...Array(500)].map((_, i) => {
           const x = Math.random() * 100;
           const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          const hasGlow = Math.random() > 0.85;
+          const distance = Math.random();
+          const size = distance > 0.7 ? Math.random() * 3 + 1.5 : Math.random() * 1.5 + 0.3;
+          const opacity = distance > 0.7 ? Math.random() * 0.4 + 0.6 : Math.random() * 0.3 + 0.1;
+          const brightness = distance > 0.7 ? 1 : 0.6;
+          const hasGlow = distance > 0.8;
 
           return (
             <div
               key={`star-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
+              className="absolute rounded-full"
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
                 width: `${size}px`,
                 height: `${size}px`,
                 opacity,
-                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+                backgroundColor: `rgba(219, 254, 1, ${brightness})`,
+                boxShadow: hasGlow ? `0 0 ${size * 2}px rgba(219, 254, 1, 0.6)` : 'none'
               }} />);
 
         })}
@@ -481,24 +484,27 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
 
      {/* Static Star Dust */}
      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-       {[...Array(300)].map((_, i) => {
+       {[...Array(500)].map((_, i) => {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-      const size = Math.random() * 2 + 0.3;
-      const opacity = Math.random() * 0.6 + 0.2;
-      const hasGlow = Math.random() > 0.85;
+      const distance = Math.random();
+      const size = distance > 0.7 ? Math.random() * 3 + 1.5 : Math.random() * 1.5 + 0.3;
+      const opacity = distance > 0.7 ? Math.random() * 0.4 + 0.6 : Math.random() * 0.3 + 0.1;
+      const brightness = distance > 0.7 ? 1 : 0.6;
+      const hasGlow = distance > 0.8;
 
       return (
         <div
           key={`star-${i}`}
-          className="absolute rounded-full bg-[#DBFE01]"
+          className="absolute rounded-full"
           style={{
             left: `${x}%`,
             top: `${y}%`,
             width: `${size}px`,
             height: `${size}px`,
             opacity,
-            boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+            backgroundColor: `rgba(219, 254, 1, ${brightness})`,
+            boxShadow: hasGlow ? `0 0 ${size * 2}px rgba(219, 254, 1, 0.6)` : 'none'
           }} />);
 
     })}
