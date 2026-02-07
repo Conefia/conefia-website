@@ -188,11 +188,19 @@ export default function HeroSection({ reduceMotion }) {
 
       {/* Scroll indicator - simplified */}
       {!reduceMotion &&
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50">
+      <motion.div 
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
+        animate={{ y: [0, 8, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+            <motion.div 
+              className="w-1.5 h-3 bg-white/50 rounded-full"
+              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
-        </div>
+        </motion.div>
       }
     </section>);
 
