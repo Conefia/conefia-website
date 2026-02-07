@@ -65,19 +65,49 @@ export default function HeroSection({ reduceMotion }) {
           const y = Math.random() * 100;
           const size = Math.random() * 2 + 0.3;
           const opacity = Math.random() * 0.6 + 0.2;
-          const hasGlow = Math.random() > 0.85;
+          const isTwinkle = Math.random() > 0.92;
+
+          if (isTwinkle) {
+            const twinkleSize = Math.random() * 3 + 2;
+            return (
+              <div
+                key={`star-${i}`}
+                className="absolute"
+                style={{
+                  left: `${x}%`,
+                  top: `${y}%`,
+                  width: `${twinkleSize}px`,
+                  height: `${twinkleSize}px`,
+                }}>
+                <div 
+                  className="absolute bg-white rounded-full"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    opacity: opacity * 1.2,
+                    boxShadow: `
+                      0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                      0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
+                    `
+                  }} />
+              </div>
+            );
+          }
 
           return (
             <div
               key={`star-${i}`}
-              className="absolute rounded-full bg-[#DBFE01]"
+              className="absolute rounded-full bg-white"
               style={{
                 left: `${x}%`,
                 top: `${y}%`,
                 width: `${size}px`,
                 height: `${size}px`,
-                opacity,
-                boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
+                opacity: opacity * 0.8,
+                boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
               }} />);
 
 
