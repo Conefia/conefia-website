@@ -111,12 +111,12 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                     height: '100%',
                     opacity: 0.95,
                     boxShadow: `
-                      0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(180, 190, 255, 0.8),
-                      0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(160, 180, 255, 0.4),
-                      0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                      0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                      ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                      ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6)
+                      0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(219, 254, 1, 0.8),
+                      0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(219, 254, 1, 0.4),
+                      0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
+                      0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
+                      ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
+                      ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6)
                     `
                   }} />
               </div>
