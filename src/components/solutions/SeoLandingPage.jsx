@@ -84,7 +84,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(150)].map((_, i) => {
+          {[...Array(300)].map((_, i) => {
           const x = Math.random() * 100;
           const y = Math.random() * 100;
           const size = Math.random() * 2 + 0.3;
@@ -481,7 +481,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
 
      {/* Static Star Dust */}
      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-       {[...Array(150)].map((_, i) => {
+       {[...Array(300)].map((_, i) => {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
       const size = Math.random() * 2 + 0.3;
