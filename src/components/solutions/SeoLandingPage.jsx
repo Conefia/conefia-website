@@ -84,16 +84,15 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(400)].map((_, i) => {
+          {[...Array(300)].map((_, i) => {
           const x = Math.random() * 100;
           const y = Math.random() * 100;
-          const size = Math.random() * 1.5 + 0.5;
-          const opacity = Math.random() * 0.5 + 0.3;
-          const isTwinkle = Math.random() > 0.96;
+          const size = Math.random() * 2 + 0.3;
+          const opacity = Math.random() * 0.6 + 0.2;
+          const isTwinkle = Math.random() > 0.92;
 
           if (isTwinkle) {
-            const twinkleSize = Math.random() * 2 + 2.5;
-            const rayLength = Math.random() * 20 + 30;
+            const twinkleSize = Math.random() * 3 + 2;
             return (
               <div
                 key={`star-${i}`}
@@ -109,14 +108,13 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                   style={{
                     width: '100%',
                     height: '100%',
-                    opacity: 0.95,
+                    opacity: opacity * 1.2,
                     boxShadow: `
-                      0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(219, 254, 1, 0.8),
-                      0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(219, 254, 1, 0.4),
-                      0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
-                      0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
-                      ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6),
-                      ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(219, 254, 1, 0.6)
+                      0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                      0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                      ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                     `
                   }} />
               </div>
@@ -132,8 +130,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 top: `${y}%`,
                 width: `${size}px`,
                 height: `${size}px`,
-                opacity: opacity * 0.7,
-                boxShadow: `0 0 ${size * 0.5}px rgba(255, 255, 255, ${opacity * 0.4})`
+                opacity: opacity * 0.8,
+                boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
               }} />);
 
         })}
@@ -513,16 +511,15 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
 
      {/* Static Star Dust */}
      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-       {[...Array(400)].map((_, i) => {
+       {[...Array(300)].map((_, i) => {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
-      const size = Math.random() * 1.5 + 0.5;
-      const opacity = Math.random() * 0.5 + 0.3;
-      const isTwinkle = Math.random() > 0.96;
+      const size = Math.random() * 2 + 0.3;
+      const opacity = Math.random() * 0.6 + 0.2;
+      const isTwinkle = Math.random() > 0.92;
 
       if (isTwinkle) {
-        const twinkleSize = Math.random() * 2 + 2.5;
-        const rayLength = Math.random() * 20 + 30;
+        const twinkleSize = Math.random() * 3 + 2;
         return (
           <div
             key={`star-${i}`}
@@ -538,14 +535,13 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
               style={{
                 width: '100%',
                 height: '100%',
-                opacity: 0.95,
+                opacity: opacity * 1.2,
                 boxShadow: `
-                  0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(180, 190, 255, 0.8),
-                  0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(160, 180, 255, 0.4),
-                  0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                  0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                  ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                  ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6)
+                  0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                  0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                  0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                  ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                  ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                 `
               }} />
           </div>
@@ -561,8 +557,8 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
             top: `${y}%`,
             width: `${size}px`,
             height: `${size}px`,
-            opacity: opacity * 0.7,
-            boxShadow: `0 0 ${size * 0.5}px rgba(255, 255, 255, ${opacity * 0.4})`
+            opacity: opacity * 0.8,
+            boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
           }} />);
 
     })}
@@ -602,16 +598,15 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(400)].map((_, i) => {
+          {[...Array(300)].map((_, i) => {
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = Math.random() * 1.5 + 0.5;
-            const opacity = Math.random() * 0.5 + 0.3;
-            const isTwinkle = Math.random() > 0.96;
+            const size = Math.random() * 2 + 0.3;
+            const opacity = Math.random() * 0.6 + 0.2;
+            const isTwinkle = Math.random() > 0.92;
 
             if (isTwinkle) {
-              const twinkleSize = Math.random() * 2 + 2.5;
-              const rayLength = Math.random() * 20 + 30;
+              const twinkleSize = Math.random() * 3 + 2;
               return (
                 <div
                   key={`star-${i}`}
@@ -627,14 +622,13 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                     style={{
                       width: '100%',
                       height: '100%',
-                      opacity: 0.95,
+                      opacity: opacity * 1.2,
                       boxShadow: `
-                        0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(180, 190, 255, 0.8),
-                        0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(160, 180, 255, 0.4),
-                        0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6)
+                        0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                        0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                       `
                     }} />
                 </div>
@@ -650,8 +644,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   top: `${y}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: opacity * 0.7,
-                  boxShadow: `0 0 ${size * 0.5}px rgba(255, 255, 255, ${opacity * 0.4})`
+                  opacity: opacity * 0.8,
+                  boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
                 }} />);
 
           })}
@@ -700,16 +694,15 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(400)].map((_, i) => {
+          {[...Array(300)].map((_, i) => {
             const x = Math.random() * 100;
             const y = Math.random() * 100;
-            const size = Math.random() * 1.5 + 0.5;
-            const opacity = Math.random() * 0.5 + 0.3;
-            const isTwinkle = Math.random() > 0.96;
+            const size = Math.random() * 2 + 0.3;
+            const opacity = Math.random() * 0.6 + 0.2;
+            const isTwinkle = Math.random() > 0.92;
 
             if (isTwinkle) {
-              const twinkleSize = Math.random() * 2 + 2.5;
-              const rayLength = Math.random() * 20 + 30;
+              const twinkleSize = Math.random() * 3 + 2;
               return (
                 <div
                   key={`star-${i}`}
@@ -725,14 +718,13 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                     style={{
                       width: '100%',
                       height: '100%',
-                      opacity: 0.95,
+                      opacity: opacity * 1.2,
                       boxShadow: `
-                        0 0 ${twinkleSize * 3}px ${twinkleSize * 1.5}px rgba(180, 190, 255, 0.8),
-                        0 0 ${twinkleSize * 5}px ${twinkleSize * 2}px rgba(160, 180, 255, 0.4),
-                        0 ${-rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        0 ${rayLength}px ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        ${-rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6),
-                        ${rayLength}px 0 ${twinkleSize * 6}px 0px rgba(180, 200, 255, 0.6)
+                        0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                        0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                        ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                       `
                     }} />
                 </div>
@@ -748,8 +740,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   top: `${y}%`,
                   width: `${size}px`,
                   height: `${size}px`,
-                  opacity: opacity * 0.7,
-                  boxShadow: `0 0 ${size * 0.5}px rgba(255, 255, 255, ${opacity * 0.4})`
+                  opacity: opacity * 0.8,
+                  boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
                 }} />);
 
           })}
