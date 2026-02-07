@@ -13,6 +13,72 @@ export default function HeroSection({ reduceMotion }) {
 
   return (
     <section className="relative min-h-screen flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .hero-animate-1 {
+          animation: fadeInUp 0.7s ease-out 0.15s both;
+        }
+
+        .hero-animate-2 {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+
+        .hero-animate-3 {
+          animation: fadeInUp 0.7s ease-out 0.45s both;
+        }
+
+        .hero-animate-4 {
+          animation: fadeInUp 0.7s ease-out 0.6s both;
+        }
+
+        .hero-animate-5 {
+          animation: fadeInUp 0.7s ease-out 0.75s both;
+        }
+
+        .hero-animate-6 {
+          animation: fadeInUp 0.7s ease-out 0.9s both;
+        }
+
+        .hero-visual {
+          animation: fadeInScale 0.8s ease-out 0.4s both;
+        }
+
+        ${reduceMotion ? `
+          .hero-animate-1,
+          .hero-animate-2,
+          .hero-animate-3,
+          .hero-animate-4,
+          .hero-animate-5,
+          .hero-animate-6,
+          .hero-visual {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+          }
+        ` : ''}
+      `}</style>
+
       {/* Base layer */}
       <div className="bg-stone-950 absolute inset-0" />
       
@@ -59,30 +125,30 @@ export default function HeroSection({ reduceMotion }) {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
+            <div className="hero-animate-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
               <span className="text-sm font-semibold text-[#DBFE01]">Your Build → Launch → Scale Partner</span>
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+            <h1 className="hero-animate-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
               Build it.{' '}
               <span className="text-[#DBFE01]">Launch it.</span>{' '}
               Scale it.
             </h1>
 
             {/* Eyebrow */}
-            <p className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
+            <p className="hero-animate-3 text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
               AI + mobile app development—plus launch and scale in one team.
             </p>
 
             {/* Subhead */}
-            <p className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+            <p className="hero-animate-4 text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               We ship production-ready apps, conversion-ready landing pages, and measurable growth for app founders, healthcare clinics, and Shopify brands.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <div className="hero-animate-5 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={() => scrollToSection('contact')}
                 className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2"
@@ -99,7 +165,7 @@ export default function HeroSection({ reduceMotion }) {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
+            <div className="hero-animate-6 flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
               <div className="text-center lg:text-left">
                 <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
                 <p className="text-white font-bold text-lg">8–12 weeks</p>
@@ -120,18 +186,20 @@ export default function HeroSection({ reduceMotion }) {
           </div>
 
           {/* Right Visual */}
-          <div className="relative flex items-center justify-center">
+          <div className="hero-visual relative flex items-center justify-center">
             <AccelerateProcessVisual reduceMotion={true} />
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50">
-        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+      {!reduceMotion && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50">
+          <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
+            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
