@@ -1,9 +1,23 @@
 import React from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
+import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
+import { usePersona } from '@/components/context/PersonaContext';
 
 export default function HeroSection({ reduceMotion }) {
+  const { selectedPersona } = usePersona();
+  const [isMobile, setIsMobile] = React.useState(false);
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  React.useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,74 +25,33 @@ export default function HeroSection({ reduceMotion }) {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: reduceMotion ? 0 : 0.15,
+        delayChildren: reduceMotion ? 0 : 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reduceMotion ? 0 : 0.7,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  };
+
+  const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
+
   return (
-    <section className="relative min-h-screen flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeInScale {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
-        .hero-animate-1 {
-          animation: fadeInUp 0.7s ease-out 0.15s both;
-        }
-
-        .hero-animate-2 {
-          animation: fadeInUp 0.7s ease-out 0.3s both;
-        }
-
-        .hero-animate-3 {
-          animation: fadeInUp 0.7s ease-out 0.45s both;
-        }
-
-        .hero-animate-4 {
-          animation: fadeInUp 0.7s ease-out 0.6s both;
-        }
-
-        .hero-animate-5 {
-          animation: fadeInUp 0.7s ease-out 0.75s both;
-        }
-
-        .hero-animate-6 {
-          animation: fadeInUp 0.7s ease-out 0.9s both;
-        }
-
-        .hero-visual {
-          animation: fadeInScale 0.8s ease-out 0.4s both;
-        }
-
-        ${reduceMotion ? `
-          .hero-animate-1,
-          .hero-animate-2,
-          .hero-animate-3,
-          .hero-animate-4,
-          .hero-animate-5,
-          .hero-animate-6,
-          .hero-visual {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-          }
-        ` : ''}
-      `}</style>
-
+    <section ref={ref} className="relative min-h-screen flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
       {/* Base layer */}
       <div className="bg-stone-950 absolute inset-0" />
       
@@ -105,9 +78,9 @@ export default function HeroSection({ reduceMotion }) {
                 height: `${size}px`,
                 opacity,
                 boxShadow: hasGlow ? '0 0 4px rgba(219, 254, 1, 0.8)' : 'none'
-              }}
-            />
-          );
+              }} />);
+
+
         })}
       </div>
       
@@ -116,56 +89,72 @@ export default function HeroSection({ reduceMotion }) {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)'
-        }}
-      />
+        }} />
 
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 md:pt-4 pb-4 md:pb-2 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="text-center lg:text-left">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="text-center lg:text-left">
+
             {/* Badge */}
-            <div className="hero-animate-1 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
               <span className="text-sm font-semibold text-[#DBFE01]">Your Build → Launch → Scale Partner</span>
-            </div>
+            </motion.div>
 
             {/* Headline */}
-            <h1 className="hero-animate-2 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+            <motion.h1
+              variants={itemVariants}
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+
               Build it.{' '}
               <span className="text-[#DBFE01]">Launch it.</span>{' '}
               Scale it.
-            </h1>
+            </motion.h1>
 
             {/* Eyebrow */}
-            <p className="hero-animate-3 text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
+            <motion.p
+              variants={itemVariants}
+              className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
               AI + mobile app development—plus launch and scale in one team.
-            </p>
+            </motion.p>
 
             {/* Subhead */}
-            <p className="hero-animate-4 text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+            <motion.p
+              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               We ship production-ready apps, conversion-ready landing pages, and measurable growth for app founders, healthcare clinics, and Shopify brands.
-            </p>
+            </motion.p>
 
             {/* CTAs */}
-            <div className="hero-animate-5 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
               <button
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2"
-              >
+                className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2">
+
                 Book Roadmap Call
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollToSection('track-selector')}
-                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm"
-              >
+                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm">
+
                 Choose Your Track
               </button>
-            </div>
+            </motion.div>
 
             {/* Trust indicators */}
-            <div className="hero-animate-6 flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
+            <motion.div
+              variants={itemVariants}
+              className="flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
+
               <div className="text-center lg:text-left">
                 <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
                 <p className="text-white font-bold text-lg">8–12 weeks</p>
@@ -182,24 +171,29 @@ export default function HeroSection({ reduceMotion }) {
                 <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">ONE BACKLOG</p>
                 <p className="text-white font-bold text-lg">One owner</p>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* Right Visual */}
-          <div className="hero-visual relative flex items-center justify-center">
-            <AccelerateProcessVisual reduceMotion={true} />
-          </div>
+          {/* Right Visual - Animated Flow */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
+            className="relative flex items-center justify-center">
+
+            <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
+          </motion.div>
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      {!reduceMotion && (
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50">
+      {/* Scroll indicator - simplified */}
+      {!reduceMotion &&
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50">
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
             <div className="w-1.5 h-3 bg-white/50 rounded-full" />
           </div>
         </div>
-      )}
-    </section>
-  );
+      }
+    </section>);
+
 }
