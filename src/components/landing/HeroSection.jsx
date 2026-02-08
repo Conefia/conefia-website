@@ -134,7 +134,9 @@ export default function HeroSection({ reduceMotion }) {
             {/* Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-              <span className="text-sm font-semibold text-[#DBFE01]">Your Build → Launch → Scale Partner</span>
+              <span className="text-sm font-semibold text-[#DBFE01]">
+                Build it. <span className="text-white">Launch it.</span> Scale it.
+              </span>
             </motion.div>
 
             {/* Headline */}
