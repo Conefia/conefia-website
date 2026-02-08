@@ -43,7 +43,7 @@ export default function HowWeWork({ reduceMotion }) {
         }
       ]
     },
-    'ai-saas': {
+    'ai-saas-mvp': {
       headline: 'De-risk fast. Build right. Launch for pilots.',
       subhead: 'We align scope, AI architecture, and launch basics so you ship a pilot-ready MVP without rework.',
       cards: [
@@ -145,7 +145,7 @@ export default function HowWeWork({ reduceMotion }) {
         }
       ]
     },
-    'enterprise': {
+    'enterprise-innovation': {
       headline: 'Governance built in — so pilots ship.',
       subhead: 'We reduce approval drag with clear checkpoints, documentation, and secure-by-design delivery.',
       cards: [
@@ -179,7 +179,7 @@ export default function HowWeWork({ reduceMotion }) {
         }
       ]
     },
-    'accelerator': {
+    'accelerator-support': {
       headline: 'Cohorts that ship — not just pitch.',
       subhead: 'We standardize delivery across founders so MVP quality is consistent and Demo Day is calm.',
       cards: [
