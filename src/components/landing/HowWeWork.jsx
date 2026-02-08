@@ -186,7 +186,7 @@ export default function HowWeWork({ reduceMotion }) {
         {
           icon: Repeat,
           title: 'Cohort System',
-          description: 'Templates + cadence so teams don't stall.',
+          description: 'Templates + cadence so teams don\'t stall.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
