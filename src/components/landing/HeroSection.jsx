@@ -56,7 +56,7 @@ export default function HeroSection({ reduceMotion }) {
       <div className="bg-stone-950 absolute inset-0" />
       
       {/* Contour lines */}
-      <ContourBackground className="opacity-80" />
+      <ContourBackground className="opacity-80" isMobile={isMobile} />
 
       {/* Static Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
