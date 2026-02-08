@@ -71,7 +71,7 @@ export default function ProblemSolution({ reduceMotion }) {
             Choose your track
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
-            What are you building right now?
+            What are you building <span className="gradient-text">right now?</span>
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto">
             Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.

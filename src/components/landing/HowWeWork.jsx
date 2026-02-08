@@ -10,7 +10,8 @@ export default function HowWeWork({ reduceMotion }) {
 
   const personaContent = {
     'clinic-growth': {
-      headline: 'Predictable clinic growth — shipped weekly.',
+      headline: 'Predictable clinic growth —',
+      headlineAccent: 'shipped weekly.',
       subhead: 'One accountable team improving bookings, local visibility, and patient conversion with HIPAA-aware delivery.',
       cards: [
         {
@@ -44,7 +45,8 @@ export default function HowWeWork({ reduceMotion }) {
       ]
     },
     'ai-saas-mvp': {
-      headline: 'De-risk fast. Build right. Launch for pilots.',
+      headline: 'De-risk fast. Build right.',
+      headlineAccent: 'Launch for pilots.',
       subhead: 'We align scope, AI architecture, and launch basics so you ship a pilot-ready MVP without rework.',
       cards: [
         {
@@ -78,7 +80,8 @@ export default function HowWeWork({ reduceMotion }) {
       ]
     },
     'app-relaunch': {
-      headline: 'Retention-first fixes — guided by data.',
+      headline: 'Retention-first fixes —',
+      headlineAccent: 'guided by data.',
       subhead: 'We diagnose churn, ship high-impact product fixes, and relaunch with analytics you can trust.',
       cards: [
         {
@@ -112,7 +115,8 @@ export default function HowWeWork({ reduceMotion }) {
       ]
     },
     'dtc-growth': {
-      headline: 'Make ROAS predictable — and conversion climb.',
+      headline: 'Make ROAS predictable —',
+      headlineAccent: 'and conversion climb.',
       subhead: 'We run disciplined experiments across ads, store UX, and lifecycle to lower CAC and grow profit.',
       cards: [
         {
@@ -146,7 +150,8 @@ export default function HowWeWork({ reduceMotion }) {
       ]
     },
     'enterprise-innovation': {
-      headline: 'Governance built in — so pilots ship.',
+      headline: 'Governance built in —',
+      headlineAccent: 'so pilots ship.',
       subhead: 'We reduce approval drag with clear checkpoints, documentation, and secure-by-design delivery.',
       cards: [
         {
@@ -180,7 +185,8 @@ export default function HowWeWork({ reduceMotion }) {
       ]
     },
     'accelerator-support': {
-      headline: 'Cohorts that ship — not just pitch.',
+      headline: 'Cohorts that ship —',
+      headlineAccent: 'not just pitch.',
       subhead: 'We standardize delivery across founders so MVP quality is consistent and Demo Day is calm.',
       cards: [
         {
@@ -234,7 +240,7 @@ export default function HowWeWork({ reduceMotion }) {
             How We Work
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
-            {content.headline}
+            {content.headline} <span className="gradient-text">{content.headlineAccent}</span>
           </h2>
           <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium">
             {content.subhead}
