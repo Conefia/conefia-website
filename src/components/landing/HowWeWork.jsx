@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Calendar, GitBranch, BarChart3, Shield, TrendingUp, Target, Repeat, DollarSign, Users, Lock, CheckCircle, Activity } from 'lucide-react';
+import { Play, FileText, Shield, Activity, Rocket, Search, Calendar, DollarSign, Users, CheckCircle, FlaskConical, Store, Repeat, FileCheck, Layers } from 'lucide-react';
 import { usePersona } from '@/components/context/PersonaContext';
 
 export default function HowWeWork({ reduceMotion }) {
@@ -14,14 +14,14 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'One accountable team improving bookings, local visibility, and patient conversion with HIPAA-aware delivery.',
       cards: [
         {
-          icon: Calendar,
+          icon: Play,
           title: 'Weekly Demos',
           description: 'Watch booking conversion improve every single week.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
         {
-          icon: GitBranch,
+          icon: FileText,
           title: 'Single Backlog',
           description: 'One priority list across site, intake, SEO, and tracking.',
           gradient: 'from-cyan-500 to-blue-600',
@@ -48,28 +48,28 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'We align scope, AI architecture, and launch basics so you ship a pilot-ready MVP without rework.',
       cards: [
         {
-          icon: Lock,
+          icon: FileText,
           title: 'Scope Lock',
           description: 'Must-haves tied to pilot outcomes and ROI.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
         {
-          icon: Calendar,
+          icon: Play,
           title: 'Weekly Demos',
           description: 'Progress you can show users, pilots, and investors.',
           gradient: 'from-cyan-500 to-blue-600',
           glow: 'shadow-cyan-500/30'
         },
         {
-          icon: BarChart3,
+          icon: FileCheck,
           title: 'Stage Gates',
           description: 'Crisp decisions and sign-offs that prevent drift.',
           gradient: 'from-emerald-500 to-teal-600',
           glow: 'shadow-emerald-500/30'
         },
         {
-          icon: Target,
+          icon: Rocket,
           title: 'Launch Kit',
           description: 'Landing page, onboarding, and analytics from day one.',
           gradient: 'from-orange-500 to-amber-600',
@@ -82,21 +82,21 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'We diagnose churn, ship high-impact product fixes, and relaunch with analytics you can trust.',
       cards: [
         {
-          icon: TrendingUp,
+          icon: Search,
           title: 'Churn Diagnosis',
           description: 'Funnels + cohorts to pinpoint drop-offs fast.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
         {
-          icon: Repeat,
+          icon: Calendar,
           title: 'Weekly Releases',
           description: 'Small, reliable shipping cycles that compound.',
           gradient: 'from-cyan-500 to-blue-600',
           glow: 'shadow-cyan-500/30'
         },
         {
-          icon: Target,
+          icon: Store,
           title: 'Store Lift',
           description: 'ASO + store assets that raise qualified installs.',
           gradient: 'from-emerald-500 to-teal-600',
@@ -116,7 +116,7 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'We run disciplined experiments across ads, store UX, and lifecycle to lower CAC and grow profit.',
       cards: [
         {
-          icon: Target,
+          icon: FlaskConical,
           title: 'Test System',
           description: 'Weekly creative + audience tests with winners/losers.',
           gradient: 'from-violet-500 to-purple-600',
@@ -150,14 +150,14 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'We reduce approval drag with clear checkpoints, documentation, and secure-by-design delivery.',
       cards: [
         {
-          icon: BarChart3,
+          icon: FileCheck,
           title: 'Stage Gates',
           description: 'Clear approvals without endless meetings.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
         {
-          icon: CheckCircle,
+          icon: FileCheck,
           title: 'Audit Trail',
           description: 'Documentation and traceability from day one.',
           gradient: 'from-cyan-500 to-blue-600',
@@ -184,14 +184,14 @@ export default function HowWeWork({ reduceMotion }) {
       subhead: 'We standardize delivery across founders so MVP quality is consistent and Demo Day is calm.',
       cards: [
         {
-          icon: Repeat,
+          icon: Layers,
           title: 'Cohort System',
           description: 'Templates + cadence so teams don\'t stall.',
           gradient: 'from-violet-500 to-purple-600',
           glow: 'shadow-violet-500/30'
         },
         {
-          icon: Calendar,
+          icon: Play,
           title: 'Founder Demos',
           description: 'Weekly momentum and fast unblocks.',
           gradient: 'from-cyan-500 to-blue-600',
