@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Play, FileText, Shield, Activity, Rocket, Search, Calendar, DollarSign, Users, CheckCircle, FlaskConical, Store, Repeat, FileCheck, Layers, BarChart3 } from 'lucide-react';
 import { usePersona } from '@/components/context/PersonaContext';
-import ContourBackground from '@/components/visual/ContourBackground';
 
 export default function HowWeWork({ reduceMotion }) {
   const ref = React.useRef(null);
@@ -222,89 +221,21 @@ export default function HowWeWork({ reduceMotion }) {
 
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-[#2F2F2F] relative overflow-hidden">
-      {/* Base layer */}
-      <div className="bg-stone-950 absolute inset-0" />
-      
-      {/* Contour lines */}
-      <ContourBackground className="opacity-80" />
-
-      {/* Static Star Dust */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(300)].map((_, i) => {
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          const isTwinkle = Math.random() > 0.92;
-
-          if (isTwinkle) {
-            const twinkleSize = Math.random() * 3 + 2;
-            return (
-              <div
-                key={`star-${i}`}
-                className="absolute"
-                style={{
-                  left: `${x}%`,
-                  top: `${y}%`,
-                  width: `${twinkleSize}px`,
-                  height: `${twinkleSize}px`,
-                }}>
-                <div 
-                  className="absolute bg-white rounded-full"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    opacity: opacity * 1.2,
-                    boxShadow: `
-                      0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
-                      0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
-                    `
-                  }} />
-              </div>
-            );
-          }
-
-          return (
-            <div
-              key={`star-${i}`}
-              className="absolute rounded-full bg-white"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity: opacity * 0.8,
-                boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
-              }} />
-          );
-        })}
-      </div>
-      
-      {/* Vignette */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)'
-        }} />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section ref={ref} className="py-16 md:py-24 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16">
 
-          <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
             How We Work
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
             {content.headline}
           </h2>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium">
             {content.subhead}
           </p>
         </motion.div>
@@ -335,10 +266,10 @@ export default function HowWeWork({ reduceMotion }) {
                     animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }} />
                 </motion.div>
-                <h3 className="text-lg font-bold text-white mb-2 group-hover:scale-105 transition-transform">
+                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">
                   {card.title}
                 </h3>
-                <p className="text-white/80 text-sm font-medium">
+                <p className="text-[#1a1a1a]/80 text-sm font-medium">
                   {card.description}
                 </p>
               </motion.div>
