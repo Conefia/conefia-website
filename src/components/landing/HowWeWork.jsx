@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Play, FileText, Shield, Activity, Rocket, Search, Calendar, DollarSign, Users, CheckCircle, FlaskConical, Store, Repeat, FileCheck, Layers } from 'lucide-react';
+import { Play, FileText, Shield, Activity, Rocket, Search, Calendar, DollarSign, Users, CheckCircle, FlaskConical, Store, Repeat, FileCheck, Layers, BarChart3 } from 'lucide-react';
 import { usePersona } from '@/components/context/PersonaContext';
 
 export default function HowWeWork({ reduceMotion }) {
