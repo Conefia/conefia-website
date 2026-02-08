@@ -15,9 +15,8 @@ export default function PlaybookSection({ reduceMotion }) {
     description: 'De-risk your idea with research and validation before building anything.',
     tasks: [
     'Discovery workshops & stakeholder alignment',
-    'Competitor analysis & market positioning scan',
-    'Interactive prototype for early user feedback',
-    'Clear MVP scope with success criteria defined'],
+    'Competitor & market positioning scan',
+    'Interactive prototype for early user feedback'],
 
     gradient: 'from-blue-600 via-indigo-600 to-purple-600',
     bgGradient: 'from-blue-500/20 to-indigo-500/20',
@@ -34,9 +33,8 @@ export default function PlaybookSection({ reduceMotion }) {
     description: 'Ship a production-ready MVP with all the essentials baked in.',
     tasks: [
     'Complete UX/UI design system and brand',
-    'Full-stack development: AI agent / app / web / store',
-    'Critical integrations, APIs & third-party services',
-    'Security, compliance (HIPAA), and analytics setup'],
+    'Full-stack development: AI / app / web / store',
+    'Critical integrations, APIs & third-party services'],
 
     gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
     bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
@@ -53,9 +51,8 @@ export default function PlaybookSection({ reduceMotion }) {
     description: 'Go live with professional presence across all channels.',
     tasks: [
     'Complete brand kit, identity & style guide',
-    'Marketing website and conversion-optimized landing pages',
-    'App Store / Google Play / Shopify listing & launch',
-    'Google Business Profile and social media setup'],
+    'Marketing website & landing pages',
+    'App Store / Google Play / Shopify listing & launch'],
 
     gradient: 'from-purple-600 via-pink-600 to-rose-600',
     bgGradient: 'from-purple-500/20 to-pink-500/20',
@@ -67,14 +64,13 @@ export default function PlaybookSection({ reduceMotion }) {
   {
     number: '04',
     icon: TrendingUp,
-    title: 'Grow',
+    title: 'Scale',
     duration: 'Ongoing',
     description: 'Scale smart with data-driven experiments and continuous optimization.',
     tasks: [
-    'Paid advertising (Google, Meta), SEO & content marketing',
-    'CRM automation, email sequences & retention flows',
-    'Analytics instrumentation, dashboards & experimentation',
-    'Continuous iteration roadmap based on user data'],
+    'Paid advertising (Google, Meta), SEO & content',
+    'CRM automation, email & retention flows',
+    'Analytics instrumentation & experimentation'],
 
     gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
     bgGradient: 'from-emerald-500/20 to-teal-500/20',
