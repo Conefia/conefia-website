@@ -91,8 +91,8 @@ export default function ProblemSolution({ reduceMotion }) {
               onClick={(e) => handlePersonaClick(e, persona.id)}
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
                 selectedPersonaId === persona.id 
-                  ? 'bg-[#1a1a1a] text-white border-[#1a1a1a] shadow-lg scale-105' 
-                  : 'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#1a1a1a]/30 hover:bg-gray-50'
+                  ? 'bg-[#DBFE01] text-[#1a1a1a] border-[#DBFE01] shadow-lg shadow-[#DBFE01]/50 scale-105 animate-pulse' 
+                  : 'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#DBFE01]/50 hover:bg-gray-50'
               }`}
             >
               {persona.label}
