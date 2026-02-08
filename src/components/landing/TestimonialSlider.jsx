@@ -60,14 +60,74 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
   if (!loading && testimonials.length === 0) return null;
 
   return (
-    <section ref={ref} className="py-20 md:py-32 relative overflow-hidden bg-[#0B1020]">
-       {/* Background */}
-       <div className="bg-stone-950 absolute inset-0 from-[#0B1020] to-[#121829]" />
-       <ContourBackground className="opacity-80" />
+    <section ref={ref} className="py-20 md:py-32 relative overflow-hidden bg-[#2F2F2F]">
+       {/* Base layer */}
+       <div className="bg-stone-950 absolute inset-0" />
        
-       {/* Decorative blobs */}
-       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
-       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/5 rounded-full blur-[100px] pointer-events-none" />
+       {/* Contour lines */}
+       <ContourBackground className="opacity-80" />
+
+       {/* Static Star Dust */}
+       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+         {[...Array(300)].map((_, i) => {
+           const x = Math.random() * 100;
+           const y = Math.random() * 100;
+           const size = Math.random() * 2 + 0.3;
+           const opacity = Math.random() * 0.6 + 0.2;
+           const isTwinkle = Math.random() > 0.92;
+
+           if (isTwinkle) {
+             const twinkleSize = Math.random() * 3 + 2;
+             return (
+               <div
+                 key={`star-${i}`}
+                 className="absolute"
+                 style={{
+                   left: `${x}%`,
+                   top: `${y}%`,
+                   width: `${twinkleSize}px`,
+                   height: `${twinkleSize}px`,
+                 }}>
+                 <div 
+                   className="absolute bg-white rounded-full"
+                   style={{
+                     width: '100%',
+                     height: '100%',
+                     opacity: opacity * 1.2,
+                     boxShadow: `
+                       0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
+                       0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                       0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                       ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
+                       ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
+                     `
+                   }} />
+               </div>
+             );
+           }
+
+           return (
+             <div
+               key={`star-${i}`}
+               className="absolute rounded-full bg-white"
+               style={{
+                 left: `${x}%`,
+                 top: `${y}%`,
+                 width: `${size}px`,
+                 height: `${size}px`,
+                 opacity: opacity * 0.8,
+                 boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
+               }} />
+           );
+         })}
+       </div>
+       
+       {/* Vignette */}
+       <div
+         className="absolute inset-0 pointer-events-none"
+         style={{
+           background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)'
+         }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
