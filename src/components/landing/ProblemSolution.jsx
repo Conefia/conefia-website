@@ -67,6 +67,7 @@ export default function ProblemSolution({ reduceMotion }) {
           className="text-center mb-12">
 
           <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             Choose your track
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">

@@ -3,7 +3,7 @@ import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { Quote, ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 
 export default function TestimonialSlider({ reduceMotion, testimonials: propTestimonials, title }) {
@@ -137,6 +137,7 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
           className="text-center mb-16">
 
           <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             Client Feedback
           </span>
           {title ?
