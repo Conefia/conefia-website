@@ -81,8 +81,8 @@ export default function PackagesSection({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16">
 
-          <span className="bg-[#DBFE01]/20 text-[#2F2F2F] mb-4 px-4 py-1.5 text-lg font-semibold rounded-full inline-block">Packages & Services
-
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+            Packages &amp; Services
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
             Start at <span className="gradient-text">any phase</span>

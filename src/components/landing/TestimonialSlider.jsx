@@ -136,7 +136,7 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
           transition={{ duration: reduceMotion ? 0 : 0.6 }}
           className="text-center mb-16">
 
-          <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 text-sm font-medium mb-6 backdrop-blur-sm">
+          <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
             Client Feedback
           </span>
           {title ?
