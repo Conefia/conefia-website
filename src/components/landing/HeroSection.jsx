@@ -142,9 +142,7 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
 
-              Build it.{' '}
-              <span className="text-[#DBFE01]">Launch it.</span>{' '}
-              Scale it.
+              One Partner to Build Your App, Grow Your Clinic, & Scale Your Shopify Brand
             </motion.h1>
 
             {/* Eyebrow */}
