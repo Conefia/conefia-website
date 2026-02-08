@@ -77,6 +77,10 @@ export default function Home() {
           <SocialProofBar reduceMotion={shouldReduceMotion} />
         </React.Suspense>
 
+        <React.Suspense fallback={<SectionSkeleton />}>
+          <HowWeWork reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+
         <React.Suspense fallback={<DarkSectionSkeleton />}>
           <CaseStudiesSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
@@ -87,10 +91,6 @@ export default function Home() {
 
         <React.Suspense fallback={<SectionSkeleton />}>
           <TestimonialSlider reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
-
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <HowWeWork reduceMotion={shouldReduceMotion} />
         </React.Suspense>
 
         <React.Suspense fallback={<SectionSkeleton />}>
