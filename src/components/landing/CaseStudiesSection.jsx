@@ -154,16 +154,15 @@ export default function CaseStudiesSection({ reduceMotion }) {
 
 
   return (
-    <section ref={ref} id="case-studies" className="py-16 md:py-24 relative overflow-hidden">
+    <section ref={ref} id="case-studies" className="py-20 md:py-32 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#2F2F2F]" />
-      <div className="bg-stone-950 absolute inset-0 from-[#DBFE01]/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] via-[#2F2F2F] to-[#1a1a1a]" />
       
-      <ContourBackground className="opacity-80" />
+      <ContourBackground className="opacity-60" />
 
       {/* Animated orbs */}
       <motion.div
-        className="absolute top-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-3xl"
         animate={reduceMotion ? {} : {
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3]
@@ -171,7 +170,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
         transition={{ duration: 8, repeat: Infinity }} />
 
       <motion.div
-        className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-3xl"
         animate={reduceMotion ? {} : {
           scale: [1.2, 1, 1.2],
           opacity: [0.5, 0.3, 0.5]
@@ -184,17 +183,17 @@ export default function CaseStudiesSection({ reduceMotion }) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
-          className="text-center mb-12">
+          className="text-center mb-16">
 
-          <span className="bg-white/10 text-white/60 mb-6 px-4 py-2 text-lg font-semibold rounded-full inline-flex items-center gap-2 border border-white/20">Case Studies
-
-
+          <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+            Case Studies
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Real outcomes.<br />
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight">
+            Real outcomes.{' '}
             <span className="text-[#DBFE01]">Real growth.</span>
           </h2>
-          <p className="text-white/80 max-w-2xl mx-auto font-medium">
+          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
             See how we've helped founders go from idea to live product with measurable results.
           </p>
         </motion.div>
@@ -202,11 +201,11 @@ export default function CaseStudiesSection({ reduceMotion }) {
         {/* Carousel */}
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-6">
+            <div className="flex gap-8">
               {caseStudies.map((study, index) =>
               <motion.div
                 key={study.id}
-                className="flex-[0_0_100%] md:flex-[0_0_85%] lg:flex-[0_0_70%] min-w-0"
+                className="flex-[0_0_100%] md:flex-[0_0_90%] lg:flex-[0_0_75%] min-w-0"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}>
@@ -214,56 +213,53 @@ export default function CaseStudiesSection({ reduceMotion }) {
                   <div className="group relative">
                     {/* Glow effect */}
                     <motion.div
-                    className={`absolute -inset-1 bg-gradient-to-r ${study.gradient} rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
+                    className={`absolute -inset-1 bg-gradient-to-r ${study.gradient} rounded-3xl opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500`}
                     animate={reduceMotion ? {} : {
                       scale: [1, 1.05, 1]
                     }}
                     transition={{ duration: 3, repeat: Infinity }} />
 
 
-                    <div className="relative bg-white/5 backdrop-blur-sm rounded-3xl overflow-hidden border border-white/10 hover:border-[#DBFE01]/30 transition-all duration-500">
+                    <div className="relative bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 hover:border-[#DBFE01]/40 transition-all duration-500 shadow-2xl">
                       {/* Image */}
-                      <div className="relative h-64 overflow-hidden">
+                      <div className="relative h-72 overflow-hidden">
                         <img
                         src={study.image}
                         alt={study.client}
                         loading="lazy"
                         width="800"
                         height="600"
-                        loading="lazy"
-                        width="800"
-                        height="600"
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
-                        <div className={`absolute inset-0 bg-gradient-to-t ${study.gradient} opacity-60`} />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#2F2F2F] via-transparent to-transparent" />
+                        <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-40`} />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#2F2F2F] via-[#2F2F2F]/60 to-transparent" />
                         
                         {/* Stage badge */}
-                        <div className="absolute top-4 right-4 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20">
-                          <span className="text-white text-xs font-bold">{study.stage}</span>
+                        <div className="absolute top-4 right-4 px-4 py-2 rounded-full bg-[#DBFE01] text-[#1a1a1a]">
+                          <span className="text-xs font-bold uppercase tracking-wide">{study.stage}</span>
                         </div>
 
                         {/* Trending icon */}
                         <motion.div
-                        className="absolute top-4 left-4 w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20"
+                        className="absolute top-4 left-4 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30"
                         whileHover={{ scale: 1.1, rotate: 5 }}>
 
-                          <TrendingUp className="w-6 h-6 text-white" />
+                          <TrendingUp className="w-7 h-7 text-[#DBFE01]" />
                         </motion.div>
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 md:p-8">
-                        <div className="flex items-start justify-between mb-3">
+                      <div className="p-8 md:p-10">
+                        <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-[#DBFE01] transition-colors">
+                            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#DBFE01] transition-colors">
                               {study.client}
                             </h3>
                             <a
                             href={study.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-white/40 hover:text-[#DBFE01] text-sm flex items-center gap-1 transition-colors"
+                            className="text-white/50 hover:text-[#DBFE01] text-sm flex items-center gap-1 transition-colors font-medium"
                             onClick={(e) => e.stopPropagation()}>
 
                               {study.url.replace('https://', '')}
@@ -272,26 +268,26 @@ export default function CaseStudiesSection({ reduceMotion }) {
                           </div>
                         </div>
 
-                        <h4 className={`text-2xl font-extrabold mb-3 bg-gradient-to-r ${study.gradient} bg-clip-text text-transparent`}>
+                        <h4 className={`text-2xl md:text-3xl font-extrabold mb-4 bg-gradient-to-r ${study.gradient} bg-clip-text text-transparent leading-tight`}>
                           {study.headline}
                         </h4>
 
-                        <p className="text-white/80 mb-6 leading-relaxed font-medium">
+                        <p className="text-white/70 text-base md:text-lg mb-8 leading-relaxed">
                           {study.summary}
                         </p>
 
                         {/* Metrics */}
-                        <div className="grid grid-cols-2 gap-3 mb-6">
+                        <div className="grid grid-cols-2 gap-4 mb-8">
                           {study.metrics.map((metric, mIndex) =>
                         <motion.div
                           key={mIndex}
                           initial={{ opacity: 0, y: 10 }}
                           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                           transition={{ delay: 0.3 + mIndex * 0.1 }}
-                          className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/10">
+                          className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/10 border border-white/20">
 
-                              <Sparkles className={`w-3 h-3 ${study.gradient.includes('blue') ? 'text-blue-400' : study.gradient.includes('purple') ? 'text-purple-400' : study.gradient.includes('amber') ? 'text-amber-400' : study.gradient.includes('emerald') ? 'text-emerald-400' : study.gradient.includes('indigo') ? 'text-indigo-400' : 'text-sky-400'}`} />
-                              <span className="text-white/80 text-xs font-semibold">{metric}</span>
+                              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+                              <span className="text-white text-sm font-bold">{metric}</span>
                             </motion.div>
                         )}
                         </div>
@@ -299,10 +295,10 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         {/* CTA */}
                         <Link
                         to={createPageUrl(caseStudyPages[study.id])}
-                        className={`w-full px-6 py-3 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-sm flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-white/20 transition-all hover:-translate-y-0.5`}>
+                        className={`w-full px-6 py-4 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-white/20 transition-all hover:-translate-y-1`}>
 
-                          View case study
-                          <ArrowRight className="w-4 h-4" />
+                          View Full Case Study
+                          <ArrowRight className="w-5 h-5" />
                         </Link>
                       </div>
                     </div>
@@ -316,29 +312,29 @@ export default function CaseStudiesSection({ reduceMotion }) {
           <div className="hidden md:block">
             <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors group">
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center hover:bg-[#DBFE01] hover:border-[#DBFE01] transition-all group">
 
-              <ChevronLeft className="w-6 h-6 text-white group-hover:text-[#DBFE01] transition-colors" />
+              <ChevronLeft className="w-7 h-7 text-white group-hover:text-[#1a1a1a] transition-colors" />
             </button>
             <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-colors group">
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 w-14 h-14 rounded-full bg-white/10 backdrop-blur-md border border-white/30 flex items-center justify-center hover:bg-[#DBFE01] hover:border-[#DBFE01] transition-all group">
 
-              <ChevronRight className="w-6 h-6 text-white group-hover:text-[#DBFE01] transition-colors" />
+              <ChevronRight className="w-7 h-7 text-white group-hover:text-[#1a1a1a] transition-colors" />
             </button>
           </div>
         </div>
 
         {/* Dots indicator */}
-        <div className="flex justify-center gap-2 mt-8">
+        <div className="flex justify-center gap-3 mt-10">
           {caseStudies.map((_, index) =>
           <button
             key={index}
             onClick={() => scrollTo(index)}
             className={`transition-all ${
             index === selectedIndex ?
-            'w-8 h-2 bg-[#DBFE01]' :
-            'w-2 h-2 bg-white/20 hover:bg-white/40'} rounded-full`
+            'w-10 h-2.5 bg-[#DBFE01]' :
+            'w-2.5 h-2.5 bg-white/30 hover:bg-white/50'} rounded-full`
             } />
 
           )}
@@ -349,15 +345,15 @@ export default function CaseStudiesSection({ reduceMotion }) {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.5 }}
-          className="text-center mt-12">
+          className="text-center mt-16">
 
-          <p className="text-white/40 text-sm mb-4 font-medium">Want results like these?</p>
+          <p className="text-white/60 text-lg mb-6 font-medium">Want results like these?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#DBFE01] text-[#2F2F2F] font-bold hover:shadow-lg hover:shadow-[#DBFE01]/30 transition-all hover:-translate-y-0.5">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#DBFE01] text-[#1a1a1a] font-bold text-base hover:shadow-xl hover:shadow-[#DBFE01]/40 transition-all hover:-translate-y-1">
 
-            Book a roadmap call
-            <ArrowRight className="w-4 h-4" />
+            Book a Roadmap Call
+            <ArrowRight className="w-5 h-5" />
           </button>
         </motion.div>
       </div>
