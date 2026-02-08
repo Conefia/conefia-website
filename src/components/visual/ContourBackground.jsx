@@ -75,7 +75,7 @@ export default function ContourBackground({ className = "", isMobile = false }) 
         return (
           <path
             key={`p2-${i}`}
-            d={`M ${110 + ox} ${5 + oy} C ${-30 + ox} ${35 + oy}, ${60 + ox} ${20 + oy}, ${120 + ox} ${50 + oy}`}
+            d={`M ${110 + ox} ${30 + oy} C ${-30 + ox} ${60 + oy}, ${60 + ox} ${45 + oy}, ${120 + ox} ${75 + oy}`}
             stroke="url(#lineGradient)"
             strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
             fill="none"
@@ -91,7 +91,7 @@ export default function ContourBackground({ className = "", isMobile = false }) 
         return (
           <path
             key={`p3-${i}`}
-            d={`M ${110 + ox} ${30 + oy} C ${-30 + ox} ${60 + oy}, ${60 + ox} ${45 + oy}, ${120 + ox} ${75 + oy}`}
+            d={`M ${110 + ox} ${55 + oy} C ${-30 + ox} ${85 + oy}, ${60 + ox} ${70 + oy}, ${120 + ox} ${100 + oy}`}
             stroke="url(#lineGradient)"
             strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
             fill="none"
