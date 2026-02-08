@@ -77,9 +77,9 @@ export default function HeroSection({ reduceMotion }) {
                   left: `${x}%`,
                   top: `${y}%`,
                   width: `${twinkleSize}px`,
-                  height: `${twinkleSize}px`
+                  height: `${twinkleSize}px`,
                 }}>
-                <div
+                <div 
                   className="absolute bg-white rounded-full"
                   style={{
                     width: '100%',
@@ -93,8 +93,8 @@ export default function HeroSection({ reduceMotion }) {
                       ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                     `
                   }} />
-              </div>);
-
+              </div>
+            );
           }
 
           return (
@@ -134,28 +134,30 @@ export default function HeroSection({ reduceMotion }) {
             {/* Badge */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-              <span className="text-sm font-semibold text-[#DBFE01]">Build it. Launch it. Scale it.</span>
+              <span className="text-sm font-semibold text-[#DBFE01]">Your Build → Launch → Scale Partner</span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight mb-6">
 
-              One Partner to Build Your App, Grow Your Clinic, & Scale Your Shopify Brand
+              Build it.{' '}
+              <span className="text-[#DBFE01]">Launch it.</span>{' '}
+              Scale it.
             </motion.h1>
 
             {/* Eyebrow */}
-            <motion.p
+            <motion.h2
               variants={itemVariants}
               className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
-              AI + mobile app development—plus launch and scale in one team.
-            </motion.p>
+              One Partner to Build Your App, Grow Your Clinic, & Scale Your Shopify Brand
+            </motion.h2>
 
             {/* Subhead */}
             <motion.p
               variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              We ship production-ready apps, conversion-ready landing pages, and measurable growth for app founders, healthcare clinics, and Shopify brands.
+              For founders, clinic teams, and Shopify brands who want to build, launch, and scale without vendor chaos, CONEFIA specializes in AI MVP and mobile app development, plus conversion-ready launch systems and growth execution—so you can ship faster, track what's working, and scale with predictable, and measurable outcomes.
             </motion.p>
 
             {/* CTAs */}
@@ -216,17 +218,17 @@ export default function HeroSection({ reduceMotion }) {
 
       {/* Scroll indicator - simplified */}
       {!reduceMotion &&
-      <motion.div
+      <motion.div 
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
         animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
-
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      >
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-            <motion.div
-            className="w-1.5 h-3 bg-white/50 rounded-full"
-            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
-
+            <motion.div 
+              className="w-1.5 h-3 bg-white/50 rounded-full"
+              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
           </div>
         </motion.div>
       }
