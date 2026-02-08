@@ -89,10 +89,10 @@ export default function ProblemSolution({ reduceMotion }) {
               key={persona.id}
               href={createPageUrl(persona.destination)}
               onClick={(e) => handlePersonaClick(e, persona.id)}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-300 border-2 inline-block cursor-pointer no-underline ${
+              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
                 selectedPersonaId === persona.id 
-                  ? 'bg-[#DBFE01] text-black font-bold border-black scale-105 animate-pulse' 
-                  : 'bg-white text-[#1a1a1a] font-semibold border-gray-300 hover:border-[#DBFE01]/50 hover:bg-gray-50'
+                  ? 'bg-[#1a1a1a] text-white border-[#1a1a1a] shadow-lg scale-105' 
+                  : 'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#1a1a1a]/30 hover:bg-gray-50'
               }`}
             >
               {persona.label}
