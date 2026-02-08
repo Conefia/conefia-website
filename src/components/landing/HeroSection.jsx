@@ -143,7 +143,7 @@ export default function HeroSection({ reduceMotion }) {
             <motion.h1
               variants={itemVariants}
               className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
-              One Partner to Build Your App, Grow Your Clinic, & Scale Your Shopify Brand
+              One Partner to Build Your <span className="text-[#DBFE01]">App</span>, Grow Your <span className="text-[#DBFE01]">Clinic</span>, and Scale Your Shopify <span className="text-[#DBFE01]">Brand</span>
             </motion.h1>
 
             {/* Subhead */}
