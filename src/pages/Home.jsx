@@ -77,12 +77,12 @@ export default function Home() {
           <SocialProofBar reduceMotion={shouldReduceMotion} />
         </React.Suspense>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <PlaybookSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
-
         <React.Suspense fallback={<DarkSectionSkeleton />}>
           <CaseStudiesSection reduceMotion={shouldReduceMotion} />
+        </React.Suspense>
+
+        <React.Suspense fallback={<SectionSkeleton />}>
+          <PlaybookSection reduceMotion={shouldReduceMotion} />
         </React.Suspense>
 
         <React.Suspense fallback={<SectionSkeleton />}>
