@@ -91,14 +91,14 @@ export default function PackagesSection({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16">
 
-          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
-            <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+          <span className="bg-gray-100 text-gray-700 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-gray-300 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             Packages &amp; Services
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-4">
             Pick a sprint. <span className="gradient-text">Ship outcomes.</span>
           </h2>
-          <p className="text-lg text-[#2F2F2F]/80 max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto font-medium leading-relaxed">
             AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.
           </p>
         </motion.div>
