@@ -10,60 +10,68 @@ export default function PackagesSection({ reduceMotion }) {
   const packages = [
   {
     icon: Search,
-    name: 'Validate Sprint',
+    name: 'MVP Validation Sprint',
     pricing: 'Fixed',
     description: 'Research + prototype + roadmap',
+    kpi: 'Clarity in 10 days',
+    bestFor: 'founders who want to de-risk before building',
     features: [
-    'Discovery workshops',
-    'Competitor analysis',
-    'Interactive prototype',
-    'MVP scope document',
-    'Success criteria definition'],
+    'Discovery workshop + goals',
+    'Competitive teardown',
+    'Clickable prototype (or UX wireflow)',
+    'MVP scope + milestones',
+    'Success metrics + launch plan'],
 
     highlight: false
   },
   {
     icon: Code2,
-    name: 'MVP Build',
+    name: 'AI / Mobile MVP Build',
     pricing: 'Fixed + Milestones',
-    description: 'Core features + QA + deploy',
+    description: 'Production-ready MVP in 8–12 weeks',
+    kpi: 'MVP in 8–12 weeks',
+    bestFor: 'founders ready to ship and start pilots',
+    popularProof: 'Chosen by founders shipping AI MVPs on tight timelines.',
     features: [
-    'UX/UI design system',
-    'Full-stack development',
-    'AI agent / app / web / store',
-    'Integrations & APIs',
-    'Security & compliance',
-    'Analytics instrumentation'],
+    'Product UX + UI system',
+    'Full-stack build (web/mobile)',
+    'AI features (LLMs/agents) when needed',
+    'Integrations + APIs',
+    'Analytics + event tracking',
+    'Security + HIPAA-aware options'],
 
     highlight: true
   },
   {
     icon: Rocket,
-    name: 'Launch Presence',
+    name: 'Launch & Acquisition Setup',
     pricing: 'Fixed',
-    description: 'Brand, site, store, listings',
+    description: 'Landing pages, store, and local visibility',
+    kpi: 'Launch-ready in 2–4 weeks',
+    bestFor: 'clinics + Shopify brands that need discoverability fast',
     features: [
-    'Brand kit & identity',
-    'Website / landing pages',
-    'App Store / Shopify setup',
-    'Google Business profile',
-    'Social media setup',
-    'Content starter kit'],
+    'Conversion landing page + tracking',
+    'App Store / Play Store assets (if needed)',
+    'Shopify setup + theme essentials',
+    'Google Business Profile + local SEO (clinics)',
+    'Social profiles + content starter kit'],
 
     highlight: false
   },
   {
     icon: TrendingUp,
-    name: 'Growth Sprint',
+    name: 'Growth Experiment Sprint',
     pricing: 'Monthly Retainer',
-    description: '4-6 experiments/month + reporting',
+    description: 'Predictable growth, measured weekly',
+    kpi: '4–6 tests/month',
+    bestFor: 'teams that want compounding results, not random marketing',
     features: [
-    'Paid ads management',
-    'SEO & content strategy',
-    'CRM & retention flows',
-    'Analytics & reporting',
-    'A/B testing',
-    'Iteration backlog'],
+    '4–6 experiments/month (CRO + paid + lifecycle)',
+    'Creative + audience testing',
+    'SEO content system + updates',
+    'Email/SMS retention flows',
+    'Dashboards: CAC, ROAS/MER, bookings, LTV',
+    'Iteration backlog + weekly review'],
 
     highlight: false
   }];
