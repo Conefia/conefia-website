@@ -164,13 +164,22 @@ export default function PackagesSection({ reduceMotion }) {
             className={`relative group perspective-1000 ${pkg.highlight ? 'lg:-mt-4 lg:mb-4' : ''}`}>
 
               {pkg.highlight &&
-            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#DBFE01] text-[#2F2F2F] text-xs font-semibold flex items-center gap-1">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#DBFE01] text-[#1a1a1a] text-xs font-bold flex items-center gap-1 shadow-lg z-10">
                   <Star className="w-3 h-3" />
                   Most Popular
                 </div>
             }
+
+              {/* Animated glow effect */}
+              <motion.div
+                className={`absolute -inset-1 bg-gradient-to-r ${pkg.gradient} rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
+                animate={reduceMotion ? {} : {
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
               
-              <div className={`glass-card rounded-3xl p-7 h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border-2 ${pkg.borderColor} hover:border-opacity-80 bg-gradient-to-br ${pkg.bgGradient} backdrop-blur-xl overflow-hidden relative group`}>
+              <div className={`glass-card rounded-3xl p-7 h-full transition-all duration-500 hover:shadow-2xl border-2 ${pkg.borderColor} hover:border-opacity-80 bg-gradient-to-br ${pkg.bgGradient} backdrop-blur-xl overflow-hidden relative`}>
                 {/* Animated gradient overlay */}
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
