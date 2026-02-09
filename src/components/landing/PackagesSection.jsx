@@ -120,52 +120,54 @@ export default function PackagesSection({ reduceMotion }) {
                 </div>
             }
               
-              <div className={`glass-card rounded-3xl p-6 h-full transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1 ${
+              <div className={`glass-card rounded-3xl p-8 h-full transition-all duration-300 ${
             pkg.highlight ?
-            'border-2 border-[#DBFE01] bg-gradient-to-b from-[#DBFE01]/5 to-transparent' :
-            'border border-transparent hover:border-[#DBFE01]/20'}`
+            'border-2 border-[#DBFE01] bg-gradient-to-br from-[#DBFE01]/10 via-[#DBFE01]/5 to-transparent shadow-xl shadow-[#DBFE01]/10 hover:shadow-2xl hover:shadow-[#DBFE01]/20' :
+            'border border-gray-200 hover:border-[#DBFE01]/40 hover:shadow-xl hover:shadow-black/5'} hover:-translate-y-1`
             }>
                 {/* Icon */}
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${
-              pkg.highlight ? 'bg-[#DBFE01]' : 'bg-[#2F2F2F]/5'}`
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${
+              pkg.highlight ? 'bg-gradient-to-br from-[#DBFE01] to-[#c5e000] shadow-lg shadow-[#DBFE01]/30' : 'bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200'}`
               }>
-                  <pkg.icon className={`w-6 h-6 ${pkg.highlight ? 'text-[#2F2F2F]' : 'text-[#2F2F2F]'}`} />
+                  <pkg.icon className={`w-7 h-7 ${pkg.highlight ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]'}`} />
                 </div>
 
                 {/* Name & pricing */}
-                <h3 className="text-xl font-bold text-[#2F2F2F] mb-2">{pkg.name}</h3>
-                <span className="inline-block px-2 py-0.5 rounded bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-xs font-medium mb-2">
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{pkg.name}</h3>
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${
+                  pkg.highlight ? 'bg-[#DBFE01] text-[#1a1a1a]' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}>
                   {pkg.pricing}
                 </span>
                 
                 {/* KPI chip */}
-                <div className="inline-flex items-center px-2 py-1 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-3">
-                  <span className="text-xs font-semibold text-[#2F2F2F]">{pkg.kpi}</span>
+                <div className={`inline-flex items-center px-3 py-1.5 rounded-full mb-4 ${
+                  pkg.highlight ? 'bg-[#DBFE01]/20 border border-[#DBFE01]' : 'bg-blue-50 border border-blue-200'}`}>
+                  <span className={`text-xs font-bold ${pkg.highlight ? 'text-[#1a1a1a]' : 'text-blue-700'}`}>{pkg.kpi}</span>
                 </div>
                 
-                <p className="text-[#2F2F2F]/70 text-sm mb-4 font-medium">{pkg.description}</p>
+                <p className="text-gray-700 text-sm mb-5 font-medium leading-relaxed">{pkg.description}</p>
 
                 {/* Popular proof (MVP Build only) */}
                 {pkg.popularProof && (
-                  <p className="text-[#2F2F2F]/60 text-xs italic mb-4">{pkg.popularProof}</p>
+                  <p className="text-gray-600 text-xs italic mb-5 bg-gray-50 p-3 rounded-lg border border-gray-100">{pkg.popularProof}</p>
                 )}
 
                 {/* Features */}
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, fIndex) =>
-                <li key={fIndex} className="flex items-start gap-2 text-sm">
+                <li key={fIndex} className="flex items-start gap-2.5 text-sm">
                       <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                  pkg.highlight ? 'text-[#DBFE01]' : 'text-[#2F2F2F]/30'}`
+                  pkg.highlight ? 'text-[#DBFE01]' : 'text-blue-600'}`
                   } />
-                      <span className="text-[#2F2F2F]/90 font-medium">{feature}</span>
+                      <span className="text-gray-800 font-medium leading-relaxed">{feature}</span>
                     </li>
                 )}
                 </ul>
 
                 {/* Best for */}
-                <div className="pt-4 border-t border-[#2F2F2F]/10">
-                  <p className="text-xs text-[#2F2F2F]/60 mb-1 font-semibold uppercase tracking-wider">Best for</p>
-                  <p className="text-sm text-[#2F2F2F] font-medium">{pkg.bestFor}</p>
+                <div className={`pt-4 border-t ${pkg.highlight ? 'border-[#DBFE01]/20' : 'border-gray-200'}`}>
+                  <p className="text-xs text-gray-500 mb-2 font-bold uppercase tracking-wider">Best for</p>
+                  <p className="text-sm text-gray-900 font-semibold leading-relaxed">{pkg.bestFor}</p>
                 </div>
               </div>
             </motion.div>
