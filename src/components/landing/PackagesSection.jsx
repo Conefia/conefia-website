@@ -94,10 +94,10 @@ export default function PackagesSection({ reduceMotion }) {
             Packages &amp; Services
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
-            Start at <span className="gradient-text">any phase</span>
+            Pick a sprint. <span className="gradient-text">Ship outcomes.</span>
           </h2>
           <p className="text-lg text-[#2F2F2F]/80 max-w-2xl mx-auto font-medium">
-            Modular engagement, one integrated team. Optional success kicker at activation/revenue milestones.
+            AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.
           </p>
         </motion.div>
 
