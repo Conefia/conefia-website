@@ -133,14 +133,25 @@ export default function PackagesSection({ reduceMotion }) {
                 </div>
 
                 {/* Name & pricing */}
-                <h3 className="text-xl font-bold text-[#2F2F2F] mb-1">{pkg.name}</h3>
-                <span className="inline-block px-2 py-0.5 rounded bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-xs font-medium mb-3">
+                <h3 className="text-xl font-bold text-[#2F2F2F] mb-2">{pkg.name}</h3>
+                <span className="inline-block px-2 py-0.5 rounded bg-[#2F2F2F]/5 text-[#2F2F2F]/60 text-xs font-medium mb-2">
                   {pkg.pricing}
                 </span>
-                <p className="text-[#2F2F2F]/70 text-sm mb-6 font-medium">{pkg.description}</p>
+                
+                {/* KPI chip */}
+                <div className="inline-flex items-center px-2 py-1 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-3">
+                  <span className="text-xs font-semibold text-[#2F2F2F]">{pkg.kpi}</span>
+                </div>
+                
+                <p className="text-[#2F2F2F]/70 text-sm mb-4 font-medium">{pkg.description}</p>
+
+                {/* Popular proof (MVP Build only) */}
+                {pkg.popularProof && (
+                  <p className="text-[#2F2F2F]/60 text-xs italic mb-4">{pkg.popularProof}</p>
+                )}
 
                 {/* Features */}
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-4">
                   {pkg.features.map((feature, fIndex) =>
                 <li key={fIndex} className="flex items-start gap-2 text-sm">
                       <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
@@ -150,6 +161,12 @@ export default function PackagesSection({ reduceMotion }) {
                     </li>
                 )}
                 </ul>
+
+                {/* Best for */}
+                <div className="pt-4 border-t border-[#2F2F2F]/10">
+                  <p className="text-xs text-[#2F2F2F]/60 mb-1 font-semibold uppercase tracking-wider">Best for</p>
+                  <p className="text-sm text-[#2F2F2F] font-medium">{pkg.bestFor}</p>
+                </div>
               </div>
             </motion.div>
           )}
