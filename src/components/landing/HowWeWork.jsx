@@ -12,7 +12,7 @@ export default function HowWeWork({ reduceMotion }) {
     'clinic-growth': {
       headline: 'Predictable clinic growth —',
       headlineAccent: 'shipped weekly.',
-      subhead: 'One accountable team improving bookings, local visibility, and patient conversion with HIPAA-aware delivery.',
+      subhead: 'One accountable team improving bookings, local visibility, and patient reach with HIPAA-aware delivery.',
       cards: [
         {
           icon: Play,
@@ -24,7 +24,7 @@ export default function HowWeWork({ reduceMotion }) {
         {
           icon: FileText,
           title: 'Single Backlog',
-          description: 'One priority list across site, intake, SEO, and tracking.',
+          description: 'One priority list across site, intake, SEO, and marketing.',
           gradient: 'from-cyan-500 to-blue-600',
           glow: 'shadow-cyan-500/30'
         },
@@ -73,7 +73,7 @@ export default function HowWeWork({ reduceMotion }) {
         {
           icon: Rocket,
           title: 'Launch Kit',
-          description: 'Landing page, onboarding, and analytics from day one.',
+          description: 'Landing page, social media presence, and analytics from day one.',
           gradient: 'from-orange-500 to-amber-600',
           glow: 'shadow-orange-500/30'
         }
