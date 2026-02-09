@@ -154,7 +154,7 @@ export default function PackagesSection({ reduceMotion }) {
               duration: reduceMotion ? 0 : 0.6,
               delay: reduceMotion ? 0 : 0.2 + index * 0.12
             }}
-            className={`relative group ${pkg.highlight ? 'lg:-mt-4 lg:mb-4' : ''}`}>
+            className={`relative group perspective-1000 ${pkg.highlight ? 'lg:-mt-4 lg:mb-4' : ''}`}>
 
               {pkg.highlight &&
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#DBFE01] text-[#2F2F2F] text-xs font-semibold flex items-center gap-1">
