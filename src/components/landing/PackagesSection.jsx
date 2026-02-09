@@ -146,54 +146,76 @@ export default function PackagesSection({ reduceMotion }) {
                 </div>
             }
               
-              <div className={`glass-card rounded-3xl p-8 h-full transition-all duration-300 ${
-            pkg.highlight ?
-            'border-2 border-[#DBFE01] bg-gradient-to-br from-[#DBFE01]/10 via-[#DBFE01]/5 to-transparent shadow-xl shadow-[#DBFE01]/10 hover:shadow-2xl hover:shadow-[#DBFE01]/20' :
-            'border border-gray-200 hover:border-[#DBFE01]/40 hover:shadow-xl hover:shadow-black/5'} hover:-translate-y-1`
-            }>
+              <div className={`glass-card rounded-3xl p-7 h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border-2 ${pkg.borderColor} hover:border-opacity-80 bg-gradient-to-br ${pkg.bgGradient} backdrop-blur-xl overflow-hidden relative group`}>
+                {/* Animated gradient overlay */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)`
+                  }}
+                  animate={reduceMotion ? {} : {
+                    x: ['-200%', '200%']
+                  }}
+                  transition={{
+                    duration: 2,
+                    ease: "easeInOut"
+                  }}
+                />
+
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-all ${
-              pkg.highlight ? 'bg-gradient-to-br from-[#DBFE01] to-[#c5e000] shadow-lg shadow-[#DBFE01]/30' : 'bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-200'}`
-              }>
-                  <pkg.icon className={`w-7 h-7 ${pkg.highlight ? 'text-[#1a1a1a]' : 'text-[#1a1a1a]'}`} />
-                </div>
+                <motion.div 
+                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pkg.iconBg} flex items-center justify-center border-2 border-white/50 shadow-lg ${pkg.glowColor} group-hover:shadow-2xl transition-all duration-500 mb-5 relative`}
+                  whileHover={reduceMotion ? {} : { scale: 1.1, rotate: 10 }}
+                >
+                  <pkg.icon className="w-8 h-8 text-white drop-shadow-lg" />
+                </motion.div>
 
                 {/* Name & pricing */}
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{pkg.name}</h3>
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${
-                  pkg.highlight ? 'bg-[#DBFE01] text-[#1a1a1a]' : 'bg-gray-100 text-gray-700 border border-gray-200'}`}>
+                <h3 className="text-xl font-extrabold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform duration-300">{pkg.name}</h3>
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${pkg.accentColor} bg-white/80 border border-current/20 mb-3`}>
                   {pkg.pricing}
                 </span>
                 
                 {/* KPI chip */}
-                <div className={`inline-flex items-center px-3 py-1.5 rounded-full mb-4 ${
-                  pkg.highlight ? 'bg-[#DBFE01]/20 border border-[#DBFE01]' : 'bg-blue-50 border border-blue-200'}`}>
-                  <span className={`text-xs font-bold ${pkg.highlight ? 'text-[#1a1a1a]' : 'text-blue-700'}`}>{pkg.kpi}</span>
+                <div className={`inline-flex items-center px-3 py-1.5 rounded-full mb-4 bg-white/60 border-2 ${pkg.borderColor}`}>
+                  <span className={`text-xs font-bold ${pkg.accentColor}`}>{pkg.kpi}</span>
                 </div>
                 
-                <p className="text-gray-700 text-sm mb-5 font-medium leading-relaxed">{pkg.description}</p>
+                <p className="text-[#1a1a1a]/80 text-sm mb-5 font-semibold leading-relaxed">{pkg.description}</p>
 
                 {/* Popular proof (MVP Build only) */}
                 {pkg.popularProof && (
-                  <p className="text-gray-600 text-xs italic mb-5 bg-gray-50 p-3 rounded-lg border border-gray-100">{pkg.popularProof}</p>
+                  <p className="text-[#1a1a1a]/70 text-xs italic mb-5 bg-white/50 p-3 rounded-lg border border-white/30">{pkg.popularProof}</p>
                 )}
 
                 {/* Features */}
                 <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, fIndex) =>
-                <li key={fIndex} className="flex items-start gap-2.5 text-sm">
-                      <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${
-                  pkg.highlight ? 'text-[#DBFE01]' : 'text-blue-600'}`
-                  } />
-                      <span className="text-gray-800 font-medium leading-relaxed">{feature}</span>
-                    </li>
+                <motion.li 
+                  key={fIndex} 
+                  className="flex items-start gap-2.5 text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.5 + fIndex * 0.05
+                  }}
+                >
+                      <motion.div
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <CheckCircle2 className={`w-4 h-4 ${pkg.accentColor} flex-shrink-0 mt-0.5`} />
+                      </motion.div>
+                      <span className="text-[#1a1a1a]/80 font-medium leading-snug">{feature}</span>
+                    </motion.li>
                 )}
                 </ul>
 
                 {/* Best for */}
-                <div className={`pt-4 border-t ${pkg.highlight ? 'border-[#DBFE01]/20' : 'border-gray-200'}`}>
-                  <p className="text-xs text-gray-500 mb-2 font-bold uppercase tracking-wider">Best for</p>
-                  <p className="text-sm text-gray-900 font-semibold leading-relaxed">{pkg.bestFor}</p>
+                <div className="pt-4 border-t-2 border-[#1a1a1a]/5">
+                  <p className="text-xs text-[#1a1a1a]/60 mb-2 font-bold uppercase tracking-wider">Best for</p>
+                  <p className="text-sm text-[#1a1a1a] font-semibold leading-relaxed">{pkg.bestFor}</p>
                 </div>
               </div>
             </motion.div>
