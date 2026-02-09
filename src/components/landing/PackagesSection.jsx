@@ -148,11 +148,18 @@ export default function PackagesSection({ reduceMotion }) {
           {packages.map((pkg, index) =>
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 40, rotateX: -15 }}
+            animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : { opacity: 0, y: 40, rotateX: -15 }}
             transition={{
-              duration: reduceMotion ? 0 : 0.6,
-              delay: reduceMotion ? 0 : 0.2 + index * 0.12
+              duration: reduceMotion ? 0 : 0.7,
+              delay: reduceMotion ? 0 : 0.2 + index * 0.15,
+              type: "spring",
+              stiffness: 80
+            }}
+            whileHover={reduceMotion ? {} : {
+              y: -8,
+              rotateY: 3,
+              transition: { duration: 0.3 }
             }}
             className={`relative group perspective-1000 ${pkg.highlight ? 'lg:-mt-4 lg:mb-4' : ''}`}>
 
