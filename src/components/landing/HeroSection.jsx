@@ -149,7 +149,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Subhead */}
             <motion.p
               variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth studio—so you acquire customers or patients faster and scale with confidence.
+              For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
             </motion.p>
 
             {/* CTAs */}
