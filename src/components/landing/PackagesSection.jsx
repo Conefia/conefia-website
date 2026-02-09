@@ -22,7 +22,13 @@ export default function PackagesSection({ reduceMotion }) {
     'MVP scope + milestones',
     'Success metrics + launch plan'],
 
-    highlight: false
+    highlight: false,
+    gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+    bgGradient: 'from-blue-500/20 to-indigo-500/20',
+    iconBg: 'from-blue-500 to-indigo-600',
+    borderColor: 'border-blue-200/50',
+    glowColor: 'shadow-blue-500/20',
+    accentColor: 'text-blue-600'
   },
   {
     icon: Code2,
@@ -40,7 +46,13 @@ export default function PackagesSection({ reduceMotion }) {
     'Analytics + event tracking',
     'Security + HIPAA-aware options'],
 
-    highlight: true
+    highlight: true,
+    gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+    bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+    iconBg: 'from-[#DBFE01] to-[#a8c600]',
+    borderColor: 'border-[#DBFE01]/50',
+    glowColor: 'shadow-[#DBFE01]/30',
+    accentColor: 'text-[#a8c600]'
   },
   {
     icon: Rocket,
@@ -56,7 +68,13 @@ export default function PackagesSection({ reduceMotion }) {
     'Google Business Profile + local SEO (clinics)',
     'Social profiles + content starter kit'],
 
-    highlight: false
+    highlight: false,
+    gradient: 'from-purple-600 via-pink-600 to-rose-600',
+    bgGradient: 'from-purple-500/20 to-pink-500/20',
+    iconBg: 'from-purple-500 to-pink-600',
+    borderColor: 'border-purple-200/50',
+    glowColor: 'shadow-purple-500/20',
+    accentColor: 'text-purple-600'
   },
   {
     icon: TrendingUp,
@@ -73,7 +91,13 @@ export default function PackagesSection({ reduceMotion }) {
     'Dashboards: CAC, ROAS/MER, bookings, LTV',
     'Iteration backlog + weekly review'],
 
-    highlight: false
+    highlight: false,
+    gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+    bgGradient: 'from-emerald-500/20 to-teal-500/20',
+    iconBg: 'from-emerald-500 to-teal-600',
+    borderColor: 'border-emerald-200/50',
+    glowColor: 'shadow-emerald-500/20',
+    accentColor: 'text-emerald-600'
   }];
 
 
