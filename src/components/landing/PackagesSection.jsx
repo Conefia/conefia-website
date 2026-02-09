@@ -104,9 +104,26 @@ export default function PackagesSection({ reduceMotion }) {
   return (
     <section ref={ref} id="packages" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50" />
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.08] blur-[120px]" />
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-blue-500 opacity-[0.05] blur-[100px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-[#FAFAFA] to-white/70" />
+      
+      {/* Animated background orbs */}
+      <motion.div
+        className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3]
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      
+      <motion.div
+        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+        animate={reduceMotion ? {} : {
+          scale: [1.2, 1, 1.2],
+          opacity: [0.5, 0.3, 0.5]
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
