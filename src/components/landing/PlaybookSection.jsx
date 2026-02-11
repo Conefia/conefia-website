@@ -249,7 +249,7 @@ export default function PlaybookSection({ reduceMotion }) {
     'dtc-growth': {
       sectionLabel: 'The Playbook',
       headline: 'Lower CAC. Stabilize ROAS. Grow profit.',
-      subhead: 'We run disciplined experiments across Shopify CRO, paid growth, and lifecycle—so results become predictable.',
+      subhead: 'We run disciplined experiments across Shopify CRO, paid growth, and lifecycle — so results become predictable.',
       phases: [
         {
           number: '01',
