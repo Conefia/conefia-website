@@ -406,7 +406,7 @@ export default function PlaybookSection({ reduceMotion }) {
     },
     'accelerator': {
       sectionLabel: 'The Playbook',
-      headline: 'Cohorts that ship — before Demo Day.',
+      headline: 'Cohorts that ship before Demo Day.',
       subhead: 'We standardize delivery and quality across founders with templates, squads, and sponsor-ready reporting.',
       phases: [
         {
