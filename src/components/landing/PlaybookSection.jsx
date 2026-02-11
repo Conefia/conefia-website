@@ -594,27 +594,15 @@ export default function PlaybookSection({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-20">
 
-          <motion.span className="bg-gradient-to-r text-[#1a1a1a] mb-6 px-4 py-2 text-lg font-semibold rounded-full inline-flex items-center gap-2 from-[#DBFE01]/30 via-purple-500/20 to-cyan-500/20 border-2 border-[#DBFE01]/30"
-
-          animate={reduceMotion ? {} : {
-            boxShadow: [
-            '0 0 20px rgba(219, 254, 1, 0.3)',
-            '0 0 40px rgba(139, 92, 246, 0.3)',
-            '0 0 20px rgba(6, 182, 212, 0.3)',
-            '0 0 20px rgba(219, 254, 1, 0.3)']
-
-          }}
-          transition={{ duration: 4, repeat: Infinity }}>The 4-Phase Playbook
-
-
-
-          </motion.span>
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+            <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+            {config.sectionLabel}
+          </span>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            From idea to <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">market leader</span>
+            {config.headline}
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
-            Clear sequencing, reusable components, and strict stage gates — 
-            so you ship faster without cutting corners or compromising quality.
+            {config.subhead}
           </p>
         </motion.div>
 
