@@ -59,12 +59,6 @@ export const PERSONAS = [
     primaryCta: 'Get my Clinic Growth Roadmap',
     secondaryCta: 'See Clinic Package',
     microLine: "Outcomes when the digital patient journey is redesigned for conversion.",
-    packageEmphasis: {
-      validation: 'Patient journey analysis & booking friction mapping',
-      build: 'Portal UX upgrades, intake forms, website booking flow',
-      launch: 'Google Business Profile optimization, local SEO setup',
-      growth: 'Call/form tracking, local ads, review automation'
-    },
     metrics: [
       {
         value: '+20–50%',
@@ -152,12 +146,6 @@ export const PERSONAS = [
     primaryCta: 'Get my MVP + Pilot Roadmap',
     secondaryCta: 'See MVP Sprint',
     microLine: "Outcomes when scope, build, and launch are owned end-to-end.",
-    packageEmphasis: {
-      validation: 'MVP scope definition, AI architecture design, pilot success metrics',
-      build: 'Full-stack AI SaaS build with LLM/agent integration & evals',
-      launch: 'Positioning, pilot onboarding, product analytics instrumentation',
-      growth: 'Pilot feedback loops, feature prioritization, activation experiments'
-    },
     metrics: [
       {
         value: '8–12 weeks',
@@ -245,12 +233,6 @@ export const PERSONAS = [
     primaryCta: 'Get my Relaunch Plan',
     secondaryCta: 'See Relaunch Sprint',
     microLine: "Outcomes when retention is treated as a product system.",
-    packageEmphasis: {
-      validation: 'Retention audit, UX friction analysis, cohort data review',
-      build: 'App UX refresh, performance optimization, activation features',
-      launch: 'ASO strategy, store assets, review collection system',
-      growth: 'Cohort analytics, lifecycle messaging, feature iteration'
-    },
     metrics: [
       {
         value: '+15–40%',
@@ -338,12 +320,6 @@ export const PERSONAS = [
     primaryCta: 'Get my DTC Growth Audit',
     secondaryCta: 'See DTC Package',
     microLine: "Outcomes when CAC drops and ROAS stabilizes through disciplined testing.",
-    packageEmphasis: {
-      validation: 'Conversion audit, funnel leak analysis, margin review',
-      build: 'Shopify CRO implementation, checkout optimization, upsell flows',
-      launch: 'Brand refresh, product pages, customer journey',
-      growth: 'Paid creative testing, retention flows (email/SMS), CAC/LTV tracking'
-    },
     metrics: [
       {
         value: '↓10–25%',
@@ -431,12 +407,6 @@ export const PERSONAS = [
     primaryCta: 'Discuss my Innovation Roadmap',
     secondaryCta: 'See Corporate Program',
     microLine: "Outcomes when governance is built into delivery from day one.",
-    packageEmphasis: {
-      validation: 'Stakeholder alignment, compliance requirements, pilot scope',
-      build: 'Enterprise-grade MVP with security/privacy built in',
-      launch: 'Internal enablement, pilot rollout materials, adoption plan',
-      growth: 'Usage analytics, adoption optimization, stakeholder reporting'
-    },
     metrics: [
       {
         value: '6–10 weeks',
@@ -524,12 +494,6 @@ export const PERSONAS = [
     primaryCta: 'Get my Cohort Support Plan',
     secondaryCta: 'See Accelerator Program',
     microLine: "Outcomes when cohorts execute with a repeatable shipping system.",
-    packageEmphasis: {
-      validation: 'Cohort-wide MVP scoping, demo day requirements, success templates',
-      build: 'Embedded squad support for technical execution per team',
-      launch: 'Demo day polish, landing pages, pitch-ready metrics',
-      growth: 'Post-demo pilot support, sponsor reporting dashboards'
-    },
     metrics: [
       {
         value: '2×',
