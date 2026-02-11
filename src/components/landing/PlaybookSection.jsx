@@ -599,10 +599,42 @@ export default function PlaybookSection({ reduceMotion }) {
             {config.sectionLabel}
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
-            <span className="text-[#1a1a1a]">{config.headline.split('.')[0]}.</span>{' '}
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
-              {config.headline.split('.').slice(1).join('.').trim()}
-            </span>
+            {selectedPersona?.id === 'clinic-growth' ? (
+              <>
+                <span className="text-[#1a1a1a]">From clicks to </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">booked appointments.</span>
+              </>
+            ) : selectedPersona?.id === 'ai-saas-mvp' ? (
+              <>
+                <span className="text-[#1a1a1a]">Pilot-ready AI MVP </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">— without rework.</span>
+              </>
+            ) : selectedPersona?.id === 'app-relaunch' ? (
+              <>
+                <span className="text-[#1a1a1a]">Fix retention. Relaunch strong. </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">Grow with data.</span>
+              </>
+            ) : selectedPersona?.id === 'dtc-growth' ? (
+              <>
+                <span className="text-[#1a1a1a]">Lower CAC. Stabilize ROAS. </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">Grow profit.</span>
+              </>
+            ) : selectedPersona?.id === 'enterprise-innovation' ? (
+              <>
+                <span className="text-[#1a1a1a]">Governance built in </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">— so pilots ship.</span>
+              </>
+            ) : selectedPersona?.id === 'accelerator-support' ? (
+              <>
+                <span className="text-[#1a1a1a]">Cohorts that ship </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">before Demo Day.</span>
+              </>
+            ) : (
+              <>
+                <span className="text-[#1a1a1a]">From idea to </span>
+                <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">market leader</span>
+              </>
+            )}
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
             {config.subhead}
