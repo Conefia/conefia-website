@@ -325,7 +325,7 @@ export default function PlaybookSection({ reduceMotion }) {
         }
       ]
     },
-    'enterprise': {
+    'enterprise-innovation': {
       sectionLabel: 'The Playbook',
       headline: 'Governance built in — so pilots ship.',
       subhead: 'We reduce approval drag with stage gates, documentation, and secure-by-design delivery.',
@@ -404,7 +404,7 @@ export default function PlaybookSection({ reduceMotion }) {
         }
       ]
     },
-    'accelerator': {
+    'accelerator-support': {
       sectionLabel: 'The Playbook',
       headline: 'Cohorts that ship before Demo Day.',
       subhead: 'We standardize delivery and quality across founders with templates, squads, and sponsor-ready reporting.',
