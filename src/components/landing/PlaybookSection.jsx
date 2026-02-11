@@ -335,7 +335,7 @@ export default function PlaybookSection({ reduceMotion }) {
           icon: Search,
           title: 'Align',
           duration: '1–2 weeks',
-          description: 'Get stakeholders aligned on "done."',
+          description: 'Get stakeholders aligned on done.',
           tasks: [
             'Use case + scope boundaries',
             'Security/privacy requirements captured early',
