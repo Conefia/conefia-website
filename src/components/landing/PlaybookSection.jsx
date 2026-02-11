@@ -1,12 +1,496 @@
 import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Search, Code2, Rocket, TrendingUp, CheckCircle2, Sparkles } from 'lucide-react';
+import { usePersona } from '../context/PersonaContext';
 
 export default function PlaybookSection({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const { selectedPersona } = usePersona();
 
-  const phases = [
+  const playbookConfigs = {
+    'clinic-growth': {
+      sectionLabel: 'The Playbook',
+      headline: 'From clicks to booked appointments.',
+      subhead: 'We improve local visibility, patient conversion, and engagement—HIPAA-aware, measurable, and shipped weekly.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Diagnose',
+          duration: '1–2 weeks',
+          description: 'Find what's blocking calls, forms, and bookings.',
+          tasks: [
+            'Google Business Profile + local SEO audit',
+            'Booking journey + intake friction review',
+            'Tracking plan: traffic → calls/forms → appointments'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '3–6 weeks',
+          description: 'Fix the patient journey where revenue leaks.',
+          tasks: [
+            'Landing/service pages + CRO upgrades',
+            'Booking + forms + patient portal improvements',
+            'Call/form tracking + attribution setup'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Launch',
+          duration: '1–2 weeks',
+          description: 'Turn visibility into consistent appointment demand.',
+          tasks: [
+            'Local SEO rollout + review system',
+            'Conversion-ready pages + messaging',
+            'Reporting dashboard (simple + actionable)'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Monthly',
+          description: 'Grow bookings with content + digital marketing, measured weekly.',
+          tasks: [
+            'Content creation (service pages, blogs, FAQs)',
+            'Digital marketing (paid ads + social content)',
+            'CRO experiments + appointment attribution reporting'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    },
+    'ai-saas-mvp': {
+      sectionLabel: 'The Playbook',
+      headline: 'Pilot-ready AI MVP—without rework.',
+      subhead: 'We align scope, AI architecture, and launch essentials so you ship fast, win pilots, and measure real usage.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Validate',
+          duration: '1–2 weeks',
+          description: 'Lock the MVP that wins pilots.',
+          tasks: [
+            'ICP + use-case + pilot success metrics',
+            'Scope lock: must-haves + stage gates',
+            'Risk map (data, eval, cost, security)'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '6–12 weeks',
+          description: 'Build a production-grade AI MVP, not a demo.',
+          tasks: [
+            'Core product flows + scalable backend',
+            'AI architecture (RAG/agents/evals)',
+            'Analytics instrumentation + event taxonomy'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Launch',
+          duration: '1–2 weeks',
+          description: 'Launch a pilot funnel that converts.',
+          tasks: [
+            'Landing page + positioning + CRO',
+            'Onboarding + activation flows',
+            'Feedback loop + iteration plan'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Monthly',
+          description: 'Add content + demand gen to turn pilots into growth.',
+          tasks: [
+            'Content creation (SEO pages, blogs, case studies)',
+            'Digital marketing (paid, social, email) + funnel tests',
+            'Activation/retention experiments + weekly reporting'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    },
+    'app-relaunch': {
+      sectionLabel: 'The Playbook',
+      headline: 'Fix retention. Relaunch strong. Grow with data.',
+      subhead: 'We diagnose churn, ship high-impact fixes, and relaunch with measurement you can trust.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Diagnose',
+          duration: '1–2 weeks',
+          description: 'Identify why users drop—and what to fix first.',
+          tasks: [
+            'Funnel + cohort analysis (D1/D7/D30)',
+            'UX/performance audit (ratings killers)',
+            'Measurement cleanup (events you can trust)'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '3–6 weeks',
+          description: 'Ship retention-led improvements in reliable cycles.',
+          tasks: [
+            'Activation + onboarding improvements',
+            'UX + speed + stability fixes',
+            'Tracking + dashboards for key flows'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Relaunch',
+          duration: '1–2 weeks',
+          description: 'Relaunch with store assets and a clear story.',
+          tasks: [
+            'ASO keyword map + store copy',
+            'Screenshots/creative + release plan',
+            'Ratings strategy + monitoring'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Monthly',
+          description: 'Grow installs with content + digital marketing—and keep users.',
+          tasks: [
+            'Content + creatives (store, ads, social clips)',
+            'Digital marketing (paid + social + lifecycle messaging)',
+            'Retention experiments + weekly analytics reporting'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    },
+    'dtc-growth': {
+      sectionLabel: 'The Playbook',
+      headline: 'Lower CAC. Stabilize ROAS. Grow profit.',
+      subhead: 'We run disciplined experiments across Shopify CRO, paid growth, and lifecycle—so results become predictable.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Diagnose',
+          duration: '1–2 weeks',
+          description: 'Find the biggest profit leaks across your funnel.',
+          tasks: [
+            'CAC/ROAS/MER audit (creative + audiences)',
+            'Shopify conversion audit (PDP/cart/checkout)',
+            'Offer + messaging clarity review'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '3–6 weeks',
+          description: 'Fix conversion before scaling spend.',
+          tasks: [
+            'CRO backlog shipped weekly',
+            'Offer architecture (bundles, upsells)',
+            'Tracking + attribution sanity check'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Launch',
+          duration: '1–2 weeks',
+          description: 'Launch a repeatable testing system.',
+          tasks: [
+            'Creative pipeline + testing framework',
+            'Landing/PDP variants for top products',
+            'Lifecycle baseline (welcome, abandon, post-purchase)'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Monthly',
+          description: 'Predictable growth with creative, content, and weekly experiments.',
+          tasks: [
+            'Content + creatives (ads, UGC briefs, email/SMS copy)',
+            'Digital marketing (paid growth + CRO tests)',
+            'Profit reporting (CAC, MER, LTV, margin)'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    },
+    'enterprise': {
+      sectionLabel: 'The Playbook',
+      headline: 'Governance built in — so pilots ship.',
+      subhead: 'We reduce approval drag with stage gates, documentation, and secure-by-design delivery.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Align',
+          duration: '1–2 weeks',
+          description: 'Get stakeholders aligned on "done."',
+          tasks: [
+            'Use case + scope boundaries',
+            'Security/privacy requirements captured early',
+            'Success metrics + stage gates agreed'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '6–12 weeks',
+          description: 'Build pilot-ready MVPs with traceability.',
+          tasks: [
+            'Secure architecture + privacy-by-design',
+            'Documentation baked in (audit-friendly)',
+            'Weekly demos + decision log'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Launch',
+          duration: '2–4 weeks',
+          description: 'Roll out with enablement, not just code.',
+          tasks: [
+            'Rollout plan + training assets',
+            'Adoption measurement setup',
+            'Support + iteration cadence'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Quarterly / Monthly',
+          description: 'Drive adoption with content and internal marketing.',
+          tasks: [
+            'Enablement content (guides, playbooks, training)',
+            'Internal campaigns + stakeholder comms',
+            'Adoption metrics + value reporting + roadmap'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    },
+    'accelerator': {
+      sectionLabel: 'The Playbook',
+      headline: 'Cohorts that ship — before Demo Day.',
+      subhead: 'We standardize delivery and quality across founders with templates, squads, and sponsor-ready reporting.',
+      phases: [
+        {
+          number: '01',
+          icon: Search,
+          title: 'Standardize',
+          duration: '1–2 weeks',
+          description: 'Give founders a delivery system that scales.',
+          tasks: [
+            'MVP templates + scope guardrails',
+            'Milestones + demo cadence',
+            'Sponsor reporting structure'
+          ],
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          bgGradient: 'from-blue-500/20 to-indigo-500/20',
+          iconBg: 'from-blue-500 to-indigo-600',
+          borderColor: 'border-blue-200/50',
+          glowColor: 'shadow-blue-500/20',
+          accentColor: 'text-blue-600'
+        },
+        {
+          number: '02',
+          icon: Code2,
+          title: 'Build',
+          duration: '4–8 weeks',
+          description: 'Deliver MVPs with consistent quality.',
+          tasks: [
+            'Build squads on demand (product + engineering)',
+            'Weekly founder demos + unblockers',
+            'Quality checkpoints + QA'
+          ],
+          gradient: 'from-[#DBFE01] via-[#c5e000] to-[#a8c600]',
+          bgGradient: 'from-[#DBFE01]/20 to-[#a8c600]/20',
+          iconBg: 'from-[#DBFE01] to-[#a8c600]',
+          borderColor: 'border-[#DBFE01]/50',
+          glowColor: 'shadow-[#DBFE01]/30',
+          accentColor: 'text-[#a8c600]'
+        },
+        {
+          number: '03',
+          icon: Rocket,
+          title: 'Launch',
+          duration: '1–2 weeks',
+          description: 'Demo Day ready—polished and measurable.',
+          tasks: [
+            'Landing page + onboarding basics',
+            'Analytics setup + metrics story',
+            'Pitch support + release readiness'
+          ],
+          gradient: 'from-purple-600 via-pink-600 to-rose-600',
+          bgGradient: 'from-purple-500/20 to-pink-500/20',
+          iconBg: 'from-purple-500 to-pink-600',
+          borderColor: 'border-purple-200/50',
+          glowColor: 'shadow-purple-500/20',
+          accentColor: 'text-purple-600'
+        },
+        {
+          number: '04',
+          icon: TrendingUp,
+          title: 'Scale',
+          duration: 'Monthly',
+          description: 'Support GTM with content + digital marketing kits.',
+          tasks: [
+            'Content creation (launch pages, decks, founder narratives)',
+            'Digital marketing kits (social, email, paid starter campaigns)',
+            'Sponsor dashboards + outcomes reporting cadence'
+          ],
+          gradient: 'from-emerald-600 via-teal-600 to-cyan-600',
+          bgGradient: 'from-emerald-500/20 to-teal-500/20',
+          iconBg: 'from-emerald-500 to-teal-600',
+          borderColor: 'border-emerald-200/50',
+          glowColor: 'shadow-emerald-500/20',
+          accentColor: 'text-emerald-600'
+        }
+      ]
+    }
+  };
+
+  // Default to generic config if persona not found
+  const defaultConfig = {
+    sectionLabel: 'The 4-Phase Playbook',
+    headline: 'From idea to market leader',
+    subhead: 'Clear sequencing, reusable components, and strict stage gates — so you ship faster without cutting corners or compromising quality.',
+    phases: [
   {
     number: '01',
     icon: Search,
