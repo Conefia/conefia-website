@@ -598,8 +598,11 @@ export default function PlaybookSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
             {config.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
-            {config.headline}
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+            <span className="text-[#1a1a1a]">{config.headline.split('.')[0]}.</span>{' '}
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+              {config.headline.split('.').slice(1).join('.').trim()}
+            </span>
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
             {config.subhead}
