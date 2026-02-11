@@ -137,7 +137,7 @@ export default function PackagesSection({ reduceMotion }) {
             Packages &amp; Services
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
-            Pick a sprint. <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">Ship outcomes.</span>
+            Pick a sprint. <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Ship outcomes.</span>
           </h2>
           <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium leading-relaxed">
             AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.
