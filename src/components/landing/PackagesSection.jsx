@@ -7,6 +7,11 @@ export default function PackagesSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const getPackageDescription = (packageId) => {
+    const emphasis = selectedPersona.packageEmphasis || {};
+    return emphasis[packageId] || null;
+  };
+
   const packages = [
   {
     icon: Search,
@@ -15,6 +20,7 @@ export default function PackagesSection({ reduceMotion }) {
     description: 'Research + prototype + roadmap',
     kpi: 'Clarity in 10 days',
     bestFor: 'founders who want to de-risk before building',
+    personaDescription: getPackageDescription('validation'),
     features: [
     'Discovery workshop + goals',
     'Competitive teardown',
@@ -38,6 +44,7 @@ export default function PackagesSection({ reduceMotion }) {
     kpi: 'MVP in 8–12 weeks',
     bestFor: 'founders ready to ship and start pilots',
     popularProof: 'Chosen by founders shipping AI MVPs on tight timelines.',
+    personaDescription: getPackageDescription('build'),
     features: [
     'Product UX + UI system',
     'Full-stack build (web/mobile)',
@@ -61,6 +68,7 @@ export default function PackagesSection({ reduceMotion }) {
     description: 'Landing pages, store, and local visibility',
     kpi: 'Launch-ready in 2–4 weeks',
     bestFor: 'clinics + Shopify brands that need discoverability fast',
+    personaDescription: getPackageDescription('launch'),
     features: [
     'Conversion landing page + tracking',
     'App Store / Play Store assets (if needed)',
@@ -83,6 +91,7 @@ export default function PackagesSection({ reduceMotion }) {
     description: 'Predictable growth, measured weekly',
     kpi: '4–6 tests/month',
     bestFor: 'teams that want compounding results, not random marketing',
+    personaDescription: getPackageDescription('growth'),
     features: [
     '4–6 experiments/month (CRO + paid + lifecycle)',
     'Creative + audience testing',
@@ -215,6 +224,14 @@ export default function PackagesSection({ reduceMotion }) {
                 </div>
                 
                 <p className="text-[#1a1a1a]/80 text-sm mb-5 font-semibold leading-relaxed">{pkg.description}</p>
+
+                {/* Persona-specific description */}
+                {pkg.personaDescription && (
+                  <div className="mb-5 p-3 rounded-lg bg-gradient-to-br from-white/90 to-white/60 border-2 border-[#1a1a1a]/10">
+                    <p className="text-xs text-[#1a1a1a]/50 font-bold uppercase tracking-wider mb-1">Your focus</p>
+                    <p className="text-sm text-[#1a1a1a] font-semibold leading-relaxed">{pkg.personaDescription}</p>
+                  </div>
+                )}
 
                 {/* Popular proof (MVP Build only) */}
                 {pkg.popularProof && (
