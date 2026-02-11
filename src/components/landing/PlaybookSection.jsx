@@ -19,7 +19,7 @@ export default function PlaybookSection({ reduceMotion }) {
           icon: Search,
           title: 'Diagnose',
           duration: '1–2 weeks',
-          description: 'Find what's blocking calls, forms, and bookings.',
+          description: 'Find what is blocking calls, forms, and bookings.',
           tasks: [
             'Google Business Profile + local SEO audit',
             'Booking journey + intake friction review',
