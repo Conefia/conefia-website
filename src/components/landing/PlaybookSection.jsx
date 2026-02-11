@@ -231,7 +231,7 @@ export default function PlaybookSection({ reduceMotion }) {
           icon: TrendingUp,
           title: 'Scale',
           duration: 'Monthly',
-          description: 'Grow installs with content + digital marketing—and keep users.',
+          description: 'Grow installs with content and digital marketing and keep users.',
           tasks: [
             'Content + creatives (store, ads, social clips)',
             'Digital marketing (paid + social + lifecycle messaging)',
