@@ -177,7 +177,7 @@ export default function PlaybookSection({ reduceMotion }) {
           icon: Search,
           title: 'Diagnose',
           duration: '1–2 weeks',
-          description: 'Identify why users drop—and what to fix first.',
+          description: 'Identify why users drop — and what to fix first.',
           tasks: [
             'Funnel + cohort analysis (D1/D7/D30)',
             'UX/performance audit (ratings killers)',
