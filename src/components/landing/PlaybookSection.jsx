@@ -562,8 +562,10 @@ export default function PlaybookSection({ reduceMotion }) {
     borderColor: 'border-emerald-200/50',
     glowColor: 'shadow-emerald-500/20',
     accentColor: 'text-emerald-600'
-  }];
+  }]};
 
+  const config = playbookConfigs[selectedPersona?.id] || defaultConfig;
+  const phases = config.phases;
 
   return (
     <section ref={ref} id="playbook" className="py-16 md:py-24 bg-gradient-to-b from-white/70 via-[#FAFAFA] to-white/70 relative overflow-hidden">
