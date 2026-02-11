@@ -90,7 +90,7 @@ export default function PlaybookSection({ reduceMotion }) {
     },
     'ai-saas-mvp': {
       sectionLabel: 'The Playbook',
-      headline: 'Pilot-ready AI MVP—without rework.',
+      headline: 'Pilot-ready AI MVP — without rework.',
       subhead: 'We align scope, AI architecture, and launch essentials so you ship fast, win pilots, and measure real usage.',
       phases: [
         {
