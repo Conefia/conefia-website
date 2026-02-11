@@ -450,7 +450,7 @@ export default function PlaybookSection({ reduceMotion }) {
           icon: Rocket,
           title: 'Launch',
           duration: '1–2 weeks',
-          description: 'Demo Day ready—polished and measurable.',
+          description: 'Demo Day ready - polished and measurable.',
           tasks: [
             'Landing page + onboarding basics',
             'Analytics setup + metrics story',
