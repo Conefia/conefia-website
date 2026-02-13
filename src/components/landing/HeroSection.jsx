@@ -135,14 +135,6 @@ export default function HeroSection({ reduceMotion }) {
             animate={isInView ? "visible" : "hidden"}
             className="text-center lg:text-left">
 
-            {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#DBFE01]/20 to-[#c5e000]/20 border border-[#DBFE01]/50 mb-6 backdrop-blur-sm shadow-lg shadow-[#DBFE01]/20">
-              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-              <span className="text-sm font-semibold text-[#DBFE01]">
-                Build it. <span className="text-white/90">Launch it.</span> Scale it.
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
