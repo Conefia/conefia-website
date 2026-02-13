@@ -90,10 +90,9 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
+            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl">
               {!submitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label className="block text-sm font-medium text-white/90 mb-2">
                       Your name
