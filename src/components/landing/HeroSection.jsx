@@ -135,21 +135,21 @@ export default function HeroSection({ reduceMotion }) {
             <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
               <span className="text-sm font-semibold text-[#DBFE01]">
-                Build it. <span className="text-white">Launch it.</span> Scale it.
+                AI MVP Development & Growth Marketing
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
-              One Partner to Build Your <span className="text-[#DBFE01]">App</span>, Grow Your <span className="text-[#DBFE01]">Clinic</span>, and Scale Your Shopify <span className="text-[#DBFE01]">Brand</span>
+              className="text-4xl md:text-6xl font-extrabold text-white mb-6 max-w-3xl mx-auto lg:mx-0 leading-tight">
+              Build AI Apps & Mobile Apps. <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Launch Fast. Grow Profit.</span>
             </motion.h1>
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
+              variants={itemVariants} className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+              End-to-end AI SaaS development, mobile app development, clinic growth systems, and Shopify growth—delivered in focused 8-12 week sprints.
             </motion.p>
 
             {/* CTAs */}
@@ -159,39 +159,35 @@ export default function HeroSection({ reduceMotion }) {
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2">
+                className="btn-primary px-8 py-4 rounded-full text-lg font-bold flex items-center justify-center gap-2 shadow-xl shadow-[#DBFE01]/30">
 
-                Book Roadmap Call
+                Book Free Roadmap Call
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
-                onClick={() => scrollToSection('track-selector')}
-                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm">
+                onClick={() => scrollToSection('case-studies')}
+                className="px-8 py-4 rounded-full text-lg font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm">
 
-                Choose Your Track
+                View Case Studies
               </button>
             </motion.div>
 
             {/* Trust indicators */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
+              className="flex flex-wrap gap-6 md:gap-8 mt-8 justify-center lg:justify-start">
 
               <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
-                <p className="text-white font-bold text-lg">8–12 weeks</p>
+                <p className="text-[#DBFE01] mb-1 text-2xl md:text-3xl font-black">8–12 weeks</p>
+                <p className="text-white/60 text-sm font-semibold">Typical MVP timeline</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">WEEKLY DEMOS</p>
-                <p className="text-white font-bold text-lg">Guaranteed</p>
+                <p className="text-[#DBFE01] mb-1 text-2xl md:text-3xl font-black">Weekly</p>
+                <p className="text-white/60 text-sm font-semibold">Demos & updates</p>
               </div>
               <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">PRIVACY-FIRST</p>
-                <p className="text-white font-bold text-lg">HIPAA-aware</p>
-              </div>
-              <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">ONE BACKLOG</p>
-                <p className="text-white font-bold text-lg">One owner</p>
+                <p className="text-[#DBFE01] mb-1 text-2xl md:text-3xl font-black">HIPAA</p>
+                <p className="text-white/60 text-sm font-semibold">Privacy-first builds</p>
               </div>
             </motion.div>
           </motion.div>
