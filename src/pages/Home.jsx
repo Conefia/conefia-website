@@ -52,8 +52,9 @@ export default function Home() {
       
       <main className="relative">
         <Seo 
+          title="Conefia | AI & Mobile App Development + Growth Partner"
           canonical="/" 
-          description="AI & mobile apps built fast, launched right, scaled with data—for tech founders, clinics, and Shopify brands (SEO, ads, social)"
+          description="Build and scale your digital venture faster. AI MVP & mobile app development plus growth marketing for founders, clinics, and Shopify brands. Free roadmap call."
         />
         
         {/* Enhanced JSON-LD Schema */}
