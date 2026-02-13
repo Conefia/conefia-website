@@ -100,7 +100,8 @@ export default function FAQSection({ reduceMotion }) {
 
 
   return (
-    <section ref={ref} id="faq" className="py-16 md:py-24 bg-white/50">
+    <section ref={ref} id="faq" className="py-20 md:py-28 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,14 +109,14 @@ export default function FAQSection({ reduceMotion }) {
           transition={{ duration: reduceMotion ? 0 : 0.7 }}
           className="text-center mb-16">
 
-          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
-            <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+          <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             FAQ
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
             Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered.</span>
           </h2>
-          <p className="text-lg text-[#2F2F2F]/80 font-medium">
+          <p className="text-lg text-[#2F2F2F]/70 font-medium">
             Everything you need to know before starting — scope, timelines, and how we work across build → launch → scale.
           </p>
         </motion.div>
@@ -130,18 +131,18 @@ export default function FAQSection({ reduceMotion }) {
                 duration: reduceMotion ? 0 : 0.6,
                 delay: reduceMotion ? 0 : 0.2 + index * 0.1
               }}
-              className="group w-full glass-card rounded-2xl p-6 transition-all duration-300 hover:border-[#DBFE01]/30 hover:shadow-lg hover:shadow-black/5"
+              className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md"
             >
               <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-colors bg-[#2F2F2F]/5 group-open:bg-[#DBFE01]">
-                    <HelpCircle className="w-5 h-5 text-[#2F2F2F]/50 group-open:text-[#2F2F2F]" />
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-gradient-to-br group-open:from-[#DBFE01] group-open:to-[#c5e000] shadow-sm">
+                    <HelpCircle className="w-5 h-5 text-[#2F2F2F]/60 group-open:text-[#0a0e1a] transition-colors" />
                   </div>
-                  <h3 className="text-lg font-semibold text-[#2F2F2F]">{faq.question}</h3>
+                  <h3 className="text-lg font-bold text-[#1a1a1a]">{faq.question}</h3>
                 </div>
                 <ChevronDown className="w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 group-open:rotate-180 flex-shrink-0" />
               </summary>
-              <div className="text-[#2F2F2F]/80 mt-4 pl-14 leading-relaxed font-medium">
+              <div className="text-[#2F2F2F]/70 mt-4 pl-14 leading-relaxed font-medium">
                 {faq.answer}
               </div>
             </motion.details>

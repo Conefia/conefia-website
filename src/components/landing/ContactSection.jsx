@@ -41,11 +41,12 @@ export default function ContactSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="contact" className="py-16 md:py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-[#DBFE01]/5" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.08] blur-[120px]" />
-      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-500 opacity-[0.04] blur-[100px]" />
+    <section ref={ref} id="contact" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Enhanced background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-[#DBFE01]/8" />
+      <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:28px_28px] opacity-[0.08]" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#DBFE01]/15 to-transparent blur-[100px]" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-blue-500/10 via-purple-500/5 to-transparent blur-[100px]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -55,15 +56,15 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7 }}
           >
-            <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-4">
-              <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+            <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-4 shadow-sm">
+              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
               Get Started
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 leading-tight">
               Ready to <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">launch</span>?
             </h2>
-            <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
-              Book a <span className="font-bold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
+            <p className="text-lg text-[#2F2F2F]/70 mb-8 leading-relaxed font-medium">
+              Book a <span className="font-extrabold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </p>
 
@@ -72,10 +73,10 @@ export default function ContactSection({ reduceMotion }) {
               {trustItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md border border-gray-200 hover:border-[#DBFE01]/40 transition-all"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white backdrop-blur-sm shadow-lg border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:scale-105 transition-all group"
                 >
-                  <item.icon className="w-5 h-5 text-[#1a1a1a]" />
-                  <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
+                  <item.icon className="w-5 h-5 text-[#1a1a1a] group-hover:text-[#DBFE01] transition-colors" />
+                  <span className="text-sm text-[#1a1a1a] font-semibold">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -89,7 +90,7 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="glass-card rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/10 border-2 border-[#DBFE01]/20 bg-white/80 backdrop-blur-xl">
+            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/10 border-2 border-[#DBFE01]/30 bg-white/90 backdrop-blur-xl">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -101,7 +102,7 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
+                      className="h-12 rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
                       required
                     />
                   </div>
@@ -115,7 +116,7 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
+                      className="h-12 rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
                       required
                     />
                   </div>
@@ -128,14 +129,14 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="Tell us about your idea or project..."
                       value={formData.project}
                       onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                      className="min-h-[120px] rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none transition-all"
+                      className="min-h-[120px] rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 resize-none transition-all"
                       required
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#1a1a1a] font-bold text-base transition-all hover:shadow-xl hover:shadow-[#DBFE01]/40 hover:-translate-y-0.5"
+                    className="w-full h-14 rounded-xl bg-gradient-to-r from-[#DBFE01] to-[#c5e000] hover:from-[#c8e600] hover:to-[#b0d000] text-[#0a0e1a] font-extrabold text-base transition-all hover:shadow-2xl hover:shadow-[#DBFE01]/50 hover:-translate-y-1"
                   >
                     Book Your Roadmap Call
                     <ArrowRight className="w-5 h-5 ml-2" />

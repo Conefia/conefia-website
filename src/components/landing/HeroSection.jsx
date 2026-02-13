@@ -51,12 +51,16 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
-      {/* Base layer */}
-      <div className="bg-stone-950 absolute inset-0" />
+    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 md:pt-0 overflow-hidden">
+      {/* Enhanced gradient base layer */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#111827] to-[#1a1f2e]" />
+      
+      {/* Accent gradient overlays */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-[#DBFE01]/10 via-[#c5e000]/5 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-500/10 via-purple-500/5 to-transparent rounded-full blur-3xl" />
       
       {/* Contour lines */}
-      <ContourBackground className="opacity-80" isMobile={isMobile} />
+      <ContourBackground className="opacity-60" isMobile={isMobile} />
 
       {/* Static Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -132,23 +136,23 @@ export default function HeroSection({ reduceMotion }) {
             className="text-center lg:text-left">
 
             {/* Badge */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 border border-[#DBFE01]/40 mb-6">
+            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-r from-[#DBFE01]/20 to-[#c5e000]/20 border border-[#DBFE01]/50 mb-6 backdrop-blur-sm shadow-lg shadow-[#DBFE01]/20">
               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
               <span className="text-sm font-semibold text-[#DBFE01]">
-                Build it. <span className="text-white">Launch it.</span> Scale it.
+                Build it. <span className="text-white/90">Launch it.</span> Scale it.
               </span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-lg md:text-xl font-bold text-white/90 mb-4 max-w-xl mx-auto lg:mx-0">
-              One Partner to Build Your <span className="text-[#DBFE01]">App</span>, Grow Your <span className="text-[#DBFE01]">Clinic</span>, and Scale Your Shopify <span className="text-[#DBFE01]">Brand</span>
+              className="text-lg md:text-xl font-bold text-white mb-4 max-w-xl mx-auto lg:mx-0 leading-tight">
+              One Partner to Build Your <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">App</span>, Grow Your <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Clinic</span>, and Scale Your Shopify <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Brand</span>
             </motion.h1>
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-lg md:text-xl text-white/90 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
+              variants={itemVariants} className="text-lg md:text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
               For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
             </motion.p>
 
@@ -159,14 +163,14 @@ export default function HeroSection({ reduceMotion }) {
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="btn-primary px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2">
+                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#DBFE01]/40 hover:-translate-y-0.5 transition-all duration-300">
 
                 Book Roadmap Call
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollToSection('track-selector')}
-                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/20 text-white hover:bg-white hover:text-[#0B1020] hover:border-white transition-all duration-300 backdrop-blur-sm">
+                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-md">
 
                 Choose Your Track
               </button>
@@ -175,23 +179,23 @@ export default function HeroSection({ reduceMotion }) {
             {/* Trust indicators */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-6 md:gap-8 mt-6 justify-center lg:justify-start">
+              className="flex flex-wrap gap-6 md:gap-8 mt-8 justify-center lg:justify-start">
 
-              <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">TYPICAL MVP</p>
-                <p className="text-white font-bold text-lg">8–12 weeks</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">TYPICAL MVP</p>
+                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
               </div>
-              <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">WEEKLY DEMOS</p>
-                <p className="text-white font-bold text-lg">Guaranteed</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">WEEKLY DEMOS</p>
+                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
               </div>
-              <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">PRIVACY-FIRST</p>
-                <p className="text-white font-bold text-lg">HIPAA-aware</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">PRIVACY-FIRST</p>
+                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
               </div>
-              <div className="text-center lg:text-left">
-                <p className="text-white/40 mb-1 text-sm font-semibold uppercase tracking-wider">ONE BACKLOG</p>
-                <p className="text-white font-bold text-lg">One owner</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">ONE BACKLOG</p>
+                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
               </div>
             </motion.div>
           </motion.div>

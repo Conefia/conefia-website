@@ -17,7 +17,7 @@ const MetricCard = ({ metric, index, reduceMotion, isInView }) => {
       }}
       className="text-center group h-full flex flex-col items-center justify-center"
     >
-      <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${metric.bgColor} mb-6 transition-all duration-300 border ${metric.borderColor} group-hover:scale-110`}>
+      <div className={`relative inline-flex items-center justify-center w-16 h-16 rounded-2xl ${metric.bgColor} mb-6 transition-all duration-300 border ${metric.borderColor} group-hover:scale-110 shadow-lg group-hover:shadow-xl`}>
         {!reduceMotion && (
           <motion.div 
             className="absolute inset-0 rounded-2xl"
@@ -41,11 +41,11 @@ const MetricCard = ({ metric, index, reduceMotion, isInView }) => {
         initial={{ scale: 0.5, opacity: 0 }}
         animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
         transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 + index * 0.12 }}
-        className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] mb-2 tracking-tight"
+        className="text-3xl md:text-4xl lg:text-5xl font-extrabold bg-gradient-to-br from-[#1a1a1a] to-[#2F2F2F] bg-clip-text text-transparent mb-2 tracking-tight"
       >
         {metric.value}
       </motion.p>
-      <p className="text-sm font-bold text-[#1a1a1a] px-4">
+      <p className="text-sm font-bold text-[#2F2F2F]/80 px-4 group-hover:text-[#1a1a1a] transition-colors">
         {metric.label}
       </p>
     </motion.div>
@@ -68,8 +68,10 @@ export default function SocialProofBar({ reduceMotion }) {
   const microLine = selectedPersona.microLine || "Outcomes when execution is owned end-to-end.";
 
   return (
-    <section ref={ref} className="py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden shadow-sm z-10 transition-colors duration-500">
-      <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.15] pointer-events-none" />
+    <section ref={ref} className="py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-[#DBFE01]/5 relative overflow-hidden z-10 transition-colors duration-500">
+      <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-[0.12] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-[#DBFE01]/10 to-transparent rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-blue-500/5 to-transparent rounded-full blur-3xl" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Micro-line */}
@@ -80,7 +82,7 @@ export default function SocialProofBar({ reduceMotion }) {
           transition={{ duration: 0.5 }}
           className="text-center mb-8 md:mb-12"
         >
-           <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto italic px-4">
+           <p className="text-lg md:text-xl text-[#2F2F2F]/70 font-medium max-w-3xl mx-auto italic px-4">
              "{microLine}"
            </p>
         </motion.div>
