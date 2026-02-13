@@ -133,7 +133,7 @@ export default function HeroSection({ reduceMotion }) {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="text-center lg:text-left lg:pr-8">
+            className="text-center lg:text-left lg:pr-2">
 
             {/* Headline */}
             <motion.h1
