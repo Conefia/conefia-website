@@ -123,7 +123,7 @@ export default function FAQSection({ reduceMotion }) {
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <motion.details
+            <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -131,21 +131,22 @@ export default function FAQSection({ reduceMotion }) {
                 duration: reduceMotion ? 0 : 0.6,
                 delay: reduceMotion ? 0 : 0.2 + index * 0.1
               }}
-              className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md"
             >
-              <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-gradient-to-br group-open:from-[#DBFE01] group-open:to-[#c5e000] shadow-sm">
-                    <HelpCircle className="w-5 h-5 text-[#2F2F2F]/60 group-open:text-[#0a0e1a] transition-colors" />
+              <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-gradient-to-br group-open:from-[#DBFE01] group-open:to-[#c5e000] shadow-sm">
+                      <HelpCircle className="w-5 h-5 text-[#2F2F2F]/60 group-open:text-[#0a0e1a] transition-colors" />
+                    </div>
+                    <h3 className="text-lg font-bold text-[#1a1a1a]">{faq.question}</h3>
                   </div>
-                  <h3 className="text-lg font-bold text-[#1a1a1a]">{faq.question}</h3>
+                  <ChevronDown className="w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 group-open:rotate-180 flex-shrink-0" />
+                </summary>
+                <div className="text-[#2F2F2F]/70 mt-4 pl-14 leading-relaxed font-medium">
+                  {faq.answer}
                 </div>
-                <ChevronDown className="w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 group-open:rotate-180 flex-shrink-0" />
-              </summary>
-              <div className="text-[#2F2F2F]/70 mt-4 pl-14 leading-relaxed font-medium">
-                {faq.answer}
-              </div>
-            </motion.details>
+              </details>
+            </motion.div>
           ))}
         </div>
       </div>
