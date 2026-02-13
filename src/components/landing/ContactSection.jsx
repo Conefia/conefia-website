@@ -90,11 +90,11 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/10 border-2 border-[#DBFE01]/30 bg-white/90 backdrop-blur-xl">
+            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-medium text-white/90 mb-2">
                       Your name
                     </label>
                     <Input
@@ -102,13 +102,13 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
+                      className="h-12 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-medium text-white/90 mb-2">
                       Email address
                     </label>
                     <Input
@@ -116,20 +116,20 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
+                      className="h-12 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 transition-all"
                       required
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-[#2F2F2F] mb-2">
+                    <label className="block text-sm font-medium text-white/90 mb-2">
                       {selectedPersona.footerFormPrompt || "What are you building?"}
                     </label>
                     <Textarea
                       placeholder="Tell us about your idea or project..."
                       value={formData.project}
                       onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                      className="min-h-[120px] rounded-xl border-gray-300/50 bg-white shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 resize-none transition-all"
+                      className="min-h-[120px] rounded-xl border-white/20 bg-white/10 text-white placeholder:text-white/40 shadow-sm focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/30 resize-none transition-all"
                       required
                     />
                   </div>
@@ -142,7 +142,7 @@ export default function ContactSection({ reduceMotion }) {
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
 
-                  <p className="text-center text-xs text-[#2F2F2F]/40">
+                  <p className="text-center text-xs text-white/40">
                     No spam, ever. We'll respond within 24 hours.
                   </p>
                 </form>
@@ -155,8 +155,8 @@ export default function ContactSection({ reduceMotion }) {
                   <div className="w-16 h-16 rounded-full bg-[#DBFE01] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#DBFE01]/30">
                     <CheckCircle2 className="w-8 h-8 text-[#1a1a1a]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">You're in!</h3>
-                  <p className="text-[#2F2F2F]/70 mb-6 font-medium">
+                  <h3 className="text-2xl font-bold text-white mb-2">You're in!</h3>
+                  <p className="text-white/70 mb-6 font-medium">
                     We'll reach out within 24 hours to schedule your free 30-minute roadmap call.
                   </p>
 
