@@ -28,7 +28,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'What do you build, exactly?',
       answer: (
         <>
-          We build digital products end-to-end: AI MVPs, mobile apps, and the launch + growth systems around them (landing pages, tracking, and content/marketing). <a href="#track-selector" onClick={(e) => { e.preventDefault(); scrollToSection('track-selector'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Solutions</a>
+          We build digital products end-to-end: AI MVPs, mobile apps, and the launch + growth systems around them (landing pages, tracking, paid ads, and content/marketing). <a href="#track-selector" onClick={(e) => { e.preventDefault(); scrollToSection('track-selector'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Solutions</a>
         </>
       )
     },
@@ -84,7 +84,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'What if I only need help with one area?',
       answer: (
         <>
-          That works. You can engage us for a focused sprint (UX fixes, analytics setup, landing page, retention audit, SEO/content plan) or expand into a full build → scale engagement. <a href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection('packages'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Packages</a>
+          That works. You can engage us for a focused sprint (UX fixes, analytics setup, landing page, paid ads setup, retention audit, SEO/content plan) or expand into a full build → scale engagement. <a href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection('packages'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Packages</a>
         </>
       )
     },
