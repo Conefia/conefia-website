@@ -361,7 +361,7 @@ function LayoutContent({ children, currentPageName }) {
 
               </div>
               <p className="text-white/80 text-sm leading-relaxed max-w-sm font-medium">
-                Founder Ops for Digital Businesses. We validate, build, launch, and grow — all in one place.
+                One Partner to Build, Launch, and Scale Your Digital Venture.
               </p>
             </div>
             <div>
