@@ -43,8 +43,9 @@ export default function ContactSection({ reduceMotion }) {
   return (
     <section ref={ref} id="contact" className="py-16 md:py-24 relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FAFAFA] to-white" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-[#DBFE01]/5" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.08] blur-[120px]" />
+      <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-blue-500 opacity-[0.04] blur-[100px]" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -59,10 +60,10 @@ export default function ContactSection({ reduceMotion }) {
               Get Started
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
-              Ready to <span className="gradient-text">launch</span>?
+              Ready to <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">launch</span>?
             </h2>
             <p className="text-lg text-[#2F2F2F]/80 mb-8 leading-relaxed font-medium">
-              Book a roadmap call and let's discuss how we can take your idea from concept to market. 
+              Book a <span className="font-bold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </p>
 
@@ -71,7 +72,7 @@ export default function ContactSection({ reduceMotion }) {
               {trustItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-[#2F2F2F]/5"
+                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm shadow-md border border-gray-200 hover:border-[#DBFE01]/40 transition-all"
                 >
                   <item.icon className="w-5 h-5 text-[#1a1a1a]" />
                   <span className="text-sm text-[#2F2F2F]/90 font-semibold">{item.text}</span>
@@ -88,7 +89,7 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="glass-card rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/5">
+            <div className="glass-card rounded-3xl p-8 md:p-10 shadow-2xl shadow-black/10 border-2 border-[#DBFE01]/20 bg-white/80 backdrop-blur-xl">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -100,7 +101,7 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="John Smith"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="h-12 rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
                       required
                     />
                   </div>
@@ -114,7 +115,7 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="john@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="h-12 rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20"
+                      className="h-12 rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 transition-all"
                       required
                     />
                   </div>
@@ -127,16 +128,16 @@ export default function ContactSection({ reduceMotion }) {
                       placeholder="Tell us about your idea or project..."
                       value={formData.project}
                       onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                      className="min-h-[120px] rounded-xl border-[#2F2F2F]/10 focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none"
+                      className="min-h-[120px] rounded-xl border-gray-200 bg-white focus:border-[#DBFE01] focus:ring-[#DBFE01]/20 resize-none transition-all"
                       required
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#2F2F2F] font-semibold text-base transition-all hover:shadow-lg hover:shadow-[#DBFE01]/30"
+                    className="w-full h-14 rounded-xl bg-[#DBFE01] hover:bg-[#c8e600] text-[#1a1a1a] font-bold text-base transition-all hover:shadow-xl hover:shadow-[#DBFE01]/40 hover:-translate-y-0.5"
                   >
-                    {selectedPersona.footerFormButton || "Book roadmap call"}
+                    Book Your Roadmap Call
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
 
@@ -150,12 +151,12 @@ export default function ContactSection({ reduceMotion }) {
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center py-8"
                 >
-                  <div className="w-16 h-16 rounded-full bg-[#DBFE01] flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-8 h-8 text-[#2F2F2F]" />
+                  <div className="w-16 h-16 rounded-full bg-[#DBFE01] flex items-center justify-center mx-auto mb-6 shadow-lg shadow-[#DBFE01]/30">
+                    <CheckCircle2 className="w-8 h-8 text-[#1a1a1a]" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#2F2F2F] mb-2">You're in!</h3>
-                  <p className="text-[#2F2F2F]/60 mb-6">
-                    We'll reach out within 24 hours to schedule your roadmap call.
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">You're in!</h3>
+                  <p className="text-[#2F2F2F]/70 mb-6 font-medium">
+                    We'll reach out within 24 hours to schedule your free 30-minute roadmap call.
                   </p>
 
                 </motion.div>
