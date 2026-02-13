@@ -51,7 +51,7 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
+    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 md:pt-0 overflow-hidden bg-[#2F2F2F]">
       {/* Base layer */}
       <div className="bg-stone-950 absolute inset-0" />
       
