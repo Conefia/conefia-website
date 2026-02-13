@@ -138,7 +138,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl mx-auto lg:mx-0 leading-tight">
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
               One Partner to <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Build, Launch, and Scale</span> Your Digital Venture.
             </motion.h1>
 
