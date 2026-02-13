@@ -57,7 +57,7 @@ export default function ContactSection({ reduceMotion }) {
             transition={{ duration: reduceMotion ? 0 : 0.7 }}
           >
             <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-4 shadow-sm">
-              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+              <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
               Get Started
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4 leading-tight">
