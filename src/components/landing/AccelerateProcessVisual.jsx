@@ -47,7 +47,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
 
 
   return (
-    <div className="relative w-full max-w-2xl ml-auto p-4">
+    <div className="relative w-full max-w-md ml-auto p-4">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/10 via-blue-500/5 to-purple-500/10 rounded-3xl blur-2xl" />
       
