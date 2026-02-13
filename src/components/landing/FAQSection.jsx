@@ -8,12 +8,19 @@ export default function FAQSection({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const faqs = [
     {
       question: 'Can I start at any phase?',
       answer: (
         <>
-          Yes. Engagement is modular — start with Validate, jump into Build, or begin at Launch/Scale if you're already shipping. <a href="#packages" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">View Packages & Services</a>
+          Yes. Engagement is modular — start with Validate, jump into Build, or begin at Launch/Scale if you're already shipping. <a href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection('packages'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">View Packages & Services</a>
         </>
       )
     },
@@ -21,7 +28,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'What do you build, exactly?',
       answer: (
         <>
-          We build digital products end-to-end: AI MVPs, mobile apps, and the launch + growth systems around them (landing pages, tracking, and content/marketing). <a href="#track-selector" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">Explore Solutions</a>
+          We build digital products end-to-end: AI MVPs, mobile apps, and the launch + growth systems around them (landing pages, tracking, and content/marketing). <a href="#track-selector" onClick={(e) => { e.preventDefault(); scrollToSection('track-selector'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Solutions</a>
         </>
       )
     },
@@ -29,7 +36,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'Who do you work with?',
       answer: (
         <>
-          Tech founders building AI/apps, healthcare clinics improving patient acquisition, and Shopify brands focused on conversion and retention. <a href="#track-selector" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">Choose Your Track</a>
+          Tech founders building AI/apps, healthcare clinics improving patient acquisition, and Shopify brands focused on conversion and retention. <a href="#track-selector" onClick={(e) => { e.preventDefault(); scrollToSection('track-selector'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Choose Your Track</a>
         </>
       )
     },
@@ -37,7 +44,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'How do you keep delivery predictable?',
       answer: (
         <>
-          Weekly demos, one shared backlog, and stage gates for decisions and sign-offs — so priorities stay clear and scope doesn't drift. <a href="#how-we-work" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">See How We Work</a>
+          Weekly demos, one shared backlog, and stage gates for decisions and sign-offs — so priorities stay clear and scope doesn't drift. <a href="#playbook" onClick={(e) => { e.preventDefault(); scrollToSection('playbook'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">See How We Work</a>
         </>
       )
     },
@@ -61,7 +68,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'How do you measure success?',
       answer: (
         <>
-          We define success metrics upfront (e.g., booked appointments, pilot activation, conversion rate, retention) and instrument tracking so progress is visible week to week. <a href="#playbook" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">View Playbook</a>
+          We define success metrics upfront (e.g., booked appointments, pilot activation, conversion rate, retention) and instrument tracking so progress is visible week to week. <a href="#playbook" onClick={(e) => { e.preventDefault(); scrollToSection('playbook'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">View Playbook</a>
         </>
       )
     },
@@ -69,7 +76,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'How fast can we launch?',
       answer: (
         <>
-          Typical ranges: Validate (2–4 weeks), Build (6–12 weeks), Launch (2–4 weeks). Scale is ongoing with monthly experimentation and content/marketing execution. <a href="#playbook" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">View Playbook</a> · <a href="#packages" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">See Packages</a>
+          Typical ranges: Validate (2–4 weeks), Build (6–12 weeks), Launch (2–4 weeks). Scale is ongoing with monthly experimentation and content/marketing execution. <a href="#playbook" onClick={(e) => { e.preventDefault(); scrollToSection('playbook'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">View Playbook</a> · <a href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection('packages'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">See Packages</a>
         </>
       )
     },
@@ -77,7 +84,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'What if I only need help with one area?',
       answer: (
         <>
-          That works. You can engage us for a focused sprint (UX fixes, analytics setup, landing page, retention audit, SEO/content plan) or expand into a full build → scale engagement. <a href="#packages" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">Explore Packages</a>
+          That works. You can engage us for a focused sprint (UX fixes, analytics setup, landing page, retention audit, SEO/content plan) or expand into a full build → scale engagement. <a href="#packages" onClick={(e) => { e.preventDefault(); scrollToSection('packages'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">Explore Packages</a>
         </>
       )
     },
@@ -85,7 +92,7 @@ export default function FAQSection({ reduceMotion }) {
       question: 'Can I see examples of your work?',
       answer: (
         <>
-          Yes — browse case studies mapped to each track: Menovia (AI MVP), Vascular (Clinic Growth), Al-Mahfza (Relaunch), Hartalega (Corporate), Larovie (Shopify Growth). <a href="#case-studies" className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">View Case Studies</a>
+          Yes — browse case studies mapped to each track: Menovia (AI MVP), Vascular (Clinic Growth), Al-Mahfza (Relaunch), Hartalega (Corporate), Larovie (Shopify Growth). <a href="#case-studies" onClick={(e) => { e.preventDefault(); scrollToSection('case-studies'); }} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline cursor-pointer">View Case Studies</a>
         </>
       )
     }
