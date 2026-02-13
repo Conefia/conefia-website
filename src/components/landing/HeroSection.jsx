@@ -175,19 +175,19 @@ export default function HeroSection({ reduceMotion }) {
 
               <div className="text-center lg:text-left group">
                 <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">TYPICAL MVP</p>
-                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
+                <p className="text-white font-normal text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
               </div>
               <div className="text-center lg:text-left group">
                 <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">WEEKLY DEMOS</p>
-                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
+                <p className="text-white font-normal text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
               </div>
               <div className="text-center lg:text-left group">
                 <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">PRIVACY-FIRST</p>
-                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
+                <p className="text-white font-normal text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
               </div>
               <div className="text-center lg:text-left group">
                 <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">ONE BACKLOG</p>
-                <p className="text-white font-extrabold text-xl bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
+                <p className="text-white font-normal text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
               </div>
             </motion.div>
           </motion.div>
