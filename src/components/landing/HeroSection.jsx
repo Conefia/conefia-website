@@ -81,9 +81,9 @@ export default function HeroSection({ reduceMotion }) {
                   left: `${x}%`,
                   top: `${y}%`,
                   width: `${twinkleSize}px`,
-                  height: `${twinkleSize}px`,
+                  height: `${twinkleSize}px`
                 }}>
-                <div 
+                <div
                   className="absolute bg-white rounded-full"
                   style={{
                     width: '100%',
@@ -97,8 +97,8 @@ export default function HeroSection({ reduceMotion }) {
                       ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                     `
                   }} />
-              </div>
-            );
+              </div>);
+
           }
 
           return (
@@ -144,8 +144,8 @@ export default function HeroSection({ reduceMotion }) {
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-lg md:text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0">
-              For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
+              variants={itemVariants} className="text-white/80 mb-8 mx-auto text-base font-medium leading-relaxed md:text-xl max-w-xl lg:mx-0">For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
+
             </motion.p>
 
             {/* CTAs */}
@@ -206,17 +206,17 @@ export default function HeroSection({ reduceMotion }) {
 
       {/* Scroll indicator - simplified */}
       {!reduceMotion &&
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
         animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
+
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
-            <motion.div 
-              className="w-1.5 h-3 bg-white/50 rounded-full"
-              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <motion.div
+            className="w-1.5 h-3 bg-white/50 rounded-full"
+            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+
           </div>
         </motion.div>
       }
