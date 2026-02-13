@@ -52,9 +52,9 @@ export default function BrandCarousel() {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-
-      <div className="relative z-10">
+    <section ref={ref} className="bg-stone-950 py-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -106,6 +106,7 @@ export default function BrandCarousel() {
             </motion.div>
           </div>
         </motion.div>
+        </div>
       </div>
     </section>);
 
