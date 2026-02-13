@@ -17,7 +17,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
     subtitle: "De-risk before you build",
     duration: "2–4 weeks",
     icon: Lightbulb,
-    description: "Market + competitor research, rapid prototyping, and a scoped roadmap you can actually ship."
+    description: "Research, prototype, and scope a roadmap you can ship."
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
     subtitle: "Ship the MVP fast",
     duration: "6–12 weeks",
     icon: Code2,
-    description: "Design and build a production-ready AI or mobile app MVP with scalable architecture and clean analytics."
+    description: "Production-ready MVP with clean architecture and analytics."
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
     subtitle: "Start acquiring users",
     duration: "Market Ready",
     icon: Rocket,
-    description: "Go live with conversion-ready landing pages, onboarding, tracking, and the channel setup to start acquiring users."
+    description: "Landing page, onboarding, tracking, and channel setup."
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
     subtitle: "Make growth predictable",
     duration: "Ongoing",
     icon: TrendingUp,
-    description: "Run CRO, SEO, and paid experiments—plus retention improvements—so growth becomes predictable and measurable.",
+    description: "CRO, SEO, paid ads, and retention improvements.",
     highlight: true
   }];
 
