@@ -360,7 +360,7 @@ function LayoutContent({ children, currentPageName }) {
                   className="h-10 w-auto brightness-0 invert" />
 
               </div>
-              <p className="text-white/80 text-sm leading-relaxed max-w-sm font-medium">
+              <p className="text-white/80 text-sm leading-relaxed max-w-lg font-medium">
                 One Partner to Build, Launch, and Scale Your Digital Venture.
               </p>
             </div>
