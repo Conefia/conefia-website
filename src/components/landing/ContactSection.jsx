@@ -91,7 +91,7 @@ export default function ContactSection({ reduceMotion }) {
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
             <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_0.5px,transparent_0.5px)] [background-size:20px_20px] opacity-10" />
+              <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                   <div>
