@@ -197,7 +197,7 @@ export default function HeroSection({ reduceMotion }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
-            className="relative flex items-center justify-center">
+            className="relative flex items-center justify-center lg:pl-0">
 
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
