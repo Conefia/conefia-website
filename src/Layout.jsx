@@ -5,6 +5,7 @@ import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ContourBackground from '@/components/visual/ContourBackground';
 import { PersonaProvider, usePersona } from '@/components/context/PersonaContext';
+import GoogleTagManager from '@/components/GoogleTagManager';
 
 function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
@@ -66,6 +67,7 @@ function LayoutContent({ children, currentPageName }) {
 
   return (
     <div className="font-['Poppins',sans-serif]">
+      <GoogleTagManager />
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
         
