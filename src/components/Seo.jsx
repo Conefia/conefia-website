@@ -4,7 +4,7 @@ import { OrganizationStructuredData } from './StructuredData';
 export default function Seo({ title, description, canonical }) {
   useEffect(() => {
     // Update title
-    document.title = title ? `${title} | Conefia` : 'Conefia - Founder Ops for Digital Businesses';
+    document.title = title ? `${title} | Conefia` : 'AI & Mobile App Development + Growth Partner';
 
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -13,8 +13,7 @@ export default function Seo({ title, description, canonical }) {
       metaDescription.name = 'description';
       document.head.appendChild(metaDescription);
     }
-    metaDescription.content = description || 'Validate, build, launch, and grow your digital business with Conefia. Your all-in-one partner for Founder Ops.';
-
+    metaDescription.content = description || 'Build and scale your digital venture faster. AI MVP & mobile app development plus growth marketing for founders, clinics, and Shopify brands. Free roadmap call.'
     // Update canonical
     if (canonical) {
       let linkCanonical = document.querySelector('link[rel="canonical"]');
