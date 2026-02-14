@@ -52,7 +52,7 @@ export default function Home() {
       
       <main className="relative">
         <Seo 
-          title="Conefia | AI & Mobile App Development + Growth Partner"
+          title="AI & Mobile App Development + Growth Partner"
           canonical="/" 
           description="Build and scale your digital venture faster. AI MVP & mobile app development plus growth marketing for founders, clinics, and Shopify brands. Free roadmap call."
         />
