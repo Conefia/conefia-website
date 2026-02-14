@@ -23,7 +23,7 @@ export function OrganizationStructuredData() {
         name: "Conefia",
         url: "https://conefia.com",
         logo: "https://conefia.com/logo.png",
-        description: "Founder Ops for Digital Businesses - Build, Launch, and Scale your digital business",
+        description: "Build and scale your digital venture faster. AI MVP & mobile app development plus growth marketing for founders, clinics, and Shopify brands. Free roadmap call.",
         sameAs: [
           "https://www.linkedin.com/company/conefia"
         ]
