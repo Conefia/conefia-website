@@ -11,6 +11,25 @@ function LayoutContent({ children, currentPageName }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { selectedPersona } = usePersona();
 
+  // Google Analytics
+  useEffect(() => {
+    // Add gtag script
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-RC04TNZQKT';
+    document.head.appendChild(script1);
+
+    // Add gtag config
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RC04TNZQKT');
+    `;
+    document.head.appendChild(script2);
+  }, []);
+
   // Home page is dark-themed (hero), others are light-themed
   const isHomePage = currentPageName === 'Home';
   // Check for solution pages
