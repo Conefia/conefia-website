@@ -4,7 +4,7 @@ import { OrganizationStructuredData } from './StructuredData';
 export default function Seo({ title, description, canonical }) {
   useEffect(() => {
     // Update title
-    document.title = title ? `${title} | Conefia` : 'AI & Mobile App Development + Growth Partner';
+    document.title = title ? `${title}` : 'Conefia | AI & Mobile App Development + Growth Partner';
 
     // Update meta description
     let metaDescription = document.querySelector('meta[name="description"]');
