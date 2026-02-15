@@ -35,10 +35,11 @@ function LayoutContent({ children, currentPageName }) {
   // Check for blog pages
   const isBlogPage = currentPageName && typeof currentPageName === 'string' && (
     currentPageName === 'Blog' ||
+    currentPageName === 'blog' ||
     currentPageName === 'BlogPost'
   );
   // Check for book page
-  const isBookPage = currentPageName === 'Book';
+  const isBookPage = currentPageName === 'Book' || currentPageName === 'book';
   // Always use light text for case studies, solutions, blog pages, and book page (dark backgrounds)
   const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || scrolled || mobileMenuOpen;
 

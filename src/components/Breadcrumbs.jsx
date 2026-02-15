@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items, theme = 'light' }) {
           <Link 
             to={createPageUrl('Home')} 
             className={`inline-flex items-center text-sm font-medium transition-colors ${
-              isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-500 hover:text-[#DBFE01]'
+              isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-600 hover:bg-gray-200 hover:text-[#1a1a1a] px-1 py-0.5 rounded'
             }`}
           >
             <Home className="w-4 h-4 mr-2" />
@@ -26,17 +26,17 @@ export default function Breadcrumbs({ items, theme = 'light' }) {
               <ChevronRight className={`w-4 h-4 ${isDark ? 'text-white/40' : 'text-gray-400'}`} />
               {item.path ? (
                 <Link 
-                  to={item.path} 
-                  className={`ml-1 text-sm font-medium transition-colors md:ml-2 ${
-                    isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-500 hover:text-[#DBFE01]'
-                  }`}
-                >
+                   to={item.path} 
+                   className={`ml-1 text-sm font-medium transition-colors md:ml-2 ${
+                     isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-600 hover:bg-gray-200 hover:text-[#1a1a1a] px-1 py-0.5 rounded'
+                   }`}
+                 >
                   {item.label}
                 </Link>
               ) : (
                 <span className={`ml-1 text-sm font-medium md:ml-2 ${
-                  isDark ? 'text-white' : 'text-gray-800'
-                }`}>
+                   isDark ? 'text-white' : 'text-gray-700'
+                 }`}>
                   {item.label}
                 </span>
               )}
