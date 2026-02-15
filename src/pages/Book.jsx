@@ -1,8 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CheckCircle2, Calendar, Clock, Video } from 'lucide-react';
 import Seo from '@/components/Seo';
 
 export default function Book() {
+  useEffect(() => {
+    // Load Calendly widget script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#0a0e1a] via-[#111827] to-[#1a1f2e]">
@@ -41,14 +52,11 @@ export default function Book() {
 
         {/* Calendly embed */}
         <div className="bg-black rounded-2xl shadow-2xl overflow-hidden">
-          {/* Calendly inline widget begin */}
-          <div 
-            className="calendly-inline-widget" 
-            data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01" 
+          <div
+            className="calendly-inline-widget"
+            data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01"
             style={{ minWidth: '320px', height: '700px' }}
           />
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-          {/* Calendly inline widget end */}
         </div>
 
         {/* Additional info */}
