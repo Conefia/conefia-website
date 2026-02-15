@@ -385,6 +385,18 @@ function LayoutContent({ children, currentPageName }) {
                 <li><Link to={createPageUrl('Home') + '#contact'} className="hover:text-[#DBFE01] transition-colors">Contact</Link></li>
               </ul>
             </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Contact</h4>
+              <ul className="space-y-3 text-sm text-white/80 font-medium">
+                <li><a href="tel:(810)0000000" className="hover:text-[#DBFE01] transition-colors">(810) 000 0000</a></li>
+                <li className="text-xs leading-relaxed">801 Keystone Park DR, 27560 Morrisville, NC, USA</li>
+              </ul>
+              <div className="flex gap-4 mt-6">
+                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">LinkedIn</a>
+                <a href="https://facebook.com/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">Facebook</a>
+                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">Instagram</a>
+              </div>
+            </div>
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm">© 2024 Conefia. All rights reserved.</p>
