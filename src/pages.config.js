@@ -63,6 +63,7 @@ import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
+import Book from './pages/Book';
 import __Layout from './Layout.jsx';
 
 
@@ -83,6 +84,7 @@ export const PAGES = {
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
     "vascularim-clinic-growth": vascularimClinicGrowth,
+    "Book": Book,
 }
 
 export const pagesConfig = {
