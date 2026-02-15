@@ -341,7 +341,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         {/* CTA */}
                         <Link
                         to={createPageUrl(caseStudyPages[study.id])}
-                        className={`w-full px-6 py-4 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-base flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-white/20 transition-all hover:-translate-y-1`}>
+                        className={`w-full px-6 py-4 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-base flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1`}>
 
                           View Full Case Study
                           <ArrowRight className="w-5 h-5" />
@@ -396,7 +396,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
           <p className="text-white/60 text-lg mb-6 font-medium">Want results like these?</p>
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#DBFE01] text-[#1a1a1a] font-bold text-base hover:shadow-xl hover:shadow-[#DBFE01]/40 transition-all hover:-translate-y-1">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#DBFE01] text-[#1a1a1a] font-bold text-base shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] transition-all hover:-translate-y-1">
 
             Book a Roadmap Call
             <ArrowRight className="w-5 h-5" />

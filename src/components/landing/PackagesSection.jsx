@@ -264,7 +264,7 @@ export default function PackagesSection({ reduceMotion }) {
 
           <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#2F2F2F] text-white font-semibold hover:bg-[#2F2F2F]/90 transition-all hover:shadow-lg hover:-translate-y-0.5">
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#2F2F2F] text-white font-semibold hover:bg-[#2F2F2F]/90 transition-all shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset,0_2px_8px_rgba(0,0,0,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.15)_inset,0_4px_12px_rgba(0,0,0,0.25)] hover:-translate-y-0.5">
 
             {selectedPersona.packagesCta || "Discuss your project"}
             <ArrowRight className="w-4 h-4" />
