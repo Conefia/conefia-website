@@ -198,7 +198,7 @@ function LayoutContent({ children, currentPageName }) {
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
               <Link
-                to={createPageUrl('Home') + '#contact'}
+                to={createPageUrl('Book')}
                 className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                 Book Roadmap Call
