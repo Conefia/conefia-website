@@ -16,38 +16,9 @@ export default function ContactSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Enhanced background with gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0e1a] via-[#111827] to-[#1a1f2e]" />
-      
-      {/* Animated gradient orbs */}
-      <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#DBFE01]/30 via-[#c5e000]/20 to-transparent blur-[120px]"
-      />
-      <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-blue-500/20 via-purple-500/15 to-transparent blur-[120px]"
-      />
-      
-      {/* Animated dots pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:32px_32px] opacity-[0.15]" />
+    <section ref={ref} id="contact" className="py-20 md:py-28 bg-[#DBFE01] relative overflow-hidden">
+      {/* Subtle Pattern */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -62,26 +33,26 @@ export default function ContactSection({ reduceMotion }) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 }}
-              className="bg-gradient-to-r from-[#DBFE01]/20 to-[#c5e000]/20 text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#DBFE01]/30 mb-6 shadow-lg shadow-[#DBFE01]/20 backdrop-blur-sm"
+              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 mb-6"
             >
-              <Sparkles className="w-4 h-4 animate-pulse" />
+              <Sparkles className="w-4 h-4" />
               Get Started
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight"
             >
-              Ready to <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent animate-pulse">launch</span>?
+              Ready to <span className="text-[#1a1a1a]">launch</span>?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.4 }}
-              className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed font-medium"
+              className="text-lg md:text-xl text-[#1a1a1a]/70 mb-8 leading-relaxed font-medium"
             >
-              Book a <span className="font-extrabold text-[#DBFE01]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
+              Book a <span className="font-extrabold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </motion.p>
 
@@ -99,10 +70,10 @@ export default function ContactSection({ reduceMotion }) {
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 backdrop-blur-sm shadow-lg border border-white/20 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/20 transition-all group cursor-default"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/10 backdrop-blur-sm shadow-lg border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/50 transition-all group cursor-default"
                 >
-                  <item.icon className="w-5 h-5 text-white/70 group-hover:text-[#DBFE01] transition-colors" />
-                  <span className="text-sm text-white font-semibold">{item.text}</span>
+                  <item.icon className="w-5 h-5 text-[#1a1a1a]/70 group-hover:text-[#1a1a1a] transition-colors" />
+                  <span className="text-sm text-[#1a1a1a] font-semibold">{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -117,25 +88,12 @@ export default function ContactSection({ reduceMotion }) {
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
             <motion.div 
-              className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/30 border-2 border-[#DBFE01]/60 bg-gradient-to-br from-[#0a0e1a] to-[#121829] backdrop-blur-xl relative overflow-hidden group"
+              className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-[#1a1a1a]/20 bg-white backdrop-blur-xl relative overflow-hidden group"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Animated background pattern */}
-              <motion.div 
-                className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:20px_20px] opacity-20 pointer-events-none"
-                animate={{
-                  backgroundPosition: ['0px 0px', '20px 20px'],
-                }}
-                transition={{
-                  duration: 20,
-                  repeat: Infinity,
-                  ease: "linear"
-                }}
-              />
-              
-              {/* Glow effect on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/0 via-[#DBFE01]/0 to-[#DBFE01]/0 group-hover:from-[#DBFE01]/10 group-hover:via-[#DBFE01]/5 group-hover:to-[#DBFE01]/0 transition-all duration-500 pointer-events-none" />
+              {/* Subtle background pattern */}
+              <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
               
               <div className="relative z-10 py-6 sm:py-8 mb-8">
                 <Link to={createPageUrl('Book')}>
@@ -154,7 +112,7 @@ export default function ContactSection({ reduceMotion }) {
 
                 <motion.a 
                   href="mailto:info@conefia.com"
-                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors mt-6"
+                  className="block text-center text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm sm:text-base transition-colors mt-6"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -173,10 +131,10 @@ export default function ContactSection({ reduceMotion }) {
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.8 + index * 0.1 }}
                       whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 hover:border-[#DBFE01]/50 transition-all cursor-default"
+                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/30 transition-all cursor-default"
                     >
-                      <badge.icon className="w-4 h-4 text-[#DBFE01]" />
-                      <span className="text-xs text-white/90 font-semibold">{badge.text}</span>
+                      <badge.icon className="w-4 h-4 text-[#1a1a1a]" />
+                      <span className="text-xs text-[#1a1a1a]/90 font-semibold">{badge.text}</span>
                     </motion.div>
                   ))}
                 </div>
