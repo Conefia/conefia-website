@@ -39,7 +39,7 @@ export default function FeaturedGrid({ posts }) {
             </p>
             <Button
               onClick={() => window.location.hash = 'playbook'}
-              className="bg-[#DBFE01] text-[#1a1a1a] font-bold px-6 py-3 rounded-full hover:bg-[#c5e000] transition-all flex items-center gap-2">
+              className="bg-[#DBFE01] text-[#1a1a1a] font-bold px-6 py-3 rounded-lg hover:bg-[#c5e000] transition-all flex items-center gap-2">
               View the Playbook
               <ArrowRight className="w-5 h-5" />
             </Button>
