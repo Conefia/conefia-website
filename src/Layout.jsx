@@ -393,7 +393,7 @@ function LayoutContent({ children, currentPageName }) {
                   <span className="leading-snug">(810) 000 0000</span>
                 </a>
                 <div className="flex items-start gap-3 text-xs text-white/80">
-                  <MapPin className="w-4 h-4 text-[#DBFE01] flex-shrink-0 mt-0.5" />
+                  <MapPin className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                   <span className="leading-snug">801 Keystone Park DR, 27560 Morrisville, NC, USA</span>
                 </div>
               </div>
