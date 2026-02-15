@@ -152,19 +152,14 @@ export default function ContactSection({ reduceMotion }) {
                   </motion.div>
                 </Link>
 
-                <a href="mailto:info@conefia.com">
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full h-12 sm:h-14 rounded-full border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-[#DBFE01]/50 text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl"
-                    >
-                      Prefer to message us? Contact us
-                    </Button>
-                  </motion.div>
-                </a>
+                <motion.a 
+                  href="mailto:info@conefia.com"
+                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Prefer to message us? Contact us
+                </motion.a>
 
                 {/* Trust badges */}
                 <div className="flex flex-wrap gap-3 justify-center pt-4">
