@@ -70,10 +70,10 @@ export default function ContactSection({ reduceMotion }) {
 
             {/* Trust indicators */}
             <motion.div 
-              initial={{ opacity: 0, y: 30, scale: 0.95 }}
-              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
-              transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.5, type: "spring", stiffness: 100 }}
-              className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start p-4 bg-[#1a1a1a]/5 rounded-2xl border border-[#1a1a1a]/10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.5 }}
+              className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start"
             >
               {trustItems.map((item, index) => (
                 <motion.div
