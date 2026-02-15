@@ -37,15 +37,18 @@ export default function Home() {
   }, [location.hash]);
 
   return (
-    <div className="min-h-screen bg-[#DBFE01] overflow-x-hidden">
-      {/* Subtle Pattern */}
+    <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
+      {/* Subtle background texture */}
       <div 
-        className="fixed inset-0 opacity-10 pointer-events-none" 
-        style={{ 
-          backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", 
-          backgroundSize: "24px 24px" 
-        }} 
+        className="fixed inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
       />
+      
+      {/* Gradient blobs */}
+      <div className="fixed top-0 right-0 w-[800px] h-[800px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px] pointer-events-none" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px] pointer-events-none" />
       
       <main className="relative">
         <Seo 
