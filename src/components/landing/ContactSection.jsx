@@ -79,12 +79,25 @@ export default function ContactSection({ reduceMotion }) {
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.08, y: -3 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm shadow-md border-2 border-[#1a1a1a]/30 hover:border-[#1a1a1a] hover:bg-[#1a1a1a]/10 hover:shadow-xl transition-all group cursor-default"
+                  animate={isInView ? { 
+                    opacity: 1, 
+                    scale: 1,
+                    y: [0, -3, 0]
+                  } : { opacity: 0, scale: 0.8 }}
+                  transition={{ 
+                    duration: reduceMotion ? 0 : 0.4, 
+                    delay: reduceMotion ? 0 : 0.6 + index * 0.1,
+                    y: {
+                      duration: 2,
+                      repeat: Infinity,
+                      delay: index * 0.3,
+                      ease: "easeInOut"
+                    }
+                  }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/15 backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/40 hover:border-[#1a1a1a] hover:bg-[#1a1a1a]/25 hover:shadow-2xl transition-all group cursor-default"
                 >
-                  <item.icon className="w-5 h-5 text-[#1a1a1a]/60 group-hover:text-[#1a1a1a] transition-colors" />
+                  <item.icon className="w-5 h-5 text-[#1a1a1a] transition-transform group-hover:scale-110" />
                   <span className="text-sm text-[#1a1a1a] font-bold">{item.text}</span>
                 </motion.div>
               ))}
