@@ -159,7 +159,7 @@ export default function ContactSection({ reduceMotion }) {
                   >
                     <Button
                       variant="outline"
-                      className="w-full h-12 sm:h-14 rounded-full border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-[#DBFE01]/50 text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl"
+                      className="w-full h-12 sm:h-14 rounded-full border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-[#DBFE01]/50 text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl pb-8"
                     >
                       Prefer to message us? Contact us
                     </Button>
