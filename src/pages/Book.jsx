@@ -35,15 +35,15 @@ export default function Book() {
 
           {/* What to expect */}
           <div className="flex flex-wrap gap-4 justify-center max-w-3xl mx-auto mb-12">
-            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <Clock className="w-5 h-5 text-[#1a1a1a] flex-shrink-0" />
               <span className="text-[#1a1a1a] text-sm font-semibold">30 Minutes</span>
             </div>
-            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <Video className="w-5 h-5 text-[#1a1a1a] flex-shrink-0" />
               <span className="text-[#1a1a1a] text-sm font-semibold">Video Call</span>
             </div>
-            <div className="flex items-center gap-3 bg-white rounded-xl px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <CheckCircle2 className="w-5 h-5 text-[#1a1a1a] flex-shrink-0" />
               <span className="text-[#1a1a1a] text-sm font-semibold">No Commitment</span>
             </div>
