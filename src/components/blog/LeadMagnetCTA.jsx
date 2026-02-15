@@ -76,7 +76,7 @@ export default function LeadMagnetCTA() {
             <button
               key={magnet.id}
               onClick={() => setSelectedMagnet(magnet.id)}
-              className={`p-6 rounded-2xl border-2 transition-all text-left ${
+              className={`p-6 rounded-lg border-2 transition-all text-left ${
                 selectedMagnet === magnet.id
                   ? 'border-[#DBFE01] bg-[#DBFE01]/10 shadow-md'
                   : 'border-gray-200 bg-white hover:border-gray-300'
@@ -107,11 +107,11 @@ export default function LeadMagnetCTA() {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-6 py-6 text-base border-2 border-gray-200 rounded-full focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all"
+              className="flex-1 px-6 py-6 text-base border-2 border-gray-200 rounded-lg focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all"
             />
             <Button
               type="submit"
-              className="btn-primary px-8 py-6 rounded-full text-base font-bold flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-[#DBFE01]/20">
+              className="btn-primary px-8 py-6 rounded-lg text-base font-bold flex items-center justify-center gap-2 whitespace-nowrap shadow-lg shadow-[#DBFE01]/20">
               Send it to me
               <ArrowRight className="w-5 h-5" />
             </Button>

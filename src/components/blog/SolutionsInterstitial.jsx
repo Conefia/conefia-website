@@ -52,7 +52,7 @@ export default function SolutionsInterstitial() {
             <Link
               key={i}
               to={createPageUrl(persona.path)}
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-full text-white font-semibold hover:bg-[#DBFE01] hover:text-[#1a1a1a] hover:border-[#DBFE01] transition-all hover:scale-105">
+              className="px-6 py-3 bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-lg text-white font-semibold hover:bg-[#DBFE01] hover:text-[#1a1a1a] hover:border-[#DBFE01] transition-all hover:scale-105">
               {persona.emoji} {persona.label}
             </Link>
           ))}
@@ -62,7 +62,7 @@ export default function SolutionsInterstitial() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             onClick={() => scrollToSection('track-selector')}
-            className="bg-[#DBFE01] text-[#1a1a1a] font-bold px-8 py-6 rounded-full text-base hover:bg-[#c5e000] transition-all hover:scale-105 shadow-xl shadow-[#DBFE01]/20">
+            className="bg-[#DBFE01] text-[#1a1a1a] font-bold px-8 py-6 rounded-lg text-base hover:bg-[#c5e000] transition-all hover:scale-105 shadow-xl shadow-[#DBFE01]/20">
             Choose Your Track
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
@@ -70,7 +70,7 @@ export default function SolutionsInterstitial() {
           <Button
             onClick={() => scrollToSection('contact')}
             variant="outline"
-            className="px-8 py-6 rounded-full text-base font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a1a1a] transition-all">
+            className="px-8 py-6 rounded-lg text-base font-bold border-2 border-white text-white hover:bg-white hover:text-[#1a1a1a] transition-all">
             Book Roadmap Call
           </Button>
         </div>

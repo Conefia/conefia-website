@@ -54,7 +54,7 @@ export default function BlogHero({ onSearch }) {
                 placeholder="Search playbooks, templates, and case studies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 py-6 text-base border-2 border-gray-200 rounded-2xl focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all shadow-sm hover:shadow-md"
+                className="pl-12 pr-4 py-6 text-base border-2 border-gray-200 rounded-lg focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all shadow-sm hover:shadow-md"
               />
             </div>
           </motion.form>
@@ -68,7 +68,7 @@ export default function BlogHero({ onSearch }) {
             
             <Button
               onClick={() => scrollToSection('contact')}
-              className="btn-primary px-8 py-6 rounded-full text-base font-bold flex items-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+              className="btn-primary px-8 py-6 rounded-lg text-base font-bold flex items-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
               Book Roadmap Call
               <ArrowRight className="w-5 h-5" />
             </Button>
@@ -76,7 +76,7 @@ export default function BlogHero({ onSearch }) {
             <Button
               onClick={() => scrollToSection('track-selector')}
               variant="outline"
-              className="px-8 py-6 rounded-full text-base font-bold border-2 border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all">
+              className="px-8 py-6 rounded-lg text-base font-bold border-2 border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all">
               Choose Your Track
             </Button>
           </motion.div>
