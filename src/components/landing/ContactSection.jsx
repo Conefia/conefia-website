@@ -137,7 +137,7 @@ export default function ContactSection({ reduceMotion }) {
               {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/0 via-[#DBFE01]/0 to-[#DBFE01]/0 group-hover:from-[#DBFE01]/10 group-hover:via-[#DBFE01]/5 group-hover:to-[#DBFE01]/0 transition-all duration-500 pointer-events-none" />
               
-              <div className="space-y-10 relative z-10 py-6 sm:py-8 mb-8">
+              <div className="relative z-10 py-6 sm:py-8 mb-8">
                 <Link to={createPageUrl('Book')}>
                   <motion.div
                     whileHover={{ scale: 1.03 }}
@@ -154,7 +154,7 @@ export default function ContactSection({ reduceMotion }) {
 
                 <motion.a 
                   href="mailto:info@conefia.com"
-                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors"
+                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors mt-6"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -162,7 +162,7 @@ export default function ContactSection({ reduceMotion }) {
                 </motion.a>
 
                 {/* Trust badges */}
-                <div className="flex flex-wrap gap-3 justify-center pt-4">
+                <div className="flex flex-wrap gap-3 justify-center pt-8 mt-6">
                   {[
                     { icon: CheckCircle2, text: 'No commitment' },
                     { icon: CheckCircle2, text: 'Instant confirmation' }
