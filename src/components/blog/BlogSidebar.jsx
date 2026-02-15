@@ -125,7 +125,7 @@ export default function BlogSidebar() {
           </p>
           <Button
             onClick={() => scrollToSection('contact')}
-            className="w-full bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-full hover:bg-[#c5e000] transition-all">
+            className="w-full bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-lg hover:bg-[#c5e000] transition-all">
             Book Roadmap Call
           </Button>
         </div>
