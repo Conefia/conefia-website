@@ -16,9 +16,42 @@ export default function ContactSection({ reduceMotion }) {
   ];
 
   return (
-    <section ref={ref} id="contact" className="py-20 md:py-28 bg-[#DBFE01] relative overflow-hidden">
-      {/* Subtle Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+    <section ref={ref} id="contact" className="py-24 md:py-32 bg-gradient-to-br from-[#DBFE01] via-[#d4f601] to-[#c5e000] relative overflow-hidden">
+      {/* Animated Pattern */}
+      <motion.div 
+        className="absolute inset-0 opacity-10 pointer-events-none" 
+        style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }}
+        animate={{ backgroundPosition: ['0px 0px', '24px 24px'] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      />
+      
+      {/* Animated glow orbs */}
+      <motion.div
+        animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.15, 0.25, 0.15],
+          x: [0, 50, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute top-10 right-10 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#1a1a1a]/20 to-transparent blur-[100px]"
+      />
+      <motion.div
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.1, 0.2, 0.1],
+          x: [0, -30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+        className="absolute bottom-10 left-10 w-[400px] h-[400px] rounded-full bg-gradient-to-tr from-[#1a1a1a]/15 to-transparent blur-[80px]"
+      />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -33,27 +66,40 @@ export default function ContactSection({ reduceMotion }) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 }}
-              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 mb-6"
+              className="bg-[#1a1a1a] text-[#DBFE01] px-5 py-3 text-xs font-black uppercase tracking-widest rounded-full inline-flex items-center gap-2 mb-8 shadow-lg"
             >
-              <Sparkles className="w-4 h-4" />
-              Get Started
+              <motion.div
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Sparkles className="w-4 h-4" />
+              </motion.div>
+              Let's Build Together
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-7xl font-black text-[#1a1a1a] mb-8 leading-[1.1] tracking-tight"
             >
-              Ready to <span className="text-[#1a1a1a]">launch</span>?
+              Ready to <span className="relative inline-block">
+                <span className="relative z-10">launch</span>
+                <motion.span
+                  className="absolute bottom-0 left-0 right-0 h-3 bg-[#1a1a1a]/20 -z-0"
+                  initial={{ scaleX: 0 }}
+                  animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                />
+              </span>?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.4 }}
-              className="text-lg md:text-xl text-[#1a1a1a]/70 mb-8 leading-relaxed font-medium"
+              className="text-xl md:text-2xl text-[#1a1a1a] mb-10 leading-relaxed font-semibold"
             >
-              Book a <span className="font-extrabold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
-              No commitment, just a conversation about what's possible.
+              Book a <span className="font-black bg-[#1a1a1a] text-[#DBFE01] px-2 py-1 rounded">free 30-minute</span> roadmap call. 
+              <span className="block mt-2 text-lg text-[#1a1a1a]/70">No commitment. Just possibilities.</span>
             </motion.p>
 
             {/* Trust indicators */}
@@ -69,11 +115,11 @@ export default function ContactSection({ reduceMotion }) {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/10 backdrop-blur-sm shadow-lg border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/50 transition-all group cursor-default"
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  className="flex items-center gap-2.5 px-5 py-3 rounded-xl bg-[#1a1a1a] shadow-xl hover:shadow-2xl border-2 border-[#1a1a1a] transition-all group cursor-default"
                 >
-                  <item.icon className="w-5 h-5 text-[#1a1a1a]/70 group-hover:text-[#1a1a1a] transition-colors" />
-                  <span className="text-sm text-[#1a1a1a] font-semibold">{item.text}</span>
+                  <item.icon className="w-5 h-5 text-[#DBFE01] transition-transform group-hover:scale-110" />
+                  <span className="text-sm text-white font-bold">{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -88,39 +134,51 @@ export default function ContactSection({ reduceMotion }) {
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
             <motion.div 
-              className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-[#1a1a1a]/20 bg-white backdrop-blur-xl relative overflow-hidden group"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
+              className="rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border-4 border-[#1a1a1a] bg-white relative overflow-hidden group"
+              whileHover={{ scale: 1.03, y: -5 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
             >
-              {/* Subtle background pattern */}
+              {/* Animated shine effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-[#DBFE01]/20 to-transparent"
+                animate={{ x: ['-100%', '100%'] }}
+                transition={{ duration: 3, repeat: Infinity, repeatDelay: 2, ease: "easeInOut" }}
+              />
+              
+              {/* Background pattern */}
               <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
               
-              <div className="relative z-10 py-6 sm:py-8 mb-8">
+              <div className="relative z-10 py-8 sm:py-10">
                 <Link to={createPageUrl('Book')}>
                   <motion.div
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
                   >
                     <Button
-                      className="w-full h-14 sm:h-16 rounded-xl bg-gradient-to-r from-[#DBFE01] to-[#c5e000] hover:from-[#c5e000] hover:to-[#DBFE01] text-[#1a1a1a] font-extrabold text-base sm:text-lg transition-all shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                      className="w-full h-16 sm:h-20 rounded-2xl bg-gradient-to-r from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] hover:from-[#2a2a2a] hover:via-[#3a3a3a] hover:to-[#2a2a2a] text-[#DBFE01] font-black text-lg sm:text-xl transition-all shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.5)] hover:-translate-y-2 flex items-center justify-center gap-3 group relative overflow-hidden"
                     >
-                      Book Free 30-Min Roadmap Call
-                      <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-[#DBFE01]/0 via-[#DBFE01]/20 to-[#DBFE01]/0"
+                        animate={{ x: ['-100%', '100%'] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                      />
+                      <span className="relative z-10">Book Free 30-Min Roadmap Call</span>
+                      <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-2 transition-transform" />
                     </Button>
                   </motion.div>
                 </Link>
 
                 <motion.a 
                   href="mailto:info@conefia.com"
-                  className="block text-center text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm sm:text-base transition-colors mt-6"
-                  whileHover={{ scale: 1.02 }}
+                  className="block text-center text-[#1a1a1a] hover:text-[#1a1a1a] font-bold text-base sm:text-lg transition-all mt-8 group"
+                  whileHover={{ scale: 1.03, y: -1 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Prefer to message us? <span className="underline">Contact us</span>
+                  Prefer email? <span className="underline decoration-2 decoration-[#1a1a1a]/30 group-hover:decoration-[#1a1a1a] underline-offset-4">info@conefia.com</span>
                 </motion.a>
 
                 {/* Trust badges */}
-                <div className="flex flex-wrap gap-3 justify-center pt-8 mt-6">
+                <div className="flex flex-wrap gap-4 justify-center pt-10 mt-8 border-t-2 border-[#1a1a1a]/10">
                   {[
                     { icon: CheckCircle2, text: 'No commitment' },
                     { icon: CheckCircle2, text: 'Instant confirmation' }
@@ -130,11 +188,11 @@ export default function ContactSection({ reduceMotion }) {
                       initial={{ opacity: 0, y: 10 }}
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/30 transition-all cursor-default"
+                      whileHover={{ scale: 1.1, y: -2 }}
+                      className="flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#1a1a1a] border-2 border-[#1a1a1a] shadow-lg hover:shadow-xl transition-all cursor-default"
                     >
-                      <badge.icon className="w-4 h-4 text-[#1a1a1a]" />
-                      <span className="text-xs text-[#1a1a1a]/90 font-semibold">{badge.text}</span>
+                      <badge.icon className="w-5 h-5 text-[#DBFE01]" />
+                      <span className="text-sm text-white font-bold">{badge.text}</span>
                     </motion.div>
                   ))}
                 </div>
