@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, FileText, Award, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { Button } from '@/components/ui/button';
 import { popularPosts, templates, caseStudies } from './blogData';
 
@@ -123,11 +124,11 @@ export default function BlogSidebar() {
           <p className="text-white/80 text-sm mb-4">
             Weekly shipping. One accountable team.
           </p>
-          <Button
-            onClick={() => scrollToSection('contact')}
-            className="w-full bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-lg hover:bg-[#c5e000] transition-all">
-            Book Roadmap Call
-          </Button>
+          <Link to={createPageUrl('Book')}>
+            <Button className="w-full bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-lg hover:bg-[#c5e000] transition-all">
+              Book Roadmap Call
+            </Button>
+          </Link>
         </div>
       </motion.div>
 
