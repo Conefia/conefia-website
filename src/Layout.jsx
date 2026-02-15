@@ -391,10 +391,19 @@ function LayoutContent({ children, currentPageName }) {
                 <li><a href="tel:(810)0000000" className="hover:text-[#DBFE01] transition-colors">(810) 000 0000</a></li>
                 <li className="text-xs leading-relaxed">801 Keystone Park DR, 27560 Morrisville, NC, USA</li>
               </ul>
-              <div className="flex gap-4 mt-6">
-                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">LinkedIn</a>
-                <a href="https://facebook.com/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">Facebook</a>
-                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors text-sm font-medium">Instagram</a>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Follow Us</h4>
+              <div className="flex gap-4">
+                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+                <a href="https://facebook.com/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                  <Instagram className="w-5 h-5" />
+                </a>
               </div>
             </div>
           </div>
