@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Check, X, Sparkles, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
+import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 
 const SOLUTION_STYLES = [
@@ -106,10 +107,10 @@ export default function SolutionTemplate({ persona }) {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 text-center w-full sm:w-auto shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)]">
+                    <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 text-center w-full sm:w-auto shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)]">
                         {persona.primaryCta}
                         <ArrowRight className="w-5 h-5" />
-                    </button>
+                    </Link>
                 </div>
               </div>
             </div>
