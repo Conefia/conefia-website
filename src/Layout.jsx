@@ -389,7 +389,7 @@ function LayoutContent({ children, currentPageName }) {
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Contact</h4>
               <div className="space-y-4">
                 <a href="tel:(810)0000000" className="flex items-start gap-3 text-sm text-white/80 hover:text-[#DBFE01] transition-colors group">
-                  <Phone className="w-4 h-4 text-[#DBFE01] flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <Phone className="w-4 h-4 text-white flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="leading-snug">(810) 000 0000</span>
                 </a>
                 <div className="flex items-start gap-3 text-xs text-white/80">
