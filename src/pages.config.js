@@ -50,7 +50,6 @@
 import AdminBlog from './pages/AdminBlog';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Book from './pages/Book';
 import Home from './pages/Home';
 import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
 import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
@@ -64,6 +63,7 @@ import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
+import Book from './pages/Book';
 import __Layout from './Layout.jsx';
 
 
@@ -71,7 +71,6 @@ export const PAGES = {
     "AdminBlog": AdminBlog,
     "Blog": Blog,
     "BlogPost": BlogPost,
-    "Book": Book,
     "Home": Home,
     "ai-saas-mvp-launch": aiSaasMvpLaunch,
     "al-mahfza-fintech-app": alMahfzaFintechApp,
@@ -85,6 +84,7 @@ export const PAGES = {
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
     "vascularim-clinic-growth": vascularimClinicGrowth,
+    "Book": Book,
 }
 
 export const pagesConfig = {
