@@ -154,11 +154,11 @@ export default function ContactSection({ reduceMotion }) {
 
                 <motion.a 
                   href="mailto:info@conefia.com"
-                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors underline"
+                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Prefer to message us? Contact us
+                  Prefer to message us? <span className="underline">Contact us</span>
                 </motion.a>
 
                 {/* Trust badges */}
