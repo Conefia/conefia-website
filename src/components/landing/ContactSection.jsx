@@ -137,7 +137,7 @@ export default function ContactSection({ reduceMotion }) {
               {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/0 via-[#DBFE01]/0 to-[#DBFE01]/0 group-hover:from-[#DBFE01]/10 group-hover:via-[#DBFE01]/5 group-hover:to-[#DBFE01]/0 transition-all duration-500 pointer-events-none" />
               
-              <div className="space-y-10 relative z-10 py-6 sm:py-8">
+              <div className="space-y-10 relative z-10 py-6 sm:py-8 mb-8">
                 <Link to={createPageUrl('Book')}>
                   <motion.div
                     whileHover={{ scale: 1.03 }}
