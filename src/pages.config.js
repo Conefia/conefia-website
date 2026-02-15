@@ -48,9 +48,7 @@
  * The mainPage value must match a key in the PAGES object exactly.
  */
 import AdminBlog from './pages/AdminBlog';
-import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
-import Book from './pages/Book';
 import Home from './pages/Home';
 import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
 import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
@@ -71,9 +69,7 @@ import __Layout from './Layout.jsx';
 
 export const PAGES = {
     "AdminBlog": AdminBlog,
-    "Blog": Blog,
     "BlogPost": BlogPost,
-    "Book": Book,
     "Home": Home,
     "ai-saas-mvp-launch": aiSaasMvpLaunch,
     "al-mahfza-fintech-app": alMahfzaFintechApp,
