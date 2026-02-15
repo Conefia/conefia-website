@@ -33,26 +33,38 @@ export default function ContactSection({ reduceMotion }) {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 }}
-              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 mb-6"
+              whileHover={{ scale: 1.05 }}
+              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 mb-6 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 animate-pulse" />
               Get Started
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.3 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight drop-shadow-sm"
             >
-              Ready to <span className="text-[#1a1a1a]">launch</span>?
+              Ready to <span className="relative inline-block">
+                <span className="relative z-10">launch</span>
+                <motion.span
+                  className="absolute -bottom-2 left-0 right-0 h-3 bg-[#1a1a1a]/10 -rotate-1"
+                  initial={{ scaleX: 0 }}
+                  animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                />
+              </span>?
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.4 }}
-              className="text-lg md:text-xl text-[#1a1a1a]/70 mb-8 leading-relaxed font-medium"
+              className="text-lg md:text-xl text-[#1a1a1a]/80 mb-8 leading-relaxed font-medium"
             >
-              Book a <span className="font-extrabold text-[#1a1a1a]">free 30-minute roadmap call</span> and let's discuss how we can take your idea from concept to market. 
+              Book a <span className="font-extrabold text-[#1a1a1a] relative">
+                <span className="relative z-10">free 30-minute roadmap call</span>
+                <span className="absolute -bottom-1 left-0 right-0 h-2 bg-[#1a1a1a]/5 blur-sm" />
+              </span> and let's discuss how we can take your idea from concept to market. 
               No commitment, just a conversation about what's possible.
             </motion.p>
 
@@ -69,11 +81,11 @@ export default function ContactSection({ reduceMotion }) {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                   transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.6 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/10 backdrop-blur-sm shadow-lg border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/50 transition-all group cursor-default"
+                  whileHover={{ scale: 1.08, y: -3 }}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm shadow-md border-2 border-[#1a1a1a]/30 hover:border-[#1a1a1a] hover:bg-[#1a1a1a]/10 hover:shadow-xl transition-all group cursor-default"
                 >
-                  <item.icon className="w-5 h-5 text-[#1a1a1a]/70 group-hover:text-[#1a1a1a] transition-colors" />
-                  <span className="text-sm text-[#1a1a1a] font-semibold">{item.text}</span>
+                  <item.icon className="w-5 h-5 text-[#1a1a1a]/60 group-hover:text-[#1a1a1a] transition-colors" />
+                  <span className="text-sm text-[#1a1a1a] font-bold">{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -88,12 +100,25 @@ export default function ContactSection({ reduceMotion }) {
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
             <motion.div 
-              className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-[#1a1a1a]/20 bg-white backdrop-blur-xl relative overflow-hidden group"
-              whileHover={{ scale: 1.02 }}
+              className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-[0_20px_60px_rgba(26,26,26,0.15)] hover:shadow-[0_30px_80px_rgba(26,26,26,0.25)] border-2 border-[#1a1a1a]/15 hover:border-[#1a1a1a]/30 bg-white backdrop-blur-xl relative overflow-hidden group transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -4 }}
               transition={{ duration: 0.3 }}
             >
               {/* Subtle background pattern */}
-              <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "16px 16px" }} />
+              
+              {/* Animated glow on hover */}
+              <motion.div
+                className="absolute -inset-1 bg-gradient-to-r from-[#1a1a1a]/0 via-[#1a1a1a]/5 to-[#1a1a1a]/0 rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
+                animate={{
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              />
               
               <div className="relative z-10 py-6 sm:py-8 mb-8">
                 <Link to={createPageUrl('Book')}>
@@ -130,11 +155,12 @@ export default function ContactSection({ reduceMotion }) {
                       initial={{ opacity: 0, y: 10 }}
                       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                       transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.8 + index * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/30 transition-all cursor-default"
+                      whileHover={{ scale: 1.08, rotate: [0, -2, 2, 0] }}
+                      transition={{ duration: 0.3 }}
+                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40 hover:bg-[#1a1a1a]/10 hover:shadow-md transition-all cursor-default"
                     >
                       <badge.icon className="w-4 h-4 text-[#1a1a1a]" />
-                      <span className="text-xs text-[#1a1a1a]/90 font-semibold">{badge.text}</span>
+                      <span className="text-xs text-[#1a1a1a]/90 font-bold">{badge.text}</span>
                     </motion.div>
                   ))}
                 </div>
