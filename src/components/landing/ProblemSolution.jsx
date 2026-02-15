@@ -202,7 +202,7 @@ export default function ProblemSolution({ reduceMotion }) {
                     <Link 
                         to={createPageUrl(selectedPersona.destination)}
                         onClick={() => handleCtaClick('primary')}
-                        className="btn-primary px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center shadow-lg shadow-[#DBFE01]/20"
+                        className="btn-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)]"
                     >
                         {selectedPersona.primaryCta}
                         <ArrowRight className="w-4 h-4" />
@@ -211,7 +211,7 @@ export default function ProblemSolution({ reduceMotion }) {
                         <Link 
                             to={createPageUrl(selectedPersona.destination)}
                             onClick={() => handleCtaClick('secondary')}
-                            className="px-8 py-4 rounded-full text-sm font-bold flex items-center justify-center gap-2 text-center border border-gray-200 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                            className="px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center border-2 border-gray-300 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-md"
                         >
                             {selectedPersona.secondaryCta}
                         </Link>
