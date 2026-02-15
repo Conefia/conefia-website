@@ -137,7 +137,7 @@ export default function ContactSection({ reduceMotion }) {
               {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/0 via-[#DBFE01]/0 to-[#DBFE01]/0 group-hover:from-[#DBFE01]/10 group-hover:via-[#DBFE01]/5 group-hover:to-[#DBFE01]/0 transition-all duration-500 pointer-events-none" />
               
-              <div className="space-y-8 relative z-10 py-6 sm:py-8">
+              <div className="space-y-10 relative z-10 py-6 sm:py-8">
                 <Link to={createPageUrl('Book')}>
                   <motion.div
                     whileHover={{ scale: 1.03 }}
@@ -159,7 +159,7 @@ export default function ContactSection({ reduceMotion }) {
                   >
                     <Button
                       variant="outline"
-                      className="w-full h-12 sm:h-14 rounded-full border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-[#DBFE01]/50 text-[#DBFE01] hover:text-[#c5e000] font-semibold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl"
+                      className="w-full h-12 sm:h-14 rounded-full border-2 border-white/30 bg-white/5 hover:bg-white/10 hover:border-[#DBFE01]/50 text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-all shadow-lg hover:shadow-xl"
                     >
                       Prefer to message us? Contact us
                     </Button>
