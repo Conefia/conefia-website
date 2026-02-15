@@ -124,7 +124,7 @@ export default function BlogSidebar() {
           <p className="text-white/80 text-sm mb-4">
             Weekly shipping. One accountable team.
           </p>
-          <Link to={createPageUrl('Book')}>
+          <Link to={createPageUrl('book')}>
             <Button className="w-full bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-lg hover:bg-[#c5e000] transition-all">
               Book Roadmap Call
             </Button>
