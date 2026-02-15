@@ -155,14 +155,14 @@ export default function HeroSection({ reduceMotion }) {
 
               <button
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[#DBFE01]/40 hover:-translate-y-0.5 transition-all duration-300 flex-1">
+                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
 
                 Book Roadmap Call
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button
                 onClick={() => scrollToSection('track-selector')}
-                className="px-8 py-4 rounded-full text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 backdrop-blur-md flex-1">
+                className="px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1">
 
                 Choose Your Track
               </button>
