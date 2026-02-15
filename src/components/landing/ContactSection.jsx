@@ -34,7 +34,7 @@ export default function ContactSection({ reduceMotion }) {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.2 }}
               whileHover={{ scale: 1.05 }}
-              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 mb-6 shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-[#1a1a1a] text-[#DBFE01] px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-lg inline-flex items-center gap-2 mb-6 shadow-lg hover:shadow-xl transition-shadow"
             >
               <Sparkles className="w-4 h-4 animate-pulse" />
               Get Started
@@ -95,7 +95,7 @@ export default function ContactSection({ reduceMotion }) {
                     }
                   }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/30 hover:border-[#1a1a1a] hover:shadow-2xl transition-all group cursor-default"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/30 hover:border-[#1a1a1a] hover:shadow-2xl transition-all group cursor-default"
                 >
                   <item.icon className="w-5 h-5 text-[#1a1a1a] transition-transform group-hover:scale-110" />
                   <span className="text-sm text-[#1a1a1a] font-bold">{item.text}</span>
@@ -170,7 +170,7 @@ export default function ContactSection({ reduceMotion }) {
                       transition={{ duration: reduceMotion ? 0 : 0.4, delay: reduceMotion ? 0 : 0.8 + index * 0.1 }}
                       whileHover={{ scale: 1.08, rotate: [0, -2, 2, 0] }}
                       transition={{ duration: 0.3 }}
-                      className="flex items-center gap-2 px-3 py-2 rounded-full bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40 hover:bg-[#1a1a1a]/10 hover:shadow-md transition-all cursor-default"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#1a1a1a]/5 backdrop-blur-sm border border-[#1a1a1a]/20 hover:border-[#1a1a1a]/40 hover:bg-[#1a1a1a]/10 hover:shadow-md transition-all cursor-default"
                     >
                       <badge.icon className="w-4 h-4 text-[#1a1a1a]" />
                       <span className="text-xs text-[#1a1a1a]/90 font-bold">{badge.text}</span>
