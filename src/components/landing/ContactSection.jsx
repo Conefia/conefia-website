@@ -154,7 +154,7 @@ export default function ContactSection({ reduceMotion }) {
 
                 <motion.a 
                   href="mailto:info@conefia.com"
-                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors"
+                  className="block text-center text-white hover:text-[#DBFE01] font-semibold text-sm sm:text-base transition-colors underline"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
