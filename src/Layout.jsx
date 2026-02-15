@@ -404,7 +404,7 @@ function LayoutContent({ children, currentPageName }) {
                 <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://facebook.com/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                <a href="https://facebook.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
