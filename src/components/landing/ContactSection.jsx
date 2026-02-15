@@ -95,7 +95,7 @@ export default function ContactSection({ reduceMotion }) {
                     }
                   }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/15 backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/40 hover:border-[#1a1a1a] hover:bg-[#1a1a1a]/25 hover:shadow-2xl transition-all group cursor-default"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/30 hover:border-[#1a1a1a] hover:shadow-2xl transition-all group cursor-default"
                 >
                   <item.icon className="w-5 h-5 text-[#1a1a1a] transition-transform group-hover:scale-110" />
                   <span className="text-sm text-[#1a1a1a] font-bold">{item.text}</span>
