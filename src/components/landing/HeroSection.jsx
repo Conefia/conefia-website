@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
@@ -153,13 +155,13 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
-              <button
-                onClick={() => scrollToSection('contact')}
+              <Link
+                to={createPageUrl('Book')}
                 className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
 
                 Book Roadmap Call
                 <ArrowRight className="w-5 h-5" />
-              </button>
+              </Link>
               <button
                 onClick={() => scrollToSection('track-selector')}
                 className="px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1">
