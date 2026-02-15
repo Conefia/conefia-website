@@ -266,7 +266,7 @@ function LayoutContent({ children, currentPageName }) {
                   </Link>
                 )}
                 <Link
-                to={createPageUrl('Home') + '#contact'}
+                to={createPageUrl('Book')}
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
