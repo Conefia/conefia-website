@@ -54,7 +54,7 @@ export default function Book() {
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div
             className="calendly-inline-widget"
-            data-url="https://calendly.com/yassen-eltayeb-conefia?text_color=2f2f2f&primary_color=dbfe01"
+            data-url="https://calendly.com/yassen-eltayeb-conefia/conefia-roadmap-call"
             style={{ minWidth: '320px', height: '700px' }}
           />
         </div>
