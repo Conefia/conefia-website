@@ -144,7 +144,7 @@ export default function ContactSection({ reduceMotion }) {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Button
-                      className="w-full h-14 sm:h-16 rounded-full bg-gradient-to-r from-[#DBFE01] to-[#c5e000] hover:from-[#c5e000] hover:to-[#DBFE01] text-[#1a1a1a] font-extrabold text-base sm:text-lg transition-all shadow-2xl shadow-[#DBFE01]/50 hover:shadow-[#DBFE01]/70 hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                      className="w-full h-14 sm:h-16 rounded-xl bg-gradient-to-r from-[#DBFE01] to-[#c5e000] hover:from-[#c5e000] hover:to-[#DBFE01] text-[#1a1a1a] font-extrabold text-base sm:text-lg transition-all shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-1 flex items-center justify-center gap-2 group"
                     >
                       Book Free 30-Min Roadmap Call
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

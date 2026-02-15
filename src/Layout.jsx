@@ -199,7 +199,7 @@ function LayoutContent({ children, currentPageName }) {
             <div className="hidden md:flex items-center gap-4">
               <Link
                 to={createPageUrl('Home') + '#contact'}
-                className="btn-primary px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2">
+                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
@@ -249,7 +249,7 @@ function LayoutContent({ children, currentPageName }) {
                  <Link
                 to={createPageUrl('Home') + '#track-selector'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 my-4">
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 my-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                     Choose your track
                     <ArrowRight className="w-4 h-4" />
@@ -268,7 +268,7 @@ function LayoutContent({ children, currentPageName }) {
                 <Link
                 to={createPageUrl('Home') + '#contact'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-full text-sm font-semibold flex items-center justify-center gap-2 mt-4">
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
