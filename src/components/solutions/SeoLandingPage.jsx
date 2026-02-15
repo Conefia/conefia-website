@@ -193,11 +193,11 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 mb-10">
 
-                  <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+                  <Link to="/contact" className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
                     {primaryCta}
                     <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                  <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
                     {secondaryCta}
                   </button>
                 </motion.div>
@@ -271,11 +271,11 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             transition={{ delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
 
-                <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+                <Link to="/contact" className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
                   {primaryCta}
                   <ArrowRight className="w-5 h-5" />
                 </Link>
-                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-full text-base font-bold flex items-center justify-center gap-2 border border-white/20 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
                   {secondaryCta}
                 </button>
               </motion.div>
@@ -434,7 +434,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             </ul>
           </div>
 
-          <Link to="/contact" className="btn-primary px-8 py-4 rounded-full text-base font-bold inline-flex items-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+          <Link to="/contact" className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
@@ -808,14 +808,14 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
           to="/contact"
-          className="px-8 py-4 bg-[#1a1a1a] text-white rounded-full text-base font-bold flex items-center justify-center gap-2 hover:bg-black transition-all hover:scale-105 shadow-xl">
+          className="px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-black transition-all hover:scale-105 shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset,0_4px_12px_rgba(0,0,0,0.3)]">
 
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
           <Link
           to="/contact"
-          className="px-8 py-4 bg-transparent border-2 border-[#1a1a1a] text-[#1a1a1a] rounded-full text-base font-bold flex items-center justify-center gap-2 hover:bg-[#1a1a1a] hover:text-[#DBFE01] transition-all hover:scale-105">
+          className="px-8 py-4 bg-transparent border-2 border-[#1a1a1a] text-[#1a1a1a] rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-[#1a1a1a] hover:text-[#DBFE01] transition-all hover:scale-105">
 
             {secondaryCta}
           </Link>
