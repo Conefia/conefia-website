@@ -181,10 +181,11 @@ function LayoutContent({ children, currentPageName }) {
                 </div>
               </div>
 
-              {navItems.map((item) =>
-                <Link
+              {navItems.map((item) => {
+                const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
+                return <Link
                   key={item.label}
-                  to={item.page ? createPageUrl(item.page) : createPageUrl('Home') + '#' + item.id}
+                  to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
                   className={`text-sm font-semibold transition-colors relative group ${
                   useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
                   }>
@@ -192,13 +193,13 @@ function LayoutContent({ children, currentPageName }) {
                     {item.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
                   </Link>
-              )}
+              })}
             </nav>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-4">
               <Link
-                to={createPageUrl('Book')}
+                to={createPageUrl('book')}
                 className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                 Book Roadmap Call
@@ -255,18 +256,20 @@ function LayoutContent({ children, currentPageName }) {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
-                {navItems.map((item) =>
-                  <Link
+                {navItems.map((item) => {
+                  const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
+                  return <Link
                     key={item.label}
-                    to={item.page ? createPageUrl(item.page) : createPageUrl('Home') + '#' + item.id}
+                    to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
                     onClick={() => setMobileMenuOpen(false)}
                     className="block w-full text-left text-white text-lg font-semibold py-2">
 
                     {item.label}
                   </Link>
-                )}
+                })}
+                
                 <Link
-                to={createPageUrl('Book')}
+                to={createPageUrl('book')}
                 onClick={() => setMobileMenuOpen(false)}
                 className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
