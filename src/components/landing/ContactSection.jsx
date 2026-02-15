@@ -48,7 +48,7 @@ export default function ContactSection({ reduceMotion }) {
               Ready to <span className="relative inline-block">
                 <span className="relative z-10">launch</span>
                 <motion.span
-                  className="absolute -bottom-2 left-0 right-0 h-3 bg-[#DBFE01]/80 -rotate-1"
+                  className="absolute -bottom-2 left-0 right-0 h-3 bg-[#1a1a1a]/10 -rotate-1"
                   initial={{ scaleX: 0 }}
                   animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 }}
@@ -95,7 +95,7 @@ export default function ContactSection({ reduceMotion }) {
                     }
                   }}
                   whileHover={{ scale: 1.1, y: -5 }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/20 hover:border-[#1a1a1a] hover:bg-white hover:shadow-2xl transition-all group cursor-default"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1a1a1a]/15 backdrop-blur-sm shadow-lg border-2 border-[#1a1a1a]/40 hover:border-[#1a1a1a] hover:bg-[#1a1a1a]/25 hover:shadow-2xl transition-all group cursor-default"
                 >
                   <item.icon className="w-5 h-5 text-[#1a1a1a] transition-transform group-hover:scale-110" />
                   <span className="text-sm text-[#1a1a1a] font-bold">{item.text}</span>
