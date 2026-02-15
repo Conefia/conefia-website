@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Clock, Users, Shield, Sparkles } from 'lucide-react';
+import { ArrowRight, Clock, Users, Shield, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 export default function ContactSection({ reduceMotion }) {
@@ -30,6 +30,7 @@ export default function ContactSection({ reduceMotion }) {
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7 }}
+            className="text-center md:text-left"
           >
             <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-4 shadow-sm">
               <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
@@ -44,7 +45,7 @@ export default function ContactSection({ reduceMotion }) {
             </p>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap gap-4 mb-8">
+            <div className="flex flex-wrap gap-4 mb-8 justify-center md:justify-start">
               {trustItems.map((item, index) => (
                 <div
                   key={index}
@@ -65,31 +66,39 @@ export default function ContactSection({ reduceMotion }) {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
             transition={{ duration: reduceMotion ? 0 : 0.7, delay: reduceMotion ? 0 : 0.2 }}
           >
-            <div className="rounded-3xl p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl relative overflow-hidden">
+            <div className="rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-[#DBFE01]/20 border-2 border-[#DBFE01]/50 bg-[#0a0e1a] backdrop-blur-xl relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:16px_16px] opacity-20 -z-10 pointer-events-none" />
               
-              <div className="space-y-6 relative z-10 py-8">
+              <div className="space-y-6 relative z-10 py-6 sm:py-8">
                 <Link to={createPageUrl('Book')}>
                   <Button
-                    className="w-full h-14 rounded-xl bg-gradient-to-r from-[#DBFE01] to-[#c5e000] hover:from-[#c8e600] hover:to-[#b0d000] text-[#0a0e1a] font-extrabold text-base transition-all hover:shadow-2xl hover:shadow-[#DBFE01]/50 hover:-translate-y-1"
+                    className="w-full h-14 sm:h-16 rounded-full bg-[#DBFE01] hover:bg-[#c5e000] text-[#1a1a1a] font-extrabold text-base sm:text-lg transition-all hover:shadow-2xl hover:shadow-[#DBFE01]/50 hover:-translate-y-1 flex items-center justify-center gap-2"
                   >
-                    Book a free 30-min roadmap call
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                    Book Free 30-Min Roadmap Call
+                    <ArrowRight className="w-5 h-5" />
                   </Button>
                 </Link>
 
-                <div className="text-center">
-                  <a 
-                    href="mailto:info@conefia.com" 
-                    className="text-sm text-white/60 hover:text-white/90 transition-colors"
+                <a href="mailto:info@conefia.com">
+                  <Button
+                    variant="outline"
+                    className="w-full h-12 sm:h-14 rounded-full border-2 border-white/20 bg-transparent hover:bg-white/5 text-white font-semibold text-sm sm:text-base transition-all"
                   >
-                    Prefer to message us? <span className="underline">Contact us</span>
-                  </a>
-                </div>
+                    Prefer to message us? Contact us
+                  </Button>
+                </a>
 
-                <p className="text-center text-xs text-white/40">
-                  No commitment • Instant confirmation
-                </p>
+                {/* Trust badges */}
+                <div className="flex flex-wrap gap-3 justify-center pt-4">
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                    <CheckCircle2 className="w-4 h-4 text-[#DBFE01]" />
+                    <span className="text-xs text-white/90 font-semibold">No commitment</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                    <CheckCircle2 className="w-4 h-4 text-[#DBFE01]" />
+                    <span className="text-xs text-white/90 font-semibold">Instant confirmation</span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
