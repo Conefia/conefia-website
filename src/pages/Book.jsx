@@ -61,7 +61,7 @@ export default function Book() {
 
         {/* Additional info */}
         <p className="text-center text-[#1a1a1a]/60 text-sm mt-8">
-          Can't find a suitable time? <a href="mailto:info@conefia.com" className="text-[#DBFE01] hover:underline">Email us</a> directly.
+          Can't find a suitable time? <a href="mailto:info@conefia.com" className="text-[#1a1a1a] font-bold hover:underline">Email us</a> directly.
         </p>
       </div>
     </div>
