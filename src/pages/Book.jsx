@@ -34,16 +34,16 @@ export default function Book() {
           </p>
 
           {/* What to expect */}
-          <div className="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-12">
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-xl p-4 border border-[#1a1a1a]/10 shadow-sm">
+          <div className="flex flex-wrap gap-4 justify-center max-w-3xl mx-auto mb-12">
+            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
               <Clock className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
               <span className="text-[#1a1a1a]/90 text-sm font-semibold">30 Minutes</span>
             </div>
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-xl p-4 border border-[#1a1a1a]/10 shadow-sm">
+            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
               <Video className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
               <span className="text-[#1a1a1a]/90 text-sm font-semibold">Video Call</span>
             </div>
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-xl p-4 border border-[#1a1a1a]/10 shadow-sm">
+            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
               <CheckCircle2 className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
               <span className="text-[#1a1a1a]/90 text-sm font-semibold">No Commitment</span>
             </div>
