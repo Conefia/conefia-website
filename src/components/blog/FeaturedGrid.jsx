@@ -30,7 +30,7 @@ export default function FeaturedGrid({ posts }) {
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#DBFE01] opacity-10 rounded-full blur-3xl" />
           
           <div className="relative z-10">
-            <Badge className="bg-[#DBFE01] text-[#1a1a1a] font-bold mb-4">Featured Series</Badge>
+            <Badge className="bg-[#DBFE01] text-[#1a1a1a] font-bold mb-4 rounded-full hover:text-white transition-colors">Featured Series</Badge>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-3">
               Build → Launch → Scale Playbook
             </h2>
