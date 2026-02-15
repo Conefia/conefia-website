@@ -24,8 +24,8 @@ export default function Book() {
         canonical="/book"
       />
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-20">
+        <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} theme="light" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 md:pt-20 pb-20">
