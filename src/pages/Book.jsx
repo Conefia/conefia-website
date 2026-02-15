@@ -26,32 +26,32 @@ export default function Book() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-20">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-6 leading-tight drop-shadow-sm">
             Book a <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Roadmap Call</span>
           </h1>
-          <p className="text-lg text-[#1a1a1a]/80 mb-8 max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-[#1a1a1a]/85 mb-8 max-w-2xl mx-auto font-medium">
             Let's discuss your idea and explore how we can help you build, launch, and scale your digital venture.
           </p>
 
           {/* What to expect */}
           <div className="flex flex-wrap gap-4 justify-center max-w-3xl mx-auto mb-12">
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <Clock className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
-              <span className="text-[#1a1a1a]/90 text-sm font-semibold">30 Minutes</span>
+              <span className="text-[#1a1a1a] text-sm font-semibold">30 Minutes</span>
             </div>
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <Video className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
-              <span className="text-[#1a1a1a]/90 text-sm font-semibold">Video Call</span>
+              <span className="text-[#1a1a1a] text-sm font-semibold">Video Call</span>
             </div>
-            <div className="flex items-center gap-3 bg-white backdrop-blur-sm rounded-full px-6 py-3 border border-[#1a1a1a]/10 shadow-sm">
+            <div className="flex items-center gap-3 bg-white rounded-full px-6 py-3 border border-[#1a1a1a]/20 shadow-md hover:shadow-lg transition-shadow">
               <CheckCircle2 className="w-5 h-5 text-[#DBFE01] flex-shrink-0" />
-              <span className="text-[#1a1a1a]/90 text-sm font-semibold">No Commitment</span>
+              <span className="text-[#1a1a1a] text-sm font-semibold">No Commitment</span>
             </div>
           </div>
         </div>
 
         {/* Calendly embed */}
-        <div className="bg-black rounded-2xl shadow-2xl overflow-hidden">
+        <div className="bg-black rounded-3xl shadow-[0_20px_60px_rgba(26,26,26,0.15)] overflow-hidden border border-[#1a1a1a]/10">
           <div
             className="calendly-inline-widget"
             data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01"
