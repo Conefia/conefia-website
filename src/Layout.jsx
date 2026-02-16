@@ -40,8 +40,10 @@ function LayoutContent({ children, currentPageName }) {
   );
   // Check for book page
   const isBookPage = currentPageName === 'Book' || currentPageName === 'book';
-  // Always use light text for case studies, solutions, blog pages, and book page (dark backgrounds)
-  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || scrolled || mobileMenuOpen;
+  // Check for about page
+  const isAboutPage = currentPageName === 'About';
+  // Always use light text for case studies, solutions, blog pages, book page, and about page (dark backgrounds)
+  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || isAboutPage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
