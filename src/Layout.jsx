@@ -55,6 +55,7 @@ function LayoutContent({ children, currentPageName }) {
   { label: 'Playbook', id: 'playbook' },
   { label: 'Case Studies', id: 'case-studies' },
   { label: 'Blog', page: 'Blog' },
+  { label: 'About', page: 'About' },
   { label: 'Pricing', id: 'packages' },
   { label: 'FAQ', id: 'faq' }];
 
