@@ -7,53 +7,11 @@ import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0B1020] via-[#121829] to-[#0B1020] relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
+      <HeroDarkBackground />
       <Seo 
-        title="About Us | Conefia - Build, Launch, Scale"
-        description="Learn about Conefia's vision, mission, and unique approach to helping founders, clinics, and brands build and scale digital ventures."
-        canonical="/about"
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "AboutPage",
-          "@id": "https://conefia.com/about/#about",
-          "url": "https://conefia.com/about",
-          "name": "About CONEFIA",
-          "about": { "@id": "https://conefia.com/#organization" },
-          "isPartOf": { "@id": "https://conefia.com/#website" }
-        })}}
-      />
+...
 
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <ContourBackground className="opacity-60" isMobile={window.innerWidth < 768} />
-      </div>
-
-      {/* Star Dust */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(200)].map((_, i) => {
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          return (
-            <div
-              key={`star-${i}`}
-              className="absolute rounded-full bg-white"
-              style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity: opacity * 0.8,
-                boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
-              }}
-            />
-          );
-        })}
-      </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-20 relative z-10">
         <Breadcrumbs items={[{ label: 'About Us' }]} theme="dark" />
