@@ -63,7 +63,7 @@ export const ProblemItem = ({ children }) =>
 
 // --- Sections ---
 
-export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], visual, layout = "center" }) => {
+export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center" }) => {
   const reduceMotion = useReducedMotion();
   return (
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
