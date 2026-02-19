@@ -10,8 +10,22 @@ export default function About() {
     <div className="min-h-screen relative overflow-hidden">
       <HeroDarkBackground />
       <Seo 
-...
-
+        title="About Us | Conefia - Build, Launch, Scale"
+        description="Learn about Conefia's vision, mission, and unique approach to helping founders, clinics, and brands build and scale digital ventures."
+        canonical="/about"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "@id": "https://conefia.com/about/#about",
+          "url": "https://conefia.com/about",
+          "name": "About CONEFIA",
+          "about": { "@id": "https://conefia.com/#organization" },
+          "isPartOf": { "@id": "https://conefia.com/#website" }
+        })}}
+      />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-20 relative z-10">
         <Breadcrumbs items={[{ label: 'About Us' }]} theme="dark" />
