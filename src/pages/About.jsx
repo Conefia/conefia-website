@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Target, Lightbulb, TrendingUp, Users, Zap, Shield } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import ContourBackground from '@/components/visual/ContourBackground';
+import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 
 export default function About() {
   return (
