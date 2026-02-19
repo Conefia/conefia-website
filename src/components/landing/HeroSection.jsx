@@ -136,6 +136,11 @@ export default function HeroSection({ reduceMotion }) {
         </div>
       </div>
 
+      {/* Trust Strip */}
+      <div className="absolute bottom-0 left-0 right-0 z-10">
+        <BrandCarousel />
+      </div>
+
       {/* Scroll indicator - simplified */}
       {!reduceMotion &&
       <motion.div
