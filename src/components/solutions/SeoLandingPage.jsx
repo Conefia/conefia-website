@@ -774,6 +774,7 @@ export default function SeoLandingPage({ content, children }) {
       <ServiceStructuredData name={meta.title} description={meta.description} url={meta.url} />
 
       <SolutionHero {...hero} />
+      <BrandCarousel />
       {metrics && <SolutionMetrics {...metrics} />}
       {trustedBy && <SolutionTrustedBy {...trustedBy} />}
       <SolutionProblem {...problem} />
