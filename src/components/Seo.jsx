@@ -28,5 +28,10 @@ export default function Seo({ title, description, canonical }) {
     }
   }, [title, description, canonical]);
 
-  return <OrganizationStructuredData />;
+  return (
+    <>
+      <OrganizationStructuredData />
+      {canonical && <WebPageStructuredData url={canonical} name={title || 'Conefia | AI & Mobile App Development + Growth Partner'} />}
+    </>
+  );
 }
