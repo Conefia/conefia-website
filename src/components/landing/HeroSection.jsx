@@ -6,6 +6,7 @@ import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import HeroDarkBackground from '../visual/HeroDarkBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
 import { usePersona } from '@/components/context/PersonaContext';
+import BrandCarousel from './BrandCarousel';
 
 export default function HeroSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
