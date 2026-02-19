@@ -23,6 +23,59 @@ export default function Book() {
         description="Schedule a free 30-minute roadmap call to discuss your digital venture. No commitment, just a conversation about what's possible."
         canonical="/book"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/book/#service",
+          "name": "Free Roadmap Call",
+          "serviceType": "Product roadmap call",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Roadmap Call",
+            "itemListElement": [{
+              "@type": "Offer",
+              "name": "Free Roadmap Call",
+              "price": "0",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://conefia.com/book"
+            }]
+          }
+        })}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What happens on the roadmap call?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We discuss your goals, current state, constraints, and the fastest path to a shippable MVP or growth milestone. You leave with clear next steps and scope options." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is the call really free?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. The roadmap call is free. If you decide to engage CONEFIA afterward, we'll propose a scope, timeline, and team." }
+            },
+            {
+              "@type": "Question",
+              "name": "Who is this call for?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Founders, clinic teams, and Shopify brands who want to build, relaunch, or grow a digital product with clear execution." }
+            },
+            {
+              "@type": "Question",
+              "name": "How should I prepare?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Bring your product link (or concept), key metrics (if any), and the outcomes you want in the next 30–90 days." }
+            }
+          ]
+        })}}
+      />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-8">
         <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} theme="light" />
