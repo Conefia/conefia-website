@@ -1,5 +1,7 @@
 import React from 'react';
 
+const LOGO_URL = "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png";
+
 export default function StructuredData({ type = 'WebSite', data }) {
   const baseData = {
     "@context": "https://schema.org",
@@ -16,18 +18,46 @@ export default function StructuredData({ type = 'WebSite', data }) {
 }
 
 export function OrganizationStructuredData() {
-  return (
-    <StructuredData
-      type="Organization"
-      data={{
-        name: "Conefia",
-        url: "https://conefia.com",
-        logo: "https://conefia.com/logo.png",
-        description: "Build and scale your digital venture faster. AI MVP & mobile app development plus growth marketing for founders, clinics, and Shopify brands. Free roadmap call.",
-        sameAs: [
-          "https://www.linkedin.com/company/conefia"
+  const graphData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://conefia.com/#organization",
+        "name": "CONEFIA",
+        "url": "https://conefia.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": LOGO_URL
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/conefia",
+          "https://www.facebook.com/conefia.tech",
+          "https://www.instagram.com/conefia.tech"
         ]
-      }}
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://conefia.com/#website",
+        "url": "https://conefia.com/",
+        "name": "CONEFIA",
+        "publisher": { "@id": "https://conefia.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://conefia.com/blog/?s={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(graphData) }}
     />
   );
 }
