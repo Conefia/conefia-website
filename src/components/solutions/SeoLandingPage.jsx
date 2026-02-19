@@ -68,7 +68,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
   const reduceMotion = useReducedMotion();
   return (
     <div>
-    <section className="relative flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 md:pt-0 overflow-hidden">
         <HeroDarkBackground />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8 md:py-12">
