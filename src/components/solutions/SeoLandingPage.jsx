@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import BrandCarousel from '@/components/landing/BrandCarousel';
 import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
@@ -756,12 +755,7 @@ export default function SeoLandingPage({ content, children }) {
   if (children) {
     return (
       <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
-        {React.Children.map(children, (child, i) => (
-          <>
-            {child}
-            {i === 0 && <BrandCarousel />}
-          </>
-        ))}
+        {children}
       </div>);
 
   }
@@ -779,7 +773,6 @@ export default function SeoLandingPage({ content, children }) {
       <ServiceStructuredData name={meta.title} description={meta.description} url={meta.url} />
 
       <SolutionHero {...hero} />
-      <BrandCarousel />
       {metrics && <SolutionMetrics {...metrics} />}
       {trustedBy && <SolutionTrustedBy {...trustedBy} />}
       <SolutionProblem {...problem} />
