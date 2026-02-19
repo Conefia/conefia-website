@@ -124,7 +124,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-3">
+              className="flex flex-wrap gap-3 mb-8">
 
                   {trustChips.map((chip, i) =>
               <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
@@ -137,6 +137,22 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                     </div>
               )}
                 </motion.div>
+
+                {/* Trust Strip */}
+                {trustStrip.length > 0 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className="flex flex-wrap gap-6 md:gap-8 pt-6 border-t border-white/10">
+                    {trustStrip.map((stat, i) => (
+                      <div key={i} className="text-left group">
+                        <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+                        <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">{stat.value}</p>
+                      </div>
+                    ))}
+                  </motion.div>
+                )}
               </div>
 
               {/* Right Column Visual */}
