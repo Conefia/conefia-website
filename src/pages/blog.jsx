@@ -104,23 +104,18 @@ export default function Blog() {
       <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Blog' }]} />
 
       {/* Structured Data for Blog */}
-      <script type="application/ld+json">
-        {JSON.stringify({
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          "name": "Conefia Blog",
-          "description": "Insights to Build, Launch, and Scale",
-          "url": typeof window !== 'undefined' ? window.location.origin + '/blog' : 'https://conefia.com/blog',
-          "publisher": {
-            "@type": "Organization",
-            "name": "Conefia",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png"
-            }
-          }
-        })}
-      </script>
+          "@id": "https://conefia.com/blog/#blog",
+          "name": "CONEFIA Blog",
+          "url": "https://conefia.com/blog",
+          "publisher": { "@id": "https://conefia.com/#organization" },
+          "inLanguage": "en"
+        })}}
+      />
 
       <BlogHero onSearch={handleSearch} />
 

@@ -47,6 +47,7 @@
  *
  * The mainPage value must match a key in the PAGES object exactly.
  */
+import About from './pages/About';
 import AdminBlog from './pages/AdminBlog';
 import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
@@ -64,11 +65,11 @@ import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
-import About from './pages/About';
 import __Layout from './Layout.jsx';
 
 
 export const PAGES = {
+    "About": About,
     "AdminBlog": AdminBlog,
     "BlogPost": BlogPost,
     "Home": Home,
@@ -86,7 +87,6 @@ export const PAGES = {
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
     "vascularim-clinic-growth": vascularimClinicGrowth,
-    "About": About,
 }
 
 export const pagesConfig = {
