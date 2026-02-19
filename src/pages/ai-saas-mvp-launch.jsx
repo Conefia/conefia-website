@@ -37,10 +37,10 @@ export default function AiSaasMvpLaunch() {
         primaryCta="Get My MVP Roadmap"
         secondaryCta="See the Sprint"
         trustChips={[
-          "AI agent + LLM integration",
+          "Scope locked (Week 2)",
           "Weekly demos",
-          "Scope lock",
-          "Pilot-ready launch"
+          "Pilot launch kit",
+          "LLM + Agent build"
         ]}
         trustStrip={[
           { label: "Typical MVP", value: "8–12 weeks" },
