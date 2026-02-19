@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       <HeroDarkBackground />
-      <Seo 
+      <Seo
         title="About Us | Conefia - Build, Launch, Scale"
         description="Learn about Conefia's vision, mission, and unique approach to helping founders, clinics, and brands build and scale digital ventures."
         canonical="/about"
