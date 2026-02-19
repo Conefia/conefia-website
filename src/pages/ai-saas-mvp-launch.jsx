@@ -42,6 +42,12 @@ export default function AiSaasMvpLaunch() {
           "Scope lock",
           "Pilot-ready launch"
         ]}
+        trustStrip={[
+          { label: "Typical MVP", value: "8–12 weeks" },
+          { label: "Weekly Demos", value: "Guaranteed" },
+          { label: "First Pilots", value: "In sprint 3" },
+          { label: "One Backlog", value: "One owner" }
+        ]}
         layout="split"
         visual={<HeroVisual />}
       />
