@@ -27,6 +27,20 @@ export default function CorporateInnovation() {
         description="Regulated software development partner for healthcare and enterprise: HIPAA-aware delivery, governance, and pilot-ready MVPs."
         canonical="/solutions/corporate-innovation"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/corporate-innovation/#service",
+          "name": "Corporate Innovation",
+          "serviceType": "Innovation delivery and product execution support",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/corporate-innovation",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD" }
+        })}}
+      />
       <SolutionHero 
         title="Corporate Innovation"
         subtitle="Pilot-ready MVPs with governance built in. Innovation dies in handoffs, stakeholders, and late compliance surprises. We're a regulated industry software development partner that ships pilot-ready MVPs with AI governance and compliance in mind."

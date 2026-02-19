@@ -16,6 +16,20 @@ export default function StartupAcceleratorSupport() {
         description="Startup accelerator MVP development services: cohort execution system, build squads, Demo Day prep, and sponsor-ready reporting."
         canonical="/solutions/startup-accelerator-support"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/startup-accelerator-support/#service",
+          "name": "Startup Accelerator Support",
+          "serviceType": "Accelerator cohort execution and MVP delivery",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/startup-accelerator-support",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD" }
+        })}}
+      />
       <SolutionHero 
         title="Startup Accelerator Support"
         subtitle="Cohorts that ship before Demo Day. Founders get advice — but execution doesn't scale. We provide the cohort execution system: templates, build squads, and sponsor-ready reporting."

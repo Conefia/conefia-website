@@ -27,6 +27,20 @@ export default function ShopifyGrowthSystem() {
         description="DTC brand growth marketing services: Shopify CRO, paid ads management, retention flows, and profit-first tracking to cut CAC."
         canonical="/solutions/shopify-growth-system"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/shopify-growth-system/#service",
+          "name": "Shopify Growth System",
+          "serviceType": "Shopify growth and conversion optimization",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/shopify-growth-system",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD" }
+        })}}
+      />
       <SolutionHero 
         title="Shopify Growth System"
         subtitle="Cut CAC. Stabilize ROAS. Lift conversion — profitably. If you're spending but margins aren't improving, you don't need 'more ads.' You need Shopify CRO + offer clarity + measurement that makes growth predictable."

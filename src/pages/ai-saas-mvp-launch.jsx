@@ -17,6 +17,20 @@ export default function AiSaasMvpLaunch() {
         description="AI SaaS MVP development agency for founders: AI agent + LLM integration + launch system to win your first paying pilots."
         canonical="/solutions/ai-saas-mvp-launch"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/ai-saas-mvp-launch/#service",
+          "name": "AI SaaS MVP Launch",
+          "serviceType": "AI MVP development",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/ai-saas-mvp-launch",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD", "description": "Start with a free roadmap call" }
+        })}}
+      />
       <SolutionHero 
         title="AI SaaS MVP Launch"
         subtitle="Ship a pilot-ready AI MVP — and start winning paying customers. You're building fast, but scope and architecture decisions are slowing you down. We're your AI SaaS MVP development agency: product + AI + full-stack + launch system, under one plan."

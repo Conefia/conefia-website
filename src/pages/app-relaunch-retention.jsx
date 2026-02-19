@@ -17,6 +17,20 @@ export default function AppRelaunchRetention() {
         description="App redesign and growth agency for retention: relaunch plan, performance + UX refresh, and ASO services to grow organic installs."
         canonical="/solutions/app-relaunch-retention"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/app-relaunch-retention/#service",
+          "name": "App Relaunch & Retention",
+          "serviceType": "Mobile app relaunch and retention optimization",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/app-relaunch-retention",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD" }
+        })}}
+      />
       <SolutionHero 
         title="App Relaunch & Retention"
         subtitle="Fix retention first. Relaunch with confidence. Grow organically. If your app is live but users aren't sticking, growth is leaking. We're an app redesign and growth agency built for mobile app retention and engagement + ASO services."

@@ -13,6 +13,18 @@ export default function About() {
         description="Learn about Conefia's vision, mission, and unique approach to helping founders, clinics, and brands build and scale digital ventures."
         canonical="/about"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "@id": "https://conefia.com/about/#about",
+          "url": "https://conefia.com/about",
+          "name": "About CONEFIA",
+          "about": { "@id": "https://conefia.com/#organization" },
+          "isPartOf": { "@id": "https://conefia.com/#website" }
+        })}}
+      />
 
       {/* Background Elements */}
       <div className="absolute inset-0">
