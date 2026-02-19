@@ -64,7 +64,7 @@ export const ProblemItem = ({ children }) =>
 
 // --- Sections ---
 
-export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center" }) => {
+export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy }) => {
   const reduceMotion = useReducedMotion();
   return (
     <div>
