@@ -32,19 +32,9 @@ export default function AiSaasMvpLaunch() {
         })}}
       />
       <SolutionHero 
-        title="Ship a Pilot-Ready AI Product — In 8–12 Weeks"
-        subtitle={<>
-          <span className="block mb-4 text-white/90 font-semibold">From idea → scoped MVP → live pilots. Without rework.</span>
-          <span className="block mb-4 text-white/70">If you're building an AI SaaS product, the challenge isn't building something. It's building the <em>right</em> thing, with the right architecture, that customers will actually pay for.</span>
-          <span className="block text-white/80 font-medium">We help AI founders and product teams:</span>
-          <ul className="mt-3 space-y-2 text-white/70 text-left list-none">
-            <li>✦ Lock MVP scope fast</li>
-            <li>✦ Design production-ready AI architecture</li>
-            <li>✦ Ship a pilot-ready product in 8–12 weeks</li>
-            <li>✦ Launch with early users and measurable traction</li>
-          </ul>
-        </>}
-        primaryCta="Book Your AI MVP Roadmap Call"
+        title="AI SaaS MVP Launch"
+        subtitle="Ship a pilot-ready AI MVP — and start winning paying customers. You're building fast, but scope and architecture decisions are slowing you down. We're your AI SaaS MVP development agency: product + AI + full-stack + launch system, under one plan."
+        primaryCta="Get My MVP Roadmap"
         secondaryCta="See the Sprint"
         trustChips={[
           "AI agent + LLM integration",
