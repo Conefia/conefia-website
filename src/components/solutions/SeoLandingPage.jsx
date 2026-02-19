@@ -756,7 +756,12 @@ export default function SeoLandingPage({ content, children }) {
   if (children) {
     return (
       <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
-        {children}
+        {React.Children.map(children, (child, i) => (
+          <>
+            {child}
+            {i === 0 && <BrandCarousel />}
+          </>
+        ))}
       </div>);
 
   }
