@@ -164,7 +164,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8">
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
 
                 {title}
               </motion.h1>
