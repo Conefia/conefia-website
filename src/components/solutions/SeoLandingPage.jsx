@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import BrandCarousel from '@/components/landing/BrandCarousel';
 import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
