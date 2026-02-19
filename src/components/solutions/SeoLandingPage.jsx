@@ -226,7 +226,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         </div>
     </section>
     <BrandCarousel />
-    );
+    </>);
 
 };
 
