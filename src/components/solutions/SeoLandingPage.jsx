@@ -79,15 +79,6 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           {layout === 'split' ?
         <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
-                <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
-
-                  <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-                  <span className="text-sm font-semibold text-[#DBFE01]">Solutions Package</span>
-                </motion.div>
-                
                 <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
