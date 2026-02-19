@@ -36,6 +36,7 @@ export default function AiSaasMvpLaunch() {
         subtitle="Ship a pilot-ready AI MVP — and start winning paying customers. You're building fast, but scope and architecture decisions are slowing you down. We're your AI SaaS MVP development agency: product + AI + full-stack + launch system, under one plan."
         primaryCta="Get My MVP Roadmap"
         secondaryCta="See the Sprint"
+        microCopy="Free 30-min call. Leave with scope + timeline + recommended AI stack."
         trustChips={[
           "Scope locked (Week 2)",
           "Weekly demos",
