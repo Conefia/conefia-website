@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { OrganizationStructuredData } from './StructuredData';
+import { OrganizationStructuredData, WebPageStructuredData } from './StructuredData';
 
 export default function Seo({ title, description, canonical }) {
   useEffect(() => {
