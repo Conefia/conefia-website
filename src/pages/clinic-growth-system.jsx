@@ -32,6 +32,20 @@ export default function ClinicGrowthSystem() {
         description="Digital patient engagement platform + clinic patient portal software + HIPAA growth marketing to book more patients. Get a roadmap."
         canonical="/solutions/clinic-growth-system"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "@id": "https://conefia.com/clinic-growth-system/#service",
+          "name": "Clinic Growth System",
+          "serviceType": "Digital patient engagement and clinic growth marketing",
+          "provider": { "@id": "https://conefia.com/#organization" },
+          "url": "https://conefia.com/clinic-growth-system",
+          "areaServed": "Worldwide",
+          "offers": { "@type": "Offer", "url": "https://conefia.com/book", "price": "0", "priceCurrency": "USD", "description": "Start with a free roadmap call" }
+        })}}
+      />
       <SolutionHero 
         title="Clinic Growth System"
         subtitle="A digital patient engagement platform that books more patients. One partner to fix your patient journey, improve local visibility, and turn traffic into booked appointments. Website + portal + intake + tracking + local SEO — aligned under one plan."
