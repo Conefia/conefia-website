@@ -44,12 +44,29 @@ export default function BlogPost() {
     );
   }
 
+  const postUrl = `https://conefia.com/blog/${post.slug}`;
+
   return (
     <div className="min-h-screen bg-[#FAFAFA]">
       <Seo
         title={post.title}
         description={post.excerpt}
         canonical={`/blog/${post.slug}`}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl },
+          "headline": post.title,
+          "description": post.excerpt,
+          ...(post.featuredImage ? { "image": [post.featuredImage] } : {}),
+          "datePublished": post.publishDate,
+          "dateModified": post.updated_date ? post.updated_date.split('T')[0] : post.publishDate,
+          "author": { "@type": "Person", "name": post.author || "Conefia Team" },
+          "publisher": { "@id": "https://conefia.com/#organization" }
+        })}}
       />
 
       {/* Hero */}
