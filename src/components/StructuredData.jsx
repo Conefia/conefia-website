@@ -34,6 +34,14 @@ export function OrganizationStructuredData() {
           "https://www.linkedin.com/company/conefia",
           "https://www.facebook.com/conefia.tech",
           "https://www.instagram.com/conefia.tech"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "info@conefia.com",
+            "availableLanguage": ["en"]
+          }
         ]
       },
       {
@@ -74,6 +82,24 @@ export function BreadcrumbStructuredData({ items }) {
     <StructuredData
       type="BreadcrumbList"
       data={{ itemListElement }}
+    />
+  );
+}
+
+export function WebPageStructuredData({ url, name }) {
+  const fullUrl = url?.startsWith('http') ? url : `https://conefia.com${url}`;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${fullUrl}#webpage`,
+        "url": fullUrl,
+        "name": name,
+        "isPartOf": { "@id": "https://conefia.com/#website" },
+        "about": { "@id": "https://conefia.com/#organization" }
+      })}}
     />
   );
 }
