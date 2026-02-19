@@ -80,12 +80,16 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
 
-                  {title}
+                  {title && title.split(/(\bAI\b|\bMVP\b)/).map((part, i) => 
+                   part === 'AI' || part === 'MVP' ? 
+                   <span key={i} className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">{part}</span> : 
+                   part
+                 )}
                 </motion.h1>
                 
                 <motion.p
