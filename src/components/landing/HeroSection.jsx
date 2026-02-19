@@ -6,7 +6,6 @@ import { ArrowRight, Play, Sparkles } from 'lucide-react';
 import HeroDarkBackground from '../visual/HeroDarkBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
 import { usePersona } from '@/components/context/PersonaContext';
-import BrandCarousel from './BrandCarousel';
 
 export default function HeroSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
@@ -134,11 +133,6 @@ export default function HeroSection({ reduceMotion }) {
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
         </div>
-      </div>
-
-      {/* Trust Strip */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <BrandCarousel />
       </div>
 
       {/* Scroll indicator - simplified */}
