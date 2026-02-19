@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
+import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 import {
   ArrowRight, Check, X, Sparkles, ShieldCheck,
   ChevronDown, ChevronUp } from

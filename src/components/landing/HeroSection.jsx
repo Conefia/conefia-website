@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Play, Sparkles } from 'lucide-react';
-import ContourBackground from '../visual/ContourBackground';
+import HeroDarkBackground from '../visual/HeroDarkBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
 import { usePersona } from '@/components/context/PersonaContext';
 
