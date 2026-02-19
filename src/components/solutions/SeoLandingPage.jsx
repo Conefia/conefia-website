@@ -101,7 +101,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg text-white/80 leading-relaxed mb-8 max-w-xl">
+              className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
 
                   {subtitle}
                 </motion.p>
