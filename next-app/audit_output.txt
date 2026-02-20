@@ -1,0 +1,481 @@
+
+🔍 COMPONENT AUDIT REPORT (Server-First Protocol)
+
+--------------------------------------------------
+[SERVER] src/App.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/Layout.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[SERVER] src/api/base44Client.js
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/Breadcrumbs.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/GoogleTagManager.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/Seo.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/StructuredData.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/UserNotRegisteredError.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/admin/BlogEditor.jsx
+  ↳ Reason: Hooks, Events
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/admin/RichTextEditor.jsx
+  ↳ Reason: Events
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/blog/BlogHero.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/components/blog/BlogSidebar.jsx
+  ↳ Reason: Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/blog/FeaturedGrid.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/components/blog/FilterBar.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/blog/LeadMagnetCTA.jsx
+  ↳ Reason: Hooks, Events
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/blog/PostCard.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/components/blog/SolutionsInterstitial.jsx
+  ↳ Reason: Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/blog/blogData.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/context/PersonaContext.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/data/personas.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/landing/AccelerateProcessVisual.jsx
+  ↳ Reason: Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/BrandCarousel.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/CaseStudiesSection.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/components/landing/ContactSection.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/FAQSection.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/HeroSection.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/components/landing/HowWeWork.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/PackagesSection.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/PlaybookSection.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/ProblemSolution.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/SocialProofBar.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/landing/TestimonialSlider.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/loading/SkeletonLoader.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/solutions/SeoLandingPage.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/solutions/SolutionTemplate.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/solutions/accelerator/AcceleratorVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/solutions/ai-saas/AiSaasVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/solutions/app-relaunch/AppRelaunchVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/solutions/clinic-growth/ClinicGrowthVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/solutions/dtc-growth/DtcGrowthVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/solutions/enterprise/EnterpriseVisuals.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/accordion.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/alert-dialog.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/alert.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/aspect-ratio.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/avatar.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/badge.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/breadcrumb.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/button.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/calendar.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/card.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/carousel.jsx
+  ↳ Reason: Hooks, Events
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/components/ui/chart.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[SERVER] src/components/ui/checkbox.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/collapsible.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/command.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/context-menu.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/dialog.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/drawer.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/dropdown-menu.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/form.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[SERVER] src/components/ui/hover-card.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/input-otp.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/ui/input.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/label.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/menubar.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/navigation-menu.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/pagination.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/popover.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/progress.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/radio-group.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/resizable.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/scroll-area.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/select.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/separator.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/sheet.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/sidebar.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/ui/skeleton.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/slider.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/sonner.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/switch.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/table.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/tabs.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/textarea.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/toast.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/toaster.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/toggle-group.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[SERVER] src/components/ui/toggle.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/components/ui/tooltip.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/components/ui/use-toast.jsx
+  ↳ Reason: Hooks
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/components/visual/ContourBackground.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/hooks/use-mobile.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/lib/AuthContext.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/lib/NavigationTracker.jsx (Explicit)
+  ↳ Reason: 'use client' directive found.
+  ↳ ACTION: Move to /components/client.
+
+[CLIENT] src/lib/PageNotFound.jsx
+  ↳ Reason: Router, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/lib/app-params.js
+  ↳ Reason: Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/lib/query-client.js
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/lib/utils.js
+  ↳ Reason: Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/main.jsx
+  ↳ Reason: Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/About.jsx
+  ↳ Reason: Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/AdminBlog.jsx
+  ↳ Reason: Hooks, Events
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/BlogPost.jsx
+  ↳ Reason: Hooks, Router, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/Home.jsx
+  ↳ Reason: Hooks, Router, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/pages/ai-saas-mvp-launch.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/pages/al-mahfza-fintech-app.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/pages/app-relaunch-retention.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/pages/aviya-digital-health-app.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/blog.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/book.jsx
+  ↳ Reason: Hooks, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/pages/clinic-growth-system.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/pages/corporate-innovation.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/pages/hartalega-ai-platform.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/larovie-beauty-ecommerce.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[CLIENT] src/pages/menovia-ai-femtech-app.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/pages/shopify-growth-system.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/pages/startup-accelerator-support.jsx
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[CLIENT] src/pages/vascularim-clinic-growth.jsx
+  ↳ Reason: Hooks, Events, Browser-API
+  ↳ ACTION: Move to /components/client, add 'use client' to top.
+
+[SERVER] src/pages.config.js
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+[SERVER] src/utils/index.ts
+  ↳ Reason: No client-side logic detected.
+  ↳ ACTION: Move to /components/server (Default).
+
+--------------------------------------------------
