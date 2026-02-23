@@ -203,7 +203,7 @@ function LayoutContent({ children }) {
             <div className="hidden md:flex items-center gap-4">
               <Link
                 href={createPageUrl('book')}
-                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
+                className="btn-primary px-5 py-2.5 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
@@ -274,7 +274,7 @@ function LayoutContent({ children }) {
                 <Link
                   href={createPageUrl('book')}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
+                  className="btn-primary w-full px-5 py-3 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />

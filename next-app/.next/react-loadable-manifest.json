@@ -1,39 +1,39 @@
 {
-  "../components/client/admin/RichTextEditor.jsx -> react-quill": {
-    "id": 60054,
+  "components/client/admin/RichTextEditor.jsx -> react-quill": {
+    "id": 51720,
     "files": [
-      "static/chunks/8012d7e2.2fbc1fbdab324f32.js",
-      "static/chunks/54.3968f84cddcbcdb4.js"
+      "static/chunks/cff4c5fa.bfbd4a3a134a6c5d.js",
+      "static/chunks/1720.abaae141fcce23bf.js"
     ]
   },
-  "../components/server/pages/clinic-growth-system.jsx -> @/components/client/landing/BrandCarousel": {
-    "id": 66347,
+  "components/server/pages/clinic-growth-system.jsx -> @/components/client/landing/BrandCarousel": {
+    "id": 13785,
     "files": [
-      "static/chunks/6347.d2082f70ff0c4d97.js"
+      "static/chunks/3785.71b333bb139a9684.js"
     ]
   },
-  "../components/server/pages/clinic-growth-system.jsx -> @/components/client/solutions/SeoLandingPage": {
-    "id": 9715,
+  "components/server/pages/clinic-growth-system.jsx -> @/components/client/solutions/SeoLandingPage": {
+    "id": 13837,
     "files": []
   },
-  "../components/server/pages/clinic-growth-system.jsx -> @/components/server/solutions/clinic-growth/ClinicGrowthVisuals": {
-    "id": 74554,
+  "components/server/pages/clinic-growth-system.jsx -> @/components/server/solutions/clinic-growth/ClinicGrowthVisuals": {
+    "id": 4028,
     "files": []
   },
-  "../components/server/pages/corporate-innovation.jsx -> @/components/client/solutions/SeoLandingPage": {
-    "id": 9715,
+  "components/server/pages/corporate-innovation.jsx -> @/components/client/solutions/SeoLandingPage": {
+    "id": 13837,
     "files": []
   },
-  "../components/server/pages/corporate-innovation.jsx -> @/components/server/solutions/enterprise/EnterpriseVisuals": {
-    "id": 7045,
+  "components/server/pages/corporate-innovation.jsx -> @/components/server/solutions/enterprise/EnterpriseVisuals": {
+    "id": 80675,
     "files": []
   },
-  "../components/server/pages/shopify-growth-system.jsx -> @/components/client/solutions/SeoLandingPage": {
-    "id": 9715,
+  "components/server/pages/shopify-growth-system.jsx -> @/components/client/solutions/SeoLandingPage": {
+    "id": 13837,
     "files": []
   },
-  "../components/server/pages/shopify-growth-system.jsx -> @/components/server/solutions/dtc-growth/DtcGrowthVisuals": {
-    "id": 43422,
+  "components/server/pages/shopify-growth-system.jsx -> @/components/server/solutions/dtc-growth/DtcGrowthVisuals": {
+    "id": 33256,
     "files": []
   }
 }

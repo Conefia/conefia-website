@@ -1,1 +1,158 @@
-{"version":3,"pages404":true,"caseSensitive":false,"basePath":"","redirects":[{"source":"/:path+/","destination":"/:path+","internal":true,"statusCode":308,"regex":"^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"}],"headers":[],"dynamicRoutes":[{"page":"/blog/[slug]","regex":"^/blog/([^/]+?)(?:/)?$","routeKeys":{"nxtPslug":"nxtPslug"},"namedRegex":"^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"}],"staticRoutes":[{"page":"/","regex":"^/(?:/)?$","routeKeys":{},"namedRegex":"^/(?:/)?$"},{"page":"/_not-found","regex":"^/_not\\-found(?:/)?$","routeKeys":{},"namedRegex":"^/_not\\-found(?:/)?$"},{"page":"/about","regex":"^/about(?:/)?$","routeKeys":{},"namedRegex":"^/about(?:/)?$"},{"page":"/admin-blog","regex":"^/admin\\-blog(?:/)?$","routeKeys":{},"namedRegex":"^/admin\\-blog(?:/)?$"},{"page":"/ai-saas-mvp-launch","regex":"^/ai\\-saas\\-mvp\\-launch(?:/)?$","routeKeys":{},"namedRegex":"^/ai\\-saas\\-mvp\\-launch(?:/)?$"},{"page":"/al-mahfza-fintech-app","regex":"^/al\\-mahfza\\-fintech\\-app(?:/)?$","routeKeys":{},"namedRegex":"^/al\\-mahfza\\-fintech\\-app(?:/)?$"},{"page":"/app-relaunch-retention","regex":"^/app\\-relaunch\\-retention(?:/)?$","routeKeys":{},"namedRegex":"^/app\\-relaunch\\-retention(?:/)?$"},{"page":"/aviya-digital-health-app","regex":"^/aviya\\-digital\\-health\\-app(?:/)?$","routeKeys":{},"namedRegex":"^/aviya\\-digital\\-health\\-app(?:/)?$"},{"page":"/blog","regex":"^/blog(?:/)?$","routeKeys":{},"namedRegex":"^/blog(?:/)?$"},{"page":"/book","regex":"^/book(?:/)?$","routeKeys":{},"namedRegex":"^/book(?:/)?$"},{"page":"/clinic-growth-system","regex":"^/clinic\\-growth\\-system(?:/)?$","routeKeys":{},"namedRegex":"^/clinic\\-growth\\-system(?:/)?$"},{"page":"/corporate-innovation","regex":"^/corporate\\-innovation(?:/)?$","routeKeys":{},"namedRegex":"^/corporate\\-innovation(?:/)?$"},{"page":"/hartalega-ai-platform","regex":"^/hartalega\\-ai\\-platform(?:/)?$","routeKeys":{},"namedRegex":"^/hartalega\\-ai\\-platform(?:/)?$"},{"page":"/larovie-beauty-ecommerce","regex":"^/larovie\\-beauty\\-ecommerce(?:/)?$","routeKeys":{},"namedRegex":"^/larovie\\-beauty\\-ecommerce(?:/)?$"},{"page":"/menovia-ai-femtech-app","regex":"^/menovia\\-ai\\-femtech\\-app(?:/)?$","routeKeys":{},"namedRegex":"^/menovia\\-ai\\-femtech\\-app(?:/)?$"},{"page":"/shopify-growth-system","regex":"^/shopify\\-growth\\-system(?:/)?$","routeKeys":{},"namedRegex":"^/shopify\\-growth\\-system(?:/)?$"},{"page":"/startup-accelerator-support","regex":"^/startup\\-accelerator\\-support(?:/)?$","routeKeys":{},"namedRegex":"^/startup\\-accelerator\\-support(?:/)?$"},{"page":"/vascularim-clinic-growth","regex":"^/vascularim\\-clinic\\-growth(?:/)?$","routeKeys":{},"namedRegex":"^/vascularim\\-clinic\\-growth(?:/)?$"}],"dataRoutes":[],"rsc":{"header":"RSC","varyHeader":"RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch","prefetchHeader":"Next-Router-Prefetch","didPostponeHeader":"x-nextjs-postponed","contentTypeHeader":"text/x-component","suffix":".rsc","prefetchSuffix":".prefetch.rsc"},"rewrites":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/blog/[slug]",
+      "regex": "^/blog/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/blog/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/admin-blog",
+      "regex": "^/admin\\-blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin\\-blog(?:/)?$"
+    },
+    {
+      "page": "/ai-saas-mvp-launch",
+      "regex": "^/ai\\-saas\\-mvp\\-launch(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ai\\-saas\\-mvp\\-launch(?:/)?$"
+    },
+    {
+      "page": "/al-mahfza-fintech-app",
+      "regex": "^/al\\-mahfza\\-fintech\\-app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/al\\-mahfza\\-fintech\\-app(?:/)?$"
+    },
+    {
+      "page": "/app-relaunch-retention",
+      "regex": "^/app\\-relaunch\\-retention(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/app\\-relaunch\\-retention(?:/)?$"
+    },
+    {
+      "page": "/aviya-digital-health-app",
+      "regex": "^/aviya\\-digital\\-health\\-app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/aviya\\-digital\\-health\\-app(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/book",
+      "regex": "^/book(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/book(?:/)?$"
+    },
+    {
+      "page": "/clinic-growth-system",
+      "regex": "^/clinic\\-growth\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/clinic\\-growth\\-system(?:/)?$"
+    },
+    {
+      "page": "/corporate-innovation",
+      "regex": "^/corporate\\-innovation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/corporate\\-innovation(?:/)?$"
+    },
+    {
+      "page": "/hartalega-ai-platform",
+      "regex": "^/hartalega\\-ai\\-platform(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hartalega\\-ai\\-platform(?:/)?$"
+    },
+    {
+      "page": "/larovie-beauty-ecommerce",
+      "regex": "^/larovie\\-beauty\\-ecommerce(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/larovie\\-beauty\\-ecommerce(?:/)?$"
+    },
+    {
+      "page": "/menovia-ai-femtech-app",
+      "regex": "^/menovia\\-ai\\-femtech\\-app(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/menovia\\-ai\\-femtech\\-app(?:/)?$"
+    },
+    {
+      "page": "/shopify-growth-system",
+      "regex": "^/shopify\\-growth\\-system(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/shopify\\-growth\\-system(?:/)?$"
+    },
+    {
+      "page": "/startup-accelerator-support",
+      "regex": "^/startup\\-accelerator\\-support(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/startup\\-accelerator\\-support(?:/)?$"
+    },
+    {
+      "page": "/vascularim-clinic-growth",
+      "regex": "^/vascularim\\-clinic\\-growth(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/vascularim\\-clinic\\-growth(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

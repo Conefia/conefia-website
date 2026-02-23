@@ -1,4 +1,5 @@
 {
+  "/api/testimonials/route": "app/api/testimonials/route.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/app-relaunch-retention/page": "app/app-relaunch-retention/page.js",
   "/blog/[slug]/page": "app/blog/[slug]/page.js",
@@ -7,8 +8,8 @@
   "/clinic-growth-system/page": "app/clinic-growth-system/page.js",
   "/corporate-innovation/page": "app/corporate-innovation/page.js",
   "/hartalega-ai-platform/page": "app/hartalega-ai-platform/page.js",
-  "/menovia-ai-femtech-app/page": "app/menovia-ai-femtech-app/page.js",
   "/larovie-beauty-ecommerce/page": "app/larovie-beauty-ecommerce/page.js",
+  "/menovia-ai-femtech-app/page": "app/menovia-ai-femtech-app/page.js",
   "/page": "app/page.js",
   "/shopify-growth-system/page": "app/shopify-growth-system/page.js",
   "/startup-accelerator-support/page": "app/startup-accelerator-support/page.js",

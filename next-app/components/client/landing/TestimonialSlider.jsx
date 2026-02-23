@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
-import { base44 } from '@/components/server/api/base44Client';
 import { motion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -27,10 +26,12 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
       setLoading(false);
       return;
     }
-    // Fetch testimonials if not provided via props
+    // Fetch testimonials from our API route
     const fetchTestimonials = async () => {
       try {
-        const data = await base44.entities.Testimonial.list('-created_date', 10);
+        const res = await fetch('/api/testimonials');
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        const data = await res.json();
         setDbTestimonials(data);
       } catch (error) {
         console.error("Failed to fetch testimonials:", error);
