@@ -499,6 +499,7 @@
     "zwitch": "^2.0.4"
   },
   "devDependencies": {
+    "@types/node": "^25.3.0",
     "@types/react": "19.2.14"
   },
   "scripts": {
