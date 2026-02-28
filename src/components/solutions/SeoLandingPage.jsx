@@ -953,7 +953,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.png" },
                   { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.png" },
                   { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.png" },
-                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.png" },
+                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                   { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.png" }
                 ].map((tech, i) => (
                   <div key={i} className="flex-shrink-0 w-28 h-28">
@@ -978,7 +978,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.png" },
                   { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.png" },
                   { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.png" },
-                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.png" },
+                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                   { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.png" }
                 ].map((tech, i) => (
                   <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
