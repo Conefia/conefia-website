@@ -1053,7 +1053,7 @@ export const SolutionFAQ = ({ items = [] }) => {
       </div>
 
       {items.length > 5 && (
-        <Reveal delay={0.2} className="mt-8 text-center">
+        <Reveal delay={0.2} className="mt-8 text-center relative z-20">
           <button
             onClick={() => setShowAll(!showAll)}
             className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
