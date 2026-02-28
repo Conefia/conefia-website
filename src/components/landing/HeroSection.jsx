@@ -75,7 +75,7 @@ export default function HeroSection({ reduceMotion }) {
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-white/80 mb-8 text-base font-medium leading-relaxed md:text-xl max-w-xl">For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
+              variants={itemVariants} className="text-white/80 mb-8 text-base font-normal leading-relaxed md:text-xl max-w-xl">For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
 
             </motion.p>
 
@@ -85,8 +85,8 @@ export default function HeroSection({ reduceMotion }) {
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
               <Link
-                 to={createPageUrl('book')}
-                 className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
+                to={createPageUrl('book')}
+                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
 
                  Book Roadmap Call
                  <ArrowRight className="w-5 h-5" />
