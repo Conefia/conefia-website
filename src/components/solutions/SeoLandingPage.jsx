@@ -982,7 +982,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               ].map((item, i) =>
               <div key={i} className="flex gap-4 items-start">
                 <Check className="w-6 h-6 text-[#DBFE01] flex-shrink-0 mt-1" />
-                <p className="font-semibold text-lg text-white/90">{item}</p>
+                <p className="font-semibold text-lg text-[#1a1a1a]/90">{item}</p>
               </div>
               )}
             </div>
