@@ -914,17 +914,24 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8 text-center">Built for speed and scale</h2>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               {[
                 { title: "Build fast", desc: "Modern full-stack (React / Node / Python) so you ship weekly, not \"someday.\"" },
                 { title: "RAG that holds up", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos." },
                 { title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates." },
                 { title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay under control." }
               ].map((item, i) =>
-              <div key={i} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-shadow">
+              <motion.div 
+                key={i} 
+                className="p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
                 <h4 className="font-bold text-lg text-[#1a1a1a] mb-2">{item.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
+                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
+              </motion.div>
               )}
             </div>
           </Reveal>
