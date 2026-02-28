@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 const goodFits = [
-  "You know who the user is and what "success" means",
+  'You know who the user is and what "success" means',
   "You can access sample data/docs (or we can define a data plan)",
   "You want pilots running in the next 60–90 days",
 ];
