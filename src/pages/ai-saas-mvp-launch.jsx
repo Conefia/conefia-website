@@ -53,6 +53,7 @@ export default function AiSaasMvpLaunch() {
         layout="split"
         visual={<HeroVisual />}
       />
+      <FitCheck />
       <SolutionMetrics 
         title="Outcomes founders care about"
         visual={<MetricsVisual />}
