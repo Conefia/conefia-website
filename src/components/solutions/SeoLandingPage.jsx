@@ -361,20 +361,16 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
   </section>;
 
 
-export const SolutionDetails = ({ title, description, features = [], primaryCta, visual }) =>
+export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
 <section id="solution" className="py-24 bg-[#F4F4F5] relative overflow-hidden">
     <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#DBFE01]/10 to-transparent pointer-events-none" />
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <Reveal className="order-2 lg:order-1 relative">
-            {visual ?
-        visual :
-
-        <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10">
-                  {/* Default visual content */}
-              </div>
-        }
+            {visual ? visual : (
+            <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10" />
+            )}
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
@@ -387,7 +383,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             {description}
           </p>
           
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-gray-200 mb-8 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-gray-200 mb-4 shadow-sm hover:shadow-md transition-shadow">
             <h4 className="font-bold text-[#1a1a1a] mb-4 flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-[#DBFE01]" />
               What you get:
@@ -398,6 +394,13 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             )}
             </ul>
           </div>
+
+          {riskReducer && (
+            <p className="text-sm text-gray-500 italic mb-8 flex items-center gap-2 pl-1">
+              <ShieldCheck className="w-4 h-4 text-emerald-500 flex-shrink-0" />
+              {riskReducer}
+            </p>
+          )}
 
           <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
             {primaryCta}
