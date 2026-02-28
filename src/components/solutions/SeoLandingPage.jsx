@@ -906,9 +906,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
+      <section className="py-24 bg-white text-white relative overflow-hidden">
         {/* Base layer */}
-        <div className="bg-stone-950 absolute inset-0" />
+        <div className="bg-white absolute inset-0" />
 
         {/* Contour lines */}
         <ContourBackground className="opacity-80" />
