@@ -993,7 +993,6 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   </div>
                 ))}
               </motion.div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#2F2F2F] to-transparent pointer-events-none" />
             </div>
           </Reveal>
         </div>
