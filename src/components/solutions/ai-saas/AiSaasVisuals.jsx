@@ -99,38 +99,109 @@ export const HeroVisual = () => {
   );
 };
 
+const METRIC_CARDS = [
+  { val: "8–12", label: "Weeks to Ship", sub: "Pilot-Ready", icon: Rocket, color: "text-blue-400", bg: "bg-[#0B1020]", border: "border-blue-500/30", accent: "from-blue-500/20 to-transparent", valColor: "text-blue-400" },
+  { val: "Active", label: "First Pilots", sub: "Customers Testing", icon: Users, color: "text-[#1a1a1a]", bg: "bg-[#DBFE01]", border: "border-[#DBFE01]", accent: "from-white/20 to-transparent", valColor: "text-[#1a1a1a]" },
+  { val: "Locked", label: "Scope", sub: "No Drift", icon: Lock, color: "text-purple-400", bg: "bg-[#0B1020]", border: "border-purple-500/30", accent: "from-purple-500/20 to-transparent", valColor: "text-purple-400" },
+  { val: "+40%", label: "Activation", sub: "User Aha!", icon: Zap, color: "text-amber-400", bg: "bg-[#0B1020]", border: "border-amber-500/30", accent: "from-amber-500/20 to-transparent", valColor: "text-amber-400" }
+];
+
 // Enhanced Metrics: Punchy Gradient Cards
-export const MetricsVisual = () => (
-  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-    {[
-      { val: "8–12", label: "Weeks to Ship", sub: "Pilot-Ready", icon: Rocket, color: "text-blue-500", bg: "bg-gradient-to-br from-blue-50 to-white", border: "border-blue-100" },
-      { val: "Active", label: "First Pilots", sub: "Customers Testing", icon: Users, color: "text-[#1a1a1a]", bg: "bg-[#DBFE01] shadow-[0_0_20px_rgba(219,254,1,0.3)]", border: "border-[#DBFE01]" },
-      { val: "Locked", label: "Scope", sub: "No Drift", icon: Lock, color: "text-purple-500", bg: "bg-gradient-to-br from-purple-50 to-white", border: "border-purple-100" },
-      { val: "+40%", label: "Activation", sub: "User Aha!", icon: Zap, color: "text-amber-500", bg: "bg-gradient-to-br from-amber-50 to-white", border: "border-amber-100" }
-    ].map((m, i) => (
-      <motion.div 
-        key={i}
-        whileHover={{ y: -5, scale: 1.02 }}
-        className={`p-5 rounded-2xl border ${m.border} shadow-sm ${m.bg} relative overflow-hidden group`}
-      >
-        <div className={`mb-3 ${m.bg === 'bg-[#DBFE01] shadow-[0_0_20px_rgba(219,254,1,0.3)]' ? 'text-[#1a1a1a]' : m.color}`}>
-          <m.icon className="w-6 h-6" />
+export const MetricsVisual = () => {
+  const [active, setActive] = useState(0);
+  const timerRef = useRef(null);
+
+  useEffect(() => {
+    timerRef.current = setInterval(() => {
+      setActive(prev => (prev + 1) % METRIC_CARDS.length);
+    }, 2200);
+    return () => clearInterval(timerRef.current);
+  }, []);
+
+  const handleDotClick = (i) => {
+    setActive(i);
+    clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
+      setActive(prev => (prev + 1) % METRIC_CARDS.length);
+    }, 2200);
+  };
+
+  return (
+    <div>
+      {/* Desktop: grid */}
+      <div className="hidden md:grid grid-cols-4 gap-4">
+        {METRIC_CARDS.map((m, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -5, scale: 1.02 }}
+            className={`p-5 rounded-2xl border ${m.border} shadow-sm ${m.bg} relative overflow-hidden group`}
+          >
+            <div className={`absolute inset-0 bg-gradient-to-br ${m.accent} pointer-events-none`} />
+            <div className={`mb-3 ${m.color} relative z-10`}>
+              <m.icon className="w-6 h-6" />
+            </div>
+            <div className={`text-3xl font-extrabold mb-1 tracking-tight relative z-10 ${m.valColor}`}>
+              {m.val}
+            </div>
+            <div className={`text-sm font-bold relative z-10 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/80' : 'text-white/80'}`}>
+              {m.label}
+            </div>
+            <div className={`text-xs mt-1 relative z-10 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/60' : 'text-white/40'}`}>
+              {m.sub}
+            </div>
+            <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none" />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Mobile: carousel */}
+      <div className="md:hidden">
+        <div className="relative overflow-hidden rounded-2xl">
+          <AnimatePresence mode="wait">
+            {METRIC_CARDS.map((m, i) => i === active && (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 60 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -60 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className={`p-8 rounded-2xl border ${m.border} ${m.bg} relative overflow-hidden`}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${m.accent} pointer-events-none`} />
+                {/* Decorative glow */}
+                <div className="absolute top-0 right-0 w-40 h-40 rounded-full blur-3xl opacity-20"
+                  style={{ background: m.bg === 'bg-[#DBFE01]' ? '#fff' : m.valColor.replace('text-', '') }} />
+                <div className="relative z-10 flex items-start gap-6">
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 border ${m.border} ${m.bg === 'bg-[#DBFE01]' ? 'bg-black/10' : 'bg-white/5'}`}>
+                    <m.icon className={`w-7 h-7 ${m.color}`} />
+                  </div>
+                  <div>
+                    <div className={`text-5xl font-extrabold tracking-tight ${m.valColor}`}>{m.val}</div>
+                    <div className={`text-base font-bold mt-1 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/80' : 'text-white/80'}`}>{m.label}</div>
+                    <div className={`text-sm mt-0.5 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/60' : 'text-white/40'}`}>{m.sub}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
-        <div className={`text-3xl font-extrabold mb-1 tracking-tight ${m.bg.includes('bg-[#DBFE01]') ? 'text-[#1a1a1a]' : 'text-gray-900'}`}>
-            {m.val}
+
+        {/* Dots */}
+        <div className="flex justify-center gap-2 mt-4">
+          {METRIC_CARDS.map((m, i) => (
+            <button
+              key={i}
+              onClick={() => handleDotClick(i)}
+              className={`transition-all duration-300 rounded-full ${
+                i === active ? 'w-6 h-2 bg-[#DBFE01]' : 'w-2 h-2 bg-white/20'
+              }`}
+            />
+          ))}
         </div>
-        <div className={`text-sm font-bold ${m.bg.includes('bg-[#DBFE01]') ? 'text-[#1a1a1a]/80' : 'text-gray-900'}`}>
-            {m.label}
-        </div>
-        <div className={`text-xs mt-1 ${m.bg.includes('bg-[#DBFE01]') ? 'text-[#1a1a1a]/60' : 'text-gray-500'}`}>
-            {m.sub}
-        </div>
-        {/* Shine Effect */}
-        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 pointer-events-none" />
-      </motion.div>
-    ))}
-  </div>
-);
+      </div>
+    </div>
+  );
+};
 
 // Enhanced Problem: Stronger Contrast
 export const ProblemVisual = () => (
