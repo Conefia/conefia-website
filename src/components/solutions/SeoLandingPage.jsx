@@ -1027,8 +1027,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   </div>
                 ))}
                 {[
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai.png" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/logos/anthropic.png" },
+                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.png" },
+                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.png" },
                   { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.png" },
                   { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.png" },
                   { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.png" },
