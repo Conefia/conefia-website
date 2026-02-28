@@ -6,7 +6,6 @@ import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/Skele
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
-const SolutionTrustedBy = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionTrustedBy })));
 const SolutionProblem = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProblem })));
 const SolutionDetails = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionDetails })));
 const SolutionProcess = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProcess })));

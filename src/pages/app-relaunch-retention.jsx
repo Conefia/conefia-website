@@ -1,11 +1,10 @@
 import React from 'react';
 import SeoLandingPage, { 
-  SolutionHero, SolutionMetrics, SolutionTrustedBy, 
+  SolutionHero, SolutionMetrics, 
   SolutionProblem, SolutionDetails, SolutionProcess, 
   SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta 
 } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
-import BrandCarousel from '@/components/landing/BrandCarousel';
 import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
 import Seo from '@/components/Seo';
 
