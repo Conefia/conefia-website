@@ -108,16 +108,44 @@ export default function AiSaasMvpLaunch() {
       <SolutionFAQ 
         items={[
           {
-            question: "Do you build the AI + the product?",
-            answer: "Yes — we are a full-stack agency. One team, one backlog. We handle the frontend, backend, database, AND the AI agent logic/LLM integration."
+            question: "What do you mean by \"pilot-ready\"?",
+            answer: "Pilot-ready means real users can complete the core workflow end-to-end, with onboarding, analytics, and enough reliability/guardrails that you can confidently test (and charge) in pilots."
           },
           {
-            question: "Do you help with pilots?",
-            answer: "Yes — we ship the product and the pilot launch system (landing pages, onboarding flows, analytics) so you can close deals."
+            question: "Can you help if we already have a prototype?",
+            answer: "Yes. We'll audit what you have, keep what's solid, and refactor only what's necessary. The goal is a pilot-ready product — not a rewrite for its own sake."
           },
           {
-            question: "Who owns the code?",
-            answer: "You do. 100%. We build in your repository or transfer full ownership upon completion."
+            question: "How do you decide between RAG, agents, or fine-tuning?",
+            answer: "We choose based on your workflow, data quality, latency needs, cost constraints, and failure tolerance. In the roadmap call, you'll get a clear recommendation (and why)."
+          },
+          {
+            question: "How do you prevent scope creep?",
+            answer: "We lock must-have scope by Week 2, tie it to success metrics, and use stage gates. If scope isn't clear, we pause and fix clarity before we build."
+          },
+          {
+            question: "What do you need from us to start?",
+            answer: "A clear target user, a core workflow, and access to sample data/docs (or a plan to get them). If you're early, we'll help define the simplest version that can still produce pilot learning."
+          },
+          {
+            question: "Do you build the full product or just the AI layer?",
+            answer: "Full product: product workflow + frontend + backend + AI layer + analytics + launch kit. One team, one backlog."
+          },
+          {
+            question: "How do you handle reliability and \"AI going wrong\"?",
+            answer: "We design guardrails, add evaluation loops, log and monitor outputs, and implement fallback behaviors when confidence is low. We aim for safe defaults, not \"best-effort answers.\""
+          },
+          {
+            question: "Will this work for regulated or sensitive data?",
+            answer: "It can. We'll align on security requirements early (access control, logging, data handling). If your use case needs HIPAA/SOC2-style controls, we'll scope accordingly."
+          },
+          {
+            question: "What if we want to use open-source models?",
+            answer: "No problem. We're stack-agnostic. We'll recommend the best fit based on performance, cost, deployment constraints, and engineering complexity."
+          },
+          {
+            question: "What happens after the MVP ships?",
+            answer: "We can support monthly scale: activation improvements, retention experiments, cost/performance tuning, and iterative roadmap delivery."
           }
         ]}
       />
