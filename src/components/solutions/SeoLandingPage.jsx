@@ -7,7 +7,7 @@ import BrandCarousel from '@/components/landing/BrandCarousel';
 import {
   ArrowRight, Check, X, Sparkles, ShieldCheck,
   ChevronDown, ChevronUp, Bot, BarChart3, FileText,
-  Users, Zap, Brain, Shield, LineChart, Layout } from
+  Users, Zap, Brain, Shield, LineChart } from
 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
