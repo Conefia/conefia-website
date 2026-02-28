@@ -371,7 +371,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             <Check className="w-3.5 h-3.5" />
             The Solution
           </div>
-          <SectionHeading>{title}</SectionHeading>
+          <SectionHeading>{title?.replace(/\.$/, '')}</SectionHeading>
           <p className="text-lg text-[#1a1a1a]/70 mb-8 leading-relaxed">
             {description}
           </p>
