@@ -51,6 +51,7 @@ import About from './pages/About';
 import AdminBlog from './pages/AdminBlog';
 import BlogPost from './pages/BlogPost';
 import Home from './pages/Home';
+import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
 import alMahfzaFintechApp from './pages/al-mahfza-fintech-app';
 import appRelaunchRetention from './pages/app-relaunch-retention';
 import aviyaDigitalHealthApp from './pages/aviya-digital-health-app';
@@ -64,7 +65,6 @@ import menoviaAiFemtechApp from './pages/menovia-ai-femtech-app';
 import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
-import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
 import __Layout from './Layout.jsx';
 
 
@@ -73,6 +73,7 @@ export const PAGES = {
     "AdminBlog": AdminBlog,
     "BlogPost": BlogPost,
     "Home": Home,
+    "ai-saas-mvp-launch": aiSaasMvpLaunch,
     "al-mahfza-fintech-app": alMahfzaFintechApp,
     "app-relaunch-retention": appRelaunchRetention,
     "aviya-digital-health-app": aviyaDigitalHealthApp,
@@ -86,7 +87,6 @@ export const PAGES = {
     "shopify-growth-system": shopifyGrowthSystem,
     "startup-accelerator-support": startupAcceleratorSupport,
     "vascularim-clinic-growth": vascularimClinicGrowth,
-    "ai-saas-mvp-launch": aiSaasMvpLaunch,
 }
 
 export const pagesConfig = {
