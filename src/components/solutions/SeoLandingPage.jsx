@@ -273,13 +273,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
   </section>;
 
 
-export const SolutionTrustedBy = ({ title, visual }) =>
-<section className="py-12 bg-gray-50/50 border-b border-gray-100">
-    <Reveal className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      {title && <SectionHeading className="mb-8 text-2xl">{title}</SectionHeading>}
-      {visual}
-    </Reveal>
-  </section>;
+
 
 
 export const SolutionProblem = ({ title, quote, items = [], visual }) =>
