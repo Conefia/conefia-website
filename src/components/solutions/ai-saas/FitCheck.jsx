@@ -63,7 +63,7 @@ export default function FitCheck() {
               {goodFits.map((item, i) =>
               <li key={i} className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#6a9200] mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-950 text-sm leading-relaxed">{item}</span>
+                  <span className="text-[#1a1a1a]/80 text-sm leading-relaxed">{item}</span>
                 </li>
               )}
             </ul>
@@ -87,7 +87,7 @@ export default function FitCheck() {
               {notFits.map((item, i) =>
               <li key={i} className="flex items-start gap-3">
                   <X className="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0" />
-                  <span className="text-slate-950 text-sm leading-relaxed">{item}</span>
+                  <span className="text-[#1a1a1a]/80 text-sm leading-relaxed">{item}</span>
                 </li>
               )}
             </ul>
