@@ -12,7 +12,7 @@ const goodFits = [
 
 const notFits = [
   "You're looking for pure R&D with no product deadline",
-  "You want "just a chatbot" without a workflow or buyer",
+  'You want "just a chatbot" without a workflow or buyer',
   "You can't access users, feedback, or data",
 ];
 
