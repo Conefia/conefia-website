@@ -913,7 +913,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8">Built for speed and scale</h2>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8 text-center">Built for speed and scale</h2>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
               {[
                 { title: "Build fast", desc: "Modern full-stack (React / Node / Python) so you ship weekly, not \"someday.\"" },
