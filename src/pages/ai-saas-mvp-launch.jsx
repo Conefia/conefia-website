@@ -6,7 +6,7 @@ import SeoLandingPage, {
 } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, OnePagerVisual } from '@/components/solutions/ai-saas/AiSaasVisuals';
 import FitCheck from '@/components/solutions/ai-saas/FitCheck';
-import { Code2, Zap, Layout, Bot, GitBranch, Layers, Rocket } from 'lucide-react';
+import { Bot } from 'lucide-react';
 import Seo from '@/components/Seo';
 
 export default function AiSaasMvpLaunch() {
