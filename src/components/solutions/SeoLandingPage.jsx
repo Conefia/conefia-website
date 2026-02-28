@@ -834,19 +834,15 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           })}
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Reveal delay={0.2} className="bg-[#2F2F2F] rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
-            <h3 className="text-2xl font-bold mb-8 text-center">{useCasesTitle || "Common Use Cases"}</h3>
-            <div className="grid sm:grid-cols-3 gap-8">
-              {useCases.map((useCase, i) =>
-              <div key={i} className="text-center group">
-                  <div className="w-14 h-14 mx-auto bg-[#DBFE01]/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-[#DBFE01] group-hover:scale-110 transition-all duration-300">
-                    <Check className="w-7 h-7 text-[#DBFE01] group-hover:text-[#1a1a1a] transition-colors" />
-                  </div>
-                  <p className="font-medium text-white/80 group-hover:text-white transition-colors">{useCase}</p>
-                </div>
-              )}
-            </div>
+          <Reveal className="text-center mb-12">
+            <span className="bg-[#1a1a1a] text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/10 mb-6">
+              <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+              Common Use Cases
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">{useCasesTitle || "Common use cases"}</h2>
           </Reveal>
+
+          <UseCasesLinked useCases={useCases} />
         </div>
       </section>
     </>);
