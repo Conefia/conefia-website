@@ -59,10 +59,6 @@ export default function AiSaasMvpLaunch() {
         visual={<MetricsVisual />}
         items={[]}
       />
-      <SolutionTrustedBy 
-        title="Trusted by next-gen AI startups."
-        visual={<BrandCarousel />}
-      />
       <SolutionProblem 
         title="Your MVP keeps moving — and traction stays unclear."
         quote="Most AI MVPs don't fail from lack of code. They fail from unclear scope, fragile architecture, and no pilot plan."
