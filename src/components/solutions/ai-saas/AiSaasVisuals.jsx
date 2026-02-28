@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Bot, Database, Code2, BrainCircuit, 
   Terminal, ShieldCheck, Zap, LineChart, 
