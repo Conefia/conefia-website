@@ -283,21 +283,20 @@ export const SolutionTrustedBy = ({ title, visual }) =>
 
 
 export const SolutionProblem = ({ title, quote, items = [], visual }) =>
-<section className="py-24 bg-[#0B1020] relative overflow-hidden">
-    {/* Grid background */}
-    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
-    {/* Glow blobs */}
-    <div className="absolute top-0 left-1/4 w-96 h-96 bg-rose-600/10 rounded-full blur-[120px] pointer-events-none" />
-    <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose-500/8 rounded-full blur-[100px] pointer-events-none" />
+<section className="py-24 bg-white relative overflow-hidden">
+    {/* Subtle dot grid */}
+    <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
+    {/* Soft red accent blob */}
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-50 rounded-full blur-[100px] pointer-events-none opacity-60" />
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
       <Reveal className="mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold uppercase tracking-widest border border-rose-500/20">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest border border-rose-200">
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl">
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] leading-tight max-w-3xl">
           {title || "Your MVP keeps moving — and traction stays unclear."}
         </h2>
       </Reveal>
@@ -315,10 +314,10 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
                 transition={{ delay: i * 0.1 + 0.1 }}
                 className="flex items-start gap-4 group"
               >
-                <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-500/20 transition-colors">
-                  <X className="w-4 h-4 text-rose-400" />
+                <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
+                  <X className="w-4 h-4 text-rose-500" />
                 </div>
-                <span className="text-white/75 text-base leading-relaxed pt-1 group-hover:text-white/90 transition-colors">{item}</span>
+                <span className="text-[#1a1a1a]/75 text-base leading-relaxed pt-1 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
               </motion.li>
             ))}
           </ul>
@@ -332,11 +331,10 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
               transition={{ delay: 0.5 }}
               className="mt-10 relative"
             >
-              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-rose-500/30 via-rose-500/10 to-transparent" />
-              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-rose-500/20">
+              <div className="relative bg-rose-50 rounded-2xl p-6 border border-rose-200 shadow-sm">
                 <div className="flex gap-3 items-start">
                   <div className="text-rose-400 text-4xl font-serif leading-none mt-1 flex-shrink-0">"</div>
-                  <p className="text-white/80 italic text-base leading-relaxed font-medium">{quote}</p>
+                  <p className="text-[#1a1a1a]/80 italic text-base leading-relaxed font-medium">{quote}</p>
                 </div>
               </div>
             </motion.div>
@@ -346,10 +344,9 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
         {/* Visual */}
         <Reveal delay={0.2} className="relative">
           {visual ? visual : (
-            <div className="rounded-2xl bg-white/5 border border-white/10 p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(#ff4444_1px,transparent_1px)] [background-size:20px_20px] opacity-5" />
+            <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
               <div className="flex items-center justify-center h-48">
-                <div className="w-20 h-20 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center shadow-[0_0_40px_rgba(239,68,68,0.2)]">
+                <div className="w-20 h-20 rounded-full bg-white border border-rose-200 flex items-center justify-center shadow-sm">
                   <X className="w-10 h-10 text-rose-400" />
                 </div>
               </div>
