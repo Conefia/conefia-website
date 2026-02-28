@@ -76,13 +76,14 @@ export default function AiSaasMvpLaunch() {
       />
       <SolutionDetails 
         title="Ship the MVP and launch for pilots — fast."
-        description="We don't just write code. We deliver a complete pilot acquisition system: defended scope, robust AI architecture, and the assets you need to close your first customers."
-        primaryCta="Get My MVP Roadmap"
+        description="We don't just \"build AI features.\" We deliver a pilot acquisition system: defended scope, production-ready AI architecture, and the product + assets you need to close early customers."
+        primaryCta="Get MVP Plan"
+        riskReducer="Scope locks by Week 2 — if it can't, we reset before build."
         features={[
-          "AI MVP development scope you can defend",
-          "AI agent development for founders (tooling, prompts, guardrails)",
-          "LLM integration services (RAG, function calling, evaluation plan)",
-          "Launch system: positioning, landing page, onboarding, analytics",
+          "MVP scope you can defend (must-have workflow only)",
+          "AI agent build (tooling, prompts, guardrails)",
+          "LLM integration (RAG, function calling, eval plan)",
+          "Launch kit (positioning, landing page, onboarding, analytics)",
           "Weekly demos + stage gates (no surprises)"
         ]}
         visual={<SolutionVisual />}
