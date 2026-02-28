@@ -21,7 +21,6 @@ const SolutionDashboardVisual = React.lazy(() => import('@/components/solutions/
 const ProcessVisual = React.lazy(() => import('@/components/solutions/clinic-growth/ClinicGrowthVisuals').then(m => ({ default: m.ProcessVisual })));
 const OutcomesVisual = React.lazy(() => import('@/components/solutions/clinic-growth/ClinicGrowthVisuals').then(m => ({ default: m.OutcomesVisual })));
 const RoadmapPreviewVisual = React.lazy(() => import('@/components/solutions/clinic-growth/ClinicGrowthVisuals').then(m => ({ default: m.RoadmapPreviewVisual })));
-const BrandCarousel = React.lazy(() => import('@/components/landing/BrandCarousel'));
 
 export default function ClinicGrowthSystem() {
   return (
