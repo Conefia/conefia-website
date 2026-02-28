@@ -2,7 +2,7 @@ import React from 'react';
 import SeoLandingPage, { 
   SolutionHero, SolutionMetrics, RoadmapCallSection,
   SolutionProblem, SolutionDetails, SolutionProcess, 
-  SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta 
+  SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta, SolutionUseCases
 } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, OnePagerVisual } from '@/components/solutions/ai-saas/AiSaasVisuals';
 import FitCheck from '@/components/solutions/ai-saas/FitCheck';
