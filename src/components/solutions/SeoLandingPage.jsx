@@ -426,7 +426,8 @@ export const RoadmapCallSection = () =>
 
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <Reveal className="text-center mb-4">
-      <span className="inline-flex items-center gap-2 bg-[#DBFE01]/10 border border-[#DBFE01]/30 text-[#DBFE01] text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+      <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
+        <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
       </span>
       <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
