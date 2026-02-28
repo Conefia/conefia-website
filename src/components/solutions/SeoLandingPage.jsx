@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
-import TechStackSection from './TechStackSection';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 import BrandCarousel from '@/components/landing/BrandCarousel';
 import {
@@ -970,8 +969,6 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         </div>
 
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
-
-        <TechStackSection />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="text-center mb-16">
