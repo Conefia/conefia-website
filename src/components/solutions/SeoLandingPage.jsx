@@ -404,6 +404,77 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
   </section>;
 
 
+export const RoadmapCallSection = () =>
+<section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
+  {/* Base layer */}
+  <div className="bg-stone-950 absolute inset-0" />
+  {/* Contour lines */}
+  <ContourBackground className="opacity-80" />
+  {/* Star Dust */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {[...Array(200)].map((_, i) => {
+      const x = Math.random() * 100;
+      const y = Math.random() * 100;
+      const size = Math.random() * 2 + 0.3;
+      const opacity = Math.random() * 0.6 + 0.2;
+      return (
+        <div key={`star-${i}`} className="absolute rounded-full bg-white" style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, opacity: opacity * 0.8, boxShadow: `0 0 ${size}px rgba(255,255,255,${opacity * 0.3})` }} />
+      );
+    })}
+  </div>
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
+
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <Reveal className="text-center mb-4">
+      <span className="inline-flex items-center gap-2 bg-[#DBFE01]/10 border border-[#DBFE01]/30 text-[#DBFE01] text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+        Roadmap Call
+      </span>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
+        What you'll get in the 30-minute roadmap call
+      </h2>
+      <p className="text-white/60 text-lg max-w-xl mx-auto">
+        This isn't a generic sales chat. We'll map your MVP like we're shipping it.
+      </p>
+    </Reveal>
+
+    <Reveal delay={0.1} className="mt-10 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm">
+      <ul className="space-y-5 mb-10">
+        {[
+          "Confirm your target user + workflow in 2 minutes",
+          "Define MVP scope (must-have vs later)",
+          "Recommend the AI approach (RAG vs agents vs fine-tuning)",
+          "Map your 8–12 week delivery plan",
+          "Flag risks early (data, compliance, cost, reliability)"
+        ].map((item, i) => (
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.08 }}
+            className="flex items-start gap-4"
+          >
+            <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
+              <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
+            </div>
+            <span className="text-white/80 text-base leading-relaxed">{item}</span>
+          </motion.li>
+        ))}
+      </ul>
+      <div className="flex justify-center">
+        <Link
+          to={createPageUrl('Book')}
+          className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all"
+        >
+          Get MVP Plan
+          <ArrowRight className="w-5 h-5" />
+        </Link>
+      </div>
+    </Reveal>
+  </div>
+</section>;
+
+
 export const SolutionProcess = ({ steps = [], visual }) =>
 <section className="py-24 bg-white">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
