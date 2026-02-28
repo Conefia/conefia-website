@@ -914,16 +914,16 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="mb-16">
             <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8">Built for speed and scale</h2>
-            <div className="space-y-4 max-w-3xl">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
               {[
-                "Modern full-stack build — React / Node / Python with clean architecture so you can iterate fast",
-                "RAG-ready retrieval — scalable knowledge pipelines with Pinecone + pgvector options",
-                "Enterprise-grade access control — roles/permissions patterns that support real orgs",
-                "Observability + evals — LangSmith for quality checks, regression testing, and cost tracking"
+                { title: "Build fast", desc: "Modern full-stack (React / Node / Python) so you ship weekly, not \"someday.\"" },
+                { title: "RAG that holds up", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos." },
+                { title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates." },
+                { title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay under control." }
               ].map((item, i) =>
-              <div key={i} className="flex gap-4 items-start">
-                <Check className="w-6 h-6 text-[#DBFE01] flex-shrink-0 mt-1" />
-                <p className="font-semibold text-lg text-[#1a1a1a]/90">{item}</p>
+              <div key={i} className="p-6 rounded-2xl bg-white border border-gray-100 hover:shadow-lg transition-shadow">
+                <h4 className="font-bold text-lg text-[#1a1a1a] mb-2">{item.title}</h4>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
               )}
             </div>
