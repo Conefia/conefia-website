@@ -73,13 +73,6 @@ export default function ClinicGrowthSystem() {
         />
       </Suspense>
 
-      <Suspense fallback={<SectionSkeleton height="h-48" />}>
-        <SolutionTrustedBy 
-          title="Trusted by clinics and digital health teams."
-          visual={<div><BrandCarousel /><p className="text-center text-sm text-gray-500 mt-4 font-medium">Clinic growth + digital transformation + patient engagement.</p></div>}
-        />
-      </Suspense>
-
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
           title="Patient acquisition breaks when the journey is broken."

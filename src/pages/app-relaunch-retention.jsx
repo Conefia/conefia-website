@@ -53,10 +53,6 @@ export default function AppRelaunchRetention() {
         visual={<MetricsVisual />}
         items={[]}
       />
-      <SolutionTrustedBy 
-        title="Trusted by top mobile apps."
-        visual={<BrandCarousel />}
-      />
       <SolutionProblem 
         title="Your app is live — but users aren't staying."
         quote="Acquisition without retention is just a very expensive way to burn your runway."
