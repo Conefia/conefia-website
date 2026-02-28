@@ -933,7 +933,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-[#1a1a1a]">Tech stack we ship with</h3>
             </div>
-            <p className="text-[#1a1a1a]/70 text-sm mb-8">Proven tools we trust—so you don't gamble on your MVP.</p>
+            <p className="text-[#1a1a1a]/70 text-sm mb-8 text-center">Proven tools we trust—so you don't gamble on your MVP.</p>
             
             <div className="relative overflow-hidden">
               <motion.div 
