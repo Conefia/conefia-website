@@ -996,7 +996,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       />
                     </div>
                   </div>
-                ))}
+                  ))}
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </Reveal>
