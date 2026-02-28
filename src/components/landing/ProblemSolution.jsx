@@ -8,11 +8,11 @@ import { PERSONAS } from '@/components/data/personas';
 import { usePersona } from '@/components/context/PersonaContext';
 
 const SOLUTION_STYLES = [
-  { gradient: 'from-violet-500 via-purple-500 to-fuchsia-500', iconBg: 'from-violet-400 to-purple-500', glow: 'shadow-violet-500/50' },
-  { gradient: 'from-blue-500 via-cyan-500 to-teal-500', iconBg: 'from-blue-400 to-cyan-500', glow: 'shadow-cyan-500/50' },
-  { gradient: 'from-emerald-500 via-green-500 to-lime-500', iconBg: 'from-emerald-400 to-green-500', glow: 'shadow-emerald-500/50' },
-  { gradient: 'from-orange-500 via-amber-500 to-yellow-400', iconBg: 'from-orange-400 to-yellow-500', glow: 'shadow-amber-500/50' }
-];
+{ gradient: 'from-violet-500 via-purple-500 to-fuchsia-500', iconBg: 'from-violet-400 to-purple-500', glow: 'shadow-violet-500/50' },
+{ gradient: 'from-blue-500 via-cyan-500 to-teal-500', iconBg: 'from-blue-400 to-cyan-500', glow: 'shadow-cyan-500/50' },
+{ gradient: 'from-emerald-500 via-green-500 to-lime-500', iconBg: 'from-emerald-400 to-green-500', glow: 'shadow-emerald-500/50' },
+{ gradient: 'from-orange-500 via-amber-500 to-yellow-400', iconBg: 'from-orange-400 to-yellow-500', glow: 'shadow-amber-500/50' }];
+
 
 export default function ProblemSolution({ reduceMotion }) {
   const ref = React.useRef(null);
@@ -23,7 +23,7 @@ export default function ProblemSolution({ reduceMotion }) {
     const hash = window.location.hash;
     if (hash && hash.startsWith('#track=')) {
       const trackId = hash.replace('#track=', '');
-      const personaExists = PERSONAS.find(p => p.id === trackId);
+      const personaExists = PERSONAS.find((p) => p.id === trackId);
       if (personaExists) {
         setSelectedPersonaId(trackId);
       }
@@ -32,11 +32,11 @@ export default function ProblemSolution({ reduceMotion }) {
 
   const handlePersonaClick = (e, id) => {
     if (e.metaKey || e.ctrlKey || e.shiftKey) return;
-    
+
     e.preventDefault();
     setSelectedPersonaId(id);
     window.history.replaceState(null, null, `#track=${id}`);
-    
+
     base44.analytics.track({
       eventName: "persona_select",
       properties: { persona: id }
@@ -44,9 +44,9 @@ export default function ProblemSolution({ reduceMotion }) {
   };
 
   const handleCtaClick = (ctaType) => {
-     base44.analytics.track({
+    base44.analytics.track({
       eventName: "cta_click",
-      properties: { 
+      properties: {
         persona: selectedPersona.id,
         cta_type: ctaType,
         destination: selectedPersona.destination
@@ -73,32 +73,32 @@ export default function ProblemSolution({ reduceMotion }) {
           <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4 leading-tight">
             What are you building <span className="gradient-text">right now?</span>
           </h2>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/80 font-medium max-w-3xl mx-auto">
-            Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
+          <p className="text-[#1a1a1a]/80 mx-auto text-lg font-normal md:text-xl max-w-3xl">Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
+
           </p>
         </motion.div>
 
         {/* Persona Selector */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-2 mb-16"
-        >
-          {PERSONAS.map((persona) => (
-            <a
-              key={persona.id}
-              href={createPageUrl(persona.destination)}
-              onClick={(e) => handlePersonaClick(e, persona.id)}
-              className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
-                selectedPersonaId === persona.id 
-                  ? 'bg-[#DBFE01] text-[#1a1a1a] border-[#DBFE01] shadow-lg scale-105' 
-                  : 'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#1a1a1a]/30 hover:bg-gray-50'
-              }`}
-            >
+          className="flex flex-wrap justify-center gap-2 mb-16">
+
+          {PERSONAS.map((persona) =>
+          <a
+            key={persona.id}
+            href={createPageUrl(persona.destination)}
+            onClick={(e) => handlePersonaClick(e, persona.id)}
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border inline-block cursor-pointer no-underline ${
+            selectedPersonaId === persona.id ?
+            'bg-[#DBFE01] text-[#1a1a1a] border-[#DBFE01] shadow-lg scale-105' :
+            'bg-white text-[#1a1a1a]/70 border-gray-200 hover:border-[#1a1a1a]/30 hover:bg-gray-50'}`
+            }>
+
               {persona.label}
             </a>
-          ))}
+          )}
         </motion.div>
 
         <AnimatePresence mode="wait">
@@ -108,8 +108,8 @@ export default function ProblemSolution({ reduceMotion }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid lg:grid-cols-2 gap-8 lg:gap-16"
-          >
+            className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+
             {/* Problem */}
             <div className="relative">
               <div className="bg-white rounded-3xl p-8 md:p-10 h-full border border-red-100 shadow-xl shadow-red-900/5 relative overflow-hidden">
@@ -124,20 +124,20 @@ export default function ProblemSolution({ reduceMotion }) {
                     {selectedPersona.problemTitle}
                   </h3>
                   <ul className="space-y-5">
-                    {selectedPersona.problems.map((problem, index) => (
-                      <motion.li
-                        key={index}
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 + index * 0.05 }}
-                        className="flex items-start gap-3"
-                      >
+                    {selectedPersona.problems.map((problem, index) =>
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 + index * 0.05 }}
+                      className="flex items-start gap-3">
+
                         <div className="w-6 h-6 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0 mt-1">
                           <X className="w-4 h-4 text-red-600" />
                         </div>
                         <span className="text-[#1a1a1a] font-semibold leading-relaxed">{problem}</span>
                       </motion.li>
-                    ))}
+                    )}
                   </ul>
                 </div>
               </div>
@@ -162,11 +162,11 @@ export default function ProblemSolution({ reduceMotion }) {
                    {selectedPersona.solutionTitle}
                 </h3>
 
-                {selectedPersona.solutionSubtitle && (
-                   <p className="text-[#1a1a1a]/80 font-medium mb-8 -mt-4 text-lg border-l-4 border-[#DBFE01] pl-4 italic">
+                {selectedPersona.solutionSubtitle &&
+                <p className="text-[#1a1a1a]/80 font-medium mb-8 -mt-4 text-lg border-l-4 border-[#DBFE01] pl-4 italic">
                        "{selectedPersona.solutionSubtitle}"
                    </p>
-                )}
+                }
 
                 <div className="grid grid-cols-2 gap-4">
                   {selectedPersona.solutions.map((solution, index) => {
@@ -178,8 +178,8 @@ export default function ProblemSolution({ reduceMotion }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.2 + index * 0.05 }}
-                        className="group relative"
-                      >
+                        className="group relative">
+
                         <div className={`absolute inset-0 bg-gradient-to-br ${styleData.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                         
                         <div className="relative p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 group-hover:border-gray-200 group-hover:shadow-lg transition-all duration-300 h-full">
@@ -192,30 +192,30 @@ export default function ProblemSolution({ reduceMotion }) {
                           </p>
                           <p className="text-xs text-[#1a1a1a]/70 font-medium leading-snug">{solution.desc}</p>
                         </div>
-                      </motion.div>
-                    );
+                      </motion.div>);
+
                   })}
                 </div>
                 
                 {/* CTAs */}
                 <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                    <Link 
-                        to={createPageUrl(selectedPersona.destination)}
-                        onClick={() => handleCtaClick('primary')}
-                        className="btn-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)]"
-                    >
+                    <Link
+                    to={createPageUrl(selectedPersona.destination)}
+                    onClick={() => handleCtaClick('primary')}
+                    className="btn-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)]">
+
                         {selectedPersona.primaryCta}
                         <ArrowRight className="w-4 h-4" />
                     </Link>
-                    {selectedPersona.secondaryCta && (
-                        <Link 
-                            to={createPageUrl(selectedPersona.destination)}
-                            onClick={() => handleCtaClick('secondary')}
-                            className="px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center border-2 border-gray-300 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-md"
-                        >
+                    {selectedPersona.secondaryCta &&
+                  <Link
+                    to={createPageUrl(selectedPersona.destination)}
+                    onClick={() => handleCtaClick('secondary')}
+                    className="px-8 py-4 rounded-xl text-sm font-bold flex items-center justify-center gap-2 text-center border-2 border-gray-300 bg-white text-[#1a1a1a] hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-md">
+
                             {selectedPersona.secondaryCta}
                         </Link>
-                    )}
+                  }
                 </div>
               </div>
             </div>
@@ -223,6 +223,6 @@ export default function ProblemSolution({ reduceMotion }) {
         </AnimatePresence>
 
       </div>
-    </section>
-  );
+    </section>);
+
 }
