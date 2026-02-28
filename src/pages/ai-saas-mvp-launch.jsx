@@ -65,12 +65,12 @@ export default function AiSaasMvpLaunch() {
       />
       <SolutionProblem 
         title="Your MVP keeps moving — and traction stays unclear."
-        quote="Scope creep is the #1 reason AI startups run out of runway before they reach product-market fit."
+        quote="Most AI MVPs don't fail from lack of code. They fail from unclear scope, fragile architecture, and no pilot plan."
         items={[
           "MVP scope expands and shipping slips",
-          "Risky LLM choices create rework later",
-          "Contractors don't align (dev vs AI vs design)",
-          "You need paying pilots — not just more demos"
+          "One risky LLM choice today becomes a rewrite later",
+          "Split contractors don't align (AI vs product vs dev)",
+          "You need paying pilots — not more demos"
         ]}
         visual={<ProblemVisual />}
       />
