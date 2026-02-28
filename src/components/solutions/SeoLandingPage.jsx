@@ -283,39 +283,78 @@ export const SolutionTrustedBy = ({ title, visual }) =>
 
 
 export const SolutionProblem = ({ title, quote, items = [], visual }) =>
-<section className="py-24 bg-white relative overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <Reveal>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-sm font-bold mb-6 border border-rose-100">
-            <X className="w-4 h-4" />
-            The Problem
-          </div>
-          <SectionHeading>{title}</SectionHeading>
-          <ul className="space-y-4">
-            {items.map((item, i) =>
-          <ProblemItem key={i}>{item}</ProblemItem>
-          )}
-          </ul>
-          <div className="mt-8 p-6 bg-gradient-to-br from-rose-50 to-white rounded-2xl border border-rose-100 shadow-sm">
-            <p className="text-rose-900/80 italic font-medium relative pl-4 border-l-4 border-rose-300">
-              "{quote}"
-            </p>
-          </div>
-        </Reveal>
-        <Reveal delay={0.2} className="relative">
-           {visual ?
-        visual :
+<section className="py-24 bg-[#0B1020] relative overflow-hidden">
+    {/* Grid background */}
+    <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:32px_32px]" />
+    {/* Glow blobs */}
+    <div className="absolute top-0 left-1/4 w-96 h-96 bg-rose-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose-500/8 rounded-full blur-[100px] pointer-events-none" />
 
-        <div className="aspect-square rounded-3xl bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-100 relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-red-100/90 backdrop-blur-sm p-4 rounded-full border border-red-200 shadow-xl">
-                        <X className="w-12 h-12 text-red-500" />
-                    </div>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* Label */}
+      <Reveal className="mb-14">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-500/10 text-rose-400 text-xs font-bold uppercase tracking-widest border border-rose-500/20">
+          <X className="w-3.5 h-3.5" />
+          The Problem
+        </div>
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight max-w-3xl">
+          {title || "Your MVP keeps moving — and traction stays unclear."}
+        </h2>
+      </Reveal>
+
+      <div className="grid lg:grid-cols-2 gap-12 items-start">
+        {/* Bullet list */}
+        <Reveal>
+          <ul className="space-y-4">
+            {items.map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 + 0.1 }}
+                className="flex items-start gap-4 group"
+              >
+                <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-500/10 border border-rose-500/30 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-500/20 transition-colors">
+                  <X className="w-4 h-4 text-rose-400" />
                 </div>
-             </div>
-        }
+                <span className="text-white/75 text-base leading-relaxed pt-1 group-hover:text-white/90 transition-colors">{item}</span>
+              </motion.li>
+            ))}
+          </ul>
+
+          {/* Callout quote */}
+          {quote && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="mt-10 relative"
+            >
+              <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-rose-500/30 via-rose-500/10 to-transparent" />
+              <div className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-rose-500/20">
+                <div className="flex gap-3 items-start">
+                  <div className="text-rose-400 text-4xl font-serif leading-none mt-1 flex-shrink-0">"</div>
+                  <p className="text-white/80 italic text-base leading-relaxed font-medium">{quote}</p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </Reveal>
+
+        {/* Visual */}
+        <Reveal delay={0.2} className="relative">
+          {visual ? visual : (
+            <div className="rounded-2xl bg-white/5 border border-white/10 p-8 relative overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(#ff4444_1px,transparent_1px)] [background-size:20px_20px] opacity-5" />
+              <div className="flex items-center justify-center h-48">
+                <div className="w-20 h-20 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center shadow-[0_0_40px_rgba(239,68,68,0.2)]">
+                  <X className="w-10 h-10 text-rose-400" />
+                </div>
+              </div>
+            </div>
+          )}
         </Reveal>
       </div>
     </div>
