@@ -476,61 +476,116 @@ export const RoadmapCallSection = () =>
 </section>;
 
 
-export const SolutionProcess = ({ steps = [], visual }) =>
-<section className="py-24 bg-white">
+const processStepsDefault = [
+  {
+    title: "Validate (Weeks 1–2)",
+    description: "Scope lock + pilot target + architecture blueprint. We define what \"done\" looks like."
+  },
+  {
+    title: "Build (Weeks 3–10)",
+    description: "AI agents + app logic + infrastructure + analytics + QA. Weekly demos you can touch."
+  },
+  {
+    title: "Launch (Weeks 11–12)",
+    description: "Onboarding, pricing test, pilot pipeline assets, analytics dashboards, and handoff."
+  },
+  {
+    title: "Scale (Monthly)",
+    description: "Activation + retention experiments + cost/performance tuning."
+  }
+];
+
+export const SolutionProcess = ({ steps, visual }) => {
+  const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
+  return (
+  <section className="py-24 bg-white overflow-hidden">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal className="text-center mb-16">
-        <span className="text-[#DBFE01] font-bold tracking-wider uppercase text-sm bg-[#1a1a1a] px-3 py-1 rounded-full">Process</span>
+        <span className="bg-white/10 text-[#1a1a1a] px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/20 mb-6 bg-[#1a1a1a]/5">
+          <Sparkles className="w-4 h-4 text-[#1a1a1a]" />
+          Our Process
+        </span>
         <SectionHeading className="mt-4">Build → Launch → Scale</SectionHeading>
       </Reveal>
 
-      <div className="relative">
-        <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-100 md:-translate-x-1/2" />
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
+        {/* Left: Stock Image */}
+        <Reveal className="relative rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-28 h-[420px] lg:h-[580px]">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+            alt="Team collaborating on a product sprint"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
+          <div className="absolute bottom-8 left-8 right-8">
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
+              <p className="text-white font-semibold text-sm">Each phase has a stage gate</p>
+              <p className="text-white/70 text-xs mt-1">You always know where you stand.</p>
+            </div>
+          </div>
+        </Reveal>
 
-        <div className="space-y-12">
-          {steps.map((step, i) =>
-        <Reveal key={i} delay={i * 0.1} className={cn("flex flex-col md:flex-row gap-8 relative", i % 2 === 0 ? "md:flex-row-reverse" : "")}>
-              <div className="flex-1 md:text-right">
-                {i % 2 === 0 &&
-            <div className="hidden md:block">
-                    <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                  </div>
-            }
-              </div>
-              
+        {/* Right: Steps */}
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#DBFE01]/60 via-gray-200 to-gray-100" />
+
+          <div className="space-y-0">
+            {displaySteps.map((step, i) => (
               <motion.div
-            whileHover={{ scale: 1.1 }}
-            className="relative flex-shrink-0 z-10">
+                key={i}
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                className="flex gap-6 group pb-10 last:pb-0"
+              >
+                {/* Step number bubble */}
+                <div className="relative flex-shrink-0 z-10">
+                  <motion.div
+                    whileHover={{ scale: 1.15 }}
+                    className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow"
+                  >
+                    {i + 1}
+                  </motion.div>
+                </div>
 
-                <div className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-bold text-[#1a1a1a]">
-                  {i + 1}
+                {/* Content */}
+                <div className="pt-1 pb-2">
+                  <h3 className="text-lg font-bold text-[#1a1a1a] mb-1.5 group-hover:text-[#1a1a1a] transition-colors">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
                 </div>
               </motion.div>
+            ))}
+          </div>
 
-              <div className="flex-1">
-                <div className={cn("md:hidden", i % 2 === 0 ? "" : "")}>
-                    <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                </div>
-                {i % 2 !== 0 &&
-            <div className="hidden md:block">
-                    <h3 className="text-xl font-bold text-[#1a1a1a] mb-2">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.description}</p>
-                  </div>
-            }
-              </div>
-            </Reveal>
-        )}
+          {/* Stage gate note */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6"
+          >
+            <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
+            <span className="italic">Each phase has a stage gate — you always know where you stand.</span>
+          </motion.div>
         </div>
-        {visual &&
-      <Reveal className="mt-20">
-            {visual}
-          </Reveal>
-      }
       </div>
+
+      {visual &&
+        <Reveal className="mt-20">
+          {visual}
+        </Reveal>
+      }
     </div>
-  </section>;
+  </section>
+  );
+};
 
 
 export const SolutionOutcomes = ({ title, items = [], visual }) =>
