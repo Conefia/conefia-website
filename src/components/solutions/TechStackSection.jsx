@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useInView as useInViewFramer } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 const features = [
