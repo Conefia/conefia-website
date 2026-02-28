@@ -98,7 +98,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               transition={{ delay: 0.2 }}
               className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
 
-                  Ship a pilot-ready AI MVP in 8–12 weeks — with scope locked by week 2, production-ready LLM architecture, and a launch system to win pilots.
+                  Scope locked by week 2. Production-ready LLM architecture. Full product + launch kit to win pilots — under one accountable team.
                 </motion.p>
                 
                 <motion.div
