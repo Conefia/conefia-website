@@ -6,8 +6,8 @@ import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 import BrandCarousel from '@/components/landing/BrandCarousel';
 import {
   ArrowRight, Check, X, Sparkles, ShieldCheck,
-  ChevronDown, ChevronUp, Bot, BarChart3, FileText,
-  Users, Zap, Brain, Shield, LineChart } from
+  ChevronDown, Bot, BarChart3, FileText,
+  Users, Zap, Brain, Shield } from
 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
