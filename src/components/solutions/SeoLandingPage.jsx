@@ -943,18 +943,18 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
               >
                 {[
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.png" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.png" },
-                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.png" },
-                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.png" },
-                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.png" },
-                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.png" },
-                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.png" },
-                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.png" },
-                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.png" },
-                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.png" },
+                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                   { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.png" }
+                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
                 ].map((tech, i) => (
                   <div key={i} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
@@ -968,18 +968,18 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   </div>
                 ))}
                 {[
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.png" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.png" },
-                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.png" },
-                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.png" },
-                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.png" },
-                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.png" },
-                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.png" },
-                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.png" },
-                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.png" },
-                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.png" },
+                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                   { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.png" }
+                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
                 ].map((tech, i) => (
                   <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
