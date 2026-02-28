@@ -20,8 +20,8 @@ import { cn } from "@/lib/utils";
 // Reusable Components
 export const SectionHeading = ({ children, className }) =>
 <h2 className={cn("text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-6", className)}>
-    {children}
-  </h2>;
+  {children}
+</h2>
 
 
 export const Reveal = ({ children, className, delay = 0 }) =>
