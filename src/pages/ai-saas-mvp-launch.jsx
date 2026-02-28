@@ -85,6 +85,10 @@ export default function AiSaasMvpLaunch() {
       />
       <RoadmapCallSection />
       <SolutionProcess />
+      <SolutionUseCases
+        useCasesTitle="Common use cases"
+        useCases={[]}
+      />
       <SolutionProof 
         title="Built for speed and scale."
         items={["Modern Stack (React/Node/Python)", "Scalable Vector DBs", "Enterprise-grade Auth"]}
