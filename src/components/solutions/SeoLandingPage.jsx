@@ -713,94 +713,108 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
 };
 
 const defaultUseCasesLeft = [
-  { label: "We need an AI workflow users trust (not just chat)", index: 0 },
-  { label: "We need architecture done right — without rework", index: 1 },
-  { label: "We need pilots launched with measurable activation", index: 2 },
+  { label: "We need an AI workflow users trust (not just chat)", icon: Brain, index: 0 },
+  { label: "We need architecture done right — without rework", icon: Shield, index: 1 },
+  { label: "We need pilots launched with measurable activation", icon: Zap, index: 2 },
 ];
 
 const defaultUseCasesRight = [
-  { title: "B2B Agent Workflows", description: "Ops, support, sales, compliance", index: 0 },
-  { title: "Data & Analytics Copilots", description: "Insights → decisions", index: 1 },
-  { title: "GenAI Content Systems", description: "Review, governance, workflows", index: 2 },
+  { title: "B2B Agent Workflows", description: "Ops, support, sales, compliance automation", icon: Bot, index: 0 },
+  { title: "Data & Analytics Copilots", description: "Turn raw data into decisions instantly", icon: BarChart3, index: 1 },
+  { title: "GenAI Content Systems", description: "Review, governance, and workflow automation", icon: FileText, index: 2 },
 ];
 
 function UseCasesLinkedLight({ useCases }) {
   const [activeIndex, setActiveIndex] = React.useState(null);
 
+  const defaultLeftIcons = [Brain, Shield, Zap];
+  const defaultRightIcons = [Bot, BarChart3, FileText];
+
   const leftItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i }))
+    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, icon: defaultLeftIcons[i % defaultLeftIcons.length], index: i }))
     : defaultUseCasesLeft;
 
   const rightItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: typeof uc === 'object' ? uc.description || '' : '', index: i }))
+    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: typeof uc === 'object' ? uc.description || '' : '', icon: defaultRightIcons[i % defaultRightIcons.length], index: i }))
     : defaultUseCasesRight;
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 items-start">
+    <div className="grid lg:grid-cols-2 gap-6 items-stretch">
       {/* Left: Lime cards */}
       <div className="space-y-4">
-        {leftItems.map((item, i) => (
-          <motion.div
-            key={i}
-            onHoverStart={() => setActiveIndex(i)}
-            onHoverEnd={() => setActiveIndex(null)}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className={cn(
-              "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
-              activeIndex === i
-                ? "bg-[#DBFE01] border-[#b8d400] shadow-[0_4px_24px_rgba(219,254,1,0.35)]"
-                : "bg-[#f2ffc0] border-[#d4f500]/60 hover:bg-[#e8ff80]"
-            )}
-          >
-            <div className={cn(
-              "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
-              activeIndex === i ? "bg-[#1a1a1a] text-[#DBFE01]" : "bg-[#DBFE01] text-[#1a1a1a]"
-            )}>
-              {i + 1}
-            </div>
-            <span className={cn(
-              "text-base leading-relaxed transition-colors duration-300 pt-0.5 font-medium",
-              "text-[#1a1a1a]"
-            )}>{item.label}</span>
-          </motion.div>
-        ))}
+        {leftItems.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={i}
+              onHoverStart={() => setActiveIndex(i)}
+              onHoverEnd={() => setActiveIndex(null)}
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              className={cn(
+                "flex items-center gap-5 p-6 rounded-2xl border cursor-pointer transition-all duration-300",
+                activeIndex === i
+                  ? "bg-[#DBFE01] border-[#b8d400] shadow-[0_8px_32px_rgba(219,254,1,0.4)]"
+                  : "bg-[#f2ffc0] border-[#d4f500]/50 hover:bg-[#e8ff80]"
+              )}
+            >
+              <div className={cn(
+                "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300",
+                activeIndex === i ? "bg-[#1a1a1a]" : "bg-[#DBFE01]"
+              )}>
+                {Icon && <Icon className={cn("w-6 h-6 transition-all duration-300", activeIndex === i ? "text-[#DBFE01]" : "text-[#1a1a1a]")} />}
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-0.5">
+                  <span className={cn("text-xs font-bold uppercase tracking-wider", activeIndex === i ? "text-[#1a1a1a]/60" : "text-[#1a1a1a]/40")}>Need #{i + 1}</span>
+                </div>
+                <span className="text-base leading-snug font-semibold text-[#1a1a1a]">{item.label}</span>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {/* Right: Dark cards */}
       <div className="space-y-4">
-        {rightItems.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 + 0.15 }}
-            animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
-            className={cn(
-              "p-6 rounded-2xl border transition-all duration-300",
-              activeIndex === i
-                ? "bg-[#1a1a1a] border-[#1a1a1a] shadow-[0_4px_24px_rgba(26,26,26,0.18)]"
-                : "bg-gray-900 border-gray-700 hover:bg-[#1a1a1a]"
-            )}
-          >
-            <div className="flex items-center gap-3 mb-2">
+        {rightItems.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 + 0.15 }}
+              animate={activeIndex === i ? { scale: 1.03, x: -4 } : { scale: 1, x: 0 }}
+              className={cn(
+                "p-6 rounded-2xl border transition-all duration-300 flex items-center gap-5",
+                activeIndex === i
+                  ? "bg-[#1a1a1a] border-[#DBFE01]/40 shadow-[0_8px_32px_rgba(26,26,26,0.25),0_0_0_1px_rgba(219,254,1,0.2)]"
+                  : "bg-[#111] border-gray-800 hover:bg-[#1a1a1a]"
+              )}
+            >
               <div className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
-                activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.7)]" : "bg-white/30"
-              )} />
-              <h4 className={cn(
-                "font-bold text-base transition-colors duration-300",
-                activeIndex === i ? "text-[#DBFE01]" : "text-white"
-              )}>{item.title}</h4>
-            </div>
-            {item.description && (
-              <p className="text-white/60 text-sm ml-5">{item.description}</p>
-            )}
-          </motion.div>
-        ))}
+                "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300",
+                activeIndex === i ? "bg-[#DBFE01]" : "bg-white/10"
+              )}>
+                {Icon && <Icon className={cn("w-6 h-6 transition-all duration-300", activeIndex === i ? "text-[#1a1a1a]" : "text-white/60")} />}
+              </div>
+              <div>
+                <h4 className={cn(
+                  "font-bold text-base transition-colors duration-300 mb-1",
+                  activeIndex === i ? "text-[#DBFE01]" : "text-white"
+                )}>{item.title}</h4>
+                {item.description && (
+                  <p className="text-white/50 text-sm leading-snug">{item.description}</p>
+                )}
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
