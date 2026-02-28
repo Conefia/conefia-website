@@ -152,12 +152,12 @@ export default function FAQSection({ reduceMotion }) {
           ))}
           </div>
           {faqs.length > 5 && (
-          <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-           transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.8 }}
-           className="mt-8 text-center"
-          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.8 }}
+              className="mt-8 text-center relative z-20"
+            >
            <button
              onClick={() => setShowAll(!showAll)}
              className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
