@@ -100,7 +100,7 @@ export const HeroVisual = () => {
 };
 
 const METRIC_CARDS = [
-  { val: "8–12", label: "Weeks to Ship", sub: "Pilot-Ready", icon: Rocket, color: "text-blue-400", bg: "bg-[#0B1020]", border: "border-blue-500/30", accent: "from-blue-500/20 to-transparent", valColor: "text-blue-400" },
+  { val: "8–12", label: "Weeks to Ship", sub: "Pilot-ready MVP", icon: Rocket, color: "text-blue-400", bg: "bg-[#0B1020]", border: "border-blue-500/30", accent: "from-blue-500/20 to-transparent", valColor: "text-blue-400" },
   { val: "Active", label: "First Pilots", sub: "Customers Testing", icon: Users, color: "text-[#1a1a1a]", bg: "bg-[#DBFE01]", border: "border-[#DBFE01]", accent: "from-white/20 to-transparent", valColor: "text-[#1a1a1a]" },
   { val: "Locked", label: "Scope", sub: "No Drift", icon: Lock, color: "text-purple-400", bg: "bg-[#0B1020]", border: "border-purple-500/30", accent: "from-purple-500/20 to-transparent", valColor: "text-purple-400" },
   { val: "+40%", label: "Activation", sub: "User Aha!", icon: Zap, color: "text-amber-400", bg: "bg-[#0B1020]", border: "border-amber-500/30", accent: "from-amber-500/20 to-transparent", valColor: "text-amber-400" }
