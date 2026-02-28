@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView as useInViewFramer } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 const features = [
