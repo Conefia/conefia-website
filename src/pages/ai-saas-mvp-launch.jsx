@@ -76,7 +76,7 @@ export default function AiSaasMvpLaunch() {
       />
       <SolutionDetails 
         title="Ship the MVP and launch for pilots — fast."
-        description="We don't just \"build AI features.\" We deliver a pilot acquisition system: defended scope, production-ready AI architecture, and the product + assets you need to close early customers."
+        description={`We don't just "build AI features." We deliver a pilot acquisition system: defended scope, production-ready AI architecture, and the product + assets you need to close early customers.`}
         primaryCta="Get MVP Plan"
         riskReducer="Scope locks by Week 2 — if it can't, we reset before build."
         features={[
