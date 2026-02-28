@@ -69,7 +69,6 @@ export default function AiSaasMvpLaunch() {
         ]}
         visual={<ProblemVisual />}
       />
-      <RoadmapCallSection />
       <SolutionDetails 
         title="Ship the MVP and launch for pilots — fast."
         description={`We don't just "build AI features." We deliver a pilot acquisition system: defended scope, production-ready AI architecture, and the product + assets you need to close early customers.`}
