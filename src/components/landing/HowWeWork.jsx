@@ -239,8 +239,8 @@ export default function HowWeWork({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             How We Work
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">
-            {content.headline} {content.headlineAccent}
+          <h2 className="text-3xl md:text-4xl font-bold text-[#2F2F2F] mb-4">
+            {content.headline} <span className="gradient-text">{content.headlineAccent}</span>
           </h2>
           <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium">
             {content.subhead}

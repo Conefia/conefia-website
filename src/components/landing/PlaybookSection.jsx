@@ -598,21 +598,42 @@ export default function PlaybookSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             {config.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
             {selectedPersona?.id === 'clinic-growth' ? (
-              'From clicks to booked appointments'
+              <>
+                <span className="text-[#1a1a1a]">From clicks to </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">booked appointments.</span>
+              </>
             ) : selectedPersona?.id === 'ai-saas-mvp' ? (
-              'Pilot-ready AI MVP — without rework'
+              <>
+                <span className="text-[#1a1a1a]">Pilot-ready AI MVP </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">— without rework.</span>
+              </>
             ) : selectedPersona?.id === 'app-relaunch' ? (
-              'Fix retention. Relaunch strong. Grow with data'
+              <>
+                <span className="text-[#1a1a1a]">Fix retention. Relaunch strong. </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Grow with data.</span>
+              </>
             ) : selectedPersona?.id === 'dtc-growth' ? (
-              'Lower CAC. Stabilize ROAS. Grow profit'
+              <>
+                <span className="text-[#1a1a1a]">Lower CAC. Stabilize ROAS. </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Grow profit.</span>
+              </>
             ) : selectedPersona?.id === 'enterprise-innovation' ? (
-              'Governance built in — so pilots ship'
+              <>
+                <span className="text-[#1a1a1a]">Governance built in </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">— so pilots ship.</span>
+              </>
             ) : selectedPersona?.id === 'accelerator-support' ? (
-              'Cohorts that ship before Demo Day'
+              <>
+                <span className="text-[#1a1a1a]">Cohorts that ship </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">before Demo Day.</span>
+              </>
             ) : (
-              'From idea to market leader'
+              <>
+                <span className="text-[#1a1a1a]">From idea to </span>
+                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">market leader</span>
+              </>
             )}
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
