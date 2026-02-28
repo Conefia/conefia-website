@@ -656,7 +656,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <SectionHeading className="text-white">{title}</SectionHeading>
+           <SectionHeading className="text-white">{title?.replace(/\.$/, '')}</SectionHeading>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>
@@ -909,7 +909,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
       <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
         {/* Base layer */}
         <div className="bg-stone-950 absolute inset-0" />
-        
+
         {/* Contour lines */}
         <ContourBackground className="opacity-80" />
 
@@ -969,10 +969,10 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         </div>
 
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="text-center mb-16">
-            <SectionHeading className="text-white">{title}</SectionHeading>
+            <SectionHeading className="text-white">{title?.replace(/\.$/, '')}</SectionHeading>
             {visual && <div className="mt-8">{visual}</div>}
           </Reveal>
 
