@@ -672,6 +672,45 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
   </section>;
 
 
+export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Animated AI sparkles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(18)].map((_, i) => {
+          const x = (i * 5.8 + 3) % 100;
+          const y = (i * 7.3 + 8) % 100;
+          const delay = (i * 0.4) % 3;
+          const size = i % 3 === 0 ? 'w-5 h-5' : i % 3 === 1 ? 'w-4 h-4' : 'w-3 h-3';
+          return (
+            <motion.div
+              key={i}
+              className={`absolute ${size} text-[#DBFE01]`}
+              style={{ left: `${x}%`, top: `${y}%` }}
+              animate={{ opacity: [0.08, 0.35, 0.08], scale: [0.8, 1.2, 0.8], rotate: [0, 20, 0] }}
+              transition={{ duration: 3 + (i % 3), repeat: Infinity, delay, ease: "easeInOut" }}
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <Reveal className="text-center mb-12">
+          <span className="bg-[#1a1a1a] text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/10 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+            Common Use Cases
+          </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
+        </Reveal>
+
+        <UseCasesLinkedLight useCases={useCases} />
+      </div>
+    </section>
+  );
+};
+
 const defaultUseCasesLeft = [
   { label: "We need an AI workflow users trust (not just chat)", index: 0 },
   { label: "We need architecture done right — without rework", index: 1 },
