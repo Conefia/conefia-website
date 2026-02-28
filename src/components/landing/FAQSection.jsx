@@ -136,8 +136,8 @@ export default function FAQSection({ reduceMotion }) {
               <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
                   <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-gradient-to-br group-open:from-[#DBFE01] group-open:to-[#c5e000] shadow-sm">
-                      <HelpCircle className="w-5 h-5 text-[#2F2F2F]/60 group-open:text-[#0a0e1a] transition-colors" />
+                    <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-[#DBFE01] shadow-sm">
+                      <span className="text-lg font-bold text-[#2F2F2F]/60 group-open:text-[#1a1a1a] transition-colors">?</span>
                     </div>
                     <h3 className="text-lg font-bold text-[#1a1a1a]">{faq.question}</h3>
                   </div>
