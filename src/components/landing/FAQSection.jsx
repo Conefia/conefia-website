@@ -114,7 +114,7 @@ export default function FAQSection({ reduceMotion }) {
             FAQ
           </span>
           <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
-            Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered.</span>
+            Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered</span>
           </h2>
           <p className="text-lg text-[#2F2F2F]/70 font-medium">
             Everything you need to know before starting — scope, timelines, and how we work across build → launch → scale.

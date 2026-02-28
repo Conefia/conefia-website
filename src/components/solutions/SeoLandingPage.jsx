@@ -1020,7 +1020,7 @@ export const SolutionFAQ = ({ items = [] }) => {
           FAQ
         </span>
         <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
-          Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered.</span>
+          Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered</span>
         </h2>
       </Reveal>
       
