@@ -100,8 +100,8 @@ export default function AiSaasMvpLaunch() {
           { quote: "A true partner. They challenged our assumptions and made the product better.", author: "Nina S.", role: "CEO, Creative AI" },
           { quote: "Pilot-ready meant actually pilot-ready. No bugs, no downtime.", author: "Tom D.", role: "Founder, Logistics AI" }
         ]}
-        useCasesTitle="AI Models We Work With"
-        useCases={["OpenAI (GPT-4o)", "Anthropic (Claude 3.5)", "Llama 3 / Mistral (Open Source)", "LangChain / LlamaIndex"]}
+        useCasesTitle="Common use cases"
+        useCases={[]}
       />
       <SolutionFAQ 
         items={[
