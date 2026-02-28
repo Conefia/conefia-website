@@ -703,7 +703,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
             <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
+          <h2 className="h2-white-bg text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
         </Reveal>
 
         <UseCasesLinkedLight useCases={useCases} />
@@ -1019,7 +1019,7 @@ export const SolutionFAQ = ({ items = [] }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
         </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
+        <h2 className="h2-white-bg text-4xl md:text-5xl font-extrabold text-[#1a1a1a]">
           Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered</span>
         </h2>
       </Reveal>
