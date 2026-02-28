@@ -986,7 +986,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       <img
                         src={tech.url}
                         alt={tech.name}
-                        className="w-16 h-16 object-contain group-hover:scale-110 transition-transform"
+                        className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
                         loading="lazy"
                       />
                     </div>
