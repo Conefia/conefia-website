@@ -359,8 +359,9 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
 
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" className="py-24 bg-[#F4F4F5] relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#DBFE01]/10 to-transparent pointer-events-none" />
+<section id="solution" className="py-24 bg-white relative overflow-hidden">
+    <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[120px] pointer-events-none" />
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
