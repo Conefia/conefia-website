@@ -52,7 +52,7 @@ const techStackGroups = [
 ];
 
 export default function TechStackSection() {
-  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const { ref, inView } = useInViewFramer({ threshold: 0.1 });
 
   return (
     <section ref={ref} className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
