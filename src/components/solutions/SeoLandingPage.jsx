@@ -1006,17 +1006,21 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
 };
 
-export const SolutionFAQ = ({ items = [] }) =>
-<section className="py-24 bg-[#FAFAFA]">
+export const SolutionFAQ = ({ items = [] }) => {
+  const [showAll, setShowAll] = React.useState(false);
+  const displayItems = showAll ? items : items.slice(0, 5);
+  
+  return (
+  <section className="py-24 bg-[#FAFAFA]">
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal className="text-center mb-12">
-        <span className="text-[#DBFE01] font-bold tracking-wider uppercase text-xs mb-2 block bg-[#1a1a1a] w-fit mx-auto px-3 py-1 rounded-full">Most asked by clients</span>
+        <span className="text-[#DBFE01] font-bold tracking-wider uppercase text-xs mb-2 block bg-[#1a1a1a] w-fit mx-auto px-3 py-1 rounded-full">Highly relevant FAQs (for AI MVP buyers)</span>
         <SectionHeading>Frequently Asked Questions</SectionHeading>
       </Reveal>
       
       <Reveal delay={0.1}>
         <Accordion type="single" collapsible className="space-y-4">
-          {items.map((item, i) =>
+          {displayItems.map((item, i) =>
         <AccordionItem key={i} value={`item-${i}`} className="bg-white border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
               <AccordionTrigger className="hover:no-underline py-6 text-lg font-semibold text-[#1a1a1a]">
                 {item.question}
@@ -1028,11 +1032,25 @@ export const SolutionFAQ = ({ items = [] }) =>
         )}
         </Accordion>
       </Reveal>
+
+      {items.length > 5 && (
+        <Reveal delay={0.2} className="mt-8 text-center">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
+          >
+            {showAll ? 'Show less' : 'Read more'}
+          </button>
+        </Reveal>
+      )}
+
       <Reveal delay={0.2} className="mt-8 text-center">
         <p className="text-sm text-gray-500">Still unsure? <Link to={createPageUrl('Book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">Book a quick chat</Link></p>
       </Reveal>
     </div>
-  </section>;
+  </section>
+  );
+};
 
 
 export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
