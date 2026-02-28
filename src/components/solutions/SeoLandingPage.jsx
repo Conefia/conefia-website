@@ -971,21 +971,30 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Reveal className="text-center mb-16">
-            <SectionHeading className="text-white">{title?.replace(/\.$/, '')}</SectionHeading>
-            {visual && <div className="mt-8">{visual}</div>}
+          <Reveal className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">Built for speed and scale</h2>
+            <div className="space-y-4 max-w-3xl">
+              {[
+                "Modern full-stack build — React / Node / Python with clean architecture so you can iterate fast",
+                "RAG-ready retrieval — scalable knowledge pipelines with Pinecone + pgvector options",
+                "Enterprise-grade access control — roles/permissions patterns that support real orgs",
+                "Observability + evals — LangSmith for quality checks, regression testing, and cost tracking"
+              ].map((item, i) =>
+              <div key={i} className="flex gap-4 items-start">
+                <Check className="w-6 h-6 text-[#DBFE01] flex-shrink-0 mt-1" />
+                <p className="font-semibold text-lg text-white/90">{item}</p>
+              </div>
+              )}
+            </div>
           </Reveal>
 
-          {items.length > 0 &&
-          <Reveal className="grid md:grid-cols-3 gap-8 mb-16">
-              {items.map((item, i) =>
-            <div key={i} className="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm">
-                  <Check className="w-8 h-8 text-[#DBFE01] mb-4" />
-                  <p className="font-semibold text-lg">{item}</p>
-                </div>
-            )}
-            </Reveal>
-          }
+          <Reveal delay={0.2} className="mt-16 pt-12 border-t border-white/10">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-1 h-8 bg-[#DBFE01] rounded-full" />
+              <p className="text-sm font-bold uppercase tracking-wider text-white/60">Tech stack we ship with</p>
+            </div>
+            <p className="text-white/70 text-sm">Built on proven AI tooling — no fragile experiments.</p>
+          </Reveal>
         </div>
       </section>
 
