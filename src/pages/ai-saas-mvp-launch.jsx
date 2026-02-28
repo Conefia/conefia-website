@@ -1,6 +1,6 @@
 import React from 'react';
 import SeoLandingPage, { 
-  SolutionHero, SolutionMetrics, SolutionTrustedBy, 
+  SolutionHero, SolutionMetrics, 
   SolutionProblem, SolutionDetails, SolutionProcess, 
   SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta 
 } from '@/components/solutions/SeoLandingPage';
