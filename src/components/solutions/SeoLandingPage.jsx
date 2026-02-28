@@ -940,7 +940,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               <motion.div 
                 className="flex gap-8 pb-6"
                 animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               >
                 {[
                   { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
