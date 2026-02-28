@@ -989,11 +989,47 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           </Reveal>
 
           <Reveal delay={0.2} className="mt-16 pt-12 border-t border-white/10">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-6">
               <div className="w-1 h-8 bg-[#DBFE01] rounded-full" />
               <p className="text-sm font-bold uppercase tracking-wider text-white/60">Tech stack we ship with</p>
             </div>
-            <p className="text-white/70 text-sm">Built on proven AI tooling — no fragile experiments.</p>
+            <p className="text-white/70 text-sm mb-8">Built on proven AI tooling — no fragile experiments.</p>
+            
+            <div className="relative overflow-hidden">
+              <div className="flex gap-8 pb-6 overflow-x-auto scrollbar-hide">
+                {[
+                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai.png" },
+                  { name: "Anthropic", url: "https://logo.svgcdn.com/logos/anthropic.png" },
+                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.png" },
+                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.png" },
+                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.png" },
+                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.png" },
+                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.png" },
+                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.png" },
+                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.png" },
+                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.png" },
+                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.png" },
+                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.png" }
+                ].map((tech, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex-shrink-0 w-28 h-28 bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group"
+                  >
+                    <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-16 h-16 object-contain filter brightness-0 invert group-hover:scale-110 transition-transform"
+                      loading="lazy"
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#2F2F2F] to-transparent pointer-events-none" />
+            </div>
           </Reveal>
         </div>
       </section>
