@@ -672,6 +672,100 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
   </section>;
 
 
+const defaultUseCasesLeft = [
+  { label: "We need an AI workflow users trust (not just chat)", index: 0 },
+  { label: "We need architecture done right — without rework", index: 1 },
+  { label: "We need pilots launched with measurable activation", index: 2 },
+];
+
+const defaultUseCasesRight = [
+  { title: "B2B Agent Workflows", description: "Ops, support, sales, compliance", index: 0 },
+  { title: "Data & Analytics Copilots", description: "Insights → decisions", index: 1 },
+  { title: "GenAI Content Systems", description: "Review, governance, workflows", index: 2 },
+];
+
+function UseCasesLinked({ useCases }) {
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
+  const leftItems = useCases && useCases.length > 0
+    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i }))
+    : defaultUseCasesLeft;
+
+  const rightItems = useCases && useCases.length > 0
+    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: '', index: i }))
+    : defaultUseCasesRight;
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-8 items-start">
+      {/* Left: Bullets */}
+      <div className="space-y-4">
+        {leftItems.map((item, i) => (
+          <motion.div
+            key={i}
+            onHoverStart={() => setActiveIndex(i)}
+            onHoverEnd={() => setActiveIndex(null)}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className={cn(
+              "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
+              activeIndex === i
+                ? "bg-[#DBFE01]/10 border-[#DBFE01]/40 shadow-[0_0_20px_rgba(219,254,1,0.1)]"
+                : "bg-white/5 border-white/10 hover:bg-white/8"
+            )}
+          >
+            <div className={cn(
+              "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
+              activeIndex === i ? "bg-[#DBFE01] text-[#1a1a1a]" : "bg-white/10 text-white/50"
+            )}>
+              {i + 1}
+            </div>
+            <span className={cn(
+              "text-base leading-relaxed transition-colors duration-300 pt-0.5",
+              activeIndex === i ? "text-white" : "text-white/70"
+            )}>{item.label}</span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Right: Cards */}
+      <div className="space-y-4">
+        {rightItems.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 + 0.15 }}
+            animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
+            className={cn(
+              "p-6 rounded-2xl border transition-all duration-300",
+              activeIndex === i
+                ? "bg-[#DBFE01]/10 border-[#DBFE01]/50 shadow-[0_0_30px_rgba(219,254,1,0.12)]"
+                : "bg-white/5 border-white/10"
+            )}
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className={cn(
+                "w-2 h-2 rounded-full transition-all duration-300",
+                activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.6)]" : "bg-white/30"
+              )} />
+              <h4 className={cn(
+                "font-bold text-base transition-colors duration-300",
+                activeIndex === i ? "text-[#DBFE01]" : "text-white"
+              )}>{item.title}</h4>
+            </div>
+            {item.description && (
+              <p className="text-white/60 text-sm ml-5">{item.description}</p>
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [] }) => {
   const reduceMotion = useReducedMotion();
   return (
