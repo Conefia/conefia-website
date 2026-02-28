@@ -84,27 +84,7 @@ export default function AiSaasMvpLaunch() {
         visual={<SolutionVisual />}
       />
       <RoadmapCallSection />
-      <SolutionProcess 
-        steps={[
-          {
-            title: "Validate (Weeks 1–2)",
-            description: "Scope lock + pilot target selection + architecture blueprint. We define exactly what 'done' looks like."
-          },
-          {
-            title: "Build (Weeks 3–10)",
-            description: "Agile sprints: AI Agents + App Logic + Infrastructure + Analytics + QA. Weekly deliverables you can touch."
-          },
-          {
-            title: "Launch (Weeks 11–12)",
-            description: "User onboarding setup, pricing test, pilot pipeline assets, and hand-off training."
-          },
-          {
-            title: "Scale (Monthly)",
-            description: "Post-launch support: activation optimization + retention experiments + cost/performance tuning."
-          }
-        ]}
-        visual={<div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><GitBranch className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Scope</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Code2 className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Build</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><Rocket className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Launch</span></div></div></div>}
-      />
+      <SolutionProcess />
       <SolutionOutcomes 
         title="Common use cases"
         items={[
