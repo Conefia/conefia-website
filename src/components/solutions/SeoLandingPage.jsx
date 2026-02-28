@@ -906,69 +906,10 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-24 bg-white text-white relative overflow-hidden">
-        {/* Base layer */}
-        <div className="bg-white absolute inset-0" />
-
-        {/* Contour lines */}
-        <ContourBackground className="opacity-80" />
-
-        {/* Static Star Dust */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(300)].map((_, i) => {
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 0.3;
-            const opacity = Math.random() * 0.6 + 0.2;
-            const isTwinkle = Math.random() > 0.92;
-
-            if (isTwinkle) {
-              const twinkleSize = Math.random() * 3 + 2;
-              return (
-                <div
-                  key={`star-${i}`}
-                  className="absolute"
-                  style={{
-                    left: `${x}%`,
-                    top: `${y}%`,
-                    width: `${twinkleSize}px`,
-                    height: `${twinkleSize}px`,
-                  }}>
-                  <div 
-                    className="absolute bg-white rounded-full"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      opacity: opacity * 1.2,
-                      boxShadow: `
-                        0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
-                        0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                        0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                        ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                        ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
-                      `
-                    }} />
-                </div>
-              );
-            }
-
-            return (
-              <div
-                key={`star-${i}`}
-                className="absolute rounded-full bg-white"
-                style={{
-                  left: `${x}%`,
-                  top: `${y}%`,
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  opacity: opacity * 0.8,
-                  boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
-                }} />);
-
-          })}
-        </div>
-
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#DBFE01_1px,transparent_1px)] [background-size:24px_24px]" />
+      <section className="py-24 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+        {/* Subtle accent blob */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <Reveal className="mb-16">
