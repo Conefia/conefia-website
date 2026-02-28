@@ -372,18 +372,18 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/20 text-[#1a1a1a] text-sm font-bold mb-6 border border-[#DBFE01]/30">
-            <Check className="w-4 h-4" />
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest mb-6 border border-[#1a1a1a]">
+            <Check className="w-3.5 h-3.5" />
             The Solution
           </div>
           <SectionHeading>{title}</SectionHeading>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p className="text-lg text-[#1a1a1a]/70 mb-8 leading-relaxed">
             {description}
           </p>
           
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-gray-200 mb-4 shadow-sm hover:shadow-md transition-shadow">
-            <h4 className="font-bold text-[#1a1a1a] mb-4 flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5 text-[#DBFE01]" />
+          <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 mb-4 shadow-sm hover:shadow-md transition-shadow">
+            <h4 className="font-bold text-[#1a1a1a] mb-5 flex items-center gap-2 text-sm uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-emerald-500" />
               What you get:
             </h4>
             <ul className="grid sm:grid-cols-1 gap-4">
