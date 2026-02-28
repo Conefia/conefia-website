@@ -930,18 +930,23 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           </Reveal>
 
           <Reveal delay={0.2} className="mt-16 pt-12 border-t border-white/10">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1 h-8 bg-[#DBFE01] rounded-full" />
-              <p className="text-sm font-bold uppercase tracking-wider text-[#1a1a1a]/60">Tech stack we ship with</p>
-            </div>
-            <p className="text-[#1a1a1a]/70 text-sm mb-8">Built on proven AI tooling — no fragile experiments.</p>
-            
             <div className="relative overflow-hidden">
               <motion.div 
-                className="flex gap-8 pb-6"
-                animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                className="flex flex-col gap-8"
+                animate={{}}
               >
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-1 h-8 bg-[#DBFE01] rounded-full" />
+                  <h3 className="text-xl font-bold text-[#1a1a1a]">Tech stack we ship with</h3>
+                </div>
+                <p className="text-[#1a1a1a]/70 text-sm mb-6">Proven tools we trust—so you don't gamble on your MVP.</p>
+                
+                <div className="flex gap-8 pb-6 overflow-x-auto">
+                  <motion.div 
+                    className="flex gap-8"
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  >
                 {[
                   { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                   { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
