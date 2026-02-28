@@ -823,7 +823,6 @@ export default function SeoLandingPage({ content, children }) {
 
       <SolutionHero {...hero} />
       {metrics && <SolutionMetrics {...metrics} />}
-      {trustedBy && <SolutionTrustedBy {...trustedBy} />}
       <SolutionProblem {...problem} />
       <SolutionDetails {...solution} />
       <SolutionProcess {...howItWorks} />
