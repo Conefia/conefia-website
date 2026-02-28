@@ -85,8 +85,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
 
-                  {title && title.split(/(\bAI\b|\bMVP\b)/).map((part, i) => 
-                   part === 'AI' || part === 'MVP' ? 
+                  {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) => 
+                   ['AI', 'MVP', 'Ship', '8–12'].includes(part) ? 
                    <span key={i} className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">{part}</span> : 
                    part
                  )}
