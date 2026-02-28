@@ -598,42 +598,21 @@ export default function PlaybookSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             {config.sectionLabel}
           </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">
+          <h2 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">
             {selectedPersona?.id === 'clinic-growth' ? (
-              <>
-                <span className="text-[#1a1a1a]">From clicks to </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">booked appointments.</span>
-              </>
+              'From clicks to booked appointments'
             ) : selectedPersona?.id === 'ai-saas-mvp' ? (
-              <>
-                <span className="text-[#1a1a1a]">Pilot-ready AI MVP </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">— without rework.</span>
-              </>
+              'Pilot-ready AI MVP — without rework'
             ) : selectedPersona?.id === 'app-relaunch' ? (
-              <>
-                <span className="text-[#1a1a1a]">Fix retention. Relaunch strong. </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Grow with data.</span>
-              </>
+              'Fix retention. Relaunch strong. Grow with data'
             ) : selectedPersona?.id === 'dtc-growth' ? (
-              <>
-                <span className="text-[#1a1a1a]">Lower CAC. Stabilize ROAS. </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Grow profit.</span>
-              </>
+              'Lower CAC. Stabilize ROAS. Grow profit'
             ) : selectedPersona?.id === 'enterprise-innovation' ? (
-              <>
-                <span className="text-[#1a1a1a]">Governance built in </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">— so pilots ship.</span>
-              </>
+              'Governance built in — so pilots ship'
             ) : selectedPersona?.id === 'accelerator-support' ? (
-              <>
-                <span className="text-[#1a1a1a]">Cohorts that ship </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">before Demo Day.</span>
-              </>
+              'Cohorts that ship before Demo Day'
             ) : (
-              <>
-                <span className="text-[#1a1a1a]">From idea to </span>
-                <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">market leader</span>
-              </>
+              'From idea to market leader'
             )}
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
