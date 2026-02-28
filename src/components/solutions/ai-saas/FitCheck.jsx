@@ -31,10 +31,13 @@ export default function FitCheck() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             <span className="text-sm font-semibold text-[#DBFE01]">Quick Fit Check</span>
-          </div>
+          </motion.div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
             Is this the right fit?
           </h2>
