@@ -7,6 +7,7 @@ import { createPageUrl } from '../../utils';
 export default function FAQSection({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [showAll, setShowAll] = useState(false);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -122,7 +123,7 @@ export default function FAQSection({ reduceMotion }) {
         </motion.div>
 
         <div className="space-y-4 relative z-10">
-          {faqs.map((faq, index) => (
+           {faqs.slice(0, showAll ? faqs.length : 5).map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -149,8 +150,23 @@ export default function FAQSection({ reduceMotion }) {
               </details>
             </motion.div>
           ))}
-        </div>
-      </div>
-    </section>);
+          </div>
+          {faqs.length > 5 && (
+          <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+           transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.8 }}
+           className="mt-8 text-center"
+          >
+           <button
+             onClick={() => setShowAll(!showAll)}
+             className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
+           >
+             {showAll ? 'Show less' : 'Read more'}
+           </button>
+          </motion.div>
+          )}
+          </div>
+          </section>);
 
 }
