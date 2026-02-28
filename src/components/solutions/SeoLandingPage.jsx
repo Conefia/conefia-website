@@ -1121,7 +1121,7 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
     }
       
       <Reveal delay={0.3}>
-        <p className="text-[#1a1a1a]/60 text-xs font-semibold mt-12 uppercase tracking-wider">No spam. Clear next steps within 24 hours.</p>
+         <p className="text-[#1a1a1a]/60 text-xs font-semibold mt-12 uppercase tracking-wider">Free 30-min MVP Roadmap call. No sales pitch.</p>
       </Reveal>
     </div>
   </section>;
