@@ -1011,27 +1011,46 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
   
   return (
-  <section className="py-24 bg-[#FAFAFA]">
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Reveal className="text-center mb-12">
-        <span className="text-[#DBFE01] font-bold tracking-wider uppercase text-xs mb-2 block bg-[#1a1a1a] w-fit mx-auto px-3 py-1 rounded-full">Highly relevant FAQs (for AI MVP buyers)</span>
-        <SectionHeading>Frequently Asked Questions</SectionHeading>
+  <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Reveal className="text-center mb-16">
+        <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
+          <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
+          Highly relevant FAQs (for AI MVP buyers)
+        </span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
+          Frequently Asked Questions
+        </h2>
       </Reveal>
       
-      <Reveal delay={0.1}>
-        <Accordion type="single" collapsible className="space-y-4">
-          {displayItems.map((item, i) =>
-        <AccordionItem key={i} value={`item-${i}`} className="bg-white border border-gray-200 rounded-xl px-6 shadow-sm hover:shadow-md transition-shadow">
-              <AccordionTrigger className="hover:no-underline py-6 text-lg font-semibold text-[#1a1a1a]">
-                {item.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base pb-6 leading-relaxed">
-                {item.answer}
-              </AccordionContent>
-            </AccordionItem>
+      <div className="space-y-4 relative z-10">
+        {displayItems.map((item, i) =>
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: i * 0.1 }}
+          className="relative"
+        >
+          <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
+            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-gradient-to-br group-open:from-[#DBFE01] group-open:to-[#c5e000] shadow-sm">
+                  <Check className="w-5 h-5 text-[#2F2F2F]/60 group-open:text-[#0a0e1a] transition-colors" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1a1a1a]">{item.question}</h3>
+              </div>
+              <ChevronDown className="w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 group-open:rotate-180 flex-shrink-0" />
+            </summary>
+            <div className="text-[#2F2F2F]/70 mt-4 pl-14 leading-relaxed font-medium">
+              {item.answer}
+            </div>
+          </details>
+        </motion.div>
         )}
-        </Accordion>
-      </Reveal>
+      </div>
 
       {items.length > 5 && (
         <Reveal delay={0.2} className="mt-8 text-center">
@@ -1044,8 +1063,8 @@ export const SolutionFAQ = ({ items = [] }) => {
         </Reveal>
       )}
 
-      <Reveal delay={0.2} className="mt-8 text-center">
-        <p className="text-sm text-gray-500">Still unsure? <Link to={createPageUrl('Book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">Book a quick chat</Link></p>
+      <Reveal delay={0.3} className="mt-8 text-center">
+        <p className="text-sm text-[#2F2F2F]/60">Still unsure? <Link to={createPageUrl('Book')} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">Book a quick chat</Link></p>
       </Reveal>
     </div>
   </section>
