@@ -1017,10 +1017,10 @@ export const SolutionFAQ = ({ items = [] }) => {
       <Reveal className="text-center mb-16">
         <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
-          Highly relevant FAQs (for AI MVP buyers)
+          FAQ
         </span>
-        <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
-          Frequently Asked Questions
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-4">
+          Common questions, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">answered.</span>
         </h2>
       </Reveal>
       
