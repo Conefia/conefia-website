@@ -723,6 +723,88 @@ const defaultUseCasesRight = [
   { title: "GenAI Content Systems", description: "Review, governance, workflows", index: 2 },
 ];
 
+function UseCasesLinkedLight({ useCases }) {
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
+  const leftItems = useCases && useCases.length > 0
+    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i }))
+    : defaultUseCasesLeft;
+
+  const rightItems = useCases && useCases.length > 0
+    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: typeof uc === 'object' ? uc.description || '' : '', index: i }))
+    : defaultUseCasesRight;
+
+  return (
+    <div className="grid lg:grid-cols-2 gap-8 items-start">
+      {/* Left: Lime cards */}
+      <div className="space-y-4">
+        {leftItems.map((item, i) => (
+          <motion.div
+            key={i}
+            onHoverStart={() => setActiveIndex(i)}
+            onHoverEnd={() => setActiveIndex(null)}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className={cn(
+              "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
+              activeIndex === i
+                ? "bg-[#DBFE01] border-[#b8d400] shadow-[0_4px_24px_rgba(219,254,1,0.35)]"
+                : "bg-[#f2ffc0] border-[#d4f500]/60 hover:bg-[#e8ff80]"
+            )}
+          >
+            <div className={cn(
+              "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
+              activeIndex === i ? "bg-[#1a1a1a] text-[#DBFE01]" : "bg-[#DBFE01] text-[#1a1a1a]"
+            )}>
+              {i + 1}
+            </div>
+            <span className={cn(
+              "text-base leading-relaxed transition-colors duration-300 pt-0.5 font-medium",
+              "text-[#1a1a1a]"
+            )}>{item.label}</span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Right: Dark cards */}
+      <div className="space-y-4">
+        {rightItems.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 + 0.15 }}
+            animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
+            className={cn(
+              "p-6 rounded-2xl border transition-all duration-300",
+              activeIndex === i
+                ? "bg-[#1a1a1a] border-[#1a1a1a] shadow-[0_4px_24px_rgba(26,26,26,0.18)]"
+                : "bg-gray-900 border-gray-700 hover:bg-[#1a1a1a]"
+            )}
+          >
+            <div className="flex items-center gap-3 mb-2">
+              <div className={cn(
+                "w-2 h-2 rounded-full transition-all duration-300",
+                activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.7)]" : "bg-white/30"
+              )} />
+              <h4 className={cn(
+                "font-bold text-base transition-colors duration-300",
+                activeIndex === i ? "text-[#DBFE01]" : "text-white"
+              )}>{item.title}</h4>
+            </div>
+            {item.description && (
+              <p className="text-white/60 text-sm ml-5">{item.description}</p>
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function UseCasesLinked({ useCases }) {
   const [activeIndex, setActiveIndex] = React.useState(null);
 
