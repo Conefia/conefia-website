@@ -740,7 +740,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <SectionHeading className="text-white">{title?.replace(/\.$/, '')}</SectionHeading>
+           <SectionHeading isDarkBackground={true} className="text-white">{title?.replace(/\.$/, '')}</SectionHeading>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>
