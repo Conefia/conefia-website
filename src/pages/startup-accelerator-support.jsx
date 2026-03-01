@@ -40,7 +40,7 @@ export default function StartupAcceleratorSupport() {
         visual={<HeroVisual />}
       />
       <SolutionMetrics 
-        title="Outcomes"
+        title={<>Cohort <span className="highlight-text">Outcomes</span></>}
         visual={<OutcomesVisual />}
         items={[
           "2× — More teams shipping MVPs",
