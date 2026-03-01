@@ -379,9 +379,6 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
-          <p className="text-lg text-[#1a1a1a]/70 mb-8 leading-relaxed">
-            {description}
-          </p>
           
           <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 mb-4 shadow-sm hover:shadow-md transition-shadow">
             <h4 className="font-bold text-[#1a1a1a] mb-5 flex items-center gap-2 text-sm uppercase tracking-wider">
