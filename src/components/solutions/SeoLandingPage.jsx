@@ -430,22 +430,24 @@ export const RoadmapCallSection = () =>
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <Reveal className="flex flex-col items-center text-center mb-14">
+      <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-5">
+        <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+        Roadmap Call
+      </span>
+      <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2">
+        What you'll get in the 30-minute roadmap call
+      </h2>
+      <p className="text-white/60 text-base max-w-2xl">
+        This isn't a generic sales chat. We'll map your MVP like we're shipping it.
+      </p>
+    </Reveal>
+
     <div className="grid lg:grid-cols-2 gap-16 items-center">
 
       {/* Left: Content */}
       <div>
         <Reveal>
-          <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
-            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-            Roadmap Call
-          </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mt-5 mb-4">
-            What you'll get in the 30-minute roadmap call
-          </h2>
-          <p className="text-white/60 text-base mb-8">
-            This isn't a generic sales chat. We'll map your MVP like we're shipping it.
-          </p>
-        </Reveal>
 
         <Reveal delay={0.1}>
           <ul className="space-y-4 mb-10">
