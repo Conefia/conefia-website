@@ -1035,10 +1035,10 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-5"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
                 >
-                  <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-                  <span className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">Why we build different</span>
+                  <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
+                  <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
                 </motion.div>
 
                 <motion.h2
