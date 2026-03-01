@@ -118,7 +118,7 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title="Expected Results"
+          title={<>Expected <span className="highlight-text">Results</span></>}
           items={[
             "Predictable, scalable customer acquisition",
             "Higher average order value",
