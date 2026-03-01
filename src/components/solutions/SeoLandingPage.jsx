@@ -1085,7 +1085,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             </div>
           </Reveal>
 
-          <Reveal delay={0.2} className="mt-16 pt-12 border-t border-white/10">
+          <Reveal delay={0.2} className="mt-16 pt-12 border-t border-gray-100">
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-[#1a1a1a]">Tech stack we ship with</h3>
             </div>
