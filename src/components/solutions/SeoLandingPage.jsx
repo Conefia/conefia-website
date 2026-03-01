@@ -425,54 +425,102 @@ export const RoadmapCallSection = () =>
   </div>
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
-  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <Reveal className="text-center mb-4">
-      <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
-        <Sparkles className="w-4 h-4 text-[#DBFE01]" />
-        Roadmap Call
-      </span>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-4">
-        What you'll get in the 30-minute roadmap call
-      </h2>
-      <p className="text-white/60 text-lg max-w-xl mx-auto">
-        This isn't a generic sales chat. We'll map your MVP like we're shipping it.
-      </p>
-    </Reveal>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-    <Reveal delay={0.1} className="mt-10 bg-white/5 border border-white/10 rounded-2xl p-8 md:p-10 backdrop-blur-sm">
-      <ul className="space-y-5 mb-10">
-        {[
-          "Confirm your target user + workflow in 2 minutes",
-          "Define MVP scope (must-have vs later)",
-          "Recommend the AI approach (RAG vs agents vs fine-tuning)",
-          "Map your 8–12 week delivery plan",
-          "Flag risks early (data, compliance, cost, reliability)"
-        ].map((item, i) => (
-          <motion.li
-            key={i}
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.08 }}
-            className="flex items-start gap-4"
+      {/* Left: Content */}
+      <div>
+        <Reveal>
+          <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
+            <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+            Roadmap Call
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mt-5 mb-4">
+            What you'll get in the 30-minute roadmap call
+          </h2>
+          <p className="text-white/60 text-base mb-8">
+            This isn't a generic sales chat. We'll map your MVP like we're shipping it.
+          </p>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <ul className="space-y-4 mb-10">
+            {[
+              "Confirm your target user + workflow in 2 minutes",
+              "Define MVP scope (must-have vs later)",
+              "Recommend the AI approach (RAG vs agents vs fine-tuning)",
+              "Map your 8–12 week delivery plan",
+              "Flag risks early (data, compliance, cost, reliability)"
+            ].map((item, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex items-start gap-4"
+              >
+                <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
+                  <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
+                </div>
+                <span className="text-white/80 text-base leading-relaxed">{item}</span>
+              </motion.li>
+            ))}
+          </ul>
+          <Link
+            to={createPageUrl('Book')}
+            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all"
           >
-            <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
-              <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
-            </div>
-            <span className="text-white/80 text-base leading-relaxed">{item}</span>
-          </motion.li>
-        ))}
-      </ul>
-      <div className="flex justify-center">
-        <Link
-          to={createPageUrl('Book')}
-          className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all"
-        >
-          Get MVP Plan
-          <ArrowRight className="w-5 h-5" />
-        </Link>
+            Book Free Roadmap Call
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </Reveal>
       </div>
-    </Reveal>
+
+      {/* Right: Stock Image */}
+      <Reveal delay={0.2} className="relative">
+        <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] lg:h-[560px]">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
+            alt="Product roadmap planning meeting"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for cohesion with dark section */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0B1020]/60 via-transparent to-[#0B1020]/40" />
+
+          {/* Floating badge top-right */}
+          <motion.div
+            initial={{ opacity: 0, y: -16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg"
+          >
+            Free · 30 min
+          </motion.div>
+
+          {/* Bottom info card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.7, duration: 0.6 }}
+            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(219,254,1,0.4)]">
+                <Sparkles className="w-5 h-5 text-[#1a1a1a]" />
+              </div>
+              <div>
+                <p className="text-white font-bold text-sm">No-pressure, all signal</p>
+                <p className="text-white/60 text-xs mt-0.5">Leave with a clear MVP plan — whether you hire us or not.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </Reveal>
+
+    </div>
   </div>
 </section>;
 
