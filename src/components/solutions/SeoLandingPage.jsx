@@ -291,7 +291,7 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] leading-tight max-w-3xl">
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] leading-tight max-w-3xl text-center">
           {title || "Your MVP keeps moving — and traction stays unclear."}
         </h2>
       </Reveal>
