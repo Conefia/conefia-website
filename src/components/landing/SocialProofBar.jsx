@@ -56,7 +56,7 @@ export default function SocialProofBar({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { selectedPersona } = usePersona();
   
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'center' }, [Autoplay({ delay: 3000, stopOnInteraction: false })]);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'center' });
 
   // Safety check to prevent errors if context is not ready
   if (!selectedPersona) {
