@@ -527,6 +527,7 @@ export const RoadmapCallSection = () =>
       </Reveal>
 
     </div>
+    </div>
   </div>
 </section>;
 
