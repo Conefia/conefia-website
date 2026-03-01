@@ -439,8 +439,9 @@ export const RoadmapCallSection = () =>
         What you'll get in the 30-minute roadmap call
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
-        This isn't a generic sales chat. We'll map your MVP like we're shipping it.
+      This isn't a generic sales chat. We'll map your MVP like we're shipping it.
       </p>
+
     </Reveal>
 
     <div className="grid lg:grid-cols-2 gap-16 items-center">
