@@ -1031,15 +1031,17 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
               {/* Right: Feature list */}
               <div className="order-1 lg:order-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
-                >
-                  <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
-                  <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
-                </motion.div>
+                <div className="flex justify-center lg:justify-start">
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
+                  >
+                    <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
+                    <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
+                  </motion.div>
+                </div>
 
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
