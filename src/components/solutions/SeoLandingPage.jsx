@@ -450,7 +450,7 @@ export const RoadmapCallSection = () =>
         <Reveal>
 
         <Reveal delay={0.1}>
-          <ul className="space-y-4 mb-10">
+          <ul className="space-y-4 mb-10 mt-4">
             {[
               "Confirm your target user + workflow in 2 minutes",
               "Define MVP scope (must-have vs later)",
