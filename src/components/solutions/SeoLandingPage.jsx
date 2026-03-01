@@ -513,7 +513,7 @@ export const RoadmapCallSection = () =>
               </div>
               <div>
                 <p className="text-white font-bold text-sm">No-pressure, all signal</p>
-                <p className="text-white/80 text-xs mt-0.5">Leave with a clear MVP plan — whether you hire us or not.</p>
+                <p className="text-white/60 text-xs mt-0.5">Leave with a clear MVP plan — whether you hire us or not.</p>
               </div>
             </div>
           </motion.div>
