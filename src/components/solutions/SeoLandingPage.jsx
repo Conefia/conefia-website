@@ -1031,7 +1031,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
               {/* Right: Feature list */}
               <div className="order-1 lg:order-2">
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center">
                   <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
