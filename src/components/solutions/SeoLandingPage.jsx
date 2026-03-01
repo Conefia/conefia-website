@@ -286,7 +286,7 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
-      <Reveal className="mb-14">
+      <Reveal className="mb-14 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest border border-rose-200">
           <X className="w-3.5 h-3.5" />
           The Problem
