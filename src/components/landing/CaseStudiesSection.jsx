@@ -11,9 +11,16 @@ export default function CaseStudiesSection({ reduceMotion }) {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center', skipSnaps: false },
-    [Autoplay({ delay: 5000, stopOnInteraction: false })]
+    { loop: true, align: 'center', skipSnaps: false }
   );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const autoplay = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 5000);
+    return () => clearInterval(autoplay);
+  }, [emblaApi]);
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 

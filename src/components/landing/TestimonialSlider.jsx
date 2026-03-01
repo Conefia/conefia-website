@@ -14,9 +14,16 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
   const testimonials = propTestimonials || dbTestimonials;
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    { loop: true, align: 'center', skipSnaps: false },
-    [Autoplay({ delay: 6000, stopOnInteraction: true })]
+    { loop: true, align: 'center', skipSnaps: false }
   );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const autoplay = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 6000);
+    return () => clearInterval(autoplay);
+  }, [emblaApi]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
