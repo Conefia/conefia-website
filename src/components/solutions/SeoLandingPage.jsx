@@ -1040,7 +1040,6 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
                   <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
                 </motion.div>
-                <br className="hidden" />
 
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
