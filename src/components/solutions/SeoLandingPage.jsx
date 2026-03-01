@@ -447,8 +447,6 @@ export const RoadmapCallSection = () =>
 
       {/* Left: Content */}
       <div>
-        <Reveal>
-
         <Reveal delay={0.1}>
           <ul className="space-y-4 mb-10 mt-4">
             {[
