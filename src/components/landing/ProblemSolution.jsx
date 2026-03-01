@@ -135,7 +135,7 @@ export default function ProblemSolution({ reduceMotion }) {
                         <div className="w-6 h-6 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0 mt-1">
                           <X className="w-4 h-4 text-red-600" />
                         </div>
-                        <span className="text-[#1a1a1a] font-semibold leading-relaxed">{problem}</span>
+                        <span className="text-[#1a1a1a] text-base font-normal leading-relaxed">{problem}</span>
                       </motion.li>
                     )}
                   </ul>
