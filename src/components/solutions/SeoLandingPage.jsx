@@ -366,7 +366,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           The Solution
         </div>
         <SectionHeading className="mt-5 text-center !mb-2">{title?.replace(/\.$/, '')}</SectionHeading>
-        <p className="text-lg text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
+        <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
           We don't just build AI features. We deliver a pilot-ready system: scope locked early, production-grade AI architecture, and the product + launch assets you need to win your first customers.
         </p>
       </Reveal>
