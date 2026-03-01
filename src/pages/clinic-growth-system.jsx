@@ -127,7 +127,7 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title="What clinics improve in 8–12 weeks"
+          title={<>What clinics improve in <span className="highlight-text">8–12 weeks</span></>}
           items={[
             "More bookings from the same traffic",
             "Better local visibility and review performance",
