@@ -912,27 +912,103 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          {/* Color splash blobs */}
+          <div className="absolute -top-20 left-1/4 w-72 h-72 bg-[#DBFE01]/10 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#DBFE01]/8 rounded-full blur-[100px] pointer-events-none" />
+
           <Reveal className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8 text-center">Built for speed and scale</h2>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {[
-                { title: "Build fast", desc: "Modern full-stack (React / Node / Python) so you ship weekly, not \"someday.\"" },
-                { title: "RAG that holds up", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos." },
-                { title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates." },
-                { title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay under control." }
-              ].map((item, i) =>
-              <motion.div 
-                key={i} 
-                className="p-6 rounded-2xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <h4 className="font-bold text-lg text-[#1a1a1a] mb-2">{item.title}</h4>
-                <p className="text-gray-700 leading-relaxed">{item.desc}</p>
-              </motion.div>
-              )}
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+              {/* Left: Stock image with overlays */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
+                <img
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80"
+                  alt="Engineering team shipping AI products"
+                  className="w-full h-full object-cover"
+                />
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
+
+                {/* Floating stat card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
+                      <Zap className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-base">8–12 weeks to production</p>
+                      <p className="text-white/60 text-sm">Scope locked. Weekly demos. No surprises.</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Top badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg"
+                >
+                  Pilot-Ready MVP
+                </motion.div>
+              </div>
+
+              {/* Right: Feature list */}
+              <div className="order-1 lg:order-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-5"
+                >
+                  <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+                  <span className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wider">Why we build different</span>
+                </motion.div>
+
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-10 leading-tight"
+                >
+                  Built for <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">speed</span> and scale
+                </motion.h2>
+
+                <div className="space-y-6">
+                  {[
+                    { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+                    { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+                    { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+                    { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" },
+                  ].map((item, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: 30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
+                      whileHover={{ x: 6 }}
+                      className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color} border ${item.border} transition-all duration-300 group`}
+                    >
+                      <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
+                      <div>
+                        <h4 className="font-bold text-base text-[#1a1a1a] mb-1">{item.title}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                      <ArrowRight className="w-4 h-4 text-[#1a1a1a]/20 group-hover:text-[#1a1a1a]/50 ml-auto flex-shrink-0 mt-1 transition-all group-hover:translate-x-1 duration-300" />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
             </div>
           </Reveal>
 
