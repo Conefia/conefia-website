@@ -53,7 +53,7 @@ export default function ShopifyGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title="Outcomes"
+          title={<>Growth <span className="highlight-text">Outcomes</span></>}
           visual={<OutcomesVisual />}
           items={[
             "↓10–25% — Lower CAC",
