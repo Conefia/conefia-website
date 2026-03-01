@@ -570,8 +570,8 @@ export const SolutionProcess = ({ steps, visual }) => {
     />
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <Reveal className="text-center mb-16">
-        <span className="bg-[#1a1a1a] text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/10 mb-6">
-          <Sparkles className="w-4 h-4 text-[#DBFE01]" />
+        <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+          <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
         <SectionHeading className="mt-4">Build → Launch → Scale</SectionHeading>
