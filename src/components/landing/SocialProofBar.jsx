@@ -2,7 +2,6 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { usePersona } from '@/components/context/PersonaContext';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 
 const MetricCard = ({ metric, index, reduceMotion, isInView }) => {
   const Icon = metric.icon;
