@@ -49,7 +49,7 @@ export default function AppRelaunchRetention() {
         visual={<HeroVisual />}
       />
       <SolutionMetrics 
-        title="Outcomes that matter"
+        title={<>Outcomes that <span className="highlight-text">matter</span></>}
         visual={<MetricsVisual />}
         items={[]}
       />
