@@ -61,7 +61,7 @@ export default function ClinicGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title="Clinic growth, measured — not guessed."
+          title={<>Clinic growth, <span className="highlight-text">measured</span> — not guessed.</>}
           visual={<AttributionVisual />}
           items={[
             "+20–50% — More booked appointments",
