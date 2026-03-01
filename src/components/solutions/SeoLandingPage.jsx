@@ -776,7 +776,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a] mb-2">{useCasesTitle || "Common use cases"}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
         </Reveal>
 
         <UseCasesLinkedLight useCases={useCases} />
