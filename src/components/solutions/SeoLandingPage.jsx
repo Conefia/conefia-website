@@ -18,19 +18,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 
 // Reusable Components
-export const SectionHeading = ({ children, className, isDarkBackground = false }) => {
-  const processedChildren = React.Children.map(children, child => {
-    if (React.isValidElement(child) && child.type === 'span' && child.props.className === 'highlight-text') {
-      return React.cloneElement(child, { className: isDarkBackground ? 'text-[#DBFE01]' : 'gradient-text' });
-    }
-    return child;
-  });
-  return (
-    <h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
-      {processedChildren}
-    </h2>
-  );
-};
+export const SectionHeading = ({ children, className }) => (
+  <h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
+    {children}
+  </h2>
+);
 
 
 export const Reveal = ({ children, className, delay = 0 }) =>
