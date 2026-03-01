@@ -1048,7 +1048,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
-                  className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-10 leading-tight"
+                  className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-10 leading-tight text-center"
                 >
                   Built for <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">speed</span> and scale
                 </motion.h2>
