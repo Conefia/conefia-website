@@ -438,7 +438,7 @@ export const RoadmapCallSection = () =>
       <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2">
         What you'll get in the 30-minute roadmap call
       </h2>
-      <p className="text-white/60 text-base max-w-2xl">
+      <p className="text-white/60 text-lg font-medium max-w-2xl">
         This isn't a generic sales chat. We'll map your MVP like we're shipping it.
       </p>
     </Reveal>
