@@ -93,7 +93,7 @@ export default function StartupAcceleratorSupport() {
         ]}
       />
       <SolutionOutcomes 
-        title={<>Program <span className="highlight-text">Benefits</span></>}
+        title={<>Program <span className="highlight-text-dark">Benefits</span></>}
         items={[
           "Higher quality MVPs on stage",
           "Data-driven investor reporting",

@@ -98,7 +98,7 @@ export default function AppRelaunchRetention() {
         visual={<div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><Search className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Audit</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Redesign</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Grow</span></div></div></div>}
       />
       <SolutionOutcomes 
-        title={<>Common <span className="highlight-text">use cases</span></>}
+        title={<>Common <span className="highlight-text-dark">use cases</span></>}
         items={[
           "We need a relaunch strategy that's investor ready",
           "We need organic growth from ASO, not only ads",
