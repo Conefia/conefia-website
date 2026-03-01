@@ -367,11 +367,13 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest mb-6 border border-[#1a1a1a]">
-            <Check className="w-3.5 h-3.5" />
-            The Solution
+          <div className="col-span-2 flex flex-col items-center text-center mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
+              <Check className="w-3.5 h-3.5" />
+              The Solution
+            </div>
+            <SectionHeading className="mt-5 text-center">{title?.replace(/\.$/, '')}</SectionHeading>
           </div>
-          <SectionHeading>{title?.replace(/\.$/, '')}</SectionHeading>
           <p className="text-lg text-[#1a1a1a]/70 mb-8 leading-relaxed">
             {description}
           </p>
