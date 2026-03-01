@@ -359,6 +359,15 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[120px] pointer-events-none" />
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Centered heading above the two columns */}
+      <Reveal className="flex flex-col items-center text-center mb-14">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
+          <Check className="w-3.5 h-3.5" />
+          The Solution
+        </div>
+        <SectionHeading className="mt-5 text-center">{title?.replace(/\.$/, '')}</SectionHeading>
+      </Reveal>
+
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <Reveal className="order-2 lg:order-1 relative">
             {visual ? visual : (
@@ -367,13 +376,6 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
-          <div className="col-span-2 flex flex-col items-center text-center mb-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
-              <Check className="w-3.5 h-3.5" />
-              The Solution
-            </div>
-            <SectionHeading className="mt-5 text-center">{title?.replace(/\.$/, '')}</SectionHeading>
-          </div>
           <p className="text-lg text-[#1a1a1a]/70 mb-8 leading-relaxed">
             {description}
           </p>
