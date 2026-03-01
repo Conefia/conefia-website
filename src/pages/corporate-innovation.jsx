@@ -53,7 +53,7 @@ export default function CorporateInnovation() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title="Outcomes"
+          title={<>Innovation <span className="highlight-text">Outcomes</span></>}
           visual={<OutcomesVisual />}
           items={[
             "6–10 weeks — POC to pilot-ready MVP",
