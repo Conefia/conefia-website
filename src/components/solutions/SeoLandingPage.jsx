@@ -989,6 +989,27 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           <div className="absolute -top-20 left-1/4 w-72 h-72 bg-[#DBFE01]/10 rounded-full blur-[80px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#DBFE01]/8 rounded-full blur-[100px] pointer-events-none" />
 
+          <Reveal className="flex flex-col items-center text-center mb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
+            >
+              <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
+              <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
+            </motion.div>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight"
+            >
+              Built for <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">speed</span> and scale
+            </motion.h2>
+          </Reveal>
+
           <Reveal className="mb-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
@@ -1035,28 +1056,6 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
               {/* Right: Feature list */}
               <div className="order-1 lg:order-2">
-                <div className="flex justify-center">
-                  <motion.div
-                    initial={{ opacity: 0, y: 16 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
-                  >
-                    <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
-                    <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
-                  </motion.div>
-                </div>
-
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.1 }}
-                  className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-10 leading-tight text-center"
-                >
-                  Built for <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">speed</span> and scale
-                </motion.h2>
-
                 <div className="space-y-6">
                   {[
                     { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
