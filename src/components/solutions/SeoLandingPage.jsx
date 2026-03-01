@@ -499,8 +499,28 @@ const processStepsDefault = [
 export const SolutionProcess = ({ steps, visual }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-  <section className="py-24 bg-white overflow-hidden">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section className="py-24 bg-white overflow-hidden relative">
+    {/* Color splash blobs */}
+    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/8 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/4" />
+    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#DBFE01]/6 rounded-full blur-[100px] pointer-events-none translate-x-1/3 translate-y-1/4" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-indigo-100/40 rounded-full blur-[80px] pointer-events-none" />
+    {/* Animated floating orbs */}
+    <motion.div
+      className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
+      animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute bottom-32 left-20 w-4 h-4 bg-[#DBFE01] rounded-full opacity-40 pointer-events-none"
+      animate={{ y: [0, 14, 0], scale: [1, 1.3, 1] }}
+      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+    />
+    <motion.div
+      className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#c5e000] rounded-full opacity-50 pointer-events-none"
+      animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
+      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+    />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <Reveal className="text-center mb-16">
         <span className="bg-[#1a1a1a] text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/10 mb-6">
           <Sparkles className="w-4 h-4 text-[#DBFE01]" />
