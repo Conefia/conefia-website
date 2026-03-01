@@ -4,7 +4,6 @@ import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, ExternalLi
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../../utils';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import ContourBackground from '../visual/ContourBackground';
 
 export default function CaseStudiesSection({ reduceMotion }) {

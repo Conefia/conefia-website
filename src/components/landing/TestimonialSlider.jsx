@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 import { Quote, ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 
