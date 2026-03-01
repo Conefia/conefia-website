@@ -118,7 +118,7 @@ export default function CorporateInnovation() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title="Enterprise Value"
+          title={<>Enterprise <span className="highlight-text">Value</span></>}
           items={[
             "Risk-managed innovation",
             "Faster time-to-pilot",
