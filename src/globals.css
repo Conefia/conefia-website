@@ -85,20 +85,13 @@
   }
 }
 
-/* Global highlight text classes used on solution pages */
-.highlight-text {
-  background: linear-gradient(135deg, #DBFE01 0%, #a8c600 100%) !important;
-  -webkit-background-clip: text !important;
+/* Fix: Tailwind color utilities set -webkit-text-fill-color which blocks gradient text on child spans.
+   This resets it so inline gradient styles on spans work correctly. */
+h2 > span[style*="WebkitTextFillColor"],
+h2 > span[style*="background"] {
   -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: transparent !important;
-  font-weight: 700;
-  display: inline;
 }
-
-/* For dark backgrounds - just use the lime color directly */
-.highlight-text-dark {
-  color: #DBFE01 !important;
+h2 > span[style*="WebkitTextFillColor: '#DBFE01'"],
+h2 > span[style*="WebkitTextFillColor: #DBFE01"] {
   -webkit-text-fill-color: #DBFE01 !important;
-  font-weight: 700;
 }
