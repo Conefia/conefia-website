@@ -439,7 +439,7 @@ export const RoadmapCallSection = () =>
         Roadmap Call
       </span>
       <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
-        <span className="text-white">What you'll get in the 30-minute roadmap call</span>
+        <span className="text-white">What you'll get in the </span><span className="gradient-text">30-minute roadmap call</span>
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
       This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.
