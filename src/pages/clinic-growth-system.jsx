@@ -61,7 +61,7 @@ export default function ClinicGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title={<>Clinic growth, <span className="highlight-text">measured</span> — not guessed.</>}
+          title={<>Clinic growth, <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent font-bold">measured</span> — not guessed.</>}
           visual={<AttributionVisual />}
           items={[
             "+20–50% — More booked appointments",
@@ -127,7 +127,7 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title={<>What clinics improve in <span className="highlight-text-dark">8–12 weeks</span></>}
+          title={<>What clinics improve in <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>8–12 weeks</span></>}
           items={[
             "More bookings from the same traffic",
             "Better local visibility and review performance",

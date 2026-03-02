@@ -53,7 +53,7 @@ export default function ShopifyGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title={<>Growth <span className="highlight-text">Outcomes</span></>}
+          title={<>Growth <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent font-bold">Outcomes</span></>}
           visual={<OutcomesVisual />}
           items={[
             "↓10–25% — Lower CAC",
@@ -118,7 +118,7 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title={<>Expected <span className="highlight-text-dark">Results</span></>}
+          title={<>Expected <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>Results</span></>}
           items={[
             "Predictable, scalable customer acquisition",
             "Higher average order value",

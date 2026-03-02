@@ -40,7 +40,7 @@ export default function StartupAcceleratorSupport() {
         visual={<HeroVisual />}
       />
       <SolutionMetrics 
-        title={<>Cohort <span className="highlight-text">Outcomes</span></>}
+        title={<>Cohort <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent font-bold">Outcomes</span></>}
         visual={<OutcomesVisual />}
         items={[
           "2× — More teams shipping MVPs",
@@ -93,7 +93,7 @@ export default function StartupAcceleratorSupport() {
         ]}
       />
       <SolutionOutcomes 
-        title={<>Program <span className="highlight-text-dark">Benefits</span></>}
+        title={<>Program <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>Benefits</span></>}
         items={[
           "Higher quality MVPs on stage",
           "Data-driven investor reporting",
