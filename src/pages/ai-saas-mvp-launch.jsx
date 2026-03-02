@@ -54,7 +54,7 @@ export default function AiSaasMvpLaunch() {
       />
       <FitCheck />
       <SolutionMetrics 
-        title={<>Outcomes founders <span className="gradient-text">care about</span></>}
+        title={<>Why most AI MVPs get delayed—and <span className="gradient-text">miss pilots and revenue</span></>}
         visual={<MetricsVisual />}
         items={[]}
       />
