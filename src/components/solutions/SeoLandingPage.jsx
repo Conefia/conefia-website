@@ -293,7 +293,7 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
           The Problem
         </div>
         <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl text-center">
-          <span className="text-[#1a1a1a]">{title || "Why most AI MVPs get delayed and miss pilots and revenue"}</span>
+          <span style={{background: 'linear-gradient(to right, #1a1a1a 0%, #5a7a00 55%, #DBFE01 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>{title || "Why most AI MVPs get delayed and miss pilots and revenue"}</span>
         </h2>
       </Reveal>
 
