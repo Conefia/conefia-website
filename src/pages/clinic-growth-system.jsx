@@ -61,7 +61,7 @@ export default function ClinicGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title={<>Clinic growth, <span style={{background: 'linear-gradient(to right, #DBFE01, #c5e000, #a8c600)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontWeight: 700}}>measured</span> — not guessed.</>}
+          title={<>Clinic growth, <span className="gradient-text">measured</span> — not guessed.</>}
           visual={<AttributionVisual />}
           items={[
             "+20–50% — More booked appointments",

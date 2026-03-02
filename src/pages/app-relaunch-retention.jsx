@@ -49,7 +49,7 @@ export default function AppRelaunchRetention() {
         visual={<HeroVisual />}
       />
       <SolutionMetrics 
-        title={<>Outcomes that <span style={{background: 'linear-gradient(to right, #DBFE01, #c5e000, #a8c600)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontWeight: 700}}>matter</span></>}
+        title={<>Outcomes that <span className="gradient-text">matter</span></>}
         visual={<MetricsVisual />}
         items={[]}
       />
