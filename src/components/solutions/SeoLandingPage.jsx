@@ -442,7 +442,7 @@ export const RoadmapCallSection = () =>
         <span className="text-white">What you'll get in the 30-minute roadmap call</span>
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
-      This isn't a generic sales chat. We'll map your MVP like we're shipping it.
+      This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.
       </p>
 
     </Reveal>
