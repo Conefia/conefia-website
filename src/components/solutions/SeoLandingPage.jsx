@@ -248,7 +248,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 <section className="py-20 bg-white border-b border-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
-        <SectionHeading className="text-center text-[#1a1a1a]">{title}</SectionHeading>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-center" style={{color: '#1a1a1a'}}>{title}</h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
       <div className="grid md:grid-cols-4 gap-6">
@@ -366,7 +366,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <SectionHeading className="mt-5 text-center !mb-2">{title?.replace(/\.$/, '')}</SectionHeading>
+        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight" style={{color: '#1a1a1a'}}>{title?.replace(/\.$/, '')}</h2>
         {description && (
           <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
@@ -732,7 +732,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <SectionHeading className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</SectionHeading>
+           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight" style={{color: 'white'}}>{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>

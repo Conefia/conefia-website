@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,9 +84,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Fix Tailwind setting -webkit-text-fill-color on text utilities, which blocks CSS gradient text on child spans */
-h2 {
-  -webkit-text-fill-color: initial !important;
 }
