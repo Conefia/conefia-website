@@ -85,19 +85,20 @@
   }
 }
 
-@layer components {
-  /* Global highlight text classes used on solution pages */
-  .highlight-text {
-    background: linear-gradient(135deg, #DBFE01 0%, #a8c600 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-weight: 700;
-  }
+/* Global highlight text classes used on solution pages */
+.highlight-text {
+  background: linear-gradient(135deg, #DBFE01 0%, #a8c600 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  font-weight: 700;
+  display: inline;
+}
 
-  /* For dark backgrounds - just use the lime color directly */
-  .highlight-text-dark {
-    color: #DBFE01;
-    font-weight: 700;
-  }
+/* For dark backgrounds - just use the lime color directly */
+.highlight-text-dark {
+  color: #DBFE01 !important;
+  -webkit-text-fill-color: #DBFE01 !important;
+  font-weight: 700;
 }
