@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -83,15 +84,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Fix: Tailwind color utilities set -webkit-text-fill-color which blocks gradient text on child spans.
-   This resets it so inline gradient styles on spans work correctly. */
-h2 > span[style*="WebkitTextFillColor"],
-h2 > span[style*="background"] {
-  -webkit-text-fill-color: transparent !important;
-}
-h2 > span[style*="WebkitTextFillColor: '#DBFE01'"],
-h2 > span[style*="WebkitTextFillColor: #DBFE01"] {
-  -webkit-text-fill-color: #DBFE01 !important;
 }
