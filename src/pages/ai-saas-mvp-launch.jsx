@@ -54,7 +54,7 @@ export default function AiSaasMvpLaunch() {
       />
       <FitCheck />
       <SolutionMetrics 
-        title={<>Outcomes <span className="gradient-text">founders</span> care about</>}
+        title={<>Outcomes founders <span className="gradient-text">care about</span></>}
         visual={<MetricsVisual />}
         items={[]}
       />
