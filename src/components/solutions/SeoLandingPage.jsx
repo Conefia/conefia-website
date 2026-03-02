@@ -438,8 +438,8 @@ export const RoadmapCallSection = () =>
         <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
       </span>
-      <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight mb-2">
-        What you'll get in the 30-minute roadmap call
+      <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
+        <span className="text-white">What you'll get in the 30-minute roadmap call</span>
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
       This isn't a generic sales chat. We'll map your MVP like we're shipping it.
