@@ -59,7 +59,7 @@ export default function AiSaasMvpLaunch() {
         items={[]}
       />
       <SolutionProblem 
-        title="Your MVP keeps moving — and traction stays unclear."
+        title="Why most AI MVPs get delayed and miss pilots and revenue"
         quote="Most AI MVPs don't fail from lack of code. They fail from unclear scope, fragile architecture, and no pilot plan."
         items={[
           "MVP scope expands and shipping slips",
