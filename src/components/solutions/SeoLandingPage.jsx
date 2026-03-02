@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 
 // Reusable Components
 export const SectionHeading = ({ children, className }) => (
-  <h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
+  <h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)} style={{WebkitTextFillColor: 'initial'}}>
     {children}
   </h2>
 );
