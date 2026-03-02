@@ -49,7 +49,7 @@ export default function FitCheck() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
             className="bg-[#f9ffe0] border border-[#c5e000] rounded-2xl p-8 relative overflow-hidden">
 
