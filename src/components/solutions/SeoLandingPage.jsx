@@ -248,7 +248,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 <section className="py-20 bg-white border-b border-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-center" style={{color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a'}}>{title}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-center"><span className="text-[#1a1a1a]">{title}</span></h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
       <div className="grid md:grid-cols-4 gap-6">
@@ -292,8 +292,8 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a1a] leading-tight max-w-3xl text-center">
-          {title || "Your MVP keeps moving — and traction stays unclear"}
+        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl text-center">
+          <span className="text-[#1a1a1a]">{title || "Your MVP keeps moving — and traction stays unclear"}</span>
         </h2>
       </Reveal>
 
@@ -366,7 +366,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight" style={{color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a'}}>{title?.replace(/\.$/, '')}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight"><span className="text-[#1a1a1a]">{title?.replace(/\.$/, '')}</span></h2>
         {description && (
           <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
@@ -582,7 +582,7 @@ export const SolutionProcess = ({ steps, visual }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4" style={{color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a'}}>Build → Launch → Scale</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">Build → Launch → Scale</span></h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -732,7 +732,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight" style={{color: 'white', WebkitTextFillColor: 'white'}}>{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
+           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight"><span className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</span></h2>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>
@@ -779,7 +779,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</span></h2>
         </Reveal>
 
         <UseCasesLinkedLight useCases={useCases} />
@@ -1009,9 +1009,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-extrabold leading-tight"
-              style={{color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a'}}
             >
-              Built for <span className="gradient-text">speed</span> and scale
+              <span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span>
             </motion.h2>
           </Reveal>
 
@@ -1188,8 +1187,8 @@ export const SolutionFAQ = ({ items = [] }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
         </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a'}}>
-          Common questions, <span className="gradient-text">answered</span>
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
+          <span className="text-[#1a1a1a]">Common questions, </span><span className="gradient-text">answered</span>
         </h2>
       </Reveal>
       
@@ -1248,8 +1247,8 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
     
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-8 leading-tight">
-          {title}
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+          <span className="text-[#1a1a1a]">{title}</span>
         </h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
