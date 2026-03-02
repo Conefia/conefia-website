@@ -248,7 +248,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 <section className="py-20 bg-white border-b border-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
-        <SectionHeading className="text-center text-[#1a1a1a]">{title}</SectionHeading>
+        <SectionHeading className="text-center" style={{color: '#1a1a1a'}}>{title}</SectionHeading>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
       <div className="grid md:grid-cols-4 gap-6">
