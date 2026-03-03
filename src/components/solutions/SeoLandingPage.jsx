@@ -1259,7 +1259,7 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
           </Link>
           <a
           href="mailto:info@conefia.com"
-          className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm transition-colors">
+          className="text-[#1a1a1a]/70 hover:text-white font-semibold text-sm transition-colors">
             Prefer to message us? <span className="underline">Contact us</span>
           </a>
         </div>
