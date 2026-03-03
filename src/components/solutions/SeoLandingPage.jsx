@@ -1258,12 +1258,11 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
-          <Link
-          to={createPageUrl('Book')}
+          <a
+          href="mailto:info@conefia.com"
           className="px-8 py-4 bg-transparent border-2 border-[#1a1a1a] text-[#1a1a1a] rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-[#1a1a1a] hover:text-[#DBFE01] transition-all hover:scale-105">
-
-            {secondaryCta}
-          </Link>
+            Prefer to message us? <span className="underline">Contact us</span>
+          </a>
         </div>
       </Reveal>
       
