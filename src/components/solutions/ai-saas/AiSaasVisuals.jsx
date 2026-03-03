@@ -372,7 +372,7 @@ export const OnePagerVisual = () => (
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             className="bg-[#DBFE01] text-[#1a1a1a] font-bold px-5 py-2 rounded-full shadow-[0_8px_20px_rgba(219,254,1,0.4)] text-xs border-2 border-white tracking-wide"
         >
-            Ready in 24h
+            Ship in 8–12 Weeks
         </motion.div>
     </div>
   </motion.div>
