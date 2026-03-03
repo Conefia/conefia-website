@@ -369,7 +369,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight"><span className="text-[#1a1a1a]">Ship your AI MVP fast and </span><span className="gradient-text">launch real pilots sooner</span></h2>
         {description && (
           <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
-            {description}
+            We build what gets adopted: clear scope, reliable AI architecture, and a launch system to land your first customers.
           </p>
         )}
       </Reveal>
