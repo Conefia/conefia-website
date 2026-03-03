@@ -1232,7 +1232,7 @@ export const SolutionFAQ = ({ items = [] }) => {
       )}
 
       <Reveal delay={0.3} className="mt-8 text-center relative z-20">
-        <p className="text-sm text-[#2F2F2F]/60">Still unsure? <Link to={createPageUrl('book')} className="text-[#1a1a1a] font-bold hover:text-[#a8c600] transition-colors underline">Book a quick chat</Link></p>
+        <p className="text-sm text-[#2F2F2F]/60">Still unsure? <Link to={createPageUrl('book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">Book a quick chat</Link></p>
       </Reveal>
     </div>
   </section>
