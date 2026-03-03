@@ -1272,7 +1272,19 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
     }
       
       <Reveal delay={0.3}>
-         <p className="text-[#1a1a1a]/60 text-xs font-semibold mt-12 uppercase tracking-wider">Free 30-min MVP Roadmap call. No sales pitch.</p>
+        <div className="flex flex-wrap justify-center gap-3 mt-10">
+          {[
+            { icon: "🕐", label: "Free 30-min call" },
+            { icon: "🚫", label: "No sales pitch" },
+            { icon: "📋", label: "Get your roadmap" },
+            { icon: "✅", label: "No commitment" },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-2 bg-[#1a1a1a]/10 rounded-full px-4 py-2 text-xs font-bold text-[#1a1a1a]/80 tracking-wide">
+              <span>{item.icon}</span>
+              <span>{item.label}</span>
+            </div>
+          ))}
+        </div>
       </Reveal>
     </div>
   </section>;
