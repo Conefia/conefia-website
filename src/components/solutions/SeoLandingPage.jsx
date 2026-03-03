@@ -1250,17 +1250,16 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
           <span className="text-[#1a1a1a]">{title}</span>
         </h2>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex flex-col items-center gap-4">
           <Link
           to={createPageUrl('Book')}
           className="px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-black transition-all hover:scale-105 shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset,0_4px_12px_rgba(0,0,0,0.3)]">
-
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
           <a
           href="mailto:info@conefia.com"
-          className="px-8 py-4 bg-transparent border-2 border-[#1a1a1a] text-[#1a1a1a] rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-[#1a1a1a] hover:text-[#DBFE01] transition-all hover:scale-105">
+          className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm transition-colors">
             Prefer to message us? <span className="underline">Contact us</span>
           </a>
         </div>
