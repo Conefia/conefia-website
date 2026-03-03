@@ -366,7 +366,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight"><span className="text-[#1a1a1a]">{title?.replace(/\.$/, '')}</span></h2>
+        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight"><span className="text-[#1a1a1a]">Ship your AI MVP fast and launch real pilots sooner</span></h2>
         {description && (
           <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
