@@ -1257,11 +1257,6 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
-          <a
-          href="mailto:info@conefia.com"
-          className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm transition-colors">
-            Prefer to message us? <span className="underline">Contact us</span>
-          </a>
         </div>
       </Reveal>
       
@@ -1274,6 +1269,14 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
       <Reveal delay={0.3}>
          <p className="text-[#1a1a1a]/60 text-xs font-semibold mt-12 uppercase tracking-wider">Free 30-min MVP Roadmap call. No sales pitch.</p>
       </Reveal>
+
+      <div className="mt-4 text-center">
+        <a
+        href="mailto:info@conefia.com"
+        className="text-[#1a1a1a]/70 hover:text-[#1a1a1a] font-semibold text-sm transition-colors">
+          Prefer to message us? <span className="underline">Contact us</span>
+        </a>
+      </div>
     </div>
   </section>;
 
