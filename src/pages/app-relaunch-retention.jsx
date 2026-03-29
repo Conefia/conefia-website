@@ -32,7 +32,7 @@ export default function AppRelaunchRetention() {
       />
       <SolutionHero 
         breadcrumbLabel="App Relaunch & Retention"
-        title="Relaunch Your App and Improve Retention in 8-12 Weeks"–12 Weeks"–12 Weeks"
+        title="Relaunch Your App and Improve Retention in 8-12 Weeks"
         subtitle="Fix retention first. Relaunch with confidence. Grow organically. If your app is live but users aren't sticking, growth is leaking. We're an app redesign and growth agency built for mobile app retention and engagement + ASO services."
         primaryCta="Get My Relaunch Plan"
         secondaryCta="See the Sprint"
@@ -80,11 +80,11 @@ export default function AppRelaunchRetention() {
             description: "Deep dive audit: Retention metrics + App Store performance + Event tracking health check."
           },
           {
-            title: "Build (Weeks 2–4)",
+            title: "Build (Weeks 2-4)",
             description: "Execution sprint: UX friction removal, performance tuning, and implementation of core activation loops."
           },
           {
-            title: "Relaunch (Weeks 5–6)",
+            title: "Relaunch (Weeks 5-6)",
             description: "Growth layer: New ASO visual assets, keyword optimization, and review management strategy."
           },
           {
