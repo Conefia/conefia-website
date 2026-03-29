@@ -298,19 +298,31 @@ export const SolutionVisual = () => (
   <div className="grid gap-6">
     {/* Checklist Card */}
     <motion.div 
-        whileHover={{ y: -4 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ y: -4, boxShadow: '0 20px 40px -10px rgba(0,0,0,0.15)' }}
         className="bg-white rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-6"
     >
         <div className="flex items-center gap-3 mb-5 border-b border-gray-100 pb-4">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+            <motion.div
+              animate={{ rotate: [0, 360] }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+              className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center"
+            >
                 <RefreshCw className="w-5 h-5 text-blue-600" />
-            </div>
+            </motion.div>
             <div>
                 <div className="font-bold text-gray-900 text-sm">Relaunch Sprint</div>
                 <div className="text-[10px] text-blue-500 font-bold uppercase tracking-wider">6-Week Plan</div>
             </div>
             <div className="ml-auto flex items-center gap-1">
-              <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              <motion.div
+                animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="w-1.5 h-1.5 rounded-full bg-green-400"
+              />
               <span className="text-[10px] text-green-500 font-bold">Live</span>
             </div>
         </div>
@@ -321,7 +333,14 @@ export const SolutionVisual = () => (
                 { label: "Onboarding Friction Removed", icon: Zap, color: "text-amber-500", bg: "bg-amber-50", progress: 80 },
                 { label: "ASO Assets Refreshed", icon: Download, color: "text-purple-500", bg: "bg-purple-50", progress: 60 }
             ].map((item, i) => (
-                <div key={i} className="p-2.5 hover:bg-gray-50 rounded-xl transition-colors group cursor-default">
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 + 0.2 }}
+                  className="p-2.5 hover:bg-gray-50 rounded-xl transition-colors group cursor-default"
+                >
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-2.5">
                         <div className={`w-6 h-6 rounded-md ${item.bg} flex items-center justify-center`}>
@@ -330,7 +349,12 @@ export const SolutionVisual = () => (
                         <span className="text-gray-700 font-medium text-sm">{item.label}</span>
                     </div>
                     {item.progress === 100
-                      ? <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      ? <motion.div
+                          initial={{ scale: 0 }}
+                          whileInView={{ scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ type: 'spring', stiffness: 300, delay: i * 0.1 + 0.5 }}
+                        ><CheckCircle2 className="w-4 h-4 text-green-500" /></motion.div>
                       : <span className="text-[10px] font-bold text-gray-400">{item.progress}%</span>
                     }
                   </div>
@@ -339,21 +363,42 @@ export const SolutionVisual = () => (
                       initial={{ width: 0 }}
                       whileInView={{ width: `${item.progress}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.8, delay: i * 0.15 }}
+                      transition={{ duration: 1, delay: i * 0.15 + 0.3, ease: 'easeOut' }}
                       className={`h-full rounded-full ${
                         item.progress === 100 ? 'bg-green-400' :
                         item.progress >= 80 ? 'bg-amber-400' : 'bg-blue-400'
                       }`}
                     />
                   </div>
-                </div>
+                </motion.div>
             ))}
         </div>
     </motion.div>
 
     {/* ASO A/B Test Board */}
-    <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden group">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.1),transparent_50%)]" />
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.15 }}
+      className="bg-[#0B1020] rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden group"
+    >
+        {/* Animated background glow */}
+        <motion.div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.15),transparent_60%)]"
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Floating particles */}
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 rounded-full bg-[#DBFE01]/40"
+            style={{ left: `${15 + i * 18}%`, top: `${20 + (i % 3) * 25}%` }}
+            animate={{ y: [0, -12, 0], opacity: [0.3, 0.8, 0.3] }}
+            transition={{ duration: 2 + i * 0.4, repeat: Infinity, delay: i * 0.3, ease: 'easeInOut' }}
+          />
+        ))}
         
         <div className="relative z-10">
             <div className="flex justify-between items-center mb-5">
@@ -362,16 +407,24 @@ export const SolutionVisual = () => (
                     <span className="text-xs font-bold text-white uppercase tracking-wider">ASO Experiment</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    <motion.span
+                      className="w-1.5 h-1.5 rounded-full bg-green-500"
+                      animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+                      transition={{ duration: 1.2, repeat: Infinity }}
+                    />
                     <span className="text-[9px] text-green-500 font-bold uppercase">Active</span>
                 </div>
             </div>
             
             <div className="grid grid-cols-2 gap-3">
               {/* Variant A - Original */}
-              <div className="opacity-60">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 0.6, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
                 <div className="bg-white/5 border border-white/10 rounded-xl p-3 mb-2">
-                  {/* App icon + name row */}
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-9 h-9 bg-gray-600 rounded-xl flex-shrink-0" />
                     <div className="space-y-1">
@@ -379,12 +432,10 @@ export const SolutionVisual = () => (
                       <div className="h-1.5 bg-white/10 rounded w-12" />
                     </div>
                   </div>
-                  {/* Stars */}
                   <div className="flex gap-0.5 mb-2">
                     {[1,2,3].map(s => <Star key={s} className="w-2.5 h-2.5 fill-gray-500 text-gray-500" />)}
                     {[4,5].map(s => <Star key={s} className="w-2.5 h-2.5 fill-gray-700 text-gray-700" />)}
                   </div>
-                  {/* Screenshot strip */}
                   <div className="flex gap-1">
                     {[1,2,3].map(s => (
                       <div key={s} className="flex-1 h-10 bg-white/5 rounded-md border border-white/5" />
@@ -395,19 +446,29 @@ export const SolutionVisual = () => (
                   <div className="text-[10px] text-gray-500 mb-0.5">Original</div>
                   <div className="text-sm font-black text-white/40">2.1% CVR</div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Variant B - Winner */}
-              <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, x: 20, scale: 0.95 }}
+                whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 200 }}
+                className="relative"
+              >
                 <motion.div
                   initial={{ y: 5, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[8px] font-extrabold px-2.5 py-0.5 rounded-full shadow-lg shadow-[#DBFE01]/30 z-20 flex items-center gap-1"
+                  animate={{ y: [0, -3, 0], opacity: 1 }}
+                  transition={{ delay: 0.8, y: { duration: 2, repeat: Infinity, ease: 'easeInOut' } }}
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[8px] font-extrabold px-2.5 py-0.5 rounded-full shadow-lg shadow-[#DBFE01]/40 z-20 flex items-center gap-1"
                 >
                   <Trophy className="w-2.5 h-2.5" /> WINNER
                 </motion.div>
-                <div className="bg-gradient-to-b from-[#DBFE01]/15 to-[#DBFE01]/5 border border-[#DBFE01]/40 rounded-xl p-3 mb-2 shadow-[0_0_20px_rgba(219,254,1,0.1)]">
+                <motion.div
+                  animate={{ boxShadow: ['0 0 0px rgba(219,254,1,0)', '0 0 25px rgba(219,254,1,0.25)', '0 0 0px rgba(219,254,1,0)'] }}
+                  transition={{ duration: 2.5, repeat: Infinity }}
+                  className="bg-gradient-to-b from-[#DBFE01]/15 to-[#DBFE01]/5 border border-[#DBFE01]/40 rounded-xl p-3 mb-2"
+                >
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-9 h-9 bg-[#DBFE01] rounded-xl flex-shrink-0 shadow-lg shadow-[#DBFE01]/30" />
                     <div className="space-y-1">
@@ -415,27 +476,48 @@ export const SolutionVisual = () => (
                       <div className="h-1.5 bg-white/20 rounded w-12" />
                     </div>
                   </div>
-                  {/* Stars - full */}
-                  <div className="flex gap-0.5 mb-2">
-                    {[1,2,3,4,5].map(s => <Star key={s} className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />)}
-                  </div>
-                  {/* Screenshot strip - vibrant */}
+                  <motion.div
+                    className="flex gap-0.5 mb-2"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1 }}
+                  >
+                    {[1,2,3,4,5].map((s, idx) => (
+                      <motion.div
+                        key={s}
+                        initial={{ scale: 0, rotate: -30 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 1 + idx * 0.08, type: 'spring', stiffness: 400 }}
+                      >
+                        <Star className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />
+                      </motion.div>
+                    ))}
+                  </motion.div>
                   <div className="flex gap-1">
                     {['from-blue-600 to-indigo-500','from-[#DBFE01] to-green-400','from-purple-500 to-pink-500'].map((g,s) => (
-                      <div key={s} className={`flex-1 h-10 bg-gradient-to-b ${g} rounded-md opacity-80`} />
+                      <motion.div
+                        key={s}
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.7 + s * 0.1, duration: 0.4, origin: 'bottom' }}
+                        className={`flex-1 h-10 bg-gradient-to-b ${g} rounded-md opacity-80`}
+                      />
                     ))}
                   </div>
-                </div>
+                </motion.div>
                 <div className="text-center">
                   <div className="text-[10px] text-[#DBFE01] font-bold mb-0.5">New Variant</div>
                   <div className="text-sm font-black text-white flex items-center justify-center gap-1">
                     <TrendingUp className="w-3 h-3 text-[#DBFE01]" /> +15% CVR
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
         </div>
-    </div>
+    </motion.div>
   </div>
 );
 
