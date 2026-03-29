@@ -4,7 +4,7 @@ import { PERSONAS } from '../data/personas';
 const PersonaContext = createContext();
 
 export function PersonaProvider({ children }) {
-  const [selectedPersonaId, setSelectedPersonaId] = useState(PERSONAS[0].id);
+  const [selectedPersonaId, setSelectedPersonaId] = useState('ai-saas-mvp');
 
   const selectedPersona = PERSONAS.find(p => p.id === selectedPersonaId) || PERSONAS[0];
 
