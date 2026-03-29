@@ -57,10 +57,12 @@ export default function AppRelaunchRetention() {
         title="Your app is live — but users aren't staying."
         quote="Acquisition without retention is just a very expensive way to burn your runway."
         items={[
-          "Retention is weak (users churn after install)",
-          "UX/performance issues hurt reviews and referrals",
-          "ASO isn't driving consistent organic downloads",
-          "Analytics isn't clean enough to make decisions"
+          "Users install the app, but too few come back",
+          "Onboarding or UX friction is hurting activation",
+          "Performance issues are dragging down ratings and referrals",
+          "Your store listing is not converting as well as it should",
+          "Acquisition spend is not compounding because retention is weak",
+          "Analytics exist, but they do not create enough clarity to guide growth"
         ]}
         visual={<ProblemVisual />}
       />
