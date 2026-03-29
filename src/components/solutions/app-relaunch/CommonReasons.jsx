@@ -48,8 +48,21 @@ const useCases = [
   }
 ];
 
+const itemToCardMapping = {
+  0: 0, // Item 1 → Retention Recovery
+  1: 0, // Item 2 → Retention Recovery
+  3: 0, // Item 4 → Retention Recovery
+  2: 1, // Item 3 → Store Conversion Lift
+  4: 1, // Item 5 → Store Conversion Lift
+  5: 2  // Item 6 → Growth Clarity
+};
+
 export default function CommonReasons() {
   const [activeIndex, setActiveIndex] = useState(null);
+  
+  const handleItemHover = (itemIndex) => {
+    setActiveIndex(itemToCardMapping[itemIndex]);
+  };
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
@@ -121,7 +134,7 @@ export default function CommonReasons() {
             {reasonItems.map((item, i) => (
               <motion.div
                 key={i}
-                onHoverStart={() => setActiveIndex(i)}
+                onHoverStart={() => handleItemHover(i)}
                 onHoverEnd={() => setActiveIndex(null)}
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
