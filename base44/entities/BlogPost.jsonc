@@ -1,0 +1,84 @@
+{
+  "name": "BlogPost",
+  "type": "object",
+  "properties": {
+    "slug": {
+      "type": "string",
+      "description": "URL-friendly slug for the post"
+    },
+    "title": {
+      "type": "string",
+      "description": "Blog post title"
+    },
+    "excerpt": {
+      "type": "string",
+      "description": "Short excerpt/description"
+    },
+    "content": {
+      "type": "string",
+      "description": "Full blog post content (HTML)"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Build",
+        "Launch",
+        "Scale",
+        "AI"
+      ],
+      "description": "Primary category"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Post tags"
+    },
+    "persona": {
+      "type": "string",
+      "enum": [
+        "founder",
+        "clinic",
+        "dtc",
+        "accelerator",
+        "enterprise"
+      ],
+      "description": "Target persona"
+    },
+    "author": {
+      "type": "string",
+      "default": "Conefia Team",
+      "description": "Author name"
+    },
+    "readTime": {
+      "type": "string",
+      "description": "Estimated read time (e.g., '8 min')"
+    },
+    "featuredImage": {
+      "type": "string",
+      "description": "Featured image URL"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Show in featured section"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is the post published"
+    },
+    "publishDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date"
+    }
+  },
+  "required": [
+    "slug",
+    "title",
+    "excerpt",
+    "category"
+  ]
+}

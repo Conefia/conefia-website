@@ -293,171 +293,88 @@ export const ProblemVisual = () => (
   </div>
 );
 
-// Enhanced Solution: Before / After App Screen + Retention Dashboard
+// Enhanced Solution: Clean & Professional
 export const SolutionVisual = () => (
-  <div className="grid gap-5">
-
-    {/* Before / After App Screens */}
-    <div className="bg-[#0B1020] rounded-2xl p-5 border border-white/10 shadow-2xl relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.08),transparent_60%)]" />
-      <div className="relative z-10">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-white/40">UX Transformation</span>
-          <div className="flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#DBFE01] animate-pulse shadow-[0_0_6px_#DBFE01]" />
-            <span className="text-[9px] font-bold text-[#DBFE01] uppercase">Live</span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-2 gap-3">
-          {/* BEFORE screen */}
-          <div className="relative">
-            <div className="text-[9px] font-bold uppercase tracking-widest text-red-400 mb-2 text-center">Before</div>
-            <div className="bg-gray-900 rounded-xl border border-red-500/20 overflow-hidden shadow-lg">
-              {/* Fake status bar */}
-              <div className="h-5 bg-gray-800 flex items-center px-2 gap-1">
-                <div className="w-1 h-1 rounded-full bg-gray-600" />
-                <div className="flex-1 h-1 bg-gray-700 rounded" />
-                <div className="w-3 h-1 bg-gray-600 rounded" />
-              </div>
-              {/* Confusing onboarding */}
-              <div className="p-3 space-y-2">
-                <div className="h-2 bg-gray-700 rounded w-3/4" />
-                <div className="h-8 bg-gray-800 rounded border border-gray-700 flex items-center px-2">
-                  <div className="h-1.5 w-1/2 bg-gray-600 rounded" />
-                </div>
-                <div className="h-8 bg-gray-800 rounded border border-gray-700 flex items-center px-2">
-                  <div className="h-1.5 w-2/3 bg-gray-600 rounded" />
-                </div>
-                <div className="h-8 bg-gray-800 rounded border border-gray-700 flex items-center px-2">
-                  <div className="h-1.5 w-1/3 bg-gray-600 rounded" />
-                </div>
-                <div className="h-1.5 bg-gray-700 rounded w-full" />
-                <div className="h-1.5 bg-gray-700 rounded w-4/5" />
-                <div className="h-7 bg-gray-700 rounded flex items-center justify-center">
-                  <div className="h-1.5 w-10 bg-gray-500 rounded" />
-                </div>
-              </div>
-              {/* Frustration overlay */}
-              <div className="px-3 pb-3">
-                <div className="flex items-center gap-1.5 bg-red-900/40 border border-red-500/30 rounded-lg p-2">
-                  <XCircle className="w-3 h-3 text-red-400 flex-shrink-0" />
-                  <span className="text-[9px] text-red-300 font-medium">Users rage-quitting here</span>
-                </div>
-              </div>
-            </div>
-            {/* Drop-off stat */}
-            <div className="mt-2 text-center">
-              <span className="text-[10px] font-bold text-red-400">78% drop-off</span>
-            </div>
-          </div>
-
-          {/* AFTER screen */}
-          <div className="relative">
-            <div className="text-[9px] font-bold uppercase tracking-widest text-[#DBFE01] mb-2 text-center">After</div>
-            <div className="bg-gray-900 rounded-xl border border-[#DBFE01]/30 overflow-hidden shadow-lg shadow-[#DBFE01]/5">
-              {/* Fake status bar */}
-              <div className="h-5 bg-gray-800 flex items-center px-2 gap-1">
-                <div className="w-1 h-1 rounded-full bg-[#DBFE01]/60" />
-                <div className="flex-1 h-1 bg-gray-700 rounded" />
-                <div className="w-3 h-1 bg-[#DBFE01]/40 rounded" />
-              </div>
-              {/* Clean onboarding */}
-              <div className="p-3 space-y-2">
-                <div className="text-center">
-                  <div className="w-8 h-8 bg-[#DBFE01] rounded-xl mx-auto mb-1.5 flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-[#1a1a1a]" />
-                  </div>
-                  <div className="h-2 bg-white/20 rounded w-3/4 mx-auto mb-1" />
-                  <div className="h-1.5 bg-white/10 rounded w-1/2 mx-auto" />
-                </div>
-                {/* Progress bar */}
-                <div className="flex gap-1 py-1">
-                  {[1,2,3].map(s => (
-                    <div key={s} className={`flex-1 h-1 rounded-full ${s <= 2 ? 'bg-[#DBFE01]' : 'bg-gray-700'}`} />
-                  ))}
-                </div>
-                <div className="h-8 bg-[#DBFE01]/10 border border-[#DBFE01]/20 rounded-lg flex items-center px-2">
-                  <div className="h-1.5 w-2/3 bg-[#DBFE01]/40 rounded" />
-                </div>
-                <div className="h-7 bg-[#DBFE01] rounded-lg flex items-center justify-center">
-                  <div className="h-1.5 w-12 bg-[#1a1a1a]/50 rounded" />
-                </div>
-              </div>
-              {/* Success badge */}
-              <div className="px-3 pb-3">
-                <div className="flex items-center gap-1.5 bg-[#DBFE01]/10 border border-[#DBFE01]/30 rounded-lg p-2">
-                  <CheckCircle2 className="w-3 h-3 text-[#DBFE01] flex-shrink-0" />
-                  <span className="text-[9px] text-[#DBFE01] font-medium">Users completing setup</span>
-                </div>
-              </div>
-            </div>
-            {/* Retention stat */}
-            <div className="mt-2 text-center">
-              <span className="text-[10px] font-bold text-[#DBFE01]">+40% retained</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Retention Uplift Dashboard */}
-    <motion.div
-      whileHover={{ y: -3 }}
-      className="bg-white rounded-2xl border border-gray-100 shadow-lg p-5 relative overflow-hidden"
+  <div className="grid gap-6">
+    {/* Checklist Card */}
+    <motion.div 
+        whileHover={{ y: -4 }}
+        className="bg-white rounded-2xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] border border-gray-100 p-6"
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-[#1a1a1a] rounded-lg flex items-center justify-center">
-            <LineChart className="w-4 h-4 text-[#DBFE01]" />
-          </div>
-          <div>
-            <div className="text-xs font-bold text-gray-900">Sprint Results</div>
-            <div className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">Week 6 Report</div>
-          </div>
+        <div className="flex items-center gap-3 mb-5 border-b border-gray-100 pb-4">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center">
+                <RefreshCw className="w-5 h-5 text-blue-600" />
+            </div>
+            <div>
+                <div className="font-bold text-gray-900 text-sm">Relaunch Sprint</div>
+                <div className="text-[10px] text-blue-500 font-bold uppercase tracking-wider">6-Week Plan</div>
+            </div>
         </div>
-        <div className="bg-green-50 text-green-600 text-[9px] font-bold px-2 py-1 rounded-full border border-green-100 flex items-center gap-1">
-          <TrendingUp className="w-2.5 h-2.5" /> On Track
+        <div className="space-y-3">
+            {[
+                { label: "Retention Loops Fixed", icon: Layers, color: "text-blue-500", bg: "bg-blue-50" },
+                { label: "Crash-Free Rate > 99%", icon: Activity, color: "text-emerald-500", bg: "bg-emerald-50" },
+                { label: "Onboarding Friction Removed", icon: Zap, color: "text-amber-500", bg: "bg-amber-50" },
+                { label: "ASO Assets Refreshed", icon: Download, color: "text-purple-500", bg: "bg-purple-50" }
+            ].map((item, i) => (
+                <div key={i} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg transition-colors group cursor-default">
+                    <div className="flex items-center gap-3">
+                        <div className={`w-6 h-6 rounded-md ${item.bg} flex items-center justify-center`}>
+                            <item.icon className={`w-3.5 h-3.5 ${item.color}`} />
+                        </div>
+                        <span className="text-gray-700 font-medium text-sm">{item.label}</span>
+                    </div>
+                    <CheckCircle2 className="w-4 h-4 text-gray-200 group-hover:text-green-500 transition-colors" />
+                </div>
+            ))}
         </div>
-      </div>
-
-      {/* KPI Row */}
-      <div className="grid grid-cols-3 gap-2 mb-4">
-        {[
-          { label: "D30 Retention", val: "+42%", color: "text-blue-600", bg: "bg-blue-50" },
-          { label: "Store Rating", val: "4.8★", color: "text-amber-500", bg: "bg-amber-50" },
-          { label: "ASO CVR", val: "+31%", color: "text-purple-600", bg: "bg-purple-50" },
-        ].map((k, i) => (
-          <div key={i} className={`${k.bg} rounded-xl p-2.5 text-center`}>
-            <div className={`text-sm font-extrabold ${k.color}`}>{k.val}</div>
-            <div className="text-[9px] text-gray-500 font-medium mt-0.5">{k.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Mini bar chart */}
-      <div className="flex items-end gap-1.5 h-14">
-        {[
-          { h: 30, label: "W1", active: false },
-          { h: 45, label: "W2", active: false },
-          { h: 55, label: "W3", active: false },
-          { h: 65, label: "W4", active: false },
-          { h: 75, label: "W5", active: false },
-          { h: 90, label: "W6", active: true },
-        ].map((b, i) => (
-          <div key={i} className="flex-1 flex flex-col items-center gap-1">
-            <motion.div
-              initial={{ height: 0 }}
-              whileInView={{ height: `${b.h}%` }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5, ease: "easeOut" }}
-              className={`w-full rounded-t-md ${ b.active ? 'bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.5)]' : 'bg-gray-100'}`}
-            />
-            <span className="text-[8px] text-gray-400 font-medium">{b.label}</span>
-          </div>
-        ))}
-      </div>
     </motion.div>
+
+    {/* ASO Testing Board */}
+    <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden group">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.1),transparent_50%)]" />
+        
+        <div className="relative z-10">
+            <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-2">
+                    <SmartphoneNfc className="w-4 h-4 text-[#DBFE01]" />
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">ASO Experiments</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[9px] text-green-500 font-bold uppercase">Active</span>
+                </div>
+            </div>
+            
+            <div className="flex gap-4 items-end">
+                {/* Variant A */}
+                <div className="flex-1 text-center opacity-50 hover:opacity-100 transition-opacity">
+                    <div className="h-24 bg-white/5 border border-white/10 rounded-xl mb-3 flex items-center justify-center">
+                        <div className="w-10 h-10 bg-white/10 rounded-lg" />
+                    </div>
+                    <div className="text-[10px] text-gray-400 mb-1">Original</div>
+                    <div className="text-xs font-bold text-white">2.1% CVR</div>
+                </div>
+
+                <div className="pb-8 text-gray-600 font-black text-sm">VS</div>
+
+                {/* Variant B (Winner) */}
+                <div className="flex-1 text-center relative">
+                    <motion.div 
+                        initial={{ y: 5 }} animate={{ y: 0 }} 
+                        className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[9px] font-extrabold px-2 py-0.5 rounded shadow-lg shadow-[#DBFE01]/20 z-20"
+                    >
+                        WINNER
+                    </motion.div>
+                    <div className="h-24 bg-gradient-to-b from-[#DBFE01]/20 to-[#DBFE01]/5 border border-[#DBFE01]/30 rounded-xl mb-3 flex items-center justify-center relative shadow-[0_0_20px_rgba(219,254,1,0.1)]">
+                        <div className="w-10 h-10 bg-[#DBFE01] rounded-lg shadow-lg" />
+                    </div>
+                    <div className="text-[10px] text-[#DBFE01] mb-1 font-bold">New Variant</div>
+                    <div className="text-xs font-bold text-white">+15% CVR</div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 );
 
