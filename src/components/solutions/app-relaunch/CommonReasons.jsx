@@ -53,7 +53,24 @@ export default function CommonReasons() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden">
-      {/* Animated AI sparkles */}
+      <style>{`
+        @keyframes glow {
+          0%, 100% { box-shadow: 0 0 20px rgba(219, 254, 1, 0.3), 0 0 40px rgba(219, 254, 1, 0.1); }
+          50% { box-shadow: 0 0 30px rgba(219, 254, 1, 0.5), 0 0 60px rgba(219, 254, 1, 0.2); }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 0.6; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.1); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-8px); }
+        }
+        .glow-card { animation: glow 3s ease-in-out infinite; }
+        .pulse-icon { animation: pulse-glow 2s ease-in-out infinite; }
+        .float-element { animation: float 3s ease-in-out infinite; }
+      `}</style>
+      {/* Animated AI sparkles with glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(18)].map((_, i) => {
           const x = (i * 5.8 + 3) % 100;
@@ -63,8 +80,8 @@ export default function CommonReasons() {
           return (
             <motion.div
               key={i}
-              className={`absolute ${size} text-[#DBFE01]`}
-              style={{ left: `${x}%`, top: `${y}%` }}
+              className={`absolute ${size} text-[#DBFE01] drop-shadow-lg`}
+              style={{ left: `${x}%`, top: `${y}%`, textShadow: '0 0 12px rgba(219, 254, 1, 0.6)' }}
               animate={{ opacity: [0.08, 0.35, 0.08], scale: [0.8, 1.2, 0.8], rotate: [0, 20, 0] }}
               transition={{ duration: 3 + (i % 3), repeat: Infinity, delay, ease: "easeInOut" }}>
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" /></svg>
@@ -72,6 +89,18 @@ export default function CommonReasons() {
           );
         })}
       </div>
+      
+      {/* Floating glow orbs */}
+      <motion.div
+        className="absolute top-1/4 right-1/3 w-40 h-40 bg-[#DBFE01]/20 rounded-full blur-3xl pointer-events-none"
+        animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-1/3 left-1/4 w-32 h-32 bg-[#DBFE01]/15 rounded-full blur-3xl pointer-events-none"
+        animate={{ y: [0, -20, 0], x: [0, -10, 0] }}
+        transition={{ duration: 7, repeat: Infinity, delay: 1, ease: "easeInOut" }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
@@ -114,11 +143,16 @@ export default function CommonReasons() {
 
                 <motion.div
                   className={cn(
-                    "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-md relative z-10",
+                    "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 relative z-10",
                     activeIndex === i ? "bg-[#1a1a1a]" : "bg-[#DBFE01]"
                   )}
-                  animate={activeIndex === i ? { rotate: 360 } : { rotate: 0 }}
+                  animate={activeIndex === i ? { rotate: 360, scale: 1.1 } : { rotate: 0, scale: 1 }}
                   transition={{ duration: 0.5 }}
+                  style={{
+                    boxShadow: activeIndex === i 
+                      ? '0 0 20px rgba(219, 254, 1, 0.6), 0 0 40px rgba(219, 254, 1, 0.3)' 
+                      : '0 2px 8px rgba(0, 0, 0, 0.1)'
+                  }}
                 >
                   <span className={cn(
                     "text-lg font-bold transition-colors duration-300",
@@ -179,10 +213,19 @@ export default function CommonReasons() {
                   <div className="flex items-start gap-4 relative z-10">
                     <motion.div
                       className={cn(
-                        "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-md",
+                        "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300",
                         activeIndex === i ? useCase.iconBg : useCase.iconBg
                       )}
-                      animate={activeIndex === i ? { scale: 1.1 } : { scale: 1 }}
+                      animate={activeIndex === i ? { scale: 1.15, rotate: 6 } : { scale: 1, rotate: 0 }}
+                      style={{
+                        boxShadow: activeIndex === i
+                          ? `0 0 16px ${
+                              i === 0 ? 'rgba(16, 185, 129, 0.5)' : i === 1 ? 'rgba(59, 130, 246, 0.5)' : 'rgba(217, 119, 6, 0.5)'
+                            }, 0 0 32px ${
+                              i === 0 ? 'rgba(16, 185, 129, 0.2)' : i === 1 ? 'rgba(59, 130, 246, 0.2)' : 'rgba(217, 119, 6, 0.2)'
+                            }`
+                          : '0 2px 8px rgba(0, 0, 0, 0.1)'
+                      }}
                     >
                       {Icon && <Icon className={cn("w-6 h-6 transition-all duration-300", useCase.iconColor)} />}
                     </motion.div>
@@ -202,7 +245,7 @@ export default function CommonReasons() {
                     </div>
                   </div>
 
-                  {/* Metrics Tags */}
+                  {/* Metrics Tags with glow */}
                   <motion.div
                     className="flex flex-wrap gap-2 relative z-10"
                     animate={activeIndex === i ? { opacity: 1 } : { opacity: 0.6 }}
@@ -212,6 +255,7 @@ export default function CommonReasons() {
                         key={idx}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
+                        animate={activeIndex === i ? { scale: 1.05 } : { scale: 1 }}
                         transition={{ delay: i * 0.1 + idx * 0.05 + 0.2 }}
                         className={cn(
                           "text-xs font-semibold px-3 py-1 rounded-full transition-all duration-300",
@@ -219,13 +263,18 @@ export default function CommonReasons() {
                             ? "bg-[#1a1a1a]/10 text-[#1a1a1a]"
                             : "bg-[#1a1a1a]/5 text-[#1a1a1a]/70"
                         )}
+                        style={{
+                          boxShadow: activeIndex === i 
+                            ? '0 0 12px rgba(26, 26, 26, 0.2)' 
+                            : 'none'
+                        }}
                       >
                         {metric}
                       </motion.span>
                     ))}
                   </motion.div>
 
-                  {/* Animated metric indicator */}
+                  {/* Animated metric indicator with glow */}
                   <motion.div
                     className="relative z-10 flex items-center gap-2"
                     animate={activeIndex === i ? { opacity: 1, y: 0 } : { opacity: 0, y: -8 }}
@@ -234,12 +283,19 @@ export default function CommonReasons() {
                     <div className="flex-1 h-1 bg-[#1a1a1a]/10 rounded-full overflow-hidden">
                       <motion.div
                         className={cn(
-                          "h-full rounded-full",
+                          "h-full rounded-full transition-shadow duration-300",
                           i === 0 ? "bg-emerald-500" : i === 1 ? "bg-blue-500" : "bg-amber-500"
                         )}
                         initial={{ width: 0 }}
                         animate={activeIndex === i ? { width: "85%" } : { width: 0 }}
                         transition={{ duration: 0.5 }}
+                        style={{
+                          boxShadow: activeIndex === i
+                            ? `0 0 12px ${
+                                i === 0 ? 'rgba(16, 185, 129, 0.6)' : i === 1 ? 'rgba(59, 130, 246, 0.6)' : 'rgba(217, 119, 6, 0.6)'
+                              }`
+                            : 'none'
+                        }}
                       />
                     </div>
                     <span className="text-xs font-bold text-[#1a1a1a]/70">{useCase.metric}</span>
