@@ -54,7 +54,7 @@ export default function AppRelaunchRetention() {
       />
       <AppRelaunchFitCheck />
       <SolutionProblem 
-        title="Your app is live — but users aren't staying."
+        title="Your app is live, but users are NOT staying"
         quote="Most apps do not stall because of one missing feature. They stall because retention leaks, product friction, and unclear data compound over time."
         items={[
           "Users install the app, but too few come back",
