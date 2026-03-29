@@ -1139,7 +1139,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       loading="lazy" />
                     </div>
                   </div>
-                ))
+                ))}
               </motion.div>
             </div>
           </Reveal>
