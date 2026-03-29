@@ -1118,8 +1118,18 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
                 { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
-                map((tech, i) =>
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }]).map((tech, i) =>
+                <div key={i} className="flex-shrink-0 w-28 h-28">
+                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
+                    </div>
+                  </div>
+                )}
                 {(techStackLogos.length > 0 ? techStackLogos : [
                 { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                 { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
@@ -1132,8 +1142,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
                 { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
-                map((tech, i) =>
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }]).map((tech, i) =>
                 <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
                       <img
