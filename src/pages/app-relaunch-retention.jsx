@@ -108,6 +108,12 @@ export default function AppRelaunchRetention() {
       <SolutionProof 
         title="Turn installs into active users."
         items={["Crash-free > 99.9%", "Native (Swift/Kotlin)", "React Native / Flutter"]}
+        whyBuildItems={[
+          { num: "01", title: "Ship fixes weekly, not someday", desc: "Product, UX, and performance improvements every week.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+          { num: "02", title: "Fix retention before scaling spend", desc: "Improve onboarding, repeat usage, and store conversion first.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+          { num: "03", title: "Built for live apps", desc: "Improve what is working. Rebuild only when it is truly needed.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+          { num: "04", title: "Know what's moving growth", desc: "Clear funnels, cohorts, and store metrics you can act on.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
+        ]}
         testimonials={[
           { quote: "Our retention Day-30 doubled after the redesign. The ASO work also lowered our CPA by 40%.", author: "Michael T.", role: "Head of Product, FinApp" },
           { quote: "Finally, a team that understands that pretty screens don't matter if users don't stick.", author: "Elena R.", role: "Founder, HealthTrack" },

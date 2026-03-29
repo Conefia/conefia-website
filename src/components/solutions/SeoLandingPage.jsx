@@ -983,7 +983,7 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [] }) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [] }) => {
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1066,11 +1066,11 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               {/* Right: Feature list */}
               <div className="order-1 lg:order-2">
                 <div className="space-y-6">
-                  {[
+                  {(whyBuildItems.length > 0 ? whyBuildItems : [
                   { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
                   { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
                   { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
-                  { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }].
+                  { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }]).
                   map((item, i) =>
                   <motion.div
                     key={i}
@@ -1079,7 +1079,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
                     whileHover={{ x: 6 }}
-                    className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color} border ${item.border} transition-all duration-300 group`}>
+                    className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color || 'from-gray-50 to-gray-50/30'} border ${item.border || 'border-gray-200/50'} transition-all duration-300 group`}>
                     
                       <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
                       <div>
