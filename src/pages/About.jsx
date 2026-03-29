@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Link2, Rocket, Smartphone, TrendingUp, Users } from 'lucide-react';
+import { Target, Lightbulb, TrendingUp, Users, Zap, Shield } from 'lucide-react';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
@@ -11,7 +11,7 @@ export default function About() {
       <HeroDarkBackground />
       <Seo
         title="About Us | Conefia - Build, Launch, Scale"
-        description="Conefia is the build + growth partner for tech founders and teams that want to launch faster and scale with confidence—without the handoff chaos."
+        description="Learn about Conefia's vision, mission, and unique approach to helping founders, clinics, and brands build and scale digital ventures."
         canonical="/about"
       />
       <script
@@ -30,7 +30,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-20 relative z-10">
         <Breadcrumbs items={[{ label: 'About Us' }]} theme="dark" />
 
-        {/* Hero */}
+        {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,28 +41,25 @@ export default function About() {
             About <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Conefia</span>
           </h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
-            The build + growth partner for tech founders and teams that want to launch faster and scale with confidence—without the handoff chaos.
+            One partner to build, launch, and scale your digital venture from idea to market leader.
           </p>
         </motion.div>
 
-        {/* The Name + Inspiration */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        {/* Mission & Vision Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#DBFE01]/30 transition-all"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#DBFE01]/30 transition-all group"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-5">
-              <span className="text-[#DBFE01] text-xs font-bold uppercase tracking-widest">The Name</span>
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Target className="w-7 h-7 text-[#1a1a1a]" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-4">What does Conefia mean?</h2>
-            <p className="text-white/70 leading-relaxed mb-4">
-              <span className="text-[#DBFE01] font-semibold">Conefia</span> stands for <span className="italic text-white/90">Connected data and processes for intelligent founders.</span>
-            </p>
-            <p className="text-white/60 leading-relaxed text-sm">
-              It comes from a simple belief: when data, tools, and execution are connected, AI becomes practical—and businesses become faster, sharper, and more competitive.
+            <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
+            <p className="text-white/70 leading-relaxed">
+              To empower founders, clinics, and brands to transform their ideas into thriving digital ventures. We eliminate the complexity of product development and growth, delivering end-to-end solutions that drive real business results.
             </p>
           </motion.div>
 
@@ -71,101 +68,117 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#DBFE01]/30 transition-all"
+            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:border-[#DBFE01]/30 transition-all group"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-5">
-              <span className="text-[#DBFE01] text-xs font-bold uppercase tracking-widest">The Inspiration</span>
+            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <Lightbulb className="w-7 h-7 text-[#1a1a1a]" />
             </div>
-            <h2 className="text-2xl font-bold text-white mb-4">Why we built this</h2>
-            <p className="text-white/70 leading-relaxed mb-3 text-sm">
-              After 10+ years helping startups and teams build products, we noticed something painful: brilliant ideas don't fail because the idea is bad—they fail because execution is weak, fragmented, or disconnected.
-            </p>
-            <p className="text-white/60 leading-relaxed text-sm">
-              Strategy lives in one place. Development in another. Growth is "later." Context gets lost, decisions get delayed, and momentum fades. So we built Conefia to fix that.
+            <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
+            <p className="text-white/70 leading-relaxed">
+              To become the most trusted partner for digital innovation, where every entrepreneur and business can turn their vision into reality without the traditional barriers of time, cost, and technical complexity.
             </p>
           </motion.div>
         </div>
 
-        {/* What We Solve */}
+        {/* Unique Value Proposition */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16"
+          className="mb-20"
         >
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20 mb-4">
-              <span className="text-rose-400 text-xs font-bold uppercase tracking-widest">What We Solve</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              The problems we're built for
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Conefia</span>
             </h2>
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              We're not just a development agency. We're your growth partner.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {[
-              "Great ideas stuck in endless planning or slow delivery",
-              "MVPs that launch without traction or clear learning",
-              "AI features that sound exciting but don't ship into real workflows",
-              "Too many vendors, too little ownership, unclear outcomes"
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5"
-              >
-                <div className="w-2 h-2 rounded-full bg-rose-400 flex-shrink-0 mt-2" />
-                <span className="text-white/75 leading-relaxed text-sm">{item}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* What We Do */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
-        >
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/20 mb-4">
-              <span className="text-[#DBFE01] text-xs font-bold uppercase tracking-widest">What We Do</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Our approach: <span className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">Build → Launch → Scale</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              { icon: Rocket, title: "AI MVP & Product Launch", desc: "Product strategy, UX, rapid build, and practical AI features that are measurable and user-safe." },
-              { icon: Smartphone, title: "Mobile & Web App Development", desc: "End-to-end delivery: discovery → build → QA → launch, with clear ownership and steady reporting." },
-              { icon: TrendingUp, title: "Growth & Retention Systems", desc: "Instrumentation, conversion improvements, retention loops, and growth support tied to product reality." },
-              { icon: Users, title: "Accelerator & Cohort Execution Support", desc: "Build squads, run milestones, and keep teams shipping with sponsor-ready updates." },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-[#DBFE01]/30 transition-all group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <item.icon className="w-6 h-6 text-[#1a1a1a]" />
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#DBFE01]/30 transition-all"
+            >
+              <Zap className="w-10 h-10 text-[#DBFE01] mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Speed to Market</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Launch in weeks, not months. Our proven playbook and pre-built systems accelerate your time to market without compromising quality.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#DBFE01]/30 transition-all"
+            >
+              <TrendingUp className="w-10 h-10 text-[#DBFE01] mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Growth-First Approach</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                We don't just build apps. We build growth systems with built-in acquisition, retention, and monetization strategies from day one.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#DBFE01]/30 transition-all"
+            >
+              <Shield className="w-10 h-10 text-[#DBFE01] mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">Risk-Free Partnership</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Validated approach with proven case studies across industries. No guesswork, just results-driven methodology backed by data.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#DBFE01]/30 transition-all"
+            >
+              <Users className="w-10 h-10 text-[#DBFE01] mb-4" />
+              <h3 className="text-xl font-bold text-white mb-3">One Dedicated Team</h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                No handoffs, no miscommunication. One experienced team handles your entire journey from validation to scale.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-[#DBFE01]/30 transition-all md:col-span-2"
+            >
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center">
+                    <span className="text-2xl font-bold text-[#1a1a1a]">AI</span>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">AI-Powered Innovation</h3>
+                  <p className="text-white/60 text-sm leading-relaxed">
+                    Leverage cutting-edge AI capabilities to build smarter products. From intelligent chatbots to predictive analytics, we integrate AI where it truly adds value to your business.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 
-        {/* Why Conefia */}
+        {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -173,13 +186,25 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="bg-gradient-to-br from-[#DBFE01] to-[#c5e000] rounded-2xl p-12 text-center"
         >
-          <div className="w-14 h-14 rounded-xl bg-[#1a1a1a]/10 flex items-center justify-center mx-auto mb-6">
-            <Link2 className="w-7 h-7 text-[#1a1a1a]" />
+          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-8">By The Numbers</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2">50+</div>
+              <div className="text-[#1a1a1a]/70 font-semibold text-sm">Projects Delivered</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2">3x</div>
+              <div className="text-[#1a1a1a]/70 font-semibold text-sm">Faster Launch</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2">95%</div>
+              <div className="text-[#1a1a1a]/70 font-semibold text-sm">Client Satisfaction</div>
+            </div>
+            <div>
+              <div className="text-4xl md:text-5xl font-extrabold text-[#1a1a1a] mb-2">24/7</div>
+              <div className="text-[#1a1a1a]/70 font-semibold text-sm">Support Available</div>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold text-[#1a1a1a] mb-4">Why Conefia?</h2>
-          <p className="text-[#1a1a1a]/80 text-lg max-w-2xl mx-auto leading-relaxed">
-            Because "build" and "growth" shouldn't be separate lanes. We connect them—so execution stays aligned, fast, and outcome-driven.
-          </p>
         </motion.div>
       </div>
     </div>
