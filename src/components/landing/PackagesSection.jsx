@@ -32,7 +32,7 @@ export default function PackagesSection({ reduceMotion }) {
   },
   {
     icon: Code2,
-    name: 'AI / Mobile MVP Build',
+    name: 'AI SaaS MVP Launch',
     pricing: 'Fixed + Milestones',
     description: 'Production-ready MVP in 8–12 weeks',
     kpi: 'MVP in 8–12 weeks',
