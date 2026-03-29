@@ -4,7 +4,7 @@ import {
   TrendingUp, Smartphone, Download, Star, Users, 
   BarChart, RefreshCw, Search, Activity, CheckCircle2, 
   XCircle, ArrowRight, Layout, Zap, Filter, MousePointerClick,
-  SmartphoneNfc, LineChart, Trophy, AlertTriangle, Layers, Rocket
+  SmartphoneNfc, LineChart, Trophy, AlertTriangle, Layers, Rocket, Code2
 } from 'lucide-react';
 
 // Enhanced Hero: 3D App Store + Glowing Retention
