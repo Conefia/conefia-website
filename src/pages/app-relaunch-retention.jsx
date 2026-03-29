@@ -67,16 +67,17 @@ export default function AppRelaunchRetention() {
         visual={<ProblemVisual />}
       />
       <SolutionDetails 
-        title="Fix retention first. Relaunch with confidence. Then grow from a stronger product"
-        description="We do not treat relaunch as a visual refresh. We treat it as a product and growth reset. That means identifying where users drop off, fixing the experience that causes friction, improving performance, strengthening store conversion, and putting reliable analytics in place so growth decisions stop feeling like guesswork."
+        title="Fix retention first. Then grow from a stronger product."
+        description="This is not just a visual refresh. We find the drop-offs, fix the friction, improve performance, strengthen store conversion, and set up analytics you can trust."
         primaryCta="Get My Relaunch Plan"
+        riskReducer="Scope locks by Week 2. If priorities are still unclear, we reset before build."
         features={[
           "Retention diagnosis across onboarding, activation, and repeat usage",
-          "UX refresh focused on clarity, speed, and user confidence",
-          "Performance improvements that support better ratings and smoother usage",
-          "Store conversion support, including ASO, screenshots, messaging, and review strategy",
-          "Funnel and cohort analytics to measure what changes after relaunch",
-          "Weekly demos and stage gates so progress stays visible and controlled"
+          "UX updates focused on clarity, speed, and confidence",
+          "Performance fixes that improve ratings and usability",
+          "ASO, screenshots, messaging, and review strategy",
+          "Funnel and cohort analytics to measure impact",
+          "Weekly demos and stage gates to keep everything on track"
         ]}
         visual={<SolutionVisual />}
       />
