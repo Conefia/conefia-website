@@ -983,7 +983,7 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.' }) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.', techStackLogos = [] }) => {
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1106,7 +1106,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
                 
-                {[
+                {(techStackLogos.length > 0 ? techStackLogos : [
                 { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                 { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
                 { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
@@ -1120,18 +1120,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                 { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
                 map((tech, i) =>
-                <div key={i} className="flex-shrink-0 w-28 h-28">
-                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
-                      <img
-                      src={tech.url}
-                      alt={tech.name}
-                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                      loading="lazy" />
-                    
-                    </div>
-                  </div>
-                )}
-                {[
+                {(techStackLogos.length > 0 ? techStackLogos : [
                 { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                 { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
                 { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
