@@ -125,8 +125,8 @@ export default function AppRelaunchRetention() {
           { name: "Mixpanel", url: "https://cdn.brandfetch.io/idr_rhI2FS/theme/dark/idMJ8uODLv.svg?c=1bxid64Mup7aczewSAYMX&t=1717143401811" },
           { name: "RevenueCat", url: "https://revenuecat.wpenginepowered.com/wp-content/uploads/2025/10/app_icon.svg" },
           { name: "Amplitude", url: "https://logo.svgcdn.com/logos/amplitude.svg" },
-          { name: "App Store", url: "https://logo.svgcdn.com/logos/app-store.svg" },
-          { name: "AppsFlyer", url: "https://logo.svgcdn.com/logos/appsflyer.svg" },
+          { name: "App Store", url: "https://cdn.brandfetch.io/idj34mSa0R/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763653537279" },
+          { name: "AppsFlyer", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AppsFlyer.svg" },
           { name: "Google Play", url: "https://logo.svgcdn.com/logos/google-play.svg" }
         ]}
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
