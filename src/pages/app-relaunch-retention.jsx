@@ -84,20 +84,20 @@ export default function AppRelaunchRetention() {
       <SolutionProcess 
         steps={[
           {
-            title: "Diagnose (Week 1)",
-            description: "Deep dive audit: Retention metrics + App Store performance + Event tracking health check."
+            title: "1) Validate (Weeks 1–2)",
+            description: "Retention audit + relaunch plan. We review the product, data, ratings, and store performance, then lock what matters most."
           },
           {
-            title: "Build (Weeks 2-4)",
-            description: "Execution sprint: UX friction removal, performance tuning, and implementation of core activation loops."
+            title: "2) Build (Weeks 3–10)",
+            description: "Product fixes + UX + performance + analytics. We ship the highest-impact improvements first, with weekly demos and clear progress."
           },
           {
-            title: "Relaunch (Weeks 5-6)",
-            description: "Growth layer: New ASO visual assets, keyword optimization, and review management strategy."
+            title: "3) Launch (Weeks 11–12)",
+            description: "Release support + store lift + measurement. We refresh store assets, support the release, and make sure tracking is live."
           },
           {
-            title: "Scale (Monthly)",
-            description: "Continuous improvement: Retention experiments, A/B testing store assets, and optimizing growth loops."
+            title: "4) Scale (Monthly)",
+            description: "Retention improvement + growth tuning. After launch, we keep improving repeat usage, store performance, and growth efficiency."
           }
         ]}
         visual={<div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><Search className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Audit</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Redesign</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Grow</span></div></div></div>}

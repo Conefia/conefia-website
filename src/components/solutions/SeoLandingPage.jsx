@@ -582,7 +582,7 @@ export const SolutionProcess = ({ steps, visual }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">Build → Launch → Scale</span></h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">Validate → Build → Launch → Scale</span></h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
