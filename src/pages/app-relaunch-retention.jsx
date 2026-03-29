@@ -122,6 +122,17 @@ export default function AppRelaunchRetention() {
         ]}
         useCasesTitle="Platforms We Master"
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
+        // Dynamic App Relaunch content
+        imageBadge="RETENTION-FIRST RELAUNCH"
+        imageOverlay={{ title: "8–12 weeks to relaunch", subtitle: "Scope locked. Weekly demos. No guesswork." }}
+        sectionBadge="Why retention matters"
+        sectionTitle={<><span className="text-[#1a1a1a]">Fix retention</span> <span className="gradient-text">first</span></>}
+        featureCards={[
+          { num: "01", title: "Ship fixes weekly, not someday", desc: "Product, UX, and performance improvements shipped every week.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+          { num: "02", title: "Fix retention before scaling spend", desc: "Improve onboarding, repeat usage, and store conversion first.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+          { num: "03", title: "Built for live apps", desc: "Improve what is working. Rebuild only when it is truly needed.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+          { num: "04", title: "Know what's moving growth", desc: "Clear funnels, cohorts, and store metrics you can act on.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
+        ]}
       />
       <SolutionFAQ 
         items={[
