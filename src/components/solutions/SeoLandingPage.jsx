@@ -18,11 +18,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from "@/lib/utils";
 
 // Reusable Components
-export const SectionHeading = ({ children, className }) => (
-  <h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
+export const SectionHeading = ({ children, className }) =>
+<h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
     {children}
-  </h2>
-);
+  </h2>;
+
 
 
 export const Reveal = ({ children, className, delay = 0 }) =>
@@ -79,7 +79,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           </div>
 
           {layout === 'split' ?
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="text-left">
                 <motion.h1
                 initial={{ opacity: 0, y: 20 }}
@@ -87,27 +87,27 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 transition={{ delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
 
-                  {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) => 
-                   ['AI', 'MVP', 'Ship', '8–12'].includes(part) ? 
-                   <span key={i} className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">{part}</span> : 
-                   part
-                 )}
+                  {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) =>
+                ['AI', 'MVP', 'Ship', '8–12'].includes(part) ?
+                <span key={i} className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">{part}</span> :
+                part
+                )}
                 </motion.h1>
                 
                 <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
 
                   Scope locked by week 2. Retention-first product fixes. UX and performance refresh. Store conversion, analytics, and growth support included — under one accountable team.
                 </motion.p>
                 
                 <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 mb-3">
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-4 mb-3">
 
                   <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
                     {primaryCta}
@@ -117,27 +117,27 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                     {secondaryCta}
                   </button>
                 </motion.div>
-                {microCopy && (
-                  <p className="text-white/50 text-xs font-medium mb-6">{microCopy}</p>
-                )}
+                {microCopy &&
+              <p className="text-white/50 text-xs font-medium mb-6">{microCopy}</p>
+              }
 
                 {/* Trust Chips - Left Aligned */}
                 <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-3 mb-8">
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-wrap gap-3 mb-8">
 
                   {trustChips.map((chip, i) =>
-              <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
                       {chip.icon ?
-                <chip.icon className="w-3 h-3 text-[#DBFE01]" /> :
+                  <chip.icon className="w-3 h-3 text-[#DBFE01]" /> :
 
-                <Check className="w-3 h-3 text-[#DBFE01]" />
-                }
+                  <Check className="w-3 h-3 text-[#DBFE01]" />
+                  }
                       {chip.name || chip}
                     </div>
-              )}
+                )}
                 </motion.div>
 
 
@@ -149,40 +149,40 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               </div>
             </div> : (
 
-        /* CENTERED LAYOUT (DEFAULT) */
-        <div className="max-w-4xl mx-auto text-center">
+          /* CENTERED LAYOUT (DEFAULT) */
+          <div className="max-w-4xl mx-auto text-center">
               <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
 
                 <Sparkles className="w-4 h-4 text-[#DBFE01]" />
                 <span className="text-sm font-semibold text-[#DBFE01]">Solutions Package</span>
               </motion.div>
               
               <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
 
                 {title}
               </motion.h1>
               
               <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-base md:text-lg text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-base md:text-lg text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">
 
                 {subtitle}
               </motion.p>
               
               <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
 
                 <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
                    {primaryCta}
@@ -195,35 +195,35 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
               {/* Trust Chips */}
               <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-4 md:gap-8">
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="flex flex-wrap justify-center gap-4 md:gap-8">
 
                 {trustChips.map((chip, i) =>
-            <div key={i} className="flex items-center gap-2 text-white/70 text-sm font-medium bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+              <div key={i} className="flex items-center gap-2 text-white/70 text-sm font-medium bg-white/5 px-4 py-2 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
                     {chip.icon ?
-              <chip.icon className="w-4 h-4 text-[#DBFE01]" /> :
+                <chip.icon className="w-4 h-4 text-[#DBFE01]" /> :
 
-              <Check className="w-4 h-4 text-[#DBFE01]" />
-              }
+                <Check className="w-4 h-4 text-[#DBFE01]" />
+                }
                     {chip.name || chip}
                   </div>
-            )}
+              )}
               </motion.div>
 
               {visual &&
-          <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-            className="mt-12">
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.5, duration: 0.7 }}
+              className="mt-12">
 
                   {visual}
                 </motion.div>
-          }
+            }
             </div>)
-        }
+          }
         </div>
       {!reduceMotion &&
         <motion.div
@@ -237,7 +237,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
           </div>
         </motion.div>
-      }
+        }
     </section>
     <BrandCarousel />
     </div>);
@@ -301,32 +301,32 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
         {/* Bullet list */}
         <Reveal>
           <ul className="space-y-4">
-            {items.map((item, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 + 0.1 }}
-                className="flex items-start gap-4 group"
-              >
+            {items.map((item, i) =>
+          <motion.li
+            key={i}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 + 0.1 }}
+            className="flex items-start gap-4 group">
+            
                 <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
                   <X className="w-4 h-4 text-rose-500" />
                 </div>
                 <span className="text-[#1a1a1a]/75 text-base leading-relaxed pt-1 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
               </motion.li>
-            ))}
+          )}
           </ul>
 
           {/* Callout quote */}
-          {quote && (
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
-              className="mt-10 relative"
-            >
+          {quote &&
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5 }}
+          className="mt-10 relative">
+          
               <div className="relative bg-rose-50 rounded-2xl p-6 border border-rose-200 shadow-sm">
                 <div className="flex gap-3 items-start">
                   <div className="text-rose-400 text-4xl font-serif leading-none mt-1 flex-shrink-0">"</div>
@@ -334,20 +334,20 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
                 </div>
               </div>
             </motion.div>
-          )}
+        }
         </Reveal>
 
         {/* Visual */}
         <Reveal delay={0.2} className="relative">
-          {visual ? visual : (
-            <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
+          {visual ? visual :
+        <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
               <div className="flex items-center justify-center h-48">
                 <div className="w-20 h-20 rounded-full bg-white border border-rose-200 flex items-center justify-center shadow-sm">
                   <X className="w-10 h-10 text-rose-400" />
                 </div>
               </div>
             </div>
-          )}
+        }
         </Reveal>
       </div>
     </div>
@@ -366,19 +366,19 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold mt-5 text-center !mb-2 leading-tight">{title}</h2>
-        {description && (
-          <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
+        <h2 className="mt-5 text-3xl font-extrabold text-center leading-tight md:text-4xl !mb-2">{title}</h2>
+        {description &&
+      <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
           </p>
-        )}
+      }
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <Reveal className="order-2 lg:order-1 relative">
-            {visual ? visual : (
-            <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10" />
-            )}
+            {visual ? visual :
+        <div className="bg-white rounded-3xl p-8 border border-[#DBFE01] shadow-2xl shadow-[#DBFE01]/10 relative z-10" />
+        }
         </Reveal>
 
         <Reveal delay={0.2} className="order-1 lg:order-2">
@@ -395,12 +395,12 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             </ul>
           </div>
 
-          {riskReducer && (
-            <p className="text-sm text-gray-500 italic mb-8 flex items-center gap-2 pl-1">
+          {riskReducer &&
+        <p className="text-sm text-gray-500 italic mb-8 flex items-center gap-2 pl-1">
               <ShieldCheck className="w-4 h-4 text-emerald-500 flex-shrink-0" />
               {riskReducer}
             </p>
-          )}
+        }
 
           <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 transition-all">
             {primaryCta}
@@ -426,8 +426,8 @@ export const RoadmapCallSection = () =>
       const size = Math.random() * 2 + 0.3;
       const opacity = Math.random() * 0.6 + 0.2;
       return (
-        <div key={`star-${i}`} className="absolute rounded-full bg-white" style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, opacity: opacity * 0.8, boxShadow: `0 0 ${size}px rgba(255,255,255,${opacity * 0.3})` }} />
-      );
+        <div key={`star-${i}`} className="absolute rounded-full bg-white" style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, opacity: opacity * 0.8, boxShadow: `0 0 ${size}px rgba(255,255,255,${opacity * 0.3})` }} />);
+
     })}
   </div>
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -454,31 +454,31 @@ export const RoadmapCallSection = () =>
         <Reveal delay={0.1}>
           <ul className="space-y-4 mb-10 mt-4">
             {[
-              "Confirm your target user + workflow in 2 minutes",
-              "Define MVP scope (must-have vs later)",
-              "Recommend the AI approach (RAG vs agents vs fine-tuning)",
-              "Map your 8–12 week delivery plan",
-              "Flag risks early (data, compliance, cost, reliability)"
-            ].map((item, i) => (
-              <motion.li
-                key={i}
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex items-start gap-4"
-              >
+            "Confirm your target user + workflow in 2 minutes",
+            "Define MVP scope (must-have vs later)",
+            "Recommend the AI approach (RAG vs agents vs fine-tuning)",
+            "Map your 8–12 week delivery plan",
+            "Flag risks early (data, compliance, cost, reliability)"].
+            map((item, i) =>
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="flex items-start gap-4">
+              
                 <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
                   <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
                 </div>
                 <span className="text-white/80 text-base leading-relaxed">{item}</span>
               </motion.li>
-            ))}
+            )}
           </ul>
           <Link
             to={createPageUrl('Book')}
-            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all"
-          >
+            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all">
+            
             Book Free Roadmap Call
             <ArrowRight className="w-5 h-5" />
           </Link>
@@ -491,8 +491,8 @@ export const RoadmapCallSection = () =>
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
             alt="Product roadmap planning meeting"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" />
+          
           {/* Dark overlay for cohesion with dark section */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0B1020]/60 via-transparent to-[#0B1020]/40" />
 
@@ -502,8 +502,8 @@ export const RoadmapCallSection = () =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg"
-          >
+            className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+            
             Free · 30 min
           </motion.div>
 
@@ -513,8 +513,8 @@ export const RoadmapCallSection = () =>
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.7, duration: 0.6 }}
-            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5"
-          >
+            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+            
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(219,254,1,0.4)]">
                 <Sparkles className="w-5 h-5 text-[#1a1a1a]" />
@@ -534,48 +534,48 @@ export const RoadmapCallSection = () =>
 
 
 const processStepsDefault = [
-  {
-    title: "Validate (Weeks 1–2)",
-    description: "Scope lock + pilot target + architecture blueprint. We define what \"done\" looks like."
-  },
-  {
-    title: "Build (Weeks 3–10)",
-    description: "AI agents + app logic + infrastructure + analytics + QA. Weekly demos you can touch."
-  },
-  {
-    title: "Launch (Weeks 11–12)",
-    description: "Onboarding, pricing test, pilot pipeline assets, analytics dashboards, and handoff."
-  },
-  {
-    title: "Scale (Monthly)",
-    description: "Activation + retention experiments + cost/performance tuning."
-  }
-];
+{
+  title: "Validate (Weeks 1–2)",
+  description: "Scope lock + pilot target + architecture blueprint. We define what \"done\" looks like."
+},
+{
+  title: "Build (Weeks 3–10)",
+  description: "AI agents + app logic + infrastructure + analytics + QA. Weekly demos you can touch."
+},
+{
+  title: "Launch (Weeks 11–12)",
+  description: "Onboarding, pricing test, pilot pipeline assets, analytics dashboards, and handoff."
+},
+{
+  title: "Scale (Monthly)",
+  description: "Activation + retention experiments + cost/performance tuning."
+}];
+
 
 export const SolutionProcess = ({ steps, visual }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-  <section className="py-24 bg-white overflow-hidden relative">
+    <section className="py-24 bg-white overflow-hidden relative">
     {/* Color splash blobs */}
     <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/8 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/4" />
     <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#DBFE01]/6 rounded-full blur-[100px] pointer-events-none translate-x-1/3 translate-y-1/4" />
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-indigo-100/40 rounded-full blur-[80px] pointer-events-none" />
     {/* Animated floating orbs */}
     <motion.div
-      className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
-      animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-    />
+        className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
+        animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
+      
     <motion.div
-      className="absolute bottom-32 left-20 w-4 h-4 bg-[#DBFE01] rounded-full opacity-40 pointer-events-none"
-      animate={{ y: [0, 14, 0], scale: [1, 1.3, 1] }}
-      transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-    />
+        className="absolute bottom-32 left-20 w-4 h-4 bg-[#DBFE01] rounded-full opacity-40 pointer-events-none"
+        animate={{ y: [0, 14, 0], scale: [1, 1.3, 1] }}
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} />
+      
     <motion.div
-      className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#c5e000] rounded-full opacity-50 pointer-events-none"
-      animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
-      transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-    />
+        className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#c5e000] rounded-full opacity-50 pointer-events-none"
+        animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />
+      
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <Reveal className="text-center mb-16">
         <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
@@ -589,10 +589,10 @@ export const SolutionProcess = ({ steps, visual }) => {
         {/* Left: Stock Image */}
         <Reveal className="relative rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-28 h-[420px] lg:h-[580px]">
           <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-            alt="Team collaborating on a product sprint"
-            className="w-full h-full object-cover"
-          />
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+              alt="Team collaborating on a product sprint"
+              className="w-full h-full object-cover" />
+            
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
@@ -608,21 +608,21 @@ export const SolutionProcess = ({ steps, visual }) => {
           <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#DBFE01]/60 via-gray-200 to-gray-100" />
 
           <div className="space-y-0">
-            {displaySteps.map((step, i) => (
+            {displaySteps.map((step, i) =>
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
-                className="flex gap-6 group pb-10 last:pb-0"
-              >
+                className="flex gap-6 group pb-10 last:pb-0">
+                
                 {/* Step number bubble */}
                 <div className="relative flex-shrink-0 z-10">
                   <motion.div
                     whileHover={{ scale: 1.15 }}
-                    className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow"
-                  >
+                    className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
+                    
                     {i + 1}
                   </motion.div>
                 </div>
@@ -637,17 +637,17 @@ export const SolutionProcess = ({ steps, visual }) => {
                   </p>
                 </div>
               </motion.div>
-            ))}
+              )}
           </div>
 
           {/* Stage gate note */}
           <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6"
-          >
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6">
+              
             <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
             <span className="italic">Each phase has a stage gate — you always know where you stand.</span>
           </motion.div>
@@ -658,10 +658,10 @@ export const SolutionProcess = ({ steps, visual }) => {
         <Reveal className="mt-20">
           {visual}
         </Reveal>
-      }
+        }
     </div>
-  </section>
-  );
+  </section>);
+
 };
 
 
@@ -692,9 +692,9 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
               left: `${x}%`,
               top: `${y}%`,
               width: `${twinkleSize}px`,
-              height: `${twinkleSize}px`,
+              height: `${twinkleSize}px`
             }}>
-            <div 
+            <div
               className="absolute bg-white rounded-full"
               style={{
                 width: '100%',
@@ -708,8 +708,8 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
                   ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                 `
               }} />
-          </div>
-        );
+          </div>);
+
       }
 
       return (
@@ -757,7 +757,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
         {[...Array(18)].map((_, i) => {
           const x = (i * 5.8 + 3) % 100;
           const y = (i * 7.3 + 8) % 100;
-          const delay = (i * 0.4) % 3;
+          const delay = i * 0.4 % 3;
           const size = i % 3 === 0 ? 'w-5 h-5' : i % 3 === 1 ? 'w-4 h-4' : 'w-3 h-3';
           return (
             <motion.div
@@ -765,11 +765,11 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
               className={`absolute ${size} text-[#DBFE01]`}
               style={{ left: `${x}%`, top: `${y}%` }}
               animate={{ opacity: [0.08, 0.35, 0.08], scale: [0.8, 1.2, 0.8], rotate: [0, 20, 0] }}
-              transition={{ duration: 3 + (i % 3), repeat: Infinity, delay, ease: "easeInOut" }}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
-            </motion.div>
-          );
+              transition={{ duration: 3 + i % 3, repeat: Infinity, delay, ease: "easeInOut" }}>
+              
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" /></svg>
+            </motion.div>);
+
         })}
       </div>
 
@@ -784,21 +784,21 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
 
         <UseCasesLinkedLight useCases={useCases} />
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 const defaultUseCasesLeft = [
-  { label: "We need an AI workflow users trust (not just chat)", icon: Brain, index: 0 },
-  { label: "We need architecture done right — without rework", icon: Shield, index: 1 },
-  { label: "We need pilots launched with measurable activation", icon: Zap, index: 2 },
-];
+{ label: "We need an AI workflow users trust (not just chat)", icon: Brain, index: 0 },
+{ label: "We need architecture done right — without rework", icon: Shield, index: 1 },
+{ label: "We need pilots launched with measurable activation", icon: Zap, index: 2 }];
+
 
 const defaultUseCasesRight = [
-  { title: "B2B Agent Workflows", description: "Ops, support, sales, compliance automation", icon: Bot, index: 0 },
-  { title: "Data & Analytics Copilots", description: "Turn raw data into decisions instantly", icon: BarChart3, index: 1 },
-  { title: "GenAI Content Systems", description: "Review, governance, and workflow automation", icon: FileText, index: 2 },
-];
+{ title: "B2B Agent Workflows", description: "Ops, support, sales, compliance automation", icon: Bot, index: 0 },
+{ title: "Data & Analytics Copilots", description: "Turn raw data into decisions instantly", icon: BarChart3, index: 1 },
+{ title: "GenAI Content Systems", description: "Review, governance, and workflow automation", icon: FileText, index: 2 }];
+
 
 function UseCasesLinkedLight({ useCases }) {
   const [activeIndex, setActiveIndex] = React.useState(null);
@@ -806,13 +806,13 @@ function UseCasesLinkedLight({ useCases }) {
   const defaultLeftIcons = [Brain, Shield, Zap];
   const defaultRightIcons = [Bot, BarChart3, FileText];
 
-  const leftItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, icon: defaultLeftIcons[i % defaultLeftIcons.length], index: i }))
-    : defaultUseCasesLeft;
+  const leftItems = useCases && useCases.length > 0 ?
+  useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, icon: defaultLeftIcons[i % defaultLeftIcons.length], index: i })) :
+  defaultUseCasesLeft;
 
-  const rightItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: typeof uc === 'object' ? uc.description || '' : '', icon: defaultRightIcons[i % defaultRightIcons.length], index: i }))
-    : defaultUseCasesRight;
+  const rightItems = useCases && useCases.length > 0 ?
+  useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: typeof uc === 'object' ? uc.description || '' : '', icon: defaultRightIcons[i % defaultRightIcons.length], index: i })) :
+  defaultUseCasesRight;
 
   return (
     <div className="grid lg:grid-cols-2 gap-6 items-stretch">
@@ -832,11 +832,11 @@ function UseCasesLinkedLight({ useCases }) {
               whileHover={{ scale: 1.02 }}
               className={cn(
                 "flex items-center gap-5 p-6 rounded-2xl border cursor-pointer transition-all duration-300",
-                activeIndex === i
-                  ? "bg-[#DBFE01] border-[#b8d400] shadow-[0_8px_32px_rgba(219,254,1,0.4)]"
-                  : "bg-[#f2ffc0] border-[#d4f500]/50 hover:bg-[#e8ff80]"
-              )}
-            >
+                activeIndex === i ?
+                "bg-[#DBFE01] border-[#b8d400] shadow-[0_8px_32px_rgba(219,254,1,0.4)]" :
+                "bg-[#f2ffc0] border-[#d4f500]/50 hover:bg-[#e8ff80]"
+              )}>
+              
               <div className={cn(
                 "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300",
                 activeIndex === i ? "bg-[#1a1a1a]" : "bg-[#DBFE01]"
@@ -849,8 +849,8 @@ function UseCasesLinkedLight({ useCases }) {
                 </div>
                 <span className="text-base leading-snug font-semibold text-[#1a1a1a]">{item.label}</span>
               </div>
-            </motion.div>
-          );
+            </motion.div>);
+
         })}
       </div>
 
@@ -868,11 +868,11 @@ function UseCasesLinkedLight({ useCases }) {
               animate={activeIndex === i ? { scale: 1.03, x: -4 } : { scale: 1, x: 0 }}
               className={cn(
                 "p-6 rounded-2xl border transition-all duration-300 flex items-center gap-5",
-                activeIndex === i
-                  ? "bg-[#1a1a1a] border-[#DBFE01]/40 shadow-[0_8px_32px_rgba(26,26,26,0.25),0_0_0_1px_rgba(219,254,1,0.2)]"
-                  : "bg-[#111] border-gray-800 hover:bg-[#1a1a1a]"
-              )}
-            >
+                activeIndex === i ?
+                "bg-[#1a1a1a] border-[#DBFE01]/40 shadow-[0_8px_32px_rgba(26,26,26,0.25),0_0_0_1px_rgba(219,254,1,0.2)]" :
+                "bg-[#111] border-gray-800 hover:bg-[#1a1a1a]"
+              )}>
+              
               <div className={cn(
                 "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300",
                 activeIndex === i ? "bg-[#DBFE01]" : "bg-white/10"
@@ -884,98 +884,98 @@ function UseCasesLinkedLight({ useCases }) {
                   "font-bold text-base transition-colors duration-300 mb-1",
                   activeIndex === i ? "text-[#DBFE01]" : "text-white"
                 )}>{item.title}</h4>
-                {item.description && (
-                  <p className="text-white/50 text-sm leading-snug">{item.description}</p>
-                )}
+                {item.description &&
+                <p className="text-white/50 text-sm leading-snug">{item.description}</p>
+                }
               </div>
-            </motion.div>
-          );
+            </motion.div>);
+
         })}
       </div>
-    </div>
-  );
+    </div>);
+
 }
 
 function UseCasesLinked({ useCases }) {
   const [activeIndex, setActiveIndex] = React.useState(null);
 
-  const leftItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i }))
-    : defaultUseCasesLeft;
+  const leftItems = useCases && useCases.length > 0 ?
+  useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i })) :
+  defaultUseCasesLeft;
 
-  const rightItems = useCases && useCases.length > 0
-    ? useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: '', index: i }))
-    : defaultUseCasesRight;
+  const rightItems = useCases && useCases.length > 0 ?
+  useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: '', index: i })) :
+  defaultUseCasesRight;
 
   return (
     <div className="grid lg:grid-cols-2 gap-8 items-start">
       {/* Left: Bullets */}
       <div className="space-y-4">
-        {leftItems.map((item, i) => (
-          <motion.div
-            key={i}
-            onHoverStart={() => setActiveIndex(i)}
-            onHoverEnd={() => setActiveIndex(null)}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className={cn(
-              "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
-              activeIndex === i
-                ? "bg-[#DBFE01]/10 border-[#DBFE01]/40 shadow-[0_0_20px_rgba(219,254,1,0.1)]"
-                : "bg-white/5 border-white/10 hover:bg-white/8"
-            )}
-          >
+        {leftItems.map((item, i) =>
+        <motion.div
+          key={i}
+          onHoverStart={() => setActiveIndex(i)}
+          onHoverEnd={() => setActiveIndex(null)}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className={cn(
+            "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
+            activeIndex === i ?
+            "bg-[#DBFE01]/10 border-[#DBFE01]/40 shadow-[0_0_20px_rgba(219,254,1,0.1)]" :
+            "bg-white/5 border-white/10 hover:bg-white/8"
+          )}>
+          
             <div className={cn(
-              "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
-              activeIndex === i ? "bg-[#DBFE01] text-[#1a1a1a]" : "bg-white/10 text-white/50"
-            )}>
+            "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
+            activeIndex === i ? "bg-[#DBFE01] text-[#1a1a1a]" : "bg-white/10 text-white/50"
+          )}>
               {i + 1}
             </div>
             <span className={cn(
-              "text-base leading-relaxed transition-colors duration-300 pt-0.5",
-              activeIndex === i ? "text-white" : "text-white/70"
-            )}>{item.label}</span>
+            "text-base leading-relaxed transition-colors duration-300 pt-0.5",
+            activeIndex === i ? "text-white" : "text-white/70"
+          )}>{item.label}</span>
           </motion.div>
-        ))}
+        )}
       </div>
 
       {/* Right: Cards */}
       <div className="space-y-4">
-        {rightItems.map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 + 0.15 }}
-            animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
-            className={cn(
-              "p-6 rounded-2xl border transition-all duration-300",
-              activeIndex === i
-                ? "bg-[#DBFE01]/10 border-[#DBFE01]/50 shadow-[0_0_30px_rgba(219,254,1,0.12)]"
-                : "bg-white/5 border-white/10"
-            )}
-          >
+        {rightItems.map((item, i) =>
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 + 0.15 }}
+          animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
+          className={cn(
+            "p-6 rounded-2xl border transition-all duration-300",
+            activeIndex === i ?
+            "bg-[#DBFE01]/10 border-[#DBFE01]/50 shadow-[0_0_30px_rgba(219,254,1,0.12)]" :
+            "bg-white/5 border-white/10"
+          )}>
+          
             <div className="flex items-center gap-3 mb-2">
               <div className={cn(
-                "w-2 h-2 rounded-full transition-all duration-300",
-                activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.6)]" : "bg-white/30"
-              )} />
+              "w-2 h-2 rounded-full transition-all duration-300",
+              activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.6)]" : "bg-white/30"
+            )} />
               <h4 className={cn(
-                "font-bold text-base transition-colors duration-300",
-                activeIndex === i ? "text-[#DBFE01]" : "text-white"
-              )}>{item.title}</h4>
+              "font-bold text-base transition-colors duration-300",
+              activeIndex === i ? "text-[#DBFE01]" : "text-white"
+            )}>{item.title}</h4>
             </div>
-            {item.description && (
-              <p className="text-white/60 text-sm ml-5">{item.description}</p>
-            )}
+            {item.description &&
+          <p className="text-white/60 text-sm ml-5">{item.description}</p>
+          }
           </motion.div>
-        ))}
+        )}
       </div>
-    </div>
-  );
+    </div>);
+
 }
 
 export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [] }) => {
@@ -998,8 +998,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5"
-            >
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5">
+              
               <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
               <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
             </motion.div>
@@ -1008,8 +1008,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-extrabold leading-tight"
-            >
+              className="text-4xl md:text-5xl font-extrabold leading-tight">
+              
               <span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span>
             </motion.h2>
           </Reveal>
@@ -1022,8 +1022,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 <img
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80"
                   alt="Engineering team shipping AI products"
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" />
+                
                 {/* Dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
 
@@ -1033,8 +1033,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.4, duration: 0.6 }}
-                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5"
-                >
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                  
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
                       <Zap className="w-6 h-6 text-[#1a1a1a]" />
@@ -1052,8 +1052,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.5 }}
-                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg"
-                >
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+                  
                   Pilot-Ready MVP
                 </motion.div>
               </div>
@@ -1062,20 +1062,20 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               <div className="order-1 lg:order-2">
                 <div className="space-y-6">
                   {[
-                    { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
-                    { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
-                    { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
-                    { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" },
-                  ].map((item, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
-                      whileHover={{ x: 6 }}
-                      className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color} border ${item.border} transition-all duration-300 group`}
-                    >
+                  { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+                  { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+                  { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+                  { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }].
+                  map((item, i) =>
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
+                    whileHover={{ x: 6 }}
+                    className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color} border ${item.border} transition-all duration-300 group`}>
+                    
                       <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
                       <div>
                         <h4 className="font-bold text-base text-[#1a1a1a] mb-1">{item.title}</h4>
@@ -1083,7 +1083,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       </div>
                       <ArrowRight className="w-4 h-4 text-[#1a1a1a]/20 group-hover:text-[#1a1a1a]/50 ml-auto flex-shrink-0 mt-1 transition-all group-hover:translate-x-1 duration-300" />
                     </motion.div>
-                  ))}
+                  )}
                 </div>
               </div>
             </div>
@@ -1096,61 +1096,61 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             <p className="text-[#1a1a1a]/70 text-base font-medium mb-8 text-center">Proven tools we trust—so you don't gamble on your MVP.</p>
             
             <div className="relative overflow-hidden">
-              <motion.div 
+              <motion.div
                 className="flex gap-8 pb-6"
                 animate={{ x: ["0%", "-50%"] }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              >
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
+                
                 {[
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
-                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
-                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
-                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
-                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
-                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
-                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
-                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
-                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
-                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
-                ].map((tech, i) => (
-                  <div key={i} className="flex-shrink-0 w-28 h-28">
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
+                <div key={i} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
                       <img
-                        src={tech.url}
-                        alt={tech.name}
-                        className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                        loading="lazy"
-                      />
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
                     </div>
                   </div>
-                ))}
+                )}
                 {[
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
-                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
-                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
-                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
-                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
-                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
-                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
-                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
-                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
-                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
-                ].map((tech, i) => (
-                  <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
+                <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
                       <img
-                        src={tech.url}
-                        alt={tech.name}
-                        className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
-                        loading="lazy"
-                      />
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
                     </div>
                   </div>
-                ))}
+                )}
               </motion.div>
             </div>
           </Reveal>
@@ -1177,9 +1177,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 export const SolutionFAQ = ({ items = [] }) => {
   const [showAll, setShowAll] = React.useState(false);
   const displayItems = showAll ? items : items.slice(0, 5);
-  
+
   return (
-  <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal className="text-center mb-16">
@@ -1194,14 +1194,14 @@ export const SolutionFAQ = ({ items = [] }) => {
       
       <div className="space-y-4 relative z-10">
         {displayItems.map((item, i) =>
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: i * 0.1 }}
-          className="relative"
-        >
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.1 }}
+            className="relative">
+            
           <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
               <div className="flex items-center gap-4">
@@ -1217,26 +1217,26 @@ export const SolutionFAQ = ({ items = [] }) => {
             </div>
           </details>
         </motion.div>
-        )}
+          )}
       </div>
 
-      {items.length > 5 && (
+      {items.length > 5 &&
         <Reveal delay={0.2} className="mt-8 text-center relative z-20">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
-          >
+            className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">
+            
             {showAll ? 'Show less' : 'Read more'}
           </button>
         </Reveal>
-      )}
+        }
 
       <Reveal delay={0.3} className="mt-8 text-center relative z-20">
         <p className="text-sm text-[#2F2F2F]/60">Still unsure? <Link to={createPageUrl('book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">Book a quick chat</Link></p>
       </Reveal>
     </div>
-  </section>
-  );
+  </section>);
+
 };
 
 
@@ -1274,16 +1274,16 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
       <Reveal delay={0.3}>
         <div className="flex flex-wrap justify-center gap-3 mt-10">
           {[
-            { icon: "🕐", label: "Free 30-min call" },
-            { icon: "🚫", label: "No sales pitch" },
-            { icon: "📋", label: "Get your roadmap" },
-            { icon: "✅", label: "No commitment" },
-          ].map((item) => (
-            <div key={item.label} className="flex items-center gap-2 bg-[#1a1a1a]/10 rounded-full px-4 py-2 text-xs font-bold text-[#1a1a1a]/80 tracking-wide">
+        { icon: "🕐", label: "Free 30-min call" },
+        { icon: "🚫", label: "No sales pitch" },
+        { icon: "📋", label: "Get your roadmap" },
+        { icon: "✅", label: "No commitment" }].
+        map((item) =>
+        <div key={item.label} className="flex items-center gap-2 bg-[#1a1a1a]/10 rounded-full px-4 py-2 text-xs font-bold text-[#1a1a1a]/80 tracking-wide">
               <span>{item.icon}</span>
               <span>{item.label}</span>
             </div>
-          ))}
+        )}
         </div>
       </Reveal>
     </div>
