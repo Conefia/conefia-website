@@ -5,8 +5,8 @@ import { Search, Smartphone, TrendingUp, Zap } from 'lucide-react';
 export default function ProcessStepVisual() {
   const steps = [
     { icon: Search, label: 'Audit', color: 'from-blue-700 to-blue-600', bgColor: 'bg-blue-700', textColor: 'text-blue-700', shadowColor: 'rgba(29, 78, 216, 0.7)' },
-    { icon: Smartphone, label: 'Redesign', color: 'from-[#DBFE01] to-[#a8c600]', bgColor: 'bg-[#DBFE01]', textColor: 'text-[#8fa800]', shadowColor: 'rgba(219, 254, 1, 0.8)' },
-    { icon: TrendingUp, label: 'Grow', color: 'from-emerald-700 to-emerald-600', bgColor: 'bg-emerald-700', textColor: 'text-emerald-700', shadowColor: 'rgba(4, 120, 87, 0.7)' }
+    { icon: Smartphone, label: 'Build', color: 'from-[#DBFE01] to-[#a8c600]', bgColor: 'bg-[#DBFE01]', textColor: 'text-[#8fa800]', shadowColor: 'rgba(219, 254, 1, 0.8)' },
+    { icon: TrendingUp, label: 'Relaunch', color: 'from-emerald-700 to-emerald-600', bgColor: 'bg-emerald-700', textColor: 'text-emerald-700', shadowColor: 'rgba(4, 120, 87, 0.7)' }
   ];
 
   const containerVariants = {
