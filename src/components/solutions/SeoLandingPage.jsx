@@ -292,7 +292,7 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-5 text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl text-center">
+        <h2 className="mt-5 text-3xl font-bold text-center leading-tight md:text-4xl lg:text-5xl max-w-3xl">
           {title || <><span className="text-[#1a1a1a]">Why most AI MVPs get delayed and miss </span><span className="gradient-text">pilots and revenue</span></>}
         </h2>
       </Reveal>
