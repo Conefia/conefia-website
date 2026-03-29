@@ -7,6 +7,7 @@ import SeoLandingPage, {
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
 import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
 import AppRelaunchFitCheck from '@/components/solutions/app-relaunch/AppRelaunchFitCheck';
+import CommonReasons from '@/components/solutions/app-relaunch/CommonReasons';
 import Seo from '@/components/Seo';
 
 export default function AppRelaunchRetention() {
@@ -102,15 +103,7 @@ export default function AppRelaunchRetention() {
         ]}
         visual={<div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><Search className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Audit</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Redesign</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Grow</span></div></div></div>}
       />
-      <SolutionOutcomes 
-        title={<>Common <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>use cases</span></>}
-        items={[
-          "We need a relaunch strategy that's investor ready",
-          "We need organic growth from ASO, not only ads",
-          "We need an app user retention strategy that actually works"
-        ]}
-        visual={<div className="grid gap-4">{["Consumer Social Apps", "Subscription Utilities", "Fintech & Health"].map((u,i) => <div key={i} className="bg-white/10 p-4 rounded-lg border border-white/5 flex items-center gap-3"><Smartphone className="w-5 h-5 text-[#DBFE01]"/><span className="text-white font-medium">{u}</span></div>)}</div>}
-      />
+      <CommonReasons />
       <SolutionProof 
         title="Turn installs into active users."
         items={["Crash-free > 99.9%", "Native (Swift/Kotlin)", "React Native / Flutter"]}
