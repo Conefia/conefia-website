@@ -449,7 +449,7 @@ export const OnePagerVisual = () => {
         viewport={{ once: true }}
         transition={{ delay: 0.7, type: 'spring', stiffness: 300 }}
         animate={{ y: [0, -4, 0] }}
-        className="absolute inset-x-0 bottom-5 flex justify-center"
+        className="flex justify-center mt-6 relative z-20"
       >
         <motion.div 
           whileHover={{ scale: 1.05 }}
