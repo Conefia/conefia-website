@@ -1049,6 +1049,7 @@ export const SolutionProof = ({
           </Reveal>
 
           {isDynamic && (
+            <>
             <Reveal className="mb-16">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
 
