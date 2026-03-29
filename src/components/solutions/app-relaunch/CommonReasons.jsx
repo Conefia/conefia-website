@@ -59,9 +59,16 @@ const itemToCardMapping = {
 
 export default function CommonReasons() {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [hoveredLeftItem, setHoveredLeftItem] = useState(null);
   
   const handleItemHover = (itemIndex) => {
+    setHoveredLeftItem(itemIndex);
     setActiveIndex(itemToCardMapping[itemIndex]);
+  };
+  
+  const handleItemHoverEnd = () => {
+    setHoveredLeftItem(null);
+    setActiveIndex(null);
   };
 
   return (
@@ -135,7 +142,7 @@ export default function CommonReasons() {
               <motion.div
                 key={i}
                 onHoverStart={() => handleItemHover(i)}
-                onHoverEnd={() => setActiveIndex(null)}
+                onHoverEnd={handleItemHoverEnd}
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
