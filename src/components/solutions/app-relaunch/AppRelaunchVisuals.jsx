@@ -315,7 +315,7 @@ export const SolutionVisual = () => (
             </motion.div>
             <div>
                 <div className="font-bold text-gray-900 text-sm">Relaunch Sprint</div>
-                <div className="text-[10px] text-blue-500 font-bold uppercase tracking-wider">6-Week Plan</div>
+                <div className="text-[10px] text-blue-500 font-bold uppercase tracking-wider">8-12 Weeks Plan</div>
             </div>
             <div className="ml-auto flex items-center gap-1">
               <motion.div
