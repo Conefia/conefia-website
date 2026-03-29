@@ -32,6 +32,7 @@ export default function AiSaasMvpLaunch() {
         })}}
       />
       <SolutionHero 
+        breadcrumbLabel="AI SaaS MVP Launch"
         title="Ship a Pilot-Ready AI MVP in 8–12 Weeks"
         subtitle="Ship a pilot-ready AI MVP — and start winning paying customers. You're building fast, but scope and architecture decisions are slowing you down. We're your AI SaaS MVP development agency: product + AI + full-stack + launch system, under one plan."
         primaryCta="Get My MVP Roadmap"
