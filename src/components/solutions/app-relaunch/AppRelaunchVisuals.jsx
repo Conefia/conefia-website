@@ -524,7 +524,7 @@ export const SolutionVisual = () => (
 // Enhanced One Pager
 export const RelaunchPlanVisual = () => {
   const phases = [
-    { icon: Search, label: "Diagnose", desc: "Week 1", color: "blue", bgColor: "bg-blue-50", textColor: "text-blue-600" },
+    { icon: Search, label: "Audit", desc: "Week 1", color: "blue", bgColor: "bg-blue-50", textColor: "text-blue-600" },
     { icon: Code2, label: "Build", desc: "Weeks 2-4", color: "purple", bgColor: "bg-purple-50", textColor: "text-purple-600" },
     { icon: TrendingUp, label: "Relaunch", desc: "Weeks 5-6", color: "emerald", bgColor: "bg-emerald-50", textColor: "text-emerald-600" }
   ];
