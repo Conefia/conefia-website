@@ -4,9 +4,9 @@ import { Search, Smartphone, TrendingUp, Zap } from 'lucide-react';
 
 export default function ProcessStepVisual() {
   const steps = [
-    { icon: Search, label: 'Audit', color: 'from-blue-600 to-blue-500', bgColor: 'bg-blue-600', textColor: 'text-blue-600' },
-    { icon: Smartphone, label: 'Redesign', color: 'from-[#DBFE01] to-[#c5e000]', bgColor: 'bg-[#DBFE01]', textColor: 'text-[#DBFE01]' },
-    { icon: TrendingUp, label: 'Grow', color: 'from-emerald-600 to-emerald-500', bgColor: 'bg-emerald-600', textColor: 'text-emerald-600' }
+    { icon: Search, label: 'Audit', color: 'from-blue-700 to-blue-600', bgColor: 'bg-blue-700', textColor: 'text-blue-700', shadowColor: 'rgba(29, 78, 216, 0.7)' },
+    { icon: Smartphone, label: 'Redesign', color: 'from-[#DBFE01] to-[#a8c600]', bgColor: 'bg-[#DBFE01]', textColor: 'text-[#8fa800]', shadowColor: 'rgba(219, 254, 1, 0.8)' },
+    { icon: TrendingUp, label: 'Grow', color: 'from-emerald-700 to-emerald-600', bgColor: 'bg-emerald-700', textColor: 'text-emerald-700', shadowColor: 'rgba(4, 120, 87, 0.7)' }
   ];
 
   const containerVariants = {
@@ -64,7 +64,7 @@ export default function ProcessStepVisual() {
                   <div className="relative w-20 h-20">
                     {/* Pulsing background */}
                     <motion.div
-                      className={`absolute inset-0 rounded-full ${step.bgColor} opacity-20`}
+                      className={`absolute inset-0 rounded-full ${step.bgColor} opacity-30`}
                       animate={pulseVariants}
                     />
                     
@@ -72,15 +72,18 @@ export default function ProcessStepVisual() {
                     <motion.div
                       variants={iconVariants}
                       whileTap="tap"
-                      className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer`}
+                      className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-xl border-2 border-white/40 hover:shadow-2xl transition-shadow cursor-pointer`}
+                      style={{
+                        boxShadow: `0 0 30px ${step.shadowColor}, 0 8px 20px ${step.shadowColor}`
+                      }}
                     >
-                      <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
+                      <Icon className="w-10 h-10 text-white" strokeWidth={3} />
                     </motion.div>
                   </div>
 
                   {/* Label */}
                   <motion.span
-                    className={`text-lg font-bold ${step.textColor} text-center`}
+                    className={`text-lg font-bold ${step.textColor} text-center drop-shadow-sm`}
                     initial={{ opacity: 0.8 }}
                     whileHover={{ opacity: 1, scale: 1.05 }}
                     transition={{ duration: 0.2 }}
@@ -118,7 +121,7 @@ export default function ProcessStepVisual() {
                   <div className="relative w-24 h-24">
                     {/* Pulsing background */}
                     <motion.div
-                      className={`absolute inset-0 rounded-full ${step.bgColor} opacity-20`}
+                      className={`absolute inset-0 rounded-full ${step.bgColor} opacity-30`}
                       animate={pulseVariants}
                     />
                     
@@ -126,15 +129,18 @@ export default function ProcessStepVisual() {
                     <motion.div
                       variants={iconVariants}
                       whileTap="tap"
-                      className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer`}
+                      className={`absolute inset-0 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center shadow-xl border-2 border-white/40 hover:shadow-2xl transition-shadow cursor-pointer`}
+                      style={{
+                        boxShadow: `0 0 40px ${step.shadowColor}, 0 12px 30px ${step.shadowColor}`
+                      }}
                     >
-                      <Icon className="w-12 h-12 text-white" strokeWidth={2.5} />
+                      <Icon className="w-12 h-12 text-white" strokeWidth={3} />
                     </motion.div>
                   </div>
 
                   {/* Label */}
                   <motion.span
-                    className={`text-xl font-bold ${step.textColor} text-center`}
+                    className={`text-xl font-bold ${step.textColor} text-center drop-shadow-md`}
                     initial={{ opacity: 0.8 }}
                     whileHover={{ opacity: 1, scale: 1.05 }}
                     transition={{ duration: 0.2 }}
