@@ -119,7 +119,7 @@ export default function AppRelaunchRetention() {
           { name: "Flutter", url: "https://logo.svgcdn.com/logos/flutter.svg" },
           { name: "React Native", url: "https://logo.svgcdn.com/logos/react.svg" },
           { name: "Figma", url: "https://logo.svgcdn.com/logos/figma.svg" },
-          { name: "Firebase", url: "https://logo.svgcdn.com/logos/firebase.svg" },
+          { name: "Firebase", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Firebase_icon.svg" },
           { name: "UXcam", url: "https://logo.svgcdn.com/logos/uxcam.svg" },
           { name: "AppTweak", url: "https://logo.svgcdn.com/logos/apptweak.svg" },
           { name: "Mixpanel", url: "https://logo.svgcdn.com/logos/mixpanel.svg" },
