@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, X, ArrowRight } from 'lucide-react';
+import { Check, X, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
@@ -21,8 +21,8 @@ const notFits = [
 
 export default function AppRelaunchFitCheck() {
   return (
-    <section className="py-20 bg-[#F7F8FA] relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
+    <section className="py-20 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.04] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
@@ -30,40 +30,42 @@ export default function AppRelaunchFitCheck() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 text-xs font-bold uppercase tracking-widest text-[#1a1a1a]/50 mb-4">
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+            <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Quick Fit Check
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">Is this the right fit?</h2>
-          <p className="text-base text-[#1a1a1a]/60 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+            <span className="text-[#1a1a1a]">Is this the </span><span className="gradient-text">right fit?</span>
+          </h2>
+          <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium leading-relaxed max-w-2xl">
             This is for teams with a live app that already has users, installs, reviews, or product history — but retention, growth, ratings, or store performance are not where they should be.
           </p>
         </motion.div>
 
         {/* Two columns */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Good fit */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="bg-white rounded-2xl border border-emerald-100 p-7 shadow-sm"
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="bg-[#f9ffe0] border border-[#c5e000] rounded-2xl p-8 relative overflow-hidden"
           >
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-7 h-7 rounded-full bg-emerald-100 flex items-center justify-center">
-                <Check className="w-4 h-4 text-emerald-600" strokeWidth={2.5} />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-sm">
+                <Check className="w-5 h-5 text-[#1a1a1a]" strokeWidth={3} />
               </div>
-              <h3 className="font-bold text-[#1a1a1a] text-base">Good fit if:</h3>
+              <h3 className="text-slate-950 text-lg font-bold">Good fit if</h3>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {goodFits.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-emerald-500" strokeWidth={2.5} />
-                  </div>
-                  <span className="text-sm text-[#1a1a1a]/75 leading-relaxed">{item}</span>
+                  <Check className="w-4 h-4 text-[#6a9200] mt-0.5 flex-shrink-0" />
+                  <span className="text-[#1a1a1a]/80 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -74,22 +76,20 @@ export default function AppRelaunchFitCheck() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.15 }}
-            className="bg-white rounded-2xl border border-rose-100 p-7 shadow-sm"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-rose-50 border border-rose-200 rounded-2xl p-8 relative overflow-hidden"
           >
-            <div className="flex items-center gap-2 mb-5">
-              <div className="w-7 h-7 rounded-full bg-rose-100 flex items-center justify-center">
-                <X className="w-4 h-4 text-rose-500" strokeWidth={2.5} />
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-9 h-9 rounded-xl bg-rose-100 flex items-center justify-center flex-shrink-0 border border-rose-300">
+                <X className="w-5 h-5 text-rose-500" strokeWidth={3} />
               </div>
-              <h3 className="font-bold text-[#1a1a1a] text-base">Not a fit if:</h3>
+              <h3 className="text-lg font-bold text-rose-600">Not a fit if</h3>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {notFits.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <X className="w-3 h-3 text-rose-400" strokeWidth={2.5} />
-                  </div>
-                  <span className="text-sm text-[#1a1a1a]/75 leading-relaxed">{item}</span>
+                  <X className="w-4 h-4 text-rose-400 mt-0.5 flex-shrink-0" />
+                  <span className="text-[#1a1a1a]/80 text-sm leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -98,18 +98,18 @@ export default function AppRelaunchFitCheck() {
 
         {/* Mini CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 12 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.25 }}
-          className="mt-10 flex justify-center"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex justify-center"
         >
           <Link
-            to={createPageUrl('book')}
-            className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 transition-all"
+            to={createPageUrl('Book')}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#DBFE01] text-[#1a1a1a] font-bold rounded-xl text-base hover:scale-105 hover:shadow-[0_6px_30px_rgba(219,254,1,0.35)] transition-all shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.2)]"
           >
             Get Relaunch Plan
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
 
