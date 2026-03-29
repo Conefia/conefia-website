@@ -36,14 +36,10 @@ export default function AppRelaunchRetention() {
         primaryCta="Get My Relaunch Plan"
         secondaryCta="See the Sprint"
         trustChips={[
-          { name: "Swift / SwiftUI", icon: Smartphone },
-          { name: "Kotlin / Jetpack", icon: Smartphone },
-          { name: "React Native", icon: Code2 },
-          { name: "Flutter", icon: Layers },
-          { name: "RevenueCat", icon: CreditCard },
-          { name: "Amplitude", icon: BarChart3 },
-          { name: "Firebase", icon: Database },
-          { name: "Mixpanel", icon: TrendingUp }
+          "Scope locked (Week 2)",
+          "Weekly demos",
+          "UX + performance fixes",
+          "Store conversion + analytics"
         ]}
         layout="split"
         visual={<HeroVisual />}
