@@ -2,7 +2,7 @@ import React from 'react';
 import SeoLandingPage, { 
   SolutionHero, SolutionMetrics, 
   SolutionProblem, SolutionDetails, SolutionProcess, 
-  SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta 
+  SolutionOutcomes, SolutionProof, SolutionFAQ, SolutionFinalCta, RoadmapCallSection 
 } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
 import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
@@ -132,7 +132,7 @@ export default function AppRelaunchRetention() {
       <SolutionFAQ 
         items={[
           {
-            question: "What do you mean by \"app relaunch\"?",
+            question: "What do you mean by \"app relaunch?\"",
             answer: "A relaunch means improving the product in a way users can actually feel — not just updating the visuals. It usually includes product fixes, UX improvements, performance cleanup, store optimization, and analytics so the next version performs better after release."
           },
           {
@@ -172,6 +172,18 @@ export default function AppRelaunchRetention() {
             answer: "Yes — but the strongest results usually come when retention and conversion improve alongside acquisition, not when acquisition is scaled on top of a leaky product experience. Re-engaged users often perform better than net-new users on early engagement and retention, which is why fixing the product first usually improves growth efficiency."
           }
         ]}
+      />
+      <RoadmapCallSection 
+        title="What you'll get in the 30-minute relaunch roadmap call"
+        description="This is not a generic intro call. We will look at your app like a team preparing to relaunch it."
+        items={[
+          "Clarify the biggest drop-off points in your user journey",
+          "Identify what is hurting retention, ratings, or growth most",
+          "Define what needs fixing now versus what can wait",
+          "Map your 8–12 week relaunch plan",
+          "Flag risks early, including analytics gaps, technical debt, store conversion issues, and release complexity"
+        ]}
+        primaryCta="Get Relaunch Plan"
       />
       <SolutionFinalCta 
         title="Want users to stick after install?"
