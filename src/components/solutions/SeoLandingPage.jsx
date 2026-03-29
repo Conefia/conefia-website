@@ -1105,20 +1105,46 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 className="flex gap-8 pb-6"
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
+                
                 {[
-                { name: "Flutter", url: "https://cdn.simpleicons.org/flutter" },
-                { name: "React Native", url: "https://cdn.simpleicons.org/react" },
-                { name: "Figma", url: "https://cdn.simpleicons.org/figma" },
-                { name: "Maze", url: "https://cdn.simpleicons.org/maze" },
-                { name: "UXCam", url: "https://logotyp.us/file/uxcam.svg" },
-                { name: "Firebase", url: "https://cdn.simpleicons.org/firebase" },
-                { name: "Amplitude", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Amplitude_logo.svg" },
-                { name: "Mixpanel", url: "https://cdn.simpleicons.org/mixpanel" },
-                { name: "AppsFlyer", url: "https://logotyp.us/file/appsflyer.svg" },
-                { name: "RevenueCat", url: "https://cdn.simpleicons.org/revenuecat" },
-                { name: "AppTweak", url: "https://seeklogo.com/vector-logo/512229/apptweak" },
-                { name: "Google Play Console", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Play_Console_Logo_(2023).svg" }
-                ].map((tech, i) =>
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
+                <div key={i} className="flex-shrink-0 w-28 h-28">
+                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
+                    </div>
+                  </div>
+                )}
+                {[
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
                 <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
                       <img
@@ -1253,10 +1279,11 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
       <Reveal delay={0.3}>
         <div className="flex flex-wrap justify-center gap-3 mt-10">
           {[
-          { icon: "🕐", label: "Free 30-min call" },
-          { icon: "🚫", label: "No sales pitch" },
-          { icon: "📋", label: "Get your roadmap" },
-          { icon: "✅", label: "No commitment" }].map((item) =>
+        { icon: "🕐", label: "Free 30-min call" },
+        { icon: "🚫", label: "No sales pitch" },
+        { icon: "📋", label: "Get your roadmap" },
+        { icon: "✅", label: "No commitment" }].
+        map((item) =>
         <div key={item.label} className="flex items-center gap-2 bg-[#1a1a1a]/10 rounded-full px-4 py-2 text-xs font-bold text-[#1a1a1a]/80 tracking-wide">
               <span>{item.icon}</span>
               <span>{item.label}</span>
