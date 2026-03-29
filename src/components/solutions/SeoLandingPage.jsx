@@ -100,7 +100,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               transition={{ delay: 0.2 }}
               className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
 
-                  Scope locked by week 2. Production-ready LLM architecture. Full product + launch kit to win pilots — under one accountable team.
+                  Scope locked by week 2. Retention-first product fixes. UX and performance refresh. Store conversion, analytics, and growth support included — under one accountable team.
                 </motion.p>
                 
                 <motion.div
