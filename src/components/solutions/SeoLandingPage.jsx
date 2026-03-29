@@ -412,7 +412,18 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
   </section>;
 
 
-export const RoadmapCallSection = () =>
+export const RoadmapCallSection = ({ 
+  title = "What you'll get in the 30-minute roadmap call",
+  description = "This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.",
+  items = [
+    "Confirm your target user + workflow in 2 minutes",
+    "Define MVP scope (must-have vs later)",
+    "Recommend the AI approach (RAG vs agents vs fine-tuning)",
+    "Map your 8–12 week delivery plan",
+    "Flag risks early (data, compliance, cost, reliability)"
+  ],
+  primaryCta = "Book Free Roadmap Call"
+} = {}) =>
 <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
@@ -439,10 +450,10 @@ export const RoadmapCallSection = () =>
         Roadmap Call
       </span>
       <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
-        <span className="text-white">What you'll get in the </span><span className="gradient-text">30-minute roadmap call</span>
+        {title}
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
-      This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.
+        {description}
       </p>
 
     </Reveal>
@@ -453,13 +464,7 @@ export const RoadmapCallSection = () =>
       <div>
         <Reveal delay={0.1}>
           <ul className="space-y-4 mb-10 mt-4">
-            {[
-            "Confirm your target user + workflow in 2 minutes",
-            "Define MVP scope (must-have vs later)",
-            "Recommend the AI approach (RAG vs agents vs fine-tuning)",
-            "Map your 8–12 week delivery plan",
-            "Flag risks early (data, compliance, cost, reliability)"].
-            map((item, i) =>
+            {items.map((item, i) =>
             <motion.li
               key={i}
               initial={{ opacity: 0, x: -16 }}
@@ -479,7 +484,7 @@ export const RoadmapCallSection = () =>
             to={createPageUrl('Book')}
             className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_4px_20px_rgba(219,254,1,0.4)] hover:scale-105 transition-all">
             
-            Book Free Roadmap Call
+            {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </Reveal>
@@ -521,7 +526,7 @@ export const RoadmapCallSection = () =>
               </div>
               <div>
                 <p className="text-white font-bold text-sm">No-pressure, all signal</p>
-                <p className="text-white/60 text-xs mt-0.5">Leave with a clear MVP plan — whether you hire us or not.</p>
+                <p className="text-white/60 text-xs mt-0.5">Leave with a clear plan — whether you hire us or not.</p>
               </div>
             </div>
           </motion.div>
