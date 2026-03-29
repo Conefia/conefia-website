@@ -309,36 +309,57 @@ export const SolutionVisual = () => (
                 <div className="font-bold text-gray-900 text-sm">Relaunch Sprint</div>
                 <div className="text-[10px] text-blue-500 font-bold uppercase tracking-wider">6-Week Plan</div>
             </div>
+            <div className="ml-auto flex items-center gap-1">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="text-[10px] text-green-500 font-bold">Live</span>
+            </div>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-2.5">
             {[
-                { label: "Retention Loops Fixed", icon: Layers, color: "text-blue-500", bg: "bg-blue-50" },
-                { label: "Crash-Free Rate > 99%", icon: Activity, color: "text-emerald-500", bg: "bg-emerald-50" },
-                { label: "Onboarding Friction Removed", icon: Zap, color: "text-amber-500", bg: "bg-amber-50" },
-                { label: "ASO Assets Refreshed", icon: Download, color: "text-purple-500", bg: "bg-purple-50" }
+                { label: "Retention Loops Fixed", icon: Layers, color: "text-blue-500", bg: "bg-blue-50", progress: 100 },
+                { label: "Crash-Free Rate > 99%", icon: Activity, color: "text-emerald-500", bg: "bg-emerald-50", progress: 100 },
+                { label: "Onboarding Friction Removed", icon: Zap, color: "text-amber-500", bg: "bg-amber-50", progress: 80 },
+                { label: "ASO Assets Refreshed", icon: Download, color: "text-purple-500", bg: "bg-purple-50", progress: 60 }
             ].map((item, i) => (
-                <div key={i} className="flex items-center justify-between p-2 hover:bg-gray-50 rounded-lg transition-colors group cursor-default">
-                    <div className="flex items-center gap-3">
+                <div key={i} className="p-2.5 hover:bg-gray-50 rounded-xl transition-colors group cursor-default">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-2.5">
                         <div className={`w-6 h-6 rounded-md ${item.bg} flex items-center justify-center`}>
                             <item.icon className={`w-3.5 h-3.5 ${item.color}`} />
                         </div>
                         <span className="text-gray-700 font-medium text-sm">{item.label}</span>
                     </div>
-                    <CheckCircle2 className="w-4 h-4 text-gray-200 group-hover:text-green-500 transition-colors" />
+                    {item.progress === 100
+                      ? <CheckCircle2 className="w-4 h-4 text-green-500" />
+                      : <span className="text-[10px] font-bold text-gray-400">{item.progress}%</span>
+                    }
+                  </div>
+                  <div className="ml-8 h-1 bg-gray-100 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${item.progress}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.8, delay: i * 0.15 }}
+                      className={`h-full rounded-full ${
+                        item.progress === 100 ? 'bg-green-400' :
+                        item.progress >= 80 ? 'bg-amber-400' : 'bg-blue-400'
+                      }`}
+                    />
+                  </div>
                 </div>
             ))}
         </div>
     </motion.div>
 
-    {/* ASO Testing Board */}
+    {/* ASO A/B Test Board */}
     <div className="bg-[#0B1020] rounded-2xl p-6 border border-white/10 shadow-2xl relative overflow-hidden group">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.1),transparent_50%)]" />
         
         <div className="relative z-10">
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex justify-between items-center mb-5">
                 <div className="flex items-center gap-2">
                     <SmartphoneNfc className="w-4 h-4 text-[#DBFE01]" />
-                    <span className="text-xs font-bold text-white uppercase tracking-wider">ASO Experiments</span>
+                    <span className="text-xs font-bold text-white uppercase tracking-wider">ASO Experiment</span>
                 </div>
                 <div className="flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -346,32 +367,72 @@ export const SolutionVisual = () => (
                 </div>
             </div>
             
-            <div className="flex gap-4 items-end">
-                {/* Variant A */}
-                <div className="flex-1 text-center opacity-50 hover:opacity-100 transition-opacity">
-                    <div className="h-24 bg-white/5 border border-white/10 rounded-xl mb-3 flex items-center justify-center">
-                        <div className="w-10 h-10 bg-white/10 rounded-lg" />
+            <div className="grid grid-cols-2 gap-3">
+              {/* Variant A - Original */}
+              <div className="opacity-60">
+                <div className="bg-white/5 border border-white/10 rounded-xl p-3 mb-2">
+                  {/* App icon + name row */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-9 h-9 bg-gray-600 rounded-xl flex-shrink-0" />
+                    <div className="space-y-1">
+                      <div className="h-1.5 bg-white/20 rounded w-16" />
+                      <div className="h-1.5 bg-white/10 rounded w-12" />
                     </div>
-                    <div className="text-[10px] text-gray-400 mb-1">Original</div>
-                    <div className="text-xs font-bold text-white">2.1% CVR</div>
+                  </div>
+                  {/* Stars */}
+                  <div className="flex gap-0.5 mb-2">
+                    {[1,2,3].map(s => <Star key={s} className="w-2.5 h-2.5 fill-gray-500 text-gray-500" />)}
+                    {[4,5].map(s => <Star key={s} className="w-2.5 h-2.5 fill-gray-700 text-gray-700" />)}
+                  </div>
+                  {/* Screenshot strip */}
+                  <div className="flex gap-1">
+                    {[1,2,3].map(s => (
+                      <div key={s} className="flex-1 h-10 bg-white/5 rounded-md border border-white/5" />
+                    ))}
+                  </div>
                 </div>
+                <div className="text-center">
+                  <div className="text-[10px] text-gray-500 mb-0.5">Original</div>
+                  <div className="text-sm font-black text-white/40">2.1% CVR</div>
+                </div>
+              </div>
 
-                <div className="pb-8 text-gray-600 font-black text-sm">VS</div>
-
-                {/* Variant B (Winner) */}
-                <div className="flex-1 text-center relative">
-                    <motion.div 
-                        initial={{ y: 5 }} animate={{ y: 0 }} 
-                        className="absolute -top-8 left-1/2 -translate-x-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[9px] font-extrabold px-2 py-0.5 rounded shadow-lg shadow-[#DBFE01]/20 z-20"
-                    >
-                        WINNER
-                    </motion.div>
-                    <div className="h-24 bg-gradient-to-b from-[#DBFE01]/20 to-[#DBFE01]/5 border border-[#DBFE01]/30 rounded-xl mb-3 flex items-center justify-center relative shadow-[0_0_20px_rgba(219,254,1,0.1)]">
-                        <div className="w-10 h-10 bg-[#DBFE01] rounded-lg shadow-lg" />
+              {/* Variant B - Winner */}
+              <div className="relative">
+                <motion.div
+                  initial={{ y: 5, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#DBFE01] text-[#1a1a1a] text-[8px] font-extrabold px-2.5 py-0.5 rounded-full shadow-lg shadow-[#DBFE01]/30 z-20 flex items-center gap-1"
+                >
+                  <Trophy className="w-2.5 h-2.5" /> WINNER
+                </motion.div>
+                <div className="bg-gradient-to-b from-[#DBFE01]/15 to-[#DBFE01]/5 border border-[#DBFE01]/40 rounded-xl p-3 mb-2 shadow-[0_0_20px_rgba(219,254,1,0.1)]">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-9 h-9 bg-[#DBFE01] rounded-xl flex-shrink-0 shadow-lg shadow-[#DBFE01]/30" />
+                    <div className="space-y-1">
+                      <div className="h-1.5 bg-white/40 rounded w-16" />
+                      <div className="h-1.5 bg-white/20 rounded w-12" />
                     </div>
-                    <div className="text-[10px] text-[#DBFE01] mb-1 font-bold">New Variant</div>
-                    <div className="text-xs font-bold text-white">+15% CVR</div>
+                  </div>
+                  {/* Stars - full */}
+                  <div className="flex gap-0.5 mb-2">
+                    {[1,2,3,4,5].map(s => <Star key={s} className="w-2.5 h-2.5 fill-amber-400 text-amber-400" />)}
+                  </div>
+                  {/* Screenshot strip - vibrant */}
+                  <div className="flex gap-1">
+                    {['from-blue-600 to-indigo-500','from-[#DBFE01] to-green-400','from-purple-500 to-pink-500'].map((g,s) => (
+                      <div key={s} className={`flex-1 h-10 bg-gradient-to-b ${g} rounded-md opacity-80`} />
+                    ))}
+                  </div>
                 </div>
+                <div className="text-center">
+                  <div className="text-[10px] text-[#DBFE01] font-bold mb-0.5">New Variant</div>
+                  <div className="text-sm font-black text-white flex items-center justify-center gap-1">
+                    <TrendingUp className="w-3 h-3 text-[#DBFE01]" /> +15% CVR
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
