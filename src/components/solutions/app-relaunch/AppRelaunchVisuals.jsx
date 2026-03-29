@@ -522,65 +522,145 @@ export const SolutionVisual = () => (
 );
 
 // Enhanced One Pager
-export const RelaunchPlanVisual = () => (
+export const RelaunchPlanVisual = () => {
+  const phases = [
+    { icon: Search, label: "Diagnose", desc: "Week 1", color: "blue", bgColor: "bg-blue-50", textColor: "text-blue-600" },
+    { icon: Code2, label: "Build", desc: "Weeks 2-4", color: "purple", bgColor: "bg-purple-50", textColor: "text-purple-600" },
+    { icon: TrendingUp, label: "Relaunch", desc: "Weeks 5-6", color: "emerald", bgColor: "bg-emerald-50", textColor: "text-emerald-600" }
+  ];
+
+  return (
     <motion.div 
-    whileHover={{ rotate: 1, scale: 1.02 }}
-    className="bg-white max-w-xs mx-auto rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] p-8 relative border border-gray-100"
-  >
-    <div className="flex items-center gap-4 mb-8 border-b border-gray-100 pb-6">
-        <div className="w-12 h-12 bg-[#1a1a1a] rounded-xl flex items-center justify-center shadow-xl">
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02, boxShadow: '0 40px 80px -20px rgba(0,0,0,0.2)' }}
+      className="bg-gradient-to-br from-white to-gray-50 max-w-md mx-auto rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] p-8 relative border border-gray-100 overflow-hidden"
+    >
+      {/* Background glow */}
+      <motion.div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.08),transparent_70%)]"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 4, repeat: Infinity }}
+      />
+
+      <div className="relative z-10">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="flex items-center gap-4 mb-8 border-b border-gray-100 pb-6"
+        >
+          <motion.div
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            className="w-12 h-12 bg-gradient-to-br from-[#1a1a1a] to-gray-800 rounded-xl flex items-center justify-center shadow-xl"
+          >
             <Trophy className="w-6 h-6 text-[#DBFE01]" />
-        </div>
-        <div>
-            <div className="text-sm font-bold text-gray-900">Relaunch Plan</div>
-            <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Confidential Strategy</div>
-        </div>
-    </div>
-    
-    <div className="space-y-4">
-        {/* Phase 1 */}
-        <div className="flex gap-3">
-            <div className="flex flex-col items-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
-                <div className="w-0.5 h-full bg-gray-100 my-1" />
-            </div>
-            <div className="pb-4">
-                <div className="h-2 bg-gray-200 rounded w-24 mb-2" />
-                <div className="h-1.5 bg-gray-100 rounded w-40" />
-            </div>
-        </div>
+          </motion.div>
+          <div>
+            <div className="text-sm font-bold text-gray-900">8-12 Week Relaunch</div>
+            <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Strategic Timeline</div>
+          </div>
+        </motion.div>
         
-        {/* Phase 2 */}
-        <div className="flex gap-3">
-            <div className="flex flex-col items-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-purple-500" />
-                <div className="w-0.5 h-full bg-gray-100 my-1" />
-            </div>
-            <div className="pb-4">
-                <div className="h-2 bg-gray-200 rounded w-20 mb-2" />
-                <div className="h-1.5 bg-gray-100 rounded w-36" />
-            </div>
+        {/* Timeline */}
+        <div className="space-y-6 relative">
+          {/* Animated background line */}
+          <motion.div 
+            className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-purple-300 to-emerald-300"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            style={{ transformOrigin: 'top' }}
+          />
+
+          {phases.map((phase, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + idx * 0.2, duration: 0.4 }}
+              className="flex gap-4 relative"
+            >
+              {/* Node */}
+              <div className="flex flex-col items-center pt-1">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4 + idx * 0.2, type: 'spring', stiffness: 300 }}
+                  className={`w-12 h-12 ${phase.bgColor} rounded-full flex items-center justify-center border-2 border-${phase.color}-300 relative z-20 shadow-lg`}
+                >
+                  <phase.icon className={`w-6 h-6 ${phase.textColor}`} />
+                </motion.div>
+              </div>
+
+              {/* Content */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 + idx * 0.2 }}
+                className="pb-2 pt-1.5 flex-1"
+              >
+                <div className="flex items-baseline justify-between mb-1">
+                  <span className="font-bold text-gray-900 text-sm">{phase.label}</span>
+                  <span className={`text-[10px] font-bold ${phase.textColor} uppercase tracking-wider`}>{phase.desc}</span>
+                </div>
+                <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${60 + idx * 15}%` }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.6 + idx * 0.15, duration: 0.6, ease: 'easeOut' }}
+                    className={`h-full bg-gradient-to-r from-${phase.color}-400 to-${phase.color}-500`}
+                    style={{
+                      background: idx === 0 ? 'linear-gradient(90deg, #3b82f6, #60a5fa)' :
+                                 idx === 1 ? 'linear-gradient(90deg, #a855f7, #c084fc)' :
+                                           'linear-gradient(90deg, #10b981, #34d399)'
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
 
-        {/* Phase 3 */}
-        <div className="flex gap-3">
-            <div className="flex flex-col items-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#DBFE01] shadow-[0_0_8px_#DBFE01]" />
-            </div>
-            <div>
-                <div className="h-2 bg-gray-800 rounded w-28 mb-2" />
-                <div className="h-1.5 bg-gray-100 rounded w-32" />
-            </div>
-        </div>
-    </div>
-    
-    {/* Stamp */}
-    <motion.div 
-        initial={{ scale: 1.5, opacity: 0, rotate: -20 }}
+        {/* Footer CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 1 }}
+          className="mt-8 pt-6 border-t border-gray-100"
+        >
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">Ready to Launch?</span>
+            <motion.span
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="text-[#DBFE01] text-sm font-bold">→</motion.span>
+          </div>
+          <div className="text-[11px] text-gray-600 leading-relaxed">Book a 30-minute roadmap call to get your personalized relaunch timeline.</div>
+        </motion.div>
+      </div>
+      
+      {/* Animated Stamp */}
+      <motion.div 
+        initial={{ scale: 1.5, opacity: 0, rotate: -25 }}
         whileInView={{ scale: 1, opacity: 1, rotate: -15 }}
-        className="absolute bottom-6 right-6 border-2 border-[#DBFE01] text-[#1a1a1a] text-[10px] font-black px-3 py-1 rounded uppercase tracking-widest bg-[#DBFE01]/20 backdrop-blur-sm"
-    >
-        Approved
+        viewport={{ once: true }}
+        transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
+        whileHover={{ scale: 1.1, rotate: -10 }}
+        className="absolute top-6 right-6 border-2 border-[#DBFE01] text-[#1a1a1a] text-[9px] font-black px-3 py-1.5 rounded uppercase tracking-widest bg-[#DBFE01]/25 backdrop-blur-sm shadow-lg"
+      >
+        Ready
+      </motion.div>
     </motion.div>
-  </motion.div>
-);
+  );
+};
