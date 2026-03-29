@@ -1105,8 +1105,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 className="flex gap-8 pb-6"
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
-                
-                [
+                {[
                 { name: "Flutter", url: "https://cdn.simpleicons.org/flutter" },
                 { name: "React Native", url: "https://cdn.simpleicons.org/react" },
                 { name: "Figma", url: "https://cdn.simpleicons.org/figma" },
@@ -1254,22 +1253,10 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
       <Reveal delay={0.3}>
         <div className="flex flex-wrap justify-center gap-3 mt-10">
           {[
-          { name: "Flutter", url: "https://cdn.simpleicons.org/flutter" },
-          { name: "React Native", url: "https://cdn.simpleicons.org/react" },
-          { name: "Figma", url: "https://cdn.simpleicons.org/figma" },
-          { name: "Maze", url: "https://cdn.simpleicons.org/maze" },
-          { name: "UXCam", url: "https://logotyp.us/file/uxcam.svg" },
-          { name: "Firebase", url: "https://cdn.simpleicons.org/firebase" },
-          { name: "Amplitude", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Amplitude_logo.svg" },
-          { name: "Mixpanel", url: "https://cdn.simpleicons.org/mixpanel" },
-          { name: "AppsFlyer", url: "https://logotyp.us/file/appsflyer.svg" },
-          { name: "RevenueCat", url: "https://cdn.simpleicons.org/revenuecat" },
-          { name: "AppTweak", url: "https://seeklogo.com/vector-logo/512229/apptweak" },
           { icon: "🕐", label: "Free 30-min call" },
           { icon: "🚫", label: "No sales pitch" },
           { icon: "📋", label: "Get your roadmap" },
-          { icon: "✅", label: "No commitment" }].
-        map((item) =>
+          { icon: "✅", label: "No commitment" }].map((item) =>
         <div key={item.label} className="flex items-center gap-2 bg-[#1a1a1a]/10 rounded-full px-4 py-2 text-xs font-bold text-[#1a1a1a]/80 tracking-wide">
               <span>{item.icon}</span>
               <span>{item.label}</span>
