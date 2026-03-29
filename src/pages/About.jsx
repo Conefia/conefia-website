@@ -66,7 +66,7 @@ export default function About() {
         </motion.div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 pb-24 text-center">
-          <Breadcrumbs items={[{ label: 'About Us' }]} theme="dark" />
+          <Breadcrumbs items={[{ label: 'AI SaaS MVP Launch' }]} theme="dark" />
           <motion.div {...fadeUp(0.1)}>
             <span className="inline-block px-4 py-1.5 rounded-full border border-[#DBFE01]/30 bg-[#DBFE01]/10 text-[#DBFE01] text-xs font-semibold uppercase tracking-widest mb-6">
               Who We Are
