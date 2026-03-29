@@ -983,7 +983,7 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.', techStackLogos = [] }) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.' }) => {
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1106,30 +1106,20 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
                 
-                {(techStackLogos.length > 0 ? [...techStackLogos, ...techStackLogos] : [
-                { name: "OpenAI", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1200px-OpenAI_Logo.svg.png" },
-                { name: "Google", url: "https://www.google.com/favicon.ico" },
-                { name: "AWS", url: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" },
-                { name: "Azure", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" },
-                { name: "PostgreSQL", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PostgreSQL_logo.3colors.120x120.png/120px-PostgreSQL_logo.3colors.120x120.png" },
-                { name: "Python", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" },
-                { name: "React", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" },
-                { name: "Node.js", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" },
-                { name: "Docker", url: "https://www.docker.com/wp-content/uploads/2023/04/Docker-logo-blue.png" },
-                { name: "Kubernetes", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png" },
-                { name: "Redis", url: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png" },
-                { name: "MongoDB", url: "https://www.mongodb.com/community/logos/mongodb-community-logo.svg" }].concat([{ name: "OpenAI", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1200px-OpenAI_Logo.svg.png" },
-                { name: "Google", url: "https://www.google.com/favicon.ico" },
-                { name: "AWS", url: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" },
-                { name: "Azure", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1200px-Microsoft_Azure.svg.png" },
-                { name: "PostgreSQL", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/PostgreSQL_logo.3colors.120x120.png/120px-PostgreSQL_logo.3colors.120x120.png" },
-                { name: "Python", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" },
-                { name: "React", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" },
-                { name: "Node.js", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" },
-                { name: "Docker", url: "https://www.docker.com/wp-content/uploads/2023/04/Docker-logo-blue.png" },
-                { name: "Kubernetes", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/1200px-Kubernetes_logo_without_workmark.svg.png" },
-                { name: "Redis", url: "https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png" },
-                { name: "MongoDB", url: "https://www.mongodb.com/community/logos/mongodb-community-logo.svg" }])).map((tech, i) => (
+                {[
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
                 <div key={i} className="flex-shrink-0 w-28 h-28">
                     <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
                       <img
@@ -1137,9 +1127,35 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       alt={tech.name}
                       className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
                       loading="lazy" />
+                    
                     </div>
                   </div>
-                ))}
+                )}
+                {[
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }].
+                map((tech, i) =>
+                <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
+                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
+                    </div>
+                  </div>
+                )}
               </motion.div>
             </div>
           </Reveal>
