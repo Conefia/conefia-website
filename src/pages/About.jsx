@@ -23,7 +23,7 @@ const stats = [
 
 const pillars = [
   { icon: Zap, title: 'Speed to Market', body: 'Launch in weeks, not months. Our proven playbook and pre-built systems compress your time to value without cutting corners.' },
-  { icon: TrendingUp, title: 'Growth-First Approach', body: "We don't just build apps. We build growth systems with acquisition, retention, and monetization baked in from day one." }, We build growth systems with acquisition, retention, and monetization baked in from day one.' },
+  { icon: TrendingUp, title: 'Growth-First Approach', body: "We don't just build apps. We build growth systems with acquisition, retention, and monetization baked in from day one." },
   { icon: Shield, title: 'Risk-Free Partnership', body: 'Validated approach, weekly demos, and clear stage gates mean no surprises — just results backed by data.' },
   { icon: Users, title: 'One Dedicated Team', body: 'No handoffs, no miscommunication. One experienced team owns your entire journey from validation to scale.' },
 ];
