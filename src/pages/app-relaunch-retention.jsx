@@ -8,6 +8,7 @@ import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanV
 import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
 import AppRelaunchFitCheck from '@/components/solutions/app-relaunch/AppRelaunchFitCheck';
 import CommonReasons from '@/components/solutions/app-relaunch/CommonReasons';
+import ProcessStepVisual from '@/components/solutions/app-relaunch/ProcessStepVisual';
 import Seo from '@/components/Seo';
 
 export default function AppRelaunchRetention() {
@@ -101,7 +102,7 @@ export default function AppRelaunchRetention() {
             description: "Retention improvement + growth tuning. After launch, we keep improving repeat usage, store performance, and growth efficiency."
           }
         ]}
-        visual={<div className="mt-8 flex justify-center"><div className="inline-flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200"><div className="flex items-center gap-2"><Search className="w-4 h-4 text-blue-500"/><span className="text-sm font-medium">Audit</span></div><div className="w-px h-6 bg-gray-300"/> <div className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-[#DBFE01]"/><span className="text-sm font-medium">Redesign</span></div><div className="w-px h-6 bg-gray-300"/><div className="flex items-center gap-2"><TrendingUp className="w-4 h-4 text-emerald-500" /><span className="text-sm font-medium">Grow</span></div></div></div>}
+        visual={<ProcessStepVisual />}
       />
       <CommonReasons />
       <SolutionProof 
