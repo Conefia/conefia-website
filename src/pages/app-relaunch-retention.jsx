@@ -55,7 +55,7 @@ export default function AppRelaunchRetention() {
       <AppRelaunchFitCheck />
       <SolutionProblem 
         title="Your app is live — but users aren't staying."
-        quote="Acquisition without retention is just a very expensive way to burn your runway."
+        quote="Most apps do not stall because of one missing feature. They stall because retention leaks, product friction, and unclear data compound over time."
         items={[
           "Users install the app, but too few come back",
           "Onboarding or UX friction is hurting activation",
