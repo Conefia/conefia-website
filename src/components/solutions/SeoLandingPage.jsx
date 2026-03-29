@@ -983,37 +983,8 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({
-  title,
-  items = [],
-  visual,
-  testimonials = [],
-  useCasesTitle,
-  useCases = [],
-  // New dynamic props for App Relaunch section
-  imageBadge,
-  imageOverlay,
-  sectionBadge = "Why we build different",
-  sectionTitle,
-  imageUrl,
-  featureCards = []
-}) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [] }) => {
   const reduceMotion = useReducedMotion();
-  
-  // Check if this is the new dynamic App Relaunch format
-  const isDynamic = imageBadge || imageUrl || (featureCards && featureCards.length > 0);
-  
-  // Default feature cards for SolutionProof section
-  const displayCards = isDynamic && featureCards.length > 0 ? featureCards : [
-    { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
-    { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
-    { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
-    { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
-  ];
-  
-  const displayImageUrl = imageUrl || "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80";
-  const displaySectionTitle = sectionTitle || (<><span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span></>) ;
-
   return (
     <>
       <section className="py-24 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
@@ -1035,7 +1006,7 @@ export const SolutionProof = ({
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5">
               
               <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
-              <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">{sectionBadge}</span>
+              <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -1044,65 +1015,63 @@ export const SolutionProof = ({
               transition={{ delay: 0.1 }}
               className="text-4xl md:text-5xl font-extrabold leading-tight">
               
-              {displaySectionTitle}
+              <span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span>
             </motion.h2>
           </Reveal>
 
-          {isDynamic && (
-            <>
-            <Reveal className="mb-16">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <Reveal className="mb-16">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-                {/* Left: Stock image with overlays */}
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
-                  <img
-                    src={displayImageUrl}
-                    alt="Solution overview"
-                    className="w-full h-full object-cover" />
+              {/* Left: Stock image with overlays */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
+                <img
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80"
+                  alt="Engineering team shipping AI products"
+                  className="w-full h-full object-cover" />
+                
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
+
+                {/* Floating stat card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
                   
-                  {/* Dark gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
+                      <Zap className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-base">8–12 weeks to production</p>
+                      <p className="text-white/60 text-sm">Scope locked. Weekly demos. No surprises.</p>
+                    </div>
+                  </div>
+                </motion.div>
 
-                  {/* Image Overlay Text */}
-                  {imageOverlay && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.4, duration: 0.6 }}
-                      className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
-                      
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
-                          <Zap className="w-6 h-6 text-[#1a1a1a]" />
-                        </div>
-                        <div>
-                          <p className="text-white font-bold text-base">{imageOverlay.title}</p>
-                          <p className="text-white/60 text-sm">{imageOverlay.subtitle}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
+                {/* Top badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+                  
+                  Pilot-Ready MVP
+                </motion.div>
+              </div>
 
-                  {/* Top badge */}
-                  {imageBadge && (
-                    <motion.div
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.5 }}
-                      className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
-                      
-                      {imageBadge}
-                    </motion.div>
-                  )}
-                </div>
-
-                {/* Right: Feature list */}
-                <div className="order-1 lg:order-2">
-                  <div className="space-y-6">
-                      {displayCards.
-                    map((item, i) =>
+              {/* Right: Feature list */}
+              <div className="order-1 lg:order-2">
+                <div className="space-y-6">
+                  {[
+                  { num: "01", title: "Ship weekly, not someday", desc: "Modern full-stack (React / Node / Python) with CI/CD from day one.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+                  { num: "02", title: "RAG that holds up under pressure", desc: "Reliable retrieval with Pinecone or pgvector—built for real usage, not demos.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+                  { num: "03", title: "Ready for real teams", desc: "Roles + permissions from day one, so pilots don't break when customers invite teammates.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+                  { num: "04", title: "Know what's working", desc: "LangSmith evals + tracing so quality improves and costs stay predictable.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }].
+                  map((item, i) =>
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, x: 30 }}
@@ -1189,9 +1158,7 @@ export const SolutionProof = ({
                 )}
               </motion.div>
             </div>
-            </Reveal>
-            </>
-          )}
+          </Reveal>
         </div>
       </section>
 
