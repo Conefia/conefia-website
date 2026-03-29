@@ -983,7 +983,7 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products' }) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.' }) => {
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1096,9 +1096,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
           <Reveal delay={0.2} className="mt-16 pt-12 border-t border-gray-100">
             <div className="text-center mb-6">
-              <h3 className="text-xl font-bold text-[#1a1a1a]">Tech stack we ship with</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a]">{techStackTitle}</h3>
             </div>
-            <p className="text-[#1a1a1a]/70 text-base font-medium mb-8 text-center">Proven tools we trust—so you don't gamble on your MVP.</p>
+            <p className="text-[#1a1a1a]/70 text-base font-medium mb-8 text-center">{techStackDesc}</p>
             
             <div className="relative overflow-hidden">
               <motion.div
