@@ -127,6 +127,7 @@ export default function AppRelaunchRetention() {
         imageOverlay={{ title: "8–12 weeks to relaunch", subtitle: "Scope locked. Weekly demos. No guesswork." }}
         sectionBadge="Why retention matters"
         sectionTitle={<><span className="text-[#1a1a1a]">Fix retention</span> <span className="gradient-text">first</span></>}
+        // Removed hardcoded sectionBadge and sectionTitle to use component defaults
         featureCards={[
           { num: "01", title: "Ship fixes weekly, not someday", desc: "Product, UX, and performance improvements shipped every week.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
           { num: "02", title: "Fix retention before scaling spend", desc: "Improve onboarding, repeat usage, and store conversion first.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
