@@ -386,17 +386,17 @@ export const OnePagerVisual = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 + i * 0.1 }}
-            className="p-3 bg-gray-50 rounded-lg border border-gray-100 group hover:bg-gray-100 transition-colors"
+            className="p-3 bg-gray-50 rounded-lg border border-gray-200 group hover:bg-white transition-colors"
           >
             <div className="flex items-center justify-between mb-1.5">
               <div className="flex items-center gap-2">
                 <span className="text-lg">{section.icon}</span>
-                <span className="text-xs font-bold text-gray-700">{section.title}</span>
+                <span className="text-xs font-bold text-gray-900">{section.title}</span>
               </div>
               <motion.span
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
-                className="text-[10px] font-bold text-[#DBFE01] bg-[#DBFE01]/10 px-2 py-0.5 rounded"
+                className="text-[10px] font-bold text-white bg-[#DBFE01] px-2 py-0.5 rounded"
               >
                 {section.status}
               </motion.span>
@@ -418,9 +418,9 @@ export const OnePagerVisual = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ delay: 0.5 }}
-        className="bg-white rounded-lg p-3 mb-4 border border-gray-100 relative z-10"
+        className="bg-white rounded-lg p-3 mb-4 border border-gray-200 relative z-10"
       >
-        <div className="text-[10px] font-bold text-gray-600 uppercase tracking-wide mb-2">Deliverables</div>
+        <div className="text-[10px] font-bold text-gray-800 uppercase tracking-wide mb-2">Deliverables</div>
         <div className="space-y-1.5">
           {["Weekly demos", "Clear milestones", "Live analytics"].map((item, i) => (
             <motion.div
@@ -429,7 +429,7 @@ export const OnePagerVisual = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6 + i * 0.08 }}
-              className="flex items-center gap-2 text-[10px] text-gray-700"
+              className="flex items-center gap-2 text-[10px] text-gray-800"
             >
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
