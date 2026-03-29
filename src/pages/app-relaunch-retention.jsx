@@ -6,6 +6,7 @@ import SeoLandingPage, {
 } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual, MetricsVisual, ProblemVisual, SolutionVisual, RelaunchPlanVisual } from '@/components/solutions/app-relaunch/AppRelaunchVisuals';
 import { Users, TrendingUp, Smartphone, Layers, Search, BarChart3, Star, Zap, Code2, Database, CreditCard } from 'lucide-react';
+import AppRelaunchFitCheck from '@/components/solutions/app-relaunch/AppRelaunchFitCheck';
 import Seo from '@/components/Seo';
 
 export default function AppRelaunchRetention() {
@@ -51,6 +52,7 @@ export default function AppRelaunchRetention() {
         visual={<MetricsVisual />}
         items={[]}
       />
+      <AppRelaunchFitCheck />
       <SolutionProblem 
         title="Your app is live — but users aren't staying."
         quote="Acquisition without retention is just a very expensive way to burn your runway."
