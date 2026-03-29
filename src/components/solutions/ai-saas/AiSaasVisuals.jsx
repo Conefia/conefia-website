@@ -396,7 +396,7 @@ export const OnePagerVisual = () => {
               <motion.span
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
-                className="text-[10px] font-bold text-white bg-[#DBFE01] px-2 py-0.5 rounded"
+                className="text-[10px] font-bold text-white bg-blue-600 px-2 py-0.5 rounded"
               >
                 {section.status}
               </motion.span>
@@ -406,7 +406,7 @@ export const OnePagerVisual = () => {
               whileInView={{ width: '100%' }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 + i * 0.1, duration: 0.6, ease: 'easeOut' }}
-              className="h-1 bg-gradient-to-r from-[#DBFE01] to-[#c5e000] rounded-full"
+              className="h-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full"
             />
           </motion.div>
         ))}
@@ -434,7 +434,7 @@ export const OnePagerVisual = () => {
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
-                className="w-1.5 h-1.5 rounded-full bg-[#DBFE01]"
+                className="w-1.5 h-1.5 rounded-full bg-blue-600"
               />
               {item}
             </motion.div>
@@ -453,7 +453,7 @@ export const OnePagerVisual = () => {
       >
         <motion.div 
           whileHover={{ scale: 1.05 }}
-          className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#1a1a1a] font-bold px-6 py-2.5 rounded-full shadow-[0_12px_24px_rgba(219,254,1,0.35)] text-xs border-2 border-white/50 tracking-wide"
+          className="bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold px-6 py-2.5 rounded-full shadow-[0_12px_24px_rgba(37,99,235,0.35)] text-xs border-2 border-white/50 tracking-wide"
         >
           🚀 Ship in 8–12 Weeks
         </motion.div>
