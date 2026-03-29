@@ -67,7 +67,7 @@ export default function AppRelaunchRetention() {
         visual={<ProblemVisual />}
       />
       <SolutionDetails 
-        title="Fix retention first. Relaunch with confidence. Then grow from a stronger product."
+        title="Fix retention first. Relaunch with confidence. Then grow from a stronger product"
         description="We do not treat relaunch as a visual refresh. We treat it as a product and growth reset. That means identifying where users drop off, fixing the experience that causes friction, improving performance, strengthening store conversion, and putting reliable analytics in place so growth decisions stop feeling like guesswork."
         primaryCta="Get My Relaunch Plan"
         features={[
