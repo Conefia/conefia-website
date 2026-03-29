@@ -132,16 +132,44 @@ export default function AppRelaunchRetention() {
       <SolutionFAQ 
         items={[
           {
-            question: "Do you do the design and the code?",
-            answer: "Yes. We handle the UX/UI redesign and the implementation (Native or Cross-platform) to ensure performance improvements are realized."
+            question: "What do you mean by \"app relaunch\"?",
+            answer: "A relaunch means improving the product in a way users can actually feel — not just updating the visuals. It usually includes product fixes, UX improvements, performance cleanup, store optimization, and analytics so the next version performs better after release."
           },
           {
-            question: "How long does a relaunch take?",
-            answer: "Typically 4-6 weeks for the core sprint. We focus on high-impact changes that move the needle on retention first."
+            question: "Do we need to rebuild the whole app?",
+            answer: "Usually, no. We start by finding the highest-impact fixes first. If your current product can be improved without a rebuild, that is usually the fastest and most cost-effective path."
           },
           {
-            question: "Can you guarantee ASO results?",
-            answer: "We guarantee a data-driven process and implementation of best practices. While store algorithms change, our clients typically see 15-30% lift in conversion."
+            question: "Why do you focus so much on retention?",
+            answer: "Because retention is what turns installs into actual product growth. If users leave too early, acquisition gets less efficient and growth becomes harder to sustain."
+          },
+          {
+            question: "Can you help with growth, or only product fixes?",
+            answer: "Yes. Our relaunch work is designed to improve the product side of growth: activation, repeat usage, store conversion, ratings, and the clarity needed to make smarter growth decisions afterward."
+          },
+          {
+            question: "Do you handle App Store and Google Play optimization too?",
+            answer: "Yes. We can support ASO, screenshots, messaging, store conversion improvement, and review strategy as part of the relaunch."
+          },
+          {
+            question: "How do you decide what to fix first?",
+            answer: "We prioritize based on retention impact, user friction, ratings, store performance, and what is blocking growth most. The goal is not to fix everything. The goal is to fix what matters most first."
+          },
+          {
+            question: "Can you help if we already have an internal team?",
+            answer: "Yes. We can work as an extension of your team, bring the product and growth structure, and help move the relaunch forward faster without creating more coordination overhead."
+          },
+          {
+            question: "What analytics do you set up?",
+            answer: "We usually focus on the metrics that matter most for relaunch decisions: onboarding drop-off, activation, retention, repeat usage, feature engagement, and store-to-install conversion where relevant."
+          },
+          {
+            question: "What happens after the relaunch ships?",
+            answer: "We can continue into a monthly scale phase focused on retention experiments, lifecycle messaging, analytics refinement, store optimization, and product iteration."
+          },
+          {
+            question: "Is this a fit if we are still spending on acquisition?",
+            answer: "Yes — but the strongest results usually come when retention and conversion improve alongside acquisition, not when acquisition is scaled on top of a leaky product experience. Re-engaged users often perform better than net-new users on early engagement and retention, which is why fixing the product first usually improves growth efficiency."
           }
         ]}
       />
