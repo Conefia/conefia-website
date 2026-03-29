@@ -36,6 +36,7 @@ export default function AppRelaunchRetention() {
         subtitle="Fix retention first. Relaunch with confidence. Grow organically. If your app is live but users aren't sticking, growth is leaking. We're an app redesign and growth agency built for mobile app retention and engagement + ASO services."
         primaryCta="Get My Relaunch Plan"
         secondaryCta="See the Sprint"
+        microCopy="Free 30-minute roadmap call. Leave with clear priorities, timeline, and a relaunch plan built around retention and sustainable growth."
         trustChips={[
           "Scope locked (Week 2)",
           "Weekly demos",
