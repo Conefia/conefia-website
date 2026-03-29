@@ -41,8 +41,8 @@ export default function AiSaasMvpLaunch() {
         trustChips={[
           "Scope locked (Week 2)",
           "Weekly demos",
-          "UX + performance fixes",
-          "Store conversion + analytics"
+          "Pilot launch kit",
+          "LLM + Agent build"
         ]}
         trustStrip={[
           { label: "Typical MVP", value: "8–12 weeks" },
