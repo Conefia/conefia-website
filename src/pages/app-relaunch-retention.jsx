@@ -119,14 +119,14 @@ export default function AppRelaunchRetention() {
           { name: "Flutter", url: "https://logo.svgcdn.com/logos/flutter.svg" },
           { name: "React Native", url: "https://logo.svgcdn.com/logos/react.svg" },
           { name: "Figma", url: "https://logo.svgcdn.com/logos/figma.svg" },
-          { name: "Firebase", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Firebase_icon.svg" },
-          { name: "UXcam", url: "https://cdn.brandfetch.io/id3HhK-6Wr/idspkLJs23.svg?c=1bxid64Mup7aczewSAYMX&t=1662630648941" },
-          { name: "AppTweak", url: "https://cdn.brandfetch.io/idMJBTnE3x/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1767648114271" },
-          { name: "Mixpanel", url: "https://cdn.brandfetch.io/idr_rhI2FS/theme/dark/idMJ8uODLv.svg?c=1bxid64Mup7aczewSAYMX&t=1717143401811" },
-          { name: "RevenueCat", url: "https://revenuecat.wpenginepowered.com/wp-content/uploads/2025/10/app_icon.svg" },
+          { name: "Firebase", url: "https://logo.svgcdn.com/logos/firebase.svg" },
+          { name: "UXcam", url: "https://logo.svgcdn.com/logos/uxcam.svg" },
+          { name: "AppTweak", url: "https://logo.svgcdn.com/logos/apptweak.svg" },
+          { name: "Mixpanel", url: "https://logo.svgcdn.com/logos/mixpanel.svg" },
+          { name: "RevenueCat", url: "https://logo.svgcdn.com/logos/revenuecat.svg" },
           { name: "Amplitude", url: "https://logo.svgcdn.com/logos/amplitude.svg" },
-          { name: "App Store", url: "https://cdn.brandfetch.io/idj34mSa0R/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763653537279" },
-          { name: "AppsFlyer", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AppsFlyer.svg" },
+          { name: "App Store", url: "https://logo.svgcdn.com/logos/app-store.svg" },
+          { name: "AppsFlyer", url: "https://logo.svgcdn.com/logos/appsflyer.svg" },
           { name: "Google Play", url: "https://logo.svgcdn.com/logos/google-play.svg" }
         ]}
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
