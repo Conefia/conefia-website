@@ -31,7 +31,7 @@ export default function AppRelaunchRetention() {
         })}}
       />
       <SolutionHero 
-        title="App Relaunch & Retention"
+        title="Relaunch Your App and Improve Retention in 8–12 Weeks"
         subtitle="Fix retention first. Relaunch with confidence. Grow organically. If your app is live but users aren't sticking, growth is leaking. We're an app redesign and growth agency built for mobile app retention and engagement + ASO services."
         primaryCta="Get My Relaunch Plan"
         secondaryCta="See the Sprint"
