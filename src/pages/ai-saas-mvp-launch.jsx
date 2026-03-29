@@ -39,10 +39,11 @@ export default function AiSaasMvpLaunch() {
         secondaryCta="See the Sprint"
         microCopy="Free 30-min roadmap call. Leave with scope, timeline, and a recommended AI approach (RAG vs agents vs fine-tuning)."
         trustChips={[
-          "Scope locked (Week 2)",
           "Weekly demos",
-          "Pilot launch kit",
-          "LLM + Agent build"
+          "UX Polish",
+          "Performance fixes",
+          "Store conversion",
+          "User analytics"
         ]}
         trustStrip={[
           { label: "Typical MVP", value: "8–12 weeks" },
