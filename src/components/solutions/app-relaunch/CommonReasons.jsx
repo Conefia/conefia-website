@@ -150,7 +150,7 @@ export default function CommonReasons() {
                 whileHover={{ scale: 1.02 }}
                 className={cn(
                   "flex items-center gap-5 p-6 rounded-2xl border cursor-pointer transition-all duration-300 relative group overflow-hidden",
-                  activeIndex === i
+                  hoveredLeftItem === i
                     ? "bg-[#DBFE01] border-[#b8d400] shadow-[0_8px_32px_rgba(219,254,1,0.4)]"
                     : "bg-[#f2ffc0] border-[#d4f500]/50 hover:bg-[#e8ff80]"
                 )}>
@@ -158,25 +158,25 @@ export default function CommonReasons() {
                 {/* Animated background pulse */}
                 <motion.div
                   className="absolute inset-0 bg-[#1a1a1a]/5 opacity-0 group-hover:opacity-100 transition-opacity"
-                  animate={activeIndex === i ? { opacity: 0.1 } : { opacity: 0 }}
+                  animate={hoveredLeftItem === i ? { opacity: 0.1 } : { opacity: 0 }}
                 />
 
                 <motion.div
                   className={cn(
                     "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 relative z-10",
-                    activeIndex === i ? "bg-[#1a1a1a]" : "bg-[#DBFE01]"
+                    hoveredLeftItem === i ? "bg-[#1a1a1a]" : "bg-[#DBFE01]"
                   )}
-                  animate={activeIndex === i ? { rotate: 360, scale: 1.1 } : { rotate: 0, scale: 1 }}
+                  animate={hoveredLeftItem === i ? { rotate: 360, scale: 1.1 } : { rotate: 0, scale: 1 }}
                   transition={{ duration: 0.5 }}
                   style={{
-                    boxShadow: activeIndex === i 
+                    boxShadow: hoveredLeftItem === i 
                       ? '0 0 20px rgba(219, 254, 1, 0.6), 0 0 40px rgba(219, 254, 1, 0.3)' 
                       : '0 2px 8px rgba(0, 0, 0, 0.1)'
                   }}
                 >
                   <span className={cn(
                     "text-lg font-bold transition-colors duration-300",
-                    activeIndex === i ? "text-[#DBFE01]" : "text-[#1a1a1a]"
+                    hoveredLeftItem === i ? "text-[#DBFE01]" : "text-[#1a1a1a]"
                   )}>
                     {i + 1}
                   </span>
@@ -185,7 +185,7 @@ export default function CommonReasons() {
                 {/* Checkmark indicator */}
                 <motion.div
                   className="absolute right-4 top-4 w-6 h-6 rounded-full bg-[#1a1a1a]/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                  animate={activeIndex === i ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
+                  animate={hoveredLeftItem === i ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
                 >
                   <svg className="w-4 h-4 text-[#1a1a1a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
