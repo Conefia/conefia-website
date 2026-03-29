@@ -1100,8 +1100,36 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             </div>
             <p className="text-[#1a1a1a]/70 text-base font-medium mb-8 text-center">{techStackDesc}</p>
             
-            <div className="relative">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 pb-6">
+            <div className="relative overflow-hidden">
+              <motion.div
+                className="flex gap-8 pb-6"
+                animate={{ x: ["0%", "-50%"] }}
+                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
+                
+                {(techStackLogos.length > 0 ? techStackLogos : [
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }]).map((tech, i) =>
+                <div key={i} className="flex-shrink-0 w-28 h-28">
+                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    
+                    </div>
+                  </div>
+                )}
                 {(techStackLogos.length > 0 ? techStackLogos : [
                 { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                 { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
@@ -1115,22 +1143,17 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                 { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }]).map((tech, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05, duration: 0.4 }}
-                  className="aspect-square bg-white/5 border border-white/10 rounded-xl p-3 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
-                  <img
-                    src={tech.url}
-                    alt={tech.name}
-                    title={tech.name}
-                    className="w-full h-full object-contain group-hover:scale-110 transition-transform p-2"
-                    loading="lazy" />
-                </motion.div>
+                <div key={`${i}-duplicate`} className="flex-shrink-0 w-28 h-28">
+                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                      <img
+                      src={tech.url}
+                      alt={tech.name}
+                      className="w-20 h-20 object-contain group-hover:scale-110 transition-transform"
+                      loading="lazy" />
+                    </div>
+                  </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </Reveal>
         </div>
