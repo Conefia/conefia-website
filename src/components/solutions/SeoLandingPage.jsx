@@ -983,7 +983,7 @@ function UseCasesLinked({ useCases }) {
 
 }
 
-export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [] }) => {
+export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products' }) => {
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1025,8 +1025,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               {/* Left: Stock image with overlays */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
                 <img
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80"
-                  alt="Engineering team shipping AI products"
+                  src={imageUrl}
+                  alt={imageAlt}
                   className="w-full h-full object-cover" />
                 
                 {/* Dark gradient overlay */}
@@ -1045,8 +1045,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       <Zap className="w-6 h-6 text-[#1a1a1a]" />
                     </div>
                     <div>
-                      <p className="text-white font-bold text-base">8–12 weeks to production</p>
-                      <p className="text-white/60 text-sm">Scope locked. Weekly demos. No surprises.</p>
+                      <p className="text-white font-bold text-base">{statTitle}</p>
+                      <p className="text-white/60 text-sm">{statDesc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -1059,7 +1059,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   transition={{ delay: 0.5 }}
                   className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
                   
-                  Pilot-Ready MVP
+                  {badge}
                 </motion.div>
               </div>
 

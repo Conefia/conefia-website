@@ -108,6 +108,11 @@ export default function AppRelaunchRetention() {
       <SolutionProof 
         title="Turn installs into active users."
         items={["Crash-free > 99.9%", "Native (Swift/Kotlin)", "React Native / Flutter"]}
+        badge="RETENTION-FIRST RELAUNCH"
+        statTitle="8–12 weeks to relaunch"
+        statDesc="Scope locked. Weekly demos. No guesswork."
+        imageUrl="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=900&q=80"
+        imageAlt="Mobile app retention metrics and analytics dashboard"
         whyBuildItems={[
           { num: "01", title: "Ship fixes weekly, not someday", desc: "Product, UX, and performance improvements every week.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
           { num: "02", title: "Fix retention before scaling spend", desc: "Improve onboarding, repeat usage, and store conversion first.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
