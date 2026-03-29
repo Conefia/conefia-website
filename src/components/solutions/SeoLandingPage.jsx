@@ -1012,8 +1012,7 @@ export const SolutionProof = ({
   ];
   
   const displayImageUrl = imageUrl || "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80";
-  const displayBadge = sectionBadge || "WHY WE BUILD DIFFERENT";
-  const displaySectionTitle = sectionTitle || (<><span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span></>);
+  const displaySectionTitle = sectionTitle || (<><span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span></>) ;
 
   return (
     <>
@@ -1036,7 +1035,7 @@ export const SolutionProof = ({
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5">
               
               <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
-              <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">{displayBadge}</span>
+              <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">{sectionBadge}</span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
