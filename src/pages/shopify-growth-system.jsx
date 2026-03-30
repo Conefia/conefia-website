@@ -67,7 +67,7 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
-          title="The Problem: You're spending — but profit isn't scaling."
+          title="You are spending, but profit growth is NOT scaling."
           quote="Most Shopify brands do not struggle because they lack traffic. They struggle because the system behind growth is weak."
           items={[
             "Traffic gets expensive when the store leaks conversion",
