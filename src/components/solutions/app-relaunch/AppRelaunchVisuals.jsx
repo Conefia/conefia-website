@@ -181,7 +181,7 @@ export const MetricsVisual = () => (
     {[
       { val: "+40%", label: "Retention Lift", sub: "Day 30", icon: Users, color: "text-blue-600", bg: "bg-gradient-to-b from-blue-50/80 to-white", border: "border-blue-100" },
       { val: "+30%", label: "ASO Conversion", sub: "Install Rate", icon: Download, color: "text-[#1a1a1a]", bg: "bg-[#DBFE01] shadow-[0_0_20px_rgba(219,254,1,0.3)]", border: "border-[#DBFE01]" },
-      { val: "6 Wks", label: "Sprint Speed", sub: "Relaunch Ready", icon: Zap, color: "text-purple-600", bg: "bg-gradient-to-b from-purple-50/80 to-white", border: "border-purple-100" },
+      { val: "8 - 12 Wks", label: "Sprint Speed", sub: "Relaunch Ready", icon: Zap, color: "text-purple-600", bg: "bg-gradient-to-b from-purple-50/80 to-white", border: "border-purple-100" },
       { val: "4.8★", label: "Avg Rating", sub: "Was 3.2★", icon: Star, color: "text-amber-500", bg: "bg-gradient-to-b from-amber-50/80 to-white", border: "border-amber-100" }
     ].map((m, i) => (
       <motion.div 
