@@ -1120,13 +1120,15 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                 { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
                 ]).map((tech, i) =>
-                <div key={i} className={`flex-shrink-0 ${tech.wide ? 'w-36 h-16' : 'w-20 h-20'}`}>
-                   <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group">
+                <div key={i} className={`flex-shrink-0 h-20 ${tech.wide ? 'w-44' : 'w-20'}`}>
+                   <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: tech.wide ? '10px 16px' : '12px' }}>
                      <img
-                     src={tech.url}
-                     alt={tech.name}
-                     className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
-                     loading="lazy" />
+                       src={tech.url}
+                       alt={tech.name}
+                       className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+                       loading="lazy"
+                       style={{ width: tech.wide ? '100%' : '100%', height: '100%' }}
+                     />
                    </div>
                  </div>
                 )}
