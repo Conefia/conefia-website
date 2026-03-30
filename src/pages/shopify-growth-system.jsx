@@ -42,11 +42,13 @@ export default function ShopifyGrowthSystem() {
         })}}
       />
       <SolutionHero 
-        title="Shopify Growth System"
-        subtitle="Cut CAC. Stabilize ROAS. Lift conversion — profitably. If you're spending but margins aren't improving, you don't need 'more ads.' You need Shopify CRO + offer clarity + measurement that makes growth predictable."
-        primaryCta="Get My Growth Audit"
-        secondaryCta="See the Package"
-        trustChips={["Shopify Experts", "Profit-First", "Data-Driven"]}
+        breadcrumbLabel="Shopify Growth System"
+        title="Build and Grow Your Shopify Store Profitably"
+        subtitle="We help Shopify brands build the right foundation or fix what is holding growth back — from conversion and retention to creative, SEO, and paid performance."
+        primaryCta="Get Your Growth Plan"
+        secondaryCta="See the Sprint"
+        microCopy="Free 30-min roadmap call. Leave with clear priorities, timeline, and next steps."
+        trustChips={["Scope locked by Week 2", "Weekly demos", "Creative + CRO", "Retention + reporting"]}
         layout="split"
         visual={<HeroVisual />}
       />
