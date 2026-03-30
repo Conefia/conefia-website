@@ -133,7 +133,7 @@ export default function ShopifySolutionVisual() {
           {[40, 55, 48, 70, 62, 85, 78].map((h, i) => (
             <motion.div
               key={i}
-              className="flex-1 bg-[#1a1a1a] rounded-t"
+              className="flex-1 bg-[#DBFE01] rounded-t"
               initial={{ height: 0 }}
               animate={{ height: `${h}%` }}
               transition={{ duration: 0.8, delay: i * 0.08, ease: "easeOut" }}
