@@ -163,15 +163,15 @@ export default function ShopifyGrowthSystem() {
       </Suspense>
 
       <RoadmapCallSection
-        title="What you'll get in your free Growth Audit call"
-        description="This is not a sales pitch. In 30 minutes, you leave with a clear picture of what to fix first and a plan to grow profitably."
+        title="What you'll get in the 30-minute growth roadmap call"
+        description="This is not a generic sales chat. We'll look at your Shopify growth engine like a team preparing to build or improve it."
         items={[
-          "Spot the biggest leaks in growth",
-          "See whether you need a build, a growth sprint, or both",
-          "Prioritize what matters now vs later",
-          "Get a recommended plan across CRO, retention, creative, SEO, and ads",
-          "Map the next 8-12 weeks",
-          "Flag risks early"
+          "Identify the biggest gaps in conversion, retention, creative, and tracking",
+          "Confirm whether you need a store build, a growth sprint, or both",
+          "Prioritize what needs fixing now versus later",
+          "Recommend the right mix across CRO, retention, SEO, creative, and campaign optimization",
+          "Map your 8-12 week sprint",
+          "Flag risks early in offer clarity, landing pages, campaign efficiency, and reporting"
         ]}
         primaryCta="Get Your Growth Plan"
       />
