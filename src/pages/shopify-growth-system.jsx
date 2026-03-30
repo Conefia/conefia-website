@@ -16,7 +16,6 @@ const SolutionFAQ = React.lazy(() => import('@/components/solutions/SeoLandingPa
 const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFinalCta })));
 
 import ShopifyFitCheck from '@/components/solutions/shopify-growth/ShopifyFitCheck';
-import ShopifyProblemVisual from '@/components/solutions/shopify-growth/ShopifyProblemVisual';
 import ShopifySolutionVisual from '@/components/solutions/shopify-growth/ShopifySolutionVisual';
 
 // Lazy load visuals
@@ -68,7 +67,7 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
-          title="You are spending, but profit growth is NOT scaling."
+          title="The Problem: You're spending — but profit isn't scaling."
           quote="Most Shopify brands do not struggle because they lack traffic. They struggle because the system behind growth is weak."
           items={[
             "Traffic gets expensive when the store leaks conversion",
@@ -78,7 +77,7 @@ export default function ShopifyGrowthSystem() {
             "Search, social, landing pages, and reporting are disconnected",
             "If you are early, the risk is building the wrong setup and paying for it later"
           ]}
-          visual={<ShopifyProblemVisual />}
+          visual={<ProblemVisual />}
         />
       </Suspense>
 
