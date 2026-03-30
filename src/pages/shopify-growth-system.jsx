@@ -58,7 +58,7 @@ export default function ShopifyGrowthSystem() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title={<>Growth <span className="gradient-text">Outcomes</span></>}
+          title={<>Outcomes that <span className="gradient-text">actually matter</span></>}
           visual={<ShopifyMetricsVisual />}
           items={[]}
         />
