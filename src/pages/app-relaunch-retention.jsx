@@ -126,7 +126,9 @@ export default function AppRelaunchRetention() {
           { name: "Amplitude", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Amplitude_logo_2020.svg", wide: true },
           { name: "App Store", url: "https://cdn.brandfetch.io/idj34mSa0R/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763653537279", wide: true },
           { name: "Swift", url: "https://cdn.brandfetch.io/id43MWupxN/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1769252279088", wide: true },
-          { name: "Kotlin", url: "https://cdn.brandfetch.io/id8oU9wOdk/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772514620898", wide: true }
+          { name: "Kotlin", url: "https://cdn.brandfetch.io/id8oU9wOdk/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772514620898", wide: true },
+          { name: "AppsFlyer", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AppsFlyer.svg", wide: true },
+          { name: "Google Play Console", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Play_Console_Logo_(2023).svg" }
         ]}
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
       />
