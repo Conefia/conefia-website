@@ -1106,7 +1106,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 animate={{ x: ["0%", "-50%"] }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}>
                 
-                {(techStackLogos || [
+                {(() => { const logos = techStackLogos || [
                 { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
                 { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
                 { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
@@ -1119,7 +1119,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
                 { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
                 { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
-                ]).map((tech, i) =>
+                ]; return [...logos, ...logos]; })().map((tech, i) =>
                 <div key={i} className={`flex-shrink-0 h-20 ${tech.wide ? 'w-44' : 'w-20'}`}>
                    <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: tech.wide ? '10px 16px' : '12px' }}>
                      <img
