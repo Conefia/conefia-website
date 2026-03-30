@@ -16,6 +16,7 @@ const SolutionFAQ = React.lazy(() => import('@/components/solutions/SeoLandingPa
 const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFinalCta })));
 
 import ShopifyFitCheck from '@/components/solutions/shopify-growth/ShopifyFitCheck';
+import ShopifySolutionVisual from '@/components/solutions/shopify-growth/ShopifySolutionVisual';
 
 // Lazy load visuals
 const OutcomesVisual = React.lazy(() => import('@/components/solutions/dtc-growth/DtcGrowthVisuals').then(m => ({ default: m.OutcomesVisual })));
@@ -82,16 +83,21 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
-          title="The Solution: A growth system you can scale without guesswork."
-          description="We align your acquisition, conversion, and retention into a single profit engine."
-          primaryCta="Get My Growth Audit"
+          title="Build the system behind profitable growth."
+          description={`We do not just "do marketing." We connect the pieces that actually drive ecommerce growth — storefront, CRO, retention, creative, SEO, and campaign execution.`} the pieces that actually drive ecommerce growth — storefront, CRO, retention, creative, SEO, and campaign execution."
+          primaryCta="Get Your Growth Plan"
+          riskReducer="Scope locks by Week 2. If it is not clear, we fix clarity first."
           features={[
-            "Shopify conversion rate optimization agency execution (PDP → checkout)",
-            "Shopify paid ads and marketing management (testing cadence + discipline)",
-            "DTC retention strategy (email/SMS flows that actually sell)",
-            "Profit-first tracking (CAC, MER, LTV, contribution margin)"
+            "A Shopify growth roadmap you can trust",
+            "Store build or improvement plan based on your stage",
+            "CRO fixes across PDPs, collections, cart, checkout, and mobile",
+            "Ad creative support: post designs, statics, and short-form video edits",
+            "Email + SMS lifecycle flows",
+            "SEO and blog content planning",
+            "Multi-channel campaign optimization",
+            "Weekly demos and stage gates"
           ]}
-          visual={<SolutionVisual />}
+          visual={<ShopifySolutionVisual />}
         />
       </Suspense>
 
