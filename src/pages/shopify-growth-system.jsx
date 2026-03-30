@@ -182,20 +182,40 @@ export default function ShopifyGrowthSystem() {
         <SolutionFAQ 
           items={[
             {
-              question: "Do you handle ad creative?",
-              answer: "Yes, we provide creative strategy, briefs, and can handle production depending on the package."
+              question: "What do you mean by 'Shopify Growth System'?",
+              answer: "It means your storefront, conversion journey, retention, creative, content, and reporting are working together — not as separate tactics."
             },
             {
-              question: "What platforms do you manage?",
-              answer: "Primarily Meta (Facebook/Instagram), Google (Search/Shopping), and TikTok. We focus on where your customers are."
+              question: "Can you help if we are still early and do not have the store live yet?",
+              answer: "Yes. If you are ready to launch properly, we can build the Shopify foundation as part of the package — including store structure, content, tracking, and growth setup — so you do not scale on top of weak foundations."
             },
             {
-              question: "How does the audit work?",
-              answer: "It's a comprehensive review of your ad account, store performance, and email setup to identify low-hanging fruit and long-term opportunities."
+              question: "Do you only help with CRO?",
+              answer: "No. CRO is one part of the system. We also work on store build, retention flows, ad creative, video editing, SEO content, landing pages, and campaign optimization."
             },
             {
-              question: "What is your pricing model?",
-              answer: "We work on a flat monthly retainer based on the scope of services. No % of ad spend incentives that encourage waste."
+              question: "Do you create ad creatives too?",
+              answer: "Yes. We support post designs, static ad assets, campaign visuals, and short-form video edits so your channels have stronger creative to test."
+            },
+            {
+              question: "Do you help with SEO and blogs?",
+              answer: "Yes. We plan and create SEO-focused content and blog content to support organic growth and reduce overdependence on paid."
+            },
+            {
+              question: "Do you manage multiple channels or just one?",
+              answer: "We support coordinated execution across search, social, email, landing pages, and reporting."
+            },
+            {
+              question: "What if we already have an agency or freelancers?",
+              answer: "That is common. We can plug into the setup and bring more structure, accountability, and clarity to the backlog."
+            },
+            {
+              question: "How do you prevent random scope drift?",
+              answer: "We lock the highest-priority work by Week 2 and use weekly demos plus stage gates to keep execution clear."
+            },
+            {
+              question: "What happens after the sprint?",
+              answer: "We can continue with monthly optimization across conversion, creative refreshes, retention, SEO content, and campaign efficiency."
             }
           ]}
         />
