@@ -105,45 +105,46 @@ export default function ShopifySolutionVisual() {
       </div>
 
       {/* Live Metrics Bar */}
-      <div className="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
-        <div className="flex items-center justify-between mb-4">
+      <div className="bg-[#0B1020] rounded-2xl border border-white/10 p-5 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-40 h-40 bg-[#DBFE01]/5 rounded-full blur-[50px]" />
+        <div className="flex items-center justify-between mb-4 relative z-10">
           <div className="flex items-center gap-2">
-            <BarChart3 className="w-4 h-4 text-gray-500" />
-            <span className="text-xs font-bold text-gray-700 uppercase tracking-wide">Profit Dashboard</span>
+            <BarChart3 className="w-4 h-4 text-[#DBFE01]" />
+            <span className="text-xs font-bold text-white/70 uppercase tracking-wide">Profit Dashboard</span>
           </div>
-          <span className="text-[9px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">Live</span>
+          <span className="text-[9px] font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">Live</span>
         </div>
 
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 gap-3 relative z-10">
           {METRICS.map((m, i) => (
             <motion.div
               key={i}
-              className="bg-gray-50 rounded-xl p-3 border border-gray-100 text-center"
+              className="bg-white/5 rounded-xl p-3 border border-white/10 text-center"
               animate={{ y: tick % 3 === i ? [-2, 0] : 0 }}
               transition={{ duration: 0.4 }}
             >
               <div className={`text-lg font-extrabold ${m.color}`}>{m.val}</div>
-              <div className="text-[10px] text-gray-400 font-semibold uppercase tracking-wider mt-0.5">{m.label}</div>
+              <div className="text-[10px] text-white/40 font-semibold uppercase tracking-wider mt-0.5">{m.label}</div>
             </motion.div>
           ))}
         </div>
 
-        {/* Mini bar chart */}
-        <div className="mt-4 flex items-end gap-1.5 h-10">
+        {/* Animated bar chart */}
+        <div className="mt-4 flex items-end gap-1.5 h-12 relative z-10">
           {[40, 55, 48, 70, 62, 85, 78].map((h, i) => (
             <motion.div
-              key={i}
-              className="flex-1 bg-[#DBFE01] rounded-t"
-              initial={{ height: 0 }}
-              animate={{ height: `${h}%` }}
-              transition={{ duration: 0.8, delay: i * 0.08, ease: "easeOut" }}
-              style={{ minHeight: 4 }}
+              key={`${tick}-${i}`}
+              className="flex-1 rounded-t"
+              style={{ background: i === 5 || i === 6 ? '#DBFE01' : 'rgba(219,254,1,0.4)', minHeight: 4 }}
+              initial={{ height: 0, scaleY: 0 }}
+              animate={{ height: `${h}%`, scaleY: 1 }}
+              transition={{ duration: 0.9, delay: i * 0.1, ease: [0.34, 1.56, 0.64, 1] }}
             />
           ))}
         </div>
-        <div className="flex justify-between mt-1">
+        <div className="flex justify-between mt-1 relative z-10">
           {['W1','W2','W3','W4','W5','W6','W7'].map(w => (
-            <span key={w} className="text-[8px] text-gray-300 font-bold">{w}</span>
+            <span key={w} className="text-[8px] text-white/30 font-bold">{w}</span>
           ))}
         </div>
       </div>
