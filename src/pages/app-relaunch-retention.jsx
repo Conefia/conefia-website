@@ -51,7 +51,7 @@ export default function AppRelaunchRetention() {
       />
       <AppRelaunchFitCheck />
       <SolutionMetrics 
-        title={<>Outcomes that <span className="gradient-text">matter</span></>}
+        title="Outcomes product teams actually care about"
         visual={<MetricsVisual />}
         items={[]}
       />
