@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { base44 } from '@/api/base44Client';
