@@ -53,6 +53,29 @@ function LayoutContent({ children, currentPageName }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const stripTrailingPeriod = (el) => {
+      // Walk last text node of h2 and remove trailing period
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      let lastNode = null;
+      let node;
+      while ((node = walker.nextNode())) lastNode = node;
+      if (lastNode && lastNode.textContent.trimEnd().endsWith('.')) {
+        lastNode.textContent = lastNode.textContent.replace(/\.\s*$/, '');
+      }
+    };
+
+    const processAll = () => {
+      document.querySelectorAll('h2').forEach(stripTrailingPeriod);
+    };
+
+    processAll();
+
+    const observer = new MutationObserver(() => processAll());
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
+
   const navItems = [
   { label: 'Playbook', id: 'playbook' },
   { label: 'Case Studies', id: 'case-studies' },
