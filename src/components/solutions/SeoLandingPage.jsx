@@ -39,8 +39,8 @@ export const Reveal = ({ children, className, delay = 0 }) =>
 
 export const CheckListItem = ({ children }) =>
 <li className="flex items-start gap-3">
-    <div className="w-6 h-6 rounded-full bg-[#DBFE01]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-      <Check className="w-3.5 h-3.5 text-[#1a1a1a]" />
+    <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_8px_rgba(219,254,1,0.4)]">
+      <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
     </div>
     <span className="text-[#1a1a1a]/80 font-medium leading-relaxed">{children}</span>
   </li>;
@@ -48,8 +48,8 @@ export const CheckListItem = ({ children }) =>
 
 export const DarkCheckListItem = ({ children }) =>
 <li className="flex items-start gap-3">
-    <div className="w-6 h-6 rounded-full bg-[#DBFE01]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-      <Check className="w-3.5 h-3.5 text-[#DBFE01]" />
+    <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.35)]">
+      <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
     </div>
     <span className="text-white/80 font-medium leading-relaxed">{children}</span>
   </li>;
