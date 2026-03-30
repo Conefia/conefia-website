@@ -14,6 +14,8 @@ const SolutionProof = React.lazy(() => import('@/components/solutions/SeoLanding
 const SolutionFAQ = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFAQ })));
 const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFinalCta })));
 
+import ShopifyFitCheck from '@/components/solutions/shopify-growth/ShopifyFitCheck';
+
 // Lazy load visuals
 const OutcomesVisual = React.lazy(() => import('@/components/solutions/dtc-growth/DtcGrowthVisuals').then(m => ({ default: m.OutcomesVisual })));
 const ProblemVisual = React.lazy(() => import('@/components/solutions/dtc-growth/DtcGrowthVisuals').then(m => ({ default: m.ProblemVisual })));
@@ -155,6 +157,8 @@ export default function ShopifyGrowthSystem() {
           useCasesTitle="Industries We Scale"
         />
       </Suspense>
+
+      <ShopifyFitCheck />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionFAQ 
