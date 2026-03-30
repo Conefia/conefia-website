@@ -49,12 +49,12 @@ export default function AppRelaunchRetention() {
         layout="split"
         visual={<HeroVisual />}
       />
+      <AppRelaunchFitCheck />
       <SolutionMetrics 
         title={<>Outcomes that <span className="gradient-text">matter</span></>}
         visual={<MetricsVisual />}
         items={[]}
       />
-      <AppRelaunchFitCheck />
       <SolutionProblem 
         title="Your app is live, but users are NOT staying"
         quote="Most apps do not stall because of one missing feature. They stall because retention leaks, product friction, and unclear data compound over time."
@@ -82,6 +82,18 @@ export default function AppRelaunchRetention() {
           "Weekly demos and stage gates to keep everything on track"
         ]}
         visual={<SolutionVisual />}
+      />
+      <RoadmapCallSection 
+        title="What you'll get in the 30-minute relaunch roadmap call"
+        description="This is not a generic intro call. We will look at your app like a team preparing to relaunch it."
+        items={[
+          "Clarify the biggest drop-off points in your user journey",
+          "Identify what is hurting retention, ratings, or growth most",
+          "Define what needs fixing now versus what can wait",
+          "Map your 8–12 week relaunch plan",
+          "Flag risks early, including analytics gaps, technical debt, store conversion issues, and release complexity"
+        ]}
+        primaryCta="Get Relaunch Plan"
       />
       <SolutionProcess 
         steps={[
@@ -175,18 +187,6 @@ export default function AppRelaunchRetention() {
             answer: "Yes — but the strongest results usually come when retention and conversion improve alongside acquisition, not when acquisition is scaled on top of a leaky product experience. Re-engaged users often perform better than net-new users on early engagement and retention, which is why fixing the product first usually improves growth efficiency."
           }
         ]}
-      />
-      <RoadmapCallSection 
-        title="What you'll get in the 30-minute relaunch roadmap call"
-        description="This is not a generic intro call. We will look at your app like a team preparing to relaunch it."
-        items={[
-          "Clarify the biggest drop-off points in your user journey",
-          "Identify what is hurting retention, ratings, or growth most",
-          "Define what needs fixing now versus what can wait",
-          "Map your 8–12 week relaunch plan",
-          "Flag risks early, including analytics gaps, technical debt, store conversion issues, and release complexity"
-        ]}
-        primaryCta="Get Relaunch Plan"
       />
       <SolutionFinalCta 
         title="Want users to stick after install?"
