@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
+import SeoLandingPage, { SolutionHero, RoadmapCallSection } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/dtc-growth/DtcGrowthVisuals';
 import ShopifyMetricsVisual from '@/components/solutions/shopify-growth/ShopifyMetricsVisual';
 import Seo from '@/components/Seo';
@@ -161,6 +161,20 @@ export default function ShopifyGrowthSystem() {
           useCasesTitle="Industries We Scale"
         />
       </Suspense>
+
+      <RoadmapCallSection
+        title="What you'll get in your free Growth Audit call"
+        description="This is not a sales pitch. In 30 minutes, you leave with a clear picture of what to fix first and a plan to grow profitably."
+        items={[
+          "Spot the biggest leaks in growth",
+          "See whether you need a build, a growth sprint, or both",
+          "Prioritize what matters now vs later",
+          "Get a recommended plan across CRO, retention, creative, SEO, and ads",
+          "Map the next 8-12 weeks",
+          "Flag risks early"
+        ]}
+        primaryCta="Get Your Growth Plan"
+      />
 
       <ShopifyFitCheck />
 
