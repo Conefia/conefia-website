@@ -1130,7 +1130,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       className="flex gap-8 pb-6"
                       style={{ width: 'max-content', animation: `${animName} ${duration}s linear infinite` }}>
                       {[...logos, ...logos].map((tech, i) =>
-                        <div key={i} className="flex-shrink-0 h-20 w-28">
+                        <div key={i} className={`flex-shrink-0 h-20 ${tech.wide === 'xl' ? 'w-52' : tech.wide ? 'w-40' : 'w-28'}`}>
                           <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: '12px 16px' }}>
                             <img
                               src={tech.url}
