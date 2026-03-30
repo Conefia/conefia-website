@@ -115,18 +115,16 @@ export default function AppRelaunchRetention() {
         imageAlt="Mobile app retention metrics and analytics dashboard"
         techStackTitle="Tech stack we relaunch with"
         techStackLogos={[
-          { name: "Flutter", url: "https://logo.svgcdn.com/logos/flutter.svg" },
-          { name: "React Native", url: "https://logo.svgcdn.com/logos/react.svg" },
-          { name: "Swift", url: "https://logo.svgcdn.com/logos/swift.svg" },
-          { name: "Kotlin", url: "https://logo.svgcdn.com/logos/kotlin.svg" },
-          { name: "Firebase", url: "https://logo.svgcdn.com/logos/firebase.svg" },
-          { name: "Mixpanel", url: "https://logo.svgcdn.com/logos/mixpanel.svg" },
-          { name: "Amplitude", url: "https://logo.svgcdn.com/logos/amplitude.svg" },
-          { name: "Figma", url: "https://logo.svgcdn.com/logos/figma.svg" },
-          { name: "App Store", url: "https://logo.svgcdn.com/logos/app-store.svg" },
-          { name: "Google Play", url: "https://logo.svgcdn.com/logos/google-play.svg" },
-          { name: "RevenueCat", url: "https://logo.svgcdn.com/logos/revenuecat.svg" },
-          { name: "AppsFlyer", url: "https://logo.svgcdn.com/logos/appsflyer.svg" }
+          { name: "Flutter", url: "https://flutter.dev/assets/icon_flutter.817b4a56b047d0d36b338dd9ffd44dbd.svg" },
+          { name: "React Native", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/React.svg" },
+          { name: "Figma", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Figma-logo.svg" },
+          { name: "Firebase", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Firebase_icon.svg" },
+          { name: "UXcam", url: "https://cdn.brandfetch.io/id3HhK-6Wr/idspkLJs23.svg?c=1bxid64Mup7aczewSAYMX&t=1662630648941" },
+          { name: "AppTweak", url: "https://cdn.brandfetch.io/idMJBTnE3x/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1767648114271" },
+          { name: "Mixpanel", url: "https://cdn.brandfetch.io/idr_rhI2FS/theme/dark/idMJ8uODLv.svg?c=1bxid64Mup7aczewSAYMX&t=1717143401811" },
+          { name: "RevenueCat", url: "https://revenuecat.wpenginepowered.com/wp-content/uploads/2025/10/app_icon.svg" },
+          { name: "Amplitude", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Amplitude_logo_2020.svg" },
+          { name: "App Store", url: "https://cdn.brandfetch.io/idj34mSa0R/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1763653537279" }
         ]}
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
       />
