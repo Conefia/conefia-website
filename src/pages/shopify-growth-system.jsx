@@ -67,12 +67,14 @@ export default function ShopifyGrowthSystem() {
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
           title="The Problem: You're spending — but profit isn't scaling."
-          quote="We have great months and terrible months, and we don't know why."
+          quote="Most Shopify brands do not struggle because they lack traffic. They struggle because the system behind growth is weak."
           items={[
-            "CAC rises and ROAS swings week to week",
-            "Shopify conversion leaks (PDP/cart/checkout)",
+            "Traffic gets expensive when the store leaks conversion",
+            "Creative gets stale, and new ads are slow to ship",
             "Email/SMS isn't driving repeat purchases",
-            "No single owner across ads → site → retention"
+            "SEO is underused, so paid has to do too much work",
+            "Search, social, landing pages, and reporting are disconnected",
+            "If you are early, the risk is building the wrong setup and paying for it later"
           ]}
           visual={<ProblemVisual />}
         />
