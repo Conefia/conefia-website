@@ -84,7 +84,7 @@ export default function ShopifyGrowthSystem() {
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
           title="Build the system behind profitable growth."
-          description={`We do not just "do marketing." We connect the pieces that actually drive ecommerce growth — storefront, CRO, retention, creative, SEO, and campaign execution.`}
+          description="We do not just 'do marketing.' We connect the pieces that actually drive ecommerce growth - storefront, CRO, retention, creative, SEO, and campaign execution."
           primaryCta="Get Your Growth Plan"
           riskReducer="Scope locks by Week 2. If it is not clear, we fix clarity first."
           features={[
