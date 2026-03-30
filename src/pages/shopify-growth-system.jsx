@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/dtc-growth/DtcGrowthVisuals';
+import ShopifyMetricsVisual from '@/components/solutions/shopify-growth/ShopifyMetricsVisual';
 import Seo from '@/components/Seo';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 
@@ -58,13 +59,8 @@ export default function ShopifyGrowthSystem() {
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
           title={<>Growth <span className="gradient-text">Outcomes</span></>}
-          visual={<OutcomesVisual />}
-          items={[
-            "↓10–25% — Lower CAC",
-            "↑15–40% — More stable ROAS",
-            "+10–25% — Higher conversion rate",
-            "+10–30% — Higher AOV / revenue per visit"
-          ]}
+          visual={<ShopifyMetricsVisual />}
+          items={[]}
         />
       </Suspense>
 
