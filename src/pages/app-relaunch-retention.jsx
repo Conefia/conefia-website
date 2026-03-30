@@ -141,7 +141,7 @@ export default function AppRelaunchRetention() {
           { name: "Kotlin", url: "https://cdn.brandfetch.io/id8oU9wOdk/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772514620898", wide: true },
           { name: "Maze", url: "https://cdn.brandfetch.io/iddFGFHNcm/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1773377594137", wide: true },
           { name: "AppsFlyer", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_of_AppsFlyer.svg", wide: true },
-          { name: "Google Play Console", url: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Google_Play_Console_Logo_(2023).svg" }
+
         ]}
         useCases={["iOS (App Store)", "Android (Google Play)", "React Native", "Flutter"]}
       />
