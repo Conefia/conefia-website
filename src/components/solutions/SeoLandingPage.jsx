@@ -1100,32 +1100,52 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             </div>
             <p className="text-[#1a1a1a]/70 text-base font-medium mb-8 text-center">{techStackDesc}</p>
             
-            <div className="flex flex-wrap justify-center gap-4">
-              {(techStackLogos || [
-                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
-                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
-                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
-                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
-                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
-                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
-                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
-                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
-                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
-                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
-                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
-              ]).map((tech, i) =>
-                <div key={i} className={`h-16 ${tech.wide ? 'w-36' : 'w-16'}`}>
-                  <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: tech.wide ? '8px 14px' : '10px' }}>
-                    <img
-                      src={tech.url}
-                      alt={tech.name}
-                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              )}
+            <div className="relative overflow-hidden">
+              {(() => {
+                const logos = techStackLogos || [
+                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
+                ];
+                const duration = logos.length * 3;
+                const animName = `logo-scroll-${logos.length}`;
+                return (
+                  <>
+                    <style>{`
+                      @keyframes ${animName} {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-50%); }
+                      }
+                    `}</style>
+                    <div
+                      className="flex gap-8 pb-6"
+                      style={{ width: 'max-content', animation: `${animName} ${duration}s linear infinite` }}>
+                      {[...logos, ...logos].map((tech, i) =>
+                        <div key={i} className={`flex-shrink-0 h-20 ${tech.wide ? 'w-44' : 'w-20'}`}>
+                          <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: tech.wide ? '10px 16px' : '12px' }}>
+                            <img
+                              src={tech.url}
+                              alt={tech.name}
+                              className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+                              loading="lazy"
+                              style={{ width: '100%', height: '100%' }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </>
+                );
+              })()}
             </div>
           </Reveal>
         </div>
