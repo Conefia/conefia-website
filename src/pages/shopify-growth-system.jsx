@@ -152,6 +152,7 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
+          badge="PROFIT-FIRST GROWTH"
           title="Why brands trust us"
           techStackTitle="Tools we grow Shopify brands with"
           techStackDesc="Proven stack for CRO, retention, creative, analytics, and paid performance."
