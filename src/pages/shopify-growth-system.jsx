@@ -13,7 +13,7 @@ const SolutionProcess = React.lazy(() => import('@/components/solutions/SeoLandi
 const SolutionOutcomes = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionOutcomes })));
 const SolutionProof = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionProof })));
 const SolutionFAQ = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFAQ })));
-const SolutionUseCases = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionUseCases })));
+import ShopifyUseCases from '@/components/solutions/shopify-growth/ShopifyUseCases';
 const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionFinalCta })));
 
 import ShopifyFitCheck from '@/components/solutions/shopify-growth/ShopifyFitCheck';
@@ -128,19 +128,7 @@ export default function ShopifyGrowthSystem() {
         />
       </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <SolutionUseCases
-          useCasesTitle="Common Use Cases"
-          useCases={[
-            { label: "We need to build the store properly before scaling", title: "Store Foundation Build", description: "Setup, structure, merchandising, tracking, launch readiness" },
-            { label: "We need better conversion without starting over", title: "Conversion Recovery", description: "PDPs, collections, cart, checkout, mobile UX" },
-            { label: "We need stronger retention and repeat purchase", title: "Retention Lift", description: "Email, SMS, post-purchase, win-back" },
-            { label: "We need better ad creatives and video edits", title: "Creative Performance Engine", description: "Post designs, paid creative refresh, video edits" },
-            { label: "We need SEO so paid is not carrying everything", title: "Organic Growth Layer", description: "SEO content, blogs, search-intent pages" },
-            { label: "We need clearer reporting across channels", title: "Growth Clarity", description: "Tracking, attribution, funnel visibility, profit-first reporting" }
-          ]}
-        />
-      </Suspense>
+      <ShopifyUseCases />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
