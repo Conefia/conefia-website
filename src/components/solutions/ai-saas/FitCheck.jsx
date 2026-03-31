@@ -43,9 +43,32 @@ export default function FitCheck() {
           </p>
         </motion.div>
 
+        {/* Ideal customer illustration */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.05 }}
+          className="mb-10 rounded-2xl overflow-hidden shadow-md border border-gray-100 relative max-h-60">
+          <img
+            src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
+            alt="Tech founder team working on AI product"
+            className="w-full h-60 object-cover object-center"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0e1a]/70 via-[#0a0e1a]/30 to-transparent flex items-center px-8">
+            <div className="max-w-sm">
+              <p className="text-[#DBFE01] text-xs font-bold uppercase tracking-widest mb-1">Ideal Client</p>
+              <p className="text-white font-bold text-lg md:text-xl leading-snug drop-shadow">
+                A founder or product lead with a real workflow to improve — and a pilot deadline in sight.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Two columns */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
-          {/* Good fit */}
+        {/* Good fit */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
