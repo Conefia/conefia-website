@@ -156,22 +156,22 @@ export default function ShopifyGrowthSystem() {
           techStackTitle="Tools we grow Shopify brands with"
           techStackDesc="Proven stack for CRO, retention, creative, analytics, and paid performance."
           techStackLogos={[
-            { name: "Shopify", url: "https://logo.svgcdn.com/logos/shopify.svg" },
-            { name: "Google Merchant Center", url: "https://static.cdnlogo.com/logos/g/38/google-merchant-center.svg" },
-            { name: "Klaviyo", url: "https://companieslogo.com/img/orig/KVYO_BIG-7b916c87.svg?download=true&t=1720244492" },
-            { name: "Google Analytics", url: "https://logo.svgcdn.com/logos/google-analytics.svg" },
-            { name: "Google Tag Manager", url: "https://logo.svgcdn.com/logos/google-tag-manager.svg" },
-            { name: "Google Ads", url: "https://logo.svgcdn.com/logos/google-ads.svg" },
-            { name: "Meta", url: "https://logo.svgcdn.com/logos/meta.svg" },
-            { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg" },
-            { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg" },
-            { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg" },
-            { name: "Canva", url: "https://cdn.brandfetch.io/id9mVQlyB1/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1725863496299" },
-            { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446" },
-            { name: "Yotpo", url: "https://logotyp.us/file/yotpo.svg" },
-            { name: "Gorgias", url: "https://cdn.brandfetch.io/idtDRkJ5U2/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1690782642250" },
-            { name: "Attentive", url: "https://logotyp.us/file/attentive.svg" },
-            { name: "Triple Whale", url: "https://cdn.brandfetch.io/id4RWiZqcZ/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1702661442704" }
+            { name: "Shopify", url: "https://logo.svgcdn.com/logos/shopify.svg", wide: true },
+            { name: "Google Merchant Center", url: "https://static.cdnlogo.com/logos/g/38/google-merchant-center.svg", wide: 'xl' },
+            { name: "Klaviyo", url: "https://companieslogo.com/img/orig/KVYO_BIG-7b916c87.svg?download=true&t=1720244492", wide: true },
+            { name: "Google Analytics", url: "https://logo.svgcdn.com/logos/google-analytics.svg", wide: true },
+            { name: "Google Tag Manager", url: "https://logo.svgcdn.com/logos/google-tag-manager.svg", wide: true },
+            { name: "Google Ads", url: "https://logo.svgcdn.com/logos/google-ads.svg", wide: true },
+            { name: "Meta", url: "https://logo.svgcdn.com/logos/meta.svg", wide: true },
+            { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg", wide: true },
+            { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg", wide: true },
+            { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg", wide: true },
+            { name: "Canva", url: "https://cdn.brandfetch.io/id9mVQlyB1/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1725863496299", wide: true },
+            { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446", wide: true },
+            { name: "Yotpo", url: "https://logotyp.us/file/yotpo.svg", wide: true },
+            { name: "Gorgias", url: "https://cdn.brandfetch.io/idtDRkJ5U2/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1690782642250", wide: true },
+            { name: "Attentive", url: "https://logotyp.us/file/attentive.svg", wide: true },
+            { name: "Triple Whale", url: "https://cdn.brandfetch.io/id4RWiZqcZ/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1702661442704", wide: true }
           ]}
           useCasesTitle="Industries We Scale"
           imageUrl="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/a87877946_generated_image.png"
