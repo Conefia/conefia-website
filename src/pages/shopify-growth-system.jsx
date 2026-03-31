@@ -17,6 +17,7 @@ const SolutionFinalCta = React.lazy(() => import('@/components/solutions/SeoLand
 
 import ShopifyFitCheck from '@/components/solutions/shopify-growth/ShopifyFitCheck';
 import ShopifySolutionVisual from '@/components/solutions/shopify-growth/ShopifySolutionVisual';
+import ShopifyGrowthPlanVisual from '@/components/solutions/shopify-growth/ShopifyGrowthPlanVisual';
 
 // Lazy load visuals
 const OutcomesVisual = React.lazy(() => import('@/components/solutions/dtc-growth/DtcGrowthVisuals').then(m => ({ default: m.OutcomesVisual })));
@@ -227,6 +228,7 @@ export default function ShopifyGrowthSystem() {
           description="Whether you need a stronger store foundation or a smarter growth system, we can map the priorities behind profitable Shopify growth."
           primaryCta="Get My Growth Audit"
           secondaryCta="See the Package"
+          visual={<ShopifyGrowthPlanVisual />}
         />
       </Suspense>
     </SeoLandingPage>
