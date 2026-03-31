@@ -1,0 +1,22 @@
+{
+  "name": "ClinicMetric",
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "string",
+      "description": "The metric value (e.g., '+20\u201350%')"
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the metric (e.g., 'More booked appointments')"
+    },
+    "order": {
+      "type": "number",
+      "description": "Display order"
+    }
+  },
+  "required": [
+    "value",
+    "description"
+  ]
+}

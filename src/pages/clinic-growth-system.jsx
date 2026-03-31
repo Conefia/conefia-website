@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
+import { base44 } from '@/api/base44Client';
 import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
 import Seo from '@/components/Seo';
@@ -24,6 +25,16 @@ const OutcomesVisual = React.lazy(() => import('@/components/solutions/clinic-gr
 const RoadmapPreviewVisual = React.lazy(() => import('@/components/solutions/clinic-growth/ClinicGrowthVisuals').then(m => ({ default: m.RoadmapPreviewVisual })));
 
 export default function ClinicGrowthSystem() {
+  const [metrics, setMetrics] = useState([]);
+
+  useEffect(() => {
+    const loadMetrics = async () => {
+      const data = await base44.entities.ClinicMetric.list('order');
+      setMetrics(data.map(m => `${m.value} — ${m.description}`));
+    };
+    loadMetrics();
+  }, []);
+
   return (
     <SeoLandingPage>
       <Seo 
@@ -68,7 +79,7 @@ export default function ClinicGrowthSystem() {
         <SolutionMetrics 
           title={<>Clinic growth, <span className="gradient-text">measured</span> — not guessed.</>}
           visual={<AttributionVisual />}
-          items={[
+          items={metrics.length > 0 ? metrics : [
             "+20–50% — More booked appointments",
             "Top 3–10 — Higher local rankings (Google Maps)",
             "+30–60% — More qualified calls & form leads",
