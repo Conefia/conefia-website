@@ -59,6 +59,8 @@ export default function ShopifyGrowthSystem() {
         visual={<HeroVisual />}
       />
       
+      <ShopifyFitCheck />
+
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
           title={<>Outcomes that <span className="gradient-text">actually matter</span></>}
@@ -102,6 +104,20 @@ export default function ShopifyGrowthSystem() {
           visual={<ShopifySolutionVisual />}
         />
       </Suspense>
+
+      <RoadmapCallSection
+        title="What you'll get in the 30-minute growth roadmap call"
+        description="This is not a generic sales chat. We'll look at your Shopify growth engine like a team preparing to build or improve it."
+        items={[
+          "Identify the biggest gaps in conversion, retention, creative, and tracking",
+          "Confirm whether you need a store build, a growth sprint, or both",
+          "Prioritize what needs fixing now versus later",
+          "Recommend the right mix across CRO, retention, SEO, creative, and campaign optimization",
+          "Map your 8-12 week sprint",
+          "Flag risks early in offer clarity, landing pages, campaign efficiency, and reporting"
+        ]}
+        primaryCta="Get Your Growth Plan"
+      />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess
@@ -166,22 +182,6 @@ export default function ShopifyGrowthSystem() {
           ]}
         />
       </Suspense>
-
-      <RoadmapCallSection
-        title="What you'll get in the 30-minute growth roadmap call"
-        description="This is not a generic sales chat. We'll look at your Shopify growth engine like a team preparing to build or improve it."
-        items={[
-          "Identify the biggest gaps in conversion, retention, creative, and tracking",
-          "Confirm whether you need a store build, a growth sprint, or both",
-          "Prioritize what needs fixing now versus later",
-          "Recommend the right mix across CRO, retention, SEO, creative, and campaign optimization",
-          "Map your 8-12 week sprint",
-          "Flag risks early in offer clarity, landing pages, campaign efficiency, and reporting"
-        ]}
-        primaryCta="Get Your Growth Plan"
-      />
-
-      <ShopifyFitCheck />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionFAQ 
