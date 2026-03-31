@@ -135,19 +135,6 @@ export default function ShopifyGrowthSystem() {
       <ShopifyUseCases />
 
       <Suspense fallback={<SectionSkeleton />}>
-        <SolutionOutcomes 
-          title={<>Expected <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>Results</span></>}
-          items={[
-            "Predictable, scalable customer acquisition",
-            "Higher average order value",
-            "Increased repeat purchase rate",
-            "Clear attribution and profitability visibility"
-          ]}
-          visual={null}
-        />
-      </Suspense>
-
-      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Why brands trust us"
           items={[
