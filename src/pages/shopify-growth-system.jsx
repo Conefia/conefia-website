@@ -107,8 +107,8 @@ export default function ShopifyGrowthSystem() {
         <SolutionProcess
           title="Build → Launch → Scale"
           note="Every phase has a stage gate, so you always know what is happening."
-          imageUrl="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-          imageAlt="E-commerce growth strategy dashboard with analytics and conversion metrics"
+          imageUrl="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+          imageAlt="Shopify e-commerce store on laptop screen"
           steps={[
             {
               title: "Validate (Weeks 1–2)",
