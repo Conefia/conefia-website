@@ -557,7 +557,7 @@ const processStepsDefault = [
 }];
 
 
-export const SolutionProcess = ({ steps, visual }) => {
+export const SolutionProcess = ({ steps, visual, title, note }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-24 bg-white overflow-hidden relative">
@@ -587,7 +587,7 @@ export const SolutionProcess = ({ steps, visual }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">Build → Launch → Scale</span></h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">{title || 'Build → Launch → Scale'}</span></h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -654,7 +654,7 @@ export const SolutionProcess = ({ steps, visual }) => {
               className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6">
               
             <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
-            <span className="italic">Each phase has a stage gate — you always know where you stand.</span>
+            <span className="italic">{note || 'Each phase has a stage gate — you always know where you stand.'}</span>
           </motion.div>
         </div>
       </div>

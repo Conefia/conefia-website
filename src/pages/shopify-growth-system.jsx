@@ -103,23 +103,25 @@ export default function ShopifyGrowthSystem() {
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <SolutionProcess 
+        <SolutionProcess
+          title="Build → Launch → Scale"
+          note="Every phase has a stage gate, so you always know what is happening."
           steps={[
             {
-              title: "Audit (Week 1–2)",
-              description: "Deep dive into your funnel, offer structure, tracking setup, and creative performance."
+              title: "Validate (Weeks 1–2)",
+              description: "Audit the store or define the right launch foundation. Lock priorities and success metrics."
             },
             {
-              title: "Build (Weeks 3–6)",
-              description: "Implementing CRO fixes, site speed improvements, high-converting landing pages, and essential email flows."
+              title: "Build (Weeks 3–8)",
+              description: "Ship store improvements, creative assets, lifecycle flows, content, and tracking fixes."
             },
             {
-              title: "Launch (Weeks 7–8)",
-              description: "Rolling out the new testing system and establishing a consistent reporting cadence."
+              title: "Launch (Weeks 9–10)",
+              description: "Roll out the new store or updated growth system. Align campaigns and reporting."
             },
             {
               title: "Scale (Monthly)",
-              description: "Ongoing experiments, rapid creative iteration, and strategies to lift LTV."
+              description: "Keep improving offers, creative, retention, SEO, and paid performance."
             }
           ]}
         />
