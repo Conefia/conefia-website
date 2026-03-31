@@ -171,6 +171,12 @@ export default function ShopifyGrowthSystem() {
           useCasesTitle="Industries We Scale"
           imageUrl="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/a87877946_generated_image.png"
           imageAlt="Shopify growth dashboard with ROAS, CVR, and revenue metrics"
+          whyBuildItems={[
+            { num: "01", title: "Ship weekly, not someday", desc: "Store updates, creatives, flows, and landing pages shipped in a steady weekly rhythm.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+            { num: "02", title: "Creatives built for performance", desc: "Fresh ads posts, static designs, and video edits that keep testing moving and fatigue down.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+            { num: "03", title: "One system, not siloed tactics", desc: "CRO, retention, SEO, and campaigns work together — so growth compounds instead of leaking.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+            { num: "04", title: "Know what is driving profit", desc: "Clear tracking and profit-first reporting so you can see what to scale and what to fix.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
+          ]}
         />
       </Suspense>
 
