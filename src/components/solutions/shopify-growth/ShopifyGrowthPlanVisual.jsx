@@ -1,12 +1,10 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, Wrench, Rocket, TrendingUp, Trophy } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 
-const phases = [
-  { icon: Search, label: "Audit", desc: "Week 1–2", color: "blue", bg: "bg-blue-50", text: "text-blue-600", grad: "linear-gradient(90deg, #3b82f6, #60a5fa)" },
-  { icon: Wrench, label: "Build", desc: "Weeks 3–6", color: "purple", bg: "bg-purple-50", text: "text-purple-600", grad: "linear-gradient(90deg, #a855f7, #c084fc)" },
-  { icon: Rocket, label: "Launch", desc: "Weeks 7–8", color: "emerald", bg: "bg-emerald-50", text: "text-emerald-600", grad: "linear-gradient(90deg, #10b981, #34d399)" },
-  { icon: TrendingUp, label: "Scale", desc: "Monthly", color: "amber", bg: "bg-amber-50", text: "text-amber-600", grad: "linear-gradient(90deg, #f59e0b, #fbbf24)" },
+const sections = [
+  { title: "Store Audit", icon: "🔍", status: "Complete" },
+  { title: "Growth Roadmap", icon: "📈", status: "Mapped" },
+  { title: "Sprint Plan", icon: "📅", status: "8–12 Weeks" }
 ];
 
 export default function ShopifyGrowthPlanVisual() {
@@ -16,123 +14,112 @@ export default function ShopifyGrowthPlanVisual() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.02, boxShadow: '0 40px 80px -20px rgba(0,0,0,0.2)' }}
-      className="bg-gradient-to-br from-white to-gray-50 max-w-md mx-auto rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] p-8 relative border border-gray-100 overflow-hidden"
+      whileHover={{ scale: 1.03, boxShadow: '0 30px 60px -15px rgba(0,0,0,0.15)' }}
+      className="bg-gradient-to-br from-white to-gray-50 w-72 mx-auto rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] p-7 relative border border-gray-100 overflow-hidden"
     >
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.07),transparent_70%)] pointer-events-none" />
+
+      {/* Header */}
       <motion.div
-        className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.08),transparent_70%)]"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-
-      <div className="relative z-10">
-        {/* Header */}
+        initial={{ opacity: 0, y: -10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="flex items-center gap-3 mb-6 border-b border-gray-100 pb-4 relative z-10"
+      >
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="flex items-center gap-4 mb-8 border-b border-gray-100 pb-6"
+          animate={{ rotate: [0, 5, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-11 h-11 bg-gradient-to-br from-[#1a1a1a] to-gray-800 rounded-lg flex items-center justify-center shadow-lg"
         >
-          <motion.div
-            whileHover={{ scale: 1.1, rotate: 5 }}
-            className="w-12 h-12 bg-gradient-to-br from-[#1a1a1a] to-gray-800 rounded-xl flex items-center justify-center shadow-xl"
-          >
-            <Trophy className="w-6 h-6 text-[#DBFE01]" />
-          </motion.div>
-          <div>
-            <div className="text-sm font-bold text-gray-900">8–12 Week Growth Sprint</div>
-            <div className="text-[10px] text-gray-500 font-medium uppercase tracking-wide">Shopify Growth Roadmap</div>
-          </div>
+          <ShoppingBag className="w-6 h-6 text-[#DBFE01]" />
         </motion.div>
+        <div className="text-left">
+          <div className="text-sm font-bold text-gray-900">Growth Roadmap</div>
+          <div className="text-[10px] text-gray-500 font-medium">Your Shopify Launch Plan</div>
+        </div>
+      </motion.div>
 
-        {/* Timeline */}
-        <div className="space-y-6 relative">
+      {/* Sections */}
+      <div className="space-y-3 mb-6 relative z-10">
+        {sections.map((section, i) => (
           <motion.div
-            className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-300 via-purple-300 via-emerald-300 to-amber-300"
-            initial={{ scaleY: 0 }}
-            whileInView={{ scaleY: 1 }}
+            key={i}
+            initial={{ opacity: 0, x: -15 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.2 }}
-            style={{ transformOrigin: 'top' }}
-          />
-
-          {phases.map((phase, idx) => (
+            transition={{ delay: 0.15 + i * 0.1 }}
+            className="p-3 bg-gray-50 rounded-lg border border-gray-200 hover:bg-white transition-colors"
+          >
+            <div className="flex items-center justify-between mb-1.5">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">{section.icon}</span>
+                <span className="text-xs font-bold text-gray-900">{section.title}</span>
+              </div>
+              <motion.span
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.3 }}
+                className="text-[10px] font-bold text-[#1a1a1a] bg-[#DBFE01] px-2 py-0.5 rounded"
+              >
+                {section.status}
+              </motion.span>
+            </div>
             <motion.div
-              key={idx}
-              initial={{ opacity: 0, x: -20 }}
+              initial={{ width: 0 }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 + i * 0.1, duration: 0.6, ease: 'easeOut' }}
+              className="h-1 bg-gradient-to-r from-[#DBFE01] to-[#c5e000] rounded-full"
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Deliverables */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.5 }}
+        className="bg-white rounded-lg p-3 mb-4 border border-gray-200 relative z-10"
+      >
+        <div className="text-[10px] font-bold text-gray-800 uppercase tracking-wide mb-2">Deliverables</div>
+        <div className="space-y-1.5">
+          {["Weekly demos", "CRO + retention fixes", "Profit-first tracking"].map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -8 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 + idx * 0.15, duration: 0.4 }}
-              className="flex gap-4 relative"
+              transition={{ delay: 0.6 + i * 0.08 }}
+              className="flex items-center gap-2 text-[10px] text-gray-800"
             >
-              <div className="flex flex-col items-center pt-1">
-                <motion.div
-                  initial={{ scale: 0 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4 + idx * 0.15, type: 'spring', stiffness: 300 }}
-                  className={`w-12 h-12 ${phase.bg} rounded-full flex items-center justify-center relative z-20 shadow-lg border-2 border-${phase.color}-200`}
-                >
-                  <phase.icon className={`w-6 h-6 ${phase.text}`} />
-                </motion.div>
-              </div>
-
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.5 + idx * 0.15 }}
-                className="pb-2 pt-1.5 flex-1"
-              >
-                <div className="flex items-baseline justify-between mb-1">
-                  <span className="font-bold text-gray-900 text-sm">{phase.label}</span>
-                  <span className={`text-[10px] font-bold ${phase.text} uppercase tracking-wider`}>{phase.desc}</span>
-                </div>
-                <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${55 + idx * 12}%` }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.6 + idx * 0.15, duration: 0.6, ease: 'easeOut' }}
-                    className="h-full rounded-full"
-                    style={{ background: phase.grad }}
-                  />
-                </div>
-              </motion.div>
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+                className="w-1.5 h-1.5 rounded-full bg-[#DBFE01]"
+              />
+              {item}
             </motion.div>
           ))}
         </div>
+      </motion.div>
 
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1 }}
-          className="mt-8 pt-6 border-t border-gray-100"
-        >
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-bold text-gray-600 uppercase tracking-wide">Ready to Grow?</span>
-            <motion.span
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="text-[#1a1a1a] text-sm font-bold">→</motion.span>
-          </div>
-          <div className="text-[11px] text-gray-600 leading-relaxed">Book a 30-minute roadmap call to get your personalized Shopify growth plan.</div>
-        </motion.div>
-      </div>
-
-      {/* Stamp */}
+      {/* CTA Badge */}
       <motion.div
-        initial={{ scale: 1.5, opacity: 0, rotate: -25 }}
-        whileInView={{ scale: 1, opacity: 1, rotate: -15 }}
+        initial={{ scale: 0.8, opacity: 0, y: 10 }}
+        whileInView={{ scale: 1, opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.8, type: 'spring', stiffness: 200 }}
-        whileHover={{ scale: 1.1, rotate: -10 }}
-        className="absolute top-6 right-6 border-2 border-[#DBFE01] text-[#1a1a1a] text-[9px] font-black px-3 py-1.5 rounded uppercase tracking-widest bg-[#DBFE01]/25 backdrop-blur-sm shadow-lg"
+        transition={{ delay: 0.7, type: 'spring', stiffness: 300 }}
+        animate={{ y: [0, -4, 0] }}
+        className="flex justify-center mt-6 relative z-20"
       >
-        Profitable
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="bg-[#1a1a1a] text-[#DBFE01] font-bold px-6 py-2.5 rounded-full shadow-[0_12px_24px_rgba(0,0,0,0.25)] text-xs border-2 border-[#DBFE01]/30 tracking-wide"
+        >
+          🛍️ Scale in 8–12 Weeks
+        </motion.div>
       </motion.div>
     </motion.div>
   );
