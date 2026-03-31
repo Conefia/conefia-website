@@ -154,6 +154,7 @@ export default function ShopifyGrowthSystem() {
         <SolutionProof 
           badge="PROFIT-FIRST GROWTH"
           title="Why brands trust us"
+          statTitle="8–12 weeks to stronger growth"
           statDesc="Better conversion. Stronger retention. Clearer reporting."
           techStackTitle="Tools we grow Shopify brands with"
           techStackDesc="Proven stack for CRO, retention, creative, analytics, and paid performance."
