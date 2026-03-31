@@ -153,24 +153,26 @@ export default function ShopifyGrowthSystem() {
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Why brands trust us"
-          items={[
-            "No long-term lock-in contracts",
-            "Weekly strategy syncs",
-            "Direct access to your growth team"
+          techStackTitle="Tools we grow Shopify brands with"
+          techStackDesc="Proven stack for CRO, retention, creative, analytics, and paid performance."
+          techStackLogos={[
+            { name: "Shopify", url: "https://logo.svgcdn.com/logos/shopify.svg" },
+            { name: "Google Merchant Center", url: "https://static.cdnlogo.com/logos/g/38/google-merchant-center.svg" },
+            { name: "Klaviyo", url: "https://companieslogo.com/img/orig/KVYO_BIG-7b916c87.svg?download=true&t=1720244492" },
+            { name: "Google Analytics", url: "https://logo.svgcdn.com/logos/google-analytics.svg" },
+            { name: "Google Tag Manager", url: "https://logo.svgcdn.com/logos/google-tag-manager.svg" },
+            { name: "Google Ads", url: "https://logo.svgcdn.com/logos/google-ads.svg" },
+            { name: "Meta", url: "https://logo.svgcdn.com/logos/meta.svg" },
+            { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg" },
+            { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg" },
+            { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg" },
+            { name: "Canva", url: "https://logo.svgcdn.com/devicon/canva-original.svg" },
+            { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446" },
+            { name: "Yotpo", url: "https://logotyp.us/file/yotpo.svg" },
+            { name: "Gorgias", url: "https://cdn.brandfetch.io/idtDRkJ5U2/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1690782642250" },
+            { name: "Attentive", url: "https://logotyp.us/file/attentive.svg" },
+            { name: "Triple Whale", url: "https://cdn.brandfetch.io/id4RWiZqcZ/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1702661442704" }
           ]}
-          testimonials={[
-            { quote: "They fixed our conversion rate in month one. The ad spend finally makes sense.", author: "Sarah J.", role: "Founder, Skincare Brand" },
-            { quote: "Finally a team that looks at the whole picture, not just ROAS.", author: "Mike T.", role: "CMO, Apparel Co" },
-            { quote: "Our CAC dropped by 20% in the first 6 weeks.", author: "Jessica L.", role: "Founder, Home Goods" },
-            { quote: "The email flows they built are generating 30% of our revenue now.", author: "David R.", role: "Marketing Director, Supplement Brand" },
-            { quote: "Profit-first tracking changed how we spend. We're finally scaling profitably.", author: "Tom B.", role: "CEO, Footwear Brand" },
-            { quote: "No more vanity metrics. Just real revenue growth.", author: "Amanda K.", role: "Founder, Jewelry Line" },
-            { quote: "The landing pages convert like crazy. Best investment we made.", author: "Chris P.", role: "Growth Lead, Tech Accessories" },
-            { quote: "They act like owners. The strategy syncs are the highlight of my week.", author: "Rachel M.", role: "Founder, Pet Brand" },
-            { quote: "We scaled from $50k to $200k/mo with their help.", author: "James H.", role: "Founder, Coffee Brand" },
-            { quote: "Detailed, data-driven, and creative. The perfect mix.", author: "Emma S.", role: "CMO, Luxury Brand" }
-          ]}
-          useCases={["Fashion & Apparel", "Health & Wellness", "Beauty & Cosmetics"]}
           useCasesTitle="Industries We Scale"
           imageUrl="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/a87877946_generated_image.png"
           imageAlt="Shopify growth dashboard with ROAS, CVR, and revenue metrics"
