@@ -107,6 +107,8 @@ export default function ShopifyGrowthSystem() {
         <SolutionProcess
           title="Build → Launch → Scale"
           note="Every phase has a stage gate, so you always know what is happening."
+          imageUrl="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/65437b982_generated_image.png"
+          imageAlt="Build, Launch, Scale sprint process timeline for Shopify growth"
           steps={[
             {
               title: "Validate (Weeks 1–2)",
