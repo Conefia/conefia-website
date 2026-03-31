@@ -1,5 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
-import { base44 } from '@/api/base44Client';
+import React, { Suspense } from 'react';
 import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
 import Seo from '@/components/Seo';
@@ -25,16 +24,6 @@ const OutcomesVisual = React.lazy(() => import('@/components/solutions/clinic-gr
 const RoadmapPreviewVisual = React.lazy(() => import('@/components/solutions/clinic-growth/ClinicGrowthVisuals').then(m => ({ default: m.RoadmapPreviewVisual })));
 
 export default function ClinicGrowthSystem() {
-  const [metrics, setMetrics] = useState([]);
-
-  useEffect(() => {
-    const loadMetrics = async () => {
-      const data = await base44.entities.ClinicMetric.list('order');
-      setMetrics(data.map(m => `${m.value} — ${m.description}`));
-    };
-    loadMetrics();
-  }, []);
-
   return (
     <SeoLandingPage>
       <Seo 
@@ -79,7 +68,7 @@ export default function ClinicGrowthSystem() {
         <SolutionMetrics 
           title={<>Clinic growth, <span className="gradient-text">measured</span> — not guessed.</>}
           visual={<AttributionVisual />}
-          items={metrics.length > 0 ? metrics : [
+          items={[
             "+20–50% — More booked appointments",
             "Top 3–10 — Higher local rankings (Google Maps)",
             "+30–60% — More qualified calls & form leads",
@@ -143,12 +132,12 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title="Outcomes clinic teams actually care about"
+          title={<>What clinics improve in <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>8–12 weeks</span></>}
           items={[
-            { label: "More", title: "Booked Appointments", description: "Better website-to-booking conversion" },
-            { label: "Smoother", title: "Patient Intake", description: "Less drop-off before scheduling" },
-            { label: "Stronger", title: "Local Visibility", description: "More qualified traffic from Google" },
-            { label: "Clearer", title: "Growth Attribution", description: "Know what is driving bookings" }
+            "More bookings from the same traffic",
+            "Better local visibility and review performance",
+            "Clear attribution: what's driving appointments",
+            "Faster iteration (no vendor ping-pong)"
           ]}
           visual={<OutcomesVisual />}
         />

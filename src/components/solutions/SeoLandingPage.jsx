@@ -737,34 +737,13 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <h2 className="text-3xl md:text-4xl font-bold mb-8 leading-tight"><span className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</span></h2>
+           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight"><span className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</span></h2>
            {items.length > 0 &&
-        <div className="space-y-6">
-               {items.map((item, i) => {
-                 const isObject = typeof item === 'object' && item !== null;
-                 return (
-                   <motion.div
-                     key={i}
-                     initial={{ opacity: 0, y: 12 }}
-                     whileInView={{ opacity: 1, y: 0 }}
-                     viewport={{ once: true }}
-                     transition={{ delay: i * 0.1 }}
-                     className="flex items-start gap-4">
-                     <div className="flex-shrink-0 w-2 h-2 rounded-full bg-[#DBFE01] mt-2" />
-                     <div>
-                       {isObject ? (
-                         <>
-                           <p className="font-bold text-lg text-white mb-1">{item.label} <span className="font-extrabold">{item.title}</span></p>
-                           <p className="text-white/60 text-sm leading-relaxed">{item.description}</p>
-                         </>
-                       ) : (
-                         <p className="text-white/80 font-medium leading-relaxed">{item}</p>
-                       )}
-                     </div>
-                   </motion.div>
-                 );
-               })}
-             </div>
+        <ul className="space-y-4">
+               {items.map((item, i) =>
+          <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
+          )}
+             </ul>
         }
          </Reveal>
          <Reveal delay={0.2}>
