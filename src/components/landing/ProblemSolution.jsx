@@ -78,6 +78,25 @@ export default function ProblemSolution({ reduceMotion }) {
           </p>
         </motion.div>
 
+        {/* Illustrative image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mb-10 rounded-2xl overflow-hidden shadow-lg border border-gray-100 max-h-64 relative">
+          <img
+            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
+            alt="Different professionals choosing their path"
+            className="w-full h-64 object-cover object-center"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/60 via-transparent to-[#1a1a1a]/40 flex items-center px-8">
+            <p className="text-white font-bold text-xl md:text-2xl max-w-md leading-snug drop-shadow-lg">
+              Every venture is different. <span className="text-[#DBFE01]">Which track fits yours?</span>
+            </p>
+          </div>
+        </motion.div>
+
         {/* Persona Selector */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
