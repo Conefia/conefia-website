@@ -1249,7 +1249,7 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
           <Link
           to={createPageUrl('Book')}
           className="px-8 py-4 bg-[#1a1a1a] text-white rounded-xl text-base font-bold flex items-center justify-center gap-2 hover:bg-black transition-all hover:scale-105 shadow-[0_1px_0_0_rgba(255,255,255,0.1)_inset,0_4px_12px_rgba(0,0,0,0.3)]">
-            {primaryCta}
+            Book 30-mins Free Roadmap Call
             <ArrowRight className="w-5 h-5" />
           </Link>
           <a
