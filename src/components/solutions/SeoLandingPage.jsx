@@ -412,16 +412,16 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
   </section>;
 
 
-export const RoadmapCallSection = ({ 
+export const RoadmapCallSection = ({
   title = "What you'll get in the 30-minute roadmap call",
   description = "This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.",
   items = [
-    "Confirm your target user + workflow in 2 minutes",
-    "Define MVP scope (must-have vs later)",
-    "Recommend the AI approach (RAG vs agents vs fine-tuning)",
-    "Map your 8–12 week delivery plan",
-    "Flag risks early (data, compliance, cost, reliability)"
-  ],
+  "Confirm your target user + workflow in 2 minutes",
+  "Define MVP scope (must-have vs later)",
+  "Recommend the AI approach (RAG vs agents vs fine-tuning)",
+  "Map your 8–12 week delivery plan",
+  "Flag risks early (data, compliance, cost, reliability)"],
+
   primaryCta = "Book Free Roadmap Call"
 } = {}) =>
 <section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
@@ -1103,19 +1103,19 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             <div className="relative overflow-hidden">
               {(() => {
                 const logos = techStackLogos || [
-                  { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
-                  { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
-                  { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
-                  { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
-                  { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
-                  { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
-                  { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
-                  { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
-                  { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
-                  { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
-                  { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
-                  { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }
-                ];
+                { name: "OpenAI", url: "https://logo.svgcdn.com/logos/openai-icon.svg" },
+                { name: "Anthropic", url: "https://logo.svgcdn.com/l/anthropic-icon.svg" },
+                { name: "Google Gemini", url: "https://logo.svgcdn.com/logos/google-gemini.svg" },
+                { name: "Azure", url: "https://logo.svgcdn.com/logos/microsoft-azure.svg" },
+                { name: "LangChain", url: "https://logo.svgcdn.com/simple-icons/langchain-dark.svg" },
+                { name: "LangGraph", url: "https://logo.svgcdn.com/simple-icons/langgraph-dark.svg" },
+                { name: "Pinecone", url: "https://logo.svgcdn.com/logos/pinecone.svg" },
+                { name: "PostgreSQL", url: "https://logo.svgcdn.com/logos/postgresql.svg" },
+                { name: "AWS", url: "https://logo.svgcdn.com/logos/aws.svg" },
+                { name: "Google Cloud", url: "https://logo.svgcdn.com/logos/google-cloud.svg" },
+                { name: "Docker", url: "https://logo.svgcdn.com/logos/docker.svg" },
+                { name: "Kubernetes", url: "https://logo.svgcdn.com/logos/kubernetes.svg" }];
+
                 const duration = logos.length * 3;
                 const animName = `logo-scroll-${logos.length}`;
                 return (
@@ -1130,21 +1130,21 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                       className="flex gap-8 pb-6"
                       style={{ width: 'max-content', animation: `${animName} ${duration}s linear infinite` }}>
                       {[...logos, ...logos].map((tech, i) =>
-                        <div key={i} className={`flex-shrink-0 h-20 ${tech.wide === 'xl' ? 'w-52' : tech.wide ? 'w-40' : 'w-28'}`}>
+                      <div key={i} className={`flex-shrink-0 h-20 ${tech.wide === 'xl' ? 'w-52' : tech.wide ? 'w-40' : 'w-28'}`}>
                           <div className="w-full h-full bg-white/5 border border-white/10 rounded-xl flex items-center justify-center hover:bg-white/10 hover:border-white/20 transition-all duration-300 group" style={{ padding: '12px 16px' }}>
                             <img
-                              src={tech.url}
-                              alt={tech.name}
-                              className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
-                              loading="lazy"
-                              style={{ width: '100%', height: '100%' }}
-                            />
+                            src={tech.url}
+                            alt={tech.name}
+                            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
+                            loading="lazy"
+                            style={{ width: '100%', height: '100%' }} />
+                          
                           </div>
                         </div>
                       )}
                     </div>
-                  </>
-                );
+                  </>);
+
               })()}
             </div>
           </Reveal>
@@ -1244,7 +1244,7 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
           <span className="text-[#1a1a1a]">{title}</span>
         </h2>
-        {description && <p className="text-[#1a1a1a]/70 text-lg font-medium mb-8 max-w-2xl mx-auto leading-relaxed">{description}</p>}
+        
         <div className="flex flex-col items-center gap-4">
           <Link
           to={createPageUrl('Book')}
