@@ -51,7 +51,7 @@ export default function ClinicGrowthSystem() {
         subtitle="We help clinics turn more searches, visits, and clicks into booked appointments. From local SEO and trust-building to landing pages, intake, booking, content, and ads — everything works together under one team."
         primaryCta="Get Clinic Growth Plan"
         secondaryCta="See Sprint"
-        ctaMicrocopy="Free 30-min roadmap call. Leave with clear priorities, timeline, and a practical plan."
+        microCopy="Free 30-min roadmap call. Leave with clear priorities, timeline, and a practical plan."
         trustChips={[
           "HIPAA-aware workflows",
           "Weekly demos",
