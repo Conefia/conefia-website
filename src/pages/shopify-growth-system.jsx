@@ -106,8 +106,6 @@ export default function ShopifyGrowthSystem() {
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess
           title="Build → Launch → Scale"
-          image="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80"
-          imageAlt="Shopify ecommerce growth dashboard"
           note="Every phase has a stage gate, so you always know what is happening."
           steps={[
             {

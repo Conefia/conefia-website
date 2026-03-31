@@ -557,7 +557,7 @@ const processStepsDefault = [
 }];
 
 
-export const SolutionProcess = ({ steps, visual, title, note, image, imageAlt }) => {
+export const SolutionProcess = ({ steps, visual, title, note }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-24 bg-white overflow-hidden relative">
@@ -594,8 +594,8 @@ export const SolutionProcess = ({ steps, visual, title, note, image, imageAlt })
         {/* Left: Stock Image */}
         <Reveal className="relative rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-28 h-[420px] lg:h-[580px]">
           <img
-              src={image || "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"}
-              alt={imageAlt || "Team collaborating on a product sprint"}
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+              alt="Team collaborating on a product sprint"
               className="w-full h-full object-cover" />
             
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
