@@ -283,6 +283,20 @@ export default function HowWeWork({ reduceMotion }) {
             );
           })}
         </div>
+
+        {/* Illustrative image */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.6 }}
+          className="mt-16 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+            alt="Team collaborating on a product sprint"
+            className="w-full h-64 md:h-96 object-cover object-center"
+            loading="lazy"
+          />
+        </motion.div>
       </div>
     </section>);
 
