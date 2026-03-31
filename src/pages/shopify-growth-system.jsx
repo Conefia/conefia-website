@@ -125,9 +125,8 @@ export default function ShopifyGrowthSystem() {
           note="Every phase has a stage gate, so you always know what is happening."
           imageUrl="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
           imageAlt="Shopify e-commerce store on laptop screen"
-          badge="PROFIT-FIRST GROWTH"
-          imageOverlayTitle="8–12 weeks to stronger growth"
-          imageOverlayDesc="Better conversion. Stronger retention. Clearer reporting."
+          imageOverlayTitle="From store launch to profitable scale"
+          imageOverlayDesc="A structured sprint so every phase moves your Shopify revenue forward."
           steps={[
             {
               title: "Validate (Weeks 1–2)",

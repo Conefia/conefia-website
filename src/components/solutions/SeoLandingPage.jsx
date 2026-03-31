@@ -557,7 +557,7 @@ const processStepsDefault = [
 }];
 
 
-export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, badge, imageOverlayTitle, imageOverlayDesc }) => {
+export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-24 bg-white overflow-hidden relative">
@@ -605,11 +605,6 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
               <p className="text-white/70 text-xs mt-1">{imageOverlayDesc || 'You always know where you stand.'}</p>
             </div>
           </div>
-          {badge && (
-            <div className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
-              {badge}
-            </div>
-          )}
         </Reveal>
 
         {/* Right: Steps */}
