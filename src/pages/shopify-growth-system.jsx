@@ -168,7 +168,7 @@ export default function ShopifyGrowthSystem() {
             { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg", wide: true },
             { name: "Canva", url: "https://cdn.brandfetch.io/id9mVQlyB1/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1725863496299", wide: true },
             { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446", wide: true },
-            { name: "Yotpo", url: "https://cdn.brandfetch.io/idywQ6OCNo/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1684253482903", wide: true },
+            { name: "Yotpo", url: "https://cdn.brandfetch.io/ideFeeg1AP/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667644024134", wide: true },
             { name: "Gorgias", url: "https://cdn.brandfetch.io/idtDRkJ5U2/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1690782642250", wide: true },
             { name: "Attentive", url: "https://logotyp.us/file/attentive.svg", wide: true },
             { name: "Triple Whale", url: "https://cdn.brandfetch.io/id4RWiZqcZ/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1702661442704", wide: true }
