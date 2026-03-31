@@ -594,11 +594,11 @@ export const SolutionProcess = ({ steps, visual, title, note }) => {
         {/* Left: Stock Image */}
         <Reveal className="relative rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-28 h-[420px] lg:h-[580px]">
           <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-              alt="Team collaborating on a product sprint"
+              src="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/3ffc26cb0_generated_image.png"
+              alt="Shopify growth sprint phases: Validate, Build, Launch, Scale"
               className="w-full h-full object-cover" />
             
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/60 via-transparent to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
               <p className="text-white font-semibold text-sm">Each phase has a stage gate</p>
