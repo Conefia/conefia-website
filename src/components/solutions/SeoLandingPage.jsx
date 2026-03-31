@@ -1032,28 +1032,35 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 {/* Dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
 
+                {/* Floating stat card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
+                      <Zap className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-base">{statTitle}</p>
+                      <p className="text-white/60 text-sm">{statDesc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+
                 {/* Top badge */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.5 }}
                   className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
-                  PROFIT-FIRST GROWTH
+                  
+                  {badge}
                 </motion.div>
-
-                {/* Center headline and subtext */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-                  <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 leading-tight">8–12 weeks to stronger growth</h3>
-                  <p className="text-base md:text-lg text-white/90 font-medium">Better conversion. Stronger retention. Clearer reporting.</p>
-                </motion.div>
-
-                {/* Floating stat card */}
               </div>
 
               {/* Right: Feature list */}
