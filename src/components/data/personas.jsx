@@ -35,7 +35,7 @@ export const PERSONAS = [
       },
       {
         title: 'AI architecture done right',
-        desc: 'Practical LLM/agent design (RAG, evals, monitoring) that won't create rework later.',
+        desc: "Practical LLM/agent design (RAG, evals, monitoring) that won't create rework later.",
         icon: Brain
       },
       {
@@ -54,7 +54,7 @@ export const PERSONAS = [
     heroSecondaryCta: 'See the 12-week sprint',
     packagesCta: 'Explore Sprint',
     footerFormButton: 'Book MVP Call',
-    footerFormPrompt: 'What are you building, who is the buyer, and what's your target launch date?',
+    footerFormPrompt: "What are you building, who is the buyer, and what's your target launch date?",
     destination: 'ai-saas-mvp-launch',
     primaryCta: 'Get my MVP + Pilot Roadmap',
     secondaryCta: 'See MVP Sprint',
@@ -132,7 +132,7 @@ export const PERSONAS = [
       },
       {
         title: 'Analytics you can act on',
-        desc: 'Funnels + cohorts (D1/D7/D30) so you know what's working.',
+        desc: "Funnels + cohorts (D1/D7/D30) so you know what's working.",
         icon: LineChart
       }
     ],
@@ -315,7 +315,7 @@ export const PERSONAS = [
     heroSecondaryCta: 'See the growth system',
     packagesCta: 'Explore Package',
     footerFormButton: 'Request Audit',
-    footerFormPrompt: 'What do you sell, and what's the biggest issue: traffic, conversion, or repeat purchases?',
+    footerFormPrompt: "What do you sell, and what's the biggest issue: traffic, conversion, or repeat purchases?",
     destination: 'shopify-growth-system',
     primaryCta: 'Get my DTC Growth Audit',
     secondaryCta: 'See DTC Package',
