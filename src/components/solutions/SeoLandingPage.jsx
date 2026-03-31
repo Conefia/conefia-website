@@ -557,7 +557,7 @@ const processStepsDefault = [
 }];
 
 
-export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt }) => {
+export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-24 bg-white overflow-hidden relative">
@@ -601,8 +601,8 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-4">
-              <p className="text-white font-semibold text-sm">Each phase has a stage gate</p>
-              <p className="text-white/70 text-xs mt-1">You always know where you stand.</p>
+              <p className="text-white font-semibold text-sm">{imageOverlayTitle || 'Each phase has a stage gate'}</p>
+              <p className="text-white/70 text-xs mt-1">{imageOverlayDesc || 'You always know where you stand.'}</p>
             </div>
           </div>
         </Reveal>
