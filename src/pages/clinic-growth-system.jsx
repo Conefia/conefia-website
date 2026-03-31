@@ -4,6 +4,7 @@ import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVis
 import Seo from '@/components/Seo';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 import ClinicFitCheck from '@/components/solutions/clinic-growth/ClinicFitCheck';
+import ClinicOutcomesSection from '@/components/solutions/clinic-growth/ClinicOutcomesSection';
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
@@ -65,16 +66,7 @@ export default function ClinicGrowthSystem() {
       <ClinicFitCheck />
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
-        <SolutionMetrics 
-          title={<>Clinic growth, <span className="gradient-text">measured</span> — not guessed.</>}
-          visual={<AttributionVisual />}
-          items={[
-            "+20–50% — More booked appointments",
-            "Top 3–10 — Higher local rankings (Google Maps)",
-            "+30–60% — More qualified calls & form leads",
-            "+10–25% — Better lead-to-appointment conversion"
-          ]}
-        />
+        <ClinicOutcomesSection visual={<AttributionVisual />} />
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
