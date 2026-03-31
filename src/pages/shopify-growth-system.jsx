@@ -165,6 +165,8 @@ export default function ShopifyGrowthSystem() {
           ]}
           useCases={["Fashion & Apparel", "Health & Wellness", "Beauty & Cosmetics"]}
           useCasesTitle="Industries We Scale"
+          imageUrl="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/a87877946_generated_image.png"
+          imageAlt="Shopify growth dashboard with ROAS, CVR, and revenue metrics"
         />
       </Suspense>
 
