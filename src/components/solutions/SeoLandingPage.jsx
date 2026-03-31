@@ -1234,7 +1234,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 };
 
 
-export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
+export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
 <section className="py-24 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
@@ -1244,6 +1244,7 @@ export const SolutionFinalCta = ({ title, primaryCta, secondaryCta, visual }) =>
         <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
           <span className="text-[#1a1a1a]">{title}</span>
         </h2>
+        {description && <p className="text-[#1a1a1a]/70 text-lg font-medium mb-8 max-w-2xl mx-auto leading-relaxed">{description}</p>}
         <div className="flex flex-col items-center gap-4">
           <Link
           to={createPageUrl('Book')}

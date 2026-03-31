@@ -223,7 +223,8 @@ export default function ShopifyGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionFinalCta 
-          title="Want predictable growth — not random spikes?"
+          title="Ready to build or grow your Shopify store with more control?"
+          description="Whether you need a stronger store foundation or a smarter growth system, we can map the priorities behind profitable Shopify growth."
           primaryCta="Get My Growth Audit"
           secondaryCta="See the Package"
         />
