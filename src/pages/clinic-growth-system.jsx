@@ -45,15 +45,17 @@ export default function ClinicGrowthSystem() {
         })}}
       />
       <SolutionHero 
-        title="Clinic Growth System"
-        subtitle="A digital patient engagement platform that books more patients. One partner to fix your patient journey, improve local visibility, and turn traffic into booked appointments. Website + portal + intake + tracking + local SEO — aligned under one plan."
-        primaryCta="Get My Clinic Growth Roadmap"
-        secondaryCta="See the Package"
+        breadcrumb="Clinic Growth System"
+        title="Get More Patient Bookings in 8–12 Weeks"
+        subtitle="We help clinics turn more searches, visits, and clicks into booked appointments. From local SEO and trust-building to landing pages, intake, booking, content, and ads — everything works together under one team."
+        primaryCta="Get Clinic Growth Plan"
+        secondaryCta="See Sprint"
+        ctaMicrocopy="Free 30-min roadmap call. Leave with clear priorities, timeline, and a practical plan."
         trustChips={[
           "HIPAA-aware workflows",
-          "Local SEO + GBP",
-          "Conversion tracking",
-          "Weekly delivery"
+          "Weekly demos",
+          "SEO + ads + creative",
+          "Booking-first reporting"
         ]}
         layout="split"
         visual={<HeroVisual />}
