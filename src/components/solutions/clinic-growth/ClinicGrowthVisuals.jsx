@@ -98,112 +98,53 @@ export const HeroVisual = () => {
 
 };
 
-// Metrics Attribution Visual (Light Mode) - Enhanced
+// Metrics Attribution Visual (Light Mode)
 export const AttributionVisual = () =>
 <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="flex items-center justify-center gap-3 md:gap-6 mt-12 py-8 px-6 bg-gradient-to-r from-blue-50/40 via-emerald-50/40 to-[#DBFE01]/10 rounded-3xl border border-gray-100/50 backdrop-blur-sm">
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.5 }}
+  className="flex items-center justify-center gap-2 md:gap-4 mt-8 opacity-90">
 
-    {/* Traffic Stage */}
-    <motion.div
-      className="flex flex-col items-center group"
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.1 }}
-    >
-      <motion.div
-        whileHover={{ scale: 1.15, rotate: 5 }}
-        className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-500 flex items-center justify-center mb-3 border-2 border-white shadow-lg shadow-blue-200/40 group-hover:shadow-blue-300/60 transition-shadow relative"
-      >
-        <div className="absolute inset-0 rounded-2xl bg-white/10" />
-        <MousePointerClick className="w-7 h-7 text-white relative z-10" />
-      </motion.div>
-      <span className="text-[11px] text-gray-700 font-bold uppercase tracking-wider">Website Traffic</span>
-      <span className="text-[9px] text-gray-500 mt-0.5">All Visitors</span>
-    </motion.div>
+    <div className="flex flex-col items-center group">
+      <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center mb-2 border border-gray-200 group-hover:border-blue-200 group-hover:bg-blue-50 transition-colors">
+        <MousePointerClick className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors" />
+      </div>
+      <span className="text-[10px] text-gray-500 font-medium">Traffic</span>
+    </div>
     
-    {/* Arrow Animation 1 */}
-    <motion.div
-      className="h-1 w-6 md:w-12 relative overflow-hidden rounded-full bg-gradient-to-r from-blue-400 to-emerald-400"
-      initial={{ opacity: 0, scaleX: 0 }}
-      whileInView={{ opacity: 1, scaleX: 1 }}
-      transition={{ delay: 0.2, duration: 0.6 }}
-    >
+    <div className="h-[2px] w-8 md:w-16 bg-gray-100 relative overflow-hidden rounded-full">
       <motion.div
-        animate={{ x: ["-100%", "100%"] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-1/3 opacity-60 blur-sm"
-      />
-      <motion.div
-        className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1 text-sm"
-        animate={{ x: ["-100%", "100%"] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        →
-      </motion.div>
-    </motion.div>
+      animate={{ x: ["-100%", "100%"] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+      className="absolute inset-0 bg-blue-400 w-1/2 opacity-30" />
 
-    {/* Qualified Leads Stage */}
-    <motion.div
-      className="flex flex-col items-center group"
-      initial={{ opacity: 0, y: -20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
-    >
-      <motion.div
-        whileHover={{ scale: 1.15, rotate: -5 }}
-        className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center mb-3 border-2 border-white shadow-lg shadow-emerald-200/40 group-hover:shadow-emerald-300/60 transition-shadow relative"
-      >
-        <div className="absolute inset-0 rounded-2xl bg-white/10" />
-        <Phone className="w-7 h-7 text-white relative z-10" />
-      </motion.div>
-      <span className="text-[11px] text-gray-700 font-bold uppercase tracking-wider">Qualified Leads</span>
-      <span className="text-[9px] text-gray-500 mt-0.5">Form + Call</span>
-    </motion.div>
+    </div>
 
-    {/* Arrow Animation 2 */}
-    <motion.div
-      className="h-1 w-6 md:w-12 relative overflow-hidden rounded-full bg-gradient-to-r from-emerald-400 to-[#DBFE01]"
-      initial={{ opacity: 0, scaleX: 0 }}
-      whileInView={{ opacity: 1, scaleX: 1 }}
-      transition={{ delay: 0.3, duration: 0.6 }}
-    >
-      <motion.div
-        animate={{ x: ["-100%", "100%"] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent w-1/3 opacity-60 blur-sm"
-      />
-      <motion.div
-        className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1 text-sm"
-        animate={{ x: ["-100%", "100%"] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-      >
-        →
-      </motion.div>
-    </motion.div>
+    <div className="flex flex-col items-center group">
+      <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center mb-2 border border-gray-200 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">
+        <Phone className="w-5 h-5 text-gray-400 group-hover:text-emerald-500 transition-colors" />
+      </div>
+      <span className="text-[10px] text-gray-500 font-medium">Qualified Leads</span>
+    </div>
 
-    {/* Booked Patient Stage */}
-    <motion.div
-      className="flex flex-col items-center"
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.3 }}
-    >
+    <div className="h-[2px] w-8 md:w-16 bg-gray-100 relative overflow-hidden rounded-full">
       <motion.div
-        whileHover={{ scale: 1.2, rotate: 10 }}
-        animate={{ y: [0, -4, 0] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-        className="w-18 h-18 rounded-2xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-3 border-3 border-white shadow-2xl shadow-[#DBFE01]/50 relative"
-      >
-        <div className="absolute inset-0 rounded-2xl bg-white/20" />
-        <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity bg-gradient-to-tr from-transparent to-white/20" />
-        <CalendarCheck className="w-9 h-9 text-[#1a1a1a] relative z-10" />
+      animate={{ x: ["-100%", "100%"] }}
+      transition={{ duration: 1.5, delay: 0.75, repeat: Infinity, ease: "linear" }}
+      className="absolute inset-0 bg-[#DBFE01] w-1/2 opacity-60" />
+
+    </div>
+
+    <div className="flex flex-col items-center">
+      <motion.div
+      whileHover={{ scale: 1.1, rotate: 5 }}
+      className="w-12 h-12 rounded-full bg-[#DBFE01] text-[#1a1a1a] flex items-center justify-center mb-2 shadow-lg shadow-[#DBFE01]/20 border-2 border-white z-10">
+
+        <CalendarCheck className="w-6 h-6" />
       </motion.div>
-      <span className="text-[11px] text-[#1a1a1a] font-extrabold uppercase tracking-wider">Booked Patient</span>
-      <span className="text-[9px] text-gray-600 mt-0.5">Appointment Confirmed</span>
-    </motion.div>
+      <span className="text-xs text-[#1a1a1a] font-bold bg-[#DBFE01]/20 px-2 py-0.5 rounded-full">Booked Patient</span>
+    </div>
   </motion.div>;
 
 
