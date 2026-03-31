@@ -166,7 +166,7 @@ export default function ShopifyGrowthSystem() {
             { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg" },
             { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg" },
             { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg" },
-            { name: "Canva", url: "https://logo.svgcdn.com/devicon/canva-original.svg" },
+            { name: "Canva", url: "https://cdn.brandfetch.io/id9mVQlyB1/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1725863496299" },
             { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446" },
             { name: "Yotpo", url: "https://logotyp.us/file/yotpo.svg" },
             { name: "Gorgias", url: "https://cdn.brandfetch.io/idtDRkJ5U2/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1690782642250" },
