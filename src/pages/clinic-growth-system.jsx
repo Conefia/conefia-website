@@ -132,12 +132,12 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title={<>What clinics improve in <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>8–12 weeks</span></>}
+          title="Outcomes clinic teams actually care about"
           items={[
-            "More bookings from the same traffic",
-            "Better local visibility and review performance",
-            "Clear attribution: what's driving appointments",
-            "Faster iteration (no vendor ping-pong)"
+            { label: "More", title: "Booked Appointments", description: "Better website-to-booking conversion" },
+            { label: "Smoother", title: "Patient Intake", description: "Less drop-off before scheduling" },
+            { label: "Stronger", title: "Local Visibility", description: "More qualified traffic from Google" },
+            { label: "Clearer", title: "Growth Attribution", description: "Know what is driving bookings" }
           ]}
           visual={<OutcomesVisual />}
         />
