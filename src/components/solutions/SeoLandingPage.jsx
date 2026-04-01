@@ -1023,111 +1023,15 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           <Reveal className="mb-16">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-              {/* Left: Healthcare Team Delivering Growth Visual */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1 bg-gradient-to-br from-emerald-50 to-blue-50">
-                {/* Healthcare Team Illustration */}
-                <div className="w-full h-full flex flex-col items-center justify-center relative p-8">
-                  {/* Background medical pattern */}
-                  <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23000000"%3E%3Cpath d="M30 5c13.807 0 25 11.193 25 25s-11.193 25-25 25S5 43.807 5 30 16.193 5 30 5zm0 5c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20zm0 3c9.389 0 17 7.611 17 17s-7.611 17-17 17S13 34.389 13 25 20.611 8 30 8z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
-                  
-                  {/* Team members - animated floating cards */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.1 }}
-                    className="relative w-full h-full flex items-center justify-center">
-                    
-                    {/* Lead Developer/Architect */}
-                    <motion.div
-                      animate={{ y: [0, -8, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                      className="absolute left-4 top-8 bg-white rounded-2xl p-4 shadow-lg border border-emerald-100 w-32">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 mx-auto mb-2 flex items-center justify-center text-white font-bold text-sm">DV</div>
-                      <p className="text-xs font-bold text-center text-gray-900">Tech Lead</p>
-                      <p className="text-[10px] text-center text-gray-500 mt-1">Growth Stack</p>
-                    </motion.div>
-                    
-                    {/* Product Manager */}
-                    <motion.div
-                      animate={{ y: [0, -6, 0] }}
-                      transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
-                      className="absolute right-8 top-16 bg-white rounded-2xl p-4 shadow-lg border border-blue-100 w-32">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 mx-auto mb-2 flex items-center justify-center text-white font-bold text-sm">PM</div>
-                      <p className="text-xs font-bold text-center text-gray-900">Product</p>
-                      <p className="text-[10px] text-center text-gray-500 mt-1">Strategy</p>
-                    </motion.div>
-                    
-                    {/* Healthcare Expert */}
-                    <motion.div
-                      animate={{ y: [0, -10, 0] }}
-                      transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-                      className="absolute left-2 bottom-12 bg-white rounded-2xl p-4 shadow-lg border border-emerald-100 w-32">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 mx-auto mb-2 flex items-center justify-center text-white font-bold text-sm">HX</div>
-                      <p className="text-xs font-bold text-center text-gray-900">Healthcare</p>
-                      <p className="text-[10px] text-center text-gray-500 mt-1">Expert</p>
-                    </motion.div>
-                    
-                    {/* Growth Analyst */}
-                    <motion.div
-                      animate={{ y: [0, -7, 0] }}
-                      transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut', delay: 0.9 }}
-                      className="absolute right-2 bottom-8 bg-white rounded-2xl p-4 shadow-lg border border-blue-100 w-32">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 mx-auto mb-2 flex items-center justify-center text-white font-bold text-sm">GA</div>
-                      <p className="text-xs font-bold text-center text-gray-900">Growth</p>
-                      <p className="text-[10px] text-center text-gray-500 mt-1">Analytics</p>
-                    </motion.div>
-                    
-                    {/* Central connecting element - clinic icon */}
-                    <motion.div
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500 to-blue-500 flex items-center justify-center shadow-xl">
-                      <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 6h-1V5a1 1 0 0 0-2 0v1h-4V5a1 1 0 0 0-2 0v1H9V5a1 1 0 0 0-2 0v1H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-8 13h-2v-2h2zm0-4h-2v-2h2zm4 4h-2v-2h2zm0-4h-2v-2h2zm4 4h-2v-2h2zm0-4h-2v-2h2z"/>
-                      </svg>
-                    </motion.div>
-                    
-                    {/* Connecting lines between roles */}
-                    <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }}>
-                      <defs>
-                        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#10B981" stopOpacity="0.2" />
-                          <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.2" />
-                        </linearGradient>
-                      </defs>
-                      <circle cx="50%" cy="50%" r="40%" fill="none" stroke="url(#lineGrad)" strokeWidth="1" strokeDasharray="5,5" opacity="0.3" />
-                    </svg>
-                  </motion.div>
-                </div>
+              {/* Left: Stock image with overlays */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-112173f7f869?w=800&q=80"
+                  alt="Healthcare team collaborating on patient care technology"
+                  className="w-full h-full object-cover" />
                 
-                {/* Floating stat card */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
-                  className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md border border-emerald-200 rounded-2xl p-5 shadow-xl">
-                  
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center flex-shrink-0 shadow-lg text-white font-bold">+</div>
-                    <div>
-                      <p className="text-gray-900 font-bold text-base">{statTitle}</p>
-                      <p className="text-gray-600 text-sm">{statDesc}</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Top badge */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="absolute top-6 left-6 bg-emerald-500 text-white text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
-                  
-                  {badge}
-                </motion.div>
+                {/* Gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/40 via-emerald-900/20 to-transparent" />
               </div>
 
               {/* Right: Feature list */}
