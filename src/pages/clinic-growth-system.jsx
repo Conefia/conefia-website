@@ -108,8 +108,6 @@ export default function ClinicGrowthSystem() {
         />
       </Suspense>
 
-      <ClinicContentCreativeSection />
-
       <RoadmapCallSection
         title="What you'll get in the 30-minute clinic growth roadmap call"
         description="This is not a generic sales chat. We'll look at your patient acquisition system like a team preparing to fix and grow it."
