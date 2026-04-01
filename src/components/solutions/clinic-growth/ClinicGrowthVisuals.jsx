@@ -15,85 +15,186 @@ export const HeroVisual = () => {
     icon: Search,
     label: "Discovery",
     desc: "Patient finds you on Google Maps or Search.",
-    fix: "Top 3 Ranking + Review Mgmt"
+    color: "from-blue-500/30 to-blue-600/20",
+    border: "border-blue-500/30",
+    glow: "shadow-blue-500/20"
   },
   {
     icon: Globe,
     label: "Decision",
     desc: "Patient visits website to check credibility.",
-    fix: "High-Converting Service Pages"
+    color: "from-purple-500/30 to-purple-600/20",
+    border: "border-purple-500/30",
+    glow: "shadow-purple-500/20"
   },
   {
     icon: FileText,
     label: "Intake",
     desc: "Patient fills forms before or during booking.",
-    fix: "Mobile-First Digital Forms"
+    color: "from-amber-500/30 to-amber-600/20",
+    border: "border-amber-500/30",
+    glow: "shadow-amber-500/20"
   },
   {
     icon: CalendarCheck,
     label: "Booking",
     desc: "Patient schedules appointment directly.",
-    fix: "Integrated Self-Scheduling"
+    color: "from-[#DBFE01]/30 to-[#DBFE01]/10",
+    border: "border-[#DBFE01]/30",
+    glow: "shadow-[#DBFE01]/20"
   }];
 
 
   return (
-    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 w-full relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#DBFE01]/5 to-transparent pointer-events-none" />
-      
-      <div className="flex items-center justify-between mb-8">
+    <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 md:p-8 w-full relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/5 via-transparent to-blue-500/5 pointer-events-none" />
+      <motion.div
+        className="absolute top-10 right-10 w-40 h-40 bg-[#DBFE01]/10 rounded-full blur-[80px] pointer-events-none"
+        animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* Header */}
+      <div className="flex items-center justify-between mb-8 relative z-10">
         <div className="text-sm text-white font-bold uppercase tracking-wide flex items-center gap-2">
           <Activity className="w-4 h-4 text-[#DBFE01]" />
-          Connected Journey
+          Connected Patient Journey
         </div>
-        <div className="text-xs text-[#DBFE01] bg-[#DBFE01]/10 px-2 py-1 rounded-full font-mono border border-[#DBFE01]/20">
-          100% VISIBILITY
-        </div>
-      </div>
-
-      <div className="relative space-y-8">
-        {/* Vertical connecting line */}
-        <div className="absolute left-[19px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#DBFE01] to-white/10" />
-
-        {steps.map((step, i) =>
         <motion.div
-          key={i}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: i * 0.15 }}
-          className="relative flex items-start gap-4">
-
-            <div className="relative z-10 w-10 h-10 rounded-full bg-[#0B1020] border border-[#DBFE01]/30 flex items-center justify-center shadow-[0_0_15px_rgba(219,254,1,0.15)] group hover:border-[#DBFE01] transition-colors">
-              <step.icon className="w-5 h-5 text-[#DBFE01]" />
-            </div>
-            
-            <div className="flex-1 pt-1">
-              <div className="flex justify-between items-start mb-1">
-                <h4 className="text-white text-base font-bold">{step.label}</h4>
-                <span className="text-[10px] font-bold text-[#DBFE01] uppercase tracking-wider bg-[#DBFE01]/5 px-2 py-0.5 rounded border border-[#DBFE01]/10">
-                  {step.fix}
-                </span>
-              </div>
-              <p className="text-white/60 text-sm leading-relaxed">
-                {step.desc}
-              </p>
-            </div>
-          </motion.div>
-        )}
+          animate={{ opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-xs text-[#DBFE01] bg-[#DBFE01]/10 px-3 py-1 rounded-full font-mono border border-[#DBFE01]/20 flex items-center gap-1.5"
+        >
+          <div className="w-1.5 h-1.5 rounded-full bg-[#DBFE01] animate-pulse" />
+          LIVE
+        </motion.div>
       </div>
-      
-      <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-center">
-        <div className="flex items-center gap-2 text-xs font-medium text-white/80">
-          <div className="flex -space-x-2">
-            {[1, 2, 3].map((i) =>
-            <div key={i} className="w-6 h-6 rounded-full bg-[#DBFE01] border-2 border-[#0B1020] flex items-center justify-center text-[8px] font-bold text-black">
-                <Check className="w-3 h-3" />
+
+      {/* Journey Steps */}
+      <div className="relative z-10">
+        {/* Horizontal layout on desktop, vertical on mobile */}
+        <div className="hidden md:flex items-start justify-between relative">
+          {/* Connecting line */}
+          <div className="absolute top-7 left-[10%] right-[10%] h-0.5 bg-white/10 z-0" />
+          <motion.div
+            className="absolute top-[27px] left-[10%] h-0.5 bg-gradient-to-r from-[#DBFE01] to-[#DBFE01]/30 z-[1]"
+            initial={{ width: 0 }}
+            whileInView={{ width: "80%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+          />
+          {/* Animated pulse traveling along line */}
+          <motion.div
+            className="absolute top-[24px] w-2 h-2 rounded-full bg-[#DBFE01] z-[2] shadow-[0_0_12px_rgba(219,254,1,0.8)]"
+            animate={{ left: ["10%", "90%"] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", repeatDelay: 1 }}
+          />
+
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2, duration: 0.5 }}
+              className="flex flex-col items-center text-center w-1/4 relative z-10"
+            >
+              <motion.div
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} border ${step.border} flex items-center justify-center mb-3 shadow-lg ${step.glow} backdrop-blur-sm transition-all`}
+              >
+                <step.icon className="w-7 h-7 text-white" />
+              </motion.div>
+              <h4 className="text-white text-sm font-bold mb-1">{step.label}</h4>
+              <p className="text-white/50 text-xs leading-snug">{step.desc}</p>
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 + 0.4, type: "spring" }}
+                className="mt-2 w-5 h-5 rounded-full bg-[#DBFE01] text-[#0B1020] text-[10px] font-extrabold flex items-center justify-center"
+              >
+                {i + 1}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile: vertical layout */}
+        <div className="md:hidden relative space-y-6">
+          <div className="absolute left-7 top-4 bottom-4 w-0.5 bg-white/10" />
+          <motion.div
+            className="absolute left-7 top-4 w-0.5 bg-gradient-to-b from-[#DBFE01] to-[#DBFE01]/20"
+            initial={{ height: 0 }}
+            whileInView={{ height: "calc(100% - 2rem)" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.5, delay: 0.3 }}
+          />
+
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="relative flex items-start gap-4"
+            >
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className={`relative z-10 w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} border ${step.border} flex items-center justify-center shadow-lg ${step.glow} flex-shrink-0`}
+              >
+                <step.icon className="w-7 h-7 text-white" />
+              </motion.div>
+              <div className="flex-1 pt-1">
+                <h4 className="text-white text-base font-bold mb-0.5">{step.label}</h4>
+                <p className="text-white/50 text-sm">{step.desc}</p>
               </div>
-            )}
-          </div>
-          <span className="text-base">Seamless data flow end-to-end</span>
+              <div className="w-5 h-5 rounded-full bg-[#DBFE01] text-[#0B1020] text-[10px] font-extrabold flex items-center justify-center flex-shrink-0 mt-2">
+                {i + 1}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
+
+      {/* Bottom bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 1.2 }}
+        className="mt-8 pt-6 border-t border-white/10 relative z-10"
+      >
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
+            <div className="flex -space-x-2">
+              {[Search, Globe, FileText, CalendarCheck].map((Icon, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 1.4 + i * 0.1, type: "spring" }}
+                  className="w-7 h-7 rounded-full bg-[#DBFE01] border-2 border-[#0B1020] flex items-center justify-center"
+                >
+                  <Icon className="w-3 h-3 text-[#0B1020]" />
+                </motion.div>
+              ))}
+            </div>
+            <span className="text-white/70 text-sm font-medium">4 touchpoints connected</span>
+          </div>
+          <motion.div
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-xs text-[#DBFE01] font-bold uppercase tracking-wider flex items-center gap-1.5"
+          >
+            <TrendingUp className="w-3.5 h-3.5" />
+            Zero drop-off
+          </motion.div>
+        </div>
+      </motion.div>
     </div>);
 
 };
