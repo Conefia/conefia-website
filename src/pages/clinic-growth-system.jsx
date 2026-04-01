@@ -163,8 +163,8 @@ export default function ClinicGrowthSystem() {
             { num: "03", title: "Built for real clinic teams", desc: "HIPAA-aware workflows, simple approvals, and one accountable team that works with busy operators — not against them.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
             { num: "04", title: "Know what is driving appointments", desc: "Booking-first reporting across calls, forms, campaigns, and channels, so you can see what is working and where patients drop off.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
           ]}
-          techStackTitle="Tools we work with"
-          techStackDesc="Proven platforms we integrate with — so your clinic stack keeps working."
+          techStackTitle="Tools behind better clinic growth"
+          techStackDesc="Proven platforms we use to build, track, and grow your patient journey — without breaking your existing stack."
           techStackLogos={[
             { name: "Calendly", url: "https://cdn.brandfetch.io/idbJpTKFPT/idoHNAJiuQ.svg?c=1bxid64Mup7aczewSAYMX&t=1657269348716", wide: true },
             { name: "CallRail", url: "https://cdn.brandfetch.io/id2tENgwdX/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667616161752", wide: true },
