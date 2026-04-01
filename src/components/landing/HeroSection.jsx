@@ -53,7 +53,7 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 md:pt-0 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-28 md:pt-32 overflow-hidden">
       <HeroDarkBackground isMobile={isMobile} />
 
       
