@@ -43,6 +43,19 @@ export default function FitCheck() {
           </p>
         </motion.div>
 
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="mb-12">
+          <img
+            src="https://media.base44.com/images/public/695311d1426e4dadf87a8d53/a18c3c49d_ai-mvp-launch.jpg"
+            alt="AI MVP Launch Team"
+            className="w-full rounded-3xl shadow-lg object-cover" />
+        </motion.div>
+
         {/* Two columns */}
         <div className="grid md:grid-cols-2 gap-6 mb-10">
           {/* Good fit */}
