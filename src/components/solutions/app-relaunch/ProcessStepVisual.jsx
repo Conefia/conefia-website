@@ -106,19 +106,19 @@ export default function ProcessStepVisual() {
           })}
         </div>
 
-        {/* Mobile: Vertical stacked */}
-        <div className="md:hidden flex flex-col items-center gap-8">
+        {/* Mobile: Horizontal layout */}
+        <div className="md:hidden flex items-center justify-between gap-4 flex-wrap">
           {steps.map((step, idx) => {
             const Icon = step.icon;
             return (
               <React.Fragment key={idx}>
                 <motion.div
-                  variants={itemVariants}
-                  className="flex flex-col items-center gap-4 w-full"
-                  whileHover="hover"
-                >
+                   variants={itemVariants}
+                   className="flex flex-col items-center gap-3 flex-1 min-w-0"
+                   whileHover="hover"
+                 >
                   {/* Icon Container */}
-                  <div className="relative w-24 h-24">
+                   <div className="relative w-16 h-16">
                     {/* Pulsing background */}
                     <motion.div
                       className={`absolute inset-0 rounded-full ${step.bgColor} opacity-30`}
@@ -134,13 +134,13 @@ export default function ProcessStepVisual() {
                         boxShadow: `0 0 40px ${step.shadowColor}, 0 12px 30px ${step.shadowColor}`
                       }}
                     >
-                      <Icon className="w-12 h-12 text-white" strokeWidth={3} />
+                      <Icon className="w-8 h-8 text-white" strokeWidth={3} />
                     </motion.div>
                   </div>
 
                   {/* Label */}
                   <motion.span
-                    className={`text-xl font-bold ${step.textColor} text-center drop-shadow-md`}
+                    className={`text-sm font-bold ${step.textColor} text-center drop-shadow-sm`}
                     initial={{ opacity: 0.8 }}
                     whileHover={{ opacity: 1, scale: 1.05 }}
                     transition={{ duration: 0.2 }}
@@ -152,10 +152,10 @@ export default function ProcessStepVisual() {
                 {/* Divider (except last) */}
                 {idx < steps.length - 1 && (
                   <motion.div
-                    initial={{ scaleY: 0, opacity: 0 }}
-                    whileInView={{ scaleY: 1, opacity: 1 }}
+                    initial={{ scaleX: 0, opacity: 0 }}
+                    whileInView={{ scaleX: 1, opacity: 1 }}
                     transition={{ delay: 0.4 + idx * 0.2, duration: 0.6 }}
-                    className="w-1 h-8 bg-gradient-to-b from-slate-300 to-slate-300 rounded-full origin-top"
+                    className="hidden sm:flex flex-1 h-1 bg-gradient-to-r from-slate-300 to-slate-300 rounded-full origin-left max-w-xs"
                   />
                 )}
               </React.Fragment>
