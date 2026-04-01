@@ -88,15 +88,19 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionDetails 
-          title="One team. One backlog. More appointments."
-          description="We run clinic digital transformation as one system: digital patient engagement platform + clinic patient portal software improvements + local SEO + conversion tracking."
-          primaryCta="Get My Clinic Growth Roadmap"
+          title="Fix the patient journey first. Then scale what works."
+          description="We build the system behind better clinic growth: stronger visibility, better trust signals, higher-converting pages, smoother intake, smarter creative, and clearer reporting."
+          primaryCta="Get Clinic Growth Plan →"
+          riskReducer="We lock priorities by Week 2 so the sprint stays focused."
           features={[
-            "Patient journey upgrades (portal + intake + booking flow)",
-            "Local visibility system (Google Business Profile, reviews, service pages)",
-            "HIPAA-aware execution (privacy-first workflows and reporting)",
-            "Conversion tracking (traffic → calls/forms → booked appointments)",
-            "Weekly delivery cadence (demos, priorities, stage gates)"
+            "A clinic growth roadmap you can act on",
+            "Local SEO and Google Business Profile improvements",
+            "Better landing pages and service pages",
+            "Mobile-friendly form and booking fixes",
+            "Ad creative, post design, and video editing",
+            "SEO blogs and patient-friendly content",
+            "Multi-channel campaign optimization",
+            "Weekly demos and clear stage gates"
           ]}
           visual={<SolutionDashboardVisual />}
         />
