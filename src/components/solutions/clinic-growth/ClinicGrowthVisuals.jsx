@@ -98,25 +98,27 @@ export const HeroVisual = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.5 }}
-              className="flex flex-col items-center text-center w-1/4 relative z-10"
+              className="flex flex-col items-center text-center w-1/4 relative z-10 gap-3"
             >
-              <motion.div
-                whileHover={{ scale: 1.15, rotate: 5 }}
-                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} border ${step.border} flex items-center justify-center mb-3 shadow-lg ${step.glow} backdrop-blur-sm transition-all`}
-              >
-                <step.icon className="w-7 h-7 text-white" />
-              </motion.div>
-              <h4 className="text-white text-sm font-bold mb-1">{step.label}</h4>
-              <p className="text-white/50 text-xs leading-snug">{step.desc}</p>
               <motion.div
                 initial={{ scale: 0 }}
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 + 0.4, type: "spring" }}
-                className="mt-2 w-5 h-5 rounded-full bg-[#DBFE01] text-[#0B1020] text-[10px] font-extrabold flex items-center justify-center"
+                className="w-6 h-6 rounded-full bg-[#DBFE01] text-[#0B1020] text-[11px] font-extrabold flex items-center justify-center"
               >
                 {i + 1}
               </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} border ${step.border} flex items-center justify-center shadow-lg ${step.glow} backdrop-blur-sm transition-all`}
+              >
+                <step.icon className="w-7 h-7 text-white" />
+              </motion.div>
+              <div>
+                <h4 className="text-white text-sm font-bold mb-1">{step.label}</h4>
+                <p className="text-white/50 text-xs leading-snug">{step.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
