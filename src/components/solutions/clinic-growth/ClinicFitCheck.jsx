@@ -57,9 +57,9 @@ export default function ClinicFitCheck() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1020]/60 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-5 py-3">
-              <p className="text-white font-bold text-sm">“I want more bookings, not just more clicks.”</p>
-              <p className="text-white/70 text-xs mt-0.5">The clinic manager this is built for</p>
+            <div className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] rounded-xl px-5 py-3">
+              <p className="text-[#1a1a1a] font-bold text-sm">"I want more bookings, not just more clicks."</p>
+              <p className="text-[#1a1a1a]/70 text-xs mt-0.5">The clinic manager this is built for</p>
             </div>
           </div>
         </motion.div>
