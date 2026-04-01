@@ -71,13 +71,16 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProblem 
-          title="Patient acquisition breaks when the journey is broken."
-          quote="Most clinics don't have a marketing problem. They have a journey + measurement problem."
+          title="Patients are finding your clinic — but too many are not booking."
+          subtitle="Patients check your Google listing, reviews, website, service pages, forms, and booking flow before they decide. If that journey feels slow, disconnected, or unclear, they drop off."
+          quote="Patients do not decide from one touchpoint. They decide across search, trust, content, and booking."
           items={[
-            "Patients drop when intake is slow or confusing",
-            "Calls get wasted when tracking is missing or messy",
-            "Local visibility slips when GBP + reviews aren't managed",
-            "Vendors don't align — and nothing improves end-to-end"
+            "Your local visibility is weaker than it should be",
+            "Your website gets visits, but pages are not converting",
+            "Intake and booking feel clunky, especially on mobile",
+            "Your ads are running, but the creative is stale or generic",
+            "SEO, blogs, social, and ads are all moving separately",
+            "Reporting shows clicks, not what actually turns into appointments"
           ]}
           visual={<BrokenJourneyVisual />}
         />

@@ -278,7 +278,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 
 
 
-export const SolutionProblem = ({ title, quote, items = [], visual }) =>
+export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) =>
 <section className="py-24 bg-white relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -295,6 +295,7 @@ export const SolutionProblem = ({ title, quote, items = [], visual }) =>
         <h2 className="mt-5 text-3xl font-bold text-center leading-tight md:text-4xl lg:text-5xl max-w-3xl">
           {title || <><span className="text-[#1a1a1a]">Why most AI MVPs get delayed and miss </span><span className="gradient-text">pilots and revenue</span></>}
         </h2>
+        {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">
