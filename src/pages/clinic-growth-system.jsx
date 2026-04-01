@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import SeoLandingPage, { SolutionHero } from '@/components/solutions/SeoLandingPage';
+import SeoLandingPage, { SolutionHero, RoadmapCallSection } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
 import Seo from '@/components/Seo';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
@@ -108,6 +108,20 @@ export default function ClinicGrowthSystem() {
       </Suspense>
 
       <ClinicContentCreativeSection />
+
+      <RoadmapCallSection
+        title="What you'll get in the 30-minute clinic growth roadmap call"
+        description="This is not a generic sales chat. We'll look at your patient acquisition system like a team preparing to fix and grow it."
+        items={[
+          "Identify the biggest gaps in local visibility, conversion, intake, and creative",
+          "Confirm whether you need a full growth sprint, a specific fix, or both",
+          "Prioritize what needs fixing now versus later",
+          "Recommend the right mix across SEO, ads, landing pages, content, and booking",
+          "Map your 8–12 week sprint",
+          "Flag risks early in patient journey clarity, tracking, and campaign efficiency"
+        ]}
+        primaryCta="Get Clinic Growth Plan"
+      />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
