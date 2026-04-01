@@ -154,6 +154,15 @@ export default function ClinicGrowthSystem() {
         <SolutionProof 
           title="Real clinic growth. Real outcomes."
           items={[]}
+          badge="BOOKING-FIRST GROWTH"
+          statTitle="8–12 weeks to stronger bookings"
+          statDesc="Clear priorities. Weekly demos. No scattered vendors."
+          whyBuildItems={[
+            { num: "01", title: "Ship weekly, not someday", desc: "Pages, local SEO, forms, content, and campaigns move forward every week — so growth does not sit in a backlog.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
+            { num: "02", title: "Turn search into scheduled visits", desc: "We improve the moments that matter most: Google visibility, trust signals, landing pages, intake, and booking flow.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
+            { num: "03", title: "Built for real clinic teams", desc: "HIPAA-aware workflows, simple approvals, and one accountable team that works with busy operators — not against them.", color: "from-emerald-50 to-teal-50/30", border: "border-emerald-200/50" },
+            { num: "04", title: "Know what is driving appointments", desc: "Booking-first reporting across calls, forms, campaigns, and channels, so you can see what is working and where patients drop off.", color: "from-purple-50 to-violet-50/30", border: "border-purple-200/50" }
+          ]}
           testimonials={[
             { quote: "We stopped coordinating vendors. Now improvements ship weekly.", author: "Dr. Sarah M.", role: "Clinic Owner, Vascular Care" },
             { quote: "Tracking finally showed what was driving appointments.", author: "Mark T.", role: "Practice Manager, Multi-site Clinic" },
