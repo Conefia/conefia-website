@@ -450,7 +450,7 @@ export const RoadmapCallSection = ({
         <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
       </span>
-      <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2">
+      <h2 className="text-3xl md:text-4xl font-extrabold leading-tight mb-2 text-white">
         {title}
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
