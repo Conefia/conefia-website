@@ -5,6 +5,7 @@ import Seo from '@/components/Seo';
 import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 import ClinicFitCheck from '@/components/solutions/clinic-growth/ClinicFitCheck';
 import ClinicOutcomesSection from '@/components/solutions/clinic-growth/ClinicOutcomesSection';
+import ClinicContentCreativeSection from '@/components/solutions/clinic-growth/ClinicContentCreativeSection';
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
@@ -105,6 +106,8 @@ export default function ClinicGrowthSystem() {
           visual={<SolutionDashboardVisual />}
         />
       </Suspense>
+
+      <ClinicContentCreativeSection />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
