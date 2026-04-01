@@ -94,7 +94,7 @@ export default function ClinicOutcomesSection({ visual }) {
                 </motion.div>
 
                 {/* Description */}
-                <p className="font-medium text-gray-700 text-sm leading-relaxed">
+                <p className="font-medium text-[#1a1a1a]/70 text-sm leading-relaxed">
                   {card.description}
                 </p>
 
