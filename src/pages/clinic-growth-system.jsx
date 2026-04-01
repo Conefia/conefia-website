@@ -166,19 +166,19 @@ export default function ClinicGrowthSystem() {
           techStackTitle="Tools we work with"
           techStackDesc="Proven platforms we integrate with — so your clinic stack keeps working."
           techStackLogos={[
-            { name: "Calendly", url: "https://cdn.brandfetch.io/idbJpTKFPT/idoHNAJiuQ.svg?c=1bxid64Mup7aczewSAYMX&t=1657269348716" },
+            { name: "Calendly", url: "https://cdn.brandfetch.io/idbJpTKFPT/idoHNAJiuQ.svg?c=1bxid64Mup7aczewSAYMX&t=1657269348716", wide: true },
             { name: "CallRail", url: "https://cdn.brandfetch.io/id2tENgwdX/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667616161752", wide: true },
-            { name: "WordPress", url: "https://cdn.brandfetch.io/idbnlnCBDY/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668516065445" },
+            { name: "WordPress", url: "https://cdn.brandfetch.io/idbnlnCBDY/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668516065445", wide: true },
             { name: "SEMrush", url: "https://cdn.brandfetch.io/idt3n8W3ef/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1667587193361", wide: true },
-            { name: "Google Analytics", url: "https://logo.svgcdn.com/logos/google-analytics.svg" },
+            { name: "Google Analytics", url: "https://logo.svgcdn.com/logos/google-analytics.svg", wide: true },
             { name: "HubSpot", url: "https://cdn.brandfetch.io/idRt0LuzRf/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1761193704935", wide: true },
-            { name: "Google Tag Manager", url: "https://logo.svgcdn.com/logos/google-tag-manager.svg" },
-            { name: "Google Ads", url: "https://logo.svgcdn.com/logos/google-ads.svg" },
-            { name: "Meta", url: "https://logo.svgcdn.com/logos/meta.svg" },
-            { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg" },
-            { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg" },
-            { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg" },
-            { name: "Canva", url: "https://logo.svgcdn.com/devicon/canva-original.svg" },
+            { name: "Google Tag Manager", url: "https://logo.svgcdn.com/logos/google-tag-manager.svg", wide: true },
+            { name: "Google Ads", url: "https://logo.svgcdn.com/logos/google-ads.svg", wide: true },
+            { name: "Meta", url: "https://logo.svgcdn.com/logos/meta.svg", wide: true },
+            { name: "TikTok", url: "https://logo.svgcdn.com/logos/tiktok.svg", wide: true },
+            { name: "YouTube", url: "https://logo.svgcdn.com/logos/youtube.svg", wide: true },
+            { name: "Hotjar", url: "https://logo.svgcdn.com/logos/hotjar.svg", wide: true },
+            { name: "Canva", url: "https://cdn.brandfetch.io/id9mVQlyB1/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1725863496299", wide: true },
             { name: "CapCut", url: "https://cdn.brandfetch.io/idUmqKFgE3/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1772513764446", wide: true }
           ]}
           testimonials={[
