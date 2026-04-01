@@ -192,40 +192,64 @@ export default function ShopifyGrowthSystem() {
         <SolutionFAQ 
           items={[
             {
-              question: "What do you mean by 'Shopify Growth System'?",
-              answer: "It means your storefront, conversion journey, retention, creative, content, and reporting are working together — not as separate tactics."
+              question: "Who is this for?",
+              answer: "For brands that already have a Shopify store and want more profitable growth \u2014 or early-stage brands that want to build the right foundation before scaling."
+            },
+            {
+              question: "What do you mean by \"Shopify Growth System\"?",
+              answer: "It means your storefront, conversion journey, retention, creative, SEO, ads, and reporting all work together as one system."
+            },
+            {
+              question: "What happens in the roadmap call?",
+              answer: "We review your current setup, identify the biggest growth leaks, and map the highest-priority fixes for the next 8\u201312 weeks."
+            },
+            {
+              question: "What makes this different from a typical marketing agency?",
+              answer: "Most agencies focus on traffic or channels. We focus on the full path to growth \u2014 and help fix the system behind conversion, retention, and scale."
             },
             {
               question: "Can you help if we are still early and do not have the store live yet?",
-              answer: "Yes. If you are ready to launch properly, we can build the Shopify foundation as part of the package — including store structure, content, tracking, and growth setup — so you do not scale on top of weak foundations."
+              answer: "Yes. We can help build the Shopify foundation properly from the start \u2014 including store setup, content, tracking, and launch readiness."
             },
             {
               question: "Do you only help with CRO?",
-              answer: "No. CRO is one part of the system. We also work on store build, retention flows, ad creative, video editing, SEO content, landing pages, and campaign optimization."
+              answer: "No. We improve the full growth system \u2014 from storefront and retention to creative, SEO, landing pages, and campaign performance."
             },
             {
-              question: "Do you create ad creatives too?",
-              answer: "Yes. We support post designs, static ad assets, campaign visuals, and short-form video edits so your channels have stronger creative to test."
+              question: "Can you improve our store without a full rebuild?",
+              answer: "Yes. Often the fastest gains come from improving the current journey before rebuilding anything."
             },
             {
-              question: "Do you help with SEO and blogs?",
-              answer: "Yes. We plan and create SEO-focused content and blog content to support organic growth and reduce overdependence on paid."
+              question: "How fast can we expect results?",
+              answer: "That depends on your starting point, but many brands see early wins from fixing conversion leaks, improving retention, and sharpening campaign performance."
             },
             {
-              question: "Do you manage multiple channels or just one?",
-              answer: "We support coordinated execution across search, social, email, landing pages, and reporting."
+              question: "Can you work with our current store, apps, or team?",
+              answer: "Usually, yes. We start by improving what is already in place and focus on the highest-impact fixes first."
             },
             {
-              question: "What if we already have an agency or freelancers?",
-              answer: "That is common. We can plug into the setup and bring more structure, accountability, and clarity to the backlog."
+              question: "Do you create content too?",
+              answer: "Yes. We support blog content, landing page copy, SEO content, product messaging, and campaign content."
             },
             {
-              question: "How do you prevent random scope drift?",
-              answer: "We lock the highest-priority work by Week 2 and use weekly demos plus stage gates to keep execution clear."
+              question: "Do you also help with ad creative?",
+              answer: "Yes. We create ad concepts, post designs, static assets, and short-form video edits for paid and organic channels."
+            },
+            {
+              question: "Do you manage ads as well?",
+              answer: "We support multi-channel campaign optimization across platforms like Google, Meta, and TikTok, with a focus on profitable growth."
+            },
+            {
+              question: "What do you need from us to get started?",
+              answer: "Usually access to your Shopify store, analytics, ad accounts, current tools, and one decision-maker who can keep the sprint moving."
+            },
+            {
+              question: "Can you work alongside our internal team or current agency?",
+              answer: "Yes. We can plug into your setup, sharpen priorities, and help move the growth backlog forward."
             },
             {
               question: "What happens after the sprint?",
-              answer: "We can continue with monthly optimization across conversion, creative refreshes, retention, SEO content, and campaign efficiency."
+              answer: "We can continue supporting growth through ongoing optimization across conversion, retention, creative, SEO, and campaign performance."
             }
           ]}
         />
