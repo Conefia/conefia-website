@@ -48,12 +48,12 @@ export default function ClinicFitCheck() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative rounded-2xl overflow-hidden mb-10 shadow-lg max-h-72"
+          className="relative rounded-2xl overflow-hidden mb-10 shadow-lg"
         >
           <img
             src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80"
             alt="Clinic manager reviewing growth metrics"
-            className="w-full h-72 object-cover object-top"
+            className="w-full h-72 md:h-[576px] object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1020]/60 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6">
