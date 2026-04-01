@@ -113,12 +113,11 @@ export default function ClinicGrowthSystem() {
         title="What you'll get in the 30-minute clinic growth roadmap call"
         description="This is not a generic sales chat. We'll look at your patient acquisition system like a team preparing to fix and grow it."
         items={[
-          "Identify the biggest gaps in local visibility, conversion, intake, and creative",
-          "Confirm whether you need a full growth sprint, a specific fix, or both",
-          "Prioritize what needs fixing now versus later",
-          "Review whether your current content and ads are helping or hurting",
-          "Map your 8–12 week sprint",
-          "Flag risks early in patient journey clarity, tracking, and campaign efficiency"
+          "Identify the biggest leaks in local visibility, trust, pages, intake, and booking",
+          "Review whether your current ads and content are helping or hurting conversion",
+          "Define what needs fixing now versus later",
+          "Recommend priorities across SEO, Google Business Profile, creative, landing pages, ads, and reporting",
+          "Map your 8–12 week clinic growth sprint"
         ]}
         primaryCta="Get Clinic Growth Plan"
       />
