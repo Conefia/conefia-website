@@ -393,7 +393,9 @@ export const SolutionDashboardVisual = () =>
     className="absolute -right-6 -bottom-8 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-20">
 
       <div className="flex items-start gap-3 mb-3">
-        <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md shadow-blue-200">G</div>
+        <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-md shadow-blue-100 border border-gray-100">
+          <span className="font-extrabold text-lg" style={{background: 'linear-gradient(135deg, #4285F4 0%, #EA4335 33%, #FBBC05 66%, #34A853 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>G</span>
+        </div>
         <div>
           <div className="text-xs font-bold text-gray-900">Google Maps</div>
           <div className="flex items-center gap-1 mt-0.5">
