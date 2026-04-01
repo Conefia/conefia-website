@@ -66,7 +66,7 @@ export const ProblemItem = ({ children }) =>
 
 // --- Sections ---
 
-export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel }) => {
+export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel, breadcrumb }) => {
   const reduceMotion = useReducedMotion();
   return (
     <div>
@@ -75,7 +75,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-8 relative z-10">
           <div className="mb-4">
-            <Breadcrumbs items={[{ label: 'Solutions', path: createPageUrl('Home') + '#playbook' }, { label: breadcrumbLabel || title }]} theme="dark" />
+            <Breadcrumbs items={[{ label: 'Solutions', path: createPageUrl('Home') + '#playbook' }, { label: breadcrumb || breadcrumbLabel || title }]} theme="dark" />
           </div>
 
           {layout === 'split' ?
