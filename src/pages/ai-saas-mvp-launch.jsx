@@ -109,44 +109,52 @@ export default function AiSaasMvpLaunch() {
       <SolutionFAQ 
         items={[
           {
+            question: "Who is this for?",
+            answer: "For founders and product teams who want to launch an AI MVP that can win pilots \u2014 not just ship a demo."
+          },
+          {
+            question: "What happens in the 30-minute roadmap call?",
+            answer: "We review your use case, identify the biggest blockers, and map the next 8\u201312 weeks across scope, architecture, and launch."
+          },
+          {
+            question: "What makes this different from a typical AI agency or dev shop?",
+            answer: "Most teams build features. We focus on pilot readiness \u2014 clear scope, solid AI architecture, and a product people can actually use."
+          },
+          {
             question: "What do you mean by \"pilot-ready\"?",
-            answer: "Pilot-ready means real users can complete the core workflow end-to-end, with onboarding, analytics, and enough reliability/guardrails that you can confidently test (and charge) in pilots."
+            answer: "It means your MVP is ready for real users in a real workflow \u2014 with enough structure to test, learn, and start closing early customers."
           },
           {
             question: "Can you help if we already have a prototype?",
-            answer: "Yes. We'll audit what you have, keep what's solid, and refactor only what's necessary. The goal is a pilot-ready product — not a rewrite for its own sake."
+            answer: "Yes. We can improve what exists, tighten scope, and turn it into something more usable, reliable, and sellable."
           },
           {
             question: "How do you decide between RAG, agents, or fine-tuning?",
-            answer: "We choose based on your workflow, data quality, latency needs, cost constraints, and failure tolerance. In the roadmap call, you'll get a clear recommendation (and why)."
+            answer: "We choose based on your workflow, data, latency, cost, and risk tolerance. You'll get a clear recommendation and why."
           },
           {
             question: "How do you prevent scope creep?",
-            answer: "We lock must-have scope by Week 2, tie it to success metrics, and use stage gates. If scope isn't clear, we pause and fix clarity before we build."
-          },
-          {
-            question: "What do you need from us to start?",
-            answer: "A clear target user, a core workflow, and access to sample data/docs (or a plan to get them). If you're early, we'll help define the simplest version that can still produce pilot learning."
+            answer: "We lock must-have scope by Week 2, tie it to success metrics, and use stage gates to keep the build focused."
           },
           {
             question: "Do you build the full product or just the AI layer?",
-            answer: "Full product: product workflow + frontend + backend + AI layer + analytics + launch kit. One team, one backlog."
+            answer: "The full product \u2014 workflow, UX, backend, AI layer, analytics, and launch readiness."
           },
           {
-            question: "How do you handle reliability and \"AI going wrong\"?",
-            answer: "We design guardrails, add evaluation loops, log and monitor outputs, and implement fallback behaviors when confidence is low. We aim for safe defaults, not \"best-effort answers.\""
+            question: "Can you work with our current team?",
+            answer: "Yes. We can lead the sprint or work alongside your internal team to keep execution moving."
           },
           {
             question: "Will this work for regulated or sensitive data?",
-            answer: "It can. We'll align on security requirements early (access control, logging, data handling). If your use case needs HIPAA/SOC2-style controls, we'll scope accordingly."
+            answer: "It can. We align on security, access control, logging, and data handling early. If stricter controls are needed, we scope for them."
           },
           {
-            question: "What if we want to use open-source models?",
-            answer: "No problem. We're stack-agnostic. We'll recommend the best fit based on performance, cost, deployment constraints, and engineering complexity."
+            question: "How fast can we expect progress?",
+            answer: "That depends on your starting point, but the goal is simple: less drift, faster decisions, quicker path to pilots."
           },
           {
             question: "What happens after the MVP ships?",
-            answer: "We can support monthly scale: activation improvements, retention experiments, cost/performance tuning, and iterative roadmap delivery."
+            answer: "We can keep supporting the product through pilot feedback, activation improvements, architecture refinement, and next-step growth work."
           }
         ]}
       />
