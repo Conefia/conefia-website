@@ -134,7 +134,7 @@ export default function HeroSection({ reduceMotion }) {
       </div>
 
       {/* Scroll indicator - simplified */}
-      {!reduceMotion &&
+      {!reduceMotion && (
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
         animate={{ y: [0, 8, 0] }}
@@ -148,7 +148,7 @@ export default function HeroSection({ reduceMotion }) {
 
           </div>
         </motion.div>
-      }
+      )}
     </section>);
 
-}
+    }
