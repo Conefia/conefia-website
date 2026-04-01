@@ -36,9 +36,15 @@ export default function ClinicContentCreativeSection() {
             Content that builds trust.<br />
             <span className="gradient-text">Creative that drives action.</span>
           </h2>
-          <p className="text-[#1a1a1a]/60 text-base max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-[#1a1a1a]/60 text-base max-w-2xl mx-auto leading-relaxed"
+          >
             A lot of clinic marketing breaks because the strategy and the content live in different places. Ads need creative. SEO needs content. Social needs posts. The website needs better copy. Nobody owns the full story.
-          </p>
+          </motion.p>
         </motion.div>
 
         {/* Image grid */}
