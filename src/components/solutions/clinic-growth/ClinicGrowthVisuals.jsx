@@ -496,131 +496,103 @@ export const OutcomesVisual = () =>
 // Final CTA Visual: Roadmap
 export const RoadmapPreviewVisual = () => {
   const phases = [
-    { icon: '🔍', label: 'Audit', color: 'bg-blue-50', border: 'border-blue-200' },
-    { icon: '📋', label: 'Plan', color: 'bg-purple-50', border: 'border-purple-200' },
-    { icon: '⚙️', label: 'Build', color: 'bg-emerald-50', border: 'border-emerald-200' },
-    { icon: '📈', label: 'Scale', color: 'bg-orange-50', border: 'border-orange-200' }
+    { label: 'Audit', num: '1' },
+    { label: 'Plan', num: '2' },
+    { label: 'Build', num: '3' },
+    { label: 'Scale', num: '4' }
   ];
 
   return (
-    <div className="space-y-8">
-      {/* Timeline Flow */}
-      <div className="relative">
-        <div className="flex items-stretch justify-between gap-2 md:gap-4">
-          {phases.map((phase, i) => (
+    <div className="space-y-12 max-w-2xl mx-auto">
+      {/* Simple Timeline */}
+      <div className="flex items-center justify-between gap-4">
+        {phases.map((phase, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            className="flex flex-col items-center gap-3 flex-1">
+            
+            {/* Number Circle */}
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15 }}
-              className="flex-1 flex flex-col items-center gap-3">
-              
-              {/* Phase Circle */}
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className={`w-14 h-14 rounded-full ${phase.color} border-2 ${phase.border} flex items-center justify-center text-2xl shadow-md`}>
-                {phase.icon}
-              </motion.div>
-              
-              {/* Connecting line */}
-              {i < phases.length - 1 && (
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ delay: 0.4 + i * 0.1, duration: 0.6 }}
-                  className="hidden md:block absolute top-7 left-[calc(25%+28px)] right-[calc(25%-28px)] h-1 bg-gradient-to-r from-[#DBFE01]/30 to-[#DBFE01]/10"
-                  style={{ transformOrigin: 'left' }}
-                />
-              )}
-              
-              <p className="text-xs font-bold text-gray-700 text-center whitespace-nowrap">{phase.label}</p>
+              whileHover={{ scale: 1.15 }}
+              className="w-12 h-12 rounded-full bg-[#1a1a1a] text-[#DBFE01] font-bold text-lg flex items-center justify-center shadow-lg">
+              {phase.num}
             </motion.div>
-          ))}
-        </div>
+            
+            <p className="text-sm font-bold text-[#1a1a1a]">{phase.label}</p>
+            
+            {/* Connector Line */}
+            {i < phases.length - 1 && (
+              <motion.div
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                className="hidden lg:block absolute w-12 h-1 bg-[#DBFE01] top-6 left-[calc(50%+24px)]"
+                style={{ transformOrigin: 'left' }}
+              />
+            )}
+          </motion.div>
+        ))}
       </div>
 
-      {/* Roadmap Preview Card */}
+      {/* Roadmap Card */}
       <motion.div
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(219, 254, 1, 0.15)' }}
-        initial={{ rotate: 2, y: 0 }}
-        whileInView={{ rotate: 0 }}
-        transition={{ type: 'spring', stiffness: 200 }}
-        className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 relative overflow-hidden">
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        whileHover={{ boxShadow: '0 20px 50px rgba(26, 26, 26, 0.1)' }}
+        className="bg-white rounded-2xl border-2 border-[#1a1a1a] p-8 shadow-lg relative overflow-hidden">
         
-        {/* Animated background */}
-        <div className="absolute inset-0 -z-10">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-8 pb-6 border-b-2 border-[#1a1a1a]">
           <motion.div
-            animate={{ opacity: [0.3, 0.5, 0.3] }}
+            animate={{ rotate: 360 }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="absolute top-0 right-0 w-40 h-40 bg-[#DBFE01]/5 rounded-full blur-2xl" />
-        </div>
-        
-        <div className="flex items-center justify-between mb-5 border-b border-gray-100 pb-4">
-          <div className="text-sm font-bold text-gray-900 flex items-center gap-2">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="flex-shrink-0">
-              <FileText className="w-5 h-5 text-[#DBFE01] fill-current" />
-            </motion.div>
-            Your Growth Roadmap
-          </div>
-          <motion.div
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-[10px] font-extrabold text-white bg-gradient-to-r from-[#DBFE01] to-[#c5e000] px-3 py-1.5 rounded-full text-[#1a1a1a]">
-            LIVE PREVIEW
+            className="flex-shrink-0">
+            <FileText className="w-6 h-6 text-[#DBFE01] fill-current" />
           </motion.div>
+          <h3 className="text-lg font-bold text-[#1a1a1a]">Your Growth Roadmap</h3>
         </div>
         
-        <div className="space-y-3 mb-5">
+        {/* Content Items */}
+        <div className="space-y-4">
           {[
-            { title: 'Patient Journey Audit', desc: '4-week lookback of bookings, drops, and friction points' },
-            { title: 'Local SEO Wins', desc: 'GBP improvements, reviews workflow, mobile site speed' },
-            { title: 'Conversion System Fixes', desc: 'Forms, intake, booking flow, payment experience' },
-            { title: 'Campaign + Creative Plan', desc: 'Ad concepts, content calendar, testing roadmap' }
+            { title: 'Patient Journey Audit', icon: '→' },
+            { title: 'Local SEO & Visibility Plan', icon: '→' },
+            { title: 'Booking System Improvements', icon: '→' },
+            { title: '8-12 Week Campaign Roadmap', icon: '→' }
           ].map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + i * 0.1 }}
-              className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-gray-50 to-transparent border border-gray-100 hover:border-[#DBFE01]/30 transition-all">
+              transition={{ delay: 0.5 + i * 0.08 }}
+              className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg border border-gray-200 hover:bg-[#DBFE01]/5 hover:border-[#DBFE01] transition-all">
               
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ delay: i * 0.1, duration: 1.5, repeat: Infinity }}
-                className="w-5 h-5 rounded-full border-2 border-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <motion.div
-                  animate={{ scale: [0, 1, 0] }}
-                  transition={{ delay: i * 0.1 + 0.3, duration: 1.5, repeat: Infinity }}
-                  className="w-2 h-2 rounded-full bg-[#DBFE01]" />
-              </motion.div>
-              
-              <div>
-                <p className="text-xs font-bold text-gray-900">{item.title}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
-              </div>
+              <div className="w-5 h-5 rounded-full bg-[#DBFE01] flex-shrink-0" />
+              <p className="text-sm font-semibold text-[#1a1a1a]">{item.title}</p>
             </motion.div>
           ))}
         </div>
         
+        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="pt-4 border-t border-gray-100">
-          <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2 text-gray-500">
-              <Clock className="w-3.5 h-3.5" />
-              <span className="font-medium">Delivered in 24 hours</span>
-            </div>
-            <motion.div
-              animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-[#DBFE01] font-bold">→</motion.div>
+          className="mt-8 pt-6 border-t-2 border-[#1a1a1a] flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-[#1a1a1a]" />
+            <span className="text-sm font-bold text-[#1a1a1a]">Delivered in 24 hours</span>
           </div>
+          <motion.div
+            animate={{ x: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-[#DBFE01] text-lg font-bold">
+            →
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>
