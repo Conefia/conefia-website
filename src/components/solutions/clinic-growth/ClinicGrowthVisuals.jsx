@@ -496,10 +496,10 @@ export const OutcomesVisual = () =>
 // Final CTA Visual: Roadmap
 export const RoadmapPreviewVisual = () => {
   const phases = [
-    { icon: '🔍', label: 'Audit', color: 'bg-blue-50', border: 'border-blue-200' },
-    { icon: '📋', label: 'Plan', color: 'bg-purple-50', border: 'border-purple-200' },
-    { icon: '⚙️', label: 'Build', color: 'bg-emerald-50', border: 'border-emerald-200' },
-    { icon: '📈', label: 'Scale', color: 'bg-orange-50', border: 'border-orange-200' }
+    { icon: <Activity className="w-6 h-6 text-blue-500" />, label: 'Vitals Audit', color: 'bg-blue-50', border: 'border-blue-200' },
+    { icon: <Search className="w-6 h-6 text-indigo-500" />, label: 'Diagnosis', color: 'bg-indigo-50', border: 'border-indigo-200' },
+    { icon: <FileText className="w-6 h-6 text-purple-500" />, label: 'Rx Plan', color: 'bg-purple-50', border: 'border-purple-200' },
+    { icon: <TrendingUp className="w-6 h-6 text-emerald-500" />, label: 'Healthy Growth', color: 'bg-emerald-50', border: 'border-emerald-200' }
   ];
 
   return (
@@ -519,107 +519,116 @@ export const RoadmapPreviewVisual = () => {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className={`w-14 h-14 rounded-full ${phase.color} border-2 ${phase.border} flex items-center justify-center text-2xl shadow-md`}>
+                className={`w-14 h-14 rounded-full ${phase.color} border-2 ${phase.border} flex items-center justify-center shadow-md relative z-10`}>
                 {phase.icon}
               </motion.div>
               
-              {/* Connecting line */}
+              {/* Connecting line with pulse */}
               {i < phases.length - 1 && (
-                <motion.div
-                  initial={{ scaleX: 0 }}
-                  whileInView={{ scaleX: 1 }}
-                  transition={{ delay: 0.4 + i * 0.1, duration: 0.6 }}
-                  className="hidden md:block absolute top-7 left-[calc(25%+28px)] right-[calc(25%-28px)] h-1 bg-gradient-to-r from-[#DBFE01]/30 to-[#DBFE01]/10"
-                  style={{ transformOrigin: 'left' }}
-                />
+                <div className="hidden md:block absolute top-7 left-[calc(25%+28px)] right-[calc(25%-28px)] h-1 bg-gray-100 rounded-full z-0 overflow-hidden">
+                  <motion.div
+                    animate={{ x: ["-100%", "200%"] }}
+                    transition={{ duration: 2, delay: i * 0.5, repeat: Infinity, ease: "linear" }}
+                    className="w-1/2 h-full bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-50"
+                  />
+                </div>
               )}
               
-              <p className="text-xs font-bold text-gray-700 text-center whitespace-nowrap">{phase.label}</p>
+              <p className="text-[11px] md:text-xs font-bold text-gray-700 text-center whitespace-nowrap">{phase.label}</p>
             </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Roadmap Preview Card */}
+      {/* Clinical Prescription Card */}
       <motion.div
-        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(219, 254, 1, 0.15)' }}
-        initial={{ rotate: 2, y: 0 }}
+        whileHover={{ y: -4, boxShadow: '0 20px 40px rgba(59, 130, 246, 0.1)' }}
+        initial={{ rotate: 1, y: 0 }}
         whileInView={{ rotate: 0 }}
         transition={{ type: 'spring', stiffness: 200 }}
-        className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100 relative overflow-hidden">
+        className="bg-white rounded-2xl shadow-xl p-6 border border-blue-100 relative overflow-hidden">
         
-        {/* Animated background */}
-        <div className="absolute inset-0 -z-10">
-          <motion.div
-            animate={{ opacity: [0.3, 0.5, 0.3] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute top-0 right-0 w-40 h-40 bg-[#DBFE01]/5 rounded-full blur-2xl" />
+        {/* Animated ECG background */}
+        <div className="absolute inset-0 -z-10 opacity-5">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="w-full h-full text-blue-500">
+            <motion.path 
+              d="M0,50 L20,50 L25,20 L35,90 L45,10 L55,80 L60,50 L100,50" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            />
+          </svg>
+          <div className="absolute top-0 right-0 w-40 h-40 bg-blue-100 rounded-full blur-3xl opacity-50" />
         </div>
         
-        <div className="flex items-center justify-between mb-5 border-b border-gray-100 pb-4">
-          <div className="text-sm font-bold text-gray-900 flex items-center gap-2">
+        <div className="flex items-center justify-between mb-6 border-b border-gray-100 pb-4">
+          <div className="text-sm font-bold text-gray-900 flex items-center gap-3">
             <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="flex-shrink-0">
-              <FileText className="w-5 h-5 text-[#DBFE01] fill-current" />
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="flex-shrink-0 bg-blue-50 p-2.5 rounded-full border border-blue-100 shadow-sm">
+              <Activity className="w-4 h-4 text-blue-500" />
             </motion.div>
-            Your Growth Roadmap
+            <div>
+               <div className="text-[10px] text-blue-500 uppercase tracking-wider font-extrabold mb-0.5">Post-Call Deliverable</div>
+               <div>Growth Prescription</div>
+            </div>
           </div>
           <motion.div
-            animate={{ scale: [1, 1.05, 1] }}
+            animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="text-[10px] font-extrabold text-white bg-gradient-to-r from-[#DBFE01] to-[#c5e000] px-3 py-1.5 rounded-full text-[#1a1a1a]">
-            LIVE PREVIEW
+            className="text-[10px] font-extrabold text-blue-600 bg-blue-50 border border-blue-100 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+            Live Preview
           </motion.div>
         </div>
         
-        <div className="space-y-3 mb-5">
+        <div className="space-y-4 mb-6 relative">
           {[
-            { title: 'Patient Journey Audit', desc: '4-week lookback of bookings, drops, and friction points' },
-            { title: 'Local SEO Wins', desc: 'GBP improvements, reviews workflow, mobile site speed' },
-            { title: 'Conversion System Fixes', desc: 'Forms, intake, booking flow, payment experience' },
-            { title: 'Campaign + Creative Plan', desc: 'Ad concepts, content calendar, testing roadmap' }
+            { title: 'Patient Leakage Diagnosis', desc: 'Identify exactly where patients drop off (Maps, Website, or Phones)', icon: <Search className="w-4 h-4 text-blue-600" />, bg: 'bg-blue-50', border: 'border-blue-100' },
+            { title: 'Local Authority Rx', desc: 'Step-by-step plan to dominate the "near me" map pack', icon: <MapPin className="w-4 h-4 text-indigo-600" />, bg: 'bg-indigo-50', border: 'border-indigo-100' },
+            { title: 'Intake Optimization', desc: 'Frictionless scheduling flow to triple booking conversion', icon: <CalendarCheck className="w-4 h-4 text-purple-600" />, bg: 'bg-purple-50', border: 'border-purple-100' },
+            { title: '90-Day Treatment Plan', desc: 'Clear ROI timeline, required budgets, and expected patient volume', icon: <TrendingUp className="w-4 h-4 text-emerald-600" />, bg: 'bg-emerald-50', border: 'border-emerald-100' }
           ].map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: -10 }}
+              initial={{ opacity: 0, x: -15 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.5 + i * 0.1 }}
-              className="flex items-start gap-3 p-3 rounded-lg bg-gradient-to-r from-gray-50 to-transparent border border-gray-100 hover:border-[#DBFE01]/30 transition-all">
+              transition={{ delay: 0.3 + i * 0.15 }}
+              className="flex items-start gap-4 p-3.5 rounded-xl bg-white border border-gray-100 hover:border-blue-200 hover:shadow-md transition-all relative z-10 group">
               
               <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ delay: i * 0.1, duration: 1.5, repeat: Infinity }}
-                className="w-5 h-5 rounded-full border-2 border-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <motion.div
-                  animate={{ scale: [0, 1, 0] }}
-                  transition={{ delay: i * 0.1 + 0.3, duration: 1.5, repeat: Infinity }}
-                  className="w-2 h-2 rounded-full bg-[#DBFE01]" />
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className={`w-11 h-11 rounded-full ${item.bg} flex items-center justify-center flex-shrink-0 shadow-sm border ${item.border} group-hover:shadow-md transition-all`}>
+                {item.icon}
               </motion.div>
               
-              <div>
-                <p className="text-xs font-bold text-gray-900">{item.title}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.desc}</p>
+              <div className="pt-0.5">
+                <p className="text-sm font-bold text-gray-900 group-hover:text-blue-700 transition-colors">{item.title}</p>
+                <p className="text-[11px] text-gray-500 mt-1 leading-snug">{item.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-          className="pt-4 border-t border-gray-100">
-          <div className="flex items-center justify-between text-xs">
-            <div className="flex items-center gap-2 text-gray-500">
-              <Clock className="w-3.5 h-3.5" />
-              <span className="font-medium">Delivered in 24 hours</span>
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9 }}
+          className="pt-4 border-t border-gray-100 bg-gray-50/50 -mx-6 -mb-6 px-6 pb-6 rounded-b-2xl mt-6">
+          <div className="flex items-center justify-between text-xs mt-2">
+            <div className="flex items-center gap-2 text-gray-600 font-medium">
+              <Clock className="w-4 h-4 text-blue-500" />
+              <span>Delivered 24h after your call</span>
             </div>
             <motion.div
               animate={{ x: [0, 4, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-[#DBFE01] font-bold">→</motion.div>
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="text-blue-600 font-bold bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
+              Free
+            </motion.div>
           </div>
         </motion.div>
       </motion.div>
