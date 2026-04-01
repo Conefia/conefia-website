@@ -43,26 +43,24 @@ export default function FitCheck() {
           </p>
         </motion.div>
 
-        {/* Two columns with image */}
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch mb-10">
-          {/* Image - Left side on large screens */}
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-1 order-2 lg:order-1">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg h-full min-h-[400px]">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&q=80"
-                alt="AI SaaS founders building MVP"
-                className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/60 via-transparent to-transparent" />
-            </div>
-          </motion.div>
+        {/* Image - Above cards */}
+        <motion.div
+          initial={{ opacity: 0, y: -24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="mb-8">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg h-80">
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
+              alt="Founders collaborating on AI strategy"
+              className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/40 via-transparent to-transparent" />
+          </div>
+        </motion.div>
 
-          {/* Cards container */}
-          <div className="lg:col-span-2 order-1 lg:order-2 space-y-6">
+        {/* Cards container */}
+        <div className="space-y-6">
             {/* Good fit */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
