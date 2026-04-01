@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 
 // Reusable Components
 export const SectionHeading = ({ children, className }) =>
-<h2 className={cn("text-3xl md:text-4xl font-bold mb-4 leading-tight", className)}>
+<h2 className={cn("text-4xl md:text-5xl font-700 mb-6 leading-tight", className)}>
     {children}
   </h2>;
 
@@ -85,7 +85,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 max-w-4xl leading-tight">
+                className="text-5xl md:text-6xl lg:text-7xl font-800 text-white mb-6 max-w-4xl leading-tight">
 
                   {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) =>
                 ['AI', 'MVP', 'Ship', '8–12'].includes(part) ?
@@ -164,7 +164,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+              className="text-5xl md:text-6xl lg:text-7xl font-800 text-white leading-tight mb-6">
 
                 {title}
               </motion.h1>
@@ -248,7 +248,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 <section className="py-20 bg-white border-b border-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight text-center text-[#1a1a1a]">{title}</h2>
+        <h2 className="text-4xl md:text-5xl font-700 mb-6 leading-tight text-center text-[#1a1a1a]">{title}</h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
       <div className="grid md:grid-cols-4 gap-6">
@@ -292,7 +292,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-5 text-3xl font-bold text-center leading-tight md:text-4xl lg:text-5xl max-w-3xl">
+        <h2 className="mt-6 text-4xl font-700 text-center leading-tight md:text-5xl lg:text-6xl max-w-3xl">
           {title || <><span className="text-[#1a1a1a]">Why most AI MVPs get delayed and miss </span><span className="gradient-text">pilots and revenue</span></>}
         </h2>
         {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
@@ -367,7 +367,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="mt-5 text-3xl font-bold text-center leading-tight !mb-2">{title}</h2>
+        <h2 className="mt-6 text-4xl font-700 text-center leading-tight mb-4">{title}</h2>
         {description &&
       <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
@@ -588,7 +588,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight mt-4"><span className="text-[#1a1a1a]">{title || 'Build → Launch → Scale'}</span></h2>
+        <h2 className="text-4xl md:text-5xl font-700 mb-6 leading-tight mt-6"><span className="text-[#1a1a1a]">{title || 'Build → Launch → Scale'}</span></h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -738,7 +738,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight"><span className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</span></h2>
+           <h2 className="text-4xl md:text-5xl font-700 mb-6 leading-tight"><span className="text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</span></h2>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>
@@ -785,7 +785,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</span></h2>
+          <h2 className="text-4xl md:text-5xl font-700"><span className="text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</span></h2>
         </Reveal>
 
         <UseCasesLinkedLight useCases={useCases} />
@@ -1014,7 +1014,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl font-extrabold leading-tight">
+              className="text-5xl md:text-6xl font-800 leading-tight">
               
               <span className="text-[#1a1a1a]">Built for </span><span className="gradient-text">speed</span><span className="text-[#1a1a1a]"> and scale</span>
             </motion.h2>
@@ -1182,8 +1182,8 @@ export const SolutionFAQ = ({ items = [] }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
         </span>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
-          <span className="text-[#1a1a1a]">Common questions, </span><span className="gradient-text">answered</span>
+        <h2 className="text-5xl md:text-6xl font-800 mb-6">
+         <span className="text-[#1a1a1a]">Common questions, </span><span className="gradient-text">answered</span>
         </h2>
       </Reveal>
       
@@ -1242,7 +1242,7 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
     
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+        <h2 className="text-5xl md:text-6xl font-800 mb-6 leading-tight">
           <span className="text-[#1a1a1a]">{title}</span>
         </h2>
         {description && <p className="text-[#1a1a1a]/70 text-lg font-medium mb-8 max-w-2xl mx-auto">{description}</p>}
