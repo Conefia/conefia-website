@@ -1242,9 +1242,10 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
     
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       <Reveal>
-        <h2 className="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+        <h2 className="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
           <span className="text-[#1a1a1a]">{title}</span>
         </h2>
+        {description && <p className="text-[#1a1a1a]/70 text-lg font-medium mb-8 max-w-2xl mx-auto">{description}</p>}
         
         <div className="flex flex-col items-center gap-4">
           <Link
