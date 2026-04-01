@@ -179,40 +179,64 @@ export default function ClinicGrowthSystem() {
         <SolutionFAQ 
           items={[
             {
-              question: "What do you mean by \"Shopify Growth System\"?",
-              answer: "It means your storefront, conversion journey, retention, creative, content, and reporting are working together — not as separate tactics."
+              question: "Who is this for?",
+              answer: "For clinics that already have services, patient demand, or active marketing — and want more booked appointments from the traffic and attention they already have."
             },
             {
-              question: "Can you help if we are still early and do not have the store live yet?",
-              answer: "Yes. If you are ready to launch properly, we can build the Shopify foundation as part of the package — including store structure, content, tracking, and growth setup — so you do not scale on top of weak foundations."
+              question: "What do you mean by \"Clinic Growth System\"?",
+              answer: "It means your local visibility, website, landing pages, intake, booking flow, content, ads, and reporting all work together as one system."
             },
             {
-              question: "Do you only help with CRO?",
-              answer: "No. CRO is one part of the system. We also work on store build, retention flows, ad creative, video editing, SEO content, landing pages, and campaign optimization."
+              question: "Do you only help with websites?",
+              answer: "No. We improve the full patient journey — from local SEO and landing pages to forms, booking flow, content, creative, and campaign performance."
             },
             {
-              question: "Do you create ad creatives too?",
-              answer: "Yes. We support post designs, static ad assets, campaign visuals, and short-form video edits so your channels have stronger creative to test."
+              question: "What makes this different from a typical marketing agency?",
+              answer: "Most agencies focus on traffic or campaigns. We focus on the full path to booking — and help fix the conversion system behind it."
             },
             {
-              question: "Do you help with SEO and blogs?",
-              answer: "Yes. We plan and create SEO-focused content and blog content to support organic growth and reduce overdependence on paid."
+              question: "What happens in the roadmap call?",
+              answer: "We review your current setup, identify the biggest growth leaks, and map the highest-priority fixes for the next 8–12 weeks."
             },
             {
-              question: "Do you manage multiple channels or just one?",
-              answer: "We support coordinated execution across search, social, email, landing pages, and reporting."
+              question: "How fast can we expect results?",
+              answer: "That depends on your starting point, but many clinics see early wins from improving visibility, trust, landing pages, and booking friction."
             },
             {
-              question: "What if we already have an agency or freelancers?",
-              answer: "That is common. We can plug into the setup and bring more structure, accountability, and clarity to the backlog."
+              question: "Can you improve our booking flow without a full rebuild?",
+              answer: "Yes. Often the fastest gains come from improving the current journey before rebuilding anything."
             },
             {
-              question: "How do you prevent random scope drift?",
-              answer: "We lock the highest-priority work by Week 2 and use weekly demos plus stage gates to keep execution clear."
+              question: "Can you work with our current website, CRM, or scheduling tool?",
+              answer: "Usually, yes. We start by improving what is already in place and focus on the highest-impact fixes first."
             },
             {
-              question: "What happens after the sprint?",
-              answer: "We can continue with monthly optimization across conversion, creative refreshes, retention, SEO content, and campaign efficiency."
+              question: "Do you handle local SEO for clinics?",
+              answer: "Yes. We improve local visibility through Google Business Profile optimization, service and location page improvements, and SEO content."
+            },
+            {
+              question: "Do you create content too?",
+              answer: "Yes. We support blogs, landing page copy, trust-building website content, and patient-focused campaign content."
+            },
+            {
+              question: "Do you also help with ad creative?",
+              answer: "Yes. We create ad concepts, post designs, and short-form video edits for paid and organic channels."
+            },
+            {
+              question: "Do you manage ads as well?",
+              answer: "We support multi-channel campaign optimization across platforms like Google and Meta, with a focus on patient acquisition and conversion."
+            },
+            {
+              question: "Do you support HIPAA compliance?",
+              answer: "We work with HIPAA-aware workflows and healthcare-sensitive journeys. Exact compliance needs depend on your tools and setup."
+            },
+            {
+              question: "What do you need from us to get started?",
+              answer: "Usually access to your website, analytics, Google Business Profile, current campaigns, booking or form tools, and one decision-maker."
+            },
+            {
+              question: "Can you work alongside our internal team or current agency?",
+              answer: "Yes. We can plug into your existing setup, sharpen priorities, and help drive the growth backlog forward."
             }
           ]}
         />
