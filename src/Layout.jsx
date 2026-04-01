@@ -77,12 +77,16 @@ function LayoutContent({ children, currentPageName }) {
   }, []);
 
   const navItems = [
-  { label: 'Playbook', id: 'playbook' },
   { label: 'Case Studies', id: 'case-studies' },
   { label: 'Blog', page: 'Blog' },
-  { label: 'About', page: 'About' },
+  { label: 'About', page: 'About' }
+  ];
+
+  const secondaryItems = [
+  { label: 'Playbook', id: 'playbook' },
   { label: 'Pricing', id: 'packages' },
-  { label: 'FAQ', id: 'faq' }];
+  { label: 'FAQ', id: 'faq' }
+  ];
 
 
   const solutionItems = [
@@ -151,7 +155,7 @@ function LayoutContent({ children, currentPageName }) {
                 </div>
               </div>
 
-              {navItems.map((item) => {
+{navItems.map((item) => {
                 const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
                 return <Link
                   key={item.label}
@@ -164,6 +168,31 @@ function LayoutContent({ children, currentPageName }) {
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
                   </Link>
               })}
+              
+              {/* More Menu */}
+              <div className="relative group">
+                <button
+                  className={`text-sm font-semibold transition-colors flex items-center gap-1 py-2 ${
+                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                  }>
+
+                  More
+                  <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                </button>
+                
+                <div className="absolute top-full right-0 mt-0 w-48 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="py-2">
+                    {secondaryItems.map((item) => (
+                      <Link
+                        key={item.label}
+                        to={createPageUrl('Home') + '#' + item.id}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </nav>
 
             {/* CTA */}
@@ -210,7 +239,20 @@ function LayoutContent({ children, currentPageName }) {
                   to={createPageUrl(item.path)}
                   onClick={() => setMobileMenuOpen(false)}
                   className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors">
+                        {item.label}
+                      </Link>
+                )}
+                 </div>
 
+                 {/* Secondary Items (Mobile) */}
+                 <div className="pb-4 border-b border-white/10">
+                    <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">More</p>
+                    {secondaryItems.map((item) =>
+                <Link
+                  key={item.label}
+                  to={createPageUrl('Home') + '#' + item.id}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors">
                         {item.label}
                       </Link>
                 )}
@@ -226,22 +268,21 @@ function LayoutContent({ children, currentPageName }) {
                     <ArrowRight className="w-4 h-4" />
                   </Link>
 
-                {navItems.map((item) => {
-                  const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
-                  return <Link
-                    key={item.label}
-                    to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full text-left text-white text-lg font-semibold py-2">
+{navItems.map((item) => {
+  const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
+  return <Link
+    key={item.label}
+    to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
+    onClick={() => setMobileMenuOpen(false)}
+    className="block w-full text-left text-white text-lg font-semibold py-2">
+    {item.label}
+  </Link>
+})}
 
-                    {item.label}
-                  </Link>
-                })}
-                
-                <Link
-                to={createPageUrl('book')}
-                onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
+<Link
+to={createPageUrl('book')}
+onClick={() => setMobileMenuOpen(false)}
+className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
 
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
