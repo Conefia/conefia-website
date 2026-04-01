@@ -79,37 +79,46 @@ export default function HeroSection({ reduceMotion }) {
 
             </motion.p>
 
-            {/* CTA - Single Primary */}
+            {/* CTAs */}
             <motion.div
               variants={itemVariants}
-              className="flex justify-center lg:justify-start">
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
               <Link
                 to={createPageUrl('book')}
-                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300">
-                Book Free Roadmap Call
-                <ArrowRight className="w-5 h-5" />
-              </Link>
+                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
+
+                 Book Roadmap Call
+                 <ArrowRight className="w-5 h-5" />
+               </Link>
+              <button
+                onClick={() => scrollToSection('track-selector')}
+                className="px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1">
+
+                Choose Your Track
+              </button>
             </motion.div>
 
-            {/* Trust indicators - Simplified */}
+            {/* Trust indicators */}
             <motion.div
               variants={itemVariants}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10 w-full max-w-2xl lg:max-w-none lg:w-auto">
-              <div className="text-left group">
-                <p className="text-white/40 mb-2 text-xs font-bold uppercase tracking-widest">Timeline</p>
-                <p className="text-white font-semibold text-sm">8–12 weeks</p>
+              className="flex flex-wrap gap-6 md:gap-8 mt-8 justify-center lg:justify-start">
+
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">TYPICAL MVP</p>
+                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
               </div>
-              <div className="text-left group">
-                <p className="text-white/40 mb-2 text-xs font-bold uppercase tracking-widest">Demos</p>
-                <p className="text-white font-semibold text-sm">Weekly</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">WEEKLY DEMOS</p>
+                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
               </div>
-              <div className="text-left group">
-                <p className="text-white/40 mb-2 text-xs font-bold uppercase tracking-widest">Privacy</p>
-                <p className="text-white font-semibold text-sm">HIPAA-aware</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">PRIVACY-FIRST</p>
+                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
               </div>
-              <div className="text-left group">
-                <p className="text-white/40 mb-2 text-xs font-bold uppercase tracking-widest">Ownership</p>
-                <p className="text-white font-semibold text-sm">One owner</p>
+              <div className="text-center lg:text-left group">
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">ONE BACKLOG</p>
+                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
               </div>
             </motion.div>
           </motion.div>

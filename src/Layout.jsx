@@ -77,9 +77,12 @@ function LayoutContent({ children, currentPageName }) {
   }, []);
 
   const navItems = [
+  { label: 'Playbook', id: 'playbook' },
   { label: 'Case Studies', id: 'case-studies' },
   { label: 'Blog', page: 'Blog' },
-  { label: 'About', page: 'About' }];
+  { label: 'About', page: 'About' },
+  { label: 'Pricing', id: 'packages' },
+  { label: 'FAQ', id: 'faq' }];
 
 
   const solutionItems = [
@@ -121,7 +124,7 @@ function LayoutContent({ children, currentPageName }) {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-8">
               {/* Solutions Dropdown */}
               <div className="relative group">
                 <button
@@ -148,7 +151,19 @@ function LayoutContent({ children, currentPageName }) {
                 </div>
               </div>
 
+              {navItems.map((item) => {
+                const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
+                return <Link
+                  key={item.label}
+                  to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
+                  className={`text-sm font-semibold transition-colors relative group ${
+                  useLightText ? 'text-white/70 hover:text-white' : 'text-[#1a1a1a]/70 hover:text-[#1a1a1a]'}`
+                  }>
 
+                    {item.label}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+                  </Link>
+              })}
             </nav>
 
             {/* CTA */}
