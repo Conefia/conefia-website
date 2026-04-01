@@ -148,44 +148,52 @@ export default function AppRelaunchRetention() {
       <SolutionFAQ 
         items={[
           {
-            question: "What do you mean by \"app relaunch?\"",
-            answer: "A relaunch means improving the product in a way users can actually feel — not just updating the visuals. It usually includes product fixes, UX improvements, performance cleanup, store optimization, and analytics so the next version performs better after release."
+            question: "Who is this for?",
+            answer: "For teams with a live app that already has users, reviews, or product history \u2014 but retention, ratings, store conversion, or growth are underperforming."
           },
           {
-            question: "Do we need to rebuild the whole app?",
-            answer: "Usually, no. We start by finding the highest-impact fixes first. If your current product can be improved without a rebuild, that is usually the fastest and most cost-effective path."
+            question: "What happens in the 30-minute roadmap call?",
+            answer: "We review where users drop off, spot the biggest friction points, and map the highest-priority fixes for the next 8\u201312 weeks."
           },
           {
-            question: "Why do you focus so much on retention?",
-            answer: "Because retention is what turns installs into actual product growth. If users leave too early, acquisition gets less efficient and growth becomes harder to sustain."
+            question: "What makes this different from a typical software dev agency?",
+            answer: "Most teams focus on shipping screens. We focus on relaunching the product in a way that improves retention, ratings, store performance, and growth clarity."
           },
           {
-            question: "Can you help with growth, or only product fixes?",
-            answer: "Yes. Our relaunch work is designed to improve the product side of growth: activation, repeat usage, store conversion, ratings, and the clarity needed to make smarter growth decisions afterward."
+            question: "What do you mean by \"app relaunch\"?",
+            answer: "It means improving the app in ways users can actually feel \u2014 smoother onboarding, less friction, better performance, stronger store conversion, and clearer analytics."
           },
           {
-            question: "Do you handle App Store and Google Play optimization too?",
-            answer: "Yes. We can support ASO, screenshots, messaging, store conversion improvement, and review strategy as part of the relaunch."
+            question: "Can you help if we already have a live app or internal team?",
+            answer: "Yes. We can improve what already exists and work alongside your internal team to keep execution moving."
+          },
+          {
+            question: "Do we need a full rebuild?",
+            answer: "Usually not. We start with the highest-impact fixes first. If the current app can be improved without a rebuild, that is usually the faster and smarter path."
           },
           {
             question: "How do you decide what to fix first?",
-            answer: "We prioritize based on retention impact, user friction, ratings, store performance, and what is blocking growth most. The goal is not to fix everything. The goal is to fix what matters most first."
+            answer: "We prioritize based on retention impact, UX friction, ratings, store performance, and what is blocking growth most."
           },
           {
-            question: "Can you help if we already have an internal team?",
-            answer: "Yes. We can work as an extension of your team, bring the product and growth structure, and help move the relaunch forward faster without creating more coordination overhead."
+            question: "How do you prevent scope creep?",
+            answer: "We lock must-fix priorities by Week 2 and use stage gates to keep the sprint focused and controlled."
+          },
+          {
+            question: "Do you only handle UX and product fixes, or growth too?",
+            answer: "Both. We improve the product side of growth \u2014 onboarding, retention, repeat usage, store conversion, ratings, and analytics."
+          },
+          {
+            question: "Do you handle App Store and Google Play optimization too?",
+            answer: "Yes. We can support ASO, screenshots, messaging, review strategy, and store conversion improvements as part of the relaunch."
           },
           {
             question: "What analytics do you set up?",
-            answer: "We usually focus on the metrics that matter most for relaunch decisions: onboarding drop-off, activation, retention, repeat usage, feature engagement, and store-to-install conversion where relevant."
+            answer: "We focus on the signals that matter most: onboarding drop-off, activation, retention, repeat usage, feature engagement, and store-to-install conversion."
           },
           {
             question: "What happens after the relaunch ships?",
-            answer: "We can continue into a monthly scale phase focused on retention experiments, lifecycle messaging, analytics refinement, store optimization, and product iteration."
-          },
-          {
-            question: "Is this a fit if we are still spending on acquisition?",
-            answer: "Yes — but the strongest results usually come when retention and conversion improve alongside acquisition, not when acquisition is scaled on top of a leaky product experience. Re-engaged users often perform better than net-new users on early engagement and retention, which is why fixing the product first usually improves growth efficiency."
+            answer: "We can continue with retention experiments, analytics refinement, lifecycle messaging, store optimization, and next-step growth work."
           }
         ]}
       />
