@@ -246,8 +246,9 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
 export const SolutionMetrics = ({ title, visual, items = [] }) =>
 <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
-    <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/8 rounded-full blur-[100px] pointer-events-none" />
-    <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-emerald-100/20 rounded-full blur-[80px] pointer-events-none" />
+    <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
+    <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
+    <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-700 mb-6 leading-tight text-center text-[#1a1a1a]">{title}</h2>
@@ -281,11 +282,12 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 
 
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) =>
-<section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/30 relative overflow-hidden">
+<section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
-    {/* Soft red accent blob */}
-    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-rose-100/40 rounded-full blur-[100px] pointer-events-none" />
+    {/* Bold red/pink splash */}
+    <div className="absolute -top-32 right-0 w-[650px] h-[650px] bg-rose-200/35 rounded-full blur-[130px] pointer-events-none" />
+    <div className="absolute -bottom-20 left-1/3 w-[500px] h-[500px] bg-red-100/25 rounded-full blur-[100px] pointer-events-none" />
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
@@ -360,8 +362,9 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
 <section id="solution" className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
-    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DBFE01]/12 rounded-full blur-[120px] pointer-events-none" />
-    <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-100/15 rounded-full blur-[100px] pointer-events-none" />
+    <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/28 rounded-full blur-[140px] pointer-events-none" />
+    <div className="absolute -bottom-40 left-1/4 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-yellow-100/20 rounded-full blur-[100px] pointer-events-none" />
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       {/* Centered heading above the two columns */}
@@ -563,10 +566,10 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
-    {/* Color splash blobs */}
-    <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/4" />
-    <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-100/20 rounded-full blur-[100px] pointer-events-none translate-x-1/3 translate-y-1/4" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-indigo-100/25 rounded-full blur-[80px] pointer-events-none" />
+    {/* Bold color splash blobs */}
+    <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
+    <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
+    <div className="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-lime-100/25 rounded-full blur-[110px] pointer-events-none" />
     {/* Animated floating orbs */}
     <motion.div
         className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
@@ -758,7 +761,10 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
 
 export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   return (
-    <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/20 relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
+      {/* Bold color splash background */}
+      <div className="absolute -top-32 left-1/4 w-[550px] h-[550px] bg-blue-200/25 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
       {/* Animated AI sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(18)].map((_, i) => {
@@ -1175,10 +1181,11 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/40 relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
-    <div className="absolute top-0 left-1/4 w-80 h-80 bg-purple-100/15 rounded-full blur-[100px] pointer-events-none" />
-    <div className="absolute bottom-0 right-1/3 w-96 h-96 bg-[#DBFE01]/8 rounded-full blur-[120px] pointer-events-none" />
+    <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
+    <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
+    <div className="absolute top-1/2 left-0 w-80 h-80 bg-indigo-100/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal className="text-center mb-20">
         <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
