@@ -124,24 +124,26 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProcess 
+          title="Validate → Build → Launch → Scale"
           steps={[
             {
               title: "Validate (Weeks 1–2)",
-              description: "Audit the patient journey + local SEO + tracking. Deliver a prioritized growth roadmap."
+              description: "We audit your patient journey, local presence, website, booking flow, content, and analytics. Then we lock priorities."
             },
             {
               title: "Build (Weeks 3–8)",
-              description: "Fix portal/intake friction + CRO improvements + service pages + tracking setup."
+              description: "We ship page updates, booking fixes, local SEO work, creative assets, blog content, and tracking improvements."
             },
             {
               title: "Launch (Weeks 9–10)",
-              description: "QA + go-live + dashboards + handover (or keep us on to run growth)."
+              description: "We push live the approved work, tighten campaign alignment, and make sure reporting is clear."
             },
             {
               title: "Scale (Monthly)",
-              description: "CRO experiments + local SEO iteration + review workflows + continuous improvements."
+              description: "We keep improving SEO, creative, campaign performance, and booking conversion based on real data."
             }
           ]}
+          note="Each phase has a stage gate, so you always know what is happening and what is next."
         />
       </Suspense>
 
