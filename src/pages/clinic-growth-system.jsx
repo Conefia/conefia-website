@@ -116,7 +116,7 @@ export default function ClinicGrowthSystem() {
           "Identify the biggest gaps in local visibility, conversion, intake, and creative",
           "Confirm whether you need a full growth sprint, a specific fix, or both",
           "Prioritize what needs fixing now versus later",
-          "Recommend the right mix across SEO, ads, landing pages, content, and booking",
+          "Review whether your current content and ads are helping or hurting",
           "Map your 8–12 week sprint",
           "Flag risks early in patient journey clarity, tracking, and campaign efficiency"
         ]}
