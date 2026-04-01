@@ -57,8 +57,7 @@ export default function HeroSection({ reduceMotion }) {
       <HeroDarkBackground isMobile={isMobile} />
 
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-center justify-items-center lg:justify-items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-8 items-center justify-items-center lg:justify-items-start relative z-10">
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
@@ -132,7 +131,6 @@ export default function HeroSection({ reduceMotion }) {
 
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
-        </div>
       </div>
 
       {/* Scroll indicator - simplified */}
