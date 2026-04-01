@@ -146,12 +146,32 @@
     color: #1a1a1a;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #DBFE01 0%, #c5e000 100%);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(219, 254, 1, 0.4);
+    box-shadow: 0_0_20px rgba(219, 254, 1, 0.5), 0 8px 30px rgba(219, 254, 1, 0.4);
     background: #c5e000;
+  }
+
+  .btn-primary:hover::before {
+    opacity: 0.15;
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
@@ -165,10 +185,39 @@
   .btn-secondary:hover {
     background: #1a1a1a;
     color: white;
+    box-shadow: 0 0 20px rgba(26, 26, 26, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Premium Input Focus States */
+  input:focus {
+    box-shadow: 0 0 0 3px rgba(219, 254, 1, 0.1), 0 0 20px rgba(219, 254, 1, 0.2);
+  }
+
+  textarea:focus {
+    box-shadow: 0 0 0 3px rgba(219, 254, 1, 0.1), 0 0 20px rgba(219, 254, 1, 0.2);
+  }
+
+  /* Glow animation for premium feel */
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 5px rgba(219, 254, 1, 0.2), 0 0 10px rgba(219, 254, 1, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 15px rgba(219, 254, 1, 0.4), 0 0 25px rgba(219, 254, 1, 0.2);
+    }
+  }
+
+  .glow-hover:hover {
+    animation: glow-pulse 2s ease-in-out infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {

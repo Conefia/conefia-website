@@ -199,12 +199,11 @@ function LayoutContent({ children, currentPageName }) {
             <div className="hidden md:flex items-center gap-4">
               <Link
                 to={createPageUrl('book')}
-                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
-
+                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
               </Link>
-            </div>
+              </div>
 
             {/* Mobile menu button */}
             <button
@@ -262,8 +261,7 @@ function LayoutContent({ children, currentPageName }) {
                  <Link
                 to={createPageUrl('Home') + '#track-selector'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 my-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
-
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 my-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                     Choose your track
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -282,8 +280,7 @@ function LayoutContent({ children, currentPageName }) {
 <Link
 to={createPageUrl('book')}
 onClick={() => setMobileMenuOpen(false)}
-className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)]">
-
+className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
                 </Link>
