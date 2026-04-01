@@ -367,7 +367,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="mt-6 text-4xl font-700 text-center leading-tight mb-4">{title}</h2>
+        <h2 className="mt-6 mb-4 text-3xl font-extrabold text-center leading-tight">{title}</h2>
         {description &&
       <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
