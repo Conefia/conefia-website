@@ -496,93 +496,135 @@ export const OutcomesVisual = () =>
 
 // Final CTA Visual: Roadmap
 export const RoadmapPreviewVisual = () => {
-  const phases = [
-    { label: 'Audit', num: '1' },
-    { label: 'Plan', num: '2' },
-    { label: 'Build', num: '3' },
-    { label: 'Scale', num: '4' }
+  const roadmapCards = [
+    {
+      title: 'Audit',
+      subtitle: 'Spot the leaks',
+      Icon: Search,
+      tone: 'bg-blue-50 border-blue-200',
+      iconWrap: 'bg-blue-100 text-blue-700',
+      note: 'Website, calls, forms, maps'
+    },
+    {
+      title: 'Plan',
+      subtitle: 'Set priorities',
+      Icon: FileText,
+      tone: 'bg-violet-50 border-violet-200',
+      iconWrap: 'bg-violet-100 text-violet-700',
+      note: 'Quick wins + 90-day actions'
+    },
+    {
+      title: 'Build',
+      subtitle: 'Fix the journey',
+      Icon: CalendarCheck,
+      tone: 'bg-amber-50 border-amber-200',
+      iconWrap: 'bg-amber-100 text-amber-700',
+      note: 'Pages, booking, tracking'
+    },
+    {
+      title: 'Scale',
+      subtitle: 'Grow predictably',
+      Icon: TrendingUp,
+      tone: 'bg-[#DBFE01]/20 border-[#d4ef3f]',
+      iconWrap: 'bg-[#DBFE01] text-[#1a1a1a]',
+      note: 'SEO, ads, reporting'
+    }
   ];
 
   return (
-    <div className="space-y-12 max-w-xl mx-auto">
-      {/* Simple Timeline */}
+    <div className="max-w-lg mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
+        transition={{ delay: 0.3 }}
         whileHover={{ boxShadow: '0 20px 50px rgba(26, 26, 26, 0.1)' }}
-        className="bg-white rounded-2xl border-2 border-[#1a1a1a] p-8 shadow-lg relative overflow-hidden">
-        
-        {/* Animated Background Elements */}
-        <div className="absolute top-0 right-0 w-40 h-40 bg-[#DBFE01]/5 rounded-full blur-3xl -z-0" />
-        <div className="absolute bottom-10 left-0 w-32 h-32 bg-[#1a1a1a]/5 rounded-full blur-2xl -z-0" />
-        
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-8 pb-6 border-b-2 border-[#1a1a1a] relative z-10">
+        className="bg-white rounded-[28px] border-2 border-[#1a1a1a] p-6 md:p-7 shadow-lg relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(219,254,1,0.18),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(26,26,26,0.06),transparent_30%)]" />
+
+        <div className="relative z-10 flex items-center gap-3 mb-6">
           <motion.div
-            animate={{ rotate: 360 }}
+            animate={{ rotate: [0, 8, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="flex-shrink-0">
-            <Map className="w-7 h-7 text-[#DBFE01]" />
+            className="w-12 h-12 rounded-2xl bg-[#1a1a1a] text-[#DBFE01] flex items-center justify-center shadow-md"
+          >
+            <BarChart3 className="w-6 h-6" />
           </motion.div>
-          <h3 className="text-xl font-bold text-[#1a1a1a]">Your Growth Roadmap</h3>
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#1a1a1a]/55">Growth map</p>
+            <h3 className="text-xl font-bold text-[#1a1a1a]">Your clinic roadmap</h3>
+          </div>
         </div>
-        
-        {/* Content Items with Icons */}
-        <div className="space-y-3 relative z-10">
-          {[
-            { title: 'Patient Journey Audit', Icon: Search },
-            { title: 'Local SEO & Visibility Plan', Icon: Zap },
-            { title: 'Booking System Improvements', Icon: CheckCircle },
-            { title: '8-12 Week Campaign Roadmap', Icon: BarChart3 }
-          ].map((item, i) => {
-            const IconComp = item.Icon;
+
+        <div className="relative z-10 grid grid-cols-2 gap-3">
+          {roadmapCards.map((card, i) => {
+            const IconComp = card.Icon;
             return (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 + i * 0.1 }}
-                whileHover={{ x: 4, backgroundColor: 'rgba(219, 254, 1, 0.08)' }}
-                className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200 transition-all group">
-                
+                key={card.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.1 }}
+                whileHover={{ y: -4, scale: 1.02 }}
+                className={`rounded-2xl border p-4 ${card.tone} relative overflow-hidden min-h-[148px]`}
+              >
                 <motion.div
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.15 }}
-                  className="w-10 h-10 rounded-lg bg-[#DBFE01] text-[#1a1a1a] flex items-center justify-center flex-shrink-0 group-hover:shadow-lg transition-shadow">
+                  animate={{ scale: [1, 1.08, 1] }}
+                  transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.2 }}
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center mb-4 ${card.iconWrap}`}
+                >
                   <IconComp className="w-5 h-5" />
                 </motion.div>
-                <p className="text-sm font-semibold text-[#1a1a1a] flex-1">{item.title}</p>
-                <motion.div
-                  animate={{ x: [0, 3, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="text-[#DBFE01] text-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                  →
-                </motion.div>
+
+                <div className="space-y-1">
+                  <div className="flex items-center justify-between gap-2">
+                    <h4 className="text-sm font-bold text-[#1a1a1a]">{card.title}</h4>
+                    <span className="text-[11px] font-bold text-[#1a1a1a]/45">0{i + 1}</span>
+                  </div>
+                  <p className="text-sm font-semibold text-[#1a1a1a]/80">{card.subtitle}</p>
+                  <p className="text-[12px] leading-relaxed text-[#1a1a1a]/60">{card.note}</p>
+                </div>
               </motion.div>
             );
           })}
         </div>
-        
-        {/* Footer */}
+
+        <div className="relative z-10 mt-5 flex items-center justify-center gap-2">
+          {[0, 1, 2].map((dot) => (
+            <motion.div
+              key={dot}
+              animate={{ scale: [1, 1.35, 1], opacity: [0.35, 1, 0.35] }}
+              transition={{ duration: 1.8, repeat: Infinity, delay: dot * 0.2 }}
+              className={`rounded-full ${dot === 1 ? 'w-10 h-2 bg-[#DBFE01]' : 'w-2 h-2 bg-[#1a1a1a]/20'}`}
+            />
+          ))}
+        </div>
+
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-8 pt-6 border-t-2 border-[#1a1a1a] flex items-center justify-between relative z-10 bg-gradient-to-r from-transparent via-[#DBFE01]/5 to-transparent rounded-lg px-4 py-3 -mx-4 -mb-4">
-          <div className="flex items-center gap-2">
+          className="relative z-10 mt-5 rounded-2xl bg-[#1a1a1a] text-white px-4 py-3 flex items-center justify-between gap-3"
+        >
+          <div className="flex items-center gap-2.5">
             <motion.div
               animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}>
-              <Clock className="w-5 h-5 text-[#1a1a1a]" />
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-8 h-8 rounded-full bg-[#DBFE01] text-[#1a1a1a] flex items-center justify-center"
+            >
+              <Clock className="w-4 h-4" />
             </motion.div>
-            <span className="text-sm font-bold text-[#1a1a1a]">Delivered in 24 hours</span>
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.18em] text-white/45 font-bold">Delivery</p>
+              <p className="text-sm font-bold">Clear roadmap in 24 hours</p>
+            </div>
           </div>
           <motion.div
-            animate={{ x: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-[#DBFE01] text-2xl font-bold">
-            ✓
+            animate={{ x: [0, 4, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity }}
+            className="text-[#DBFE01]"
+          >
+            <ChevronRight className="w-5 h-5" />
           </motion.div>
         </motion.div>
       </motion.div>
