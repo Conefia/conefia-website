@@ -37,7 +37,7 @@ export default function ClinicContentCreativeSection() {
             <span className="gradient-text">Creative that drives action.</span>
           </h2>
           <p className="text-[#1a1a1a]/60 text-base max-w-2xl mx-auto leading-relaxed">
-            Ads, SEO, social, and copy — all owned by one team, built around one patient journey.
+            A lot of clinic marketing breaks because the strategy and the content live in different places. Ads need creative. SEO needs content. Social needs posts. The website needs better copy. Nobody owns the full story.
           </p>
         </motion.div>
 
