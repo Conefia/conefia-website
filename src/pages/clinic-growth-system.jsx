@@ -148,19 +148,6 @@ export default function ClinicGrowthSystem() {
       </Suspense>
 
       <Suspense fallback={<SectionSkeleton />}>
-        <SolutionOutcomes 
-          title={<>What clinics improve in <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>8–12 weeks</span></>}
-          items={[
-            "More bookings from the same traffic",
-            "Better local visibility and review performance",
-            "Clear attribution: what's driving appointments",
-            "Faster iteration (no vendor ping-pong)"
-          ]}
-          visual={<OutcomesVisual />}
-        />
-      </Suspense>
-
-      <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
           title="Real clinic growth. Real outcomes."
           items={[]}
