@@ -128,7 +128,7 @@ function LayoutContent({ children, currentPageName }) {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-10">
               {/* Solutions Dropdown */}
               <div className="relative group">
                 <button
@@ -297,7 +297,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
       {children}
 
       {/* Footer */}
-      <footer className="bg-[#2F2F2F] text-white py-16 relative overflow-hidden">
+      <footer className="bg-[#2F2F2F] text-white py-28 relative overflow-hidden">
         {/* Base layer */}
         <div className="bg-stone-950 absolute inset-0" />
         

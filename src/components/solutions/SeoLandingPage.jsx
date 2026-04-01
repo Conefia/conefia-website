@@ -73,7 +73,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
         <HeroDarkBackground />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 md:pt-40 pb-12 relative z-10">
           <div className="mb-4">
             <Breadcrumbs items={[{ label: 'Solutions', path: createPageUrl('Home') + '#playbook' }, { label: breadcrumb || breadcrumbLabel || title }]} theme="dark" />
           </div>
@@ -245,13 +245,13 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 };
 
 export const SolutionMetrics = ({ title, visual, items = [] }) =>
-<section className="py-20 bg-white border-b border-gray-100">
+<section className="py-32 bg-white border-b border-gray-100">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
         <h2 className="text-4xl md:text-5xl font-700 mb-6 leading-tight text-center text-[#1a1a1a]">{title}</h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
-      <div className="grid md:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-4 gap-8">
             {items.map((item, i) =>
         <motion.div
           key={i}
@@ -279,7 +279,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 
 
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) =>
-<section className="py-24 bg-white relative overflow-hidden">
+<section className="py-32 bg-white relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Soft red accent blob */}
@@ -287,7 +287,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
-      <Reveal className="mb-14 flex flex-col items-center text-center">
+      <Reveal className="mb-20 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest border border-rose-200">
           <X className="w-3.5 h-3.5" />
           The Problem
@@ -298,7 +298,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
         {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
       </Reveal>
 
-      <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* Bullet list */}
         <Reveal>
           <ul className="space-y-4">
@@ -356,13 +356,13 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" className="py-24 bg-white relative overflow-hidden">
+<section id="solution" className="py-32 bg-white relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#DBFE01]/10 rounded-full blur-[120px] pointer-events-none" />
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       {/* Centered heading above the two columns */}
-      <Reveal className="flex flex-col items-center text-center mb-14">
+      <Reveal className="flex flex-col items-center text-center mb-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
           <Check className="w-3.5 h-3.5" />
           The Solution
@@ -425,7 +425,7 @@ export const RoadmapCallSection = ({
 
   primaryCta = "Book Free Roadmap Call"
 } = {}) =>
-<section className="py-24 bg-[#2F2F2F] text-white relative overflow-hidden">
+<section className="py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
@@ -445,7 +445,7 @@ export const RoadmapCallSection = ({
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <Reveal className="flex flex-col items-center text-center mb-14">
+    <Reveal className="flex flex-col items-center text-center mb-20">
       <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-5">
         <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
@@ -561,7 +561,7 @@ const processStepsDefault = [
 export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section className="py-24 bg-white overflow-hidden relative">
+    <section className="py-32 bg-white overflow-hidden relative">
     {/* Color splash blobs */}
     <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#DBFE01]/8 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/4" />
     <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#DBFE01]/6 rounded-full blur-[100px] pointer-events-none translate-x-1/3 translate-y-1/4" />
@@ -583,7 +583,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />
       
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <Reveal className="text-center mb-16">
+      <Reveal className="text-center mb-20">
         <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
@@ -672,7 +672,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
 
 
 export const SolutionOutcomes = ({ title, items = [], visual }) =>
-<section className="py-24 bg-[#2F2F2F] text-white overflow-hidden relative">
+<section className="py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      
@@ -757,7 +757,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
 
 export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-32 bg-white relative overflow-hidden">
       {/* Animated AI sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(18)].map((_, i) => {
@@ -780,7 +780,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Reveal className="text-center mb-12">
+        <Reveal className="text-center mb-16">
           <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
@@ -861,7 +861,7 @@ function UseCasesLinkedLight({ useCases }) {
       </div>
 
       {/* Right: Dark cards */}
-      <div className="space-y-4">
+      <div className="space-y-6">
         {rightItems.map((item, i) => {
           const Icon = item.icon;
           return (
@@ -914,7 +914,7 @@ function UseCasesLinked({ useCases }) {
   defaultUseCasesRight;
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 items-start">
+    <div className="grid lg:grid-cols-2 gap-12 items-start">
       {/* Left: Bullets */}
       <div className="space-y-4">
         {leftItems.map((item, i) =>
@@ -988,7 +988,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-24 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+      <section className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
         {/* Subtle accent blob */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -999,7 +999,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           <div className="absolute -top-20 left-1/4 w-72 h-72 bg-[#DBFE01]/10 rounded-full blur-[80px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#DBFE01]/8 rounded-full blur-[100px] pointer-events-none" />
 
-          <Reveal className="flex flex-col items-center text-center mb-14">
+          <Reveal className="flex flex-col items-center text-center mb-20">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -1174,10 +1174,10 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Reveal className="text-center mb-16">
+      <Reveal className="text-center mb-20">
         <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
@@ -1187,7 +1187,7 @@ export const SolutionFAQ = ({ items = [] }) => {
         </h2>
       </Reveal>
       
-      <div className="space-y-4 relative z-10">
+      <div className="space-y-6 relative z-10">
         {displayItems.map((item, i) =>
           <motion.div
             key={i}
@@ -1236,7 +1236,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 
 
 export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
-<section className="py-24 bg-[#DBFE01] relative overflow-hidden">
+<section className="py-32 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
     
