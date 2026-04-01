@@ -53,7 +53,7 @@ export default function ClinicFitCheck() {
           <img
             src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80"
             alt="Clinic manager reviewing growth metrics"
-            className="w-full h-72 md:h-[576px] object-cover object-top"
+            className="w-full h-72 md:h-[420px] object-cover object-top scale-90 origin-top"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1020]/60 via-transparent to-transparent" />
           <div className="absolute bottom-6 left-6">
