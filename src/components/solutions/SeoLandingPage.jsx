@@ -292,7 +292,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-6 text-3xl font-extrabold text-center leading-tight md:text-5xl lg:text-6xl max-w-3xl">
+        <h2 className="mt-6 text-4xl font-700 text-center leading-tight md:text-5xl lg:text-6xl max-w-3xl">
           {title || <><span className="text-[#1a1a1a]">Why most AI MVPs get delayed and miss </span><span className="gradient-text">pilots and revenue</span></>}
         </h2>
         {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
@@ -367,7 +367,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="mt-6 mb-4 text-3xl font-extrabold text-center leading-tight">{title}</h2>
+        <h2 className="mt-6 text-4xl font-700 text-center leading-tight mb-4">{title}</h2>
         {description &&
       <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
