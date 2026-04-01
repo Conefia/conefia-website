@@ -73,7 +73,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
         <HeroDarkBackground />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-36 md:pt-40 pb-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-12 relative z-10">
           <div className="mb-4">
             <Breadcrumbs items={[{ label: 'Solutions', path: createPageUrl('Home') + '#playbook' }, { label: breadcrumb || breadcrumbLabel || title }]} theme="dark" />
           </div>
