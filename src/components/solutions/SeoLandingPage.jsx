@@ -1026,12 +1026,42 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               {/* Left: Stock image with overlays */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
                 <img
-                  src="https://images.unsplash.com/photo-1576091160550-112173f7f869?w=800&q=80"
-                  alt="Healthcare team collaborating on patient care technology"
+                  src={imageUrl}
+                  alt={imageAlt}
                   className="w-full h-full object-cover" />
                 
-                {/* Gradient overlay for depth */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900/40 via-emerald-900/20 to-transparent" />
+                {/* Dark gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
+
+                {/* Floating stat card */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.6 }}
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                  
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
+                      <Zap className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <div>
+                      <p className="text-white font-bold text-base">{statTitle}</p>
+                      <p className="text-white/60 text-sm">{statDesc}</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Top badge */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5 }}
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+                  
+                  {badge}
+                </motion.div>
               </div>
 
               {/* Right: Feature list */}
