@@ -196,8 +196,8 @@ export default function ClinicGrowthSystem() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionFinalCta 
-          title="Want more bookings without adding more vendors?"
-          primaryCta="Get My Clinic Growth Roadmap"
+          title="Ready to grow your clinic with more control?"
+          description="If you want more booked appointments — not more scattered marketing activity — let's map the next 8–12 weeks together."
           secondaryCta="See the Package"
           visual={<RoadmapPreviewVisual />}
         />
