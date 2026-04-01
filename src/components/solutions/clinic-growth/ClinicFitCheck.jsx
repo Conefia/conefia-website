@@ -55,13 +55,6 @@ export default function ClinicFitCheck() {
             alt="Clinic manager reviewing growth metrics"
             className="w-full h-72 md:h-[576px] object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1020]/60 via-transparent to-transparent" />
-          <div className="absolute bottom-4 left-4 right-4 sm:right-auto sm:left-6 sm:bottom-6">
-            <div className="bg-white backdrop-blur-sm border border-white/80 rounded-xl px-4 py-3">
-              <p className="text-[#1a1a1a] font-bold text-sm">"I want more bookings, not just more clicks."</p>
-              <p className="text-[#1a1a1a]/60 text-xs mt-0.5">The clinic manager this is built for</p>
-            </div>
-          </div>
         </motion.div>
 
         {/* Two columns */}
