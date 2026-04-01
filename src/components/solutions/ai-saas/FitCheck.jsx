@@ -109,7 +109,6 @@ export default function FitCheck() {
               </ul>
             </motion.div>
           </div>
-        </div>
 
         {/* Mini CTA */}
         <motion.div
