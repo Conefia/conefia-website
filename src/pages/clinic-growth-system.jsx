@@ -157,6 +157,8 @@ export default function ClinicGrowthSystem() {
           badge="BOOKING-FIRST GROWTH"
           statTitle="8–12 weeks to stronger bookings"
           statDesc="Clear priorities. Weekly demos. No scattered vendors."
+          imageUrl="https://images.unsplash.com/photo-1631217b5f55-eca37266e3d2?w=900&q=80"
+          imageAlt="Clinic team reviewing patient growth strategy"
           whyBuildItems={[
             { num: "01", title: "Ship weekly, not someday", desc: "Pages, local SEO, forms, content, and campaigns move forward every week — so growth does not sit in a backlog.", color: "from-[#DBFE01]/20 to-[#DBFE01]/5", border: "border-[#DBFE01]/30" },
             { num: "02", title: "Turn search into scheduled visits", desc: "We improve the moments that matter most: Google visibility, trust signals, landing pages, intake, and booking flow.", color: "from-blue-50 to-indigo-50/30", border: "border-blue-200/50" },
