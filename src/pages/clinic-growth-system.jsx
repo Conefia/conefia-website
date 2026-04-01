@@ -6,6 +6,7 @@ import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/Skele
 import ClinicFitCheck from '@/components/solutions/clinic-growth/ClinicFitCheck';
 import ClinicOutcomesSection from '@/components/solutions/clinic-growth/ClinicOutcomesSection';
 import ClinicContentCreativeSection from '@/components/solutions/clinic-growth/ClinicContentCreativeSection';
+import ClinicUseCases from '@/components/solutions/clinic-growth/ClinicUseCases';
 
 // Lazy load below-the-fold components
 const SolutionMetrics = React.lazy(() => import('@/components/solutions/SeoLandingPage').then(m => ({ default: m.SolutionMetrics })));
@@ -146,6 +147,8 @@ export default function ClinicGrowthSystem() {
           note="Each phase has a stage gate, so you always know what is happening and what is next."
         />
       </Suspense>
+
+      <ClinicUseCases />
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionProof 
