@@ -51,7 +51,7 @@ export default function ClinicFitCheck() {
           className="relative rounded-2xl overflow-hidden mb-10 shadow-lg max-h-72"
         >
           <img
-            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=1200&q=80"
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1200&q=80"
             alt="Clinic manager reviewing growth metrics"
             className="w-full h-72 object-cover object-top"
           />
