@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -37,6 +39,9 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --color-primary: #DBFE01;
+    --color-dark: #1a1a1a;
+    --color-light: #FAFAFA;
   }
 
   .dark {
@@ -84,12 +89,15 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    color: #1a1a1a;
     letter-spacing: -0.3px;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     letter-spacing: -0.5px;
+    color: #1a1a1a;
   }
 
   h1 {
@@ -113,5 +121,60 @@
   p {
     line-height: 1.6;
     letter-spacing: -0.2px;
+    color: #1a1a1a;
+  }
+
+  a {
+    color: #1a1a1a;
+  }
+
+  button {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #C5E000 0%, #A8C600 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+  }
+
+  .btn-primary {
+    background: #DBFE01;
+    color: #1a1a1a;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(219, 254, 1, 0.4);
+    background: #c5e000;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .btn-secondary:hover {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }

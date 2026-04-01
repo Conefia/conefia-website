@@ -95,70 +95,13 @@ function LayoutContent({ children, currentPageName }) {
 
 
   return (
-    <div className="font-['Poppins',sans-serif]">
+    <div>
       <GoogleTagManager />
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-        
-        :root {
-          --color-primary: #DBFE01;
-          --color-dark: #1a1a1a;
-        }
-        
-        body {
-          color: #1a1a1a;
-        }
-        
-        html {
-          scroll-behavior: smooth;
-        }
-        
-        .gradient-text {
-          background: linear-gradient(135deg, #C5E000 0%, #A8C600 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          font-weight: 700;
-        }
-        
         .glass-card {
           background: rgba(255, 255, 255, 0.7);
           backdrop-filter: blur(20px);
           border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-        
-        .btn-primary {
-          background: #DBFE01;
-          color: #1a1a1a;
-          font-weight: 600;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .btn-primary:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 30px rgba(219, 254, 1, 0.4);
-          background: #c5e000;
-        }
-        
-        .btn-secondary {
-          background: transparent;
-          color: #1a1a1a;
-          border: 2px solid #1a1a1a;
-          font-weight: 600;
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .btn-secondary:hover {
-          background: #1a1a1a;
-          color: white;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-          }
         }
       `}</style>
 
