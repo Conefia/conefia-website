@@ -165,7 +165,21 @@ export default function CaseStudiesSection({ reduceMotion }) {
       <div className="bg-stone-950 absolute inset-0" />
       
       {/* Contour lines */}
-      <ContourBackground className="opacity-80" isMobile={window.innerWidth < 768} />
+      {window.innerWidth < 768 ? (
+        <>
+          <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-80" isMobile={false} />
+          </div>
+          <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-80" isMobile={false} />
+          </div>
+          <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-80" isMobile={false} />
+          </div>
+        </>
+      ) : (
+        <ContourBackground className="opacity-80" isMobile={false} />
+      )}
 
       {/* Static Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
