@@ -71,9 +71,11 @@ export default function HeroSection({ reduceMotion }) {
               className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left"
               style={{
                 background: 'linear-gradient(95deg, #0F1524 0%, #41506A 18%, #B9D71D 55%, #EAF3B2 100%)',
+                backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
+                color: 'transparent',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                textShadow: '0 1px 1px rgba(15, 21, 36, 0.12)'
               }}>
               One Partner to Build, Launch, and Scale Your Digital Venture.
             </motion.h1>
