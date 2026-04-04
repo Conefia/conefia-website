@@ -108,7 +108,7 @@ export default function PolicyLayout({ title, effectiveDate, breadcrumb, childre
               href="mailto:info@conefia.com"
               className="inline-block mt-2 text-sm font-semibold text-stone-900 underline underline-offset-2 decoration-[#DBFE01] hover:text-[#8aaa00] transition-colors"
             >
-              info@conefia.com
+              Send us an email
             </a>
           </div>
         </Reveal>
