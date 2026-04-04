@@ -30,9 +30,10 @@ export default function ClinicGrowthSystem() {
   return (
     <SeoLandingPage>
       <Seo 
-        title="Clinic Growth: Digital Patient Engagement | Conefia"
-        description="Digital patient engagement platform + clinic patient portal software + HIPAA growth marketing to book more patients. Get a roadmap."
+        title="Clinic Growth System | More Patient Bookings | Conefia"
+        description="Grow patient bookings with local SEO, landing pages, booking flow fixes, content, and ads—built for clinics by Conefia."
         canonical="/solutions/clinic-growth-system"
+        keywords="clinic growth system, more patient bookings, local SEO for clinics, clinic marketing agency, booking flow optimization for clinics, patient acquisition for clinics, Google Business Profile optimization, healthcare landing pages, medical practice SEO, clinic ads and content marketing"
       />
       <script
         type="application/ld+json"
