@@ -380,7 +380,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Services</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Services</h4>
               <ul className="space-y-3 text-sm text-white font-medium">
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Validate</Link></li>
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Build</Link></li>
@@ -389,7 +389,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Company</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Company</h4>
               <ul className="space-y-3 text-sm text-white font-medium">
                 <li><Link to={createPageUrl('Home') + '#case-studies'} className="hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
                 <li><Link to={createPageUrl('Home') + '#packages'} className="hover:text-[#DBFE01] transition-colors">Packages</Link></li>
@@ -397,7 +397,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Contact</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Contact</h4>
               <div className="space-y-4">
                 <a href="tel:+18100000000" className="flex items-start gap-3 text-sm text-white hover:text-[#DBFE01] transition-colors group">
                   <Phone className="w-4 h-4 text-white flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
@@ -410,7 +410,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Follow Us</h4>
+              <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Follow Us</h4>
               <div className="flex gap-4">
                 <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
                   <Linkedin className="w-5 h-5" />
