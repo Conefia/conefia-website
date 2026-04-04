@@ -1,46 +1,55 @@
 import React from 'react';
+import PolicyLayout, { Section, BulletList } from '@/components/legal/PolicyLayout';
 
 export default function CopyrightPolicy() {
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-2">Copyright Policy</h1>
-        <p className="text-gray-500 text-sm mb-10">Last updated: April 2025</p>
+    <PolicyLayout title="Copyright Policy & DMCA Notice" effectiveDate="May 07, 2024" breadcrumb="Copyright Policy">
+      <p className="text-gray-600 text-sm leading-relaxed">
+        Conefia respects the intellectual property rights of others and expects users of the Site to do the same. If you believe that content on the Site infringes your copyright, you may send a notice under the Digital Millennium Copyright Act ("DMCA").
+      </p>
 
-        <div className="space-y-8 text-gray-700 leading-relaxed">
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">1. Copyright Notice</h2>
-            <p>All content on this website — including but not limited to text, graphics, logos, icons, images, audio clips, and software — is the property of Conefia and is protected by United States and international copyright laws.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">2. Permitted Use</h2>
-            <p>You may view, download, and print content from this website solely for personal, non-commercial use, provided you do not modify the content and retain all copyright and proprietary notices.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">3. Prohibited Use</h2>
-            <p>You may not reproduce, distribute, publicly display, transmit, or create derivative works from any content on this website without prior written permission from Conefia.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">4. DMCA Takedown Requests</h2>
-            <p>If you believe that your copyrighted work has been reproduced on our website in a way that constitutes copyright infringement, please send a written notice to <a href="mailto:hello@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">hello@conefia.com</a> including:</p>
-            <ul className="list-disc pl-6 mt-2 space-y-1">
-              <li>A description of the copyrighted work you claim has been infringed.</li>
-              <li>The URL(s) where the alleged infringement occurs.</li>
-              <li>Your contact information.</li>
-              <li>A statement of good faith belief that the use is not authorized.</li>
-              <li>Your physical or electronic signature.</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">5. Contact</h2>
-            <p>For copyright concerns, contact us at <a href="mailto:hello@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">hello@conefia.com</a>.</p>
-          </section>
+      <Section number="1" title="Designated Agent">
+        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-800 mb-3">
+          <strong>Note:</strong> Publish the agent details below only after Conefia has registered its designated agent with the U.S. Copyright Office.
         </div>
-      </div>
-    </div>
+        <BulletList items={[
+          'Designated Agent: [Insert Name]',
+          'Company: Conefia LLC, d/b/a Conefia Technologies',
+          'Address: 6272 Saginaw Road #1136, Grand Blanc, MI 48439, United States',
+          'Email: info@conefia.com',
+        ]} />
+      </Section>
+
+      <Section number="2" title="Notice Requirements">
+        <p>A DMCA takedown notice must include:</p>
+        <BulletList items={[
+          'Identification of the copyrighted work claimed to be infringed;',
+          'Identification of the allegedly infringing material and its location on the Site;',
+          'Your contact information;',
+          'A statement that you have a good-faith belief the use is not authorized by the copyright owner, its agent, or the law;',
+          'A statement, under penalty of perjury, that the information in the notice is accurate and that you are authorized to act;',
+          'Your physical or electronic signature.',
+        ]} />
+      </Section>
+
+      <Section number="3" title="Counter-Notice">
+        <p>A counter-notice must include:</p>
+        <BulletList items={[
+          'Identification of the removed material and its prior location;',
+          'Your contact information;',
+          'A statement under penalty of perjury that you believe removal was a mistake or misidentification;',
+          'A statement consenting to the jurisdiction of the appropriate court;',
+          'Your physical or electronic signature.',
+        ]} />
+      </Section>
+
+      <Section number="4" title="Repeat Infringers">
+        <p>Where appropriate, Conefia may suspend or terminate access for repeat infringers.</p>
+      </Section>
+
+      <Section number="5" title="Misrepresentations">
+        <p>Any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability.</p>
+      </Section>
+    </PolicyLayout>
   );
 }
