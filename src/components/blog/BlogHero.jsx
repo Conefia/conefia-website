@@ -31,8 +31,8 @@ export default function BlogHero({ onSearch }) {
           transition={{ duration: 0.6 }}
           className="text-center">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 tracking-tight">
-            Insights to <span className="text-[#DBFE01] bg-[#1a1a1a] px-3 py-1 rounded-lg">Build</span>, Launch, and Scale
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+            Insights to Build, Launch, and Scale
           </h1>
           
           <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">

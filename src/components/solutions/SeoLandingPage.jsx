@@ -85,13 +85,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 max-w-4xl leading-tight">
-
-                  {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) =>
-                ['AI', 'MVP', 'Ship', '8–12'].includes(part) ?
-                <span key={i} className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] bg-clip-text text-transparent">{part}</span> :
-                part
-                )}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl leading-tight">
+                  {title && title.replace(/\.$/, '')}
                 </motion.h1>
                 
                 <motion.p
@@ -164,9 +159,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-
-                {title}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                {title && title.replace(/\.$/, '')}
               </motion.h1>
               
               <motion.p
