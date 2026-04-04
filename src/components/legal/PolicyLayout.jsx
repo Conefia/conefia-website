@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { createPageUrl } from '@/utils';
 
 // Scroll-reveal wrapper for content sections
 function Reveal({ children, delay = 0 }) {
@@ -40,19 +40,20 @@ export default function PolicyLayout({ title, effectiveDate, breadcrumb, childre
         <HeroDarkBackground isMobile={isMobile} />
 
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          {/* Breadcrumb */}
-          <motion.nav
+          {/* Breadcrumb — same as solution pages */}
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-1.5 text-sm text-white/50 mb-6"
           >
-            <Link to="/" className="hover:text-[#DBFE01] transition-colors">Home</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <Link to="/legal" className="hover:text-[#DBFE01] transition-colors">Legal</Link>
-            <ChevronRight className="w-3.5 h-3.5" />
-            <span className="text-white/80">{breadcrumb || title}</span>
-          </motion.nav>
+            <Breadcrumbs
+              items={[
+                { label: 'Legal', path: '/legal' },
+                { label: breadcrumb || title },
+              ]}
+              theme="dark"
+            />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
