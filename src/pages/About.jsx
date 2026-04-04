@@ -74,7 +74,7 @@ export default function About() {
           </motion.div>
           <motion.h1
             {...fadeUp(0.2)}
-            className="text-3xl font-bold text-white mb-6 leading-tight"
+            className="text-3xl font-bold text-white mb-6 leading-tight text-center md:text-left"
           >
             One Partner to Build, Launch &amp; Scale
           </motion.h1>

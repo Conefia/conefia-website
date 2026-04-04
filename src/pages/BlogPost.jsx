@@ -89,7 +89,7 @@ export default function BlogPost() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-3xl font-bold text-white mb-6 leading-tight">
+            className="text-3xl font-bold text-white mb-6 leading-tight text-center md:text-left">
             {post.title}
           </motion.h1>
 
