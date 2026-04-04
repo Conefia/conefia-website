@@ -87,7 +87,7 @@ export default function About() {
           <motion.div {...fadeUp(0.5)} className="mt-10">
             <Link
               to={createPageUrl('book')}
-              className="inline-flex items-center gap-2 bg-[#DBFE01] text-[#1a1a1a] font-bold px-8 py-4 rounded-xl hover:bg-[#c5e000] transition-colors shadow-[0_4px_24px_rgba(219,254,1,0.3)]"
+              className="inline-flex items-center gap-2 bg-[#DBFE01] text-[#1a1a1a] font-bold px-8 py-4 rounded-xl text-base hover:bg-[#c5e000] transition-colors shadow-[0_4px_24px_rgba(219,254,1,0.3)]"
             >
               Book a Free Roadmap Call <ArrowRight className="w-4 h-4" />
             </Link>
@@ -304,7 +304,7 @@ export default function About() {
           </p>
           <Link
             to={createPageUrl('book')}
-            className="inline-flex items-center gap-2 bg-[#DBFE01] text-[#1a1a1a] font-bold px-10 py-5 rounded-xl text-lg hover:bg-[#c5e000] transition-colors shadow-[0_4px_32px_rgba(219,254,1,0.35)]"
+            className="inline-flex items-center gap-2 bg-[#DBFE01] text-[#1a1a1a] font-bold px-10 py-5 rounded-xl text-base hover:bg-[#c5e000] transition-colors shadow-[0_4px_32px_rgba(219,254,1,0.35)]"
           >
             Book a Free Roadmap Call <ArrowRight className="w-5 h-5" />
           </Link>
