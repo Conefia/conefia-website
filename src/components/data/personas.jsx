@@ -1,14 +1,14 @@
 import { 
   Workflow, MapPin, Phone, Calendar, 
   ShieldCheck, Brain, Rocket, Flag,
-  RefreshCw, Smartphone, Download, LineChart,
+  RefreshCw, Smartphone, Download,
   ShoppingBag, FlaskConical, Mail, BadgeDollarSign,
   Lock, FileCheck, Users, Gauge,
-  Layout, Code2, Presentation, PieChart,
-  Timer, TrendingUp,
+  Code2, Presentation, PieChart,
+  TrendingUp,
   CalendarCheck, MapPinned, PhoneIncoming, ArrowUpRight,
   PlaneTakeoff, Target, Zap,
-  Magnet, Store, Star,
+  Store, Star,
   TrendingDown, Scale, MousePointerClick, Coins,
   Hourglass, ClipboardCheck, BarChart3,
   Package, Clock, Award
@@ -133,7 +133,7 @@ export const PERSONAS = [
       {
         title: 'Analytics you can act on',
         desc: "Funnels + cohorts (D1/D7/D30) so you know what's working.",
-        icon: LineChart
+        icon: TrendingUp
       }
     ],
     topNavCta: 'Book Relaunch Call',
@@ -151,7 +151,7 @@ export const PERSONAS = [
         value: '+15–40%',
         label: 'Better retention (users stick)',
         subtext: '',
-        icon: Magnet,
+        icon: TrendingUp,
         color: 'text-cyan-600',
         bgColor: 'bg-cyan-50',
         borderColor: 'border-cyan-100',
@@ -466,7 +466,7 @@ export const PERSONAS = [
       {
         title: 'Cohort execution system',
         desc: 'Templates + cadence so every team knows what "good" looks like.',
-        icon: Layout
+        icon: Workflow
       },
       {
         title: 'MVP build squads',
