@@ -15,9 +15,10 @@ export default function AppRelaunchRetention() {
   return (
     <SeoLandingPage>
       <Seo 
-        title="Conefia | App Relaunch & Retention | Relaunch Your App in 8–12 Weeks"
-        description="Relaunch your app in 8–12 weeks with one accountable team. Improve retention, UX, performance, ASO, and analytics. Free 30-min roadmap call."
+        title="App Relaunch & Retention | 8–12 Week Relaunch | Conefia"
+        description="Relaunch your app in 8–12 weeks. Improve retention, UX, performance, ASO, and analytics. Free 30-min roadmap call."
         canonical="/solutions/app-relaunch-retention"
+        keywords="app relaunch, app retention, app relaunch services, app relaunch and retention, mobile app retention, app onboarding optimization, app performance optimization, app store optimization, ASO services, app analytics, mobile app growth"
       />
       <script
         type="application/ld+json"
