@@ -71,6 +71,11 @@ import Cookies from './pages/Cookies';
 import IPPolicy from './pages/IPPolicy';
 import CopyrightPolicy from './pages/CopyrightPolicy';
 import Legal from './pages/Legal';
+import AcceptableUsePolicy from './pages/AcceptableUsePolicy';
+import AiNotice from './pages/AiNotice';
+import ContactLegal from './pages/ContactLegal';
+import MarketingDisclosure from './pages/MarketingDisclosure';
+import SubmissionConfidentiality from './pages/SubmissionConfidentiality';
 import __Layout from './Layout.jsx';
 
 
@@ -99,6 +104,11 @@ export const PAGES = {
     "ip-policy": IPPolicy,
     "copyright-policy": CopyrightPolicy,
     "legal": Legal,
+    "acceptable-use": AcceptableUsePolicy,
+    "ai-notice": AiNotice,
+    "contact-legal": ContactLegal,
+    "marketing-disclosure": MarketingDisclosure,
+    "submission-confidentiality": SubmissionConfidentiality,
 }
 
 export const pagesConfig = {

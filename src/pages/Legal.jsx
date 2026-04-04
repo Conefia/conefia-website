@@ -11,6 +11,11 @@ const policies = [
   { label: 'Intellectual Property Policy', path: '/ip-policy', desc: 'Ownership rights for work product and pre-existing IP.' },
   { label: 'Cookie Policy', path: '/cookies', desc: 'How we use cookies and similar tracking technologies.' },
   { label: 'Copyright Policy', path: '/copyright-policy', desc: 'Copyright notices, permitted use, and DMCA takedown process.' },
+  { label: 'Acceptable Use Policy', path: '/acceptable-use', desc: 'Rules governing acceptable use of the Site and related services.' },
+  { label: 'AI and Automated Systems Notice', path: '/ai-notice', desc: 'How Conefia uses AI and automated systems in its services.' },
+  { label: 'Contact and Legal Notice', path: '/contact-legal', desc: 'Official contact information and legal entity details.' },
+  { label: 'Marketing and Testimonials Disclosure', path: '/marketing-disclosure', desc: 'Disclosures about marketing claims, results, and testimonials.' },
+  { label: 'Submission and Confidentiality Notice', path: '/submission-confidentiality', desc: 'What happens to information submitted through public forms.' },
 ];
 
 export default function Legal() {
