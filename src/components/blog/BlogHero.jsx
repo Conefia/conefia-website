@@ -31,7 +31,7 @@ export default function BlogHero({ onSearch }) {
           transition={{ duration: 0.6 }}
           className="text-center">
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h1 className="text-3xl font-bold text-white mb-6 tracking-tight">
             Insights to Build, Launch, and Scale
           </h1>
           

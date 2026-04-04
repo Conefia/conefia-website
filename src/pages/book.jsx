@@ -84,7 +84,7 @@ export default function Book() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] mb-6 leading-tight drop-shadow-sm">
+          <h1 className="text-3xl font-bold text-[#1a1a1a] mb-6 leading-tight drop-shadow-sm">
             Book a Roadmap Call
           </h1>
           <p className="text-lg text-[#1a1a1a]/85 mb-8 max-w-2xl mx-auto font-medium">
