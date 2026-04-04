@@ -375,13 +375,13 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
                   className="h-10 w-auto brightness-0 invert" />
 
               </div>
-              <p className="text-white/80 text-sm leading-relaxed max-w-lg font-medium">
+              <p className="text-white text-sm leading-relaxed max-w-lg font-medium">
                 One Partner to Build, Launch, and Scale Your Digital Venture.
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Services</h4>
-              <ul className="space-y-3 text-sm text-white/80 font-medium">
+              <ul className="space-y-3 text-sm text-white font-medium">
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Validate</Link></li>
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Build</Link></li>
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Launch</Link></li>
@@ -390,7 +390,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Company</h4>
-              <ul className="space-y-3 text-sm text-white/80 font-medium">
+              <ul className="space-y-3 text-sm text-white font-medium">
                 <li><Link to={createPageUrl('Home') + '#case-studies'} className="hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
                 <li><Link to={createPageUrl('Home') + '#packages'} className="hover:text-[#DBFE01] transition-colors">Packages</Link></li>
                 <li><Link to={createPageUrl('Home') + '#contact'} className="hover:text-[#DBFE01] transition-colors">Contact</Link></li>
@@ -399,11 +399,11 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Contact</h4>
               <div className="space-y-4">
-                <a href="tel:+18100000000" className="flex items-start gap-3 text-sm text-white/80 hover:text-[#DBFE01] transition-colors group">
+                <a href="tel:+18100000000" className="flex items-start gap-3 text-sm text-white hover:text-[#DBFE01] transition-colors group">
                   <Phone className="w-4 h-4 text-white flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="leading-snug">(810) 000 0000</span>
                 </a>
-                <div className="flex items-start gap-3 text-xs text-white/80">
+                <div className="flex items-start gap-3 text-xs text-white">
                   <MapPin className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
                   <span className="leading-snug">801 Keystone Park DR, 27560 Morrisville, NC, USA</span>
                 </div>
@@ -412,21 +412,21 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/60">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://facebook.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                <a href="https://facebook.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-[#DBFE01] transition-colors">
+                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
             </div>
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm">© 2024 Conefia. All rights reserved.</p>
-            <div className="flex items-center gap-6 text-sm text-white/40">
+            <p className="text-white text-sm">© 2024 Conefia. All rights reserved.</p>
+            <div className="flex items-center gap-6 text-sm text-white">
               <a href="#" className="hover:text-[#DBFE01] transition-colors">Privacy</a>
               <a href="#" className="hover:text-[#DBFE01] transition-colors">Terms</a>
             </div>
