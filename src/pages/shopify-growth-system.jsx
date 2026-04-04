@@ -29,9 +29,10 @@ export default function ShopifyGrowthSystem() {
   return (
     <SeoLandingPage>
       <Seo 
-        title="DTC Growth: Shopify CRO + Paid Ads | Conefia"
-        description="DTC brand growth marketing services: Shopify CRO, paid ads management, retention flows, and profit-first tracking to cut CAC."
+        title="Shopify Growth System | CRO, Retention & Ads | Conefia"
+        description="Build or grow your Shopify store with stronger conversion, retention, creative, SEO, and ad performance. Get your growth plan."
         canonical="/solutions/shopify-growth-system"
+        keywords="grow Shopify store, profitable Shopify growth, Shopify CRO agency, Shopify retention flows, Shopify ad creative, Shopify blog SEO, Shopify campaign optimization, ecommerce retention marketing, Shopify performance growth, Shopify growth roadmap"
       />
       <script
         type="application/ld+json"
