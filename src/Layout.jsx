@@ -381,19 +381,19 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Services</h4>
-              <ul className="space-y-3 text-sm text-white font-medium">
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Validate</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Build</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Launch</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="hover:text-[#DBFE01] transition-colors">Grow</Link></li>
+              <ul className="space-y-3 text-sm font-medium">
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Validate</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Build</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Launch</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Grow</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Company</h4>
-              <ul className="space-y-3 text-sm text-white font-medium">
-                <li><Link to={createPageUrl('Home') + '#case-studies'} className="hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
-                <li><Link to={createPageUrl('Home') + '#packages'} className="hover:text-[#DBFE01] transition-colors">Packages</Link></li>
-                <li><Link to={createPageUrl('Home') + '#contact'} className="hover:text-[#DBFE01] transition-colors">Contact</Link></li>
+              <ul className="space-y-3 text-sm font-medium">
+                <li><Link to={createPageUrl('Home') + '#case-studies'} className="text-white hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
+                <li><Link to={createPageUrl('Home') + '#packages'} className="text-white hover:text-[#DBFE01] transition-colors">Packages</Link></li>
+                <li><Link to={createPageUrl('Home') + '#contact'} className="text-white hover:text-[#DBFE01] transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
