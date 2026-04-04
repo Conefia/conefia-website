@@ -42,8 +42,16 @@ function LayoutContent({ children, currentPageName }) {
   const isBookPage = currentPageName === 'Book' || currentPageName === 'book';
   // Check for about page
   const isAboutPage = currentPageName === 'About';
-  // Always use light text for case studies, solutions, blog pages, book page, and about page (dark backgrounds)
-  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || isAboutPage || scrolled || mobileMenuOpen;
+  // Check for policy/legal pages (always dark background)
+  const isPolicyPage = currentPageName && (
+    currentPageName === 'Legal' || currentPageName === 'legal' ||
+    currentPageName === 'Terms' || currentPageName === 'terms' ||
+    currentPageName === 'Privacy' || currentPageName === 'privacy' ||
+    currentPageName === 'ip-policy' || currentPageName === 'IPPolicy' ||
+    currentPageName === 'cookies' || currentPageName === 'Cookies' ||
+    currentPageName === 'copyright-policy' || currentPageName === 'CopyrightPolicy'
+  );
+  const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || isAboutPage || isPolicyPage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 const policies = [
   { label: 'Terms of Service', path: '/terms', desc: 'Rules and conditions governing the use of Conefia services.' },
@@ -11,24 +14,83 @@ const policies = [
 ];
 
 export default function Legal() {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-2">Legal</h1>
-        <p className="text-gray-500 text-sm mb-10">All Conefia legal documents in one place.</p>
+    <div className="min-h-screen bg-white">
+      {/* Hero */}
+      <div className="relative overflow-hidden pt-28 pb-20">
+        <HeroDarkBackground isMobile={isMobile} />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <Breadcrumbs
+              items={[{ label: 'Legal' }]}
+              theme="dark"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="inline-flex items-center mb-5 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#DBFE01]/10 text-[#DBFE01] border border-[#DBFE01]/20 gap-1.5"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#DBFE01] inline-block" />
+            Legal Documents
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.15 }}
+            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight"
+          >
+            Legal
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.25 }}
+            className="text-white/50 text-sm"
+          >
+            All Conefia legal documents in one place.
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Policy list */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="divide-y divide-gray-100">
-          {policies.map((p) => (
-            <Link
+          {policies.map((p, i) => (
+            <motion.div
               key={p.path}
-              to={p.path}
-              className="flex items-center justify-between py-5 group"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: i * 0.07 }}
             >
-              <div>
-                <p className="font-semibold text-gray-900 group-hover:text-[#1a1a1a] transition-colors">{p.label}</p>
-                <p className="text-sm text-gray-500 mt-0.5">{p.desc}</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#1a1a1a] flex-shrink-0 ml-4 transition-colors" />
-            </Link>
+              <Link
+                to={p.path}
+                className="flex items-center justify-between py-5 group"
+              >
+                <div>
+                  <p className="font-semibold text-gray-900 group-hover:text-[#1a1a1a] transition-colors">{p.label}</p>
+                  <p className="text-sm text-gray-500 mt-0.5">{p.desc}</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#1a1a1a] flex-shrink-0 ml-4 transition-colors group-hover:translate-x-1 duration-200" />
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
