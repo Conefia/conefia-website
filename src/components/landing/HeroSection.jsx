@@ -70,7 +70,7 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left"
               style={{
-                background: 'linear-gradient(95deg, #0F1524 0%, #41506A 18%, #B9D71D 55%, #EAF3B2 100%)',
+                background: 'linear-gradient(95deg, #C8D8F0 0%, #8AAFD4 18%, #B9D71D 55%, #EAF3B2 100%)',
                 backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
