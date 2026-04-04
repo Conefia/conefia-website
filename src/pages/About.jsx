@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import ContourBackground from '@/components/visual/ContourBackground';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Target, Lightbulb, TrendingUp, Users, Zap, Shield, ArrowRight, CheckCircle } from 'lucide-react';
 import Seo from '@/components/Seo';
@@ -53,43 +52,18 @@ export default function About() {
 
       {/* ── Hero ── */}
       <section ref={heroRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        {/* Contour lines */}
-        {window.innerWidth < 768 ? (
-          <>
-            <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none z-[1]">
-              <ContourBackground className="opacity-60" isMobile={false} />
-            </div>
-            <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none z-[1]">
-              <ContourBackground className="opacity-60" isMobile={false} />
-            </div>
-            <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none z-[1]">
-              <ContourBackground className="opacity-60" isMobile={false} />
-            </div>
-          </>
-        ) : (
-          <ContourBackground className="opacity-60 z-[1]" isMobile={false} />
-        )}
-        {/* Star Dust */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
-          {[...Array(200)].map((_, i) => {
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 0.3;
-            const opacity = Math.random() * 0.6 + 0.2;
-            const isTwinkle = Math.random() > 0.92;
-            if (isTwinkle) {
-              const twinkleSize = Math.random() * 3 + 2;
-              return (
-                <div key={`star-${i}`} className="absolute" style={{ left: `${x}%`, top: `${y}%`, width: `${twinkleSize}px`, height: `${twinkleSize}px` }}>
-                  <div className="absolute bg-white rounded-full" style={{ width: '100%', height: '100%', opacity: opacity * 1.2, boxShadow: `0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}), 0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}), 0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})` }} />
-                </div>
-              );
-            }
-            return (
-              <div key={`star-${i}`} className="absolute rounded-full bg-white" style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, opacity: opacity * 0.8, boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})` }} />
-            );
-          })}
-        </div>
+        {/* Parallax background image */}
+        <motion.div
+          style={{ y: imgY }}
+          className="absolute inset-0 z-0"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
+            alt="Team collaboration"
+            className="w-full h-full object-cover object-center opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B1020]/60 via-[#0B1020]/40 to-[#0B1020]" />
+        </motion.div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-24 text-center">
           <Breadcrumbs items={[{ label: 'About Us' }]} theme="dark" />
