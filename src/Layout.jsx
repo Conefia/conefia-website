@@ -426,7 +426,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm">© 2024 Conefia. All rights reserved.</p>
-            <div className="flex items-center gap-6 text-sm text-white">
+            <div className="grid grid-cols-2 md:flex md:items-center gap-3 md:gap-6 text-sm text-white">
               <Link to="/privacy" className="text-white hover:text-[#DBFE01] transition-colors">Privacy Policy</Link>
               <Link to="/terms" className="text-white hover:text-[#DBFE01] transition-colors">Terms of Service</Link>
               <Link to="/cookies" className="text-white hover:text-[#DBFE01] transition-colors">Cookie Policy</Link>
