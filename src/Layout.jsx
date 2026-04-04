@@ -385,7 +385,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Validate</Link></li>
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Build</Link></li>
                 <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Launch</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Grow</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Scale</Link></li>
               </ul>
             </div>
             <div>
