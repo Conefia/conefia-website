@@ -14,8 +14,9 @@ export default function AiSaasMvpLaunch() {
     <SeoLandingPage>
       <Seo 
         title="AI SaaS MVP Sprint: AI MVP Development | Conefia"
-        description="AI SaaS MVP development agency for founders: AI agent + LLM integration + launch system to win your first paying pilots."
+        description="Launch a pilot-ready AI SaaS MVP in 8–12 weeks. Lock scope early, choose the right AI architecture, and start winning pilots."
         canonical="/solutions/ai-saas-mvp-launch"
+        keywords="AI SaaS MVP launch, AI SaaS MVP development, AI MVP development, AI MVP launch, pilot-ready AI MVP, AI product development agency, LLM MVP development, RAG MVP development, AI agent MVP development, AI startup MVP development, build AI SaaS MVP, launch AI MVP, AI architecture for startups, AI product launch, MVP for AI startup, how to launch an AI SaaS MVP, AI SaaS MVP in 8–12 weeks, build a pilot-ready AI MVP, AI MVP development for startups, RAG vs agents for AI MVP, production-ready AI MVP development"
       />
       <script
         type="application/ld+json"
