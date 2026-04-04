@@ -68,6 +68,9 @@ import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
+import IPPolicy from './pages/IPPolicy';
+import CopyrightPolicy from './pages/CopyrightPolicy';
+import Legal from './pages/Legal';
 import __Layout from './Layout.jsx';
 
 
@@ -93,6 +96,9 @@ export const PAGES = {
     "privacy": Privacy,
     "terms": Terms,
     "cookies": Cookies,
+    "ip-policy": IPPolicy,
+    "copyright-policy": CopyrightPolicy,
+    "legal": Legal,
 }
 
 export const pagesConfig = {
