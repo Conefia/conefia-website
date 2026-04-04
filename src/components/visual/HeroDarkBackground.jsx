@@ -14,7 +14,21 @@ export default function HeroDarkBackground({ isMobile = false, className = '' })
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-500/10 via-purple-500/5 to-transparent rounded-full blur-3xl" />
 
       {/* Contour lines */}
-      <ContourBackground className="opacity-60" isMobile={isMobile} />
+      {isMobile ? (
+        <>
+          <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-60" isMobile={false} />
+          </div>
+          <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-60" isMobile={false} />
+          </div>
+          <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
+            <ContourBackground className="opacity-60" isMobile={false} />
+          </div>
+        </>
+      ) : (
+        <ContourBackground className="opacity-60" isMobile={false} />
+      )}
 
       {/* Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
