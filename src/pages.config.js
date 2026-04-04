@@ -65,6 +65,9 @@ import shopifyGrowthSystem from './pages/shopify-growth-system';
 import startupAcceleratorSupport from './pages/startup-accelerator-support';
 import vascularimClinicGrowth from './pages/vascularim-clinic-growth';
 import aiSaasMvpLaunch from './pages/ai-saas-mvp-launch';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import Cookies from './pages/Cookies';
 import __Layout from './Layout.jsx';
 
 
@@ -87,6 +90,9 @@ export const PAGES = {
     "startup-accelerator-support": startupAcceleratorSupport,
     "vascularim-clinic-growth": vascularimClinicGrowth,
     "ai-saas-mvp-launch": aiSaasMvpLaunch,
+    "privacy": Privacy,
+    "terms": Terms,
+    "cookies": Cookies,
 }
 
 export const pagesConfig = {
