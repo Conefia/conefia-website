@@ -74,7 +74,7 @@ export default function About() {
           </motion.div>
           <motion.h1
             {...fadeUp(0.2)}
-            className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
           >
             One Partner to{' '}
             <span className="bg-gradient-to-r from-[#DBFE01] to-[#a8c600] bg-clip-text text-transparent">

@@ -36,7 +36,7 @@ export default function BlogPost() {
     return (
       <div className="min-h-screen bg-[#FAFAFA] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#1a1a1a] mb-4">Post not found</h1>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-4">Post not found</h1>
           <Link to={createPageUrl('Blog')} className="text-[#DBFE01] font-semibold hover:underline">
             ← Back to Blog
           </Link>
@@ -89,7 +89,7 @@ export default function BlogPost() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight">
             {post.title}
           </motion.h1>
 

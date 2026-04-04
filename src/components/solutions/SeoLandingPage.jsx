@@ -85,7 +85,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl font-extrabold text-white mb-6 max-w-4xl leading-tight">
+                className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 max-w-4xl leading-tight">
 
                   {title && title.split(/(\bAI\b|\bMVP\b|\bShip\b|8–12)/).map((part, i) =>
                 ['AI', 'MVP', 'Ship', '8–12'].includes(part) ?
@@ -164,7 +164,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-800 text-white leading-tight mb-6">
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
 
                 {title}
               </motion.h1>

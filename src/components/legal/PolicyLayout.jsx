@@ -69,7 +69,7 @@ export default function PolicyLayout({ title, effectiveDate, breadcrumb, childre
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight"
           >
             {title}
           </motion.h1>
