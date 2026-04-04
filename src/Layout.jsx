@@ -231,7 +231,7 @@ function LayoutContent({ children, currentPageName }) {
               <div className="px-4 py-6 space-y-4 max-h-[85vh] overflow-y-auto">
                  {/* Solutions (Mobile) */}
                  <div className="pb-4 border-b border-white/10">
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">Solutions</p>
+                    <p className="text-white text-xs font-bold uppercase tracking-wider mb-3">Solutions</p>
                     {solutionItems.map((item) =>
                 <Link
                   key={item.path}
@@ -245,7 +245,7 @@ function LayoutContent({ children, currentPageName }) {
 
                  {/* Secondary Items (Mobile) */}
                  <div className="pb-4 border-b border-white/10">
-                    <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">More</p>
+                    <p className="text-white text-xs font-bold uppercase tracking-wider mb-3">More</p>
                     {secondaryItems.map((item) =>
                 <Link
                   key={item.label}
