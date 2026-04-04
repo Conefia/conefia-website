@@ -140,7 +140,7 @@ export default function FAQSection({ reduceMotion }) {
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-[#DBFE01] shadow-sm">
                       <span className="text-lg font-bold text-[#2F2F2F]/60 group-open:text-[#1a1a1a] transition-colors">?</span>
                     </div>
-                    <h3 className="text-lg font-bold text-[#1a1a1a]">{faq.question}</h3>
+                    <h3 className="text-xl font-bold text-[#1a1a1a]">{faq.question}</h3>
                   </div>
                   <ChevronDown className="w-5 h-5 text-[#2F2F2F]/40 transition-transform duration-300 group-open:rotate-180 flex-shrink-0" />
                 </summary>

@@ -682,7 +682,7 @@ export default function PlaybookSection({ reduceMotion }) {
 
                 {/* Title & duration */}
                 <div className="relative mb-4">
-                  <h3 className="text-2xl font-extrabold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform duration-300">
+                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform duration-300">
                     {phase.title}
                   </h3>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${phase.accentColor} bg-white/80 border border-current/20`}>

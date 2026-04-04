@@ -303,7 +303,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                       <div className="p-8 md:p-10">
                         <div className="flex items-start justify-between mb-4">
                           <div className="flex-1">
-                            <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-[#DBFE01] transition-colors">
+                            <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#DBFE01] transition-colors">
                               {study.client}
                             </h3>
                             <a

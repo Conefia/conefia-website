@@ -139,7 +139,7 @@ export default function ProblemSolution({ reduceMotion }) {
                     <X className="w-4 h-4" />
                     The Problem
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-6 leading-tight">
                     {selectedPersona.problemTitle}
                   </h3>
                   <ul className="space-y-5">
@@ -177,7 +177,7 @@ export default function ProblemSolution({ reduceMotion }) {
                   <Check className="w-4 h-4" />
                   The Solution
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-6 leading-tight">
                    {selectedPersona.solutionTitle}
                 </h3>
 

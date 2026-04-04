@@ -273,7 +273,7 @@ export default function HowWeWork({ reduceMotion }) {
                     animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }} />
                 </motion.div>
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">
                   {card.title}
                 </h3>
                 <p className="text-[#1a1a1a]/80 text-sm font-medium">

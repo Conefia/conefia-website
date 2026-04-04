@@ -204,7 +204,7 @@ export default function PackagesSection({ reduceMotion }) {
                 </motion.div>
 
                 {/* Name & pricing */}
-                <h3 className="text-xl font-extrabold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform duration-300">{pkg.name}</h3>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform duration-300">{pkg.name}</h3>
                 <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${pkg.accentColor} bg-white/80 border border-current/20 mb-3`}>
                   {pkg.pricing}
                 </span>
