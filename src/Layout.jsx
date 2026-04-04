@@ -426,13 +426,13 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
           </div>
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm">© 2024 Conefia. All rights reserved.</p>
-            <div className="grid grid-cols-2 md:flex md:items-center gap-3 md:gap-6 text-sm text-white">
-              <Link to="/terms" className="text-white hover:text-[#DBFE01] transition-colors">Terms of Service</Link>
-              <Link to="/privacy" className="text-white hover:text-[#DBFE01] transition-colors">Privacy Policy</Link>
-              <Link to="/ip-policy" className="text-white hover:text-[#DBFE01] transition-colors">IP Policy</Link>
-              <Link to="/cookies" className="text-white hover:text-[#DBFE01] transition-colors">Cookie Policy</Link>
-              <Link to="/copyright-policy" className="text-white hover:text-[#DBFE01] transition-colors">Copyright Policy</Link>
-              <Link to="/legal" className="text-white hover:text-[#DBFE01] transition-colors">More</Link>
+            <div className="grid grid-cols-2 w-full md:flex md:items-center gap-3 md:gap-6 text-sm text-white">
+              <Link to="/terms" className="text-white hover:text-[#DBFE01] transition-colors text-left">Terms of Use</Link>
+              <Link to="/privacy" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">Privacy Policy</Link>
+              <Link to="/ip-policy" className="text-white hover:text-[#DBFE01] transition-colors text-left">IP Policy</Link>
+              <Link to="/cookies" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">Cookie Policy</Link>
+              <Link to="/copyright-policy" className="text-white hover:text-[#DBFE01] transition-colors text-left">Copyright Policy</Link>
+              <Link to="/legal" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">More</Link>
             </div>
           </div>
         </div>
