@@ -51,7 +51,7 @@ export default function ContactSection({ reduceMotion }) {
           <Link to={createPageUrl('book')}>
             <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
               <Button className="h-14 sm:h-16 px-10 rounded-xl bg-[#1a1a1a] hover:bg-black text-white font-extrabold text-base sm:text-lg transition-all shadow-[0_4px_12px_rgba(0,0,0,0.25)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.35)] hover:-translate-y-1 inline-flex items-center gap-2 group">
-                Book Free 30-Min Roadmap Call
+                Book Free Roadmap Call
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
