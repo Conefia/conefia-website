@@ -136,8 +136,8 @@ export default function PackagesSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Packages &amp; Services
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a1a1a] mb-4">
-            Pick a sprint. <span className="bg-gradient-to-r from-[#DBFE01] via-[#c5e000] to-[#a8c600] bg-clip-text text-transparent">Ship outcomes.</span>
+          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4">
+            Pick a sprint. Ship outcomes.
           </h2>
           <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium leading-relaxed">
             AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.

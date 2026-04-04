@@ -29,7 +29,7 @@ export default function ContactSection({ reduceMotion }) {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight"
+          className="text-2xl font-bold text-[#1a1a1a] mb-6 leading-tight"
         >
           Ready to launch?
         </motion.h2>

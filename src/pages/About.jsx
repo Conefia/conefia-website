@@ -189,9 +189,8 @@ export default function About() {
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp(0)} className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
-              Why Choose{' '}
-              <span className="bg-gradient-to-r from-[#DBFE01] to-[#a8c600] bg-clip-text text-transparent">Conefia</span>
+            <h2 className="text-2xl font-bold text-white mb-4">
+              Why Choose Conefia
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">We're not just a dev agency — we're your growth partner.</p>
           </motion.div>
@@ -229,7 +228,7 @@ export default function About() {
             <div>
               <motion.div {...fadeUp(0)}>
                 <span className="text-[#DBFE01] text-xs font-semibold uppercase tracking-widest mb-4 block">Our Commitments</span>
-                <h2 className="text-4xl font-extrabold text-white mb-6 leading-tight">
+                <h2 className="text-2xl font-bold text-white mb-6 leading-tight">
                   Built for founders who are done waiting
                 </h2>
                 <p className="text-white/60 mb-8 leading-relaxed">
@@ -297,11 +296,8 @@ export default function About() {
           {...fadeUp(0)}
           className="relative z-10 max-w-2xl mx-auto px-4 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            Ready to ship your{' '}
-            <span className="bg-gradient-to-r from-[#DBFE01] to-[#a8c600] bg-clip-text text-transparent">
-              AI MVP?
-            </span>
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Ready to ship your AI MVP?
           </h2>
           <p className="text-white/60 text-lg mb-10">
             Book a free 30-minute roadmap call. No sales pitch — just clarity on scope, timeline, and fit.
