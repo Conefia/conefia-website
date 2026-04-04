@@ -73,7 +73,7 @@ import CopyrightPolicy from './pages/CopyrightPolicy';
 import Legal from './pages/Legal';
 import AcceptableUsePolicy from './pages/AcceptableUsePolicy';
 import AiNotice from './pages/AiNotice';
-import ContactLegal from './pages/ContactLegal';
+
 import MarketingDisclosure from './pages/MarketingDisclosure';
 import SubmissionConfidentiality from './pages/SubmissionConfidentiality';
 import __Layout from './Layout.jsx';
@@ -106,7 +106,7 @@ export const PAGES = {
     "legal": Legal,
     "acceptable-use": AcceptableUsePolicy,
     "ai-notice": AiNotice,
-    "contact-legal": ContactLegal,
+
     "marketing-disclosure": MarketingDisclosure,
     "submission-confidentiality": SubmissionConfidentiality,
 }
