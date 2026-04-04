@@ -147,13 +147,12 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
             Client Feedback
           </span>
           {title ?
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
               {title}
             </h2> :
 
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-              Trusted by founders <br />
-              <span className="text-[#DBFE01]">worldwide.</span>
+          <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
+              Trusted by founders worldwide.
             </h2>
           }
         </motion.div>
