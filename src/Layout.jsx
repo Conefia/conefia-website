@@ -74,7 +74,7 @@ function LayoutContent({ children, currentPageName }) {
     };
 
     const processAll = () => {
-      document.querySelectorAll('h2').forEach(stripTrailingPeriod);
+      document.querySelectorAll('h1, h2').forEach(stripTrailingPeriod);
     };
 
     processAll();
