@@ -137,7 +137,7 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-4">
                   <Target className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Our Mission</h2>
+                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--glow">Our Mission</h2>
                 <p className="text-white/60 leading-relaxed">
                   To empower founders, clinics, and brands to transform their ideas into thriving digital ventures — eliminating the complexity of product development and growth with one accountable partner.
                 </p>
@@ -189,7 +189,7 @@ export default function About() {
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp(0)} className="text-center mb-16">
-            <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
+            <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--glow">
               Why Choose Conefia
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">We're not just a dev agency — we're your growth partner.</p>
@@ -228,7 +228,7 @@ export default function About() {
             <div>
               <motion.div {...fadeUp(0)}>
                 <span className="text-[#DBFE01] text-xs font-semibold uppercase tracking-widest mb-4 block">Our Commitments</span>
-                <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--premium">
+                <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--glow">
                   Built for founders who are done waiting
                 </h2>
                 <p className="text-white/60 mb-8 leading-relaxed">
