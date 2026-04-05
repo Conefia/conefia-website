@@ -68,15 +68,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left"
-              style={{
-                background: 'linear-gradient(92deg, #F3F7FB 0%, #D0F002 28%, #D0F002 58%, #7C8CA3 90%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                color: 'transparent',
-                WebkitTextFillColor: 'transparent',
-                textShadow: '0 1px 1px rgba(15, 21, 36, 0.12)'
-              }}>
+              className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left">
               One Partner to Build, Launch, and Scale Your Digital Venture.
             </motion.h1>
 

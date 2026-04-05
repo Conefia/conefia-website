@@ -104,6 +104,10 @@
     @apply text-5xl md:text-6xl lg:text-7xl;
     font-weight: 800;
     line-height: 1.1;
+    background: linear-gradient(92deg, #F3F7FB 0%, #D0F002 28%, #D0F002 58%, #7C8CA3 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   h2 {
