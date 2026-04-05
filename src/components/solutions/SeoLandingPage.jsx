@@ -410,7 +410,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             </p>
         }
 
-          <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2">
+          <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 flex justify-center md:justify-start w-full md:w-auto">
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
