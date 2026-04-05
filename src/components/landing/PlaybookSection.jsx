@@ -601,7 +601,7 @@ export default function PlaybookSection({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--premium">
             {config.headline}
           </h2>
-          <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">
+          <p className="text-base text-[#1a1a1a]/80 max-w-3xl mx-auto font-normal leading-relaxed">
             {config.subhead}
           </p>
         </motion.div>
