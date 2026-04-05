@@ -53,7 +53,7 @@ export default function Hartalega() {
             Build
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight" style={{ color: 'white', WebkitTextFillColor: 'white', backgroundImage: 'none' }}>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight" style={{ color: '#1a1a1a', WebkitTextFillColor: '#1a1a1a', backgroundImage: 'none' }}>
             Validated AI PoCs in 3 months with 5× ROI
           </h1>
 
