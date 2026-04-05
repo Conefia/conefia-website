@@ -78,7 +78,7 @@ export const HeroVisual = () => {
                         {/* Flow Arrow */}
                         {i < 3 && (
                             <motion.div 
-                                className="absolute -right-[calc(50%+8px)] md:-right-[50%] top-8 md:top-8 hidden md:block text-white/20 md:inline-block text-white/20"
+                                className="absolute -right-[calc(50%+8px)] md:-right-[50%] top-8 block text-white/20"
                                 animate={{ x: [0, 10, 0], opacity: [0.2, 0.6, 0.2] }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             >
