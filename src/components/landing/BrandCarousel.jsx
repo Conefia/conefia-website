@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import ContourBackground from '../visual/ContourBackground';
 
 export default function BrandCarousel() {
   const ref = React.useRef(null);
@@ -51,11 +50,20 @@ export default function BrandCarousel() {
   // Duplicate logos for seamless loop
   const duplicatedLogos = [...logos, ...logos];
 
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   return (
     <section ref={ref} className="bg-stone-950 py-6 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
-        {/* Entrance animation - staggered */}
+        {/* Entrance animation */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -68,27 +76,30 @@ export default function BrandCarousel() {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="relative">
-          {/* Scrolling container - single animation */}
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}>
+          {/* Scrolling container */}
           <div className="flex">
             <motion.div
               className="flex gap-12 items-center"
               animate={{
-                x: ['0%', '-50%']
+                x: isHovered ? ['0%', '-50%'] : ['0%', '-50%']
               }}
               transition={{
                 x: {
-                  duration: 50,
+                  duration: isMobile ? 45 : 50,
                   repeat: Infinity,
                   ease: "linear",
                   repeatType: "loop"
                 }
               }}>
-
-              {duplicatedLogos.map((logo, index) =>
+               {duplicatedLogos.map((logo, index) =>
               <div
-                key={index}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300">
+               key={index}
+               className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300 will-change-transform"
+               role="img"
+               aria-label={logo.alt}>
 
                   <img
                   src={logo.url}
@@ -96,6 +107,7 @@ export default function BrandCarousel() {
                   loading="lazy"
                   width="128"
                   height="64"
+                  decoding="async"
                   className="max-w-full max-h-full object-contain" />
 
                 </div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
 import { motion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -6,11 +6,13 @@ import { Quote, ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';
 import ContourBackground from '../visual/ContourBackground';
 
 export default function TestimonialSlider({ reduceMotion, testimonials: propTestimonials, title }) {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [dbTestimonials, setDbTestimonials] = useState([]);
   const [loading, setLoading] = useState(!propTestimonials);
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const [isHovered, setIsHovered] = useState(false);
+  const autoplayRef = useRef(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -24,13 +26,28 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
     { loop: true, align: 'center', skipSnaps: false }
   );
 
-  useEffect(() => {
-    if (!emblaApi) return;
-    const autoplay = setInterval(() => {
+  // Auto-play with pause on hover/focus
+  const startAutoplay = useCallback(() => {
+    if (!emblaApi || isHovered) return;
+    autoplayRef.current = setInterval(() => {
       emblaApi.scrollNext();
     }, 6000);
-    return () => clearInterval(autoplay);
-  }, [emblaApi]);
+  }, [emblaApi, isHovered]);
+
+  const stopAutoplay = useCallback(() => {
+    if (autoplayRef.current) clearInterval(autoplayRef.current);
+  }, []);
+
+  useEffect(() => {
+    startAutoplay();
+    return stopAutoplay;
+  }, [emblaApi, startAutoplay, stopAutoplay]);
+
+  // Resume autoplay when unhovered
+  useEffect(() => {
+    if (!isHovered) startAutoplay();
+    else stopAutoplay();
+  }, [isHovered, startAutoplay, stopAutoplay]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -66,9 +83,29 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
     return () => emblaApi.off('select', onSelect);
   }, [emblaApi, onSelect]);
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((index) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    emblaApi && emblaApi.scrollPrev();
+    stopAutoplay();
+    startAutoplay();
+  }, [emblaApi, stopAutoplay, startAutoplay]);
+
+  const scrollNext = useCallback(() => {
+    emblaApi && emblaApi.scrollNext();
+    stopAutoplay();
+    startAutoplay();
+  }, [emblaApi, stopAutoplay, startAutoplay]);
+
+  const scrollTo = useCallback((index) => {
+    emblaApi && emblaApi.scrollTo(index);
+    stopAutoplay();
+    startAutoplay();
+  }, [emblaApi, stopAutoplay, startAutoplay]);
+
+  // Keyboard navigation (arrow keys)
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowLeft') scrollPrev();
+    if (e.key === 'ArrowRight') scrollNext();
+  }, [scrollPrev, scrollNext]);
 
   if (!loading && testimonials.length === 0) return null;
 
@@ -165,7 +202,15 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
         </motion.div>
 
         <div className="relative max-w-5xl mx-auto">
-          <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+          <div
+            className="overflow-hidden cursor-grab active:cursor-grabbing"
+            ref={emblaRef}
+            role="region"
+            aria-label="Client testimonials carousel"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}>
             <div className="flex">
               {loading ?
               // Skeleton loader
@@ -179,9 +224,10 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
               <div key={item.id} className="flex-[0_0_100%] md:flex-[0_0_100%] lg:flex-[0_0_80%] min-w-0 px-4 pl-4 md:pl-10">
                     <motion.div
                   className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 relative group hover:border-white/20 transition-all duration-300"
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}>
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                  transition={{ duration: 0.4, delay: isMobile ? 0 : index * 0.08 }}
+                  role="article">
 
                       <Quote className="absolute top-8 left-8 w-10 h-10 text-[#DBFE01]/20 rotate-180" />
                       
@@ -231,28 +277,32 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
           <>
               <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-white transition-all hidden md:flex"
-              aria-label="Previous testimonial">
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 flex items-center justify-center text-white transition-all hidden md:flex"
+              aria-label="Previous testimonial"
+              aria-controls="testimonials-carousel">
 
                 <ChevronLeft className="w-6 h-6" />
               </button>
               <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 flex items-center justify-center text-white transition-all hidden md:flex"
-              aria-label="Next testimonial">
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 flex items-center justify-center text-white transition-all hidden md:flex"
+              aria-label="Next testimonial"
+              aria-controls="testimonials-carousel">
 
                 <ChevronRight className="w-6 h-6" />
               </button>
 
-              <div className="flex justify-center gap-2 mt-8">
+              <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Testimonial slides">
                 {testimonials.map((_, index) =>
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
+                className={`h-1.5 rounded-full transition-all duration-300 will-change-transform ${
                 index === selectedIndex ? 'w-8 bg-[#DBFE01]' : 'w-2 bg-white/10 hover:bg-white/20'}`
                 }
-                aria-label={`Go to slide ${index + 1}`} />
+                role="tab"
+                aria-selected={index === selectedIndex}
+                aria-label={`Go to testimonial ${index + 1} of ${testimonials.length}`} />
 
               )}
               </div>
