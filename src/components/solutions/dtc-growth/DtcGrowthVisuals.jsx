@@ -50,7 +50,7 @@ export const HeroVisual = () => {
             {/* Connecting Line */}
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 md:block hidden" />
             
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0 relative">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 relative w-full">
                 {[
                     { label: "Paid Ads", icon: MegaphoneIcon, color: "bg-blue-500" },
                     { label: "PDP", icon: ShoppingBag, color: "bg-indigo-500" },
@@ -64,21 +64,21 @@ export const HeroVisual = () => {
                         transition={{ delay: 0.5 + i * 0.2, type: "spring" }}
                         className="relative z-10 flex flex-col items-center"
                     >
-                        <div className={`w-16 h-16 rounded-2xl ${step.color} flex items-center justify-center shadow-lg shadow-${step.color}/20 mb-3 border-2 border-white/10 relative overflow-hidden group`}>
+                        <div className={`w-12 h-12 sm:w-16 sm:h-16 rounded-2xl ${step.color} flex items-center justify-center shadow-lg shadow-${step.color}/20 mb-2 sm:mb-3 border-2 border-white/10 relative overflow-hidden group`}>
                             <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            {i === 0 ? <Zap className="w-8 h-8 text-white" /> : 
-                             i === 1 ? <ShoppingBag className="w-8 h-8 text-white" /> :
-                             i === 2 ? <CreditCard className="w-8 h-8 text-white" /> :
-                             <RefreshCw className="w-8 h-8 text-black" />}
+                            {i === 0 ? <Zap className="w-5 h-5 sm:w-8 sm:h-8 text-white" /> : 
+                             i === 1 ? <ShoppingBag className="w-5 h-5 sm:w-8 sm:h-8 text-white" /> :
+                             i === 2 ? <CreditCard className="w-5 h-5 sm:w-8 sm:h-8 text-white" /> :
+                             <RefreshCw className="w-5 h-5 sm:w-8 sm:h-8 text-black" />}
                         </div>
-                        <div className="text-white font-bold text-sm bg-[#0B1020]/80 px-3 py-1 rounded-full border border-white/10">
+                        <div className="text-white font-bold text-xs sm:text-sm bg-[#0B1020]/80 px-2 sm:px-3 py-1 rounded-full border border-white/10 text-center">
                             {step.label}
                         </div>
                         
                         {/* Flow Arrow */}
                         {i < 3 && (
                             <motion.div 
-                                className="absolute -right-[50%] top-8 hidden md:block text-white/20"
+                                className="absolute -right-[calc(50%+8px)] md:-right-[50%] top-8 md:top-8 hidden md:block text-white/20 md:inline-block text-white/20"
                                 animate={{ x: [0, 10, 0], opacity: [0.2, 0.6, 0.2] }}
                                 transition={{ duration: 2, repeat: Infinity }}
                             >
