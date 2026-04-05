@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Code2, Rocket, TrendingUp, Zap } from 'lucide-react';
 
+// Minimal animation approach: opacity fades only (GPU-friendly)
+
 export default function AccelerateProcessVisual({ reduceMotion }) {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -52,48 +54,36 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/10 via-blue-500/5 to-purple-500/10 rounded-3xl blur-2xl" />
       
       <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">
-        {/* Connecting Line Container */}
-        <div className="absolute left-[2.25rem] top-12 bottom-12 w-0.5 bg-white/10">
-          <motion.div
-            className="absolute top-0 left-0 w-full bg-gradient-to-b from-[#DBFE01] to-blue-500"
-            initial={{ height: reduceMotion ? "100%" : "0%" }}
-            animate={{ height: "100%" }}
-            transition={{ duration: reduceMotion ? 0 : 2, ease: "easeInOut", delay: reduceMotion ? 0 : 0.5 }} />
-
-        </div>
+        {/* Connecting Line - Static, no animation */}
+        <div className="absolute left-[2.25rem] top-12 bottom-12 w-0.5 bg-gradient-to-b from-[#DBFE01] to-blue-500" />
 
         <div className="space-y-8 relative">
           {steps.map((step, index) =>
           <motion.div
             key={step.id}
-            initial={{ opacity: reduceMotion ? 1 : 0, x: reduceMotion ? 0 : -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: reduceMotion ? 0 : index * 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.15 }}
             onClick={() => scrollToSection(step.title.toLowerCase())}
-            className="flex gap-6 relative cursor-pointer hover:scale-[1.02] transition-transform">
+            className="flex gap-6 relative cursor-pointer group">
 
-              {/* Icon Node */}
+              {/* Icon Node - Static with hover effect */}
               <div className="relative z-10 flex-shrink-0">
-                <motion.div
-                initial={{ scale: reduceMotion ? 1 : 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ type: "spring", delay: reduceMotion ? 0 : index * 0.2 + 0.1 }}
-                className={`w-12 h-12 rounded-xl flex items-center justify-center border-2 ${
+                <div
+                className={`w-12 h-12 rounded-xl flex items-center justify-center border-2 transition-all duration-300 group-hover:scale-105 ${
                 step.highlight ?
                 'bg-[#DBFE01] border-[#DBFE01] text-black shadow-[0_0_20px_rgba(219,254,1,0.4)]' :
                 'bg-[#0B1020] border-white/20 text-white shadow-lg'}`
                 }>
-
                   <step.icon className="w-6 h-6" />
-                </motion.div>
-                {/* Active Pulse for Highlight */}
+                </div>
+                {/* Pulse animation - GPU-friendly with opacity only */}
                 {step.highlight &&
               <motion.div
                 className="absolute inset-0 bg-[#DBFE01] rounded-xl -z-10"
-                animate={reduceMotion ? {} : { scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }}
+                animate={{ opacity: [0.3, 0, 0.3] }}
                 transition={{ duration: 2, repeat: Infinity }} />
-
               }
               </div>
 
@@ -114,14 +104,10 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
           )}
         </div>
 
-        {/* Floating Accent Elements */}
-        <motion.div
-          className="absolute top-4 right-4 text-[#DBFE01]/20"
-          animate={reduceMotion ? {} : { rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
-
+        {/* Subtle floating accent - static with CSS only */}
+        <div className="absolute top-4 right-4 text-[#DBFE01]/10 opacity-60">
           <Zap className="w-24 h-24" />
-        </motion.div>
+        </div>
       </div>
     </div>);
 

@@ -265,4 +265,20 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+  /* Mobile optimization: reduce animation on small screens */
+  @media (max-width: 768px) {
+    /* Disable continuous animations on mobile for better performance */
+    [animate*="scale"],
+    [animate*="rotate"],
+    [animate*="y"] {
+      animation-duration: 0s !important;
+      animation: none !important;
+    }
+
+    /* Keep entrance animations but reduce stagger */
+    motion.div {
+      transition-duration: 0.3s !important;
+    }
+  }
 }
