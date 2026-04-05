@@ -224,9 +224,9 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
               <div key={item.id} className="flex-[0_0_100%] md:flex-[0_0_100%] lg:flex-[0_0_80%] min-w-0 px-4 pl-4 md:pl-10">
                     <motion.div
                   className="bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 md:p-12 relative group hover:border-white/20 transition-all duration-300"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                  transition={{ duration: 0.4, delay: isMobile ? 0 : index * 0.08 }}
+                  initial={isMobile ? false : { opacity: 0, y: 10 }}
+                  animate={isMobile ? false : (isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 })}
+                  transition={isMobile ? {} : { duration: 0.3, delay: index * 0.06 }}
                   role="article">
 
                       <Quote className="absolute top-8 left-8 w-10 h-10 text-[#DBFE01]/20 rotate-180" />

@@ -65,17 +65,17 @@ export default function BrandCarousel() {
         <div className="relative z-10 overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
         {/* Entrance animation */}
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          initial={isMobile ? false : { opacity: 0 }}
+          animate={isMobile ? false : (isInView ? { opacity: 1 } : { opacity: 0 })}
+          transition={isMobile ? {} : { duration: 0.4 }}
           className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-4 px-4">
           Trusted by
         </motion.p>
         
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          initial={isMobile ? false : { opacity: 0 }}
+          animate={isMobile ? false : (isInView ? { opacity: 1 } : { opacity: 0 })}
+          transition={isMobile ? {} : { duration: 0.4, delay: 0.1 }}
           className="relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}>
@@ -84,11 +84,11 @@ export default function BrandCarousel() {
             <motion.div
               className="flex gap-12 items-center"
               animate={{
-                x: isHovered ? ['0%', '-50%'] : ['0%', '-50%']
+                x: ['0%', '-50%']
               }}
               transition={{
                 x: {
-                  duration: isMobile ? 45 : 50,
+                  duration: isMobile ? 40 : 50,
                   repeat: Infinity,
                   ease: "linear",
                   repeatType: "loop"
