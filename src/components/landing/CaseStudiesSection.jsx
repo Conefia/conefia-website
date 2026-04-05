@@ -255,7 +255,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 text-[#DBFE01]" />
             Case Studies
           </span>
-          <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
+          <h2 className="text-2xl font-bold mb-6 tracking-tight gradient-heading gradient-heading--glow">
             Real outcomes. Real growth.
           </h2>
           <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">

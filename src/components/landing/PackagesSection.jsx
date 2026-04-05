@@ -136,7 +136,7 @@ export default function PackagesSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Packages &amp; Services
           </span>
-          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4">
+          <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
             Pick a sprint. Ship outcomes.
           </h2>
           <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium leading-relaxed">

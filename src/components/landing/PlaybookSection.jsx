@@ -598,7 +598,7 @@ export default function PlaybookSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             {config.sectionLabel}
           </span>
-          <h2 className="text-2xl font-bold mb-6 leading-tight text-[#1a1a1a]">
+          <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--premium">
             {config.headline}
           </h2>
           <p className="text-lg md:text-xl text-[#1a1a1a]/80 max-w-3xl mx-auto font-medium leading-relaxed">

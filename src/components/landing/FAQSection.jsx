@@ -114,7 +114,7 @@ export default function FAQSection({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             FAQ
           </span>
-          <h2 className="text-2xl font-bold text-[#1a1a1a] mb-4">
+          <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
             Common questions, answered
           </h2>
           <p className="text-lg text-[#2F2F2F]/70 font-medium">
