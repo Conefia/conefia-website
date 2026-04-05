@@ -38,7 +38,7 @@ export default function FitCheck() {
           <h2 className="text-2xl font-bold mb-4 text-[#1a1a1a]">
             Is this the right fit?
           </h2>
-          <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium leading-relaxed max-w-xl">If you have a real workflow to improve and access to users (or data), we can get you to pilots fast.
+          <p className="text-[#1a1a1a]/80 mx-auto text-base font-normal leading-relaxed max-w-xl">If you have a real workflow to improve and access to users (or data), we can get you to pilots fast.
 
           </p>
         </motion.div>
