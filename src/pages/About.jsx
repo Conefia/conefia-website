@@ -147,7 +147,7 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-4">
                   <Lightbulb className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Our Vision</h2>
+                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--glow">Our Vision</h2>
                 <p className="text-white/60 leading-relaxed">
                   To become the most trusted partner for digital innovation — where every entrepreneur can turn their vision into reality without the traditional barriers of time, cost, and technical complexity.
                 </p>
