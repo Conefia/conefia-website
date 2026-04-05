@@ -49,11 +49,11 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
 
 
   return (
-    <div className="relative w-full max-w-md ml-auto p-4">
+    <div className="relative w-full max-w-md ml-auto p-4 lg:w-screen lg:max-w-none lg:pr-0 lg:mr-0 lg:-mr-[calc(100vw-100%)]">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#DBFE01]/10 via-blue-500/5 to-purple-500/10 rounded-3xl blur-2xl" />
       
-      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden">
+      <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 overflow-hidden lg:rounded-none lg:rounded-l-3xl lg:mr-[calc(100vw-100%+2rem)]">
         {/* Connecting Line - Static, no animation */}
         <div className="absolute left-[2.25rem] top-12 bottom-12 w-0.5 bg-gradient-to-b from-[#DBFE01] to-blue-500" />
 
@@ -105,7 +105,7 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
         </div>
 
         {/* Subtle floating accent - static with CSS only */}
-        <div className="absolute top-4 right-4 text-[#DBFE01]/10 opacity-60">
+        <div className="absolute top-4 right-4 lg:right-[calc(100vw-100%+2rem)] text-[#DBFE01]/10 opacity-60">
           <Zap className="w-24 h-24" />
         </div>
       </div>
