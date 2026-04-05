@@ -18,7 +18,7 @@ export const HeroVisual = () => {
           <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[100px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl px-4 flex flex-col items-center">
+      <div className="relative z-10 w-full px-2 sm:px-4 md:px-6 lg:px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
         
         {/* Floating Metrics Cards */}
         <div className="flex gap-4 mb-8">
