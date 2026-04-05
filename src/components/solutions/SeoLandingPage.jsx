@@ -116,7 +116,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                     {primaryCta}
                     <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                  <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020]">
                     {secondaryCta}
                   </button>
                 </motion.div>
@@ -190,7 +190,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                    {primaryCta}
                    <ArrowRight className="w-5 h-5" />
                 </Link>
-                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
+                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020]">
                    {secondaryCta}
                 </button>
               </motion.div>
