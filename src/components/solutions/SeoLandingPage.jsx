@@ -245,7 +245,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <Reveal>
-        <h2 className="text-2xl font-bold mb-6 leading-tight text-center text-[#1a1a1a]">{title}</h2>
+        <h2 className="text-2xl font-bold mb-6 leading-tight text-center gradient-heading gradient-heading--premium">{title}</h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
       <div className="grid md:grid-cols-4 gap-8">
@@ -290,7 +290,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
           <X className="w-3.5 h-3.5" />
           The Problem
         </div>
-        <h2 className="mt-6 text-2xl font-bold text-center leading-tight max-w-3xl">
+        <h2 className="mt-6 text-2xl font-bold text-center leading-tight max-w-3xl gradient-heading gradient-heading--premium">
           {title || 'Why most AI MVPs get delayed and miss pilots and revenue'}
         </h2>
         {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
@@ -367,7 +367,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           <Check className="w-3.5 h-3.5" />
           The Solution
         </div>
-        <h2 className="mt-6 text-2xl font-bold text-center leading-tight mb-4">{title}</h2>
+        <h2 className="mt-6 text-2xl font-bold text-center leading-tight mb-4 gradient-heading gradient-heading--premium">{title}</h2>
         {description &&
       <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
             {description}
@@ -464,7 +464,7 @@ export const RoadmapCallSection = ({
         <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
       </span>
-      <h2 className="text-2xl font-bold leading-tight mb-2 text-white">
+      <h2 className="text-2xl font-bold leading-tight mb-2 gradient-heading gradient-heading--glow">
         {title}
       </h2>
       <p className="text-white/60 text-lg font-medium max-w-2xl">
@@ -600,7 +600,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-2xl font-bold mb-6 leading-tight mt-6 text-[#1a1a1a]">{title || 'Build → Launch → Scale'}</h2>
+        <h2 className="text-2xl font-bold mb-6 leading-tight mt-6 gradient-heading gradient-heading--premium">{title || 'Build → Launch → Scale'}</h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -709,7 +709,7 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
        <div className="grid lg:grid-cols-2 gap-16 items-center">
          <Reveal>
-           <h2 className="text-2xl font-bold mb-6 leading-tight text-white">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
+           <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--glow">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
            {items.length > 0 &&
         <ul className="space-y-4">
                {items.map((item, i) =>
@@ -759,7 +759,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-2xl font-bold text-[#1a1a1a]">{useCasesTitle || "Common use cases"}</h2>
+          <h2 className="text-2xl font-bold gradient-heading gradient-heading--premium">{useCasesTitle || "Common use cases"}</h2>
         </Reveal>
 
         <UseCasesLinkedLight useCases={useCases} />
@@ -988,7 +988,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-2xl font-bold leading-tight text-[#1a1a1a]">
+              className="text-2xl font-bold leading-tight gradient-heading gradient-heading--premium">
               Built for speed and scale
             </motion.h2>
           </Reveal>
@@ -1158,7 +1158,7 @@ export const SolutionFAQ = ({ items = [] }) => {
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
         </span>
-        <h2 className="text-2xl font-bold mb-6 text-[#1a1a1a]">
+        <h2 className="text-2xl font-bold mb-6 gradient-heading gradient-heading--premium">
          Common questions, answered
         </h2>
       </Reveal>
