@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function ContourBackground({ className = "", isMobile = false }) {
-  // Desktop version - single flowing pattern
+  // Desktop version - single flowing pattern with multi-color gradients
   if (!isMobile) {
     return (
       <svg 
@@ -10,25 +10,35 @@ export default function ContourBackground({ className = "", isMobile = false }) 
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-            <stop offset="40%" stopColor="rgba(219, 254, 1, 1)" />
-            <stop offset="60%" stopColor="rgba(219, 254, 1, 1)" />
-            <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
+          <linearGradient id="lgDesktop" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stopColor="rgba(219,254,1,0)" />
+            <stop offset="30%" stopColor="rgba(219,254,1,0.9)" />
+            <stop offset="55%" stopColor="rgba(102,240,255,0.7)" />
+            <stop offset="80%" stopColor="rgba(219,254,1,0.8)" />
+            <stop offset="100%" stopColor="rgba(219,254,1,0)" />
+          </linearGradient>
+          <linearGradient id="lgDesktop2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stopColor="rgba(126,143,255,0)" />
+            <stop offset="40%" stopColor="rgba(126,143,255,0.6)" />
+            <stop offset="70%" stopColor="rgba(219,254,1,0.5)" />
+            <stop offset="100%" stopColor="rgba(219,254,1,0)" />
           </linearGradient>
         </defs>
         {[...Array(20)].map((_, i) => {
-          const ox = i * 2 - 10; 
-          const oy = i * 1.2 - 5;
-          
+          const spread = 16;
+          const ox = (i / 19) * spread - spread / 2;
+          const oy = (i / 19) * 2 - 1;
+          const isThick = i % 4 === 0;
+          const isMid = i % 4 === 2;
+          const grad = i % 2 === 0 ? 'url(#lgDesktop)' : 'url(#lgDesktop2)';
           return (
             <path
               key={i}
               d={`M ${110 + ox} ${-20 + oy} C ${-30 + ox} ${90 + oy}, ${60 + ox} ${0 + oy}, ${120 + ox} ${120 + oy}`}
-              stroke="url(#lineGradient)"
-              strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
+              stroke={grad}
+              strokeWidth={isThick ? 0.35 : isMid ? 0.18 : 0.09}
               fill="none"
-              opacity={0.2 + Math.random() * 0.3}
+              opacity={isThick ? 0.55 : isMid ? 0.35 : 0.2}
             />
           );
         })}
