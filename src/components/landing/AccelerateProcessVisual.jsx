@@ -99,11 +99,11 @@ export default function AccelerateProcessVisual({ reduceMotion }) {
 
               {/* Content */}
               <div className="flex-1 pt-1">
-                <div className="flex justify-between items-start mb-1">
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1">
                   <h3 className="text-lg font-bold" style={{ color: 'white', WebkitTextFillColor: 'white', backgroundImage: 'none' }}>
                     {step.title}
                   </h3>
-                  <span className="bg-white/5 text-[#DBFE01] px-2 py-1 text-sm font-semibold rounded border border-white/10">
+                  <span className="bg-white/5 text-[#DBFE01] px-2 py-0.5 text-xs font-semibold rounded border border-white/10 ml-1">
                     {step.duration}
                   </span>
                 </div>
