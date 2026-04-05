@@ -132,7 +132,7 @@ export default function CommonReasons() {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold"><span className="text-[#1a1a1a]">Common reasons teams come to us</span></h2>
+          <h2 className="text-2xl font-bold text-[#1a1a1a]">Common reasons teams come to us</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-6 items-stretch">
