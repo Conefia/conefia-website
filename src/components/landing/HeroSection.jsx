@@ -53,11 +53,11 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-20 md:pt-24 overflow-hidden">
+    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-16 sm:pt-20 md:pt-24 pb-8 sm:pb-12 md:pb-0 overflow-hidden">
       <HeroDarkBackground isMobile={isMobile} />
 
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-8 items-center justify-items-center lg:justify-items-start relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center lg:justify-items-start relative z-10">
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
@@ -68,32 +68,34 @@ export default function HeroSection({ reduceMotion }) {
             {/* Headline */}
             <motion.h1
               variants={itemVariants}
-              className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left gradient-heading gradient-heading--glow">
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left gradient-heading gradient-heading--glow">
               One Partner to Build, Launch, and Scale Your Digital Venture.
             </motion.h1>
 
             {/* Subhead */}
             <motion.p
-              variants={itemVariants} className="text-white/80 mb-8 text-base font-normal leading-relaxed md:text-xl max-w-xl text-center md:text-left">For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
-
+              variants={itemVariants} 
+              className="text-white/80 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-xl text-center md:text-left"
+            >
+              For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
             </motion.p>
 
             {/* CTAs */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto justify-center lg:justify-start"
+            >
               <Link
                 to={createPageUrl('book')}
-                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1">
-
-                 Book Roadmap Call
-                 <ArrowRight className="w-5 h-5" />
-               </Link>
+                className="bg-gradient-to-r from-[#DBFE01] to-[#c5e000] text-[#0a0e1a] px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(219,254,1,0.35)] hover:-translate-y-0.5 transition-all duration-300 flex-1 sm:flex-initial"
+              >
+                Book Roadmap Call
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              </Link>
               <button
                 onClick={() => scrollToSection('track-selector')}
-                className="px-8 py-4 rounded-xl text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1">
-
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1 sm:flex-initial"
+              >
                 Choose Your Track
               </button>
             </motion.div>
@@ -101,23 +103,23 @@ export default function HeroSection({ reduceMotion }) {
             {/* Trust indicators */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-wrap gap-6 md:gap-8 mt-8 justify-center lg:justify-start">
-
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-12 w-full lg:w-auto"
+            >
               <div className="text-center lg:text-left group">
-                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">TYPICAL MVP</p>
-                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">TYPICAL MVP</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">WEEKLY DEMOS</p>
-                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">WEEKLY DEMOS</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">PRIVACY-FIRST</p>
-                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">PRIVACY-FIRST</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-widest">ONE BACKLOG</p>
-                <p className="text-white font-bold text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">ONE BACKLOG</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
               </div>
             </motion.div>
           </motion.div>
@@ -127,8 +129,8 @@ export default function HeroSection({ reduceMotion }) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
             transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
-            className="relative w-fit ml-auto">
-
+            className="relative w-full lg:w-fit flex justify-center lg:justify-end"
+          >
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
       </div>
