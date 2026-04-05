@@ -53,7 +53,7 @@ export default function Larovie() {
             Idea → Growth
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight" style={{ color: 'white', WebkitTextFillColor: 'white', backgroundImage: 'none' }}>
             1,500+ customers in 3 months with AED 32 CAC
           </h1>
 

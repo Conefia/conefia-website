@@ -60,7 +60,7 @@ export default function Vascular() {
             Growth
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#2F2F2F] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight" style={{ color: 'white', WebkitTextFillColor: 'white', backgroundImage: 'none' }}>
             200+ patients at $20 CAC in 6 months
           </h1>
 

@@ -53,7 +53,7 @@ export default function AlMahfza() {
             Build
           </span>
 
-          <h1 className="text-4xl md:text-6xl font-extrabold text-[#1a1a1a] mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight" style={{ color: 'white', WebkitTextFillColor: 'white', backgroundImage: 'none' }}>
             Mobile app shipped in 60 days after 1 year stuck
           </h1>
 
