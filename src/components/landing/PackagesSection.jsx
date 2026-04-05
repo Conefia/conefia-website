@@ -113,8 +113,8 @@ export default function PackagesSection({ reduceMotion }) {
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3]
         }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
+        transition={{ duration: 8, repeat: Infinity }} />
+      
       
       <motion.div
         className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
@@ -122,8 +122,8 @@ export default function PackagesSection({ reduceMotion }) {
           scale: [1.2, 1, 1.2],
           opacity: [0.5, 0.3, 0.5]
         }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
+        transition={{ duration: 8, repeat: Infinity }} />
+      
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
@@ -139,8 +139,8 @@ export default function PackagesSection({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
             Pick a sprint. Ship outcomes.
           </h2>
-          <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium leading-relaxed">
-            AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.
+          <p className="text-[#1a1a1a]/80 mx-auto text-base font-normal leading-relaxed max-w-2xl">AI MVP development, mobile app development, clinic growth, and Shopify growth—delivered in focused sprints with one accountable team.
+
           </p>
         </motion.div>
 
@@ -172,34 +172,34 @@ export default function PackagesSection({ reduceMotion }) {
 
               {/* Animated glow effect */}
               <motion.div
-                className={`absolute -inset-1 bg-gradient-to-r ${pkg.gradient} rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
-                animate={reduceMotion ? {} : {
-                  scale: [1, 1.05, 1]
-                }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
+              className={`absolute -inset-1 bg-gradient-to-r ${pkg.gradient} rounded-3xl opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
+              animate={reduceMotion ? {} : {
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ duration: 3, repeat: Infinity }} />
+            
               
               <div className={`glass-card rounded-3xl p-7 h-full transition-all duration-500 hover:shadow-2xl border-2 ${pkg.borderColor} hover:border-opacity-80 bg-gradient-to-br ${pkg.bgGradient} backdrop-blur-xl overflow-hidden relative`}>
                 {/* Animated gradient overlay */}
                 <motion.div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: `linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)`
-                  }}
-                  animate={reduceMotion ? {} : {
-                    x: ['-200%', '200%']
-                  }}
-                  transition={{
-                    duration: 2,
-                    ease: "easeInOut"
-                  }}
-                />
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: `linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)`
+                }}
+                animate={reduceMotion ? {} : {
+                  x: ['-200%', '200%']
+                }}
+                transition={{
+                  duration: 2,
+                  ease: "easeInOut"
+                }} />
+              
 
                 {/* Icon */}
-                <motion.div 
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pkg.iconBg} flex items-center justify-center border-2 border-white/50 shadow-lg ${pkg.glowColor} group-hover:shadow-2xl transition-all duration-500 mb-5 relative`}
-                  whileHover={reduceMotion ? {} : { scale: 1.1, rotate: 10 }}
-                >
+                <motion.div
+                className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pkg.iconBg} flex items-center justify-center border-2 border-white/50 shadow-lg ${pkg.glowColor} group-hover:shadow-2xl transition-all duration-500 mb-5 relative`}
+                whileHover={reduceMotion ? {} : { scale: 1.1, rotate: 10 }}>
+                
                   <pkg.icon className="w-8 h-8 text-white drop-shadow-lg" />
                 </motion.div>
 
@@ -217,27 +217,27 @@ export default function PackagesSection({ reduceMotion }) {
                 <p className="text-[#1a1a1a]/80 text-sm mb-5 font-semibold leading-relaxed">{pkg.description}</p>
 
                 {/* Popular proof (MVP Build only) */}
-                {pkg.popularProof && (
-                  <p className="text-[#1a1a1a]/70 text-xs italic mb-5 bg-white/50 p-3 rounded-lg border border-white/30">{pkg.popularProof}</p>
-                )}
+                {pkg.popularProof &&
+              <p className="text-[#1a1a1a]/70 text-xs italic mb-5 bg-white/50 p-3 rounded-lg border border-white/30">{pkg.popularProof}</p>
+              }
 
                 {/* Features */}
                 <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, fIndex) =>
-                <motion.li 
-                  key={fIndex} 
+                <motion.li
+                  key={fIndex}
                   className="flex items-start gap-2.5 text-sm"
                   initial={{ opacity: 0, x: -10 }}
                   animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                   transition={{
                     duration: 0.4,
                     delay: 0.5 + fIndex * 0.05
-                  }}
-                >
+                  }}>
+                  
                       <motion.div
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        transition={{ duration: 0.5 }}
-                      >
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    transition={{ duration: 0.5 }}>
+                    
                         <CheckCircle2 className={`w-4 h-4 ${pkg.accentColor} flex-shrink-0 mt-0.5`} />
                       </motion.div>
                       <span className="text-[#1a1a1a]/80 font-medium leading-snug">{feature}</span>
