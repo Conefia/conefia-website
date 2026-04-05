@@ -11,7 +11,7 @@ import {
 // Hero Visual: Profit Engine + Dashboard
 export const HeroVisual = () => {
   return (
-    <div className="relative w-full h-[450px] flex items-center justify-center select-none perspective-[1200px] overflow-visible">
+    <div className="relative w-full h-[300px] sm:h-[380px] md:h-[450px] flex items-center justify-center select-none perspective-[1200px] overflow-visible">
        {/* Background Ambience */}
        <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/10 mx-4 md:mx-0 shadow-2xl">
           <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-[120px]" />
@@ -21,7 +21,7 @@ export const HeroVisual = () => {
       <div className="relative z-10 w-full px-2 sm:px-4 md:px-6 lg:px-4 max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
         
         {/* Floating Metrics Cards */}
-        <div className="flex gap-4 mb-8">
+        <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 justify-center">
             {[
                 { label: "ROAS", val: "7.5x", icon: Target, color: "text-green-500", bg: "bg-green-500/10" },
                 { label: "CAC", val: "$15", icon: Users, color: "text-blue-500", bg: "bg-blue-500/10" },
@@ -32,14 +32,14 @@ export const HeroVisual = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + i * 0.1 }}
-                    className="bg-[#0B1020]/90 backdrop-blur border border-white/10 rounded-xl p-3 md:p-4 flex items-center gap-3 shadow-xl min-w-[120px]"
+                    className="bg-[#0B1020]/90 backdrop-blur border border-white/10 rounded-xl p-2 sm:p-3 md:p-4 flex items-center gap-2 sm:gap-3 shadow-xl min-w-fit"
                 >
-                    <div className={`p-2 rounded-lg ${m.bg}`}>
-                        <m.icon className={`w-4 h-4 ${m.color}`} />
+                    <div className={`p-1.5 sm:p-2 rounded-lg ${m.bg}`}>
+                        <m.icon className={`w-3 h-3 sm:w-4 sm:h-4 ${m.color}`} />
                     </div>
                     <div>
-                        <div className="text-[10px] text-gray-400 uppercase font-bold">{m.label}</div>
-                        <div className="text-lg font-bold text-white">{m.val}</div>
+                        <div className="text-[9px] sm:text-[10px] text-gray-400 uppercase font-bold">{m.label}</div>
+                        <div className="text-sm sm:text-base md:text-lg font-bold text-white">{m.val}</div>
                     </div>
                 </motion.div>
             ))}
