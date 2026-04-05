@@ -113,7 +113,8 @@ function LayoutContent({ children, currentPageName }) {
   const secondaryItems = [
   { label: 'Playbook', id: 'playbook' },
   { label: 'Pricing', id: 'packages' },
-  { label: 'FAQ', id: 'faq' }];
+  { label: 'FAQ', id: 'faq' },
+  { label: 'Legal', path: '/legal' }];
 
 
 
@@ -212,12 +213,12 @@ function LayoutContent({ children, currentPageName }) {
                   <div className="py-2">
                     {secondaryItems.map((item) =>
                     <Link
-                      key={item.label}
-                      to={createPageUrl('Home') + '#' + item.id}
-                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
-                        {item.label}
-                      </Link>
-                    )}
+                       key={item.label}
+                       to={item.path ? item.path : createPageUrl('Home') + '#' + item.id}
+                       className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
+                         {item.label}
+                       </Link>
+                     )}
                   </div>
                 </div>
               </div>
@@ -275,14 +276,14 @@ function LayoutContent({ children, currentPageName }) {
                  <div className="pb-4 border-b border-white/10">
                     <p className="text-white/40 text-xs font-bold uppercase tracking-wider mb-3">More</p>
                     {secondaryItems.map((item) =>
-                <Link
-                  key={item.label}
-                  to={createPageUrl('Home') + '#' + item.id}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors">
+                    <Link
+                    key={item.label}
+                    to={item.path ? item.path : createPageUrl('Home') + '#' + item.id}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block w-full text-left text-white text-base font-semibold py-2 pl-2 border-l-2 border-transparent hover:border-[#DBFE01] transition-colors">
                         {item.label}
                       </Link>
-                )}
+                    )}
                  </div>
 
                  {/* Choose your track */}
