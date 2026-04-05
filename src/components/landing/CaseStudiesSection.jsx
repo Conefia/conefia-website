@@ -193,9 +193,9 @@ export default function CaseStudiesSection({ reduceMotion }) {
                   left: `${x}%`,
                   top: `${y}%`,
                   width: `${twinkleSize}px`,
-                  height: `${twinkleSize}px`,
+                  height: `${twinkleSize}px`
                 }}>
-                <div 
+                <div
                   className="absolute bg-white rounded-full"
                   style={{
                     width: '100%',
@@ -209,8 +209,8 @@ export default function CaseStudiesSection({ reduceMotion }) {
                       ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                     `
                   }} />
-              </div>
-            );
+              </div>);
+
           }
 
           return (
@@ -224,8 +224,8 @@ export default function CaseStudiesSection({ reduceMotion }) {
                 height: `${size}px`,
                 opacity: opacity * 0.8,
                 boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
-              }} />
-          );
+              }} />);
+
         })}
       </div>
       
@@ -252,8 +252,8 @@ export default function CaseStudiesSection({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-6 tracking-tight gradient-heading gradient-heading--glow">
             Real outcomes. Real growth.
           </h2>
-          <p className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto font-medium leading-relaxed">
-            See how we've helped founders go from idea to live product with measurable results.
+          <p className="text-white/70 mx-auto text-base font-normal leading-relaxed md:text-xl max-w-3xl">See how we've helped founders go from idea to live product with measurable results.
+
           </p>
         </motion.div>
 
@@ -271,14 +271,14 @@ export default function CaseStudiesSection({ reduceMotion }) {
 
                   <div className="group relative">
                     {/* Glow effect - disabled on mobile to reduce concurrent animations */}
-                    {!isMobile && (
-                    <motion.div
+                    {!isMobile &&
+                  <motion.div
                     className={`absolute -inset-1 bg-gradient-to-r ${study.gradient} rounded-3xl opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500`}
                     animate={reduceMotion ? {} : {
                       opacity: [0.2, 0.3, 0.2]
                     }}
                     transition={{ duration: 3, repeat: Infinity }} />
-                    )}
+                  }
 
 
                     <div className="relative bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 hover:border-[#DBFE01]/40 transition-all duration-500 shadow-2xl">
