@@ -9,6 +9,13 @@ import ContourBackground from '../visual/ContourBackground';
 export default function CaseStudiesSection({ reduceMotion }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const [isMobile, setIsMobile] = React.useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'center', skipSnaps: false }
@@ -165,21 +172,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
       <div className="bg-stone-950 absolute inset-0" />
       
       {/* Contour lines */}
-      {window.innerWidth < 768 ? (
-        <>
-          <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
-            <ContourBackground className="opacity-80" isMobile={false} />
-          </div>
-          <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
-            <ContourBackground className="opacity-80" isMobile={false} />
-          </div>
-          <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
-            <ContourBackground className="opacity-80" isMobile={false} />
-          </div>
-        </>
-      ) : (
-        <ContourBackground className="opacity-80" isMobile={false} />
-      )}
+      <ContourBackground className="opacity-80" isMobile={isMobile} />
 
       {/* Static Star Dust */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

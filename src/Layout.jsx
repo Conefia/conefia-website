@@ -10,6 +10,13 @@ import GoogleTagManager from '@/components/GoogleTagManager';
 function LayoutContent({ children, currentPageName }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const { selectedPersona } = usePersona();
 
   // Home page is dark-themed (hero), others are light-themed
@@ -307,21 +314,7 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
         <div className="bg-stone-950 absolute inset-0" />
         
         {/* Contour lines */}
-        {window.innerWidth < 768 ? (
-          <>
-            <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
-              <ContourBackground className="opacity-80" isMobile={false} />
-            </div>
-            <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
-              <ContourBackground className="opacity-80" isMobile={false} />
-            </div>
-            <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
-              <ContourBackground className="opacity-80" isMobile={false} />
-            </div>
-          </>
-        ) : (
-          <ContourBackground className="opacity-80" isMobile={false} />
-        )}
+        <ContourBackground className="opacity-80" isMobile={isMobile} />
 
         {/* Static Star Dust */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
