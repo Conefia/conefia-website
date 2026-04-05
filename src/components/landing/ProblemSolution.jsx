@@ -73,7 +73,7 @@ export default function ProblemSolution({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-4 leading-tight gradient-heading gradient-heading--premium">
             What are you building right now?
           </h2>
-          <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium md:text-xl max-w-3xl">Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
+          <p className="text-[#1a1a1a]/80 mx-auto text-base font-normal md:text-xl max-w-3xl">Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
 
           </p>
         </motion.div>
@@ -88,8 +88,8 @@ export default function ProblemSolution({ reduceMotion }) {
             src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80"
             alt="Different professionals choosing their path"
             className="w-full h-64 object-cover object-center"
-            loading="lazy"
-          />
+            loading="lazy" />
+          
           <div className="absolute inset-0 bg-gradient-to-r from-[#1a1a1a]/60 via-transparent to-[#1a1a1a]/40 flex items-center px-8">
             <p className="text-white font-bold text-xl md:text-2xl max-w-md leading-snug drop-shadow-lg">
               Every venture is different. <span className="text-[#DBFE01]">Which track fits yours?</span>
