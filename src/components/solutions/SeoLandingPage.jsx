@@ -88,12 +88,12 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
           {layout === 'split' ?
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
+              <div className="text-center">
                 <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl font-bold text-white mb-6 max-w-4xl leading-tight text-center md:text-left">
+                className="text-3xl font-bold text-white mb-6 max-w-4xl leading-tight text-center mx-auto">
                   {title && title.replace(/\.$/, '')}
                 </motion.h1>
                 
@@ -101,7 +101,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-base text-white/80 leading-relaxed mb-6 max-w-xl">
+                className="text-base text-white/80 leading-relaxed mb-6 max-w-xl text-center mx-auto">
 
                   {subtitle}
                 </motion.p>
@@ -110,7 +110,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 mb-3">
+                className="flex flex-col sm:flex-row gap-4 mb-3 justify-center">
 
                   <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
                     {primaryCta}
@@ -124,12 +124,12 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <p className="text-white/50 text-xs font-medium mb-6">{microCopy}</p>
               }
 
-                {/* Trust Chips - Left Aligned */}
+                {/* Trust Chips - Centered */}
                 <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-wrap gap-3 mb-8">
+                className="flex flex-wrap gap-3 mb-8 justify-center">
 
                   {trustChips.map((chip, i) =>
                 <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
@@ -167,7 +167,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl font-bold text-white leading-tight mb-6 text-center md:text-left">
+              className="text-3xl font-bold text-white leading-tight mb-6 text-center">
                 {title && title.replace(/\.$/, '')}
               </motion.h1>
               
@@ -278,7 +278,6 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
       </Reveal>
     </div>
   </section>;
-
 
 
 
@@ -706,10 +705,10 @@ export function SolutionOutcomes({ title, items = [], visual }) {
            <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--glow">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
            {items.length > 0 &&
         <ul className="space-y-4">
-               {items.map((item, i) =>
-          <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
-          )}
-             </ul>
+                 {items.map((item, i) =>
+           <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
+           )}
+              </ul>
         }
          </Reveal>
          <Reveal delay={0.2}>
