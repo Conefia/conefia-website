@@ -23,41 +23,41 @@ function LayoutContent({ children, currentPageName }) {
   const isHomePage = currentPageName === 'Home';
   // Check for solution pages
   const isSolutionPage = currentPageName && typeof currentPageName === 'string' && (
-    currentPageName === 'clinic-growth-system' ||
-    currentPageName === 'ai-saas-mvp-launch' ||
-    currentPageName === 'app-relaunch-retention' ||
-    currentPageName === 'shopify-growth-system' ||
-    currentPageName === 'corporate-innovation' ||
-    currentPageName === 'startup-accelerator-support'
-  );
+  currentPageName === 'clinic-growth-system' ||
+  currentPageName === 'ai-saas-mvp-launch' ||
+  currentPageName === 'app-relaunch-retention' ||
+  currentPageName === 'shopify-growth-system' ||
+  currentPageName === 'corporate-innovation' ||
+  currentPageName === 'startup-accelerator-support');
+
   // Check for case study pages
   const isCaseStudyPage = currentPageName && typeof currentPageName === 'string' && (
-    currentPageName === 'vascularim-clinic-growth' ||
-    currentPageName === 'menovia-ai-femtech-app' ||
-    currentPageName === 'larovie-beauty-ecommerce' ||
-    currentPageName === 'al-mahfza-fintech-app' ||
-    currentPageName === 'hartalega-ai-platform' ||
-    currentPageName === 'aviya-digital-health-app'
-  );
+  currentPageName === 'vascularim-clinic-growth' ||
+  currentPageName === 'menovia-ai-femtech-app' ||
+  currentPageName === 'larovie-beauty-ecommerce' ||
+  currentPageName === 'al-mahfza-fintech-app' ||
+  currentPageName === 'hartalega-ai-platform' ||
+  currentPageName === 'aviya-digital-health-app');
+
   // Check for blog pages
   const isBlogPage = currentPageName && typeof currentPageName === 'string' && (
-    currentPageName === 'Blog' ||
-    currentPageName === 'blog' ||
-    currentPageName === 'BlogPost'
-  );
+  currentPageName === 'Blog' ||
+  currentPageName === 'blog' ||
+  currentPageName === 'BlogPost');
+
   // Check for book page
   const isBookPage = currentPageName === 'Book' || currentPageName === 'book';
   // Check for about page
   const isAboutPage = currentPageName === 'About';
   // Check for policy/legal pages (always dark background)
   const isPolicyPage = currentPageName && (
-    currentPageName === 'Legal' || currentPageName === 'legal' ||
-    currentPageName === 'Terms' || currentPageName === 'terms' ||
-    currentPageName === 'Privacy' || currentPageName === 'privacy' ||
-    currentPageName === 'ip-policy' || currentPageName === 'IPPolicy' ||
-    currentPageName === 'cookies' || currentPageName === 'Cookies' ||
-    currentPageName === 'copyright-policy' || currentPageName === 'CopyrightPolicy'
-  );
+  currentPageName === 'Legal' || currentPageName === 'legal' ||
+  currentPageName === 'Terms' || currentPageName === 'terms' ||
+  currentPageName === 'Privacy' || currentPageName === 'privacy' ||
+  currentPageName === 'ip-policy' || currentPageName === 'IPPolicy' ||
+  currentPageName === 'cookies' || currentPageName === 'Cookies' ||
+  currentPageName === 'copyright-policy' || currentPageName === 'CopyrightPolicy');
+
   const useLightText = isHomePage || isSolutionPage || isCaseStudyPage || isBlogPage || isBookPage || isAboutPage || isPolicyPage || scrolled || mobileMenuOpen;
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function LayoutContent({ children, currentPageName }) {
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
       let lastNode = null;
       let node;
-      while ((node = walker.nextNode())) lastNode = node;
+      while (node = walker.nextNode()) lastNode = node;
       if (lastNode && lastNode.textContent.trimEnd().endsWith('.')) {
         lastNode.textContent = lastNode.textContent.replace(/\.\s*$/, '');
       }
@@ -107,14 +107,14 @@ function LayoutContent({ children, currentPageName }) {
   const navItems = [
   { label: 'Case Studies', id: 'case-studies' },
   { label: 'Blog', page: 'Blog' },
-  { label: 'About', page: 'About' }
-  ];
+  { label: 'About', page: 'About' }];
+
 
   const secondaryItems = [
   { label: 'Playbook', id: 'playbook' },
   { label: 'Pricing', id: 'packages' },
-  { label: 'FAQ', id: 'faq' }
-  ];
+  { label: 'FAQ', id: 'faq' }];
+
 
 
   const solutionItems = [
@@ -184,7 +184,7 @@ function LayoutContent({ children, currentPageName }) {
               </div>
 
 {navItems.map((item) => {
-                const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
+                const pageName = item.page ? item.page === 'Blog' ? 'blog' : item.page : 'Home';
                 return <Link
                   key={item.label}
                   to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
@@ -194,7 +194,7 @@ function LayoutContent({ children, currentPageName }) {
 
                     {item.label}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
-                  </Link>
+                  </Link>;
               })}
               
               {/* More Menu */}
@@ -210,14 +210,14 @@ function LayoutContent({ children, currentPageName }) {
                 
                 <div className="absolute top-full right-0 mt-0 w-48 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
                   <div className="py-2">
-                    {secondaryItems.map((item) => (
-                      <Link
-                        key={item.label}
-                        to={createPageUrl('Home') + '#' + item.id}
-                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
+                    {secondaryItems.map((item) =>
+                    <Link
+                      key={item.label}
+                      to={createPageUrl('Home') + '#' + item.id}
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1a1a1a] font-medium transition-colors">
                         {item.label}
                       </Link>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
@@ -295,20 +295,20 @@ function LayoutContent({ children, currentPageName }) {
                   </Link>
 
 {navItems.map((item) => {
-  const pageName = item.page ? (item.page === 'Blog' ? 'blog' : item.page) : 'Home';
-  return <Link
-    key={item.label}
-    to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
-    onClick={() => setMobileMenuOpen(false)}
-    className="block w-full text-left text-white text-lg font-semibold py-2">
+                const pageName = item.page ? item.page === 'Blog' ? 'blog' : item.page : 'Home';
+                return <Link
+                  key={item.label}
+                  to={item.page ? createPageUrl(pageName) : createPageUrl('Home') + '#' + item.id}
+                  onClick={() => setMobileMenuOpen(false)} className="text-white py-2 text-base font-bold text-left block w-full">
+                  
     {item.label}
-  </Link>
-})}
+  </Link>;
+              })}
 
 <Link
-to={createPageUrl('book')}
-onClick={() => setMobileMenuOpen(false)}
-className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
+                to={createPageUrl('book')}
+                onClick={() => setMobileMenuOpen(false)}
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -348,9 +348,9 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
                     left: `${x}%`,
                     top: `${y}%`,
                     width: `${twinkleSize}px`,
-                    height: `${twinkleSize}px`,
+                    height: `${twinkleSize}px`
                   }}>
-                  <div 
+                  <div
                     className="absolute bg-white rounded-full"
                     style={{
                       width: '100%',
@@ -364,8 +364,8 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
                         ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
                       `
                     }} />
-                </div>
-              );
+                </div>);
+
             }
 
             return (
@@ -379,8 +379,8 @@ className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex it
                   height: `${size}px`,
                   opacity: opacity * 0.8,
                   boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
-                }} />
-            );
+                }} />);
+
           })}
         </div>
         
