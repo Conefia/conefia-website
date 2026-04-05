@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
@@ -68,10 +68,18 @@ export const ProblemItem = ({ children }) =>
 
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel, breadcrumb }) => {
   const reduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div>
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
-        <HeroDarkBackground isMobile={window.innerWidth < 768} />
+        <HeroDarkBackground isMobile={isMobile} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-12 relative z-10">
           <div className="mb-4">
