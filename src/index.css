@@ -142,13 +142,16 @@
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(95deg, #FFFFFF 0%, #D9FF2F 24%, #B8FF00 45%, #66F0FF 74%, #7E8FFF 100%);
   }
 
   .gradient-heading--premium {
+    background-image: linear-gradient(95deg, #1a1a1a 0%, #3a3a3a 40%, #2a4a00 70%, #1a2a1a 100%);
     text-shadow: 0 1px 2px rgba(7, 16, 34, 0.18);
   }
 
   .gradient-heading--glow {
+    background-image: linear-gradient(95deg, #FFFFFF 0%, #D9FF2F 24%, #B8FF00 45%, #66F0FF 74%, #7E8FFF 100%);
     text-shadow:
       0 0 12px rgba(215, 255, 0, 0.18),
       0 1px 2px rgba(7, 16, 34, 0.22);
