@@ -88,29 +88,28 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
           {layout === 'split' ?
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-center">
+              <div>
                 <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left md:mx-0">
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left">
                   {title && title.replace(/\.$/, '')}
                 </motion.h1>
-                
+
                 <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed mb-4 sm:mb-6 max-w-xl text-center md:text-left md:mx-0">
+                className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed mb-4 sm:mb-6 max-w-xl text-center md:text-left">
                   {subtitle}
                 </motion.p>
-                
+
                 <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="flex flex-col sm:flex-row gap-4 mb-3 justify-center md:justify-start">
-
                   <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
                     {primaryCta}
                     <ArrowRight className="w-5 h-5" />
@@ -123,32 +122,28 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <p className="text-white/50 text-xs font-medium mb-6 text-left">{microCopy}</p>
               }
 
-                {/* Trust Chips - Centered */}
+                {/* Trust Chips */}
                 <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
-
                   {trustChips.map((chip, i) =>
                 <div key={i} className="flex items-center gap-2 text-white/70 text-xs sm:text-sm font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
                       {chip.icon ?
                   <chip.icon className="w-3 h-3 text-[#DBFE01]" /> :
-
                   <Check className="w-3 h-3 text-[#DBFE01]" />
                   }
                       {chip.name || chip}
                     </div>
                 )}
                 </motion.div>
-
-
               </div>
 
               {/* Right Column Visual */}
               <div className="relative">
                  {visual}
-              </div>
+               </div>
             </div> : (
 
           /* CENTERED LAYOUT (DEFAULT) */
