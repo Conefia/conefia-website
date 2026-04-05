@@ -509,7 +509,9 @@ export function RoadmapCallSection({
           <img
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
             alt="Product roadmap planning meeting"
-            className="w-full h-full object-cover" />
+            className="w-full h-full object-cover"
+            loading="lazy"
+            decoding="async" />
           
           {/* Dark overlay for cohesion with dark section */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0B1020]/60 via-transparent to-[#0B1020]/40" />
@@ -611,7 +613,9 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
           <img
               src={imageUrl || "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"}
               alt={imageAlt || "Team collaborating on a product sprint"}
-              className="w-full h-full object-cover" />
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async" />
             
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
           <div className="absolute bottom-8 left-8 right-8">
@@ -997,7 +1001,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                 <img
                   src={imageUrl}
                   alt={imageAlt}
-                  className="w-full h-full object-cover" />
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async" />
                 
                 {/* Dark gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1020]/80 via-[#0B1020]/30 to-transparent" />
@@ -1107,6 +1113,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                             alt={tech.name}
                             className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
                             loading="lazy"
+                            decoding="async"
                             style={{ width: '100%', height: '100%' }} />
                           
                           </div>
