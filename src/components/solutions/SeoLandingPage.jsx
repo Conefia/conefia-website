@@ -93,7 +93,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-3xl font-bold text-white mb-6 max-w-4xl leading-tight text-center md:text-left md:mx-0">
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left md:mx-0">
                   {title && title.replace(/\.$/, '')}
                 </motion.h1>
                 
@@ -101,8 +101,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-base text-white/80 leading-relaxed mb-6 max-w-xl text-center md:text-left md:mx-0">
-
+                className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed mb-4 sm:mb-6 max-w-xl text-center md:text-left md:mx-0">
                   {subtitle}
                 </motion.p>
                 
@@ -132,7 +131,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
 
                   {trustChips.map((chip, i) =>
-                <div key={i} className="flex items-center gap-2 text-white/70 text-xs font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
+                <div key={i} className="flex items-center gap-2 text-white/70 text-xs sm:text-sm font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
                       {chip.icon ?
                   <chip.icon className="w-3 h-3 text-[#DBFE01]" /> :
 
