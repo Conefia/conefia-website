@@ -69,8 +69,8 @@ function LayoutContent({ children, currentPageName }) {
   }, []);
 
   useEffect(() => {
+    // Defer non-critical DOM mutations to avoid blocking rendering
     const stripTrailingPeriod = (el) => {
-      // Walk last text node of h2 and remove trailing period
       const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
       let lastNode = null;
       let node;
@@ -84,11 +84,24 @@ function LayoutContent({ children, currentPageName }) {
       document.querySelectorAll('h1, h2').forEach(stripTrailingPeriod);
     };
 
-    processAll();
-
-    const observer = new MutationObserver(() => processAll());
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+    // Use requestIdleCallback for non-critical processing
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => {
+        processAll();
+        const observer = new MutationObserver(() => processAll());
+        observer.observe(document.body, { childList: true, subtree: true });
+        return () => observer.disconnect();
+      });
+    } else {
+      // Fallback: setTimeout for older browsers
+      const timer = setTimeout(() => {
+        processAll();
+        const observer = new MutationObserver(() => processAll());
+        observer.observe(document.body, { childList: true, subtree: true });
+        return () => observer.disconnect();
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const navItems = [

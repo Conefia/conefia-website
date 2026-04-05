@@ -12,6 +12,11 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Main app bundle - module type defers automatically -->
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Non-critical external scripts loaded async to avoid blocking rendering -->
+    <!-- GoogleTagManager and analytics loaded after page interactive -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=your-ga-id"></script>
   </body>
 </html>
