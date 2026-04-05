@@ -152,9 +152,6 @@
 
   .gradient-heading--glow {
     background-image: linear-gradient(95deg, #FFFFFF 0%, #D9FF2F 24%, #B8FF00 45%, #66F0FF 74%, #7E8FFF 100%);
-    text-shadow:
-      0 0 12px rgba(215, 255, 0, 0.18),
-      0 1px 2px rgba(7, 16, 34, 0.22);
   }
 
   .gradient-text {
