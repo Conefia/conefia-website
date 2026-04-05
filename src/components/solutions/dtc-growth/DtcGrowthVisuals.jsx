@@ -50,7 +50,7 @@ export const HeroVisual = () => {
             {/* Connecting Line */}
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-y-1/2 md:block hidden" />
             
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 relative w-full">
+            <div className="flex flex-row flex-wrap justify-center md:justify-between items-center gap-3 md:gap-0 relative w-full">
                 {[
                     { label: "Paid Ads", icon: MegaphoneIcon, color: "bg-blue-500" },
                     { label: "PDP", icon: ShoppingBag, color: "bg-indigo-500" },
