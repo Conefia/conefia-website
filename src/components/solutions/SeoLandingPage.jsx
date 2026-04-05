@@ -421,7 +421,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
   </section>;
 
 
-export const RoadmapCallSection = ({
+export function RoadmapCallSection({
   title = "What you'll get in the 30-minute roadmap call",
   description = "This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.",
   items = [
@@ -430,28 +430,20 @@ export const RoadmapCallSection = ({
   "Recommend the AI approach (RAG vs agents vs fine-tuning)",
   "Map your 8–12 week delivery plan",
   "Flag risks early (data, compliance, cost, reliability)"],
-
   primaryCta = "Book Free Roadmap Call"
-} = {}) =>
+} = {}) {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return (
 <section className="py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
-  {window.innerWidth < 768 ? (
-    <>
-      <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
-        <ContourBackground className="opacity-80" isMobile={false} />
-      </div>
-      <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
-        <ContourBackground className="opacity-80" isMobile={false} />
-      </div>
-      <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
-        <ContourBackground className="opacity-80" isMobile={false} />
-      </div>
-    </>
-  ) : (
-    <ContourBackground className="opacity-80" isMobile={false} />
-  )}
+  <ContourBackground className="opacity-80" isMobile={isMobile} />
   {/* Star Dust */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
     {[...Array(200)].map((_, i) => {
@@ -556,7 +548,9 @@ export const RoadmapCallSection = ({
 
     </div>
   </div>
-</section>;
+</section>
+  );
+}
 
 
 const processStepsDefault = [
@@ -691,27 +685,19 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
 };
 
 
-export const SolutionOutcomes = ({ title, items = [], visual }) =>
+export function SolutionOutcomes({ title, items = [], visual }) {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return (
 <section className="py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
-     
      {/* Contour lines */}
-     {window.innerWidth < 768 ? (
-       <>
-         <div className="absolute inset-x-0 top-0 h-1/3 overflow-hidden pointer-events-none">
-           <ContourBackground className="opacity-80" isMobile={false} />
-         </div>
-         <div className="absolute inset-x-0 top-1/3 h-1/3 overflow-hidden pointer-events-none">
-           <ContourBackground className="opacity-80" isMobile={false} />
-         </div>
-         <div className="absolute inset-x-0 top-2/3 h-1/3 overflow-hidden pointer-events-none">
-           <ContourBackground className="opacity-80" isMobile={false} />
-         </div>
-       </>
-     ) : (
-       <ContourBackground className="opacity-80" isMobile={false} />
-     )}
+     <ContourBackground className="opacity-80" isMobile={isMobile} />
 
      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#DBFE01]/5 blur-[120px] pointer-events-none" />
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -731,10 +717,12 @@ export const SolutionOutcomes = ({ title, items = [], visual }) =>
          </Reveal>
        </div>
      </div>
-  </section>;
+  </section>
+  );
+  }
 
 
-export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
+  export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   return (
     <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
