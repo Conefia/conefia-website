@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { createPageUrl } from '@/utils';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function BlogHero({ onSearch }) {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -24,6 +26,10 @@ export default function BlogHero({ onSearch }) {
     <section className="relative pt-32 pb-16 bg-[#0B1020] overflow-hidden">
       <HeroDarkBackground />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mb-4">
+          <Breadcrumbs items={[{ label: 'Blog' }]} theme="dark" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,19 +71,18 @@ export default function BlogHero({ onSearch }) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="btn-primary px-8 py-6 rounded-lg text-base font-bold flex items-center gap-2 shadow-lg shadow-[#DBFE01]/20 hover:scale-105 transition-transform">
+            <Link
+              to={createPageUrl('book')}
+              className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
               Book Roadmap Call
               <ArrowRight className="w-5 h-5" />
-            </Button>
+            </Link>
 
-            <Button
+            <button
               onClick={() => scrollToSection('track-selector')}
-              variant="outline"
-              className="px-8 py-6 rounded-lg text-base font-bold border-2 border-white/30 text-white hover:bg-white/10 transition-all">
+              className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] transition-all hover:scale-105">
               Choose Your Track
-            </Button>
+            </button>
           </motion.div>
         </motion.div>
       </div>

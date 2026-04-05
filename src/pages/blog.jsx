@@ -119,9 +119,7 @@ export default function Blog() {
 
       <BlogHero onSearch={handleSearch} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumbs items={[{ label: 'Blog' }]} />
-      </div>
+
 
       <FilterBar
         activeCategory={activeCategory}
