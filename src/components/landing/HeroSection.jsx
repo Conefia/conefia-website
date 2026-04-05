@@ -70,10 +70,12 @@ export default function HeroSection({ reduceMotion }) {
               variants={itemVariants}
               className="text-3xl font-bold mb-4 max-w-4xl leading-tight text-center md:text-left"
               style={{
-                background: 'linear-gradient(95deg, #0F1524 0%, #41506A 28%, #B9D71D 55%, #EAF3B2 90%)',
+                background: 'linear-gradient(92deg, #F3F7FB 0%, #D0F002 28%, #D0F002 58%, #7C8CA3 100%)',
+                backgroundClip: 'text',
                 WebkitBackgroundClip: 'text',
+                color: 'transparent',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                textShadow: '0 1px 1px rgba(15, 21, 36, 0.12)'
               }}>
               One Partner to Build, Launch, and Scale Your Digital Venture.
             </motion.h1>
