@@ -200,7 +200,7 @@
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0_0_20px rgba(219, 254, 1, 0.5), 0 8px 30px rgba(219, 254, 1, 0.4);
+    box-shadow: 0 0 20px rgba(219, 254, 1, 0.5), 0 8px 30px rgba(219, 254, 1, 0.4);
     background: #c5e000;
   }
 
