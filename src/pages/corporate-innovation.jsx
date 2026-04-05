@@ -53,7 +53,7 @@ export default function CorporateInnovation() {
       
       <Suspense fallback={<SectionSkeleton height="h-64" />}>
         <SolutionMetrics 
-          title={<>Innovation <span className="gradient-text">Outcomes</span></>}
+          title="Innovation Outcomes"
           visual={<OutcomesVisual />}
           items={[
             "6–10 weeks — POC to pilot-ready MVP",
@@ -118,7 +118,7 @@ export default function CorporateInnovation() {
 
       <Suspense fallback={<SectionSkeleton />}>
         <SolutionOutcomes 
-          title={<>Enterprise <span className="text-[#DBFE01] font-bold" style={{WebkitTextFillColor: '#DBFE01'}}>Value</span></>}
+          title="Enterprise Value"
           items={[
             "Risk-managed innovation",
             "Faster time-to-pilot",
