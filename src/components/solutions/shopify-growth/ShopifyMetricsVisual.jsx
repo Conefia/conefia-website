@@ -71,7 +71,7 @@ export default function ShopifyMetricsVisual() {
   return (
     <div>
       {/* Desktop: grid */}
-      <div className="hidden md:grid grid-cols-4 gap-4">
+      <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-4">
         {METRIC_CARDS.map((m, i) => (
           <motion.div
             key={i}
@@ -96,7 +96,7 @@ export default function ShopifyMetricsVisual() {
         ))}
       </div>
 
-      {/* Mobile: carousel */}
+      {/* Mobile & Tablet: carousel */}
       <div className="md:hidden">
         <div className="relative overflow-hidden rounded-2xl">
           <AnimatePresence mode="wait">
@@ -107,17 +107,17 @@ export default function ShopifyMetricsVisual() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -60 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className={`p-8 rounded-2xl border ${m.border} ${m.bg} relative overflow-hidden`}
+                className={`p-6 sm:p-8 rounded-2xl border ${m.border} ${m.bg} relative overflow-hidden`}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${m.accent} pointer-events-none`} />
-                <div className="relative z-10 flex items-start gap-6">
-                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 border ${m.border} ${m.bg === 'bg-[#DBFE01]' ? 'bg-black/10' : 'bg-white/5'}`}>
-                    <m.icon className={`w-7 h-7 ${m.color}`} />
+                <div className="relative z-10 flex items-start gap-4 sm:gap-6">
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center flex-shrink-0 border ${m.border} ${m.bg === 'bg-[#DBFE01]' ? 'bg-black/10' : 'bg-white/5'}`}>
+                    <m.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${m.color}`} />
                   </div>
-                  <div>
-                    <div className={`text-5xl font-extrabold tracking-tight ${m.valColor}`}>{m.val}</div>
-                    <div className={`text-base font-bold mt-1 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/80' : 'text-white/80'}`}>{m.label}</div>
-                    <div className={`text-sm mt-0.5 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/60' : 'text-white/40'}`}>{m.sub}</div>
+                  <div className="flex-1">
+                    <div className={`text-4xl sm:text-5xl font-extrabold tracking-tight ${m.valColor}`}>{m.val}</div>
+                    <div className={`text-sm sm:text-base font-bold mt-1 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/80' : 'text-white/80'}`}>{m.label}</div>
+                    <div className={`text-xs sm:text-sm mt-0.5 ${m.bg === 'bg-[#DBFE01]' ? 'text-[#1a1a1a]/60' : 'text-white/40'}`}>{m.sub}</div>
                   </div>
                 </div>
               </motion.div>
