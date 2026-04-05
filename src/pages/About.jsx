@@ -74,7 +74,7 @@ export default function About() {
           </motion.div>
           <motion.h1
             {...fadeUp(0.2)}
-            className="text-3xl font-bold text-white mb-6 leading-tight text-center md:text-left"
+            className="text-3xl font-bold mb-6 leading-tight text-center md:text-left gradient-heading gradient-heading--glow"
           >
             One Partner to Build, Launch &amp; Scale
           </motion.h1>
@@ -137,7 +137,7 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-4">
                   <Target className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-3">Our Mission</h2>
+                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Our Mission</h2>
                 <p className="text-white/60 leading-relaxed">
                   To empower founders, clinics, and brands to transform their ideas into thriving digital ventures — eliminating the complexity of product development and growth with one accountable partner.
                 </p>
@@ -147,7 +147,7 @@ export default function About() {
                 <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#DBFE01] to-[#c5e000] flex items-center justify-center mb-4">
                   <Lightbulb className="w-6 h-6 text-[#1a1a1a]" />
                 </div>
-                <h2 className="text-2xl font-bold text-white mb-3">Our Vision</h2>
+                <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Our Vision</h2>
                 <p className="text-white/60 leading-relaxed">
                   To become the most trusted partner for digital innovation — where every entrepreneur can turn their vision into reality without the traditional barriers of time, cost, and technical complexity.
                 </p>
@@ -189,7 +189,7 @@ export default function About() {
       <section className="py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div {...fadeUp(0)} className="text-center mb-16">
-            <h2 className="text-2xl font-bold text-white mb-4">
+            <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
               Why Choose Conefia
             </h2>
             <p className="text-white/50 text-lg max-w-xl mx-auto">We're not just a dev agency — we're your growth partner.</p>
@@ -228,7 +228,7 @@ export default function About() {
             <div>
               <motion.div {...fadeUp(0)}>
                 <span className="text-[#DBFE01] text-xs font-semibold uppercase tracking-widest mb-4 block">Our Commitments</span>
-                <h2 className="text-2xl font-bold text-white mb-6 leading-tight">
+                <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--premium">
                   Built for founders who are done waiting
                 </h2>
                 <p className="text-white/60 mb-8 leading-relaxed">
@@ -296,7 +296,7 @@ export default function About() {
           {...fadeUp(0)}
           className="relative z-10 max-w-2xl mx-auto px-4 text-center"
         >
-          <h2 className="text-2xl font-bold text-white mb-6">
+          <h2 className="text-2xl font-bold mb-6 gradient-heading gradient-heading--glow">
             Ready to ship your AI MVP?
           </h2>
           <p className="text-white/60 text-lg mb-10">
