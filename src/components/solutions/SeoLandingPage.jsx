@@ -71,7 +71,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
   return (
     <div>
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
-        <HeroDarkBackground />
+        <HeroDarkBackground isMobile={window.innerWidth < 768} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-12 relative z-10">
           <div className="mb-4">
