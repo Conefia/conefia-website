@@ -35,8 +35,8 @@ export default function ShopifyFitCheck() {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Quick Fit Check
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
-            <span className="text-[#1a1a1a]">Is this the </span><span className="gradient-text">right fit?</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#1a1a1a]">
+            Is this the right fit?
           </h2>
           <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium leading-relaxed max-w-2xl">
             This is for brands that want to grow faster — or launch smarter from day one.
