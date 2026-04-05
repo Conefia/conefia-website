@@ -37,7 +37,7 @@ export default function AppRelaunchFitCheck() {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Quick Fit Check
           </span>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-[#1a1a1a]">
+          <h2 className="text-2xl font-bold mb-4 text-[#1a1a1a]">
             Is this the right fit?
           </h2>
           <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium leading-relaxed max-w-2xl">
