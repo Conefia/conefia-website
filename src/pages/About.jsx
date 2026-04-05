@@ -79,8 +79,8 @@ export default function About() {
             One Partner to Build, Launch &amp; Scale
           </motion.h1>
           <motion.p
-            {...fadeUp(0.35)}
-            className="text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
+            {...fadeUp(0.35)} className="text-white/60 mx-auto text-base leading-relaxed max-w-2xl">
+            
             
             We help founders, clinics, and brands transform ideas into pilot-ready digital ventures — faster and with less risk.
           </motion.p>
