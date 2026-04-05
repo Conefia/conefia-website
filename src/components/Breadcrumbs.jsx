@@ -8,11 +8,11 @@ export default function Breadcrumbs({ items, theme = 'light' }) {
   
   return (
     <nav className="flex mb-6" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+      <ol className="inline-flex items-center space-x-0.5 sm:space-x-1 md:space-x-3 text-xs sm:text-sm">
         <li className="inline-flex items-center">
           <Link 
             to={createPageUrl('Home')} 
-            className={`inline-flex items-center text-sm font-medium transition-colors ${
+            className={`inline-flex items-center text-xs sm:text-sm font-medium transition-colors ${
               isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-600 hover:bg-gray-200 hover:text-[#1a1a1a] px-1 py-0.5 rounded'
             }`}
           >
@@ -23,18 +23,18 @@ export default function Breadcrumbs({ items, theme = 'light' }) {
         {items.map((item, index) => (
           <li key={index}>
             <div className="flex items-center">
-              <ChevronRight className={`w-4 h-4 ${isDark ? 'text-white/40' : 'text-gray-400'}`} />
+              <ChevronRight className={`w-3 h-3 sm:w-4 sm:h-4 ${isDark ? 'text-white/40' : 'text-gray-400'}`} />
               {item.path ? (
                 <Link 
                    to={item.path} 
-                   className={`ml-1 text-sm font-medium transition-colors md:ml-2 ${
+                   className={`ml-0.5 sm:ml-1 text-xs sm:text-sm font-medium transition-colors md:ml-2 ${
                      isDark ? 'text-white/60 hover:text-[#DBFE01]' : 'text-gray-600 hover:bg-gray-200 hover:text-[#1a1a1a] px-1 py-0.5 rounded'
                    }`}
                  >
                   {item.label}
                 </Link>
               ) : (
-                <span className={`ml-1 text-sm font-medium md:ml-2 ${
+                <span className={`ml-0.5 sm:ml-1 text-xs sm:text-sm font-medium md:ml-2 ${
                    isDark ? 'text-white' : 'text-gray-700'
                  }`}>
                   {item.label}
