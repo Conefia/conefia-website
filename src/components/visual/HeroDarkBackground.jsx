@@ -15,17 +15,7 @@ export default function HeroDarkBackground({ isMobile = false, className = '' })
 
       {/* Contour lines */}
       {isMobile ? (
-        <>
-          <div className="absolute inset-x-0 top-0 overflow-hidden pointer-events-none" style={{ height: '36%' }}>
-            <ContourBackground className="opacity-60" isMobile={false} />
-          </div>
-          <div className="absolute inset-x-0 overflow-hidden pointer-events-none" style={{ top: '30%', height: '36%' }}>
-            <ContourBackground className="opacity-60" isMobile={false} />
-          </div>
-          <div className="absolute inset-x-0 overflow-hidden pointer-events-none" style={{ top: '62%', height: '38%' }}>
-            <ContourBackground className="opacity-60" isMobile={false} />
-          </div>
-        </>
+        <ContourBackground className="opacity-60" isMobile={true} />
       ) : (
         <ContourBackground className="opacity-60" isMobile={false} />
       )}
