@@ -121,7 +121,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                   </button>
                 </motion.div>
                 {microCopy &&
-              <p className="text-white/50 text-xs font-medium mb-6">{microCopy}</p>
+              <p className="text-white/50 text-xs font-medium mb-6 text-left">{microCopy}</p>
               }
 
                 {/* Trust Chips - Centered */}
