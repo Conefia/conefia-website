@@ -242,9 +242,9 @@ export default function HowWeWork({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
             {content.headline} {content.headlineAccent}
           </h2>
-          <p className="text-lg text-[#1a1a1a]/80 max-w-2xl mx-auto font-medium">
-            {content.subhead}
-          </p>
+          <p className="text-base text-[#1a1a1a]/80 max-w-2xl mx-auto font-normal">
+             {content.subhead}
+           </p>
         </motion.div>
 
         {/* Workflow cards */}

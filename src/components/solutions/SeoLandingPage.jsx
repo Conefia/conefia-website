@@ -294,7 +294,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
         <h2 className="mt-6 text-2xl font-bold text-center leading-tight max-w-3xl gradient-heading gradient-heading--premium">
           {title || 'Why most AI MVPs get delayed and miss pilots and revenue'}
         </h2>
-        {subtitle && <p className="mt-4 text-lg text-[#1a1a1a]/70 font-medium leading-relaxed max-w-2xl text-center">{subtitle}</p>}
+        {subtitle && <p className="mt-4 text-base text-[#1a1a1a]/70 font-normal leading-relaxed max-w-2xl text-center">{subtitle}</p>}
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -370,8 +370,8 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </div>
         <h2 className="mt-6 text-2xl font-bold text-center leading-tight mb-4 gradient-heading gradient-heading--premium">{title}</h2>
         {description &&
-      <p className="text-lg font-medium text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
-            {description}
+        <p className="text-base font-normal text-[#1a1a1a]/70 leading-relaxed max-w-2xl text-center">
+              {description}
           </p>
       }
       </Reveal>
@@ -460,7 +460,7 @@ export function RoadmapCallSection({
       <h2 className="text-2xl font-bold leading-tight mb-2 gradient-heading gradient-heading--glow">
         {title}
       </h2>
-      <p className="text-white/60 text-lg font-medium max-w-2xl">
+      <p className="text-white/60 text-base font-normal max-w-2xl">
         {description}
       </p>
 
@@ -1211,7 +1211,7 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
         <h2 className="text-2xl font-bold mb-6 leading-tight text-[#1a1a1a]">
           {title}
         </h2>
-        {description && <p className="text-[#1a1a1a]/70 text-lg font-medium mb-8 max-w-2xl mx-auto">{description}</p>}
+        {description && <p className="text-[#1a1a1a]/70 text-base font-normal mb-8 max-w-2xl mx-auto">{description}</p>}
         
         <div className="flex flex-col items-center gap-4">
           <Link
