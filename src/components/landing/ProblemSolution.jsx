@@ -70,7 +70,7 @@ export default function ProblemSolution({ reduceMotion }) {
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Choose your track
           </span>
-          <h2 className="text-2xl font-bold mb-4 leading-tight gradient-heading gradient-heading--premium">
+          <h2 className="text-2xl font-bold mb-4 leading-tight gradient-heading gradient-heading--glow">
             What are you building right now?
           </h2>
           <p className="text-[#1a1a1a]/80 mx-auto text-lg font-medium md:text-xl max-w-3xl">Pick your track and we’ll show the biggest bottleneck we typically see — plus the plan to fix it.
