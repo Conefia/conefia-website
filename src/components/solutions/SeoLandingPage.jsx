@@ -241,7 +241,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 };
 
 export const SolutionMetrics = ({ title, visual, items = [] }) =>
-<section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
+<section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
@@ -277,7 +277,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 
 
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) =>
-<section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+<section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
@@ -355,7 +355,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
+<section id="solution" className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/28 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-40 left-1/4 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
@@ -432,7 +432,7 @@ export function RoadmapCallSection({
     return () => window.removeEventListener('resize', check);
   }, []);
   return (
-<section className="py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
+<section className="py-16 md:py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
@@ -569,7 +569,7 @@ const processStepsDefault = [
 export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
+    <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
     {/* Bold color splash blobs */}
     <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
@@ -687,7 +687,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
     return () => window.removeEventListener('resize', check);
   }, []);
   return (
-<section className="py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
+<section className="py-16 md:py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      {/* Contour lines */}
@@ -718,7 +718,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
 
   export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   return (
-    <section className="py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
       <div className="absolute -top-32 left-1/4 w-[550px] h-[550px] bg-blue-200/25 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
@@ -952,7 +952,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+      <section className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
         {/* Subtle accent blob */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -1137,7 +1137,7 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section className="py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
+    <section className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
     <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
@@ -1202,7 +1202,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 
 
 export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
-<section className="py-32 bg-[#DBFE01] relative overflow-hidden">
+<section className="py-16 md:py-32 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
     
