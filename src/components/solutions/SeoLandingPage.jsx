@@ -496,7 +496,7 @@ export function RoadmapCallSection({
           </ul>
           <Link
             to={createPageUrl('Book')}
-            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
+            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 flex justify-center md:justify-start w-full md:w-auto">
             {primaryCta || 'Book Free Roadmap Call'}
             <ArrowRight className="w-5 h-5" />
           </Link>
