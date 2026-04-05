@@ -57,7 +57,7 @@ export default function IPPolicy() {
       </Section>
 
       <Section number="10" title="Reporting Infringement">
-        <p>If you believe Conefia intellectual property is being infringed or misused, contact <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>.</p>
+        <p>If you believe Conefia intellectual property is being infringed or misused, <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contact us</a>.</p>
       </Section>
     </PolicyLayout>
   );

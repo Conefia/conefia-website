@@ -87,7 +87,7 @@ export default function Privacy() {
           'Request portability where applicable;',
           'Opt out of certain marketing communications or targeted-advertising uses.',
         ]} />
-        <p className="mt-3">To exercise privacy rights, contact us at <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>. We may need to verify your identity before processing your request.</p>
+        <p className="mt-3">To exercise privacy rights, <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contact us</a>. We may need to verify your identity before processing your request.</p>
       </Section>
 
       <Section number="12" title="EEA, UK, and Similar Jurisdictions">
@@ -98,11 +98,11 @@ export default function Privacy() {
         <p>If you are a California resident, you may have rights under California privacy law, including rights to know, delete, correct, and opt out of certain sales or sharing.</p>
         <p className="font-semibold text-gray-800 mt-3 mb-1">Categories of Personal Information We May Collect</p>
         <BulletList items={['Identifiers', 'Internet or electronic network activity information', 'Commercial information', 'Approximate geolocation derived from IP address', 'Professional or employment-related information', 'Communications content', 'Inferences drawn from browsing or engagement behavior']} />
-        <p className="mt-3">California residents may submit requests to <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>.</p>
+        <p className="mt-3">California residents may <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contact us</a>.</p>
       </Section>
 
       <Section number="14" title="Marketing Communications">
-        <p>You may opt out of promotional emails by using the unsubscribe link in the message or by contacting us at <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>. Transactional or relationship messages may still be sent where permitted.</p>
+        <p>You may opt out of promotional emails by using the unsubscribe link in the message or by <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contacting us</a>. Transactional or relationship messages may still be sent where permitted.</p>
       </Section>
 
       <Section number="15" title="Do Not Track and Preference Signals">

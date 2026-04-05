@@ -16,7 +16,7 @@ export default function CopyrightPolicy() {
           'Designated Agent: [Insert Name]',
           'Company: Conefia LLC, d/b/a Conefia Technologies',
           'Address: 6272 Saginaw Road #1136, Grand Blanc, MI 48439, United States',
-          'Email: info@conefia.com',
+          'Email: <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">Contact Us</a>',
         ]} />
       </Section>
 
