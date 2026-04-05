@@ -5,6 +5,12 @@ function generateUnsplashSrcset(imageId, widths = [320, 640, 960, 1280]) {
     .join(", ");
 }
 
+// Helper to extract image ID from Unsplash URLs
+function extractUnsplashId(url) {
+  const match = url.match(/photo-([\w-]+)/);
+  return match ? match[1] : null;
+}
+
 export default function OptimizedImage({
   src,
   webp,
@@ -20,7 +26,8 @@ export default function OptimizedImage({
   ...props
 }) {
   // Generate srcset from Unsplash image ID if src is provided
-  const finalSrcset = srcset || (src?.includes("unsplash") ? generateUnsplashSrcset(src.split("-")[src.split("-").length - 1]?.split("?")[0], widths) : null);
+  const imageId = src?.includes("unsplash") ? extractUnsplashId(src) : null;
+  const finalSrcset = srcset || (imageId ? generateUnsplashSrcset(imageId, widths) : null);
 
   // Standard img if no formats or srcset
   if (!webp && !avif && !finalSrcset) {
@@ -29,8 +36,8 @@ export default function OptimizedImage({
         src={src}
         alt={alt}
         className={className}
-        loading={loading}
-        decoding={decoding}
+        loading="lazy"
+        decoding="async"
         {...props}
       />
     );
@@ -45,8 +52,8 @@ export default function OptimizedImage({
         srcSet={finalSrcset}
         alt={alt}
         className={className}
-        loading={loading}
-        decoding={decoding}
+        loading="lazy"
+        decoding="async"
         sizes={sizes}
         {...props}
       />
