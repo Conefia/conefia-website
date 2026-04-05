@@ -211,7 +211,7 @@ export default function About() {
                     <Icon className="w-6 h-6 text-[#DBFE01]" />
                   </div>
                   <div>
-                   <h3 className="text-lg font-bold mb-2 gradient-heading gradient-heading--premium">{p.title}</h3>
+                   <h3 className="text-lg font-bold mb-2 gradient-heading gradient-heading--glow">{p.title}</h3>
                    <p className="text-white/55 text-sm leading-relaxed">{p.body}</p>
                   </div>
                 </motion.div>);
