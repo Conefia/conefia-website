@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Check, X, Sparkles, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { base44 } from '@/api/base44Client';
@@ -14,8 +14,14 @@ const SOLUTION_STYLES = [
 ];
 
 export default function SolutionTemplate({ persona }) {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const reduceMotion = useReducedMotion();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
   }, []);
 
   if (!persona) return null;
@@ -57,12 +63,18 @@ export default function SolutionTemplate({ persona }) {
                   </h3>
                   <ul className="space-y-5">
                     {persona.problems.map((problem, index) => (
-                      <li key={index} className="flex items-start gap-3">
+                      <motion.li
+                        key={index}
+                        initial={{ opacity: 0, x: -16 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: !isMobile ? index * 0.08 : 0 }}
+                        className="flex items-start gap-3">
                         <div className="w-6 h-6 rounded-full bg-red-200 flex items-center justify-center flex-shrink-0 mt-1">
                           <X className="w-4 h-4 text-red-600" />
                         </div>
                         <span className="text-[#1a1a1a] font-semibold leading-relaxed">{problem}</span>
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </div>
@@ -90,7 +102,13 @@ export default function SolutionTemplate({ persona }) {
                     const styleData = SOLUTION_STYLES[index % SOLUTION_STYLES.length];
                     const Icon = solution.icon || HelpCircle;
                     return (
-                      <div key={index} className="group relative">
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 12 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: !isMobile ? index * 0.06 : 0 }}
+                        className="group relative">
                         <div className={`absolute inset-0 bg-gradient-to-br ${styleData.gradient} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                         <div className="relative p-4 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 group-hover:border-gray-200 group-hover:shadow-lg transition-all duration-300 h-full">
                           <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${styleData.iconBg} flex items-center justify-center mb-3 shadow-md ${styleData.glow}`}>
@@ -101,7 +119,7 @@ export default function SolutionTemplate({ persona }) {
                           </p>
                           <p className="text-xs text-[#1a1a1a]/70 font-medium leading-snug">{solution.desc}</p>
                         </div>
-                      </div>
+                      </motion.div>
                     );
                   })}
                 </div>

@@ -25,16 +25,19 @@ export const SectionHeading = ({ children, className }) =>
 
 
 
-export const Reveal = ({ children, className, delay = 0 }) =>
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, margin: "-100px" }}
-  transition={{ duration: 0.5, delay, ease: "easeOut" }}
-  className={className}>
-
-    {children}
-  </motion.div>;
+export const Reveal = ({ children, className, delay = 0, isMobile = false }) => {
+  const reduceMotion = useReducedMotion();
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: reduceMotion || isMobile ? 0 : 0.5, delay: reduceMotion || isMobile ? 0 : delay, ease: "easeOut" }}
+      className={className}>
+        {children}
+      </motion.div>
+  );
+};
 
 
 export const CheckListItem = ({ children }) =>
@@ -69,6 +72,7 @@ export const ProblemItem = ({ children }) =>
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel, breadcrumb }) => {
   const reduceMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const shouldReduceAnimations = reduceMotion || isMobile;
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
@@ -76,6 +80,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  const shouldReduceAnimations = reduceMotion || isMobile;
+  
   return (
     <div>
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
@@ -92,7 +98,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: shouldReduceAnimations ? 0 : 0.1 }}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left">
                   {title && title.replace(/\.$/, '')}
                 </motion.h1>
@@ -100,7 +106,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: shouldReduceAnimations ? 0 : 0.2 }}
                 className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed mb-4 sm:mb-6 max-w-xl text-center md:text-left">
                   {subtitle}
                 </motion.p>
@@ -108,7 +114,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: shouldReduceAnimations ? 0 : 0.3 }}
                 className="flex flex-col sm:flex-row gap-4 mb-3 justify-center md:justify-start">
                   <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
                     {primaryCta}
@@ -126,7 +132,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
                 className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
                   {trustChips.map((chip, i) =>
                 <div key={i} className="flex items-center gap-2 text-white/70 text-xs sm:text-sm font-medium bg-white/5 px-3 py-1.5 rounded-full border border-white/10 hover:bg-white/10 transition-colors">
@@ -149,9 +155,10 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           /* CENTERED LAYOUT (DEFAULT) */
           <div className="max-w-4xl mx-auto text-center">
               <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: shouldReduceAnimations ? 0 : 0.3 }}
+               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
 
                 <Sparkles className="w-4 h-4 text-[#DBFE01]" />
                 <span className="text-sm font-semibold text-[#DBFE01]">Solutions Package</span>
@@ -160,7 +167,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.1 }}
               className="text-3xl font-bold text-white leading-tight mb-6 text-center">
                 {title && title.replace(/\.$/, '')}
               </motion.h1>
@@ -168,7 +175,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.2 }}
               className="text-base md:text-lg text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">
 
                 {subtitle}
@@ -177,7 +184,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
 
                 <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
@@ -193,7 +200,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
               className="flex flex-wrap justify-center gap-4 md:gap-8">
 
                 {trustChips.map((chip, i) =>
@@ -212,7 +219,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             <motion.div
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.5, duration: shouldReduceAnimations ? 0 : 0.7 }}
               className="mt-12">
 
                   {visual}
@@ -230,7 +237,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
             <motion.div
               className="w-1.5 h-3 bg-white/50 rounded-full"
               animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
+              transition={{ duration: shouldReduceAnimations ? 0 : 2, repeat: Infinity, ease: "easeInOut" }} />
           </div>
         </motion.div>
         }
@@ -240,7 +247,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
 };
 
-export const SolutionMetrics = ({ title, visual, items = [] }) =>
+export const SolutionMetrics = ({ title, visual, items = [], isMobile = false }) =>
 <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
@@ -254,7 +261,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
             {items.map((item, i) =>
         <motion.div
           key={i}
-          whileHover={{ y: -5 }}
+          whileHover={!isMobile ? { y: -5 } : {}}
           className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 p-6 rounded-2xl text-center shadow-sm hover:shadow-md transition-all">
 
                   {item.includes('—') ?
@@ -276,7 +283,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) =>
 
 
 
-export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) =>
+export const SolutionProblem = ({ title, subtitle, quote, items = [], visual, isMobile = false }) =>
 <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -302,12 +309,12 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
         <Reveal>
           <ul className="space-y-4">
             {items.map((item, i) =>
-          <motion.li
-            key={i}
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 + 0.1 }}
+            <motion.li
+              key={i}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: !isMobile ? i * 0.06 : 0 }}
             className="flex items-start gap-4 group">
             
                 <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
@@ -478,7 +485,7 @@ export function RoadmapCallSection({
               initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
+              transition={{ delay: !isMobile ? i * 0.06 : 0 }}
               className="flex items-start gap-4">
               
                 <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
@@ -513,7 +520,7 @@ export function RoadmapCallSection({
             initial={{ opacity: 0, y: -16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: !isMobile ? 0.6 : 0 }}
             className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
             
             Free · 30 min
@@ -524,7 +531,7 @@ export function RoadmapCallSection({
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.7, duration: 0.6 }}
+            transition={{ delay: !isMobile ? 0.7 : 0, duration: !isMobile ? 0.6 : 0 }}
             className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
             
             <div className="flex items-center gap-3">
@@ -567,6 +574,8 @@ const processStepsDefault = [
 
 
 export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
     <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
@@ -575,20 +584,20 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
     <div className="absolute top-1/3 -right-40 w-[450px] h-[450px] bg-lime-100/25 rounded-full blur-[110px] pointer-events-none" />
     {/* Animated floating orbs */}
-    <motion.div
+    {!shouldReduceAnimations && <motion.div
         className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
         animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />}
       
-    <motion.div
+    {!shouldReduceAnimations && <motion.div
         className="absolute bottom-32 left-20 w-4 h-4 bg-[#DBFE01] rounded-full opacity-40 pointer-events-none"
         animate={{ y: [0, 14, 0], scale: [1, 1.3, 1] }}
-        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} />
+        transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} />}
       
-    <motion.div
+    {!shouldReduceAnimations && <motion.div
         className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#c5e000] rounded-full opacity-50 pointer-events-none"
         animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />}
       
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <Reveal className="text-center mb-20">
@@ -628,13 +637,13 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.12, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: !isMobile ? i * 0.08 : 0, ease: "easeOut" }}
                 className="flex gap-6 group pb-10 last:pb-0">
                 
                 {/* Step number bubble */}
                 <div className="relative flex-shrink-0 z-10">
                   <motion.div
-                    whileHover={{ scale: 1.15 }}
+                    whileHover={!isMobile ? { scale: 1.15 } : {}}
                     className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
                     
                     {i + 1}
@@ -659,7 +668,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
+              transition={{ delay: !isMobile ? 0.6 : 0 }}
               className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6">
               
             <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
@@ -717,6 +726,8 @@ export function SolutionOutcomes({ title, items = [], visual }) {
 
 
   export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
     <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
@@ -724,7 +735,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
       <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
       {/* Animated AI sparkles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(18)].map((_, i) => {
+        {!shouldReduceAnimations && [...Array(isMobile ? 8 : 18)].map((_, i) => {
           const x = (i * 5.8 + 3) % 100;
           const y = (i * 7.3 + 8) % 100;
           const delay = i * 0.4 % 3;
@@ -752,7 +763,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
           <h2 className="text-2xl font-bold gradient-heading gradient-heading--premium">{useCasesTitle || "Common use cases"}</h2>
         </Reveal>
 
-        <UseCasesLinkedLight useCases={useCases} />
+        <UseCasesLinkedLight useCases={useCases} isMobile={isMobile} />
       </div>
     </section>);
 
@@ -770,7 +781,7 @@ const defaultUseCasesRight = [
 { title: "GenAI Content Systems", description: "Review, governance, and workflow automation", icon: FileText, index: 2 }];
 
 
-function UseCasesLinkedLight({ useCases }) {
+function UseCasesLinkedLight({ useCases, isMobile = false }) {
   const [activeIndex, setActiveIndex] = React.useState(null);
 
   const defaultLeftIcons = [Brain, Shield, Zap];
@@ -798,8 +809,8 @@ function UseCasesLinkedLight({ useCases }) {
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.02 }}
+              transition={{ delay: !isMobile ? i * 0.08 : 0 }}
+              whileHover={!isMobile ? { scale: 1.02 } : {}}
               className={cn(
                 "flex items-center gap-5 p-6 rounded-2xl border cursor-pointer transition-all duration-300",
                 activeIndex === i ?
@@ -949,6 +960,7 @@ function UseCasesLinked({ useCases }) {
 }
 
 export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.', techStackLogos = null }) => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1041,8 +1053,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                     initial={{ opacity: 0, x: 30 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 + 0.2, duration: 0.5 }}
-                    whileHover={{ x: 6 }}
+                    transition={{ delay: !isMobile ? i * 0.08 : 0, duration: 0.4 }}
+                    whileHover={!isMobile ? { x: 6 } : {}}
                     className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color || 'from-gray-50 to-gray-50/30'} border ${item.border || 'border-gray-200/50'} transition-all duration-300 group`}>
                     
                       <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
