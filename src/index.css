@@ -146,7 +146,7 @@
   }
 
   .gradient-heading--premium {
-    background-image: linear-gradient(95deg, #0f0f0f 0%, #3d7a00 30%, #007a6e 60%, #1a1a6e 100%);
+    background-image: linear-gradient(95deg, #1a1a1a 0%, #3a3a3a 40%, #2a4a00 70%, #1a2a1a 100%);
     text-shadow: 0 1px 2px rgba(7, 16, 34, 0.18);
   }
 
