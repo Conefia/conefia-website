@@ -57,7 +57,7 @@ export default function HeroSection({ reduceMotion }) {
       <HeroDarkBackground isMobile={isMobile} />
 
       
-      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center lg:justify-items-start relative z-10">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:pl-8 lg:pr-4 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center justify-items-center lg:justify-items-start relative z-10">
           {/* Left Content */}
           <motion.div
             variants={containerVariants}
