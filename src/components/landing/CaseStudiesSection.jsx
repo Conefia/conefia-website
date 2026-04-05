@@ -238,10 +238,11 @@ export default function CaseStudiesSection({ reduceMotion }) {
 
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Section header - single animation */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: reduceMotion ? 0 : 0.7 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16">
 
           <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-6">
@@ -264,18 +265,20 @@ export default function CaseStudiesSection({ reduceMotion }) {
               <motion.div
                 key={study.id}
                 className="flex-[0_0_100%] md:flex-[0_0_90%] lg:flex-[0_0_75%] min-w-0"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}>
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.4, delay: isMobile ? 0 : Math.min(index * 0.08, 0.3) }}>
 
                   <div className="group relative">
-                    {/* Glow effect */}
+                    {/* Glow effect - disabled on mobile to reduce concurrent animations */}
+                    {!isMobile && (
                     <motion.div
                     className={`absolute -inset-1 bg-gradient-to-r ${study.gradient} rounded-3xl opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500`}
                     animate={reduceMotion ? {} : {
-                      scale: [1, 1.05, 1]
+                      opacity: [0.2, 0.3, 0.2]
                     }}
                     transition={{ duration: 3, repeat: Infinity }} />
+                    )}
 
 
                     <div className="relative bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 hover:border-[#DBFE01]/40 transition-all duration-500 shadow-2xl">
@@ -297,13 +300,12 @@ export default function CaseStudiesSection({ reduceMotion }) {
                           <span className="text-xs font-bold uppercase tracking-wide">{study.stage}</span>
                         </div>
 
-                        {/* Trending icon */}
-                        <motion.div
-                        className="absolute top-4 left-4 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30"
-                        whileHover={{ scale: 1.1, rotate: 5 }}>
+                        {/* Trending icon - hover only */}
+                        <div
+                        className="absolute top-4 left-4 w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30 hover:scale-110 transition-transform duration-300">
 
                           <TrendingUp className="w-7 h-7 text-[#DBFE01]" />
-                        </motion.div>
+                        </div>
                       </div>
 
                       {/* Content */}
@@ -337,16 +339,13 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         {/* Metrics */}
                         <div className="grid grid-cols-2 gap-4 mb-8">
                           {study.metrics.map((metric, mIndex) =>
-                        <motion.div
+                        <div
                           key={mIndex}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-                          transition={{ delay: 0.3 + mIndex * 0.1 }}
                           className="flex items-center gap-2.5 px-4 py-3 rounded-xl bg-white/10 border border-white/20">
 
                               <Sparkles className="w-4 h-4 text-[#DBFE01]" />
                               <span className="text-white text-sm font-bold">{metric}</span>
-                            </motion.div>
+                            </div>
                         )}
                         </div>
 
@@ -398,11 +397,11 @@ export default function CaseStudiesSection({ reduceMotion }) {
           )}
         </div>
 
-        {/* Bottom CTA */}
+        {/* Bottom CTA - single animation */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: reduceMotion ? 0 : 0.6, delay: reduceMotion ? 0 : 0.5 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-center mt-16">
 
           <p className="text-white/60 text-lg mb-6 font-medium">Want results like these?</p>

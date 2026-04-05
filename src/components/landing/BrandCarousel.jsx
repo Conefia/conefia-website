@@ -55,24 +55,21 @@ export default function BrandCarousel() {
     <section ref={ref} className="bg-stone-950 py-6 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
+        {/* Entrance animation - staggered */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5 }}
           className="text-center text-sm font-medium text-white/40 uppercase tracking-wider mb-4 px-4">
-
           Trusted by
         </motion.p>
         
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="relative">
-
-          {/* Gradient overlays removed */}
-          
-          {/* Scrolling container */}
+          {/* Scrolling container - single animation */}
           <div className="flex">
             <motion.div
               className="flex gap-12 items-center"
@@ -91,7 +88,7 @@ export default function BrandCarousel() {
               {duplicatedLogos.map((logo, index) =>
               <div
                 key={index}
-                className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-70 hover:brightness-100 hover:invert-0 hover:opacity-100 transition-all duration-300">
+                className="flex-shrink-0 w-32 h-16 flex items-center justify-center brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300">
 
                   <img
                   src={logo.url}
