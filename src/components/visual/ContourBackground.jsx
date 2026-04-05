@@ -36,69 +36,55 @@ export default function ContourBackground({ className = "", isMobile = false }) 
     );
   }
 
-  // Mobile version - 3 continuous flowing groups, each starting where the previous ends
+  // Mobile version - single continuous flowing SVG with 3 wave groups
+  const groups = [
+    { startY: -8,  cp1Y: 20,  cp2Y: 5,   endY: 36  },
+    { startY: 30,  cp1Y: 58,  cp2Y: 40,  endY: 70  },
+    { startY: 64,  cp1Y: 90,  cp2Y: 74,  endY: 105 },
+  ];
+
   return (
-    <svg 
-      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`} 
-      viewBox="0 0 100 100" 
+    <svg
+      className={`absolute inset-0 w-full h-full pointer-events-none ${className}`}
+      viewBox="0 0 100 100"
       preserveAspectRatio="none"
     >
       <defs>
-        <linearGradient id="lineGradientMobile" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="rgba(219, 254, 1, 0)" />
-          <stop offset="40%" stopColor="rgba(219, 254, 1, 1)" />
-          <stop offset="60%" stopColor="rgba(219, 254, 1, 1)" />
-          <stop offset="100%" stopColor="rgba(219, 254, 1, 0)" />
+        <linearGradient id="lgMobile" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"   stopColor="rgba(219,254,1,0)" />
+          <stop offset="30%" stopColor="rgba(219,254,1,0.9)" />
+          <stop offset="55%" stopColor="rgba(102,240,255,0.7)" />
+          <stop offset="80%" stopColor="rgba(219,254,1,0.8)" />
+          <stop offset="100%" stopColor="rgba(219,254,1,0)" />
+        </linearGradient>
+        <linearGradient id="lgMobile2" x1="100%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stopColor="rgba(126,143,255,0)" />
+          <stop offset="40%" stopColor="rgba(126,143,255,0.6)" />
+          <stop offset="70%" stopColor="rgba(219,254,1,0.5)" />
+          <stop offset="100%" stopColor="rgba(219,254,1,0)" />
         </linearGradient>
       </defs>
-      
-      {/* Group 1: top third — ends around y=33 */}
-      {[...Array(7)].map((_, i) => {
-        const ox = i * 2 - 5;
-        const oy = i * 1.2 - 3;
-        return (
-          <path
-            key={`p1-${i}`}
-            d={`M ${110 + ox} ${-5 + oy} C ${-30 + ox} ${22 + oy}, ${60 + ox} ${5 + oy}, ${120 + ox} ${33 + oy}`}
-            stroke="url(#lineGradientMobile)"
-            strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
-            fill="none"
-            opacity={0.2 + Math.random() * 0.3}
-          />
-        );
-      })}
-      
-      {/* Group 2: mid third — starts at y=28 (overlaps group 1 end), ends around y=67 */}
-      {[...Array(7)].map((_, i) => {
-        const ox = i * 2 - 5;
-        const oy = i * 1.2 - 3;
-        return (
-          <path
-            key={`p2-${i}`}
-            d={`M ${110 + ox} ${28 + oy} C ${-30 + ox} ${55 + oy}, ${60 + ox} ${38 + oy}, ${120 + ox} ${67 + oy}`}
-            stroke="url(#lineGradientMobile)"
-            strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
-            fill="none"
-            opacity={0.2 + Math.random() * 0.3}
-          />
-        );
-      })}
-      
-      {/* Group 3: bottom third — starts at y=62 (overlaps group 2 end), ends at y=100 */}
-      {[...Array(7)].map((_, i) => {
-        const ox = i * 2 - 5;
-        const oy = i * 1.2 - 3;
-        return (
-          <path
-            key={`p3-${i}`}
-            d={`M ${110 + ox} ${62 + oy} C ${-30 + ox} ${88 + oy}, ${60 + ox} ${72 + oy}, ${120 + ox} ${100 + oy}`}
-            stroke="url(#lineGradientMobile)"
-            strokeWidth={i % 4 === 0 ? 0.3 : 0.1}
-            fill="none"
-            opacity={0.2 + Math.random() * 0.3}
-          />
-        );
-      })}
+
+      {groups.map((g, gi) =>
+        [...Array(12)].map((_, i) => {
+          const spread = 16;
+          const ox = (i / 11) * spread - spread / 2;
+          const oy = (i / 11) * 2 - 1;
+          const isThick = i % 4 === 0;
+          const isMid = i % 4 === 2;
+          const grad = gi % 2 === 0 ? 'url(#lgMobile)' : 'url(#lgMobile2)';
+          return (
+            <path
+              key={`g${gi}-${i}`}
+              d={`M ${112 + ox} ${g.startY + oy} C ${-28 + ox} ${g.cp1Y + oy}, ${58 + ox} ${g.cp2Y + oy}, ${118 + ox} ${g.endY + oy}`}
+              stroke={grad}
+              strokeWidth={isThick ? 0.35 : isMid ? 0.18 : 0.09}
+              fill="none"
+              opacity={isThick ? 0.55 : isMid ? 0.35 : 0.2}
+            />
+          );
+        })
+      )}
     </svg>
   );
 }
