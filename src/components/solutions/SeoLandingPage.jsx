@@ -72,8 +72,7 @@ export const ProblemItem = ({ children }) =>
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel, breadcrumb }) => {
   const reduceMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  const shouldReduceAnimations = reduceMotion || isMobile;
-
+  
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', checkMobile);
@@ -247,7 +246,14 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
 };
 
-export const SolutionMetrics = ({ title, visual, items = [], isMobile = false }) =>
+export const SolutionMetrics = ({ title, visual, items = [] }) => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return (
 <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
@@ -278,12 +284,18 @@ export const SolutionMetrics = ({ title, visual, items = [], isMobile = false })
       }
       </Reveal>
     </div>
-  </section>;
+  </section>
+  );
+};
 
-
-
-
-export const SolutionProblem = ({ title, subtitle, quote, items = [], visual, isMobile = false }) =>
+export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+  return (
 <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -358,8 +370,8 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual, is
         </Reveal>
       </div>
     </div>
-  </section>;
-
+  </section>);
+};
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
 <section id="solution" className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
@@ -575,6 +587,11 @@ const processStepsDefault = [
 
 export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
