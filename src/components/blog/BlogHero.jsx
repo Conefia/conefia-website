@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 
 export default function BlogHero({ onSearch }) {
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -20,10 +21,8 @@ export default function BlogHero({ onSearch }) {
   };
 
   return (
-    <section className="relative pt-32 pb-16 bg-gradient-to-br from-[#FAFAFA] to-white overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.03] blur-[120px] pointer-events-none" />
-      
+    <section className="relative pt-32 pb-16 bg-[#0B1020] overflow-hidden">
+      <HeroDarkBackground />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,11 +30,11 @@ export default function BlogHero({ onSearch }) {
           transition={{ duration: 0.6 }}
           className="text-center">
           
-          <h1 className="text-3xl font-bold text-white mb-6 tracking-tight text-center md:text-left">
+          <h1 className="text-3xl font-bold mb-6 tracking-tight text-center gradient-heading gradient-heading--glow">
             Insights to Build, Launch, and Scale
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 mb-10 max-w-3xl mx-auto leading-relaxed">
             Practical guides for founders, clinics, Shopify brands, accelerators, and enterprise innovation teams. 
             No fluff—just what works on the ground.
           </p>
@@ -48,13 +47,13 @@ export default function BlogHero({ onSearch }) {
             onSubmit={handleSearch}
             className="max-w-2xl mx-auto mb-8">
             <div className="relative group">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 group-focus-within:text-[#1a1a1a] transition-colors" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/40 group-focus-within:text-white transition-colors" />
               <Input
                 type="text"
                 placeholder="Search playbooks, templates, and case studies..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 py-6 text-base border-2 border-gray-200 rounded-lg focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all shadow-sm hover:shadow-md"
+                className="pl-12 pr-4 py-6 text-base bg-white/10 border-2 border-white/20 text-white placeholder:text-white/40 rounded-lg focus:border-[#DBFE01] focus:ring-2 focus:ring-[#DBFE01]/20 transition-all"
               />
             </div>
           </motion.form>
@@ -76,7 +75,7 @@ export default function BlogHero({ onSearch }) {
             <Button
               onClick={() => scrollToSection('track-selector')}
               variant="outline"
-              className="px-8 py-6 rounded-lg text-base font-bold border-2 border-[#1a1a1a] text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white transition-all">
+              className="px-8 py-6 rounded-lg text-base font-bold border-2 border-white/30 text-white hover:bg-white/10 transition-all">
               Choose Your Track
             </Button>
           </motion.div>
