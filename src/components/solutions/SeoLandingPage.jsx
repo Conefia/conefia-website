@@ -112,7 +112,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                 transition={{ delay: 0.3 }}
                 className="flex flex-col sm:flex-row gap-4 mb-3 justify-center md:justify-start">
 
-                  <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
+                  <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
                     {primaryCta}
                     <ArrowRight className="w-5 h-5" />
                   </Link>
@@ -410,7 +410,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
             </p>
         }
 
-          <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
+          <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2">
             {primaryCta}
             <ArrowRight className="w-5 h-5" />
           </Link>
@@ -1222,7 +1222,7 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
         <div className="flex flex-col items-center gap-4">
           <Link
           to={createPageUrl('Book')}
-          className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(219,254,1,0.25)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_20px_rgba(219,254,1,0.4),0_6px_20px_rgba(219,254,1,0.35)] hover:scale-105 active:scale-95 transition-all duration-300">
+          className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
             Book 30-mins Free Roadmap Call
             <ArrowRight className="w-5 h-5" />
           </Link>
