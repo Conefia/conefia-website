@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-
 import SeoLandingPage, { SolutionHero, RoadmapCallSection } from '@/components/solutions/SeoLandingPage';
 import { HeroVisual } from '@/components/solutions/clinic-growth/ClinicGrowthVisuals';
 import Seo from '@/components/Seo';

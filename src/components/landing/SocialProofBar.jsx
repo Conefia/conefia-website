@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { usePersona } from '@/components/context/PersonaContext';
 import useEmblaCarousel from 'embla-carousel-react';
@@ -52,7 +52,7 @@ const MetricCard = ({ metric, index, reduceMotion, isInView }) => {
 };
 
 export default function SocialProofBar({ reduceMotion }) {
-  const ref = useRef(null);
+  const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { selectedPersona } = usePersona();
   
