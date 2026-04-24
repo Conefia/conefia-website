@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* Font display strategy: swap fallback fonts immediately, show Poppins when ready */
-@font-face {
-  font-family: 'Poppins';
-  font-display: swap;
-}
+/*
+  Font is loaded via <link rel="stylesheet"> in index.html with display=swap.
+  Google Fonts injects @font-face { font-display: swap } automatically.
+  No @import needed here — avoids render-blocking chain: HTML → CSS → @import.
+*/
 
 @tailwind base;
 @tailwind components;

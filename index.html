@@ -2,24 +2,37 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable" />
-    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Browser caching: cache HTML for 1 week, assets for 1 year -->
-    <meta http-equiv="expires" content="604800" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
+
+    <!-- PWA manifest -->
     <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Preload critical font for faster LCP -->
-    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" crossorigin />
+
+    <!--
+      FONT LOADING STRATEGY (correct approach for Google Fonts):
+      1. preconnect to fonts.googleapis.com — establishes the TCP/TLS connection early
+      2. preconnect to fonts.gstatic.com crossorigin — font files live here; crossorigin needed
+         because the actual woff2 downloads are cross-origin
+      3. Load the stylesheet normally (rel="stylesheet") — Google Fonts injects
+         @font-face { font-display: swap } automatically when display=swap is in the URL
+      NOTE: <link rel="preload" as="font"> on a CSS URL is incorrect and browsers reject it.
+            The correct preload target would be the raw .woff2 binary URL, but those URLs
+            are dynamic per-browser so preconnect is the right primitive here.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+    />
+
     <title>Base44 APP</title>
   </head>
   <body>
     <div id="root"></div>
-    <!-- Main app bundle - module type defers automatically -->
+    <!-- Main app bundle — type="module" defers automatically -->
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Non-critical external scripts loaded async to avoid blocking rendering -->
-    <!-- GoogleTagManager and analytics loaded after page interactive -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=your-ga-id"></script>
   </body>
 </html>
