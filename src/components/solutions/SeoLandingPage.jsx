@@ -1143,6 +1143,9 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                             alt={tech.name}
                             className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform"
                             loading="lazy"
+                            decoding="async"
+                            width="80"
+                            height="40"
                             style={{ width: '100%', height: '100%' }} />
                           
                           </div>

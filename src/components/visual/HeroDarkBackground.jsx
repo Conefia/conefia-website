@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import ContourBackground from './ContourBackground';
 
-// Shared dark hero background: gradient base + accent blobs + contour lines + star dust + vignette
-// Matches the home page hero design exactly.
+// Pre-generate star data once per mount — avoids re-generating Math.random() on every render
+function generateStars(count) {
+  return Array.from({ length: count }, (_, i) => {
+    const x = Math.random() * 100;
+    const y = Math.random() * 100;
+    const isTwinkle = Math.random() > 0.92;
+    if (isTwinkle) {
+      const size = Math.random() * 3 + 2;
+      const opacity = Math.random() * 0.6 + 0.2;
+      return { id: i, type: 'twinkle', x, y, size, opacity };
+    }
+    return {
+      id: i, type: 'dot',
+      x, y,
+      size: Math.random() * 2 + 0.3,
+      opacity: Math.random() * 0.6 + 0.2,
+    };
+  });
+}
+
 export default function HeroDarkBackground({ isMobile = false, className = '' }) {
+  // Memoize stars so they're generated once and stable across renders
+  const stars = useMemo(() => generateStars(isMobile ? 80 : 300), [isMobile]);
+
   return (
     <div className={`absolute inset-0 ${className}`}>
       {/* Gradient base layer */}
@@ -14,57 +35,45 @@ export default function HeroDarkBackground({ isMobile = false, className = '' })
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-500/10 via-purple-500/5 to-transparent rounded-full blur-3xl" />
 
       {/* Contour lines */}
-      {isMobile ? (
-        <ContourBackground className="opacity-60" isMobile={true} />
-      ) : (
-        <ContourBackground className="opacity-60" isMobile={false} />
-      )}
+      <ContourBackground className="opacity-60" isMobile={isMobile} />
 
-      {/* Star Dust - reduced count on mobile for performance */}
+      {/* Star Dust - memoized, reduced count on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(isMobile ? 80 : 300)].map((_, i) => {
-          const x = Math.random() * 100;
-          const y = Math.random() * 100;
-          const size = Math.random() * 2 + 0.3;
-          const opacity = Math.random() * 0.6 + 0.2;
-          const isTwinkle = Math.random() > 0.92;
-
-          if (isTwinkle) {
-            const twinkleSize = Math.random() * 3 + 2;
+        {stars.map((star) => {
+          if (star.type === 'twinkle') {
             return (
               <div
-                key={`star-${i}`}
+                key={`star-${star.id}`}
                 className="absolute"
-                style={{ left: `${x}%`, top: `${y}%`, width: `${twinkleSize}px`, height: `${twinkleSize}px` }}>
+                style={{ left: `${star.x}%`, top: `${star.y}%`, width: `${star.size}px`, height: `${star.size}px` }}>
                 <div
                   className="absolute bg-white rounded-full"
                   style={{
                     width: '100%',
                     height: '100%',
-                    opacity: opacity * 1.2,
+                    opacity: star.opacity * 1.2,
                     boxShadow: `
-                      0 0 ${twinkleSize * 2}px ${twinkleSize}px rgba(219, 254, 1, ${opacity * 0.6}),
-                      0 ${-twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      0 ${twinkleSize * 4}px ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      ${-twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4}),
-                      ${twinkleSize * 4}px 0 ${twinkleSize * 2}px 0px rgba(219, 254, 1, ${opacity * 0.4})
+                      0 0 ${star.size * 2}px ${star.size}px rgba(219, 254, 1, ${star.opacity * 0.6}),
+                      0 ${-star.size * 4}px ${star.size * 2}px 0px rgba(219, 254, 1, ${star.opacity * 0.4}),
+                      0 ${star.size * 4}px ${star.size * 2}px 0px rgba(219, 254, 1, ${star.opacity * 0.4}),
+                      ${-star.size * 4}px 0 ${star.size * 2}px 0px rgba(219, 254, 1, ${star.opacity * 0.4}),
+                      ${star.size * 4}px 0 ${star.size * 2}px 0px rgba(219, 254, 1, ${star.opacity * 0.4})
                     `
                   }} />
               </div>
             );
           }
-
           return (
             <div
-              key={`star-${i}`}
+              key={`star-${star.id}`}
               className="absolute rounded-full bg-white"
               style={{
-                left: `${x}%`,
-                top: `${y}%`,
-                width: `${size}px`,
-                height: `${size}px`,
-                opacity: opacity * 0.8,
-                boxShadow: `0 0 ${size}px rgba(255, 255, 255, ${opacity * 0.3})`
+                left: `${star.x}%`,
+                top: `${star.y}%`,
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                opacity: star.opacity * 0.8,
+                boxShadow: `0 0 ${star.size}px rgba(255, 255, 255, ${star.opacity * 0.3})`
               }} />
           );
         })}

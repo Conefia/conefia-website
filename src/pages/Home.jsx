@@ -38,17 +38,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
-      {/* Subtle background texture */}
-      <div 
-        className="fixed inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-        }}
-      />
-      
-      {/* Gradient blobs */}
-      <div className="fixed top-0 right-0 w-[800px] h-[800px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px] pointer-events-none" />
-      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px] pointer-events-none" />
+      {/* Gradient blobs — pure CSS, no image download needed */}
+      <div className="fixed top-0 right-0 w-[800px] h-[800px] rounded-full bg-[#DBFE01] opacity-[0.06] blur-[120px] pointer-events-none" aria-hidden="true" />
+      <div className="fixed bottom-0 left-0 w-[600px] h-[600px] rounded-full bg-[#DBFE01] opacity-[0.04] blur-[100px] pointer-events-none" aria-hidden="true" />
       
       <main className="relative">
         <Seo 
@@ -70,41 +62,60 @@ export default function Home() {
           <BrandCarousel />
         </React.Suspense>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <ProblemSolution reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        {/* content-visibility: auto lets the browser skip off-screen rendering until scroll */}
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <ProblemSolution reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton height="h-48" />}>
-          <SocialProofBar reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 200px' }}>
+          <React.Suspense fallback={<SectionSkeleton height="h-48" />}>
+            <SocialProofBar reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <HowWeWork reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <HowWeWork reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<DarkSectionSkeleton />}>
-          <CaseStudiesSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
+          <React.Suspense fallback={<DarkSectionSkeleton />}>
+            <CaseStudiesSection reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <PlaybookSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <PlaybookSection reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <TestimonialSlider reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <TestimonialSlider reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <PackagesSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <PackagesSection reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <FAQSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <FAQSection reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
 
-        <React.Suspense fallback={<SectionSkeleton />}>
-          <ContactSection reduceMotion={shouldReduceMotion} />
-        </React.Suspense>
+        <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
+          <React.Suspense fallback={<SectionSkeleton />}>
+            <ContactSection reduceMotion={shouldReduceMotion} />
+          </React.Suspense>
+        </div>
       </main>
     </div>
   );
