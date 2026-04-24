@@ -862,7 +862,7 @@ function UseCasesLinkedLight({ useCases, isMobile = false }) {
               initial={{ opacity: 0, x: 24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 + 0.15 }}
+              transition={{ delay: 0 }}
               animate={activeIndex === i ? { scale: 1.03, x: -4 } : { scale: 1, x: 0 }}
               className={cn(
                 "p-6 rounded-2xl border transition-all duration-300 flex items-center gap-5",
@@ -947,7 +947,7 @@ function UseCasesLinked({ useCases }) {
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: i * 0.1 + 0.15 }}
+          transition={{ delay: 0 }}
           animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
           className={cn(
             "p-6 rounded-2xl border transition-all duration-300",
@@ -1030,7 +1030,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.4, duration: 0.6 }}
+                  transition={{ delay: !isMobile ? 0.4 : 0, duration: !isMobile ? 0.6 : 0 }}
                   className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
                   
                   <div className="flex items-center gap-4">
@@ -1049,7 +1049,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
+                  transition={{ delay: !isMobile ? 0.5 : 0 }}
                   className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
                   
                   {badge}
@@ -1189,7 +1189,7 @@ export const SolutionFAQ = ({ items = [] }) => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.1 }}
+            transition={{ duration: 0.4, delay: 0 }}
             className="relative">
             
           <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
