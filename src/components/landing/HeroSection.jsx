@@ -38,13 +38,14 @@ export default function HeroSection({ reduceMotion }) {
     }
   };
 
+  // GPU-friendly: use transform instead of y for hardware acceleration
   const itemVariants = {
-    hidden: { opacity: 0, y: reduceMotion ? 0 : 30 },
+    hidden: { opacity: 0, transform: reduceMotion || isMobile ? 'translateY(0)' : 'translateY(20px)' },
     visible: {
       opacity: 1,
-      y: 0,
+      transform: 'translateY(0)',
       transition: {
-        duration: reduceMotion ? 0 : 0.7,
+        duration: reduceMotion || isMobile ? 0 : 0.5,
         ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
@@ -124,28 +125,28 @@ export default function HeroSection({ reduceMotion }) {
             </motion.div>
           </motion.div>
 
-          {/* Right Visual - Animated Flow */}
+          {/* Right Visual - GPU-friendly animation */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
-            transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.4 }}
-            className="relative w-full lg:w-fit flex justify-center lg:justify-end"
+            initial={{ opacity: 0, transform: isMobile ? 'scale(1)' : 'scale(0.98)' }}
+            animate={isInView ? { opacity: 1, transform: 'scale(1)' } : { opacity: 0, transform: 'scale(0.98)' }}
+            transition={{ duration: reduceMotion || isMobile ? 0 : 0.5, delay: reduceMotion || isMobile ? 0 : 0.2 }}
+            className="relative w-full lg:w-fit flex justify-center lg:justify-end will-change-transform"
           >
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
       </div>
 
-      {/* Scroll indicator - simplified */}
-      {!reduceMotion && (
+      {/* Scroll indicator - GPU-friendly with transform */}
+      {!reduceMotion && !isMobile && (
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
-        animate={{ y: [0, 8, 0] }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50 will-change-transform"
+        animate={{ transform: ['translateY(0px)', 'translateY(8px)', 'translateY(0px)'] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
 
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
             <motion.div
-            className="w-1.5 h-3 bg-white/50 rounded-full"
-            animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+            className="w-1.5 h-3 bg-white/50 rounded-full will-change-transform"
+            animate={{ transform: ['translateY(0px)', 'translateY(12px)', 'translateY(0px)'], opacity: [1, 0.3, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} />
 
           </div>

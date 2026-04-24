@@ -20,9 +20,9 @@ export default function HeroDarkBackground({ isMobile = false, className = '' })
         <ContourBackground className="opacity-60" isMobile={false} />
       )}
 
-      {/* Star Dust */}
+      {/* Star Dust - reduced count on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(300)].map((_, i) => {
+        {[...Array(isMobile ? 80 : 300)].map((_, i) => {
           const x = Math.random() * 100;
           const y = Math.random() * 100;
           const size = Math.random() * 2 + 0.3;

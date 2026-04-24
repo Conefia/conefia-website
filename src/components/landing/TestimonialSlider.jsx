@@ -117,9 +117,9 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
        {/* Contour lines */}
        <ContourBackground className="opacity-80" isMobile={isMobile} />
 
-       {/* Static Star Dust */}
+       {/* Static Star Dust - fewer on mobile */}
        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-         {[...Array(300)].map((_, i) => {
+         {[...Array(isMobile ? 60 : 300)].map((_, i) => {
            const x = Math.random() * 100;
            const y = Math.random() * 100;
            const size = Math.random() * 2 + 0.3;
@@ -292,13 +292,13 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
                 <ChevronRight className="w-6 h-6" />
               </button>
 
-              <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Testimonial slides">
+              <div className="flex justify-center gap-3 mt-8" role="tablist" aria-label="Testimonial slides">
                 {testimonials.map((_, index) =>
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 will-change-transform ${
-                index === selectedIndex ? 'w-8 bg-[#DBFE01]' : 'w-2 bg-white/10 hover:bg-white/20'}`
+                className={`h-1.5 w-8 rounded-full transition-all duration-300 will-change-transform origin-center ${
+                index === selectedIndex ? 'bg-[#DBFE01] scale-x-100 opacity-100' : 'bg-white scale-x-[0.25] opacity-20 hover:opacity-40'}`
                 }
                 role="tab"
                 aria-selected={index === selectedIndex}

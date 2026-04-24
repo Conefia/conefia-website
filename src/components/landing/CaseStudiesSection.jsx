@@ -174,9 +174,9 @@ export default function CaseStudiesSection({ reduceMotion }) {
       {/* Contour lines */}
       <ContourBackground className="opacity-80" isMobile={isMobile} />
 
-      {/* Static Star Dust */}
+      {/* Static Star Dust - fewer on mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(300)].map((_, i) => {
+        {[...Array(isMobile ? 60 : 300)].map((_, i) => {
           const x = Math.random() * 100;
           const y = Math.random() * 100;
           const size = Math.random() * 2 + 0.3;
@@ -352,7 +352,7 @@ export default function CaseStudiesSection({ reduceMotion }) {
                         {/* CTA */}
                         <Link
                         to={createPageUrl(caseStudyPages[study.id])}
-                        className={`w-full px-6 py-4 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-base flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-1`}>
+                        className={`w-full px-6 py-4 rounded-xl bg-gradient-to-r ${study.gradient} text-white font-bold text-base flex items-center justify-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_6px_20px_rgba(0,0,0,0.2)] transition-all hover:-translate-y-px will-change-transform`}>
 
                           View Full Case Study
                           <ArrowRight className="w-5 h-5" />

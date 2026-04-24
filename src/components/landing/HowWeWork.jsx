@@ -230,10 +230,10 @@ export default function HowWeWork({ reduceMotion }) {
     <section ref={ref} className="py-16 md:py-24 bg-gradient-to-b from-white/50 to-[#FAFAFA]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: reduceMotion ? 0 : 0.7 }}
-          className="text-center mb-16">
+          initial={{ opacity: 0, transform: 'translateY(20px)' }}
+          animate={isInView ? { opacity: 1, transform: 'translateY(0)' } : { opacity: 0, transform: 'translateY(20px)' }}
+          transition={{ duration: reduceMotion ? 0 : 0.5 }}
+          className="text-center mb-16 will-change-transform">
 
           <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
@@ -254,25 +254,18 @@ export default function HowWeWork({ reduceMotion }) {
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.9 }}
+                initial={{ opacity: 0, transform: 'translateY(20px)' }}
+                animate={isInView ? { opacity: 1, transform: 'translateY(0)' } : { opacity: 0, transform: 'translateY(20px)' }}
                 transition={{
-                  duration: reduceMotion ? 0 : 0.6,
-                  delay: reduceMotion ? 0 : 0.2 + index * 0.12,
-                  type: "spring",
-                  stiffness: 100
+                  duration: reduceMotion ? 0 : 0.4,
+                  delay: reduceMotion ? 0 : Math.min(0.1 + index * 0.08, 0.4)
                 }}
-                whileHover={reduceMotion ? {} : { scale: 1.05, y: -5 }}
-                className="text-center p-6 group">
-                <motion.div
-                  className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mx-auto mb-4 shadow-lg ${card.glow} group-hover:shadow-2xl transition-all duration-300`}
-                  whileHover={reduceMotion ? {} : { rotate: 5, scale: 1.1 }}>
+                whileHover={reduceMotion ? {} : { transform: 'translateY(-4px) scale(1.02)' }}
+                className="text-center p-6 group will-change-transform">
+                <div
+                  className={`relative w-16 h-16 rounded-2xl bg-gradient-to-br ${card.gradient} flex items-center justify-center mx-auto mb-4 shadow-lg ${card.glow} group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105`}>
                   <Icon className="w-8 h-8 text-white relative z-10" />
-                  <motion.div
-                    className="absolute inset-0 rounded-2xl bg-white/20"
-                    animate={reduceMotion ? {} : { scale: [1, 1.2, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }} />
-                </motion.div>
+                </div>
                 <h3 className="text-xl font-bold text-[#1a1a1a] mb-2 group-hover:scale-105 transition-transform">
                   {card.title}
                 </h3>
@@ -284,11 +277,11 @@ export default function HowWeWork({ reduceMotion }) {
           })}
         </div>
 
-        {/* Illustrative image */}
+        {/* Illustrative image - GPU-friendly */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.3 }}
           className="mt-16 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
           <img
             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"

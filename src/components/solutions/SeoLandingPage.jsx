@@ -29,11 +29,11 @@ export const Reveal = ({ children, className, delay = 0, isMobile = false }) => 
   const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, transform: 'translateY(20px)' }}
+      whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: reduceMotion || isMobile ? 0 : 0.5, delay: reduceMotion || isMobile ? 0 : delay, ease: "easeOut" }}
-      className={className}>
+      transition={{ duration: reduceMotion || isMobile ? 0 : 0.4, delay: reduceMotion || isMobile ? 0 : delay, ease: "easeOut" }}
+      className={cn(className, "will-change-transform")}>
         {children}
       </motion.div>
   );
@@ -229,13 +229,13 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         </div>
       {!reduceMotion &&
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
-          animate={{ y: [0, 8, 0] }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50 will-change-transform"
+          animate={{ transform: ['translateY(0px)', 'translateY(8px)', 'translateY(0px)'] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
           <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
             <motion.div
-              className="w-1.5 h-3 bg-white/50 rounded-full"
-              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
+              className="w-1.5 h-3 bg-white/50 rounded-full will-change-transform"
+              animate={{ transform: ['translateY(0px)', 'translateY(12px)', 'translateY(0px)'], opacity: [1, 0.3, 1] }}
               transition={{ duration: shouldReduceAnimations ? 0 : 2, repeat: Infinity, ease: "easeInOut" }} />
           </div>
         </motion.div>
@@ -323,11 +323,11 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
             {items.map((item, i) =>
             <motion.li
               key={i}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, transform: 'translateX(-12px)' }}
+              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: !isMobile ? i * 0.06 : 0 }}
-            className="flex items-start gap-4 group">
+              transition={{ duration: 0.35, delay: !isMobile ? i * 0.06 : 0 }}
+            className="flex items-start gap-4 group will-change-transform">
             
                 <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
                   <X className="w-4 h-4 text-rose-500" />
@@ -340,11 +340,11 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
           {/* Callout quote */}
           {quote &&
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-10 relative">
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: !isMobile ? 0.4 : 0 }}
+        className="mt-10 relative">
           
               <div className="relative bg-rose-50 rounded-2xl p-6 border border-rose-200 shadow-sm">
                 <div className="flex gap-3 items-start">
@@ -456,9 +456,9 @@ export function RoadmapCallSection({
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
   <ContourBackground className="opacity-80" isMobile={isMobile} />
-  {/* Star Dust */}
+  {/* Star Dust - fewer on mobile */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {[...Array(200)].map((_, i) => {
+   {[...Array(isMobile ? 50 : 200)].map((_, i) => {
       const x = Math.random() * 100;
       const y = Math.random() * 100;
       const size = Math.random() * 2 + 0.3;
@@ -494,11 +494,11 @@ export function RoadmapCallSection({
             {items.map((item, i) =>
             <motion.li
               key={i}
-              initial={{ opacity: 0, x: -16 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, transform: 'translateX(-12px)' }}
+              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
               viewport={{ once: true }}
-              transition={{ delay: !isMobile ? i * 0.06 : 0 }}
-              className="flex items-start gap-4">
+              transition={{ delay: !isMobile ? i * 0.06 : 0, duration: 0.35 }}
+              className="flex items-start gap-4 will-change-transform">
               
                 <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
                   <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
@@ -529,8 +529,8 @@ export function RoadmapCallSection({
 
           {/* Floating badge top-right */}
           <motion.div
-            initial={{ opacity: 0, y: -16 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: 'translateY(-10px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
             viewport={{ once: true }}
             transition={{ delay: !isMobile ? 0.6 : 0 }}
             className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
@@ -540,11 +540,11 @@ export function RoadmapCallSection({
 
           {/* Bottom info card */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: 'translateY(12px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
             viewport={{ once: true }}
-            transition={{ delay: !isMobile ? 0.7 : 0, duration: !isMobile ? 0.6 : 0 }}
-            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+            transition={{ delay: !isMobile ? 0.7 : 0, duration: !isMobile ? 0.5 : 0 }}
+            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 will-change-transform">
             
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(219,254,1,0.4)]">
@@ -603,17 +603,17 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
     {/* Animated floating orbs */}
     {!shouldReduceAnimations && <motion.div
         className="absolute top-20 right-16 w-6 h-6 bg-[#DBFE01] rounded-full opacity-60 pointer-events-none"
-        animate={{ y: [0, -18, 0], scale: [1, 1.2, 1] }}
+        animate={{ transform: ['translateY(0) scale(1)', 'translateY(-18px) scale(1.2)', 'translateY(0) scale(1)'] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} />}
       
     {!shouldReduceAnimations && <motion.div
         className="absolute bottom-32 left-20 w-4 h-4 bg-[#DBFE01] rounded-full opacity-40 pointer-events-none"
-        animate={{ y: [0, 14, 0], scale: [1, 1.3, 1] }}
+        animate={{ transform: ['translateY(0) scale(1)', 'translateY(14px) scale(1.3)', 'translateY(0) scale(1)'] }}
         transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }} />}
       
     {!shouldReduceAnimations && <motion.div
         className="absolute top-1/3 right-1/4 w-3 h-3 bg-[#c5e000] rounded-full opacity-50 pointer-events-none"
-        animate={{ y: [0, -10, 0], x: [0, 8, 0] }}
+        animate={{ transform: ['translate(0, 0)', 'translate(8px, -10px)', 'translate(0, 0)'] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />}
       
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -651,11 +651,11 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
             {displaySteps.map((step, i) =>
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, transform: 'translateX(16px)' }}
+                whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: !isMobile ? i * 0.08 : 0, ease: "easeOut" }}
-                className="flex gap-6 group pb-10 last:pb-0">
+                className="flex gap-6 group pb-10 last:pb-0 will-change-transform">
                 
                 {/* Step number bubble */}
                 <div className="relative flex-shrink-0 z-10">
@@ -682,10 +682,10 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
 
           {/* Stage gate note */}
           <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: !isMobile ? 0.6 : 0 }}
+              transition={{ delay: !isMobile ? 0.4 : 0 }}
               className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6">
               
             <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
@@ -762,7 +762,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
               key={i}
               className={`absolute ${size} text-[#DBFE01]`}
               style={{ left: `${x}%`, top: `${y}%` }}
-              animate={{ opacity: [0.08, 0.35, 0.08], scale: [0.8, 1.2, 0.8], rotate: [0, 20, 0] }}
+              animate={{ opacity: [0.08, 0.35, 0.08], transform: ['scale(0.8) rotate(0deg)', 'scale(1.2) rotate(20deg)', 'scale(0.8) rotate(0deg)'] }}
               transition={{ duration: 3 + i % 3, repeat: Infinity, delay, ease: "easeInOut" }}>
               
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5L12 2zm0 10l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z" /></svg>
@@ -823,11 +823,11 @@ function UseCasesLinkedLight({ useCases, isMobile = false }) {
               key={i}
               onHoverStart={() => setActiveIndex(i)}
               onHoverEnd={() => setActiveIndex(null)}
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, transform: 'translateX(-16px)' }}
+              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
               viewport={{ once: true }}
               transition={{ delay: !isMobile ? i * 0.08 : 0 }}
-              whileHover={!isMobile ? { scale: 1.02 } : {}}
+              whileHover={!isMobile ? { transform: 'scale(1.02)' } : {}}
               className={cn(
                 "flex items-center gap-5 p-6 rounded-2xl border cursor-pointer transition-all duration-300",
                 activeIndex === i ?
@@ -859,11 +859,11 @@ function UseCasesLinkedLight({ useCases, isMobile = false }) {
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, transform: 'translateX(16px)' }}
+              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
               viewport={{ once: true }}
               transition={{ delay: 0 }}
-              animate={activeIndex === i ? { scale: 1.03, x: -4 } : { scale: 1, x: 0 }}
+              animate={activeIndex === i ? { transform: 'scale(1.03) translateX(-4px)' } : { transform: 'scale(1) translateX(0)' }}
               className={cn(
                 "p-6 rounded-2xl border transition-all duration-300 flex items-center gap-5",
                 activeIndex === i ?
@@ -914,10 +914,10 @@ function UseCasesLinked({ useCases }) {
           key={i}
           onHoverStart={() => setActiveIndex(i)}
           onHoverEnd={() => setActiveIndex(null)}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, transform: 'translateX(-16px)' }}
+          whileInView={{ opacity: 1, transform: 'translateX(0)' }}
           viewport={{ once: true }}
-          transition={{ delay: i * 0.1 }}
+          transition={{ delay: 0 }}
           className={cn(
             "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
             activeIndex === i ?
@@ -944,11 +944,11 @@ function UseCasesLinked({ useCases }) {
         {rightItems.map((item, i) =>
         <motion.div
           key={i}
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, transform: 'translateX(16px)' }}
+          whileInView={{ opacity: 1, transform: 'translateX(0)' }}
           viewport={{ once: true }}
           transition={{ delay: 0 }}
-          animate={activeIndex === i ? { scale: 1.03 } : { scale: 1 }}
+          animate={activeIndex === i ? { transform: 'scale(1.03)' } : { transform: 'scale(1)' }}
           className={cn(
             "p-6 rounded-2xl border transition-all duration-300",
             activeIndex === i ?
@@ -994,8 +994,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
           <Reveal className="flex flex-col items-center text-center mb-20">
             <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5">
               
@@ -1003,8 +1003,8 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
               <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
             </motion.div>
             <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
               className="text-2xl font-bold leading-tight gradient-heading gradient-heading--premium">
@@ -1027,11 +1027,11 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
                 {/* Floating stat card */}
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, transform: 'translateY(12px)' }}
+                  whileInView={{ opacity: 1, transform: 'translateY(0)' }}
                   viewport={{ once: true }}
-                  transition={{ delay: !isMobile ? 0.4 : 0, duration: !isMobile ? 0.6 : 0 }}
-                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
+                  transition={{ delay: !isMobile ? 0.4 : 0, duration: !isMobile ? 0.5 : 0 }}
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 will-change-transform">
                   
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
@@ -1046,11 +1046,11 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
                 {/* Top badge */}
                 <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, transform: 'translateX(-12px)' }}
+                  whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                   viewport={{ once: true }}
                   transition={{ delay: !isMobile ? 0.5 : 0 }}
-                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg will-change-transform">
                   
                   {badge}
                 </motion.div>
@@ -1067,11 +1067,11 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   map((item, i) =>
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, transform: 'translateX(16px)' }}
+                    whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                     viewport={{ once: true }}
                     transition={{ delay: !isMobile ? i * 0.08 : 0, duration: 0.4 }}
-                    whileHover={!isMobile ? { x: 6 } : {}}
+                    whileHover={!isMobile ? { transform: 'translateX(4px)' } : {}}
                     className={`flex items-start gap-5 p-5 rounded-2xl bg-gradient-to-br ${item.color || 'from-gray-50 to-gray-50/30'} border ${item.border || 'border-gray-200/50'} transition-all duration-300 group`}>
                     
                       <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
@@ -1186,11 +1186,11 @@ export const SolutionFAQ = ({ items = [] }) => {
         {displayItems.map((item, i) =>
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: 'translateY(16px)' }}
+            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0 }}
-            className="relative">
+            className="relative will-change-transform">
             
           <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
