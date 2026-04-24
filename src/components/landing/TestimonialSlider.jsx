@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { base44 } from '@/api/base44Client';
+
 import { motion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import { Quote, ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';

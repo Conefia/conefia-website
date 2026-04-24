@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, TrendingUp, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '../../utils';
