@@ -19,14 +19,27 @@ import React from 'react';
 const UNSPLASH_WIDTHS = [400, 640, 900, 1200, 1600];
 
 function buildUnsplashSrcSet(src) {
-  // Strip existing ?w= and &w= so we can inject our own
-  const base = src.replace(/[?&]w=\d+/, '').replace(/\?&/, '?');
-  const separator = base.includes('?') ? '&' : '?';
-  // Preserve quality param if present
-  const hasQ = /[?&]q=/.test(base);
-  return UNSPLASH_WIDTHS
-    .map(w => `${base}${separator}w=${w}${hasQ ? '' : '&q=75'} ${w}w`)
-    .join(', ');
+  // Parse the URL properly to avoid mangling query strings
+  try {
+    const url = new URL(src);
+    // Remove any existing width/format params we'll override
+    url.searchParams.delete('w');
+    // Ensure a quality param exists
+    if (!url.searchParams.has('q')) {
+      url.searchParams.set('q', '75');
+    }
+    url.searchParams.set('auto', 'format');
+    url.searchParams.set('fit', 'crop');
+    return UNSPLASH_WIDTHS
+      .map(w => {
+        url.searchParams.set('w', String(w));
+        return `${url.toString()} ${w}w`;
+      })
+      .join(', ');
+  } catch {
+    // Fallback: return src as-is if URL parsing fails
+    return undefined;
+  }
 }
 
 function isUnsplash(src) {
@@ -48,7 +61,7 @@ export default function ResponsiveImage({
 }) {
   if (!src) return null;
 
-  const srcset = isUnsplash(src) ? buildUnsplashSrcSet(src) : undefined;
+  const srcset = isUnsplash(src) ? (buildUnsplashSrcSet(src) || undefined) : undefined;
 
   return (
     <img
