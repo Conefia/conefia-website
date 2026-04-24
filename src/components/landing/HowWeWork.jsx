@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Play, FileText, Shield, Activity, Rocket, Search, Calendar, DollarSign, Users, CheckCircle, FlaskConical, Store, Repeat, FileCheck, Layers, BarChart3, Sparkles } from 'lucide-react';
 import { usePersona } from '@/components/context/PersonaContext';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 
 export default function HowWeWork({ reduceMotion }) {
   const ref = React.useRef(null);
@@ -283,11 +284,14 @@ export default function HowWeWork({ reduceMotion }) {
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : 0.3 }}
           className="mt-16 rounded-2xl overflow-hidden shadow-xl border border-gray-100">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+          <ResponsiveImage
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80"
             alt="Team collaborating on a product sprint"
-            className="w-full h-64 md:h-96 object-cover object-center"
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1280px"
             loading="lazy"
+            width="1600"
+            height="384"
+            className="w-full h-64 md:h-96 object-cover object-center"
           />
         </motion.div>
       </div>

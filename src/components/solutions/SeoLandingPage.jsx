@@ -15,6 +15,7 @@ import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { cn } from "@/lib/utils";
 
 // Reusable Components
@@ -95,24 +96,24 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, transform: 'translateY(16px)' }}
+                animate={{ opacity: 1, transform: 'translateY(0)' }}
                 transition={{ delay: shouldReduceAnimations ? 0 : 0.1 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left">
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 max-w-4xl leading-tight text-center md:text-left will-change-transform">
                   {title && title.replace(/\.$/, '')}
                 </motion.h1>
 
                 <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, transform: 'translateY(12px)' }}
+                animate={{ opacity: 1, transform: 'translateY(0)' }}
                 transition={{ delay: shouldReduceAnimations ? 0 : 0.2 }}
                 className="text-sm sm:text-base md:text-lg text-white/80 leading-relaxed mb-4 sm:mb-6 max-w-xl text-center md:text-left">
                   {subtitle}
                 </motion.p>
 
                 <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, transform: 'translateY(10px)' }}
+                animate={{ opacity: 1, transform: 'translateY(0)' }}
                 transition={{ delay: shouldReduceAnimations ? 0 : 0.3 }}
                 className="flex flex-col sm:flex-row gap-4 mb-3 justify-center md:justify-start">
                   <Link to={createPageUrl('Book')} className="btn-primary px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
@@ -154,8 +155,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           /* CENTERED LAYOUT (DEFAULT) */
           <div className="max-w-4xl mx-auto text-center">
               <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
+               initial={{ opacity: 0, transform: 'translateY(12px)' }}
+               animate={{ opacity: 1, transform: 'translateY(0)' }}
                transition={{ duration: shouldReduceAnimations ? 0 : 0.3 }}
                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
 
@@ -164,16 +165,16 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               </motion.div>
               
               <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: 'translateY(16px)' }}
+              animate={{ opacity: 1, transform: 'translateY(0)' }}
               transition={{ delay: shouldReduceAnimations ? 0 : 0.1 }}
-              className="text-3xl font-bold text-white leading-tight mb-6 text-center">
+              className="text-3xl font-bold text-white leading-tight mb-6 text-center will-change-transform">
                 {title && title.replace(/\.$/, '')}
               </motion.h1>
               
               <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: 'translateY(12px)' }}
+              animate={{ opacity: 1, transform: 'translateY(0)' }}
               transition={{ delay: shouldReduceAnimations ? 0 : 0.2 }}
               className="text-base md:text-lg text-white/80 leading-relaxed mb-6 max-w-2xl mx-auto">
 
@@ -181,8 +182,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               </motion.p>
               
               <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, transform: 'translateY(10px)' }}
+              animate={{ opacity: 1, transform: 'translateY(0)' }}
               transition={{ delay: shouldReduceAnimations ? 0 : 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
 
@@ -216,10 +217,10 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
               {visual &&
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ delay: shouldReduceAnimations ? 0 : 0.5, duration: shouldReduceAnimations ? 0 : 0.7 }}
-              className="mt-12">
+              initial={{ opacity: 0, transform: 'translateY(20px) scale(0.97)' }}
+              animate={{ opacity: 1, transform: 'translateY(0) scale(1)' }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.5, duration: shouldReduceAnimations ? 0 : 0.6 }}
+              className="mt-12 will-change-transform">
 
                   {visual}
                 </motion.div>
@@ -519,9 +520,13 @@ export function RoadmapCallSection({
       {/* Right: Stock Image */}
       <Reveal delay={0.2} className="relative">
         <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] lg:h-[560px]">
-          <img
+          <ResponsiveImage
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
             alt="Product roadmap planning meeting"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            loading="lazy"
+            width="900"
+            height="560"
             className="w-full h-full object-cover" />
           
           {/* Dark overlay for cohesion with dark section */}
@@ -628,9 +633,13 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
       <div className="grid lg:grid-cols-2 gap-16 items-start">
         {/* Left: Stock Image */}
         <Reveal className="relative rounded-3xl overflow-hidden shadow-2xl lg:sticky lg:top-28 h-[420px] lg:h-[580px]">
-          <img
+          <ResponsiveImage
               src={imageUrl || "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"}
               alt={imageAlt || "Team collaborating on a product sprint"}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              loading="lazy"
+              width="800"
+              height="580"
               className="w-full h-full object-cover" />
             
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1020]/70 via-transparent to-transparent" />
@@ -1017,9 +1026,13 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
 
               {/* Left: Stock image with overlays */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[420px] lg:h-[500px] order-2 lg:order-1">
-                <img
+                <ResponsiveImage
                   src={imageUrl}
                   alt={imageAlt}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                  width="900"
+                  height="500"
                   className="w-full h-full object-cover" />
                 
                 {/* Dark gradient overlay */}

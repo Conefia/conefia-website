@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { createPageUrl } from '../../utils';
 import useEmblaCarousel from 'embla-carousel-react';
 import ContourBackground from '../visual/ContourBackground';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 
 export default function CaseStudiesSection({ reduceMotion }) {
   const ref = React.useRef(null);
@@ -284,12 +285,13 @@ export default function CaseStudiesSection({ reduceMotion }) {
                     <div className="relative bg-white/5 backdrop-blur-md rounded-3xl overflow-hidden border border-white/20 hover:border-[#DBFE01]/40 transition-all duration-500 shadow-2xl">
                       {/* Image */}
                       <div className="relative h-72 overflow-hidden">
-                        <img
+                        <ResponsiveImage
                         src={study.image}
                         alt={study.client}
                         loading="lazy"
                         width="800"
                         height="600"
+                        sizes="(max-width: 768px) 100vw, 75vw"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
                         <div className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-40`} />
