@@ -76,7 +76,7 @@ export default function HeroSection({ reduceMotion }) {
             {/* Subhead */}
             <motion.p
               variants={itemVariants} 
-              className="text-white/90 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-xl text-center md:text-left"
+              className="text-white/80 mb-6 sm:mb-8 text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed max-w-xl text-center md:text-left"
             >
               For founders, clinic teams, and Shopify brands tired of juggling vendors, CONEFIA is your all-in-one AI + mobile app and growth marketing studio—so you acquire customers or patients faster and scale with confidence.
             </motion.p>
@@ -107,20 +107,20 @@ export default function HeroSection({ reduceMotion }) {
               className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-12 w-full lg:w-auto"
             >
               <div className="text-center lg:text-left group">
-                <p className="text-white/70 mb-1 text-xs font-bold uppercase tracking-wider">TYPICAL MVP</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">TYPICAL MVP</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/70 mb-1 text-xs font-bold uppercase tracking-wider">WEEKLY DEMOS</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">WEEKLY DEMOS</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/70 mb-1 text-xs font-bold uppercase tracking-wider">PRIVACY-FIRST</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">PRIVACY-FIRST</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/70 mb-1 text-xs font-bold uppercase tracking-wider">ONE BACKLOG</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
+                <p className="text-white/50 mb-1 text-xs font-bold uppercase tracking-wider">ONE BACKLOG</p>
+                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
               </div>
             </motion.div>
           </motion.div>
