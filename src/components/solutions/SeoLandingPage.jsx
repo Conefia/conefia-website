@@ -434,6 +434,15 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
   </section>;
 
 
+// Pre-computed star positions — generated once at module load, never on render
+const ROADMAP_STARS_DESKTOP = Array.from({ length: 200 }, (_, i) => ({
+  x: ((i * 47.3 + 11) % 100),
+  y: ((i * 31.7 + 23) % 100),
+  size: (i % 10) * 0.17 + 0.3,
+  opacity: (i % 7) * 0.057 + 0.2,
+}));
+const ROADMAP_STARS_MOBILE = ROADMAP_STARS_DESKTOP.slice(0, 50);
+
 export function RoadmapCallSection({
   title = "What you'll get in the 30-minute roadmap call",
   description = "This isn't a sales pitch. We'll leave you with a clear MVP scope, AI approach, and an 8–12 week plan to pilots.",
@@ -451,23 +460,20 @@ export function RoadmapCallSection({
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);
+
+  const stars = isMobile ? ROADMAP_STARS_MOBILE : ROADMAP_STARS_DESKTOP;
+
   return (
 <section className="py-16 md:py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
   <ContourBackground className="opacity-80" isMobile={isMobile} />
-  {/* Star Dust - fewer on mobile */}
+  {/* Star Dust — positions pre-computed, no Math.random() on render */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-   {[...Array(isMobile ? 50 : 200)].map((_, i) => {
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const size = Math.random() * 2 + 0.3;
-      const opacity = Math.random() * 0.6 + 0.2;
-      return (
-        <div key={`star-${i}`} className="absolute rounded-full bg-white" style={{ left: `${x}%`, top: `${y}%`, width: `${size}px`, height: `${size}px`, opacity: opacity * 0.8, boxShadow: `0 0 ${size}px rgba(255,255,255,${opacity * 0.3})` }} />);
-
-    })}
+   {stars.map((s, i) => (
+      <div key={i} className="absolute rounded-full bg-white" style={{ left: `${s.x}%`, top: `${s.y}%`, width: `${s.size}px`, height: `${s.size}px`, opacity: s.opacity * 0.8, boxShadow: `0 0 ${s.size}px rgba(255,255,255,${s.opacity * 0.3})` }} />
+    ))}
   </div>
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -713,6 +719,14 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
 
 };
 
+
+// Pre-computed — avoids Math.random() on every SolutionOutcomes render
+const OUTCOMES_STARS = Array.from({ length: 80 }, (_, i) => ({
+  x: ((i * 53.1 + 7) % 100),
+  y: ((i * 29.3 + 17) % 100),
+  size: (i % 8) * 0.21 + 0.3,
+  opacity: (i % 6) * 0.067 + 0.2,
+}));
 
 export function SolutionOutcomes({ title, items = [], visual }) {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);

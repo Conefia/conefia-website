@@ -1,10 +1,10 @@
+import React, { Suspense, useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import NavigationTracker from '@/lib/NavigationTracker'
 import { pagesConfig } from './pages.config'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Suspense } from 'react';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
@@ -14,6 +14,8 @@ const PageSpinner = () => (
     <div className="w-8 h-8 border-4 border-slate-200 border-t-slate-800 rounded-full animate-spin" />
   </div>
 );
+
+
 
 const { Pages, Layout, mainPage } = pagesConfig;
 const mainPageKey = mainPage ?? Object.keys(Pages)[0];
@@ -74,6 +76,23 @@ const AuthenticatedApp = () => {
 
 
 function App() {
+  // Idle-time prefetch of high-traffic pages after initial render settles
+  useEffect(() => {
+    const pages = [
+      () => import('./pages/clinic-growth-system'),
+      () => import('./pages/ai-saas-mvp-launch'),
+      () => import('./pages/shopify-growth-system'),
+      () => import('./pages/app-relaunch-retention'),
+      () => import('./pages/book'),
+    ];
+    const schedule = window.requestIdleCallback || ((cb) => setTimeout(cb, 300));
+    const timer = setTimeout(() => {
+      pages.forEach((load, i) => {
+        schedule(() => load().catch(() => {}));
+      });
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <AuthProvider>

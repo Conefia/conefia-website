@@ -22,13 +22,16 @@ function buildUnsplashSrcSet(src) {
   // Parse the URL properly to avoid mangling query strings
   try {
     const url = new URL(src);
-    // Remove any existing width/format params we'll override
+    // Remove any existing width param we'll override
     url.searchParams.delete('w');
-    // Ensure a quality param exists
+    // Quality: 75 is visually lossless at display sizes, smaller file than 80
     if (!url.searchParams.has('q')) {
       url.searchParams.set('q', '75');
     }
-    url.searchParams.set('auto', 'format');
+    // auto=format → Unsplash/Fastly serves WebP/AVIF based on Accept header
+    // compress → applies Fastly's additional compression pass
+    // fit=crop → keeps aspect ratio without letterboxing
+    url.searchParams.set('auto', 'format,compress');
     url.searchParams.set('fit', 'crop');
     return UNSPLASH_WIDTHS
       .map(w => {

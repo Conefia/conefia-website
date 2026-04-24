@@ -21,6 +21,7 @@
             The correct preload target would be the raw .woff2 binary URL, but those URLs
             are dynamic per-browser so preconnect is the right primitive here.
     -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,11 +29,38 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
     />
 
-    <title>Base44 APP</title>
+    <!--
+      DNS prefetch for external asset origins used throughout the site.
+      dns-prefetch resolves DNS early (zero extra TCP/TLS cost vs preconnect).
+      preconnect is used only where we load resources in the critical path.
+    -->
+    <!-- Supabase storage CDN — used for logo images in header/footer -->
+    <link rel="preconnect" href="https://qtrypzzcjebvfcihiynt.supabase.co" crossorigin />
+    <!-- Unsplash image CDN (Fastly) — used for all section photos -->
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <!-- SVG logo CDN used on solution pages -->
+    <link rel="dns-prefetch" href="https://logo.svgcdn.com" />
+    <!-- Calendly embed on Book page -->
+    <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://assets.calendly.com" />
+
+    <!--
+      Critical image preload — the logo used in the sticky header is always
+      visible above the fold on every page. Preloading it eliminates the
+      render-blocking gap between CSS paint and the image appearing.
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png"
+      fetchpriority="high"
+    />
+
+    <title>Conefia — Build, Launch & Scale Your Digital Venture</title>
   </head>
   <body>
     <div id="root"></div>
-    <!-- Main app bundle — type="module" defers automatically -->
+    <!-- Main app bundle — type="module" defers automatically (ES module semantics) -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

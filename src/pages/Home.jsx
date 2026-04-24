@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import Seo from '@/components/Seo';
 import HeroSection from '@/components/landing/HeroSection';
-import { SectionSkeleton, DarkSectionSkeleton } from '@/components/loading/SkeletonLoader';
 import { ServiceStructuredData } from '@/components/StructuredData';
 
-// Lazy load below-the-fold components
-const SocialProofBar = React.lazy(() => import('@/components/landing/SocialProofBar'));
-const BrandCarousel = React.lazy(() => import('@/components/landing/BrandCarousel'));
-const ProblemSolution = React.lazy(() => import('@/components/landing/ProblemSolution'));
-const PlaybookSection = React.lazy(() => import('@/components/landing/PlaybookSection'));
-const CaseStudiesSection = React.lazy(() => import('@/components/landing/CaseStudiesSection'));
-const TestimonialSlider = React.lazy(() => import('@/components/landing/TestimonialSlider'));
-const HowWeWork = React.lazy(() => import('@/components/landing/HowWeWork'));
-const PackagesSection = React.lazy(() => import('@/components/landing/PackagesSection'));
-const FAQSection = React.lazy(() => import('@/components/landing/FAQSection'));
-const ContactSection = React.lazy(() => import('@/components/landing/ContactSection'));
+// Home is already lazy-loaded at the route level (pages.config.js).
+// Static imports here bundle everything into the Home chunk — no double-lazy overhead.
+import SocialProofBar from '@/components/landing/SocialProofBar';
+import BrandCarousel from '@/components/landing/BrandCarousel';
+import ProblemSolution from '@/components/landing/ProblemSolution';
+import PlaybookSection from '@/components/landing/PlaybookSection';
+import CaseStudiesSection from '@/components/landing/CaseStudiesSection';
+import TestimonialSlider from '@/components/landing/TestimonialSlider';
+import HowWeWork from '@/components/landing/HowWeWork';
+import PackagesSection from '@/components/landing/PackagesSection';
+import FAQSection from '@/components/landing/FAQSection';
+import ContactSection from '@/components/landing/ContactSection';
 
 export default function Home() {
   const shouldReduceMotion = useReducedMotion();
@@ -58,63 +58,43 @@ export default function Home() {
         
         <HeroSection reduceMotion={shouldReduceMotion} />
 
-        <React.Suspense fallback={<DarkSectionSkeleton height="h-24" />}>
-          <BrandCarousel />
-        </React.Suspense>
+        <BrandCarousel />
 
-        {/* content-visibility: auto lets the browser skip off-screen rendering until scroll */}
+        {/* content-visibility: auto defers off-screen rendering until scroll */}
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <ProblemSolution reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <ProblemSolution reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 200px' }}>
-          <React.Suspense fallback={<SectionSkeleton height="h-48" />}>
-            <SocialProofBar reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <SocialProofBar reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <HowWeWork reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <HowWeWork reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
-          <React.Suspense fallback={<DarkSectionSkeleton />}>
-            <CaseStudiesSection reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <CaseStudiesSection reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <PlaybookSection reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <PlaybookSection reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <TestimonialSlider reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <TestimonialSlider reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <PackagesSection reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <PackagesSection reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <FAQSection reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <FAQSection reduceMotion={shouldReduceMotion} />
         </div>
 
         <div style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }}>
-          <React.Suspense fallback={<SectionSkeleton />}>
-            <ContactSection reduceMotion={shouldReduceMotion} />
-          </React.Suspense>
+          <ContactSection reduceMotion={shouldReduceMotion} />
         </div>
       </main>
     </div>
