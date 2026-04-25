@@ -2,23 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Play, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import HeroDarkBackground from '../visual/HeroDarkBackground';
 import AccelerateProcessVisual from './AccelerateProcessVisual';
 import { usePersona } from '@/components/context/PersonaContext';
+import { useMobile } from '@/hooks/useMobile';
 
 export default function HeroSection({ reduceMotion }) {
   const { selectedPersona } = usePersona();
-  const [isMobile, setIsMobile] = React.useState(false);
+  const isMobile = useMobile();
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -130,7 +124,7 @@ export default function HeroSection({ reduceMotion }) {
             initial={{ opacity: 0, transform: isMobile ? 'scale(1)' : 'scale(0.98)' }}
             animate={isInView ? { opacity: 1, transform: 'scale(1)' } : { opacity: 0, transform: 'scale(0.98)' }}
             transition={{ duration: reduceMotion || isMobile ? 0 : 0.5, delay: reduceMotion || isMobile ? 0 : 0.2 }}
-            className="relative w-full lg:w-fit flex justify-center lg:justify-end will-change-transform"
+            className="relative w-full lg:w-fit flex justify-center lg:justify-end"
           >
             <AccelerateProcessVisual reduceMotion={reduceMotion || isMobile} />
           </motion.div>
@@ -139,7 +133,7 @@ export default function HeroSection({ reduceMotion }) {
       {/* Scroll indicator - GPU-friendly with transform */}
       {!reduceMotion && !isMobile && (
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50 will-change-transform"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
         animate={{ transform: ['translateY(0px)', 'translateY(8px)', 'translateY(0px)'] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
 

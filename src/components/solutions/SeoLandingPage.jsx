@@ -7,16 +7,16 @@ import BrandCarousel from '@/components/landing/BrandCarousel';
 import {
   ArrowRight, Check, X, Sparkles, ShieldCheck,
   ChevronDown, Bot, BarChart3, FileText,
-  Users, Zap, Brain, Shield } from
+  Zap, Brain, Shield } from
 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/StructuredData';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { cn } from "@/lib/utils";
+import { useMobile } from '@/hooks/useMobile';
 
 // Reusable Components
 export const SectionHeading = ({ children, className }) =>
@@ -28,13 +28,14 @@ export const SectionHeading = ({ children, className }) =>
 
 export const Reveal = ({ children, className, delay = 0, isMobile = false }) => {
   const reduceMotion = useReducedMotion();
+  // will-change-transform only during animation; removed after completion to free GPU layers
   return (
     <motion.div
-      initial={{ opacity: 0, transform: 'translateY(20px)' }}
-      whileInView={{ opacity: 1, transform: 'translateY(0px)' }}
+      initial={{ opacity: 0, transform: 'translateY(20px)', willChange: 'transform' }}
+      whileInView={{ opacity: 1, transform: 'translateY(0px)', willChange: 'auto' }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: reduceMotion || isMobile ? 0 : 0.4, delay: reduceMotion || isMobile ? 0 : delay, ease: "easeOut" }}
-      className={cn(className, "will-change-transform")}>
+      className={className}>
         {children}
       </motion.div>
   );
@@ -72,13 +73,7 @@ export const ProblemItem = ({ children }) =>
 
 export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustChips = [], trustStrip = [], visual, layout = "center", microCopy, breadcrumbLabel, breadcrumb }) => {
   const reduceMotion = useReducedMotion();
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const isMobile = useMobile();
 
   const shouldReduceAnimations = reduceMotion || isMobile;
   
@@ -248,12 +243,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 };
 
 export const SolutionMetrics = ({ title, visual, items = [] }) => {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const isMobile = useMobile();
   return (
 <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
@@ -290,12 +280,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
 };
 
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const isMobile = useMobile();
   return (
 <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
@@ -454,12 +439,7 @@ export function RoadmapCallSection({
   "Flag risks early (data, compliance, cost, reliability)"],
   primaryCta = "Book Free Roadmap Call"
 } = {}) {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const isMobile = useMobile();
 
   const stars = isMobile ? ROADMAP_STARS_MOBILE : ROADMAP_STARS_DESKTOP;
 
@@ -505,7 +485,7 @@ export function RoadmapCallSection({
               whileInView={{ opacity: 1, transform: 'translateX(0)' }}
               viewport={{ once: true }}
               transition={{ delay: !isMobile ? i * 0.06 : 0, duration: 0.35 }}
-              className="flex items-start gap-4 will-change-transform">
+              className="flex items-start gap-4">
               
                 <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
                   <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
@@ -597,12 +577,7 @@ const processStepsDefault = [
 
 
 export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
@@ -670,7 +645,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
                 whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: !isMobile ? i * 0.08 : 0, ease: "easeOut" }}
-                className="flex gap-6 group pb-10 last:pb-0 will-change-transform">
+                className="flex gap-6 group pb-10 last:pb-0">
                 
                 {/* Step number bubble */}
                 <div className="relative flex-shrink-0 z-10">
@@ -729,12 +704,7 @@ const OUTCOMES_STARS = Array.from({ length: 80 }, (_, i) => ({
 }));
 
 export function SolutionOutcomes({ title, items = [], visual }) {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
-  useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener('resize', check);
-    return () => window.removeEventListener('resize', check);
-  }, []);
+  const isMobile = useMobile();
   return (
 <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
@@ -766,7 +736,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
 
 
   export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
     <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
@@ -917,90 +887,9 @@ function UseCasesLinkedLight({ useCases, isMobile = false }) {
 
 }
 
-function UseCasesLinked({ useCases }) {
-  const [activeIndex, setActiveIndex] = React.useState(null);
-
-  const leftItems = useCases && useCases.length > 0 ?
-  useCases.map((uc, i) => ({ label: typeof uc === 'string' ? uc : uc.label, index: i })) :
-  defaultUseCasesLeft;
-
-  const rightItems = useCases && useCases.length > 0 ?
-  useCases.map((uc, i) => ({ title: typeof uc === 'string' ? uc : uc.title, description: '', index: i })) :
-  defaultUseCasesRight;
-
-  return (
-    <div className="grid lg:grid-cols-2 gap-12 items-start">
-      {/* Left: Bullets */}
-      <div className="space-y-4">
-        {leftItems.map((item, i) =>
-        <motion.div
-          key={i}
-          onHoverStart={() => setActiveIndex(i)}
-          onHoverEnd={() => setActiveIndex(null)}
-          initial={{ opacity: 0, transform: 'translateX(-16px)' }}
-          whileInView={{ opacity: 1, transform: 'translateX(0)' }}
-          viewport={{ once: true }}
-          transition={{ delay: 0 }}
-          className={cn(
-            "flex items-start gap-4 p-5 rounded-2xl border cursor-pointer transition-all duration-300",
-            activeIndex === i ?
-            "bg-[#DBFE01]/10 border-[#DBFE01]/40 shadow-[0_0_20px_rgba(219,254,1,0.1)]" :
-            "bg-white/5 border-white/10 hover:bg-white/8"
-          )}>
-          
-            <div className={cn(
-            "w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 font-bold text-sm",
-            activeIndex === i ? "bg-[#DBFE01] text-[#1a1a1a]" : "bg-white/10 text-white/50"
-          )}>
-              {i + 1}
-            </div>
-            <span className={cn(
-            "text-base leading-relaxed transition-colors duration-300 pt-0.5",
-            activeIndex === i ? "text-white" : "text-white/70"
-          )}>{item.label}</span>
-          </motion.div>
-        )}
-      </div>
-
-      {/* Right: Cards */}
-      <div className="space-y-4">
-        {rightItems.map((item, i) =>
-        <motion.div
-          key={i}
-          initial={{ opacity: 0, transform: 'translateX(16px)' }}
-          whileInView={{ opacity: 1, transform: 'translateX(0)' }}
-          viewport={{ once: true }}
-          transition={{ delay: 0 }}
-          animate={activeIndex === i ? { transform: 'scale(1.03)' } : { transform: 'scale(1)' }}
-          className={cn(
-            "p-6 rounded-2xl border transition-all duration-300",
-            activeIndex === i ?
-            "bg-[#DBFE01]/10 border-[#DBFE01]/50 shadow-[0_0_30px_rgba(219,254,1,0.12)]" :
-            "bg-white/5 border-white/10"
-          )}>
-          
-            <div className="flex items-center gap-3 mb-2">
-              <div className={cn(
-              "w-2 h-2 rounded-full transition-all duration-300",
-              activeIndex === i ? "bg-[#DBFE01] shadow-[0_0_8px_rgba(219,254,1,0.6)]" : "bg-white/30"
-            )} />
-              <h4 className={cn(
-              "font-bold text-base transition-colors duration-300",
-              activeIndex === i ? "text-[#DBFE01]" : "text-white"
-            )}>{item.title}</h4>
-            </div>
-            {item.description &&
-          <p className="text-white/60 text-sm ml-5">{item.description}</p>
-          }
-          </motion.div>
-        )}
-      </div>
-    </div>);
-
-}
 
 export const SolutionProof = ({ title, items = [], visual, testimonials = [], useCasesTitle, useCases = [], whyBuildItems = [], badge = 'Pilot-Ready MVP', statTitle = '8–12 weeks to production', statDesc = 'Scope locked. Weekly demos. No surprises.', imageUrl = 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=900&q=80', imageAlt = 'Engineering team shipping AI products', techStackTitle = 'Tech stack we ship with', techStackDesc = 'Proven tools we trust—so you do not gamble on your MVP.', techStackLogos = null }) => {
-  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
+  const isMobile = useMobile();
   const reduceMotion = useReducedMotion();
   return (
     <>
@@ -1058,7 +947,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   whileInView={{ opacity: 1, transform: 'translateY(0)' }}
                   viewport={{ once: true }}
                   transition={{ delay: !isMobile ? 0.4 : 0, duration: !isMobile ? 0.5 : 0 }}
-                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 will-change-transform">
+                  className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5">
                   
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_20px_rgba(219,254,1,0.5)]">
@@ -1077,7 +966,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                   whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                   viewport={{ once: true }}
                   transition={{ delay: !isMobile ? 0.5 : 0 }}
-                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg will-change-transform">
+                  className="absolute top-6 left-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
                   
                   {badge}
                 </motion.div>
