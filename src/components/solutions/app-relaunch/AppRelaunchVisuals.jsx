@@ -208,11 +208,11 @@ export const MetricsVisual = () => (
 
 // Enhanced Problem: Dark Mode Leaky Bucket
 export const ProblemVisual = () => (
-  <div className="bg-white rounded-3xl border border-gray-100 p-8 shadow-xl relative flex items-center justify-center min-h-[360px] overflow-hidden">
+  <div className="bg-white rounded-3xl border border-gray-100 p-6 md:p-8 shadow-xl relative flex items-center justify-center min-h-[360px] overflow-hidden w-full">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:20px_20px] opacity-50" />
       
-      <div className="relative w-80 z-10">
+      <div className="relative w-full max-w-xs z-10">
           <div className="absolute -top-12 left-0 right-0 text-center mb-8">
              <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 px-3 py-1 rounded-full text-xs font-bold border border-red-100">
                 <AlertTriangle className="w-3 h-3" />
@@ -225,49 +225,39 @@ export const ProblemVisual = () => (
               {/* Stage 1: Install */}
               <motion.div 
                 initial={{ width: "100%" }}
-                className="h-14 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg mx-0 mb-2 flex items-center justify-between px-5 text-white shadow-lg relative z-30"
+                className="h-14 bg-gradient-to-r from-blue-600 to-blue-500 rounded-lg mx-0 mb-2 flex items-center justify-between px-4 text-white shadow-lg relative z-30"
               >
                   <span className="font-bold text-sm tracking-wide">1,000 Installs</span>
                   <span className="font-mono text-xs opacity-80">100%</span>
               </motion.div>
               
-              {/* Leak 1 */}
-              <div className="absolute -right-4 top-4 transform translate-x-full flex items-center">
-                  <motion.div 
-                    animate={{ x: [0, 10, 0], opacity: [1, 0.5, 1] }} 
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="flex flex-col items-center"
-                  >
-                     <div className="text-red-500 font-bold text-xs mb-1">-60%</div>
-                     <div className="h-px w-8 bg-red-200" />
-                     <div className="text-[10px] text-red-400 font-medium">Bounce</div>
-                  </motion.div>
+              {/* Leak 1 — inline badge instead of absolutely positioned outside */}
+              <div className="flex justify-end mb-2 pr-1">
+                <div className="flex items-center gap-1 bg-red-50 border border-red-100 rounded-full px-2 py-0.5">
+                  <div className="text-red-500 font-bold text-xs">-60%</div>
+                  <div className="text-[10px] text-red-400 font-medium">Bounce</div>
+                </div>
               </div>
 
               {/* Stage 2: Activation */}
               <motion.div 
-                className="h-14 bg-gradient-to-r from-blue-500 to-blue-400 rounded-lg mx-6 mb-2 flex items-center justify-between px-5 text-white shadow-lg relative z-20"
+                className="h-14 bg-gradient-to-r from-blue-500 to-blue-400 rounded-lg mx-6 mb-2 flex items-center justify-between px-4 text-white shadow-lg relative z-20"
               >
                   <span className="font-bold text-sm tracking-wide">400 Activated</span>
                   <span className="font-mono text-xs opacity-80">40%</span>
               </motion.div>
 
-              {/* Leak 2 */}
-              <div className="absolute -left-4 top-20 transform -translate-x-full flex items-center">
-                   <motion.div 
-                    animate={{ x: [0, -10, 0], opacity: [1, 0.5, 1] }} 
-                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                    className="flex flex-col items-center"
-                  >
-                     <div className="text-red-500 font-bold text-xs mb-1">-80%</div>
-                     <div className="h-px w-8 bg-red-200" />
-                     <div className="text-[10px] text-red-400 font-medium">Churn</div>
-                  </motion.div>
+              {/* Leak 2 — inline badge instead of absolutely positioned outside */}
+              <div className="flex justify-start mb-2 pl-1">
+                <div className="flex items-center gap-1 bg-red-50 border border-red-100 rounded-full px-2 py-0.5">
+                  <div className="text-red-500 font-bold text-xs">-80%</div>
+                  <div className="text-[10px] text-red-400 font-medium">Churn</div>
+                </div>
               </div>
 
               {/* Stage 3: Retention */}
               <motion.div 
-                className="h-14 bg-[#1a1a1a] rounded-lg mx-12 flex items-center justify-between px-5 text-white shadow-lg border border-gray-700 relative z-10"
+                className="h-14 bg-[#1a1a1a] rounded-lg mx-12 flex items-center justify-between px-4 text-white shadow-lg border border-gray-700 relative z-10"
               >
                   <span className="font-bold text-sm text-[#DBFE01]">80 Retained</span>
                   <span className="font-mono text-xs text-[#DBFE01]">8%</span>
