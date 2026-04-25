@@ -78,8 +78,8 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
   const shouldReduceAnimations = reduceMotion || isMobile;
 
   return (
-    <div>
-    <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
+    <header>
+    <section aria-label={`${title} — hero`} className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
         <HeroDarkBackground isMobile={isMobile} />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-36 pb-12 relative z-10">
@@ -225,6 +225,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         </div>
       {!reduceMotion &&
         <motion.div
+          aria-hidden="true"
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50 will-change-transform"
           animate={{ transform: ['translateY(0px)', 'translateY(8px)', 'translateY(0px)'] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
@@ -238,14 +239,14 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
         }
     </section>
     <BrandCarousel />
-    </div>);
+    </header>);
 
 };
 
 export const SolutionMetrics = ({ title, visual, items = [] }) => {
   const isMobile = useMobile();
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-10 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
+    <section aria-label="Key metrics" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-10 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
@@ -282,7 +283,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
   const isMobile = useMobile();
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+    <section aria-label="The problem" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
@@ -293,7 +294,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
       {/* Label */}
       <Reveal className="mb-10 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest border border-rose-200">
-          <X className="w-3.5 h-3.5" />
+          <X className="w-3.5 h-3.5" aria-hidden="true" />
           The Problem
         </div>
         <h2 className="mt-6 text-2xl font-bold text-center leading-tight max-w-3xl gradient-heading gradient-heading--premium">
@@ -360,7 +361,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 };
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
+<section id="solution" aria-label="Our solution" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/28 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-40 left-1/4 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
@@ -370,7 +371,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
       {/* Centered heading above the two columns */}
       <Reveal className="flex flex-col items-center text-center mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
-          <Check className="w-3.5 h-3.5" />
+          <Check className="w-3.5 h-3.5" aria-hidden="true" />
           The Solution
         </div>
         <h2 className="mt-6 text-2xl font-bold text-center leading-tight mb-4 gradient-heading gradient-heading--premium">{title}</h2>
@@ -444,9 +445,9 @@ export function RoadmapCallSection({
   const stars = isMobile ? ROADMAP_STARS_MOBILE : ROADMAP_STARS_DESKTOP;
 
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white relative overflow-hidden">
+    <section aria-label="Book your roadmap call" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
-  <div className="bg-stone-950 absolute inset-0" />
+  <div className="bg-stone-950 absolute inset-0" aria-hidden="true" />
   {/* Contour lines */}
   <ContourBackground className="opacity-80" isMobile={isMobile} />
   {/* Star Dust — positions pre-computed, no Math.random() on render */}
@@ -581,7 +582,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
+    <section aria-label="Our process" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
     {/* Bold color splash blobs */}
     <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
@@ -637,38 +638,38 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
           {/* Vertical line */}
           <div className="absolute left-5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#DBFE01]/60 via-gray-200 to-gray-100" />
 
-          <div className="space-y-0">
+          <ol className="space-y-0" aria-label="Process steps">
             {displaySteps.map((step, i) =>
-              <motion.div
+              <motion.li
                 key={i}
                 initial={{ opacity: 0, transform: 'translateX(16px)' }}
                 whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.4, delay: !isMobile ? i * 0.08 : 0, ease: "easeOut" }}
                 className="flex gap-6 group pb-10 last:pb-0">
-                
+
                 {/* Step number bubble */}
-                <div className="relative flex-shrink-0 z-10">
-                  <motion.div
-                    whileHover={!isMobile ? { scale: 1.15 } : {}}
-                    className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
-                    
-                    {i + 1}
-                  </motion.div>
+                <div className="relative flex-shrink-0 z-10" aria-hidden="true">
+                 <motion.div
+                   whileHover={!isMobile ? { scale: 1.15 } : {}}
+                   className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
+
+                   {i + 1}
+                 </motion.div>
                 </div>
 
                 {/* Content */}
                 <div className="pt-1 pb-2">
-                  <h3 className="text-lg font-bold text-[#1a1a1a] mb-1.5 group-hover:text-[#1a1a1a] transition-colors">
-                    {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-base leading-relaxed">
-                    {step.description}
-                  </p>
+                 <h3 className="text-lg font-bold text-[#1a1a1a] mb-1.5 group-hover:text-[#1a1a1a] transition-colors">
+                   {step.title}
+                 </h3>
+                 <p className="text-gray-600 text-base leading-relaxed">
+                   {step.description}
+                 </p>
                 </div>
-              </motion.div>
-              )}
-          </div>
+                </motion.li>
+                )}
+          </ol>
 
           {/* Stage gate note */}
           <motion.div
@@ -706,7 +707,7 @@ const OUTCOMES_STARS = Array.from({ length: 80 }, (_, i) => ({
 export function SolutionOutcomes({ title, items = [], visual }) {
   const isMobile = useMobile();
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white overflow-hidden relative">
+    <section aria-label="Outcomes" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      {/* Contour lines */}
@@ -739,7 +740,7 @@ export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
+    <section aria-label="Common use cases" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
       <div className="absolute -top-32 left-1/4 w-[550px] h-[550px] bg-blue-200/25 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
@@ -893,7 +894,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+      <section aria-label="Why we build different" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
         {/* Subtle accent blob */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -1085,7 +1086,7 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
+    <section aria-label="Frequently asked questions" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
     <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
@@ -1101,9 +1102,9 @@ export const SolutionFAQ = ({ items = [] }) => {
         </h2>
       </Reveal>
       
-      <div className="space-y-6 relative z-10">
+      <div className="space-y-6 relative z-10" role="list">
         {displayItems.map((item, i) =>
-          <motion.div
+          <motion.div role="listitem"
             key={i}
             initial={{ opacity: 0, transform: 'translateY(16px)' }}
             whileInView={{ opacity: 1, transform: 'translateY(0)' }}
@@ -1150,7 +1151,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 
 
 export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 320px' }} className="py-12 md:py-20 bg-[#DBFE01] relative overflow-hidden">
+<section aria-label="Get started" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 320px' }} className="py-12 md:py-20 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
     
@@ -1214,9 +1215,9 @@ export default function SeoLandingPage({ content, children }) {
     // Wrap children in a single container — each child section manages its own
     // content-visibility via its own wrapper in the page files.
     return (
-      <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
+      <main className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
         {children}
-      </div>);
+      </main>);
 
   }
 
@@ -1227,7 +1228,7 @@ export default function SeoLandingPage({ content, children }) {
   } = content;
 
   return (
-    <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
+    <main className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
       <Seo title={meta.title} description={meta.description} canonical={meta.url} />
       <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Solutions', path: '/#playbook' }, { label: meta.title }]} />
       <ServiceStructuredData name={meta.title} description={meta.description} url={meta.url} />
@@ -1247,6 +1248,6 @@ export default function SeoLandingPage({ content, children }) {
       <div style={cvStyle('0 900px')}><SolutionProof {...proof} /></div>
       <div style={cvStyle('0 600px')}><SolutionFAQ {...faq} /></div>
       <div style={cvStyle('0 400px')}><SolutionFinalCta {...finalCta} /></div>
-    </div>);
+    </main>);
 
 }

@@ -48,7 +48,7 @@ export default function HeroSection({ reduceMotion }) {
   const phases = ['Idea', 'MVP', 'Launch', 'Growth'];
 
   return (
-    <section ref={ref} className="relative min-h-screen md:min-h-[85vh] flex items-center pt-32 md:pt-20 pb-8 sm:pb-12 md:pb-0 overflow-hidden">
+    <section ref={ref} aria-label="Build, launch, and scale your digital venture" className="relative min-h-screen md:min-h-[85vh] flex items-center pt-32 md:pt-20 pb-8 sm:pb-12 md:pb-0 overflow-hidden">
       <HeroDarkBackground isMobile={isMobile} />
 
       
@@ -96,27 +96,28 @@ export default function HeroSection({ reduceMotion }) {
             </motion.div>
 
             {/* Trust indicators */}
-            <motion.div
+            <motion.dl
               variants={itemVariants}
               className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mt-6 sm:mt-8 md:mt-12 w-full lg:w-auto"
+              aria-label="Key statistics"
             >
               <div className="text-center lg:text-left group">
-                <p className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">TYPICAL MVP</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</p>
+                <dt className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">TYPICAL MVP</dt>
+                <dd className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">8–12 weeks</dd>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">WEEKLY DEMOS</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</p>
+                <dt className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">WEEKLY DEMOS</dt>
+                <dd className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">Guaranteed</dd>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">PRIVACY-FIRST</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</p>
+                <dt className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">PRIVACY-FIRST</dt>
+                <dd className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">HIPAA-aware</dd>
               </div>
               <div className="text-center lg:text-left group">
-                <p className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">ONE BACKLOG</p>
-                <p className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</p>
+                <dt className="text-white/65 mb-1 text-xs font-bold uppercase tracking-wider">ONE BACKLOG</dt>
+                <dd className="text-white font-bold text-sm sm:text-base md:text-lg bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent group-hover:from-[#DBFE01] group-hover:to-[#c5e000] transition-all">One owner</dd>
               </div>
-            </motion.div>
+            </motion.dl>
           </motion.div>
 
           {/* Right Visual - GPU-friendly animation */}
@@ -133,6 +134,7 @@ export default function HeroSection({ reduceMotion }) {
       {/* Scroll indicator - GPU-friendly with transform */}
       {!reduceMotion && !isMobile && (
       <motion.div
+        aria-hidden="true"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:block opacity-50"
         animate={{ transform: ['translateY(0px)', 'translateY(8px)', 'translateY(0px)'] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
