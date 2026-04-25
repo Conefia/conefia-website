@@ -195,10 +195,10 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 
                 {/* Trust Chips */}
                 <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
-                className="flex flex-wrap justify-center gap-4 md:gap-8">
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
+              className="flex flex-wrap justify-center gap-4 md:gap-8">
 
                 {trustChips.map((chip, i) =>
               <div key={i} className="flex items-center gap-2 text-white/90 text-sm font-medium bg-white/10 px-4 py-2 rounded-full border border-white/20 hover:bg-white/15 transition-colors">
@@ -350,8 +350,8 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
           <Reveal delay={0.2} className="relative">
             {visual}
           </Reveal>
-        }
-        {!visual && (
+          }
+        {!visual &&
           <Reveal delay={0.2} className="relative hidden lg:block">
             <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
               <div className="flex items-center justify-center h-48">
@@ -361,7 +361,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
               </div>
             </div>
           </Reveal>
-        )}
+          }
       </div>
     </div>
   </section>);
@@ -658,8 +658,8 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
                 {/* Step number bubble */}
                 <div className="relative flex-shrink-0 z-10" aria-hidden="true">
                  <motion.div
-                   whileHover={!isMobile ? { scale: 1.15 } : {}}
-                   className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
+                    whileHover={!isMobile ? { scale: 1.15 } : {}}
+                    className="w-10 h-10 rounded-full bg-[#DBFE01] border-4 border-white shadow-lg flex items-center justify-center font-extrabold text-[#1a1a1a] text-sm group-hover:shadow-[0_0_20px_rgba(219,254,1,0.5)] transition-shadow">
 
                    {i + 1}
                  </motion.div>
@@ -675,7 +675,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
                  </p>
                 </div>
                 </motion.li>
-                )}
+              )}
           </ol>
 
           {/* Stage gate note */}
@@ -687,7 +687,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
               className="mt-6 ml-16 flex items-center gap-2 text-sm text-gray-400 border-t border-gray-100 pt-6">
               
             <div className="w-2 h-2 rounded-full bg-[#DBFE01] flex-shrink-0" />
-            <span className="italic text-gray-500">{note || 'Each phase has a stage gate — you always know where you stand.'}</span>
+            <span className="text-gray-500 text-base italic">{note || 'Each phase has a stage gate — you always know where you stand.'}</span>
           </motion.div>
         </div>
       </div>
@@ -1112,12 +1112,12 @@ export const SolutionFAQ = ({ items = [] }) => {
       <div className="space-y-6 relative z-10" role="list">
         {displayItems.map((item, i) =>
           <motion.div role="listitem"
-            key={i}
-            initial={{ opacity: 0, transform: 'translateY(16px)' }}
-            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0 }}
-            className="relative will-change-transform">
+          key={i}
+          initial={{ opacity: 0, transform: 'translateY(16px)' }}
+          whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0 }}
+          className="relative will-change-transform">
             
           <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
             <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 rounded-xl">
