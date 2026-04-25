@@ -15,210 +15,210 @@ export default function HowWeWork({ reduceMotion }) {
       headlineAccent: 'shipped weekly.',
       subhead: 'One accountable team improving bookings, local visibility, and patient reach with HIPAA-aware delivery.',
       cards: [
-        {
-          icon: Play,
-          title: 'Weekly Demos',
-          description: 'Watch booking conversion improve every single week.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: FileText,
-          title: 'Single Backlog',
-          description: 'One priority list across site, intake, SEO, and marketing.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: Shield,
-          title: 'HIPAA Delivery',
-          description: 'Privacy-first workflows with clean PHI handling.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: Activity,
-          title: 'Visit Attribution',
-          description: 'Traffic → calls/forms → booked visits, clearly tracked.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: Play,
+        title: 'Weekly Demos',
+        description: 'Watch booking conversion improve every single week.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: FileText,
+        title: 'Single Backlog',
+        description: 'One priority list across site, intake, SEO, and marketing.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: Shield,
+        title: 'HIPAA Delivery',
+        description: 'Privacy-first workflows with clean PHI handling.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: Activity,
+        title: 'Visit Attribution',
+        description: 'Traffic → calls/forms → booked visits, clearly tracked.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     },
     'ai-saas-mvp': {
       headline: 'De-risk fast. Build right.',
       headlineAccent: 'Launch for pilots.',
       subhead: 'We align scope, AI architecture, and launch basics so you ship a pilot-ready MVP without rework.',
       cards: [
-        {
-          icon: FileText,
-          title: 'Scope Lock',
-          description: 'Must-haves tied to pilot outcomes and ROI.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: Play,
-          title: 'Weekly Demos',
-          description: 'Progress you can show users, pilots, and investors.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: FileCheck,
-          title: 'Stage Gates',
-          description: 'Crisp decisions and sign-offs that prevent drift.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: Rocket,
-          title: 'Launch Kit',
-          description: 'Landing page, social media presence, and analytics from day one.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: FileText,
+        title: 'Scope Lock',
+        description: 'Must-haves tied to pilot outcomes and ROI.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: Play,
+        title: 'Weekly Demos',
+        description: 'Progress you can show users, pilots, and investors.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: FileCheck,
+        title: 'Stage Gates',
+        description: 'Crisp decisions and sign-offs that prevent drift.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: Rocket,
+        title: 'Launch Kit',
+        description: 'Landing page, social media presence, and analytics from day one.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     },
     'app-relaunch': {
       headline: 'Retention-first fixes —',
       headlineAccent: 'guided by data.',
       subhead: 'We diagnose churn, ship high-impact product fixes, and relaunch with analytics you can trust.',
       cards: [
-        {
-          icon: Search,
-          title: 'Churn Diagnosis',
-          description: 'Funnels + cohorts to pinpoint drop-offs fast.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: Calendar,
-          title: 'Weekly Releases',
-          description: 'Small, reliable shipping cycles that compound.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: Store,
-          title: 'Store Lift',
-          description: 'ASO + store assets that raise qualified installs.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: BarChart3,
-          title: 'Trusted Analytics',
-          description: 'Clear dashboards that drive next actions.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: Search,
+        title: 'Churn Diagnosis',
+        description: 'Funnels + cohorts to pinpoint drop-offs fast.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: Calendar,
+        title: 'Weekly Releases',
+        description: 'Small, reliable shipping cycles that compound.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: Store,
+        title: 'Store Lift',
+        description: 'ASO + store assets that raise qualified installs.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: BarChart3,
+        title: 'Trusted Analytics',
+        description: 'Clear dashboards that drive next actions.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     },
     'dtc-growth': {
       headline: 'Make ROAS predictable —',
       headlineAccent: 'and conversion climb.',
       subhead: 'We run disciplined experiments across ads, store UX, and lifecycle to lower CAC and grow profit.',
       cards: [
-        {
-          icon: FlaskConical,
-          title: 'Test System',
-          description: 'Weekly creative + audience tests with winners/losers.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: CheckCircle,
-          title: 'CRO Backlog',
-          description: 'PDP/cart/checkout fixes ranked by impact.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: Repeat,
-          title: 'Lifecycle Flows',
-          description: 'Email/SMS that lifts repeat rate and LTV.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: DollarSign,
-          title: 'Profit Reporting',
-          description: 'CAC, MER, LTV, margin tracked consistently.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: FlaskConical,
+        title: 'Test System',
+        description: 'Weekly creative + audience tests with winners/losers.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: CheckCircle,
+        title: 'CRO Backlog',
+        description: 'PDP/cart/checkout fixes ranked by impact.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: Repeat,
+        title: 'Lifecycle Flows',
+        description: 'Email/SMS that lifts repeat rate and LTV.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: DollarSign,
+        title: 'Profit Reporting',
+        description: 'CAC, MER, LTV, margin tracked consistently.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     },
     'enterprise-innovation': {
       headline: 'Governance built in —',
       headlineAccent: 'so pilots ship.',
       subhead: 'We reduce approval drag with clear checkpoints, documentation, and secure-by-design delivery.',
       cards: [
-        {
-          icon: FileCheck,
-          title: 'Stage Gates',
-          description: 'Clear approvals without endless meetings.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: FileCheck,
-          title: 'Audit Trail',
-          description: 'Documentation and traceability from day one.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: Shield,
-          title: 'Secure Delivery',
-          description: 'Security and privacy handled early, not late.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: Activity,
-          title: 'Adoption Metrics',
-          description: 'Rollout support + success measures that prove value.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: FileCheck,
+        title: 'Stage Gates',
+        description: 'Clear approvals without endless meetings.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: FileCheck,
+        title: 'Audit Trail',
+        description: 'Documentation and traceability from day one.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: Shield,
+        title: 'Secure Delivery',
+        description: 'Security and privacy handled early, not late.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: Activity,
+        title: 'Adoption Metrics',
+        description: 'Rollout support + success measures that prove value.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     },
     'accelerator-support': {
       headline: 'Cohorts that ship —',
       headlineAccent: 'not just pitch.',
       subhead: 'We standardize delivery across founders so MVP quality is consistent and Demo Day is calm.',
       cards: [
-        {
-          icon: Layers,
-          title: 'Cohort System',
-          description: 'Templates + cadence so teams don\'t stall.',
-          gradient: 'from-violet-500 to-purple-600',
-          glow: 'shadow-violet-500/30'
-        },
-        {
-          icon: Play,
-          title: 'Founder Demos',
-          description: 'Weekly momentum and fast unblocks.',
-          gradient: 'from-cyan-500 to-blue-600',
-          glow: 'shadow-cyan-500/30'
-        },
-        {
-          icon: Users,
-          title: 'Build Squads',
-          description: 'Product + engineering support on demand.',
-          gradient: 'from-emerald-500 to-teal-600',
-          glow: 'shadow-emerald-500/30'
-        },
-        {
-          icon: BarChart3,
-          title: 'Sponsor Reporting',
-          description: 'Simple dashboards showing progress and outcomes.',
-          gradient: 'from-orange-500 to-amber-600',
-          glow: 'shadow-orange-500/30'
-        }
-      ]
+      {
+        icon: Layers,
+        title: 'Cohort System',
+        description: 'Templates + cadence so teams don\'t stall.',
+        gradient: 'from-violet-500 to-purple-600',
+        glow: 'shadow-violet-500/30'
+      },
+      {
+        icon: Play,
+        title: 'Founder Demos',
+        description: 'Weekly momentum and fast unblocks.',
+        gradient: 'from-cyan-500 to-blue-600',
+        glow: 'shadow-cyan-500/30'
+      },
+      {
+        icon: Users,
+        title: 'Build Squads',
+        description: 'Product + engineering support on demand.',
+        gradient: 'from-emerald-500 to-teal-600',
+        glow: 'shadow-emerald-500/30'
+      },
+      {
+        icon: BarChart3,
+        title: 'Sponsor Reporting',
+        description: 'Simple dashboards showing progress and outcomes.',
+        gradient: 'from-orange-500 to-amber-600',
+        glow: 'shadow-orange-500/30'
+      }]
+
     }
   };
 
@@ -243,7 +243,7 @@ export default function HowWeWork({ reduceMotion }) {
           <h2 className="text-2xl font-bold mb-4 gradient-heading gradient-heading--premium">
             {content.headline} {content.headlineAccent}
           </h2>
-          <p className="text-base text-[#1a1a1a]/80 max-w-2xl mx-auto font-normal">
+          <p className="text-[#1a1a1a]/80 mx-auto text-base font-normal max-w-2xl">
              {content.subhead}
            </p>
         </motion.div>
@@ -273,8 +273,8 @@ export default function HowWeWork({ reduceMotion }) {
                 <p className="text-[#1a1a1a]/80 text-sm font-medium">
                   {card.description}
                 </p>
-              </motion.div>
-            );
+              </motion.div>);
+
           })}
         </div>
 
@@ -291,8 +291,8 @@ export default function HowWeWork({ reduceMotion }) {
             loading="lazy"
             width="1600"
             height="384"
-            className="w-full h-64 md:h-96 object-cover object-center"
-          />
+            className="w-full h-64 md:h-96 object-cover object-center" />
+          
         </motion.div>
       </div>
     </section>);
