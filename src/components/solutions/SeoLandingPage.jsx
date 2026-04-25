@@ -255,7 +255,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
     return () => window.removeEventListener('resize', check);
   }, []);
   return (
-<section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
@@ -297,7 +297,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
     return () => window.removeEventListener('resize', check);
   }, []);
   return (
-<section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
@@ -375,7 +375,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 };
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
+<section id="solution" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/28 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-40 left-1/4 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
@@ -464,7 +464,7 @@ export function RoadmapCallSection({
   const stars = isMobile ? ROADMAP_STARS_MOBILE : ROADMAP_STARS_DESKTOP;
 
   return (
-<section className="py-16 md:py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
@@ -606,7 +606,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
     {/* Bold color splash blobs */}
     <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
@@ -736,7 +736,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
     return () => window.removeEventListener('resize', check);
   }, []);
   return (
-<section className="py-16 md:py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      {/* Contour lines */}
@@ -769,7 +769,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
-    <section className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
       <div className="absolute -top-32 left-1/4 w-[550px] h-[550px] bg-blue-200/25 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
@@ -1004,7 +1004,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+      <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }} className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
         {/* Subtle accent blob */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -1196,7 +1196,7 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
     <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
@@ -1261,7 +1261,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 
 
 export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
-<section className="py-16 md:py-32 bg-[#DBFE01] relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-16 md:py-32 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
     
@@ -1312,6 +1312,9 @@ export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta,
   </section>;
 
 
+// cv = content-visibility shorthand — defers off-screen section rendering on mobile
+const cvStyle = (size = '0 700px') => ({ contentVisibility: 'auto', containIntrinsicSize: size });
+
 // Main Wrapper for Layout
 export default function SeoLandingPage({ content, children }) {
   useEffect(() => {
@@ -1319,11 +1322,13 @@ export default function SeoLandingPage({ content, children }) {
   }, []);
 
   if (children) {
+    // Wrap children in a single container — each child section manages its own
+    // content-visibility via its own wrapper in the page files.
     return (
       <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
         {children}
-      </div>);
-
+      </div>
+    );
   }
 
   // Legacy Object Support
@@ -1338,15 +1343,21 @@ export default function SeoLandingPage({ content, children }) {
       <BreadcrumbStructuredData items={[{ label: 'Home', path: '/' }, { label: 'Solutions', path: '/#playbook' }, { label: meta.title }]} />
       <ServiceStructuredData name={meta.title} description={meta.description} url={meta.url} />
 
+      {/* Hero is always above fold — no content-visibility */}
       <SolutionHero {...hero} />
-      {metrics && <SolutionMetrics {...metrics} />}
-      <SolutionProblem {...problem} />
-      <SolutionDetails {...solution} />
-      <SolutionProcess {...howItWorks} />
-      {outcomes && <SolutionOutcomes {...outcomes} />}
-      <SolutionProof {...proof} />
-      <SolutionFAQ {...faq} />
-      <SolutionFinalCta {...finalCta} />
-    </div>);
 
+      {metrics && (
+        <div style={cvStyle('0 500px')}><SolutionMetrics {...metrics} /></div>
+      )}
+      <div style={cvStyle()}><SolutionProblem {...problem} /></div>
+      <div style={cvStyle()}><SolutionDetails {...solution} /></div>
+      <div style={cvStyle('0 800px')}><SolutionProcess {...howItWorks} /></div>
+      {outcomes && (
+        <div style={cvStyle()}><SolutionOutcomes {...outcomes} /></div>
+      )}
+      <div style={cvStyle('0 900px')}><SolutionProof {...proof} /></div>
+      <div style={cvStyle('0 600px')}><SolutionFAQ {...faq} /></div>
+      <div style={cvStyle('0 400px')}><SolutionFinalCta {...finalCta} /></div>
+    </div>
+  );
 }

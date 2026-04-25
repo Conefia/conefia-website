@@ -11,17 +11,11 @@
     <link rel="manifest" href="/manifest.json" />
 
     <!--
-      FONT LOADING STRATEGY (correct approach for Google Fonts):
-      1. preconnect to fonts.googleapis.com — establishes the TCP/TLS connection early
-      2. preconnect to fonts.gstatic.com crossorigin — font files live here; crossorigin needed
-         because the actual woff2 downloads are cross-origin
-      3. Load the stylesheet normally (rel="stylesheet") — Google Fonts injects
-         @font-face { font-display: swap } automatically when display=swap is in the URL
-      NOTE: <link rel="preload" as="font"> on a CSS URL is incorrect and browsers reject it.
-            The correct preload target would be the raw .woff2 binary URL, but those URLs
-            are dynamic per-browser so preconnect is the right primitive here.
+      FONT LOADING STRATEGY:
+      1. preconnect to fonts.googleapis.com (early TCP/TLS)
+      2. preconnect to fonts.gstatic.com crossorigin (font files need crossorigin)
+      3. Load stylesheet normally — Google Fonts injects font-display:swap automatically
     -->
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,24 +24,28 @@
     />
 
     <!--
-      DNS prefetch for external asset origins used throughout the site.
-      dns-prefetch resolves DNS early (zero extra TCP/TLS cost vs preconnect).
-      preconnect is used only where we load resources in the critical path.
+      RESOURCE HINTS — CDN origins used throughout the site.
+      preconnect: for origins where we fetch resources soon after paint.
+      dns-prefetch: cheaper (DNS-only) for origins used later or less frequently.
     -->
-    <!-- Supabase storage CDN — used for logo images in header/footer -->
+
+    <!-- Supabase storage CDN — logo images in header/footer (critical path) -->
     <link rel="preconnect" href="https://qtrypzzcjebvfcihiynt.supabase.co" crossorigin />
-    <!-- Unsplash image CDN (Fastly) — used for all section photos -->
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-    <!-- SVG logo CDN used on solution pages -->
+
+    <!-- Unsplash/Fastly image CDN — section photos (first used just below fold) -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+    <!-- SVG logo CDN — tech stack carousels on solution pages -->
     <link rel="dns-prefetch" href="https://logo.svgcdn.com" />
-    <!-- Calendly embed on Book page -->
+
+    <!-- Calendly — only loaded on /book page -->
     <link rel="dns-prefetch" href="https://calendly.com" />
     <link rel="dns-prefetch" href="https://assets.calendly.com" />
 
     <!--
-      Critical image preload — the logo used in the sticky header is always
-      visible above the fold on every page. Preloading it eliminates the
-      render-blocking gap between CSS paint and the image appearing.
+      CRITICAL IMAGE PRELOAD — the header logo is above the fold on every page.
+      fetchpriority="high" moves it ahead of other network requests.
+      imagesrcset lets the browser choose the right density variant immediately.
     -->
     <link
       rel="preload"
@@ -55,6 +53,13 @@
       href="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/695311d1426e4dadf87a8d53/d014c4e67_conefia_logo_header_80h_2x.png"
       fetchpriority="high"
     />
+
+    <!--
+      CACHE HINTS — these meta tags signal preferred caching to CDN edge nodes
+      and some proxy caches. Actual Cache-Control headers are set by the server.
+    -->
+    <!-- Tell CDNs / proxies this page can be cached for 5 minutes -->
+    <meta http-equiv="Cache-Control" content="public, max-age=300, stale-while-revalidate=600" />
 
     <title>Conefia — Build, Launch & Scale Your Digital Venture</title>
   </head>
