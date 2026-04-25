@@ -250,12 +250,9 @@ export default function CommonReasons() {
                       {Icon && <Icon className={cn("w-6 h-6 transition-all duration-300", useCase.iconColor)} />}
                     </motion.div>
                     <div className="flex-1">
-                      <h4 className={cn(
-                        "font-bold text-base transition-colors duration-300 mb-1",
-                        activeIndex === i ? "text-[#1a1a1a]" : "text-[#1a1a1a]"
-                      )}>
+                      <h3 className="font-bold text-base transition-colors duration-300 mb-1">
                         {useCase.title}
-                      </h4>
+                      </h3>
                       <p className={cn(
                         "text-sm leading-snug transition-colors duration-300",
                         activeIndex === i ? "text-[#1a1a1a]/80" : "text-[#1a1a1a]/70"
