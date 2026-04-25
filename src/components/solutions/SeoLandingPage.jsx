@@ -285,12 +285,12 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
   const isMobile = useMobile();
   return (
-    <section aria-label="The problem" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+    <section aria-label="The problem" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden w-full max-w-full">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
-    <div className="absolute -top-32 right-0 w-[650px] h-[650px] bg-rose-200/35 rounded-full blur-[130px] pointer-events-none" />
-    <div className="absolute -bottom-20 left-1/3 w-[500px] h-[500px] bg-red-100/25 rounded-full blur-[100px] pointer-events-none" />
+    <div className="absolute -top-32 right-0 w-[300px] md:w-[650px] h-[300px] md:h-[650px] bg-rose-200/35 rounded-full blur-[80px] md:blur-[130px] pointer-events-none" />
+    <div className="absolute -bottom-20 left-1/3 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-red-100/25 rounded-full blur-[60px] md:blur-[100px] pointer-events-none" />
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
@@ -316,12 +316,12 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
                 whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: !isMobile ? i * 0.06 : 0 }}
-                className="flex items-start gap-3 md:gap-4 group will-change-transform">
+                className="flex items-start gap-3 md:gap-4 group will-change-transform w-full min-w-0">
 
                 <div className="mt-0.5 w-7 h-7 md:w-8 md:h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
                   <X className="w-3.5 h-3.5 md:w-4 md:h-4 text-rose-500" />
                 </div>
-                <span className="text-[#1a1a1a]/85 text-sm md:text-base leading-relaxed pt-0.5 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
+                <span className="text-[#1a1a1a]/85 text-sm md:text-base leading-relaxed pt-0.5 group-hover:text-[#1a1a1a] transition-colors break-words min-w-0">{item}</span>
               </motion.li>
               )}
           </ul>
