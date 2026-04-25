@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import ContourBackground from '@/components/visual/ContourBackground';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
@@ -17,6 +18,7 @@ import { BreadcrumbStructuredData, ServiceStructuredData } from '@/components/St
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { cn } from "@/lib/utils";
 import { useMobile } from '@/hooks/useMobile';
+import SolutionPageNav from '@/components/solutions/SolutionPageNav';
 
 // Reusable Components
 export const SectionHeading = ({ children, className }) =>
@@ -577,12 +579,12 @@ const processStepsDefault = [
 }];
 
 
-export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc }) => {
+export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt, imageOverlayTitle, imageOverlayDesc, id }) => {
   const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section aria-label="Our process" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
+    <section id="our-process" aria-label="Our process" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
     {/* Bold color splash blobs */}
     <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
@@ -1086,7 +1088,7 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section aria-label="Frequently asked questions" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
+    <section id="faqs" aria-label="Frequently asked questions" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
     <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
@@ -1207,6 +1209,10 @@ const cvStyle = (size = '0 700px') => ({ contentVisibility: 'auto', containIntri
 
 // Main Wrapper for Layout
 export default function SeoLandingPage({ content, children }) {
+  const location = useLocation();
+  // Derive current solution path from URL (e.g. "/ai-saas-mvp-launch" → "ai-saas-mvp-launch")
+  const currentPath = location.pathname.replace(/^\//, '');
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -1217,6 +1223,8 @@ export default function SeoLandingPage({ content, children }) {
     return (
       <main className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
         {children}
+        {/* Persistent secondary nav — fixed position, full crawlable links for SEO */}
+        <SolutionPageNav currentPath={currentPath} />
       </main>);
 
   }
