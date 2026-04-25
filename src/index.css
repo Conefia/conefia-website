@@ -256,6 +256,18 @@
     animation: glow-pulse 2s ease-in-out infinite;
   }
 
+  /* Global keyboard focus ring — visible only on keyboard nav, not mouse */
+  :focus-visible {
+    outline: 2px solid #DBFE01;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Remove default outline on mouse click (already covered by :focus-visible) */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.01ms !important;

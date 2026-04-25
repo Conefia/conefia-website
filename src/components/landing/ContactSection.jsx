@@ -66,7 +66,7 @@ export default function ContactSection({ reduceMotion }) {
           </motion.a>
 
           <p className="mt-6 text-sm text-[#1a1a1a]/60 font-medium flex items-center justify-center gap-2">
-            <CheckCircle2 className="w-4 h-4" />
+            <CheckCircle2 className="w-4 h-4" aria-hidden="true" />
             No commitment · Instant confirmation
           </p>
         </motion.div>

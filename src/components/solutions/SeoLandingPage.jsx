@@ -186,17 +186,17 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
                    {primaryCta}
                    <ArrowRight className="w-5 h-5" />
                 </Link>
-                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020]">
+                <button onClick={() => document.getElementById('solution').scrollIntoView({ behavior: 'smooth' })} className="px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2 border-2 border-white/30 text-white hover:bg-white hover:text-[#0B1020] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2">
                    {secondaryCta}
-                </button>
-              </motion.div>
+                 </button>
+                </motion.div>
 
-              {/* Trust Chips */}
-              <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
-              className="flex flex-wrap justify-center gap-4 md:gap-8">
+                {/* Trust Chips */}
+                <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: shouldReduceAnimations ? 0 : 0.4 }}
+                className="flex flex-wrap justify-center gap-4 md:gap-8">
 
                 {trustChips.map((chip, i) =>
               <div key={i} className="flex items-center gap-2 text-white/90 text-sm font-medium bg-white/10 px-4 py-2 rounded-full border border-white/20 hover:bg-white/15 transition-colors">
@@ -1113,7 +1113,7 @@ export const SolutionFAQ = ({ items = [] }) => {
             className="relative will-change-transform">
             
           <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
-            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
+            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 rounded-xl">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-[#DBFE01] shadow-sm">
                   <span className="text-lg font-bold text-[#2F2F2F]/60 group-open:text-[#1a1a1a] transition-colors">?</span>
@@ -1142,7 +1142,7 @@ export const SolutionFAQ = ({ items = [] }) => {
         }
 
       <Reveal delay={0.3} className="mt-8 text-center relative z-20">
-        <p className="text-sm text-[#2F2F2F]/75">Still unsure? <Link to={createPageUrl('book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all">Book a quick chat</Link></p>
+        <p className="text-sm text-[#2F2F2F]/75">Still unsure? <Link to={createPageUrl('book')} className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 rounded-sm">Book a quick chat</Link></p>
       </Reveal>
     </div>
   </section>);

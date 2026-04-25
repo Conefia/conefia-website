@@ -89,7 +89,8 @@ export default function HeroSection({ reduceMotion }) {
               </Link>
               <button
                 onClick={() => scrollToSection('track-selector')}
-                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1 sm:flex-initial"
+                aria-label="Choose your track — scroll to solution selector"
+                className="px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-semibold flex items-center justify-center gap-2 border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/70 transition-all duration-300 backdrop-blur-md flex-1 sm:flex-initial focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2"
               >
                 Choose Your Track
               </button>

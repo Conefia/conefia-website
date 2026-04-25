@@ -154,12 +154,15 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
 
         <div className="relative max-w-5xl mx-auto">
           <div
-            className="overflow-hidden cursor-grab active:cursor-grabbing"
+            className="overflow-hidden cursor-grab active:cursor-grabbing rounded-xl"
             ref={emblaRef}
             role="region"
             aria-label="Client testimonials carousel"
+            id="testimonials-carousel"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onFocus={() => setIsHovered(true)}
+            onBlur={() => setIsHovered(false)}
             onKeyDown={handleKeyDown}
             tabIndex={0}>
             <div className="flex">
@@ -228,19 +231,19 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
           <>
               <button
               onClick={scrollPrev}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 flex items-center justify-center text-white transition-all hidden md:flex"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 flex items-center justify-center text-white transition-all hidden md:flex"
               aria-label="Previous testimonial"
               aria-controls="testimonials-carousel">
 
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-6 h-6" aria-hidden="true" />
               </button>
               <button
               onClick={scrollNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 flex items-center justify-center text-white transition-all hidden md:flex"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-12 h-12 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 active:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 flex items-center justify-center text-white transition-all hidden md:flex"
               aria-label="Next testimonial"
               aria-controls="testimonials-carousel">
 
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-6 h-6" aria-hidden="true" />
               </button>
 
               <div className="flex justify-center gap-3 mt-8" role="tablist" aria-label="Testimonial slides">
@@ -248,7 +251,8 @@ export default function TestimonialSlider({ reduceMotion, testimonials: propTest
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={`h-1.5 w-8 rounded-full transition-all duration-300 will-change-transform origin-center ${
+                tabIndex={0}
+                className={`h-1.5 w-8 rounded-full transition-all duration-300 will-change-transform origin-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-4 focus-visible:scale-x-100 ${
                 index === selectedIndex ? 'bg-[#DBFE01] scale-x-100 opacity-100' : 'bg-white scale-x-[0.25] opacity-20 hover:opacity-40'}`
                 }
                 role="tab"

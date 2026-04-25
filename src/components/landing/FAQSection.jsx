@@ -135,7 +135,7 @@ export default function FAQSection({ reduceMotion }) {
               className="relative"
             >
               <details className="group w-full bg-white rounded-2xl p-6 transition-all duration-300 border border-gray-200/50 hover:border-[#DBFE01]/50 hover:shadow-xl hover:shadow-[#DBFE01]/10 shadow-md relative z-20">
-                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30">
+                <summary className="flex items-center justify-between gap-4 cursor-pointer list-none relative z-30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 rounded-xl">
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 bg-[#1a1a1a]/5 group-open:bg-[#DBFE01] shadow-sm">
                       <span className="text-lg font-bold text-[#2F2F2F]/60 group-open:text-[#1a1a1a] transition-colors">?</span>
@@ -160,7 +160,8 @@ export default function FAQSection({ reduceMotion }) {
             >
            <button
              onClick={() => setShowAll(!showAll)}
-             className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all"
+             aria-expanded={showAll}
+             className="text-[#1a1a1a] font-bold underline decoration-[#DBFE01] decoration-2 underline-offset-2 hover:text-black hover:decoration-4 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#DBFE01] focus-visible:outline-offset-2 rounded-sm px-1"
            >
              {showAll ? 'Show less' : 'Read more'}
            </button>
