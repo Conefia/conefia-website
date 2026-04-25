@@ -37,8 +37,8 @@ export const Reveal = ({ children, className, delay = 0, isMobile = false }) => 
       transition={{ duration: reduceMotion || isMobile ? 0 : 0.4, delay: reduceMotion || isMobile ? 0 : delay, ease: "easeOut" }}
       className={className}>
         {children}
-      </motion.div>
-  );
+      </motion.div>);
+
 };
 
 
@@ -76,7 +76,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
   const isMobile = useMobile();
 
   const shouldReduceAnimations = reduceMotion || isMobile;
-  
+
   return (
     <div>
     <section className="relative min-h-screen md:min-h-[85vh] flex items-center overflow-hidden">
@@ -150,10 +150,10 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
           /* CENTERED LAYOUT (DEFAULT) */
           <div className="max-w-4xl mx-auto text-center">
               <motion.div
-               initial={{ opacity: 0, transform: 'translateY(12px)' }}
-               animate={{ opacity: 1, transform: 'translateY(0)' }}
-               transition={{ duration: shouldReduceAnimations ? 0 : 0.3 }}
-               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
+              initial={{ opacity: 0, transform: 'translateY(12px)' }}
+              animate={{ opacity: 1, transform: 'translateY(0)' }}
+              transition={{ duration: shouldReduceAnimations ? 0 : 0.3 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-4 backdrop-blur-sm">
 
                 <Sparkles className="w-4 h-4 text-[#DBFE01]" />
                 <span className="text-sm font-semibold text-[#DBFE01]">Solutions Package</span>
@@ -199,7 +199,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
               className="flex flex-wrap justify-center gap-4 md:gap-8">
 
                 {trustChips.map((chip, i) =>
-                <div key={i} className="flex items-center gap-2 text-white/90 text-sm font-medium bg-white/10 px-4 py-2 rounded-full border border-white/20 hover:bg-white/15 transition-colors">
+              <div key={i} className="flex items-center gap-2 text-white/90 text-sm font-medium bg-white/10 px-4 py-2 rounded-full border border-white/20 hover:bg-white/15 transition-colors">
                     {chip.icon ?
                 <chip.icon className="w-4 h-4 text-[#DBFE01]" /> :
 
@@ -245,7 +245,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 export const SolutionMetrics = ({ title, visual, items = [] }) => {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-10 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-10 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
@@ -254,35 +254,35 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
         <h2 className="text-2xl font-bold mb-6 leading-tight text-center gradient-heading gradient-heading--premium">{title}</h2>
         {visual && <div className="mb-12">{visual}</div>}
         {items.length > 0 &&
-      <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             {items.map((item, i) =>
-        <motion.div
-          key={i}
-          whileHover={!isMobile ? { y: -5 } : {}}
-          className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 p-6 rounded-2xl text-center shadow-sm hover:shadow-md transition-all">
+            <motion.div
+              key={i}
+              whileHover={!isMobile ? { y: -5 } : {}}
+              className="bg-gradient-to-br from-gray-50 to-white border border-gray-100 p-6 rounded-2xl text-center shadow-sm hover:shadow-md transition-all">
 
                   {item.includes('—') ?
-          <>
+              <>
                         <div className="text-3xl font-extrabold text-blue-600 mb-2 tracking-tight">{item.split('—')[0].trim()}</div>
                         <div className="font-medium text-gray-700 text-sm">{item.split('—')[1].trim()}</div>
                       </> :
 
-          <p className="font-semibold text-lg text-[#1a1a1a]">{item}</p>
-          }
+              <p className="font-semibold text-lg text-[#1a1a1a]">{item}</p>
+              }
                 </motion.div>
-        )}
+            )}
           </div>
-      }
+          }
       </Reveal>
     </div>
-  </section>
-  );
+  </section>);
+
 };
 
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
@@ -307,30 +307,30 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
         <Reveal>
           <ul className="space-y-4">
             {items.map((item, i) =>
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, transform: 'translateX(-12px)' }}
-              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: !isMobile ? i * 0.06 : 0 }}
-            className="flex items-start gap-4 group will-change-transform">
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, transform: 'translateX(-12px)' }}
+                whileInView={{ opacity: 1, transform: 'translateX(0)' }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: !isMobile ? i * 0.06 : 0 }}
+                className="flex items-start gap-4 group will-change-transform">
             
                 <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
                   <X className="w-4 h-4 text-rose-500" />
                 </div>
                 <span className="text-[#1a1a1a]/85 text-base leading-relaxed pt-1 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
               </motion.li>
-          )}
+              )}
           </ul>
 
           {/* Callout quote */}
           {quote &&
-        <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: !isMobile ? 0.4 : 0 }}
-        className="mt-10 relative">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: !isMobile ? 0.4 : 0 }}
+              className="mt-10 relative">
           
               <div className="relative bg-rose-50 rounded-2xl p-6 border border-rose-200 shadow-sm">
                 <div className="flex gap-3 items-start">
@@ -339,20 +339,20 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
                 </div>
               </div>
             </motion.div>
-        }
+            }
         </Reveal>
 
         {/* Visual */}
         <Reveal delay={0.2} className="relative">
           {visual ? visual :
-        <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
+            <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
               <div className="flex items-center justify-center h-48">
                 <div className="w-20 h-20 rounded-full bg-white border border-rose-200 flex items-center justify-center shadow-sm">
                   <X className="w-10 h-10 text-rose-400" />
                 </div>
               </div>
             </div>
-        }
+            }
         </Reveal>
       </div>
     </div>
@@ -375,7 +375,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
         </div>
         <h2 className="mt-6 text-2xl font-bold text-center leading-tight mb-4 gradient-heading gradient-heading--premium">{title}</h2>
         {description &&
-        <p className="text-base font-normal text-[#1a1a1a]/80 leading-relaxed max-w-2xl text-center">
+      <p className="text-base font-normal text-[#1a1a1a]/80 leading-relaxed max-w-2xl text-center">
               {description}
           </p>
       }
@@ -403,7 +403,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
           </div>
 
           {riskReducer &&
-          <p className="text-sm text-gray-600 italic mb-8 flex items-center gap-2 pl-1">
+        <p className="text-sm text-gray-600 italic mb-8 flex items-center gap-2 pl-1">
               <ShieldCheck className="w-4 h-4 text-emerald-500 flex-shrink-0" />
               {riskReducer}
             </p>
@@ -421,10 +421,10 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
 
 // Pre-computed star positions — generated once at module load, never on render
 const ROADMAP_STARS_DESKTOP = Array.from({ length: 200 }, (_, i) => ({
-  x: ((i * 47.3 + 11) % 100),
-  y: ((i * 31.7 + 23) % 100),
-  size: (i % 10) * 0.17 + 0.3,
-  opacity: (i % 7) * 0.057 + 0.2,
+  x: (i * 47.3 + 11) % 100,
+  y: (i * 31.7 + 23) % 100,
+  size: i % 10 * 0.17 + 0.3,
+  opacity: i % 7 * 0.057 + 0.2
 }));
 const ROADMAP_STARS_MOBILE = ROADMAP_STARS_DESKTOP.slice(0, 50);
 
@@ -451,9 +451,9 @@ export function RoadmapCallSection({
   <ContourBackground className="opacity-80" isMobile={isMobile} />
   {/* Star Dust — positions pre-computed, no Math.random() on render */}
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-   {stars.map((s, i) => (
-      <div key={i} className="absolute rounded-full bg-white" style={{ left: `${s.x}%`, top: `${s.y}%`, width: `${s.size}px`, height: `${s.size}px`, opacity: s.opacity * 0.8, boxShadow: `0 0 ${s.size}px rgba(255,255,255,${s.opacity * 0.3})` }} />
-    ))}
+   {stars.map((s, i) =>
+        <div key={i} className="absolute rounded-full bg-white" style={{ left: `${s.x}%`, top: `${s.y}%`, width: `${s.size}px`, height: `${s.size}px`, opacity: s.opacity * 0.8, boxShadow: `0 0 ${s.size}px rgba(255,255,255,${s.opacity * 0.3})` }} />
+        )}
   </div>
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -479,24 +479,24 @@ export function RoadmapCallSection({
         <Reveal delay={0.1}>
           <ul className="space-y-4 mb-10 mt-4">
             {items.map((item, i) =>
-            <motion.li
-              key={i}
-              initial={{ opacity: 0, transform: 'translateX(-12px)' }}
-              whileInView={{ opacity: 1, transform: 'translateX(0)' }}
-              viewport={{ once: true }}
-              transition={{ delay: !isMobile ? i * 0.06 : 0, duration: 0.35 }}
-              className="flex items-start gap-4">
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, transform: 'translateX(-12px)' }}
+                  whileInView={{ opacity: 1, transform: 'translateX(0)' }}
+                  viewport={{ once: true }}
+                  transition={{ delay: !isMobile ? i * 0.06 : 0, duration: 0.35 }}
+                  className="flex items-start gap-4">
               
                 <div className="w-6 h-6 rounded-full bg-[#DBFE01] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(219,254,1,0.3)]">
                   <Check className="w-3.5 h-3.5 text-[#1a1a1a]" strokeWidth={3} />
                 </div>
                 <span className="text-white/95 text-base leading-relaxed">{item}</span>
               </motion.li>
-            )}
+                )}
           </ul>
           <Link
-            to={createPageUrl('Book')}
-            className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 flex justify-center md:justify-start w-full md:w-auto">
+                to={createPageUrl('Book')}
+                className="btn-primary px-8 py-4 rounded-xl text-base font-bold inline-flex items-center gap-2 flex justify-center md:justify-start w-full md:w-auto">
             {primaryCta || 'Book Free Roadmap Call'}
             <ArrowRight className="w-5 h-5" />
           </Link>
@@ -507,35 +507,35 @@ export function RoadmapCallSection({
       <Reveal delay={0.2} className="relative">
         <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[480px] lg:h-[560px]">
           <ResponsiveImage
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
-            alt="Product roadmap planning meeting"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            loading="lazy"
-            width="900"
-            height="560"
-            className="w-full h-full object-cover" />
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80"
+                alt="Product roadmap planning meeting"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                loading="lazy"
+                width="900"
+                height="560"
+                className="w-full h-full object-cover" />
           
           {/* Dark overlay for cohesion with dark section */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#0B1020]/60 via-transparent to-[#0B1020]/40" />
 
           {/* Floating badge top-right */}
           <motion.div
-            initial={{ opacity: 0, transform: 'translateY(-10px)' }}
-            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
-            viewport={{ once: true }}
-            transition={{ delay: !isMobile ? 0.6 : 0 }}
-            className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
+                initial={{ opacity: 0, transform: 'translateY(-10px)' }}
+                whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+                viewport={{ once: true }}
+                transition={{ delay: !isMobile ? 0.6 : 0 }}
+                className="absolute top-6 right-6 bg-[#DBFE01] text-[#1a1a1a] text-xs font-extrabold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
             
             Free · 30 min
           </motion.div>
 
           {/* Bottom info card */}
           <motion.div
-            initial={{ opacity: 0, transform: 'translateY(12px)' }}
-            whileInView={{ opacity: 1, transform: 'translateY(0)' }}
-            viewport={{ once: true }}
-            transition={{ delay: !isMobile ? 0.7 : 0, duration: !isMobile ? 0.5 : 0 }}
-            className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 will-change-transform">
+                initial={{ opacity: 0, transform: 'translateY(12px)' }}
+                whileInView={{ opacity: 1, transform: 'translateY(0)' }}
+                viewport={{ once: true }}
+                transition={{ delay: !isMobile ? 0.7 : 0, duration: !isMobile ? 0.5 : 0 }}
+                className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 will-change-transform">
             
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#DBFE01] flex items-center justify-center flex-shrink-0 shadow-[0_0_16px_rgba(219,254,1,0.4)]">
@@ -552,8 +552,8 @@ export function RoadmapCallSection({
 
     </div>
   </div>
-</section>
-  );
+</section>);
+
 }
 
 
@@ -662,7 +662,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
                   <h3 className="text-lg font-bold text-[#1a1a1a] mb-1.5 group-hover:text-[#1a1a1a] transition-colors">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -697,16 +697,16 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
 
 // Pre-computed — avoids Math.random() on every SolutionOutcomes render
 const OUTCOMES_STARS = Array.from({ length: 80 }, (_, i) => ({
-  x: ((i * 53.1 + 7) % 100),
-  y: ((i * 29.3 + 17) % 100),
-  size: (i % 8) * 0.21 + 0.3,
-  opacity: (i % 6) * 0.067 + 0.2,
+  x: (i * 53.1 + 7) % 100,
+  y: (i * 29.3 + 17) % 100,
+  size: i % 8 * 0.21 + 0.3,
+  opacity: i % 6 * 0.067 + 0.2
 }));
 
 export function SolutionOutcomes({ title, items = [], visual }) {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white overflow-hidden relative">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      {/* Contour lines */}
@@ -718,24 +718,24 @@ export function SolutionOutcomes({ title, items = [], visual }) {
          <Reveal>
            <h2 className="text-2xl font-bold mb-6 leading-tight gradient-heading gradient-heading--glow">{typeof title === 'string' ? title.replace(/\.$/, '') : title}</h2>
            {items.length > 0 &&
-        <ul className="space-y-4">
+            <ul className="space-y-4">
                  {items.map((item, i) =>
-           <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
-           )}
+              <DarkCheckListItem key={i}>{item}</DarkCheckListItem>
+              )}
               </ul>
-        }
+            }
          </Reveal>
          <Reveal delay={0.2}>
            {visual}
          </Reveal>
        </div>
      </div>
-  </section>
-  );
-  }
+  </section>);
+
+}
 
 
-  export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
+export const SolutionUseCases = ({ useCasesTitle, useCases = [] }) => {
   const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
@@ -1216,8 +1216,8 @@ export default function SeoLandingPage({ content, children }) {
     return (
       <div className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
         {children}
-      </div>
-    );
+      </div>);
+
   }
 
   // Legacy Object Support
@@ -1235,18 +1235,18 @@ export default function SeoLandingPage({ content, children }) {
       {/* Hero is always above fold — no content-visibility */}
       <SolutionHero {...hero} />
 
-      {metrics && (
-        <div style={cvStyle('0 500px')}><SolutionMetrics {...metrics} /></div>
-      )}
+      {metrics &&
+      <div style={cvStyle('0 500px')}><SolutionMetrics {...metrics} /></div>
+      }
       <div style={cvStyle()}><SolutionProblem {...problem} /></div>
       <div style={cvStyle()}><SolutionDetails {...solution} /></div>
       <div style={cvStyle('0 800px')}><SolutionProcess {...howItWorks} /></div>
-      {outcomes && (
-        <div style={cvStyle()}><SolutionOutcomes {...outcomes} /></div>
-      )}
+      {outcomes &&
+      <div style={cvStyle()}><SolutionOutcomes {...outcomes} /></div>
+      }
       <div style={cvStyle('0 900px')}><SolutionProof {...proof} /></div>
       <div style={cvStyle('0 600px')}><SolutionFAQ {...faq} /></div>
       <div style={cvStyle('0 400px')}><SolutionFinalCta {...finalCta} /></div>
-    </div>
-  );
+    </div>);
+
 }
