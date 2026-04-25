@@ -245,7 +245,7 @@ export const SolutionHero = ({ title, subtitle, primaryCta, secondaryCta, trustC
 export const SolutionMetrics = ({ title, visual, items = [] }) => {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-10 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f0ffd9] border-b border-gray-100 relative overflow-hidden">
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/25 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-32 left-1/4 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="absolute top-1/3 -right-20 w-80 h-80 bg-yellow-200/15 rounded-full blur-[90px] pointer-events-none" />
@@ -282,7 +282,7 @@ export const SolutionMetrics = ({ title, visual, items = [] }) => {
 export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) => {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-rose-50/40 relative overflow-hidden">
     {/* Subtle dot grid */}
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     {/* Bold red/pink splash */}
@@ -291,7 +291,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       {/* Label */}
-      <Reveal className="mb-20 flex flex-col items-center text-center">
+      <Reveal className="mb-10 flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-rose-50 text-rose-600 text-xs font-bold uppercase tracking-widest border border-rose-200">
           <X className="w-3.5 h-3.5" />
           The Problem
@@ -360,7 +360,7 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
 };
 
 export const SolutionDetails = ({ title, description, features = [], primaryCta, riskReducer, visual }) =>
-<section id="solution" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
+<section id="solution" style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#fffaed] relative overflow-hidden">
     <div className="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:28px_28px]" />
     <div className="absolute -top-40 right-0 w-[600px] h-[600px] bg-[#DBFE01]/28 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute -bottom-40 left-1/4 w-[550px] h-[550px] bg-amber-200/30 rounded-full blur-[120px] pointer-events-none" />
@@ -368,7 +368,7 @@ export const SolutionDetails = ({ title, description, features = [], primaryCta,
     
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       {/* Centered heading above the two columns */}
-      <Reveal className="flex flex-col items-center text-center mb-20">
+      <Reveal className="flex flex-col items-center text-center mb-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a] text-[#DBFE01] text-xs font-bold uppercase tracking-widest border border-[#1a1a1a]">
           <Check className="w-3.5 h-3.5" />
           The Solution
@@ -444,7 +444,7 @@ export function RoadmapCallSection({
   const stars = isMobile ? ROADMAP_STARS_MOBILE : ROADMAP_STARS_DESKTOP;
 
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-16 md:py-32 bg-[#2F2F2F] text-white relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white relative overflow-hidden">
   {/* Base layer */}
   <div className="bg-stone-950 absolute inset-0" />
   {/* Contour lines */}
@@ -458,7 +458,7 @@ export function RoadmapCallSection({
   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#DBFE01]/5 rounded-full blur-[120px] pointer-events-none" />
 
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <Reveal className="flex flex-col items-center text-center mb-20">
+    <Reveal className="flex flex-col items-center text-center mb-10">
       <span className="bg-white/10 text-white px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-white/20 mb-5">
         <Sparkles className="w-4 h-4 text-[#DBFE01]" />
         Roadmap Call
@@ -581,7 +581,7 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   const displaySteps = steps && steps.length > 0 ? steps : processStepsDefault;
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 700px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-[#f5f9f0] overflow-hidden relative">
     {/* Bold color splash blobs */}
     <div className="absolute -top-48 left-0 w-[700px] h-[700px] bg-[#DBFE01]/22 rounded-full blur-[150px] pointer-events-none -translate-x-1/3 -translate-y-1/3" />
     <div className="absolute -bottom-40 right-0 w-[550px] h-[550px] bg-emerald-200/28 rounded-full blur-[120px] pointer-events-none translate-x-1/4 translate-y-1/3" />
@@ -603,12 +603,12 @@ export const SolutionProcess = ({ steps, visual, title, note, imageUrl, imageAlt
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }} />}
       
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <Reveal className="text-center mb-20">
-        <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+      <Reveal className="text-center mb-10">
+        <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-4">
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           Our Process
         </span>
-        <h2 className="text-2xl font-bold mb-6 leading-tight mt-6 gradient-heading gradient-heading--premium">{title || 'Build → Launch → Scale'}</h2>
+        <h2 className="text-2xl font-bold mb-4 leading-tight mt-4 gradient-heading gradient-heading--premium">{title || 'Build → Launch → Scale'}</h2>
       </Reveal>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -706,7 +706,7 @@ const OUTCOMES_STARS = Array.from({ length: 80 }, (_, i) => ({
 export function SolutionOutcomes({ title, items = [], visual }) {
   const isMobile = useMobile();
   return (
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-[#2F2F2F] text-white overflow-hidden relative">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-[#2F2F2F] text-white overflow-hidden relative">
      {/* Base layer */}
      <div className="bg-stone-950 absolute inset-0" />
      {/* Contour lines */}
@@ -739,7 +739,7 @@ export function SolutionOutcomes({ title, items = [], visual }) {
   const isMobile = useMobile();
   const shouldReduceAnimations = useReducedMotion() || isMobile;
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-br from-white via-[#FAFAFA] to-blue-50/30 relative overflow-hidden">
       {/* Bold color splash background */}
       <div className="absolute -top-32 left-1/4 w-[550px] h-[550px] bg-blue-200/25 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute -bottom-40 right-1/4 w-[600px] h-[600px] bg-cyan-100/20 rounded-full blur-[120px] pointer-events-none" />
@@ -765,8 +765,8 @@ export function SolutionOutcomes({ title, items = [], visual }) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <Reveal className="text-center mb-16">
-          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-6">
+        <Reveal className="text-center mb-10">
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-4">
             <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
             Common Use Cases
           </span>
@@ -893,7 +893,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
   const reduceMotion = useReducedMotion();
   return (
     <>
-      <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 900px' }} className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
+      <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 800px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-white relative overflow-hidden">
         {/* Subtle accent blob */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/5 rounded-full blur-[80px] pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#DBFE01]/3 rounded-full blur-[80px] pointer-events-none" />
@@ -904,12 +904,12 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
           <div className="absolute -top-20 left-1/4 w-72 h-72 bg-[#DBFE01]/10 rounded-full blur-[80px] pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#DBFE01]/8 rounded-full blur-[100px] pointer-events-none" />
 
-          <Reveal className="flex flex-col items-center text-center mb-20">
+          <Reveal className="flex flex-col items-center text-center mb-10">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-5">
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1a1a1a]/5 border border-[#1a1a1a]/10 mb-4">
               
               <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
               <span className="text-sm font-bold text-[#1a1a1a]/60 uppercase tracking-wider">Why we build different</span>
@@ -1003,7 +1003,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
             </div>
           </Reveal>
 
-          <Reveal delay={0.2} className="mt-16 pt-12 border-t border-gray-100">
+          <Reveal delay={0.2} className="mt-10 pt-8 border-t border-gray-100">
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-[#1a1a1a]">{techStackTitle}</h3>
             </div>
@@ -1085,14 +1085,14 @@ export const SolutionFAQ = ({ items = [] }) => {
   const displayItems = showAll ? items : items.slice(0, 5);
 
   return (
-    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 600px' }} className="py-16 md:py-32 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
+    <section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 500px' }} className="py-12 md:py-20 bg-gradient-to-b from-white via-[#FAFAFA] to-slate-50/50 relative overflow-hidden">
     <div className="absolute inset-0 bg-[radial-gradient(#1a1a1a_0.5px,transparent_0.5px)] [background-size:24px_24px] opacity-[0.02]" />
     <div className="absolute -top-40 left-1/4 w-[500px] h-[500px] bg-purple-200/28 rounded-full blur-[130px] pointer-events-none" />
     <div className="absolute -bottom-32 right-1/3 w-[550px] h-[550px] bg-[#DBFE01]/20 rounded-full blur-[140px] pointer-events-none" />
     <div className="absolute top-1/2 left-0 w-80 h-80 bg-indigo-100/20 rounded-full blur-[100px] pointer-events-none" />
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Reveal className="text-center mb-20">
-        <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-6 shadow-sm">
+      <Reveal className="text-center mb-10">
+        <span className="bg-gradient-to-r from-[#1a1a1a]/5 to-[#2F2F2F]/5 text-[#1a1a1a]/70 px-4 py-2.5 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/15 mb-4 shadow-sm">
           <Sparkles className="w-4 h-4 stroke-black fill-[#DBFE01]" />
           FAQ
         </span>
@@ -1150,7 +1150,7 @@ export const SolutionFAQ = ({ items = [] }) => {
 
 
 export const SolutionFinalCta = ({ title, description, primaryCta, secondaryCta, visual }) =>
-<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 400px' }} className="py-16 md:py-32 bg-[#DBFE01] relative overflow-hidden">
+<section style={{ contentVisibility: 'auto', containIntrinsicSize: '0 320px' }} className="py-12 md:py-20 bg-[#DBFE01] relative overflow-hidden">
     {/* Subtle Pattern */}
     <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(#1a1a1a 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
     
