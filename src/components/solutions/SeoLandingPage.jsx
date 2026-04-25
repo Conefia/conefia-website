@@ -305,10 +305,10 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
         {subtitle && <p className="mt-4 text-base text-[#1a1a1a]/80 font-normal leading-relaxed max-w-2xl text-center">{subtitle}</p>}
       </Reveal>
 
-      <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
         {/* Bullet list */}
         <Reveal>
-          <ul className="space-y-4">
+          <ul className="space-y-3 md:space-y-4">
             {items.map((item, i) =>
               <motion.li
                 key={i}
@@ -316,12 +316,12 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
                 whileInView={{ opacity: 1, transform: 'translateX(0)' }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.35, delay: !isMobile ? i * 0.06 : 0 }}
-                className="flex items-start gap-4 group will-change-transform">
-            
-                <div className="mt-0.5 w-8 h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
-                  <X className="w-4 h-4 text-rose-500" />
+                className="flex items-start gap-3 md:gap-4 group will-change-transform">
+
+                <div className="mt-0.5 w-7 h-7 md:w-8 md:h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center flex-shrink-0 group-hover:bg-rose-100 transition-colors">
+                  <X className="w-3.5 h-3.5 md:w-4 md:h-4 text-rose-500" />
                 </div>
-                <span className="text-[#1a1a1a]/85 text-base leading-relaxed pt-1 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
+                <span className="text-[#1a1a1a]/85 text-sm md:text-base leading-relaxed pt-0.5 group-hover:text-[#1a1a1a] transition-colors">{item}</span>
               </motion.li>
               )}
           </ul>
@@ -333,21 +333,26 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: !isMobile ? 0.4 : 0 }}
-              className="mt-10 relative">
-          
-              <div className="relative bg-rose-50 rounded-2xl p-6 border border-rose-200 shadow-sm">
+              className="mt-6 md:mt-10 relative">
+
+              <div className="relative bg-rose-50 rounded-2xl p-4 md:p-6 border border-rose-200 shadow-sm">
                 <div className="flex gap-3 items-start">
-                  <div className="text-rose-400 text-4xl font-serif leading-none mt-1 flex-shrink-0">"</div>
-                  <p className="text-[#1a1a1a]/80 italic text-base leading-relaxed font-medium">{quote}</p>
+                  <div className="text-rose-400 text-3xl md:text-4xl font-serif leading-none mt-1 flex-shrink-0">"</div>
+                  <p className="text-[#1a1a1a]/80 italic text-sm md:text-base leading-relaxed font-medium">{quote}</p>
                 </div>
               </div>
             </motion.div>
             }
         </Reveal>
 
-        {/* Visual */}
-        <Reveal delay={0.2} className="relative">
-          {visual ? visual :
+        {/* Visual — hidden on mobile if no custom visual provided */}
+        {visual &&
+          <Reveal delay={0.2} className="relative">
+            {visual}
+          </Reveal>
+        }
+        {!visual && (
+          <Reveal delay={0.2} className="relative hidden lg:block">
             <div className="rounded-2xl bg-rose-50 border border-rose-200 p-8 relative overflow-hidden">
               <div className="flex items-center justify-center h-48">
                 <div className="w-20 h-20 rounded-full bg-white border border-rose-200 flex items-center justify-center shadow-sm">
@@ -355,8 +360,8 @@ export const SolutionProblem = ({ title, subtitle, quote, items = [], visual }) 
                 </div>
               </div>
             </div>
-            }
-        </Reveal>
+          </Reveal>
+        )}
       </div>
     </div>
   </section>);
