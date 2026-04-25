@@ -1000,7 +1000,7 @@ export const SolutionProof = ({ title, items = [], visual, testimonials = [], us
                     
                       <div className="text-2xl font-extrabold text-[#1a1a1a]/15 group-hover:text-[#1a1a1a]/25 transition-colors leading-none flex-shrink-0 pt-0.5 w-8">{item.num}</div>
                       <div>
-                        <h4 className="font-bold text-base text-[#1a1a1a] mb-1">{item.title}</h4>
+                        <h3 className="font-bold text-base mb-1">{item.title}</h3>
                         <p className="text-gray-700 text-sm leading-relaxed">{item.desc}</p>
                       </div>
                       <ArrowRight className="w-4 h-4 text-[#1a1a1a]/20 group-hover:text-[#1a1a1a]/50 ml-auto flex-shrink-0 mt-1 transition-all group-hover:translate-x-1 duration-300" />
