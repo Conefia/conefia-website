@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { CheckCircle2, Clock, Video, Shield, Zap, Users, Check } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { CheckCircle2, Clock, Video, Shield, Zap, Users, Check, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, useReducedMotion, useInView } from 'framer-motion';
+import useEmblaCarousel from 'embla-carousel-react';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 import BrandCarousel from '@/components/landing/BrandCarousel';
-import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -30,6 +30,87 @@ const BOOK_REVIEWS = [
   { id: 6, client_name: "Nour H.", client_role: "Head of E-commerce", client_company: "Botaniq Beauty (Shopify)", content: "Our ROAS was stuck at 1.4×. Conefia rebuilt our ad creative strategy and Shopify conversion flow — we're now consistently at 4.1× ROAS. Exceptional work.", rating: 5 },
   { id: 7, client_name: "Dr. Sam K.", client_role: "Practice Owner", client_company: "Peak Performance Physio", content: "The clinic growth package is unlike anything I've seen — it's a full marketing department in one retainer. We went from 60% to 95% booking capacity in 10 weeks.", rating: 5 },
 ];
+
+function ReviewsCarousel({ reviews, animate }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-60px' });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start', slidesToScroll: 1 });
+  const [selected, setSelected] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelected(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    return () => emblaApi.off('select', onSelect);
+  }, [emblaApi, onSelect]);
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  return (
+    <section ref={ref} className="bg-[#F7F7F5] py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: animate ? 0.5 : 0 }}
+          className="mb-10"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-2">Real results from real clients</h2>
+          <p className="text-gray-500 text-sm font-medium">What founders and clinic owners say after working with us.</p>
+        </motion.div>
+
+        <div className="relative">
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
+              {reviews.map((r) => (
+                <div key={r.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0">
+                  <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm h-full flex flex-col">
+                    <div className="flex gap-0.5 mb-3">
+                      {[...Array(r.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 fill-[#DBFE01] text-[#DBFE01]" />
+                      ))}
+                    </div>
+                    <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">"{r.content}"</p>
+                    <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
+                      <div className="w-8 h-8 rounded-full bg-[#DBFE01]/20 flex items-center justify-center text-[#1a1a1a] font-bold text-sm flex-shrink-0">
+                        {r.client_name.charAt(0)}
+                      </div>
+                      <div>
+                        <p className="text-[#1a1a1a] font-semibold text-sm leading-tight">{r.client_name}</p>
+                        <p className="text-gray-400 text-xs">{r.client_role}{r.client_company ? `, ${r.client_company}` : ''}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Nav */}
+          <div className="flex items-center gap-3 mt-6">
+            <button onClick={scrollPrev} className="w-9 h-9 rounded-full border border-gray-200 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors shadow-sm">
+              <ChevronLeft className="w-4 h-4 text-gray-600" />
+            </button>
+            <button onClick={scrollNext} className="w-9 h-9 rounded-full border border-gray-200 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors shadow-sm">
+              <ChevronRight className="w-4 h-4 text-gray-600" />
+            </button>
+            <div className="flex gap-1.5 ml-2">
+              {reviews.map((_, i) => (
+                <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === selected ? 'w-6 bg-[#1a1a1a]' : 'w-1.5 bg-gray-300'}`} />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function Book() {
   const reduceMotion = useReducedMotion();
@@ -192,13 +273,9 @@ export default function Book() {
       <BrandCarousel />
 
       {/* ══════════════════════════════════════════
-          CLIENT REVIEWS
+          CLIENT REVIEWS — light section
       ══════════════════════════════════════════ */}
-      <TestimonialSlider
-        reduceMotion={!animate}
-        testimonials={BOOK_REVIEWS}
-        title="Real results from real clients"
-      />
+      <ReviewsCarousel reviews={BOOK_REVIEWS} animate={animate} />
 
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
