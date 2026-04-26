@@ -34,7 +34,7 @@ export default function Book() {
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, transparent 30%, rgba(11, 16, 32, 0.4) 100%)' }} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-8 relative z-10">
-        <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} theme="light" />
+        <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} theme="dark" />
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 relative z-10">
