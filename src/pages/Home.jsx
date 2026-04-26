@@ -25,16 +25,17 @@ export default function Home() {
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
+      const tryScroll = (attempts = 0) => {
+        const element = document.getElementById(id);
+        if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      }
-    } else {
-      window.scrollTo(0, 0);
+        } else if (attempts < 5) {
+          setTimeout(() => tryScroll(attempts + 1), 200);
+        }
+      };
+      tryScroll();
     }
-  }, [location.hash]);
+  }, [location.hash, location.key]);
 
   return (
     <div className="min-h-screen bg-[#FAFAFA] overflow-x-hidden">
