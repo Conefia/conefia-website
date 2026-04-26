@@ -1228,8 +1228,6 @@ export default function SeoLandingPage({ content, children }) {
     return (
       <main className="min-h-screen bg-[#FAFAFA] font-['Poppins',sans-serif]">
         {children}
-        {/* Persistent secondary nav — fixed position, full crawlable links for SEO */}
-        <SolutionPageNav currentPath={currentPath} />
       </main>);
 
   }
