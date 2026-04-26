@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { CheckCircle2, Clock, Video, Shield, Zap, Users, Star, Check } from 'lucide-react';
+import { CheckCircle2, Clock, Video, Shield, Zap, Users, Check } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
 import BrandCarousel from '@/components/landing/BrandCarousel';
+import TestimonialSlider from '@/components/landing/TestimonialSlider';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -20,9 +21,14 @@ const TRUST_CHIPS = [
   { icon: CheckCircle2, label: "No Commitment" },
 ];
 
-const SOCIAL_PROOF = [
-  { name: "Founder, HealthTech", quote: "Left the call with a full roadmap. Best 30 mins I invested." },
-  { name: "CEO, AI SaaS", quote: "Yassen was direct, knowledgeable, and gave real insight — not generic advice." },
+const BOOK_REVIEWS = [
+  { id: 1, client_name: "Sarah M.", client_role: "Clinic Owner", client_company: "VitalCare Aesthetics", content: "Our patient enquiries doubled within 90 days. Conefia built a full growth engine — content, ads, funnels — and delivered everything on time. Worth every penny.", rating: 5 },
+  { id: 2, client_name: "James O.", client_role: "Founder", client_company: "ReLift App", content: "We had a beautiful app that nobody was using. After the relaunch strategy and Conefia's retention work, our Day-30 retention went from 8% to 41%. Genuinely transformative.", rating: 5 },
+  { id: 3, client_name: "Farah A.", client_role: "CEO", client_company: "Sooq Luxe (Shopify)", content: "Revenue up 3.2× in 5 months. They rebuilt our Shopify store, nailed our paid ads, and handled email automation. I can finally focus on sourcing instead of marketing.", rating: 5 },
+  { id: 4, client_name: "Dr. Lena R.", client_role: "Medical Director", client_company: "Lumina Skin Clinic", content: "Conefia gave us a clear growth system — not just ads. The organic content strategy alone fills our consultations two weeks out. I highly recommend the roadmap call.", rating: 5 },
+  { id: 5, client_name: "Marcus T.", client_role: "Co-Founder", client_company: "Stackwise (SaaS)", content: "The app relaunch sprint gave us a completely fresh UX with zero downtime. Push notifications went live on day one and churn dropped by 22% in the first month.", rating: 5 },
+  { id: 6, client_name: "Nour H.", client_role: "Head of E-commerce", client_company: "Botaniq Beauty (Shopify)", content: "Our ROAS was stuck at 1.4×. Conefia rebuilt our ad creative strategy and Shopify conversion flow — we're now consistently at 4.1× ROAS. Exceptional work.", rating: 5 },
+  { id: 7, client_name: "Dr. Sam K.", client_role: "Practice Owner", client_company: "Peak Performance Physio", content: "The clinic growth package is unlike anything I've seen — it's a full marketing department in one retainer. We went from 60% to 95% booking capacity in 10 weeks.", rating: 5 },
 ];
 
 export default function Book() {
@@ -127,25 +133,7 @@ export default function Book() {
                 </ul>
               </motion.div>
 
-              {/* Social proof */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: animate ? 0.5 : 0, delay: animate ? 0.38 : 0 }}
-                className="space-y-3"
-              >
-                {SOCIAL_PROOF.map((p, i) => (
-                  <div key={i} className="flex items-start gap-3 bg-white/5 rounded-xl px-4 py-3 border border-white/10">
-                    <div className="flex gap-0.5 flex-shrink-0 mt-0.5">
-                      {[...Array(5)].map((_, s) => <Star key={s} className="w-3 h-3 fill-[#DBFE01] text-[#DBFE01]" />)}
-                    </div>
-                    <div>
-                      <p className="text-white/80 text-xs leading-relaxed italic">"{p.quote}"</p>
-                      <p className="text-white/40 text-xs font-semibold mt-1">— {p.name}</p>
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
+
             </div>
 
             {/* Right: Stock image */}
@@ -202,6 +190,15 @@ export default function Book() {
       </header>
 
       <BrandCarousel />
+
+      {/* ══════════════════════════════════════════
+          CLIENT REVIEWS
+      ══════════════════════════════════════════ */}
+      <TestimonialSlider
+        reduceMotion={!animate}
+        testimonials={BOOK_REVIEWS}
+        title="Real results from real clients"
+      />
 
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
