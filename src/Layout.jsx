@@ -194,7 +194,7 @@ function LayoutContent({ children, currentPageName }) {
                   }>
 
                     {item.label}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#DBFE01] transition-all group-hover:w-full" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#D4DE00] transition-all group-hover:w-full" />
                   </Link>;
               })}
               
@@ -228,7 +228,7 @@ function LayoutContent({ children, currentPageName }) {
             <div className="hidden md:flex items-center gap-4">
               <Link
                 to={createPageUrl('book')}
-                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
+                className="btn-primary px-5 py-2.5 rounded-lg text-sm font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(212,222,0,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(212,222,0,0.35),0_4px_12px_rgba(212,222,0,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                 Book Roadmap Call
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -290,7 +290,7 @@ function LayoutContent({ children, currentPageName }) {
                  <Link
                 to={createPageUrl('Home') + '#track-selector'}
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 my-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 my-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(212,222,0,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(212,222,0,0.35),0_4px_12px_rgba(212,222,0,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                     Choose your track
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -309,7 +309,7 @@ function LayoutContent({ children, currentPageName }) {
 <Link
                 to={createPageUrl('book')}
                 onClick={() => setMobileMenuOpen(false)}
-                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
+                className="btn-primary w-full px-5 py-3 rounded-lg text-sm font-semibold flex items-center justify-center gap-2 mt-4 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(212,222,0,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(212,222,0,0.35),0_4px_12px_rgba(212,222,0,0.25)] hover:scale-105 active:scale-95 transition-all duration-300">
                   Book Roadmap Call
                   <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -411,24 +411,24 @@ function LayoutContent({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Services</h4>
               <ul className="space-y-3 text-sm font-medium">
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Validate</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Build</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Launch</Link></li>
-                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#DBFE01] transition-colors">Scale</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#D4DE00] transition-colors">Validate</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#D4DE00] transition-colors">Build</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#D4DE00] transition-colors">Launch</Link></li>
+                <li><Link to={createPageUrl('Home') + '#playbook'} className="text-white hover:text-[#D4DE00] transition-colors">Scale</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Company</h4>
               <ul className="space-y-3 text-sm font-medium">
-                <li><Link to={createPageUrl('Home') + '#case-studies'} className="text-white hover:text-[#DBFE01] transition-colors">Case Studies</Link></li>
-                <li><Link to={createPageUrl('Home') + '#packages'} className="text-white hover:text-[#DBFE01] transition-colors">Packages</Link></li>
-                <li><Link to={createPageUrl('Home') + '#contact'} className="text-white hover:text-[#DBFE01] transition-colors">Contact</Link></li>
+                <li><Link to={createPageUrl('Home') + '#case-studies'} className="text-white hover:text-[#D4DE00] transition-colors">Case Studies</Link></li>
+                <li><Link to={createPageUrl('Home') + '#packages'} className="text-white hover:text-[#D4DE00] transition-colors">Packages</Link></li>
+                <li><Link to={createPageUrl('Home') + '#contact'} className="text-white hover:text-[#D4DE00] transition-colors">Contact</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Contact</h4>
               <div className="space-y-4">
-                <a href="tel:+18100000000" className="flex items-start gap-3 text-sm text-white hover:text-[#DBFE01] transition-colors group">
+                <a href="tel:+18100000000" className="flex items-start gap-3 text-sm text-white hover:text-[#D4DE00] transition-colors group">
                   <Phone className="w-4 h-4 text-white flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
                   <span className="leading-snug">(810) 000 0000</span>
                 </a>
@@ -441,13 +441,13 @@ function LayoutContent({ children, currentPageName }) {
             <div>
               <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white">Follow Us</h4>
               <div className="flex gap-4">
-                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
+                <a href="https://linkedin.com/company/conefia" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D4DE00] transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://facebook.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
+                <a href="https://facebook.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D4DE00] transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#DBFE01] transition-colors">
+                <a href="https://instagram.com/conefia.tech" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#D4DE00] transition-colors">
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
@@ -456,12 +456,12 @@ function LayoutContent({ children, currentPageName }) {
           <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm">© 2024 Conefia. All rights reserved.</p>
             <div className="grid grid-cols-2 w-full md:flex md:items-center gap-3 md:gap-6 text-sm text-white">
-              <Link to="/terms" className="text-white hover:text-[#DBFE01] transition-colors text-left">Terms of Use</Link>
-              <Link to="/privacy" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">Privacy Policy</Link>
-              <Link to="/ip-policy" className="text-white hover:text-[#DBFE01] transition-colors text-left">IP Policy</Link>
-              <Link to="/cookies" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">Cookie Policy</Link>
-              <Link to="/copyright-policy" className="text-white hover:text-[#DBFE01] transition-colors text-left">Copyright Policy</Link>
-              <Link to="/legal" className="text-white hover:text-[#DBFE01] transition-colors md:text-left text-right">More</Link>
+              <Link to="/terms" className="text-white hover:text-[#D4DE00] transition-colors text-left">Terms of Use</Link>
+              <Link to="/privacy" className="text-white hover:text-[#D4DE00] transition-colors md:text-left text-right">Privacy Policy</Link>
+              <Link to="/ip-policy" className="text-white hover:text-[#D4DE00] transition-colors text-left">IP Policy</Link>
+              <Link to="/cookies" className="text-white hover:text-[#D4DE00] transition-colors md:text-left text-right">Cookie Policy</Link>
+              <Link to="/copyright-policy" className="text-white hover:text-[#D4DE00] transition-colors text-left">Copyright Policy</Link>
+              <Link to="/legal" className="text-white hover:text-[#D4DE00] transition-colors md:text-left text-right">More</Link>
             </div>
           </div>
         </div>
