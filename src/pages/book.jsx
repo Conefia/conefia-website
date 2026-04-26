@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Clock, Video, Shield, Zap, Users, Star, Check } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
+import BrandCarousel from '@/components/landing/BrandCarousel';
 import Seo from '@/components/Seo';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
@@ -199,6 +200,8 @@ export default function Book() {
           </div>
         </div>
       </header>
+
+      <BrandCarousel />
 
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
