@@ -43,7 +43,7 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-    --color-primary: #DBFE01;
+    --color-primary: #D4DE00;
     --color-dark: #1a1a1a;
     --color-light: #FAFAFA;
   }
@@ -178,7 +178,7 @@
   }
 
   .btn-primary {
-    background: #DBFE01;
+    background: #D4DE00;
     color: #1a1a1a;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -190,7 +190,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, #DBFE01 0%, #c5e000 100%);
+    background: linear-gradient(135deg, #D4DE00 0%, #bcc800 100%);
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -198,8 +198,8 @@
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 20px rgba(219, 254, 1, 0.5), 0 8px 30px rgba(219, 254, 1, 0.4);
-    background: #c5e000;
+    box-shadow: 0 0 20px rgba(212, 222, 0, 0.5), 0 8px 30px rgba(212, 222, 0, 0.4);
+    background: #bcc800;
   }
 
   .btn-primary:hover::before {
@@ -235,20 +235,20 @@
 
   /* Premium Input Focus States */
   input:focus {
-    box-shadow: 0 0 0 3px rgba(219, 254, 1, 0.1), 0 0 20px rgba(219, 254, 1, 0.2);
+    box-shadow: 0 0 0 3px rgba(212, 222, 0, 0.1), 0 0 20px rgba(212, 222, 0, 0.2);
   }
 
   textarea:focus {
-    box-shadow: 0 0 0 3px rgba(219, 254, 1, 0.1), 0 0 20px rgba(219, 254, 1, 0.2);
+    box-shadow: 0 0 0 3px rgba(212, 222, 0, 0.1), 0 0 20px rgba(212, 222, 0, 0.2);
   }
 
   /* Glow animation for premium feel */
   @keyframes glow-pulse {
     0%, 100% {
-      box-shadow: 0 0 5px rgba(219, 254, 1, 0.2), 0 0 10px rgba(219, 254, 1, 0.1);
+      box-shadow: 0 0 5px rgba(212, 222, 0, 0.2), 0 0 10px rgba(212, 222, 0, 0.1);
     }
     50% {
-      box-shadow: 0 0 15px rgba(219, 254, 1, 0.4), 0 0 25px rgba(219, 254, 1, 0.2);
+      box-shadow: 0 0 15px rgba(212, 222, 0, 0.4), 0 0 25px rgba(212, 222, 0, 0.2);
     }
   }
 
@@ -258,7 +258,7 @@
 
   /* Global keyboard focus ring — visible only on keyboard nav, not mouse */
   :focus-visible {
-    outline: 2px solid #DBFE01;
+    outline: 2px solid #D4DE00;
     outline-offset: 3px;
     border-radius: 4px;
   }
