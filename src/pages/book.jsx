@@ -280,11 +280,6 @@ export default function Book() {
       <BrandCarousel />
 
       {/* ══════════════════════════════════════════
-          CLIENT REVIEWS — light section
-      ══════════════════════════════════════════ */}
-      <ReviewsCarousel reviews={BOOK_REVIEWS} animate={animate} />
-
-      {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
       ══════════════════════════════════════════ */}
       <main className="bg-gradient-to-b from-[#FAFAFA] to-white relative">
@@ -322,6 +317,11 @@ export default function Book() {
           </p>
         </div>
       </main>
+
+      {/* ══════════════════════════════════════════
+          CLIENT REVIEWS — light section
+      ══════════════════════════════════════════ */}
+      <ReviewsCarousel reviews={BOOK_REVIEWS} animate={animate} />
     </div>
   );
 }
