@@ -75,8 +75,8 @@ function ReviewsCarousel({ reviews, animate }) {
 
         {/* Carousel */}
         <div className="relative">
-          <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-5">
+          <div className="overflow-hidden px-1 py-2 -mx-1" ref={emblaRef}>
+            <div className="flex gap-6">
               {reviews.map((r) => (
                 <div key={r.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0">
                   <div className="bg-[#0F1420] border border-white/10 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.25)] h-full flex flex-col hover:shadow-[0_4px_24px_rgba(0,0,0,0.40)] hover:border-white/20 transition-all duration-300">
