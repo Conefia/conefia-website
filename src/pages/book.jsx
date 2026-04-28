@@ -53,37 +53,49 @@ function ReviewsCarousel({ reviews, animate }) {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section ref={ref} className="bg-[#F7F7F5] py-16 md:py-24">
+    <section ref={ref} className="bg-[#F7F7F5] py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: animate ? 0.5 : 0 }}
-          className="mb-10"
+          className="mb-12 text-center"
         >
-          <h2 className="mb-2 text-center">Real results from real clients</h2>
-          <p className="text-center">What founders and clinic owners say after working with us.</p>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1a1a1a]/6 border border-[#1a1a1a]/10 mb-5">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#DBFE01] text-[#DBFE01]" />)}
+            </div>
+            <span className="text-xs font-bold text-[#1a1a1a]/70 uppercase tracking-wider">Client Stories</span>
+          </div>
+          <h2 className="mb-3">Real results from real clients</h2>
+          <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
         </motion.div>
 
+        {/* Carousel */}
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex gap-4">
+            <div className="flex gap-5">
               {reviews.map((r) => (
                 <div key={r.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0">
-                  <div className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm h-full flex flex-col">
-                    <div className="flex gap-0.5 mb-3">
+                  <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] h-full flex flex-col hover:shadow-[0_4px_24px_rgba(0,0,0,0.10)] transition-shadow duration-300">
+                    {/* Stars */}
+                    <div className="flex gap-0.5 mb-4">
                       {[...Array(r.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-[#DBFE01] text-[#DBFE01]" />
                       ))}
                     </div>
-                    <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-4">"{r.content}"</p>
-                    <div className="flex items-center gap-3 pt-3 border-t border-gray-100">
-                      <div className="w-8 h-8 rounded-full bg-[#DBFE01]/20 flex items-center justify-center text-[#1a1a1a] font-bold text-sm flex-shrink-0">
+                    {/* Quote */}
+                    <p className="text-[#1a1a1a]/75 text-sm leading-relaxed flex-1 mb-5 font-medium">"{r.content}"</p>
+                    {/* Author */}
+                    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                      <div className="w-9 h-9 rounded-full bg-[#DBFE01] flex items-center justify-center text-[#1a1a1a] font-extrabold text-sm flex-shrink-0 shadow-[0_0_12px_rgba(219,254,1,0.35)]">
                         {r.client_name.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-[#1a1a1a] font-semibold text-sm leading-tight">{r.client_name}</p>
-                        <p className="text-gray-400 text-xs">{r.client_role}{r.client_company ? `, ${r.client_company}` : ''}</p>
+                        <p className="text-[#1a1a1a] font-bold text-sm leading-tight">{r.client_name}</p>
+                        <p className="text-gray-400 text-xs mt-0.5">{r.client_role}{r.client_company ? ` · ${r.client_company}` : ''}</p>
                       </div>
                     </div>
                   </div>
@@ -93,18 +105,18 @@ function ReviewsCarousel({ reviews, animate }) {
           </div>
 
           {/* Nav */}
-          <div className="flex items-center justify-center gap-3 mt-6">
-            <button onClick={scrollPrev} className="w-9 h-9 rounded-full border border-gray-200 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors shadow-sm">
-              <ChevronLeft className="w-4 h-4 text-gray-600" />
+          <div className="flex items-center justify-center gap-4 mt-8">
+            <button onClick={scrollPrev} aria-label="Previous" className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 shadow-sm">
+              <ChevronLeft className="w-4 h-4 text-gray-500 group-hover:text-[#1a1a1a] transition-colors" />
             </button>
-            <button onClick={scrollNext} className="w-9 h-9 rounded-full border border-gray-200 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors shadow-sm">
-              <ChevronRight className="w-4 h-4 text-gray-600" />
-            </button>
-            <div className="flex gap-1.5 ml-2">
+            <div className="flex gap-1.5">
               {reviews.map((_, i) => (
                 <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === selected ? 'w-6 bg-[#1a1a1a]' : 'w-1.5 bg-gray-300'}`} />
               ))}
             </div>
+            <button onClick={scrollNext} aria-label="Next" className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 shadow-sm">
+              <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-[#1a1a1a] transition-colors" />
+            </button>
           </div>
         </div>
       </div>
