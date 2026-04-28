@@ -307,7 +307,7 @@ export default function Book() {
           {/* Section label */}
           <div className="flex items-center gap-3 mb-10 justify-center">
             <div className="h-px flex-1 bg-gray-200" />
-            <span className="text-gray-400 text-xs font-bold uppercase tracking-widest whitespace-nowrap">Pick a time that works for you</span>
+            <span className="text-gray-600 text-xs font-bold uppercase tracking-widest whitespace-nowrap">Pick a time that works for you</span>
             <div className="h-px flex-1 bg-gray-200" />
           </div>
 
