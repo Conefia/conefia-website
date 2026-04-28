@@ -157,16 +157,16 @@ export default function Book() {
       <header className="relative min-h-screen flex items-center overflow-hidden">
         <HeroDarkBackground isMobile={isMobile} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-16 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-36 pb-16 relative z-10 w-full">
           {/* Breadcrumb */}
           <div className="mb-6">
             <Breadcrumbs items={[{ label: 'Book a Roadmap Call' }]} theme="dark" />
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
             {/* Left: Copy */}
-            <div>
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
@@ -178,12 +178,12 @@ export default function Book() {
                 <span className="text-sm font-semibold text-[#DBFE01]">Free · No Commitment</span>
               </motion.div>
 
-              {/* H1 — same gradient as global h1 */}
+              {/* H1 */}
               <motion.h1
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.08 : 0 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight will-change-transform"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight will-change-transform"
               >
                 Book Your Free<br />Roadmap Call
               </motion.h1>
@@ -202,7 +202,7 @@ export default function Book() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.22 : 0 }}
-                className="flex flex-wrap gap-3 mb-8"
+                className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8"
               >
                 {TRUST_CHIPS.map(({ icon: Icon, label }) => (
                   <div key={label} className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20 hover:bg-white/15 transition-colors">
@@ -217,7 +217,7 @@ export default function Book() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.28 : 0 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm mb-6"
+                className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm mb-6 w-full text-left"
               >
                 <p className="text-xs font-bold uppercase tracking-widest text-[#DBFE01]/80 mb-4">What you'll walk away with</p>
                 <ul className="space-y-3">
