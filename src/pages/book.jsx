@@ -126,8 +126,14 @@ function ReviewsCarousel({ reviews, animate }) {
 
 export default function Book() {
   const reduceMotion = useReducedMotion();
-  const isMobile = useState(() => window.innerWidth < 768)[0];
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const animate = !reduceMotion;
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     const script = document.createElement('script');
