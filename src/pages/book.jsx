@@ -211,7 +211,7 @@ export default function Book() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.28 : 0 }}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-sm mb-6"
+                className="bg-[#111318] border border-white/8 rounded-2xl p-5 mb-6"
               >
                 <p className="text-xs font-bold uppercase tracking-widest text-[#DBFE01]/80 mb-4">What you'll walk away with</p>
                 <ul className="space-y-3">
