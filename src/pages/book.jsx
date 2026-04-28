@@ -63,12 +63,12 @@ function ReviewsCarousel({ reviews, animate }) {
           transition={{ duration: animate ? 0.5 : 0 }}
           className="mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01] border border-[#1a1a1a]/20 mb-5">
+          <span className="bg-[#1a1a1a]/5 text-[#1a1a1a]/60 px-4 py-2 text-sm font-bold uppercase tracking-wider rounded-full inline-flex items-center gap-2 border border-[#1a1a1a]/10 mb-5">
             <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#1a1a1a] text-[#1a1a1a]" />)}
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-[#DBFE01] text-[#1a1a1a] stroke-[#1a1a1a]" />)}
             </div>
-            <span className="text-xs font-bold text-[#1a1a1a] uppercase tracking-wider">Client Stories</span>
-          </div>
+            Client Stories
+          </span>
           <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Real results from real clients</h2>
           <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
         </motion.div>
