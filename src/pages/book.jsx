@@ -53,7 +53,10 @@ function ReviewsCarousel({ reviews, animate }) {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section ref={ref} className="bg-[#F7F7F5] py-20 md:py-28 overflow-hidden">
+    <section ref={ref} className="bg-gradient-to-br from-[#FAFAFA] via-[#F5F5F2] to-[#F0F0ED] py-20 md:py-28 overflow-hidden relative">
+      {/* Subtle accent elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#DBFE01]/4 rounded-full blur-3xl -mr-48 -mt-48 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#DBFE01]/3 rounded-full blur-3xl -ml-40 -mb-40 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
