@@ -148,7 +148,7 @@ export default function Book() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Seo
         title="Book a Free Roadmap Call | Conefia"
         description="Book a free 30-minute roadmap call with Conefia. Get a clear MVP scope, AI approach, and delivery plan — no commitment required."
@@ -311,8 +311,8 @@ export default function Book() {
           </div>
 
           {/* Calendly embed */}
-          <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.08)]" style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.15), 0 8px 40px rgba(0,0,0,0.08)' }}>
-            <div className="calendly-inline-widget" data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=1a1a1a&text_color=ffffff&primary_color=dbfe01" style={{ minWidth: '320px', height: '700px' }}></div>
+          <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.08)] w-full" style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.15), 0 8px 40px rgba(0,0,0,0.08)' }}>
+            <div className="calendly-inline-widget" data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=1a1a1a&text_color=ffffff&primary_color=dbfe01" style={{ minWidth: '100%', height: '700px' }}></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
           </div>
 
