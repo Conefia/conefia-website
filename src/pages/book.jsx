@@ -70,7 +70,7 @@ function ReviewsCarousel({ reviews, animate }) {
             Roadmap Call Reviews
           </span>
           <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">What clients say after the roadmap call</h2>
-          <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
+          <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">See how founders, clinic teams, and growth-focused brands used their Conefia roadmap call to clarify scope, reduce risk, and move forward with confidence.</p>
         </motion.div>
 
         {/* Carousel */}
