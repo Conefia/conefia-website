@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { CheckCircle2, Clock, Video, Shield, Users, Check, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle2, Clock, Video, Shield, Users, Check, Star, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
@@ -131,6 +131,7 @@ export default function Book() {
   const reduceMotion = useReducedMotion();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
   const animate = !reduceMotion;
+  const calendlyRef = useRef(null);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -224,8 +225,19 @@ export default function Book() {
                 </ul>
               </motion.div>
 
+              {/* Pick a Time CTA Button */}
+              <motion.button
+               initial={{ opacity: 0, y: 12 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.34 : 0 }}
+               onClick={() => calendlyRef.current?.scrollIntoView({ behavior: 'smooth' })}
+               className="btn-primary px-7 py-3 rounded-lg text-base font-semibold flex items-center gap-2 shadow-[0_1px_0_0_rgba(255,255,255,0.3)_inset,0_2px_8px_rgba(219,254,1,0.2)] hover:shadow-[0_1px_0_0_rgba(255,255,255,0.4)_inset,0_0_15px_rgba(219,254,1,0.35),0_4px_12px_rgba(219,254,1,0.25)] hover:scale-105 active:scale-95 transition-all duration-300"
+              >
+               Pick a Time
+               <ArrowRight className="w-4 h-4" />
+              </motion.button>
 
-            </div>
+              </div>
 
             {/* Right: Stock image */}
             <motion.div
@@ -285,7 +297,7 @@ export default function Book() {
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
       ══════════════════════════════════════════ */}
-      <main className="bg-gradient-to-b from-[#FAFAFA] to-white relative">
+      <main className="bg-gradient-to-b from-[#FAFAFA] to-white relative" ref={calendlyRef}>
         {/* Subtle top glow transition */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#DBFE01]/80 to-transparent" />
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-40 bg-[#DBFE01]/8 blur-[60px] pointer-events-none" />
