@@ -69,7 +69,7 @@ function ReviewsCarousel({ reviews, animate }) {
             </div>
             Roadmap Call Reviews
           </span>
-          <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Real results from real clients</h2>
+          <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">What clients say after the roadmap call</h2>
           <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
         </motion.div>
 
