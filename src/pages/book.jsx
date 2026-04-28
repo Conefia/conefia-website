@@ -79,7 +79,7 @@ function ReviewsCarousel({ reviews, animate }) {
             <div className="flex gap-5">
               {reviews.map((r) => (
                 <div key={r.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0">
-                  <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] h-full flex flex-col hover:shadow-[0_4px_24px_rgba(0,0,0,0.10)] transition-shadow duration-300">
+                  <div className="bg-[#111318] border border-white/8 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.3)] h-full flex flex-col hover:shadow-[0_4px_24px_rgba(0,0,0,0.5)] transition-shadow duration-300">
                     {/* Stars */}
                     <div className="flex gap-0.5 mb-4">
                       {[...Array(r.rating)].map((_, i) => (
@@ -87,15 +87,15 @@ function ReviewsCarousel({ reviews, animate }) {
                       ))}
                     </div>
                     {/* Quote */}
-                    <p className="text-[#1a1a1a]/75 text-sm leading-relaxed flex-1 mb-5 font-medium">"{r.content}"</p>
+                    <p className="text-white/70 text-sm leading-relaxed flex-1 mb-5 font-medium">"{r.content}"</p>
                     {/* Author */}
-                    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+                    <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                       <div className="w-9 h-9 rounded-full bg-[#DBFE01] flex items-center justify-center text-[#1a1a1a] font-extrabold text-sm flex-shrink-0 shadow-[0_0_12px_rgba(219,254,1,0.35)]">
                         {r.client_name.charAt(0)}
                       </div>
                       <div>
-                        <p className="text-[#1a1a1a] font-bold text-sm leading-tight">{r.client_name}</p>
-                        <p className="text-gray-400 text-xs mt-0.5">{r.client_role}{r.client_company ? ` · ${r.client_company}` : ''}</p>
+                        <p className="text-white font-bold text-sm leading-tight">{r.client_name}</p>
+                        <p className="text-white/40 text-xs mt-0.5">{r.client_role}{r.client_company ? ` · ${r.client_company}` : ''}</p>
                       </div>
                     </div>
                   </div>
