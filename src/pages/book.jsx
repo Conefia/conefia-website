@@ -61,7 +61,7 @@ function ReviewsCarousel({ reviews, animate }) {
           transition={{ duration: animate ? 0.5 : 0 }}
           className="mb-10"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-2">Real results from real clients</h2>
+          <h2 className="mb-2">Real results from real clients</h2>
           <p className="text-gray-500 text-sm font-medium">What founders and clinic owners say after working with us.</p>
         </motion.div>
 
