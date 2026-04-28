@@ -302,7 +302,7 @@ export default function Book() {
           >
             <div
               className="calendly-inline-widget bg-black"
-              data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01"
+              data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01&secondary_color=ffffff"
               style={{ minWidth: '320px', height: '700px' }}
             />
           </div>
