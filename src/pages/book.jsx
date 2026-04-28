@@ -301,10 +301,11 @@ export default function Book() {
             style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.15), 0 8px 40px rgba(0,0,0,0.08)' }}
           >
             <div
-              className="calendly-inline-widget bg-black"
-              data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01"
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=1a1a1a&text_color=ffffff&primary_color=dbfe01"
               style={{ minWidth: '320px', height: '700px' }}
             />
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
           </div>
 
           {/* Footer note */}
