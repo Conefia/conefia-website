@@ -69,7 +69,7 @@ function ReviewsCarousel({ reviews, animate }) {
             </div>
             <span className="text-xs font-bold text-[#1a1a1a] uppercase tracking-wider">Client Stories</span>
           </div>
-          <h2 className="mb-3">Real results from real clients</h2>
+          <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Real results from real clients</h2>
           <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
         </motion.div>
 
