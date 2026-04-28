@@ -93,7 +93,7 @@ function ReviewsCarousel({ reviews, animate }) {
           </div>
 
           {/* Nav */}
-          <div className="flex items-center gap-3 mt-6">
+          <div className="flex items-center justify-center gap-3 mt-6">
             <button onClick={scrollPrev} className="w-9 h-9 rounded-full border border-gray-200 bg-white hover:bg-gray-50 flex items-center justify-center transition-colors shadow-sm">
               <ChevronLeft className="w-4 h-4 text-gray-600" />
             </button>
