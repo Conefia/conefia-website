@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { CheckCircle2, Clock, Video, Shield, Zap, Users, Check, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { CheckCircle2, Clock, Video, Shield, Users, Check, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, useReducedMotion, useInView } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 import HeroDarkBackground from '@/components/visual/HeroDarkBackground';
@@ -167,23 +167,12 @@ export default function Book() {
 
             {/* Left: Copy */}
             <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: animate ? 0.35 : 0 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#DBFE01]/10 border border-[#DBFE01]/30 mb-5 backdrop-blur-sm"
-              >
-                <Zap className="w-4 h-4 text-[#DBFE01]" />
-                <span className="text-sm font-semibold text-[#DBFE01]">Free · No Commitment</span>
-              </motion.div>
-
-              {/* H1 */}
+              {/* H1 — global gradient style */}
               <motion.h1
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.08 : 0 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight will-change-transform"
+                className="mb-5 will-change-transform"
               >
                 Book Your Free<br />Roadmap Call
               </motion.h1>
