@@ -282,32 +282,29 @@ export default function Book() {
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
       ══════════════════════════════════════════ */}
-      <main className="bg-gradient-to-b from-[#F5F5F0] via-[#FAFAF8] to-[#FFFFFF] relative">
-        {/* Top accent glow */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#DBFE01] to-transparent" />
-        
-        {/* Decorative background elements */}
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-80 bg-[#DBFE01]/12 blur-[80px] pointer-events-none" />
-        <div className="absolute top-1/3 -right-32 w-[400px] h-[400px] bg-[#DBFE01]/6 blur-[100px] rounded-full pointer-events-none" />
+      <main className="bg-gradient-to-b from-[#FAFAFA] to-white relative">
+        {/* Subtle top glow transition */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#DBFE01]/80 to-transparent" />
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-40 bg-[#DBFE01]/8 blur-[60px] pointer-events-none" />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           {/* Section label */}
-          <div className="flex items-center gap-3 mb-16 justify-center">
-            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#1a1a1a]/20" />
-            <span className="text-[#1a1a1a]/50 text-xs font-bold uppercase tracking-widest whitespace-nowrap">Pick a time that works for you</span>
-            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#1a1a1a]/20" />
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <div className="h-px flex-1 bg-gray-200" />
+            <span className="text-gray-600 text-xs font-bold uppercase tracking-widest whitespace-nowrap">Pick a time that works for you</span>
+            <div className="h-px flex-1 bg-gray-200" />
           </div>
 
           {/* Calendly embed */}
-          <div className="rounded-3xl overflow-hidden border border-[#DBFE01]/30 shadow-[0_20px_60px_rgba(219,254,1,0.1)]" style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.25), 0 20px 60px rgba(219,254,1,0.1), inset 0 1px 0 0 rgba(255,255,255,0.5)' }}>
+          <div className="rounded-3xl overflow-hidden border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.08)]" style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.15), 0 8px 40px rgba(0,0,0,0.08)' }}>
             <div className="calendly-inline-widget" data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=1a1a1a&text_color=ffffff&primary_color=dbfe01" style={{ minWidth: '320px', height: '700px' }}></div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
           </div>
 
           {/* Footer note */}
-          <p className="text-center text-[#1a1a1a]/50 text-sm mt-10 font-medium">
+          <p className="text-center text-gray-400 text-sm mt-8">
             Can't find a suitable time?{' '}
-            <a href="mailto:info@conefia.com" className="text-[#1a1a1a]/70 font-bold hover:text-[#1a1a1a] transition-colors underline decoration-[#DBFE01]/30 hover:decoration-[#DBFE01]">
+            <a href="mailto:info@conefia.com" className="text-gray-700 font-bold hover:text-[#1a1a1a] transition-colors underline decoration-gray-300 hover:decoration-[#DBFE01]">
               Email us
             </a>{' '}
             directly.
