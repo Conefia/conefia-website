@@ -79,7 +79,7 @@ function ReviewsCarousel({ reviews, animate }) {
             <div className="flex gap-5">
               {reviews.map((r) => (
                 <div key={r.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.33%] min-w-0">
-                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.3)] h-full flex flex-col hover:bg-white/[0.13] transition-colors duration-300">
+                  <div className="bg-[#111318] border border-white/8 rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.3)] h-full flex flex-col hover:shadow-[0_4px_24px_rgba(0,0,0,0.5)] transition-shadow duration-300">
                     {/* Stars */}
                     <div className="flex gap-0.5 mb-4">
                       {[...Array(r.rating)].map((_, i) => (
