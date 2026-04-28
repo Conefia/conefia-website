@@ -172,7 +172,7 @@ export default function Book() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: animate ? 0.4 : 0, delay: animate ? 0.08 : 0 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-5 will-change-transform"
+                className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl mb-5 will-change-transform"
               >
                 Book Your Free<br />Roadmap Call
               </motion.h1>
