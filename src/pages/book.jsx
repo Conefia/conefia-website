@@ -298,70 +298,39 @@ export default function Book() {
       {/* ══════════════════════════════════════════
           BODY — light section, Calendly embed
       ══════════════════════════════════════════ */}
-      <main className="relative bg-[#F7F8F4] overflow-hidden">
-        {/* Decorative background elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          {/* Soft lime glow — top center */}
-          <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[800px] h-64 bg-[#DBFE01]/12 blur-[80px] rounded-full" />
-          {/* Subtle dot grid */}
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: 'radial-gradient(circle, #1a1a1a 1px, transparent 1px)',
-              backgroundSize: '28px 28px',
-            }}
-          />
-          {/* Accent corner blobs */}
-          <div className="absolute top-1/3 -left-20 w-64 h-64 bg-[#DBFE01]/8 blur-[70px] rounded-full" />
-          <div className="absolute bottom-1/4 -right-20 w-48 h-48 bg-[#66F0FF]/8 blur-[60px] rounded-full" />
-        </div>
+      <main className="bg-gradient-to-b from-[#FAFAFA] to-white relative">
+        {/* Subtle top glow transition */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#DBFE01]/40 to-transparent" />
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[600px] h-40 bg-[#DBFE01]/8 blur-[60px] pointer-events-none" />
 
-        {/* Top lime accent line */}
-        <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#DBFE01]/60 to-transparent" />
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-
-          {/* Section header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DBFE01]/15 border border-[#DBFE01]/30 mb-5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#DBFE01]" />
-              <span className="text-[#1a1a1a] text-xs font-bold uppercase tracking-widest">Schedule Your Call</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mb-3 leading-tight"
-              style={{ background: 'none', WebkitTextFillColor: '#1a1a1a' }}
-            >
-              Pick a Time That Works for You
-            </h2>
-            <p className="text-gray-500 text-base max-w-md mx-auto">
-              30 minutes. No pressure. Walk away with a clear plan.
-            </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          {/* Section label */}
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <div className="h-px flex-1 bg-gray-200" />
+            <span className="text-gray-400 text-xs font-bold uppercase tracking-widest whitespace-nowrap">Pick a time that works for you</span>
+            <div className="h-px flex-1 bg-gray-200" />
           </div>
 
-          {/* Calendly embed card */}
-          <div className="relative">
-            {/* Glow ring behind card */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-[#DBFE01]/20 via-transparent to-[#66F0FF]/10 rounded-[28px] blur-sm pointer-events-none" />
-            <div className="relative rounded-3xl overflow-hidden border border-gray-200/80 shadow-[0_20px_60px_rgba(0,0,0,0.10),0_0_0_1px_rgba(219,254,1,0.12)] bg-white">
-              <div
-                className="calendly-inline-widget"
-                data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=ffffff&text_color=1a1a1a&primary_color=b8cc00"
-                style={{ minWidth: '320px', height: '700px' }}
-              />
-            </div>
+          {/* Calendly embed */}
+          <div
+            className="rounded-3xl overflow-hidden border border-gray-200 shadow-[0_8px_40px_rgba(0,0,0,0.08)]"
+            style={{ boxShadow: '0 0 0 1px rgba(219,254,1,0.15), 0 8px 40px rgba(0,0,0,0.08)' }}
+          >
+            <div
+              className="calendly-inline-widget bg-black"
+              data-url="https://calendly.com/yassen-eltayeb-conefia?background_color=000000&text_color=ffffff&primary_color=dbfe01"
+              style={{ minWidth: '320px', height: '700px' }}
+            />
           </div>
 
           {/* Footer note */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mt-10">
-            <p className="text-gray-400 text-sm text-center">
-              Can't find a suitable time?
-            </p>
-            <a
-              href="mailto:info@conefia.com"
-              className="text-sm font-bold text-[#1a1a1a] underline decoration-[#DBFE01] underline-offset-2 hover:decoration-2 transition-all"
-            >
-              Email us directly →
-            </a>
-          </div>
+          <p className="text-center text-gray-400 text-sm mt-8">
+            Can't find a suitable time?{' '}
+            <a href="mailto:info@conefia.com" className="text-gray-700 font-bold hover:text-[#1a1a1a] transition-colors underline decoration-gray-300 hover:decoration-[#DBFE01]">
+              Email us
+            </a>{' '}
+            directly.
+          </p>
         </div>
       </main>
     </div>
