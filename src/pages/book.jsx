@@ -63,11 +63,11 @@ function ReviewsCarousel({ reviews, animate }) {
           transition={{ duration: animate ? 0.5 : 0 }}
           className="mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1a1a1a]/6 border border-[#1a1a1a]/10 mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#DBFE01] border border-[#1a1a1a]/20 mb-5">
             <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#DBFE01] text-[#DBFE01]" />)}
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#1a1a1a] text-[#1a1a1a]" />)}
             </div>
-            <span className="text-xs font-bold text-[#1a1a1a]/70 uppercase tracking-wider">Client Stories</span>
+            <span className="text-xs font-bold text-[#1a1a1a] uppercase tracking-wider">Client Stories</span>
           </div>
           <h2 className="mb-3">Real results from real clients</h2>
           <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
