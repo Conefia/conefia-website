@@ -67,7 +67,7 @@ function ReviewsCarousel({ reviews, animate }) {
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 fill-[#DBFE01] text-[#1a1a1a] stroke-[#1a1a1a]" />)}
             </div>
-            Client Stories
+            Roadmap Call Reviews
           </span>
           <h2 className="text-2xl font-bold mb-3 gradient-heading gradient-heading--premium">Real results from real clients</h2>
           <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
