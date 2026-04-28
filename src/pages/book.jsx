@@ -53,7 +53,7 @@ function ReviewsCarousel({ reviews, animate }) {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section ref={ref} className="bg-[#0B1020] py-20 md:py-28 overflow-hidden">
+    <section ref={ref} className="bg-[#F7F7F5] py-20 md:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -63,14 +63,14 @@ function ReviewsCarousel({ reviews, animate }) {
           transition={{ duration: animate ? 0.5 : 0 }}
           className="mb-12 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1a1a1a]/6 border border-[#1a1a1a]/10 mb-5">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-[#DBFE01] text-[#DBFE01]" />)}
             </div>
-            <span className="text-xs font-bold text-white/70 uppercase tracking-wider">Client Stories</span>
+            <span className="text-xs font-bold text-[#1a1a1a]/70 uppercase tracking-wider">Client Stories</span>
           </div>
-          <h2 className="mb-3 gradient-heading">Real results from real clients</h2>
-          <p className="text-white/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
+          <h2 className="mb-3">Real results from real clients</h2>
+          <p className="text-[#1a1a1a]/60 max-w-xl mx-auto">What founders and clinic owners say after working with us.</p>
         </motion.div>
 
         {/* Carousel */}
@@ -106,16 +106,16 @@ function ReviewsCarousel({ reviews, animate }) {
 
           {/* Nav */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={scrollPrev} aria-label="Previous" className="w-10 h-10 rounded-full border border-white/20 bg-white/10 hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
-              <ChevronLeft className="w-4 h-4 text-white/60 group-hover:text-[#1a1a1a] transition-colors" />
+            <button onClick={scrollPrev} aria-label="Previous" className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 shadow-sm">
+              <ChevronLeft className="w-4 h-4 text-gray-500 group-hover:text-[#1a1a1a] transition-colors" />
             </button>
             <div className="flex gap-1.5">
               {reviews.map((_, i) => (
-                <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === selected ? 'w-6 bg-[#DBFE01]' : 'w-1.5 bg-white/20'}`} />
+                <div key={i} className={`h-1.5 rounded-full transition-all duration-300 ${i === selected ? 'w-6 bg-[#1a1a1a]' : 'w-1.5 bg-gray-300'}`} />
               ))}
             </div>
-            <button onClick={scrollNext} aria-label="Next" className="w-10 h-10 rounded-full border border-white/20 bg-white/10 hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 backdrop-blur-sm">
-              <ChevronRight className="w-4 h-4 text-white/60 group-hover:text-[#1a1a1a] transition-colors" />
+            <button onClick={scrollNext} aria-label="Next" className="w-10 h-10 rounded-full border border-gray-200 bg-white hover:bg-[#DBFE01] hover:border-[#DBFE01] group flex items-center justify-center transition-all duration-200 shadow-sm">
+              <ChevronRight className="w-4 h-4 text-gray-500 group-hover:text-[#1a1a1a] transition-colors" />
             </button>
           </div>
         </div>
