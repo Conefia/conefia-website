@@ -47,7 +47,8 @@ export default function Privacy() {
       </Section>
 
       <Section number="5" title="Cookies and Similar Technologies">
-        <p>We use cookies, pixels, tags, scripts, SDKs, and similar technologies for essential Site functions, security, analytics, performance measurement, functionality, personalization, and advertising or remarketing where permitted by law. You can manage cookies through your browser settings and, where available, through our cookie preference tools.</p>
+        <p>We use cookies, pixels, tags, scripts, SDKs, and similar technologies for essential Site functions, security, analytics, performance measurement, functionality, personalization, and advertising or remarketing where permitted by law.</p>
+        <p className="mt-2">You can manage cookies through your browser settings and, where available, through our cookie preference tools.</p>
       </Section>
 
       <Section number="6" title="How We Share Personal Information">
@@ -55,14 +56,14 @@ export default function Privacy() {
           'Hosting, cloud, analytics, CRM, scheduling, communications, customer support, security, development, and marketing vendors;',
           'Payment, invoicing, accounting, and bookkeeping providers;',
           'Legal, tax, audit, insurance, and other professional advisors;',
-          'Affiliates, successors, acquirers, or counterparties in connection with a financing, reorganization, merger, acquisition, or sale of assets;',
-          'Regulators, law enforcement, courts, or government authorities when required by law.',
+          'Affiliates, successors, acquirers, investors, or counterparties in connection with a financing, reorganization, merger, acquisition, dissolution, or sale of assets;',
+          'Regulators, law enforcement, courts, or government authorities when required by law or when reasonably necessary to protect rights, property, safety, or legal interests.',
         ]} />
-        <p className="mt-3">We do not represent that we never "sell" or "share" personal information under every jurisdiction's statutory definitions. Where applicable law grants opt-out rights, we will honor those rights as required.</p>
+        <p className="mt-3">We do not represent that we never "sell" or "share" personal information under every jurisdiction's statutory definitions. Where applicable law grants opt-out rights relating to targeted advertising, cross-context behavioral advertising, or similar data uses, we will honor those rights as required.</p>
       </Section>
 
       <Section number="7" title="International Transfers">
-        <p>Personal information may be transferred to and processed in the United States and other jurisdictions where Conefia or its service providers operate. Where required by applicable law, we will use appropriate safeguards for cross-border transfers.</p>
+        <p>Because Conefia markets and provides services internationally, personal information may be transferred to and processed in the United States and other jurisdictions where Conefia or its service providers operate. Where required by applicable law, we will use appropriate safeguards for cross-border transfers.</p>
       </Section>
 
       <Section number="8" title="Data Retention">
@@ -85,9 +86,9 @@ export default function Privacy() {
           'Object to or restrict certain processing;',
           'Withdraw consent where processing is based on consent;',
           'Request portability where applicable;',
-          'Opt out of certain marketing communications or targeted-advertising uses.',
+          'Opt out of certain marketing communications or certain sharing or targeted-advertising uses.',
         ]} />
-        <p className="mt-3">To exercise privacy rights, <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contact us</a>. We may need to verify your identity before processing your request.</p>
+        <p className="mt-3">To exercise privacy rights, contact us at <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>. We may need to verify your identity before processing your request.</p>
       </Section>
 
       <Section number="12" title="EEA, UK, and Similar Jurisdictions">
@@ -95,14 +96,18 @@ export default function Privacy() {
       </Section>
 
       <Section number="13" title="California Privacy Notice">
-        <p>If you are a California resident, you may have rights under California privacy law, including rights to know, delete, correct, and opt out of certain sales or sharing.</p>
+        <p>If you are a California resident, you may have rights under California privacy law, including rights to know, delete, correct, and opt out of certain sales or sharing, as well as the right to limit certain uses of sensitive personal information where applicable.</p>
         <p className="font-semibold text-gray-800 mt-3 mb-1">Categories of Personal Information We May Collect</p>
         <BulletList items={['Identifiers', 'Internet or electronic network activity information', 'Commercial information', 'Approximate geolocation derived from IP address', 'Professional or employment-related information', 'Communications content', 'Inferences drawn from browsing or engagement behavior']} />
-        <p className="mt-3">California residents may <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contact us</a>.</p>
+        <p className="font-semibold text-gray-800 mt-3 mb-1">Sources</p>
+        <BulletList items={['Directly from you', 'Automatically from your device or browser', 'From service providers and business partners', 'From public professional sources']} />
+        <p className="font-semibold text-gray-800 mt-3 mb-1">Purposes</p>
+        <BulletList items={['Site operations', 'Communications', 'Analytics', 'Marketing', 'Security', 'Fraud prevention', 'Legal compliance']} />
+        <p className="mt-3">California residents may submit requests to <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>.</p>
       </Section>
 
       <Section number="14" title="Marketing Communications">
-        <p>You may opt out of promotional emails by using the unsubscribe link in the message or by <a href="#contact" className="underline hover:text-[#DBFE01] transition-colors">contacting us</a>. Transactional or relationship messages may still be sent where permitted.</p>
+        <p>You may opt out of promotional emails by using the unsubscribe link in the message or by contacting us at <a href="mailto:info@conefia.com" className="underline hover:text-[#DBFE01] transition-colors">info@conefia.com</a>. Transactional or relationship messages may still be sent where permitted.</p>
       </Section>
 
       <Section number="15" title="Do Not Track and Preference Signals">
